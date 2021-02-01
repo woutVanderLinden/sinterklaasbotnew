@@ -300,7 +300,7 @@ var opts = {
 port = process.env.PORT || 8000;
 console.log(port);
 console.log("test");
-global.Bot = new PSClient("0.0.0.0", port, opts);
+global.Bot = new PSClient("sim.psim.us", 8000, opts);
 
 var connected = false;
 Bot.on('connect', function (con) {
@@ -594,7 +594,7 @@ if (AppOptions.testmode) {
 	ok("Test mode enabled");
 } else {
 	const PORT = process.env.PORT || 8000;
-	info('Connecting to server ' + "0.0.0.0" + ':' + PORT);
+	info('Connecting to server ' + "sim.psim.us" + ':' + 8000);
 	Bot.connect();
 	Bot.startConnectionTimeOut();
 }
