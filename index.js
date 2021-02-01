@@ -300,7 +300,16 @@ var opts = {
 port = process.env.PORT || 8000;
 console.log(port);
 console.log("test");
-global.Bot = new PSClient("sim.psim.us", 8000, opts);
+global.Bot = new PSClient(Config.server, port, opts);
+const express = require('express')
+const app = express()
+
+
+app.listen(port);
+
+app.listen(port, () => {
+  console.log(`Example app listening at http://localhost:${port}`)
+})
 
 var connected = false;
 Bot.on('connect', function (con) {
@@ -593,8 +602,7 @@ console.log("\n-----------------------------------------------\n".yellow);
 if (AppOptions.testmode) {
 	ok("Test mode enabled");
 } else {
-	const PORT = process.env.PORT || 8000;
-	info('Connecting to server ' + "sim.psim.us" + ':' + 8000);
+	info('Connecting to server ' + Config.server + ':' + Config.port);
 	Bot.connect();
 	Bot.startConnectionTimeOut();
 }
