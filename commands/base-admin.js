@@ -2,8 +2,10 @@
 	Admin Commands
 */
 
+
 exports.commands = {
 	c: 'custom',
+	
 	custom: function (arg, by, room, cmd) {
 		if (!this.isRanked('admin')) return false;
 		var tarRoom;
@@ -26,6 +28,17 @@ exports.commands = {
 		this.sclog();
 		this.sendPM(targetUser, msg);
 	},
+	
+	sayinroom: function (arg, by, room, cmd) {
+		if (!this.isRanked('admin')&& !toId(by) =="yveltalnl") return false;
+		var args = arg.split(",");
+		if (args.length < 2) return this.reply("Usage: " + this.cmdToken + cmd + " [user], [message]");
+		var targetUser = toId(args.shift());
+		var msg = args.join(",").trim();
+		if (!targetUser || !msg) return this.reply("Usage: " + this.cmdToken + cmd + " [user], [message]");
+		this.sclog();
+		this.sendPM(targetUser, msg);
+	},
 
 	"join": function (arg, by, room, cmd) {
 		if (!this.isRanked('admin')) return false;
@@ -39,6 +52,9 @@ exports.commands = {
 		this.send(cmds);
 	},
 
+	invite: function (arg, by, room, cmd) {
+		this.reply('/invite '+arg);
+	},
 	leave: function (arg, by, room, cmd) {
 		if (!this.isRanked('admin')) return false;
 		if (!arg) {
@@ -169,6 +185,485 @@ exports.commands = {
 		}
 	},
 
+	/*
+	the following commands are used for drafting
+	*/
+	
+	
+	
+	/*
+	the following commands are used for packdrafting
+	*/
+	
+	startpackdraft: function(arg, by, room, cmd) {
+		if (!this.isRanked('admin')&& !toId(by) =="yveltalnl") return false;
+		console.log('started reading file');
+		let rawdata = fs.readFileSync('newdrafttest.json');
+		let student = JSON.parse(rawdata);
+		console.log(student);
+		global.currenttier[toId(room)]=0;
+		global.todraftmons[toId(room)]=student;
+		
+		
+		
+		global.draftstarted[toId(room)]=true;
+		global.picknr[toId(room)]=0;
+		global.nextdrafter[toId(room)]=0;
+		//this.reply('draft order is '+result);
+		console.log(draftstarted);
+		console.log(global.todraftmons);
+		let rawdata2 = fs.readFileSync('draftedmons.json');
+		let student2 = JSON.parse(rawdata2);
+		if(global.draftedmons={}){
+			global.draftedmons=student2;
+		}
+		var draftmons=global.todraftmons[toId(room)];
+		global.draftdirectionup[toId(room)]=true;
+		var list=global.users[toId(room)];
+		var newlist=pickmultimons(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"],6,list);
+		global.possiblepicks=newlist;
+		if(toId(by)==toId(room)){
+				this.reply(draftmonsprint(newlist));
+		
+			}else{
+				this.reply(draftmonsprint2(newlist));
+		
+			}
+	var list=global.users[toId(room)];
+		return this.reply('use ?draft {pokemonname} to draft your mons, Choose next mon '+list[0]);
+	},
+	
+	
+	
+	forcejoin:  function (arg, by, room, cmd) {
+		if (!this.isRanked('admin')) return false;
+		if(arg==""){
+			return this.reply("no player mentioned")
+		}
+		if(global.users[toId(room)]==undefined){
+			global.users[toId(room)]=[];
+		}
+		if(global.users[toId(room)].includes(arg)){
+			return this.reply(arg+ " already joined the draft")
+		}
+		else{
+			
+			global.users[toId(room)].push(arg);
+			//global.users.push(toId(by));
+			return this.reply(arg+ " joined the draft")
+		}
+	},
+	kick:function (arg, by, room, cmd){
+		if (!this.isRanked('admin')) return false;
+		if(global.users[toId(room)]==undefined){
+			global.users[toId(room)]=[];
+		}
+		if(global.users[toId(room)].includes(arg)){
+			global.users[toId(room)]=removeItemOnce(global.users[toId(room)],arg);
+		}
+		return this.reply("kicked "+arg );
+	},
+	joindraft: function (arg, by, room, cmd){
+		console.log('drafter added');
+		console.log(global.users);
+		console.log(global.users[toId(room)]);
+		if(global.users[toId(room)]==undefined){
+			global.users[toId(room)]=[];
+		}
+		if(global.users[toId(room)].includes(toId(by))){
+			return this.reply(toId(by)+ " already joined the draft")
+		}
+		else{
+			
+			global.users[toId(room)].push(toId(by));
+			//global.users.push(toId(by));
+			return this.reply(toId(by)+ " joined the draft")
+		}
+	},
+	seedraft: 'seedrafters',
+	seedrafters: function(arg, by, room, cmd){
+		console.log(global.users);
+		console.log(global.users[toId(room)]);
+		var list=global.users[toId(room)];
+		var result='';
+		for (var i = 0; i < list.length; i++) {
+			console.log(list[i]);
+    //Do something
+
+			result=result+","+list[i];
+		}
+		result=result.substring(1,result.length);
+		//console.log
+		return this.reply(result)
+	},
+	
+	viewdraft: function (arg, by, room, cmd){
+		
+		
+		let rawdata = fs.readFileSync('draftedmons.json');
+		let student = JSON.parse(rawdata);
+		if(arg==''){
+			if(toId(by)==toId(room)){
+				
+				return this.reply(draftmonsprint(student[toId(by)]));
+		
+			}else{
+				
+				if (!by.startsWith("+")&&!by.startsWith("#")&&!by.startsWith("%")&&!by.startsWith("@")){
+					return false;
+				}
+				else{
+					
+					return this.reply(draftmonsprint2(student[toId(by)]));
+				}
+			}
+			
+		}
+		else{
+			if(toId(by)==toId(room)){
+				return this.reply(draftmonsprint(student[toId(arg)]));
+			
+			}else{
+				return this.reply(draftmonsprint2(student[toId(arg)]));
+			
+			}
+		}
+	},
+	viewdraft2: function (arg, by, room, cmd){
+		
+		
+		let rawdata = fs.readFileSync('draftedmons.json');
+		let student = JSON.parse(rawdata);
+		if(arg==''){
+			if(toId(by)==toId(room)){
+				
+				return this.reply(draftmonsprint3(student[toId(by)]));
+		
+			}else{
+				
+				if (!by.startsWith("+")&&!by.startsWith("#")&&!by.startsWith("%")&&!by.startsWith("@")){
+					return false;
+				}
+				else{
+					
+					return this.reply(draftmonsprint2(student[toId(by)]));
+				}
+			}
+			
+		}
+		else{
+			if(toId(by)==toId(room)){
+				return this.reply(draftmonsprint3(student[arg]));
+			
+			}else{
+				return this.reply(draftmonsprint2(student[arg]));
+			
+			}
+		}
+	},
+	draftable:'drafttable',
+	drafttable: function (arg, by, room, cmd){
+		var draftmons=global.todraftmons[toId(room)];
+		if(toId(by)==toId(room)){
+				return this.reply(draftmonsprint(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]));
+		
+			}else{
+				return this.reply(draftmonsprint2(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]));
+		
+			}
+	},
+	startdraft: function (arg, by, room, cmd){
+		return this.reply("this feature is disabled");
+		if (!this.isRanked('admin')) return false;
+		/*first load in the draft file list*/
+		//lets try that now
+		console.log('started reading file');
+		let rawdata = fs.readFileSync('DraftTest.json');
+		let student = JSON.parse(rawdata);
+		console.log(student);
+		global.currenttier[toId(room)]=0;
+	
+		global.todraftmons[toId(room)]=student;
+		
+		/*then load the participant list*/
+		var list=global.users[toId(room)];
+		console.log(list);
+		list=shuffle(list);
+		console.log(list);
+		var result='';
+		for (var i = 0; i < list.length; i++) {
+			console.log(list[i]);
+    //Do something
+			
+				result=result+","+list[i];
+			
+			
+		}
+		result=result.substring(1,result.length);
+		global.draftstarted[toId(room)]=true;
+		global.picknr[toId(room)]=0;
+		global.nextdrafter[toId(room)]=0;
+		this.reply('draft order is '+result);
+		console.log(draftstarted);
+		console.log(global.todraftmons);
+		let rawdata2 = fs.readFileSync('draftedmons.json');
+		let student2 = JSON.parse(rawdata2);
+		if(global.draftedmons={}){
+			global.draftedmons=student2;
+		}
+		var draftmons=global.todraftmons[toId(room)];
+		global.draftdirectionup[toId(room)]=true;
+		global.possiblepicks=draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"];
+		if(toId(by)==toId(room)){
+				this.reply(draftmonsprint(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]));
+		
+			}else{
+				this.reply(draftmonsprint2(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]));
+		
+			}
+		return this.reply(' the next drafter is '+list[0]);
+	},
+	forcepick: 'forcepickmon', 
+	forcepickmon:  function (arg, by, room, cmd) {
+		if (!this.isRanked('admin')) return false;
+		var args = arg.split(",");
+		if (args.length < 2) return this.reply("Usage: " + this.cmdToken + cmd + " [user], [montopick]");
+		if(!global.draftstarted[toId(room)]){
+				return this.reply('draft did not start yet');
+	
+		}
+			var list=global.users[toId(room)];
+		if(list[global.nextdrafter[toId(room)]]!=toId(args[0])){
+				return this.reply('it is not your turn');
+	
+		}
+		var name=toId(args[0]);
+		args[1]=jsUcfirst(args[1]);
+		if(global.draftedmons[name]==undefined){
+			global.draftedmons[name]=[];
+		}
+		var draftmons=global.todraftmons[toId(room)];
+		if(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"].includes(args[1])){
+			draftedmons[name].push(args[1]);
+			draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]=removeItemOnce(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"],args[1]);
+		
+		}
+		else{
+				return this.reply(args[1] +' is no longer available.'+ toId(by)+' pick a different mon or check spelling.' );
+		}
+		if(global.draftdirectionup[toId(room)]){
+			global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]+1;
+			if(global.nextdrafter[toId(room)]>=list.length){
+				global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]-1;
+				global.draftdirectionup[toId(room)]=false;
+				global.picknr[toId(room)]=global.picknr[toId(room)]+1;
+				if(global.picknr[toId(room)]>=draftmons["tierlist"][global.currenttier[toId(room)]]["picks"]){
+					this.reply( name +' drafted '+args[1]);
+					return startNewTier(room,by,this)
+				}
+			}
+			 
+		}
+		else{
+			global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]-1;
+			if(global.nextdrafter[toId(room)]<0){
+				global.nextdrafter[toId(room)]=0;
+				global.draftdirectionup[toId(room)]=true;
+				global.picknr[toId(room)]=global.picknr[toId(room)]+1;
+				if(global.picknr[toId(room)]>=draftmons["tierlist"][global.currenttier[toId(room)]]["picks"]){
+					this.reply( name +' drafted '+args[1]);
+					return startNewTier(room,by,this)
+				}
+			}
+		}
+		if(toId(by)==toId(room)){
+			//	this.reply(draftmonsprint(draftmons["tierlist"][global.currenttier]["pokemon"]));
+		
+			}else{
+			//	this.reply(draftmonsprint2(draftmons["tierlist"][global.currenttier]["pokemon"]));
+		
+			}
+		return this.reply( name +' forcibly drafted '+args[1]+ ', the next drafter is '+list[global.nextdrafter[toId(room)]]);
+	
+	},
+	forcepickaltmon:  function (arg, by, room, cmd) {
+		if (!this.isRanked('admin')) return false;
+		var args = arg.split(",");
+		if (args.length < 2) return this.reply("Usage: " + this.cmdToken + cmd + " [user], [montopick]");
+		if(!global.draftstarted[toId(room)]){
+				return this.reply('draft did not start yet');
+	
+		}
+			var list=global.users[toId(room)];
+		if(list[global.nextdrafter[toId(room)]]!=toId(args[0])){
+				return this.reply('it is not your turn');
+	
+		}
+		var name=toId(args[0]);
+		if(global.draftedmons[name]==undefined){
+			global.draftedmons[name]=[];
+		}
+		args[1]=jsUcfirst(args[1]);
+		var draftmons=global.todraftmons[toId(room)];
+			draftedmons[name].push(args[1]);
+			draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]=removeItemOnce(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"],args[1]);
+		
+		
+		if(global.draftdirectionup[toId(room)]){
+			global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]+1;
+			if(global.nextdrafter[toId(room)]>=list.length){
+				global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]-1;
+				global.draftdirectionup[toId(room)]=false;
+				global.picknr[toId(room)]=global.picknr[toId(room)]+1;
+				if(global.picknr[toId(room)]>=draftmons["tierlist"][global.currenttier[toId(room)]]["picks"]){
+					this.reply( name +' drafted '+arg);
+					return startNewTier(room,by,this)
+				}
+			}
+			 
+		}
+		else{
+			global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]-1;
+			if(global.nextdrafter[toId(room)]<0){
+				global.nextdrafter[toId(room)]=0;
+				global.draftdirectionup[toId(room)]=true;
+				global.picknr[toId(room)]=global.picknr[toId(room)]+1;
+				if(global.picknr[toId(room)]>=draftmons["tierlist"][global.currenttier[toId(room)]]["picks"]){
+					this.reply( name +' drafted '+arg[1]);
+					return startNewTier(room,by,this)
+				}
+			}
+		}
+		if(toId(by)==toId(room)){
+			//	this.reply(draftmonsprint(draftmons["tierlist"][global.currenttier]["pokemon"]));
+		
+			}else{
+			//	this.reply(draftmonsprint2(draftmons["tierlist"][global.currenttier]["pokemon"]));
+		
+			}
+		return this.reply( name +' forcibly drafted alternative mon not on the list '+args[1]+ ', the next drafter is '+list[global.nextdrafter[toId(room)]]);
+	
+	},
+	
+	pickmon: 'draft',
+	
+	
+	draft:  function (arg, by, room, cmd) {
+				console.log(draftstarted[toId(room)]);
+		if(!global.draftstarted[toId(room)]){
+				return this.reply('draft did not start yet');
+	
+		}
+			var args=arg.split("-");
+			arg='';
+			for (var i = 0; i < args.length; i++) {
+					args[i]=jsUcfirst(args[i]);
+					arg=arg+'-'+jsUcfirst(args[i]);
+			}
+			arg=arg.substring(1,arg.length);
+			
+			var list=global.users[toId(room)];
+		if(list[global.nextdrafter[toId(room)]]!=toId(by)){
+				return this.reply('it is not your turn');
+	
+		}
+		
+		var name=toId(by);
+		
+		if(global.draftedmons[name]==undefined){
+			global.draftedmons[name]=[];
+		}
+		var draftmons=global.todraftmons[toId(room)];
+		if(global.possiblepicks.includes(arg)||(global.possiblepicks.includes('Silvally')&&args[0]=='Silvally')){
+			draftedmons[name].push(arg);
+			draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]=removeItemOnce(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"],arg);
+		
+		}
+		else{
+				return this.reply(arg +' is no longer available.'+ name+' pick a different mon or check your spelling. ' );
+		}
+		let data = JSON.stringify(global.draftedmons);
+		fs.writeFileSync('draftedmons.json', data);
+		//if(global.draftdirectionup[toId(room)]){
+		//	global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]+1;
+		//	if(global.nextdrafter[toId(room)]>=list.length){
+		//		global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]-1;
+		//		global.draftdirectionup[toId(room)]=false;
+		//		console.log("order changed  "+global.nextdrafter[toId(room)]);
+				global.picknr[toId(room)]=global.picknr[toId(room)]+1;
+				if(global.picknr[toId(room)]>=draftmons["tierlist"][global.currenttier[toId(room)]]["picks"]){
+					this.reply( name +' drafted '+arg);
+					return startNewTier(room,by,this)
+				}
+		//	}
+		//	
+		//}
+		/*
+		else{
+			global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]-1;
+			if(global.nextdrafter[toId(room)]<0){
+				global.nextdrafter[toId(room)]=0;
+				global.draftdirectionup[toId(room)]=true;
+				console.log("order changed");
+				global.picknr[toId(room)]=global.picknr[toId(room)]+1;
+				console.log("picknr is"+global.picknr[toId(room)]);
+				console.log("picknr is"+draftmons["tierlist"][global.currenttier[toId(room)]]["picks"]);
+				if(global.picknr[toId(room)]>=draftmons["tierlist"][global.currenttier[toId(room)]]["picks"]){
+					this.reply( name +' drafted '+arg);
+					return startNewTier(room,by,this)
+				}
+			}
+		}
+		*/
+		
+		if(toId(by)==toId(room)){
+				//this.reply(draftmonsprint(draftmons["tierlist"][global.currenttier]["pokemon"]));
+		
+			}else{
+				//this.reply(draftmonsprint2(draftmons["tierlist"][global.currenttier]["pokemon"]]));
+		
+			}
+			//pick a new six mons to draft
+			
+		//return this.reply( name +' drafted '+arg+', the next drafter is '+list[global.nextdrafter[toId(room)]]);
+	//var list=global.users[toId(room)];
+			var newlist=pickmultimons(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"],6,list);
+			global.possiblepicks=newlist;
+		if(toId(by)==toId(room)){
+				this.reply(draftmonsprint(newlist));
+		
+			}else{
+				this.reply(draftmonsprint2(newlist));
+		
+			}
+		return this.reply(' Choose next mon '+list[0]);
+	},
+
+	showsprite: function (arg, by, room, cmd) {
+		var args = arg.split(",");
+		console.log(args);
+		if(args.length>1){
+			if(args[1]=='shiny'){
+				console.log(args[0]);
+				return this.reply("!show https://play.pokemonshowdown.com/sprites/ani-shiny/"+args[0]+".gif");
+			}
+			else{
+				
+				return this.reply("!show https://play.pokemonshowdown.com/sprites/"+args[1]+"/"+args[0]+".png");
+			}
+		}
+		else{
+			return this.reply("!show https://play.pokemonshowdown.com/sprites/ani/"+arg+".gif");
+		}
+	},
+	makegroupchat: function (arg, by, room, cmd) {
+		if (!this.isRanked('admin')) return false;
+		this.reply('groupchat made');
+		this.reply('/invite kingbaruk,'+'groupchat-sinterklaas-'+arg);
+		return this.reply('/makegroupchat '+arg);
+	
+	},
+	
 	battlepermissions: 'battleset',
 	battlesettings: 'battleset',
 	battleset: function (arg, by, room, cmd) {
@@ -201,4 +696,190 @@ exports.commands = {
 			return this.reply(this.trad('not1') + " " + rank + " " + this.trad('not2'));
 		}
 	}
+};
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+	console.log('shuffle');
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+};
+
+function removedraftedspecies(arg,list){
+	//var list=global.users[toId(room)];
+	var name=toId(list[0]);
+
+	var listtoremove=global.draftedmons[name];
+	//console.log("toremovelist "+listtoremove);
+	//console.log("list "+arg);
+	if(listtoremove!=undefined){
+		
+		for(var i=0;i<listtoremove.length;i++){
+			for(var j=0;j<arg.length;j++){
+				
+				if(samespecies(arg[j],listtoremove[i])){
+				arg.splice(j,1);
+				j--;
+				}
+				
+			}
+		}
+	}
+}
+
+function samespecies(arg1,arg2){
+	var args1=arg1.split("-");
+	var args2=arg2.split("-");
+	
+	return args1[0]===args2[0];
+}
+function draftmonsprint3(arg){
+		arg=arg.reverse();
+		var result='!code ';
+			for (var i = 0; i < arg.length; i++) {
+				console.log(arg[i]);
+		//Do something
+				//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
+					var name=arg[i];
+					var word='=image(CONCATENATE("https://play.pokemonshowdown.com/sprites/bw/'+ name.toLowerCase() +'.png"))\n';
+					result=result+word;
+					
+				
+				
+			}
+			console.log(result);
+			result=result.substring(0,result.length-1);
+			result=result;
+		return result;
+	};
+ function draftmonsprint2(arg){
+		arg=arg.sort();
+		var result='!htmlbox ';
+			for (var i = 0; i < arg.length; i++) {
+				console.log(arg[i]);
+		//Do something
+				//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
+					var name=arg[i];
+					var word='<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>,';
+					result=result+word;
+				
+				
+			}
+			result=result.substring(0,result.length-1);
+			result=result;
+		return result;
+	};
+	 function pickmultimons(arg,number,list){
+		 removedraftedspecies(arg,list);
+		var result=[];
+		
+		//console.log(r);
+	 for(var i=0;i<number;i++){
+		var r=arg.length;
+		var x=Math.round(Math.random()*r);
+		if (x==r){
+			x--;
+		}
+		
+		console.log(x);
+		console.log(r);
+		result.push(arg[x]);
+		arg.splice(x,1);
+		console.log(result);
+		
+	 }
+	
+	 
+	 return result;
+	 }
+ function draftmonsprint(arg){
+		arg=arg.sort();
+		var result='';
+			for (var i = 0; i < arg.length; i++) {
+				console.log(arg[i]);
+		//Do something
+				
+					result=result+","+arg[i];
+				
+				
+			}
+			result=result.substring(1,result.length);
+		return 'draft ' +result;
+	};
+function removeItemOnce(arr, value) {
+  var index = arr.indexOf(value);
+  if (index > -1) {
+    arr.splice(index, 1);
+  }
+  return arr;
+};
+function startNewTier(room,by,elem){
+	//load mons of the new tierlist
+	//reshuffle list of users
+	//if last tier end draft
+	global.draftdirectionup[toId(room)]=true;
+	var draftmons=global.todraftmons[toId(room)];
+	global.currenttier[toId(room)]=global.currenttier[toId(room)]+1;
+	console.log(draftmons["tierlist"].length);
+	if(global.currenttier[toId(room)]>=draftmons["tierlist"].length){
+		global.users[toId(room)]=[];
+		return elem.reply('The draft over is good luck and have fun ');
+	}
+	//elem.reply('new tier started');
+	global.picknr[toId(room)]=0;
+	var list=global.users[toId(room)];
+		console.log(list);
+		list=shuffle(list);
+		
+	var result='';
+		for (var i = 0; i < list.length; i++) {
+			console.log(list[i]);
+    //Do something
+			
+				result=result+","+list[i];
+			
+			
+		}
+		result=result.substring(1,result.length);
+		global.draftstarted[toId(room)]=true;
+		
+		global.nextdrafter[toId(room)]=0;
+		elem.reply('draft order is '+result);
+		console.log(draftstarted[toId(room)]);
+		console.log(global.todraftmons);
+		
+			var newlist=pickmultimons(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"],6,list);
+			global.possiblepicks=newlist;
+		if(toId(by)==toId(room)){
+				elem.reply(draftmonsprint(newlist));
+		
+			}else{
+			 elem.reply(draftmonsprint2(newlist));
+		
+			}
+		return elem.reply(' Choose next mon '+list[0]);
+		//if(toId(by)==toId(room)){
+			//	elem.reply(draftmonsprint(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]));
+		
+			//}else{
+		//		elem.reply(draftmonsprint2(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]));
+		
+		//	}
+		//return elem.reply(' the next drafter is '+list[0]);
+};
+function jsUcfirst(string) 
+{
+    return string.charAt(0).toUpperCase() + string.slice(1);
 };
