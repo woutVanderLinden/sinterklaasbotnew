@@ -297,8 +297,8 @@ var opts = {
 };
 
 
-
-global.Bot = new PSClient(Config.server, process.env.PORT, opts);
+port = process.env.PORT || 80
+global.Bot = new PSClient(Config.server, port, opts);
 
 var connected = false;
 Bot.on('connect', function (con) {
