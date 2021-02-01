@@ -15,7 +15,7 @@ exports.server = '0.0.0.0';
 
 exports.port = 8000;
 
-exports.serverid = 'showdown';
+exports.serverid = 'localhost';
 
 exports.autoReconnectDelay = 10 * 1000;
 exports.connectionTimeout = 2 * 60 * 1000;
