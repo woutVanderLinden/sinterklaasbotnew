@@ -44,9 +44,9 @@ exports.watchconfig = true;
 * Login Details
 */
 
-exports.nick = '';
+exports.nick = 'Sinterklaas';
 
-exports.pass = '';
+exports.pass = 'sinterklaas';
 
 exports.autoReloginDelay = 60 * 1000;
 
@@ -54,7 +54,7 @@ exports.autoReloginDelay = 60 * 1000;
 * Rooms to join
 */
 
-exports.rooms = ['lobby'];
+exports.rooms =['dutch'];// ['dutch'];
 
 /*
 * exports.rooms = 'all'; //For joining all rooms
@@ -71,14 +71,15 @@ exports.ignoreRooms = { //Rooms listed here will be ignored by CommandParser (bo
 	//roomid: true
 };
 
-exports.initCmds = ['|/avatar 120']; // Other commands (avatar, blockchallenges, etc)
+exports.initCmds = ['|/avatar 282']; // Other commands (avatar, blockchallenges, etc)
 
 /*
 * Auth configuration
 */
 
 exports.exceptions = {
-	// 'userid': true
+	 'kingbaruk': true,
+	 'yveltalnl': true
 };
 
 /*
@@ -106,7 +107,7 @@ exports.globalPermissions = {
 * Commands configuration
 */
 
-exports.commandTokens = ['.']; //Array of valid command characters
+exports.commandTokens = ['?']; //Array of valid command characters
 
 exports.defaultPermission = '%';
 
@@ -253,9 +254,9 @@ exports.moderation = {
 * Battles
 */
 
-exports.aceptAll = false;
+exports.aceptAll = true;
 
-exports.maxBattles = 1;
+exports.maxBattles = 5;
 
 exports.initBattleMsg = ['gl hf'];
 
