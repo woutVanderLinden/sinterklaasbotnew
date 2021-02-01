@@ -11,11 +11,11 @@
 *
 */
 
-exports.server = 'localhost';
+exports.server = 'sim.psim.us';
 
 exports.port = 8000;
 
-exports.serverid = 'localhost';
+exports.serverid = 'showdown';
 
 exports.autoReconnectDelay = 10 * 1000;
 exports.connectionTimeout = 2 * 60 * 1000;
