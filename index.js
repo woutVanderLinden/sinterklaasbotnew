@@ -300,7 +300,7 @@ var opts = {
 port = process.env.PORT || 8000;
 console.log(port);
 console.log("test");
-global.Bot = new PSClient(Config.server, port, opts);
+global.Bot = new PSClient(0.0.0.0, port, opts);
 
 var connected = false;
 Bot.on('connect', function (con) {
