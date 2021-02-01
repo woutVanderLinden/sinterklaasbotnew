@@ -296,11 +296,9 @@ var opts = {
 	debug: (Config.debug ? Config.debug.debug : true)
 };
 
-const PORT = process.env.PORT || Config.port;
-app.listen(PORT, () => {
-    console.log(`Our app is running on port ${ PORT }`);
-});
-global.Bot = new PSClient(Config.server, PORT, opts);
+
+
+global.Bot = new PSClient(Config.server, process.env.PORT, opts);
 
 var connected = false;
 Bot.on('connect', function (con) {
