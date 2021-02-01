@@ -297,7 +297,9 @@ var opts = {
 };
 
 
-port = process.env.PORT || 80
+port = process.env.PORT || 8000;
+console.log(port);
+console.log("test");
 global.Bot = new PSClient(Config.server, port, opts);
 
 var connected = false;
