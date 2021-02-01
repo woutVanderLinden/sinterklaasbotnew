@@ -45,7 +45,8 @@
   "dependencies": {
     "sugar": "1.4.1",
     "colors": "1.0.3",
-     "websocket": "1.0.28"
+     "websocket": "1.0.28",
+	"express": "~4.16.0"
   },
   "devDependencies": {
     "cache-swap": "~0.2.0",
