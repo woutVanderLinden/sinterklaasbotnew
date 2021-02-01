@@ -593,7 +593,8 @@ console.log("\n-----------------------------------------------\n".yellow);
 if (AppOptions.testmode) {
 	ok("Test mode enabled");
 } else {
-	info('Connecting to server ' + Config.server + ':' + Config.port);
+	const PORT = process.env.PORT || 8000;
+	info('Connecting to server ' + 0.0.0.0 + ':' + PORT);
 	Bot.connect();
 	Bot.startConnectionTimeOut();
 }
