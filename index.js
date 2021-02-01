@@ -3,12 +3,55 @@
 
 	By: Ecuacion
 */
+let todraftmons=[];
+let users=[];
 
+function draftmons(arg) {
+	var result='';
+		for (var i = 0; i < arg.length; i++) {
+			console.log(arg[i]);
+    //Do something
+			
+				result=result+","+arg[i];
+			
+			
+		}
+		result=result.substring(1,result.length-1);
+	return 'draftable mons are ' +result;
+};
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
 try {
 	require('sugar');
-
+	
+	global.todraftmons={};
+	global.draftdirectionup={};
+	global.users={};
+	global.picknr={};
+	global.possiblepicks={};
+	
+	global.draftstarted={};
+	global.nextdrafter={};
+	global.draftedmons={};
+	global.currenttier={};
 	global.colors = require('colors');
-	global.sys = require('sys');
+	global.util = require('util');
 	global.fs = require('fs');
 	global.path = require('path');
 	global.PSClient = require('./showdown-client.js');
@@ -168,6 +211,7 @@ function botAfterConnect () {
 function joinByQueryRequest(target) {
 	if (target === 'official' || target === 'public' || target === 'all') {
 		info('Joining ' + target + ' rooms');
+		console.log("here");
 	} else {
 		error('Config.rooms, as a string must be "official", "public" or "all"');
 		var cmds = [];
@@ -252,7 +296,11 @@ var opts = {
 	debug: (Config.debug ? Config.debug.debug : true)
 };
 
-global.Bot = new PSClient(Config.server, Config.port, opts);
+const PORT = process.env.PORT || Config.port;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
+});
+global.Bot = new PSClient(Config.server, PORT, opts);
 
 var connected = false;
 Bot.on('connect', function (con) {
@@ -264,7 +312,7 @@ Bot.on('connect', function (con) {
 			if (typeof Features[f].init === "function") Features[f].init();
 		} catch (e) {
 			errlog(e.stack);
-			error("Feature Crash: " + f + " | " + sys.inspect(e));
+			error("Feature Crash: " + f + " | " + util.inspect(e));
 			SecurityLog.log("FEATURE CRASH: " + f + " | " + e.message + "\n" + e.stack);
 		}
 	}
@@ -423,7 +471,7 @@ Bot.on('line', function (room, message, isIntro, spl) {
 			if (typeof Features[f].parse === "function") Features[f].parse(room, message, isIntro, spl);
 		} catch (e) {
 			errlog(e.stack);
-			error("Feature Crash: " + f + " | " + sys.inspect(e));
+			error("Feature Crash: " + f + " | " + util.inspect(e));
 			SecurityLog.log("FEATURE CRASH: " + f + " | " + e.message + "\n" + e.stack);
 			Features[f].disabled = true;
 			Features[f].parse = null;
@@ -502,10 +550,11 @@ var checkSystem = function () {
 				Bot.rename('Bot ' + Tools.generateRandomNick(10));
 				break;
 		}
-	}
+	
+}
 };
 if (!AppOptions.testmode) {
-	var sysChecker = setInterval(checkSystem, 60 * 60 * 1000);
+	var utilChecker = setInterval(checkSystem, 60 * 60 * 1000);
 	ok('Global monitor is working');
 }
 
