@@ -11,7 +11,7 @@
 *
 */
 
-exports.server = 'sim.psim.us';
+exports.server = '0.0.0.0';
 
 exports.port = 8000;
 
