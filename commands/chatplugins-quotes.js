@@ -45,45 +45,38 @@ exports.commands = {
 	setquote: 'quote',
 	delquote: 'quote',
 	getquote: 'quote',
+	randquote: 'quote',
 	quote: function (arg, by, room, cmd) {
-		if (cmd === "addquote" || cmd === "setquote") {
-			if (!this.isRanked('admin')) return false;
-			var args = arg.split(",");
-			if (args.length < 2) return this.reply(this.trad('u1') + ": " + this.cmdToken + cmd + " " + this.trad('u2'));
-			var id = toId(args[0]);
-			if (!id) return this.reply(this.trad('noid'));
-			args.splice(0, 1);
-			var content = Tools.stripCommands(args.join(',').trim());
-			if (!content) return this.reply(this.trad('u1') + ": " + this.cmdToken + cmd + " " + this.trad('u2'));
-			if (quotes[id] && cmd !== "setquote") return this.reply(this.trad('quote') + ' "' + id + '" ' + this.trad('already'));
-			var text;
-			if (quotes[id]) {
-				text = this.trad('quote') + ' "' + id + '" ' + this.trad('modified');
-			} else {
-				text = this.trad('quote') + ' "' + id + '" ' + this.trad('created');
-			}
-			quotes[id] = content;
-			saveQuotes();
-			this.sclog();
-			this.reply(text);
+		if (cmd === "addquote" || cmd === "setquote" || cmd=== "quote") {
+			
+			if (!this.isRanked('driver')) return false;
+			let rawdata = fs.readFileSync('quotes.json');
+			let quotes = JSON.parse(rawdata);
+			student[toId(room)].push(arg);
+			this.reply("added quote " +arg);
+			let data = JSON.stringify(quotes);
+			fs.writeFileSync('quotes.json', data);
+			
 		} else if (cmd === "delquote") {
-			if (!this.isRanked('admin')) return false;
-			var id = toId(arg);
-			if (!id) return this.reply(this.trad('noid'));
-			if (!quotes[id]) return this.reply(this.trad('quote') + ' "' + id + '" ' + this.trad('n'));
-			delete quotes[id];
-			saveQuotes();
-			this.sclog();
-			this.reply(this.trad('quote') + ' "' + id + '" ' + this.trad('d'));
+			if (!this.isRanked('driver')) return false;
+			let rawdata = fs.readFileSync('quotes.json');
+			let quotes = JSON.parse(rawdata);
+			student[toId(room)].removeItemOnce(arg);
+			this.reply("removed quote " +arg);
 		} else if (cmd === "getquote") {
 			var id = toId(arg);
 			if (!id) return this.reply(this.trad('noid'));
 			if (!quotes[id]) return this.restrictReply(this.trad('quote') + ' "' + id + '" ' + this.trad('n'), 'quote');
 			return this.restrictReply(Tools.stripCommands(quotes[id]), "quote");
 		} else {
-			var quote = rand(quotes);
-			if (quote === null) return this.restrictReply(this.trad('empty'), "quote");
-			return this.restrictReply(Tools.stripCommands(quote), "quote");
+			if (!this.isRanked('voice')) return false;
+			let rawdata = fs.readFileSync('quotes.json');
+			let quotes = JSON.parse(rawdata);
+			var quote =  quotes[Math.floor(Math.random() * quotes.length)];
+			let data = JSON.stringify(quotes);
+			fs.writeFileSync('quotes.json', data);
+			this.reply("!htmlbox "+ quote);
+			
 		}
 	},
 	listquotes: function (arg, by, room, cmd) {
