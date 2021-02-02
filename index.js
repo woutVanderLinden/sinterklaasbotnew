@@ -109,11 +109,11 @@ async function dbconnect(){
 	console.log(uri);
 	console.log("test");
 	
-	global.dbclient = await new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+	const client = await new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
 	
 	try {
-		await global.dbclient.connect(uri);
-		await listDatabases(global.dbclient);
+		await client.connect(uri);
+		await listDatabases(client);
 	} catch (e) {
 
     console.error(e);
@@ -121,7 +121,7 @@ async function dbconnect(){
 	}
 	finally {
 
-		await global.dbclient.close();
+		await client.close();
 
 	}
 }
