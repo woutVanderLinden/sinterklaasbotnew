@@ -369,12 +369,11 @@ const uri2 =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net
 	console.log("test");
 console.log(port);
 console.log("test");
-global.Bot = new PSClient(Config.server, port, opts);
+global.Bot = new PSClient(Config.server, Config.port, opts);
 const express = require('express')
 const app = express()
 
 
-app.listen(port);
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
