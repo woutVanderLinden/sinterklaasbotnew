@@ -52,7 +52,7 @@ exports.commands = {
 			if (!this.isRanked('driver')) return false;
 			let rawdata = fs.readFileSync('quotes.json');
 			let quotes = JSON.parse(rawdata);
-			student[toId(room)].push(arg);
+			quotes[toId(room)].push(arg);
 			this.reply("added quote " +arg);
 			let data = JSON.stringify(quotes);
 			fs.writeFileSync('quotes.json', data);
@@ -61,7 +61,7 @@ exports.commands = {
 			if (!this.isRanked('driver')) return false;
 			let rawdata = fs.readFileSync('quotes.json');
 			let quotes = JSON.parse(rawdata);
-			student[toId(room)].removeItemOnce(arg);
+			quotes[toId(room)].removeItemOnce(arg);
 			this.reply("removed quote " +arg);
 		} else if (cmd === "getquote") {
 			var id = toId(arg);
