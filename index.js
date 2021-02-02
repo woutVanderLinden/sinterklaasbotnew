@@ -363,6 +363,9 @@ var opts = {
 
 
 port = process.env.PORT || 8000;
+const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	console.log(uri);
+	console.log("test");
 console.log(port);
 console.log("test");
 global.Bot = new PSClient(Config.server, port, opts);
