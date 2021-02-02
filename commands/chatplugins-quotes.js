@@ -52,6 +52,9 @@ exports.commands = {
 			if (!this.isRanked('driver')) return false;
 			let rawdata = fs.readFileSync('quotes.json');
 			let quotes = JSON.parse(rawdata);
+			if(quotes[toId(room)]==undefined){
+				quotes[toId(room)]=[];
+			}
 			quotes[toId(room)].push(arg);
 			this.reply("added quote " +arg);
 			let data = JSON.stringify(quotes);
