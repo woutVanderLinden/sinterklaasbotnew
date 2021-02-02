@@ -3,7 +3,9 @@
 
 	By: Ecuacion
 */
-import dotenv from 'dotenv'
+const dotenv = require("dotenv");
+
+
 let todraftmons=[];
 let users=[];
 
