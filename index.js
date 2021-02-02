@@ -61,7 +61,7 @@ try {
 	process.exit(-1);
 }
 const {MongoClient} = require('mongodb');
-const uri ="mongodb+srv://kingbaruk:<password>@cluster0.9vx1c.mongodb.net/<dbname>?retryWrites=true&w=majority";
+const uri ="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 
 
 async function listDatabases(client){
@@ -100,7 +100,7 @@ async function findOneListingByName(client, nameOfListing) {
 
 }
 async function dbconnect(){
-	const uri = "mongodb+srv://kingbaruk:<password>@cluster0.9vx1c.mongodb.net/<dbname>?retryWrites=true&w=majority";
+	const uri = "mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 
 	global.dbclient = new MongoClient(uri);
 	try {
