@@ -152,8 +152,8 @@ const uri = "mongodb+srv://kingbaruk:<password>@cluster0.9vx1c.mongodb.net/<dbna
 
 global.dbclient = new MongoClient(uri);
 try {
-await client.connect();
-await listDatabases(client);
+await global.dbclient.connect();
+await listDatabases(global.dbclient);
 } catch (e) {
 
     console.error(e);
@@ -161,7 +161,7 @@ await listDatabases(client);
 }
 finally {
 
-    await client.close();
+    await global.dbclient.close();
 
 }
 }
