@@ -50,22 +50,28 @@ exports.commands = {
 		if (cmd === "addquote" || cmd === "setquote" || cmd=== "quote") {
 			
 			if (!this.isRanked('driver')) return false;
-			let rawdata = fs.readFileSync('quotes.json');
-			let quotes = JSON.parse(rawdata);
-			if(quotes[toId(room)]==undefined){
-				quotes[toId(room)]=[];
+			let quotes =findOneListingByName(global.dbclient,"quotes")
+			
+			if(quotes==undefined){
+				quotes={
+					 name: 'quotes',
+					'nederlands':[]
+					
+				};
 			}
-			quotes[toId(room)].push(arg);
+			quotes["nederlands"].push(arg);
 			this.reply("added quote " +arg);
-			let data = JSON.stringify(quotes);
-			fs.writeFileSync('quotes.json', data);
+			
+			
+			createListing(global.dbclient, quotes)
 			
 		} else if (cmd === "delquote") {
 			if (!this.isRanked('driver')) return false;
-			let rawdata = fs.readFileSync('quotes.json');
-			let quotes = JSON.parse(rawdata);
-			quotes[toId(room)].removeItemOnce(arg);
+			let quotes =findOneListingByName(global.dbclient,"quotes")
+			
+			quotes["nederlands"].removeItemOnce(arg);
 			this.reply("removed quote " +arg);
+			createListing(global.dbclient, quotes)
 		} else if (cmd === "getquote") {
 			var id = toId(arg);
 			if (!id) return this.reply(this.trad('noid'));
@@ -73,9 +79,10 @@ exports.commands = {
 			return this.restrictReply(Tools.stripCommands(quotes[id]), "quote");
 		} else {
 			if (!this.isRanked('voice')) return false;
-			let rawdata = fs.readFileSync('quotes.json');
-			let quotes = JSON.parse(rawdata);
-			var quote =  quotes[Math.floor(Math.random() * quotes.length)];
+			let quotes =findOneListingByName(global.dbclient,"quotes")
+			
+			var list=quotes["nederlands"];
+			var quote =  list[Math.floor(Math.random() * list.length)];
 			let data = JSON.stringify(quotes);
 			fs.writeFileSync('quotes.json', data);
 			this.reply("!htmlbox "+ quote);
