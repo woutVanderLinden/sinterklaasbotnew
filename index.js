@@ -40,9 +40,6 @@ function shuffle(array) {
 try {
 	require('sugar');
 	
-var http = require('http'); //importing http
-
-
 	global.todraftmons={};
 	global.draftdirectionup={};
 	global.users={};
@@ -115,6 +112,65 @@ if (AppOptions.debugmode) info((['Debug', 'Monitor', 'Production'])[AppOptions.d
 info('Loading globals');
 
 /* Globals */
+async function listDatabases(client){
+
+    databasesList = await client.db().admin().listDatabases();
+
+    console.log("Databases:");
+
+    databasesList.databases.forEach(db => console.log(` - ${db.name}`));
+
+};
+
+async function createListing(client, newListing){
+
+    const result = await client.db("sample_airbnb").collection("listingsAndReviews").insertOne(newListing);
+
+    console.log(`New listing created with the following id: ${result.insertedId}`);
+
+};
+
+async function findOneListingByName(client, nameOfListing) {
+
+    result = await client.db("sample_airbnb").collection("listingsAndReviews").findOne({ name: nameOfListing });
+
+    if (result) {
+
+        console.log(`Found a listing in the collection with the name '${nameOfListing}':`);
+
+        console.log(result);
+	return result;
+    } else {
+
+        console.log(`No listings found with the name '${nameOfListing}'`);
+
+    }
+
+}
+async function dbconnect(){
+const uri = "mongodb+srv://kingbaruk:<password>@cluster0.9vx1c.mongodb.net/<dbname>?retryWrites=true&w=majority";
+
+global.dbclient = new MongoClient(uri);
+try {
+await client.connect();
+await listDatabases(client);
+} catch (e) {
+
+    console.error(e);
+
+}
+finally {
+
+    await client.close();
+
+}
+}
+dbconnect().catch(console.error);
+
+
+
+
+
 
 global.Formats = {};
 
@@ -210,29 +266,7 @@ function botAfterConnect () {
 		Bot.send(cmds, 2000);
 	}
 }
-function startKeepAlive() {
-    setInterval(function() {
-        var options = {
-            host: 'sinterklaasbot.herokuapp.com',
-            port: 80,
-            path: '/'
-        };
-        http.get(options, function(res) {
-            res.on('data', function(chunk) {
-                try {
-                    // optional logging... disable after it's working
-                    console.log("HEROKU RESPONSE: " + chunk);
-                } catch (err) {
-                    console.log(err.message);
-                }
-            });
-        }).on('error', function(err) {
-            console.log("Error: " + err.message);
-        });
-    }, 20 * 60 * 1000); // load every 20 minutes
-}
 
-startKeepAlive();
 function joinByQueryRequest(target) {
 	if (target === 'official' || target === 'public' || target === 'all') {
 		info('Joining ' + target + ' rooms');
@@ -325,7 +359,7 @@ var opts = {
 port = process.env.PORT || 8000;
 console.log(port);
 console.log("test");
-global.Bot = new PSClient(Config.server, 8000, opts);
+global.Bot = new PSClient(Config.server, port, opts);
 const express = require('express')
 const app = express()
 
