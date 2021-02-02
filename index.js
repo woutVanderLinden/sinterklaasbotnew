@@ -3,6 +3,7 @@
 
 	By: Ecuacion
 */
+import dotenv from 'dotenv'
 let todraftmons=[];
 let users=[];
 
