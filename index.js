@@ -60,7 +60,7 @@ try {
 	console.log("ERROR: missing dependencies, try 'npm install'");
 	process.exit(-1);
 }
-
+const {MongoClient} = require('mongodb');
 const uri ="mongodb+srv://kingbaruk:<password>@cluster0.9vx1c.mongodb.net/<dbname>?retryWrites=true&w=majority";
 
 
