@@ -62,7 +62,7 @@ try {
 }
 const {MongoClient} = require('mongodb');
 const uri ="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
-
+dotenv.config()
 
 async function listDatabases(client){
 
@@ -103,6 +103,7 @@ async function findOneListingByName(client, nameOfListing) {
 async function dbconnect(){
 	const uri = 'mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority';
 	console.log(uri);
+	console.log("test");
 	global.dbclient = new MongoClient(uri, { useNewUrlParser: true });
 	
 	try {
