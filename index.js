@@ -61,6 +61,64 @@ try {
 	process.exit(-1);
 }
 
+const uri ="mongodb+srv://kingbaruk:<password>@cluster0.9vx1c.mongodb.net/<dbname>?retryWrites=true&w=majority";
+
+
+async function listDatabases(client){
+
+    databasesList = await client.db().admin().listDatabases();
+
+    console.log("Databases:");
+
+    databasesList.databases.forEach(db => console.log(` - ${db.name}`));
+
+};
+
+async function createListing(client, newListing){
+
+    const result = await client.db("sample_airbnb").collection("listingsAndReviews").insertOne(newListing);
+
+    console.log(`New listing created with the following id: ${result.insertedId}`);
+
+};
+
+async function findOneListingByName(client, nameOfListing) {
+
+    result = await global.client.db("sample_airbnb").collection("listingsAndReviews").findOne({ name: nameOfListing });
+
+    if (result) {
+
+        console.log(`Found a listing in the collection with the name '${nameOfListing}':`);
+
+        console.log(result);
+	return result;
+    } else {
+
+        console.log(`No listings found with the name '${nameOfListing}'`);
+
+    }
+
+}
+async function dbconnect(){
+	const uri = "mongodb+srv://kingbaruk:<password>@cluster0.9vx1c.mongodb.net/<dbname>?retryWrites=true&w=majority";
+
+	global.dbclient = new MongoClient(uri);
+	try {
+		await global.dbclient.connect();
+		await listDatabases(global.dbclient);
+	} catch (e) {
+
+    console.error(e);
+
+	}
+	finally {
+
+		await global.dbclient.close();
+
+	}
+}
+dbconnect().catch(console.error);
+
 console.log((
 	'-----------------------------------------------\n' +
 	'   Welcome to Pokemon Showdown Bot for Node!   \n' +
@@ -112,65 +170,6 @@ if (AppOptions.debugmode) info((['Debug', 'Monitor', 'Production'])[AppOptions.d
 info('Loading globals');
 
 /* Globals */
-async function listDatabases(client){
-
-    databasesList = await client.db().admin().listDatabases();
-
-    console.log("Databases:");
-
-    databasesList.databases.forEach(db => console.log(` - ${db.name}`));
-
-};
-
-async function createListing(client, newListing){
-
-    const result = await client.db("sample_airbnb").collection("listingsAndReviews").insertOne(newListing);
-
-    console.log(`New listing created with the following id: ${result.insertedId}`);
-
-};
-
-async function findOneListingByName(client, nameOfListing) {
-
-    result = await client.db("sample_airbnb").collection("listingsAndReviews").findOne({ name: nameOfListing });
-
-    if (result) {
-
-        console.log(`Found a listing in the collection with the name '${nameOfListing}':`);
-
-        console.log(result);
-	return result;
-    } else {
-
-        console.log(`No listings found with the name '${nameOfListing}'`);
-
-    }
-
-}
-async function dbconnect(){
-const uri = "mongodb+srv://kingbaruk:<password>@cluster0.9vx1c.mongodb.net/<dbname>?retryWrites=true&w=majority";
-
-global.dbclient = new MongoClient(uri);
-try {
-await global.dbclient.connect();
-await listDatabases(global.dbclient);
-} catch (e) {
-
-    console.error(e);
-
-}
-finally {
-
-    await global.dbclient.close();
-
-}
-}
-dbconnect().catch(console.error);
-
-
-
-
-
 
 global.Formats = {};
 
