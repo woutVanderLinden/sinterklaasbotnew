@@ -64,7 +64,9 @@ exports.commands = {
 			this.reply("added quote " +arg);
 			
 			
-			createListing(client, quotes)
+			
+			
+			updateListingByName(client,"quotes" ,quotes);
 			disconnect(client);
 		} else if (cmd === "delquote") {
 			if (!this.isRanked('driver')) return false;
@@ -73,7 +75,7 @@ exports.commands = {
 			
 			quotes["nederlands"].removeItemOnce(arg);
 			this.reply("removed quote " +arg);
-			createListing(client, quotes);
+			updateListingByName(client,"quotes" ,quotes);
 			disconnect(client);
 		} else if (cmd === "getquote") {
 			var id = toId(arg);
@@ -88,8 +90,8 @@ exports.commands = {
 			var list=quotes["nederlands"];
 			var quote =  list[Math.floor(Math.random() * list.length)];
 			let data = JSON.stringify(quotes);
-			fs.writeFileSync('quotes.json', data);
-			this.reply("!htmlbox "+ quote);
+			//fs.writeFileSync('quotes.json', data);
+			this.reply("__"+ quote+"__");
 			
 		}
 	},
