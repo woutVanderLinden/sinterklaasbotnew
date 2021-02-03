@@ -122,6 +122,7 @@ async function dbconnect(){
 	return client;
 	
 }
+dbconnect();
 
 async function disconnect(client){
 	
