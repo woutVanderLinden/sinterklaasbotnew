@@ -66,7 +66,7 @@ async function dbconnect(){
 	return client;
 	
 }
-console.log(connecting);
+console.log('connecting');
 dbconnect();
 async function disconnect(client){
 	
