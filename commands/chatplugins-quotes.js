@@ -12,7 +12,7 @@ const uri ="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/
 
 	console.log("hi this is a test "+uri);
 
-async function quote (arg, by, room, cmd) {
+async function quotefunc (arg, by, room, cmd) {
 		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 	console.log(uri);
 	console.log("test");
@@ -206,7 +206,7 @@ exports.commands = {
 	getquote: 'quote',
 	randquote: 'quote',
 	quote: function (arg, by, room, cmd) {
-		quote(arg,by,room,cmd);
+		quotefunc(arg,by,room,cmd);
 	},
 	listquotes: function (arg, by, room, cmd) {
 		if (!this.isRanked('admin')) return false;
