@@ -11,12 +11,7 @@ const {MongoClient} = require('mongodb');
 const uri ="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 
 	console.log("hi this is a test "+uri);
-
-async function quotefunc (arg, by, room, cmd) {
-		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
-	console.log(uri);
-	console.log("test");
-	async function listDatabases(client){
+async function listDatabases(client){
 
     databasesList = await client.db().admin().listDatabases();
 
@@ -62,6 +57,11 @@ async function findOneListingByName(client, nameOfListing) {
     console.log(`${result.modifiedCount} document(s) was/were updated.`);
 
 }
+async function quotefunc (arg, by, room, cmd) {
+		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	console.log(uri);
+	console.log("test");
+	
 	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
 	
 	try {
