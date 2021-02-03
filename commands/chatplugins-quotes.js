@@ -74,7 +74,7 @@ async function quotefunc (arg, by, room, cmd,vart) {
 			if (!vart.isRanked('driver')) return false;
 			
 			console.log("the client is "+client);
-			let quotes =findOneListingByName(client,"quotes")
+			let quotes = await findOneListingByName(client,"quotes")
 			console.log(quotes);
 			if(quotes==undefined){
 				quotes={
@@ -92,16 +92,16 @@ async function quotefunc (arg, by, room, cmd,vart) {
 			
 			
 			
-			updateListingByName(client,"quotes" ,quotes);
+			await updateListingByName(client,"quotes" ,quotes);
 			
 		} else if (cmd === "delquote") {
 			if (!vart.isRanked('driver')) return false;
 			
-			let quotes =findOneListingByName(client,"quotes")
+			let quotes =await findOneListingByName(client,"quotes")
 			
 			quotes["nederlands"].removeItemOnce(arg);
 			vart.reply("removed quote " +arg);
-			updateListingByName(client,"quotes" ,quotes);
+			await updateListingByName(client,"quotes" ,quotes);
 		
 		} else if (cmd === "getquote") {
 			var id = toId(arg);
@@ -111,7 +111,7 @@ async function quotefunc (arg, by, room, cmd,vart) {
 		} else {
 			if (!vart.isRanked('voice')) return false;
 			
-			let quotes =findOneListingByName(client,"quotes")
+			let quotes =await findOneListingByName(client,"quotes")
 			
 			var list=quotes["nederlands"];
 			var quote =  list[Math.floor(Math.random() * list.length)];
