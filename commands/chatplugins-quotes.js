@@ -59,11 +59,6 @@ async function quote (arg, by, room, cmd) {
 		
 		await client.connect();
 		await listdatabases(client);
-	} catch (e) {
-
-    		console.error(e);
-
-	}
 		if (cmd === "addquote" || cmd === "setquote" || cmd=== "quote") {
 			console.log("quotebeing added");
 			
@@ -116,9 +111,16 @@ async function quote (arg, by, room, cmd) {
 			this.reply("__"+ quote+"__");
 			
 		}
-		finally{
+	} catch (e) {
+
+    		console.error(e);
+
+	}
+		
+	finally{
 		await client.close();
 	}
+	
 }
 	console.log(uri);
 async function dbconnect(){
@@ -133,11 +135,13 @@ async function dbconnect(){
 		
 		await client.connect();
 		await listdatabases(client);
+		
 	} catch (e) {
 
     		console.error(e);
 
 	}
+	
 	finally{
 		await client.close();
 	}
