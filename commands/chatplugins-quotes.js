@@ -12,7 +12,7 @@ const uri ="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/
 	console.log("hi this is a test "+uri);
 async function listDatabases(client){
 
-    databasesList = await client.db.admin().listDatabases();
+    databasesList = await client.db().admin().listDatabases();
 
     console.log("Databases:");
 
