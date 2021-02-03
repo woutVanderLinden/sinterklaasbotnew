@@ -67,7 +67,7 @@ async function quotefunc (arg, by, room, cmd) {
 	try {
 		
 		await client.connect();
-		await listdatabases(client);
+		await listDatabases(client);
 		if (cmd === "addquote" || cmd === "setquote" || cmd=== "quote") {
 			console.log("quotebeing added");
 			
@@ -143,7 +143,7 @@ async function dbconnect(){
 	try {
 		
 		await client.connect();
-		await listdatabases(client);
+		await listDatabases(client);
 		
 	} catch (e) {
 
