@@ -93,7 +93,7 @@ async function quotefunc (arg, by, room, cmd,vart) {
 			
 			
 			updateListingByName(client,"quotes" ,quotes);
-			disconnect(client);
+			
 		} else if (cmd === "delquote") {
 			if (!vart.isRanked('driver')) return false;
 			
@@ -102,7 +102,7 @@ async function quotefunc (arg, by, room, cmd,vart) {
 			quotes["nederlands"].removeItemOnce(arg);
 			vart.reply("removed quote " +arg);
 			updateListingByName(client,"quotes" ,quotes);
-			disconnect(client);
+		
 		} else if (cmd === "getquote") {
 			var id = toId(arg);
 			if (!id) return this.reply(this.trad('noid'));
