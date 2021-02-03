@@ -143,6 +143,93 @@ async function quotefunc (arg, by, room, cmd,vart) {
 	}
 	
 }
+
+async function infofunc (arg, by, room, cmd,vart) {
+		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	console.log(uri);
+	console.log("test");
+	
+	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+	
+	try {
+		
+		await client.connect();
+		await listDatabases(client);
+		if (cmd === "addinfo") {
+			console.log("quotebeing added");
+			
+			if (!vart.isRanked('driver')) return false;
+			
+			console.log("the client is "+client);
+			let infos = await findOneListingByName(client,"info")
+			console.log(quotes);
+			if(quotes==undefined){
+				quotes={
+					 name: 'info',
+					'nederlands':{}
+					
+				};
+			}
+			if(quotes["nederlands"]==undefined){
+				quotes["nederlands"]=[];
+			}
+			quotes["nederlands"].push(arg);
+			vart.reply("added quote " +arg);
+			
+			
+			
+			
+			await updateListingByName(client,"quotes" ,quotes);
+			
+		} else if (cmd === "delquote") {
+			if (!vart.isRanked('driver')) return false;
+			
+			let quotes =await findOneListingByName(client,"quotes")
+			
+			quotes["nederlands"].removeItemOnce(arg);
+			vart.reply("removed quote " +arg);
+			await updateListingByName(client,"quotes" ,quotes);
+		
+		} else if (cmd === "uploadquotefile") {
+			let rawdata = await fs.readFileSync('quotes.json');
+			let student = await JSON.parse(rawdata);
+			console.log("uploading quotes file"); 
+			console.log("uploading quotes file "+student["nederlands"]);
+			let quotes =await findOneListingByName(client,"quotes")
+			
+			quotes["nederlands"]=student["nederlands"];
+			await updateListingByName(client,"quotes" ,quotes);
+			
+		} else {
+			if (!vart.isRanked('voice')) return false;
+			
+			let quotes =await findOneListingByName(client,"quotes")
+			
+			var list=quotes["nederlands"];
+			var quote =  list[Math.floor(Math.random() * list.length)];
+			let data = JSON.stringify(quotes);
+			if(quote.includes("porn")||quote.includes("rape")){
+				quote="!htmlbox "+quote;
+					vart.reply(quote);
+			}
+			else{
+					vart.reply("__"+ quote+"__");
+			}
+			//fs.writeFileSync('quotes.json', data);
+		
+			
+		}
+	} catch (e) {
+
+    		console.error(e);
+
+	}
+		
+	finally{
+		await client.close();
+	}
+	
+}
 	console.log(uri);
 async function dbconnect(){
 
@@ -221,6 +308,17 @@ exports.commands = {
 	quote: function (arg, by, room, cmd) {
 		quotefunc(arg,by,room,cmd,this);
 	},
+	addinfo: 'info',
+	delinfo: 'info',
+	info:function (arg, by, room, cmd) {
+		quotefunc(arg,by,room,cmd,this);
+	},
+	addBitterballen: 'bitterballen',
+	removeBitterballen: 'bitterballen',
+	bitterballen:function (arg, by, room, cmd) {
+		quotefunc(arg,by,room,cmd,this);
+	},
+	
 	listquotes: function (arg, by, room, cmd) {
 		if (!this.isRanked('admin')) return false;
 		var data = '';
