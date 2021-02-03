@@ -121,8 +121,15 @@ async function quotefunc (arg, by, room, cmd,vart) {
 			var list=quotes["nederlands"];
 			var quote =  list[Math.floor(Math.random() * list.length)];
 			let data = JSON.stringify(quotes);
+			if(quote.includes("porn")||quote.includes("rape")){
+				quote="!htmlbox "+quote;
+					vart.reply(quote);
+			}
+			else{
+					vart.reply("__"+ quote+"__");
+			}
 			//fs.writeFileSync('quotes.json', data);
-			vart.reply("__"+ quote+"__");
+		
 			
 		}
 	} catch (e) {
