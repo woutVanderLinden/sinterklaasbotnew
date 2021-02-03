@@ -48,6 +48,78 @@ async function findOneListingByName(client, nameOfListing) {
     }
 
 }
+async function quote (arg, by, room, cmd) {
+		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	console.log(uri);
+	console.log("test");
+	
+	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+	
+	try {
+		
+		await client.connect();
+		await listdatabases(client);
+	} catch (e) {
+
+    		console.error(e);
+
+	}
+		if (cmd === "addquote" || cmd === "setquote" || cmd=== "quote") {
+			console.log("quotebeing added");
+			
+			if (!this.isRanked('driver')) return false;
+			
+			console.log("the client is "+client);
+			let quotes =findOneListingByName(client,"quotes")
+			console.log(quotes);
+			if(quotes==undefined){
+				quotes={
+					 name: 'quotes',
+					'nederlands':[]
+					
+				};
+			}
+			if(quotes["nederlands"]==undefined){
+				quotes["nederlands"]=[];
+			}
+			quotes["nederlands"].push(arg);
+			this.reply("added quote " +arg);
+			
+			
+			
+			
+			updateListingByName(client,"quotes" ,quotes);
+			disconnect(client);
+		} else if (cmd === "delquote") {
+			if (!this.isRanked('driver')) return false;
+			
+			let quotes =findOneListingByName(client,"quotes")
+			
+			quotes["nederlands"].removeItemOnce(arg);
+			this.reply("removed quote " +arg);
+			updateListingByName(client,"quotes" ,quotes);
+			disconnect(client);
+		} else if (cmd === "getquote") {
+			var id = toId(arg);
+			if (!id) return this.reply(this.trad('noid'));
+			if (!quotes[id]) return this.restrictReply(this.trad('quote') + ' "' + id + '" ' + this.trad('n'), 'quote');
+			return this.restrictReply(Tools.stripCommands(quotes[id]), "quote");
+		} else {
+			if (!this.isRanked('voice')) return false;
+			
+			let quotes =findOneListingByName(client,"quotes")
+			
+			var list=quotes["nederlands"];
+			var quote =  list[Math.floor(Math.random() * list.length)];
+			let data = JSON.stringify(quotes);
+			//fs.writeFileSync('quotes.json', data);
+			this.reply("__"+ quote+"__");
+			
+		}
+		finally{
+		await client.close();
+	}
+}
 	console.log(uri);
 async function dbconnect(){
 
@@ -131,76 +203,7 @@ exports.commands = {
 	getquote: 'quote',
 	randquote: 'quote',
 	quote: function (arg, by, room, cmd) {
-		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
-	console.log(uri);
-	console.log("test");
-	
-	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
-	
-	try {
-		
-		await client.connect();
-		await listdatabases(client);
-	} catch (e) {
-
-    		console.error(e);
-
-	}
-		if (cmd === "addquote" || cmd === "setquote" || cmd=== "quote") {
-			console.log("quotebeing added");
-			
-			if (!this.isRanked('driver')) return false;
-			
-			console.log("the client is "+client);
-			let quotes =findOneListingByName(client,"quotes")
-			console.log(quotes);
-			if(quotes==undefined){
-				quotes={
-					 name: 'quotes',
-					'nederlands':[]
-					
-				};
-			}
-			if(quotes["nederlands"]==undefined){
-				quotes["nederlands"]=[];
-			}
-			quotes["nederlands"].push(arg);
-			this.reply("added quote " +arg);
-			
-			
-			
-			
-			updateListingByName(client,"quotes" ,quotes);
-			disconnect(client);
-		} else if (cmd === "delquote") {
-			if (!this.isRanked('driver')) return false;
-			
-			let quotes =findOneListingByName(client,"quotes")
-			
-			quotes["nederlands"].removeItemOnce(arg);
-			this.reply("removed quote " +arg);
-			updateListingByName(client,"quotes" ,quotes);
-			disconnect(client);
-		} else if (cmd === "getquote") {
-			var id = toId(arg);
-			if (!id) return this.reply(this.trad('noid'));
-			if (!quotes[id]) return this.restrictReply(this.trad('quote') + ' "' + id + '" ' + this.trad('n'), 'quote');
-			return this.restrictReply(Tools.stripCommands(quotes[id]), "quote");
-		} else {
-			if (!this.isRanked('voice')) return false;
-			
-			let quotes =findOneListingByName(client,"quotes")
-			
-			var list=quotes["nederlands"];
-			var quote =  list[Math.floor(Math.random() * list.length)];
-			let data = JSON.stringify(quotes);
-			//fs.writeFileSync('quotes.json', data);
-			this.reply("__"+ quote+"__");
-			
-		}
-		finally{
-		await client.close();
-	}
+		quote(arg,by,room,cmd);
 	},
 	listquotes: function (arg, by, room, cmd) {
 		if (!this.isRanked('admin')) return false;
