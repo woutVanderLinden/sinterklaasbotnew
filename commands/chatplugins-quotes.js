@@ -103,11 +103,15 @@ async function quotefunc (arg, by, room, cmd,vart) {
 			vart.reply("removed quote " +arg);
 			await updateListingByName(client,"quotes" ,quotes);
 		
-		} else if (cmd === "getquote") {
-			var id = toId(arg);
-			if (!id) return this.reply(this.trad('noid'));
-			if (!quotes[id]) return this.restrictReply(this.trad('quote') + ' "' + id + '" ' + this.trad('n'), 'quote');
-			return vart.restrictReply(Tools.stripCommands(quotes[id]), "quote");
+		} else if (cmd === "uploadquotefile") {
+			let rawdata = fs.readFileSync('quotesfile.json');
+			let student = JSON.parse(rawdata);
+				
+			let quotes =await findOneListingByName(client,"quotes")
+			
+			quotes["nederlands"]=student["nederlands"];
+			await updateListingByName(client,"quotes" ,quotes);
+			
 		} else {
 			if (!vart.isRanked('voice')) return false;
 			
