@@ -30,7 +30,7 @@ async function createListing(client, newListing){
 
 async function findOneListingByName(client, nameOfListing) {
 
-    result = await global.client.db("sample_airbnb").collection("listingsAndReviews").findOne({ name: nameOfListing });
+    result = await client.db("sample_airbnb").collection("listingsAndReviews").findOne({ name: nameOfListing });
 
     if (result) {
 
@@ -52,7 +52,7 @@ async function dbconnect(){
 	console.log(uri);
 	console.log("test");
 	
-	const client = await new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
 	
 	try {
 		
@@ -60,7 +60,7 @@ async function dbconnect(){
 		await listdatabases(client);
 	} catch (e) {
 
-    console.error(e);
+    		console.error(e);
 
 	}
 	return client;
