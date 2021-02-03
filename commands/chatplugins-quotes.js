@@ -104,8 +104,8 @@ async function quotefunc (arg, by, room, cmd,vart) {
 			await updateListingByName(client,"quotes" ,quotes);
 		
 		} else if (cmd === "uploadquotefile") {
-			let rawdata = fs.readFileSync('quotes.json');
-			let student = JSON.parse(rawdata);
+			let rawdata = await fs.readFileSync('quotes.json');
+			let student = await JSON.parse(rawdata);
 			console.log("uploading quotes file"); 
 			console.log("uploading quotes file "+student["nederlands"]);
 			let quotes =await findOneListingByName(client,"quotes")
