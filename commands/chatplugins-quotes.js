@@ -128,7 +128,7 @@ exports.commands = {
 		if (cmd === "addquote" || cmd === "setquote" || cmd=== "quote") {
 			console.log("quotebeing added");
 			if (!this.isRanked('driver')) return false;
-			const client=dbconnect().catch(console.error);
+			const client=dbconnect();
 			let quotes =findOneListingByName(client,"quotes")
 			console.log(quotes);
 			if(quotes==undefined){
@@ -151,7 +151,7 @@ exports.commands = {
 			disconnect(client);
 		} else if (cmd === "delquote") {
 			if (!this.isRanked('driver')) return false;
-			const client=dbconnect().catch(console.error);
+			const client=dbconnect();
 			let quotes =findOneListingByName(client,"quotes")
 			
 			quotes["nederlands"].removeItemOnce(arg);
@@ -165,7 +165,7 @@ exports.commands = {
 			return this.restrictReply(Tools.stripCommands(quotes[id]), "quote");
 		} else {
 			if (!this.isRanked('voice')) return false;
-			const client=dbconnect().catch(console.error);
+			const client=dbconnect();
 			let quotes =findOneListingByName(client,"quotes")
 			
 			var list=quotes["nederlands"];
