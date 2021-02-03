@@ -50,7 +50,8 @@ exports.commands = {
 		if (cmd === "addquote" || cmd === "setquote" || cmd=== "quote") {
 			
 			if (!this.isRanked('driver')) return false;
-			let quotes =findOneListingByName(global.dbclient,"quotes")
+			const client=dbconnect().catch(console.error);
+			let quotes =findOneListingByName(client,"quotes")
 			
 			if(quotes==undefined){
 				quotes={
@@ -63,15 +64,17 @@ exports.commands = {
 			this.reply("added quote " +arg);
 			
 			
-			createListing(global.dbclient, quotes)
-			
+			createListing(client, quotes)
+			disconnect(client);
 		} else if (cmd === "delquote") {
 			if (!this.isRanked('driver')) return false;
-			let quotes =findOneListingByName(global.dbclient,"quotes")
+			const client=dbconnect().catch(console.error);
+			let quotes =findOneListingByName(client,"quotes")
 			
 			quotes["nederlands"].removeItemOnce(arg);
 			this.reply("removed quote " +arg);
-			createListing(global.dbclient, quotes)
+			createListing(client, quotes);
+			disconnect(client);
 		} else if (cmd === "getquote") {
 			var id = toId(arg);
 			if (!id) return this.reply(this.trad('noid'));
@@ -79,7 +82,8 @@ exports.commands = {
 			return this.restrictReply(Tools.stripCommands(quotes[id]), "quote");
 		} else {
 			if (!this.isRanked('voice')) return false;
-			let quotes =findOneListingByName(global.dbclient,"quotes")
+			const client=dbconnect().catch(console.error);
+			let quotes =findOneListingByName(client,"quotes")
 			
 			var list=quotes["nederlands"];
 			var quote =  list[Math.floor(Math.random() * list.length)];
