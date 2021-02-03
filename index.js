@@ -3,7 +3,7 @@
 
 	By: Ecuacion
 */
-const dotenv = require("dotenv");
+
 
 
 let todraftmons=[];
@@ -65,7 +65,7 @@ try {
 }
 const {MongoClient} = require('mongodb');
 const uri ="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
-dotenv.config()
+
 	console.log("hi this is a test "+uri);
 async function listDatabases(client){
 
