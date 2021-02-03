@@ -56,7 +56,7 @@ async function dbconnect(){
 	
 	try {
 		
-		await client.connect(uri);
+		await client.connect();
 		await listdatabases(client);
 	} catch (e) {
 
