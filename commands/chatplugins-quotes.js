@@ -128,13 +128,16 @@ exports.commands = {
 			if (!this.isRanked('driver')) return false;
 			const client=dbconnect().catch(console.error);
 			let quotes =findOneListingByName(client,"quotes")
-			
+			console.log(quotes);
 			if(quotes==undefined){
 				quotes={
 					 name: 'quotes',
 					'nederlands':[]
 					
 				};
+			}
+			if(quotes["nederlands"]==undefined){
+				quotes["nederlands"]=[];
 			}
 			quotes["nederlands"].push(arg);
 			this.reply("added quote " +arg);
