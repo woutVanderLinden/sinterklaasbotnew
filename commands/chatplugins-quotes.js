@@ -57,7 +57,7 @@ async function findOneListingByName(client, nameOfListing) {
     console.log(`${result.modifiedCount} document(s) was/were updated.`);
 
 }
-async function quotefunc (arg, by, room, cmd) {
+async function quotefunc (arg, by, room, cmd,vart) {
 		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 	console.log(uri);
 	console.log("test");
@@ -71,7 +71,7 @@ async function quotefunc (arg, by, room, cmd) {
 		if (cmd === "addquote" || cmd === "setquote" || cmd=== "quote") {
 			console.log("quotebeing added");
 			
-			if (!this.isRanked('driver')) return false;
+			if (!vart.isRanked('driver')) return false;
 			
 			console.log("the client is "+client);
 			let quotes =findOneListingByName(client,"quotes")
@@ -87,7 +87,7 @@ async function quotefunc (arg, by, room, cmd) {
 				quotes["nederlands"]=[];
 			}
 			quotes["nederlands"].push(arg);
-			this.reply("added quote " +arg);
+			vart.reply("added quote " +arg);
 			
 			
 			
@@ -95,21 +95,21 @@ async function quotefunc (arg, by, room, cmd) {
 			updateListingByName(client,"quotes" ,quotes);
 			disconnect(client);
 		} else if (cmd === "delquote") {
-			if (!this.isRanked('driver')) return false;
+			if (!vart.isRanked('driver')) return false;
 			
 			let quotes =findOneListingByName(client,"quotes")
 			
 			quotes["nederlands"].removeItemOnce(arg);
-			this.reply("removed quote " +arg);
+			vart.reply("removed quote " +arg);
 			updateListingByName(client,"quotes" ,quotes);
 			disconnect(client);
 		} else if (cmd === "getquote") {
 			var id = toId(arg);
 			if (!id) return this.reply(this.trad('noid'));
 			if (!quotes[id]) return this.restrictReply(this.trad('quote') + ' "' + id + '" ' + this.trad('n'), 'quote');
-			return this.restrictReply(Tools.stripCommands(quotes[id]), "quote");
+			return vart.restrictReply(Tools.stripCommands(quotes[id]), "quote");
 		} else {
-			if (!this.isRanked('voice')) return false;
+			if (!vart.isRanked('voice')) return false;
 			
 			let quotes =findOneListingByName(client,"quotes")
 			
@@ -117,7 +117,7 @@ async function quotefunc (arg, by, room, cmd) {
 			var quote =  list[Math.floor(Math.random() * list.length)];
 			let data = JSON.stringify(quotes);
 			//fs.writeFileSync('quotes.json', data);
-			this.reply("__"+ quote+"__");
+			vart.reply("__"+ quote+"__");
 			
 		}
 	} catch (e) {
