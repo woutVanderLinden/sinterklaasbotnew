@@ -12,7 +12,7 @@ const uri ="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/
 	console.log("hi this is a test "+uri);
 async function listDatabases(client){
 
-    databasesList = await client.db().admin().listDatabases();
+    databasesList = await client.db.admin().listDatabases();
 
     console.log("Databases:");
 
@@ -22,7 +22,7 @@ async function listDatabases(client){
 
 async function createListing(client, newListing){
 
-    const result = await client.db("sample_airbnb").collection("listingsAndReviews").insertOne(newListing);
+    const result = await client.db("testDb").collection("quotes").insertOne(newListing);
 
     console.log(`New listing created with the following id: ${result.insertedId}`);
 
@@ -30,7 +30,7 @@ async function createListing(client, newListing){
 
 async function findOneListingByName(client, nameOfListing) {
 
-    result = await client.db("sample_airbnb").collection("listingsAndReviews").findOne({ name: nameOfListing });
+    result = await client.db("testDb").collection("quotes").findOne({ name: nameOfListing });
 
     if (result) {
 
@@ -76,7 +76,7 @@ async function disconnect(client){
 }
 async function updateListingByName(client, nameOfListing, updatedListing) {
 
-    result = await client.db("sample_airbnb").collection("listingsAndReviews")
+    result = await client.db("testDb").collection("quotes")
 
                         .updateOne({ name: nameOfListing }, { $set: updatedListing });
 
