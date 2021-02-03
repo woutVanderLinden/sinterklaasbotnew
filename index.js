@@ -25,6 +25,7 @@ function draftmons(arg) {
 		result=result.substring(1,result.length-1);
 	return 'draftable mons are ' +result;
 };
+
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
 
