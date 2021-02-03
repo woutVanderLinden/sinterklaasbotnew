@@ -308,13 +308,11 @@ console.log(port);
 console.log("test");
 global.Bot = new PSClient(Config.server, 8000, opts);
 const express = require('express')
-const app = express()
+const app = express();
 
 
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+app.listen(port);
 
 var connected = false;
 Bot.on('connect', function (con) {
