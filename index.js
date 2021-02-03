@@ -112,7 +112,7 @@ async function dbconnect(){
 	const client = await new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
 	
 	try {
-		await client.connect(uri);
+		await client.connect();
 		await listDatabases(client);
 	} catch (e) {
 
