@@ -390,7 +390,7 @@ function startKeepAlive() {
         });
     }, 20 * 60 * 1000); // load every 20 minutes
 }
-
+startKeepAlive();
 
 port = process.env.PORT || 8000;
 const uri2 =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
