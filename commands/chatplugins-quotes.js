@@ -210,6 +210,7 @@ exports.commands = {
 	delquote: 'quote',
 	getquote: 'quote',
 	randquote: 'quote',
+	uploadquotefile:'quote',
 	quote: function (arg, by, room, cmd) {
 		quotefunc(arg,by,room,cmd,this);
 	},
