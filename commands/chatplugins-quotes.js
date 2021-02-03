@@ -1,6 +1,4 @@
-const dotenv = require("dotenv");
 
-dotenv.config()
 const quotesDataFile = AppOptions.data + 'quotes.json';
 const jokesDataFile = AppOptions.data + 'jokes.json';
 
