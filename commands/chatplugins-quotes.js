@@ -23,7 +23,7 @@ async function listDatabases(client){
 
 async function createListing(client, newListing){
 
-    const result = await client.db("testDb").collection("quotes").insertOne(newListing);
+    const result = await client.db("TestDb").collection("quotes").insertOne(newListing);
 
     console.log(`New listing created with the following id: ${result.insertedId}`);
 
@@ -31,7 +31,7 @@ async function createListing(client, newListing){
 
 async function findOneListingByName(client, nameOfListing) {
 
-    result = await client.db("testDb").collection("quotes").findOne({ name: nameOfListing });
+    result = await client.db("TestDb").collection("quotes").findOne({ name: nameOfListing });
 
     if (result) {
 
@@ -48,7 +48,7 @@ async function findOneListingByName(client, nameOfListing) {
 }
 	async function updateListingByName(client, nameOfListing, updatedListing) {
 
-    result = await client.db("testDb").collection("quotes")
+    result = await client.db("TestDb").collection("quotes")
 
                         .updateOne({ name: nameOfListing }, { $set: updatedListing });
 
