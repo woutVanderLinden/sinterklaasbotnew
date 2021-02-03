@@ -63,7 +63,72 @@ try {
 	console.log("ERROR: missing dependencies, try 'npm install'");
 	process.exit(-1);
 }
+const {MongoClient} = require('mongodb');
+const uri ="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+dotenv.config()
+	console.log("hi this is a test "+uri);
+async function listDatabases(client){
 
+    databasesList = await client.db().admin().listDatabases();
+
+    console.log("Databases:");
+
+    databasesList.databases.forEach(db => console.log(` - ${db.name}`));
+
+};
+
+async function createListing(client, newListing){
+
+    const result = await client.db("sample_airbnb").collection("listingsAndReviews").insertOne(newListing);
+
+    console.log(`New listing created with the following id: ${result.insertedId}`);
+
+};
+
+async function findOneListingByName(client, nameOfListing) {
+
+    result = await global.client.db("sample_airbnb").collection("listingsAndReviews").findOne({ name: nameOfListing });
+
+    if (result) {
+
+        console.log(`Found a listing in the collection with the name '${nameOfListing}':`);
+
+        console.log(result);
+	return result;
+    } else {
+
+        console.log(`No listings found with the name '${nameOfListing}'`);
+
+    }
+
+}
+	console.log(uri);
+async function dbconnect(){
+
+	const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	console.log(uri);
+	console.log("test");
+	
+	const client = await new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+	
+	try {
+		await client.connect(uri);
+		await listDatabases(client);
+	} catch (e) {
+
+    console.error(e);
+
+	}
+	return client;
+	
+}
+
+async function disconnect(client){
+	
+
+		await client.close();
+
+}
 console.log((
 	'-----------------------------------------------\n' +
 	'   Welcome to Pokemon Showdown Bot for Node!   \n' +
