@@ -206,7 +206,7 @@ exports.commands = {
 	getquote: 'quote',
 	randquote: 'quote',
 	quote: function (arg, by, room, cmd) {
-		quotefunc(arg,by,room,cmd);
+		quotefunc(arg,by,room,cmd,this);
 	},
 	listquotes: function (arg, by, room, cmd) {
 		if (!this.isRanked('admin')) return false;
