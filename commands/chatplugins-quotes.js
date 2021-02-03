@@ -131,11 +131,26 @@ exports.commands = {
 	getquote: 'quote',
 	randquote: 'quote',
 	quote: function (arg, by, room, cmd) {
+		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	console.log(uri);
+	console.log("test");
+	
+	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+	
+	try {
+		
+		await client.connect();
+		await listdatabases(client);
+	} catch (e) {
+
+    		console.error(e);
+
+	}
 		if (cmd === "addquote" || cmd === "setquote" || cmd=== "quote") {
 			console.log("quotebeing added");
 			
 			if (!this.isRanked('driver')) return false;
-			const client=dbconnect();
+			
 			console.log("the client is "+client);
 			let quotes =findOneListingByName(client,"quotes")
 			console.log(quotes);
@@ -159,7 +174,7 @@ exports.commands = {
 			disconnect(client);
 		} else if (cmd === "delquote") {
 			if (!this.isRanked('driver')) return false;
-			const client=dbconnect();
+			
 			let quotes =findOneListingByName(client,"quotes")
 			
 			quotes["nederlands"].removeItemOnce(arg);
@@ -173,7 +188,7 @@ exports.commands = {
 			return this.restrictReply(Tools.stripCommands(quotes[id]), "quote");
 		} else {
 			if (!this.isRanked('voice')) return false;
-			const client=dbconnect();
+			
 			let quotes =findOneListingByName(client,"quotes")
 			
 			var list=quotes["nederlands"];
@@ -183,6 +198,9 @@ exports.commands = {
 			this.reply("__"+ quote+"__");
 			
 		}
+		finally{
+		await client.close();
+	}
 	},
 	listquotes: function (arg, by, room, cmd) {
 		if (!this.isRanked('admin')) return false;
