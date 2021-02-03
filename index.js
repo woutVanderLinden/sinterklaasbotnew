@@ -7,7 +7,11 @@
 
 let todraftmons=[];
 let users=[];
+var http = require('http'); //importing http
 
+
+
+startKeepAlive();
 function draftmons(arg) {
 	var result='';
 		for (var i = 0; i < arg.length; i++) {
@@ -365,6 +369,27 @@ var opts = {
 	showErrors: (Config.debug ? Config.debug.debug : true),
 	debug: (Config.debug ? Config.debug.debug : true)
 };
+function startKeepAlive() {
+    setInterval(function() {
+        var options = {
+            host: 'sinterklaasbot.herokuapp.com',
+            port: 80,
+            path: '/'
+        };
+        http.get(options, function(res) {
+            res.on('data', function(chunk) {
+                try {
+                    // optional logging... disable after it's working
+                    console.log("HEROKU RESPONSE: " + chunk);
+                } catch (err) {
+                    console.log(err.message);
+                }
+            });
+        }).on('error', function(err) {
+            console.log("Error: " + err.message);
+        });
+    }, 20 * 60 * 1000); // load every 20 minutes
+}
 
 
 port = process.env.PORT || 8000;
