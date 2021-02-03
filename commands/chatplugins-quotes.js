@@ -127,8 +127,10 @@ exports.commands = {
 	quote: function (arg, by, room, cmd) {
 		if (cmd === "addquote" || cmd === "setquote" || cmd=== "quote") {
 			console.log("quotebeing added");
+			
 			if (!this.isRanked('driver')) return false;
 			const client=dbconnect();
+			console.log("the client is "+client);
 			let quotes =findOneListingByName(client,"quotes")
 			console.log(quotes);
 			if(quotes==undefined){
