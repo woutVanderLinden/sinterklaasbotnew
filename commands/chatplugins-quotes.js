@@ -66,7 +66,10 @@ async function dbconnect(){
     		console.error(e);
 
 	}
-	return client;
+	finally{
+		await client.close();
+	}
+	
 	
 }
 console.log('connecting');
