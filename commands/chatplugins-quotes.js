@@ -11,7 +11,12 @@ const {MongoClient} = require('mongodb');
 const uri ="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 
 	console.log("hi this is a test "+uri);
-async function listDatabases(client){
+
+async function quote (arg, by, room, cmd) {
+		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	console.log(uri);
+	console.log("test");
+	async function listDatabases(client){
 
     databasesList = await client.db().admin().listDatabases();
 
@@ -46,11 +51,17 @@ async function findOneListingByName(client, nameOfListing) {
     }
 
 }
-async function quote (arg, by, room, cmd) {
-		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
-	console.log(uri);
-	console.log("test");
-	
+	async function updateListingByName(client, nameOfListing, updatedListing) {
+
+    result = await client.db("testDb").collection("quotes")
+
+                        .updateOne({ name: nameOfListing }, { $set: updatedListing });
+
+    console.log(`${result.matchedCount} document(s) matched the query criteria.`);
+
+    console.log(`${result.modifiedCount} document(s) was/were updated.`);
+
+}
 	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
 	
 	try {
@@ -154,17 +165,7 @@ async function disconnect(client){
 		await client.close();
 
 }
-async function updateListingByName(client, nameOfListing, updatedListing) {
 
-    result = await client.db("testDb").collection("quotes")
-
-                        .updateOne({ name: nameOfListing }, { $set: updatedListing });
-
-    console.log(`${result.matchedCount} document(s) matched the query criteria.`);
-
-    console.log(`${result.modifiedCount} document(s) was/were updated.`);
-
-}
 try {
 	quotes = quotesFFM.readObj();
 } catch (e) {
