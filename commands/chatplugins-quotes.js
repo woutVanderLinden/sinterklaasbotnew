@@ -14,7 +14,7 @@ const uri ="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/
 const listener = new EventEmitter();
 listener.on('update', (roomid, data) => {
 	console.log("received update");
-	console.log("tour started "+data);
+	
 	if (!data.bracketData || data.bracketData.type !== 'tree') return;
 	if (data.bracketData.rootNode && data.bracketData.rootNode.state === 'inprogress' && data.bracketData.rootNode.room) {
 		const doubleElim = data.bracketData.rootNode.children[0] && data.bracketData.rootNode.children[1].children[0] && data.bracketData.rootNode.children[1] &&
