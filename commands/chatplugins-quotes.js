@@ -11,6 +11,7 @@ const {MongoClient} = require('mongodb');
 const uri ="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 
 	console.log("hi this is a test "+uri);
+const listener = new EventEmitter();
 listener.on('update', (roomid, data) => {
 	if (!data.bracketData || data.bracketData.type !== 'tree') return;
 	if (data.bracketData.rootNode && data.bracketData.rootNode.state === 'inprogress' && data.bracketData.rootNode.room) {
