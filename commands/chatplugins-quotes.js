@@ -1,4 +1,4 @@
-
+const EventEmitter = require('events');
 const quotesDataFile = AppOptions.data + 'quotes.json';
 const jokesDataFile = AppOptions.data + 'jokes.json';
 
