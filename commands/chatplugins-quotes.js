@@ -415,12 +415,12 @@ exports.commands = {
 	addinfo: 'info',
 	delinfo: 'info',
 	info:function (arg, by, room, cmd) {
-		quotefunc(arg,by,room,cmd,this);
+		infofunc(arg,by,room,cmd,this);
 	},
 	addBitterballen: 'bitterballen',
 	removeBitterballen: 'bitterballen',
 	bitterballen:function (arg, by, room, cmd) {
-		quotefunc(arg,by,room,cmd,this);
+		bitterballenfunc(arg,by,room,cmd,this);
 	},
 	
 	listquotes: function (arg, by, room, cmd) {
