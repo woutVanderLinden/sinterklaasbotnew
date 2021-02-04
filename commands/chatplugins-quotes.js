@@ -200,7 +200,7 @@ async function infofunc (arg, by, room, cmd,vart) {
 				infos["nederlands"]={};
 			}
 			infos["nederlands"].arg="";
-			vart.reply("deleted info from " args);
+			vart.reply("deleted info from "+ args);
 		
 		} else if (cmd === "uploadquotefile") {
 			let rawdata = await fs.readFileSync('quotes.json');
@@ -296,7 +296,7 @@ async function infofunc (arg, by, room, cmd,vart) {
 				infos["nederlands"]={};
 			}
 			infos["nederlands"].arg="";
-			vart.reply("deleted info from " args);
+			vart.reply("deleted info from "+ args);
 			await updateListingByName(client,"bitterballen" ,bitbals);
 		
 		} else if (cmd === "uploadquotefile") {
