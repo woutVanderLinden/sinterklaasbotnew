@@ -15,7 +15,7 @@ global.Config = require('./config.js');
 require('./core.js');
 require('./utils/common.js');
 
-port = process.env.PORT || 8000;
+var port = process.env.PORT || 8000;
 const uri2 =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 	console.log(uri2);
 	console.log("test");
