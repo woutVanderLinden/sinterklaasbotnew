@@ -189,7 +189,10 @@ async function infofunc (arg, by, room, cmd,vart) {
 			if(infos["nederlands"]==undefined){
 				infos["nederlands"]={};
 			}
-			infos["nederlands"][args[0]]=args[1];
+			if(infos["nederlands"][args[0]]==undefined){
+				infos["nederlands"][args[0]]="";
+			}
+			infos["nederlands"][args[0]]=infos["nederlands"][args[0]]+" "+args[1];
 			vart.reply("added info to "+ args[0]);
 			
 			
