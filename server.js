@@ -161,8 +161,4 @@ class Server {
 }
 var port = process.env.PORT || 8000;
 
-<<<<<<< HEAD
 module.exports = new Server(Config.serverhost, Config.port);
-=======
-module.exports = new Server(Config.serverhost, port);
->>>>>>> parent of 571894f... Update server.js
