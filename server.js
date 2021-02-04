@@ -159,5 +159,6 @@ class Server {
 		return false;
 	}
 }
+var port = process.env.PORT || 8000;
 
-module.exports = new Server(Config.serverhost, Config.serverport);
+module.exports = new Server(Config.serverhost, port);
