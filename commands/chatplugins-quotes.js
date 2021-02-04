@@ -423,9 +423,11 @@ var rand = function (obj) {
 };
 
 Settings.addPermissions(['quote', 'joke']);
-
-exports.commands = {
-	/*
+module.exports = {
+	tours: {
+		listener: listener,
+	},
+	commands: {/*
 	* Quotes
 	*/
 	addquote: 'quote',
@@ -521,4 +523,7 @@ exports.commands = {
 			else this.pmReply(this.trad('err'));
 		}.bind(this));
 	}
+}
+
+	
 };
