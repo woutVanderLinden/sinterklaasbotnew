@@ -251,7 +251,8 @@ async function infofunc (arg, by, room, cmd,vart) {
 		
 		await client.connect();
 		await listDatabases(client);
-		if (cmd === "addBitterballen") {
+		console.log(cmd);
+		if (cmd === "addbitterballen") {
 			console.log("info added");
 			
 			if (!vart.isRanked('driver')) return false;
@@ -417,9 +418,10 @@ exports.commands = {
 	info:function (arg, by, room, cmd) {
 		infofunc(arg,by,room,cmd,this);
 	},
-	addBitterballen: 'bitterballen',
-	removeBitterballen: 'bitterballen',
+	addbitterballen: 'bitterballen',
+	removebitterballen: 'bitterballen',
 	bitterballen:function (arg, by, room, cmd) {
+		console.log("manupulating bitterballen");
 		bitterballenfunc(arg,by,room,cmd,this);
 	},
 	
