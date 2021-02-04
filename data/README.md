@@ -1,1 +1,4 @@
-This is where Kid A stores its databases.
+Data Files
+====================
+
+Bot data is stored here. Data format is primary `json` or dowloaded `js` files.
