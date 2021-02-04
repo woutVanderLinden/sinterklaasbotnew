@@ -287,7 +287,7 @@ async function infofunc (arg, by, room, cmd,vart) {
 			console.log(quotes);
 			if(infos==undefined){
 				infos={
-					 name: 'bitterballen,
+					 name: 'bitterballen',
 					'nederlands':{}
 					
 				};
