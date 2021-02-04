@@ -11,6 +11,18 @@ const {MongoClient} = require('mongodb');
 const uri ="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 
 	console.log("hi this is a test "+uri);
+listener.on('update', (roomid, data) => {
+	if (!data.bracketData || data.bracketData.type !== 'tree') return;
+	if (data.bracketData.rootNode && data.bracketData.rootNode.state === 'inprogress' && data.bracketData.rootNode.room) {
+		const doubleElim = data.bracketData.rootNode.children[0] && data.bracketData.rootNode.children[1].children[0] && data.bracketData.rootNode.children[1] &&
+			(data.bracketData.rootNode.children[1].children[1].children[0] && !data.bracketData.rootNode.children[1].children[0].children[0]);
+		if (doubleElim) {
+			ChatHandler.send(roomid, `/wall ${data.bracketData.rootNode.children[0].team} is on match point! <<${data.bracketData.rootNode.room}>>`);
+		} else {
+			ChatHandler.send(roomid, `/wall Watch the finals of the tournament! <<${data.bracketData.rootNode.room}>>`);
+		}
+	}
+});
 async function listDatabases(client){
 
     databasesList = await client.db().admin().listDatabases();
