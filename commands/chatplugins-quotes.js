@@ -177,7 +177,7 @@ async function infofunc (arg, by, room, cmd,vart) {
 				infos["nederlands"]={};
 			}
 			infos["nederlands"].args[0]=args[1];
-			vart.reply("added info to " args[0]);
+			vart.reply("added info to "+ args[0]);
 			
 			
 			
@@ -273,7 +273,7 @@ async function infofunc (arg, by, room, cmd,vart) {
 				bitbals["nederlands"]={};
 			}
 			bitbals["nederlands"].args[0]=bitbals["nederlands"].args[0]+args[1];
-			vart.reply(args[0]+"heeft " bitbals["nederlands"].args[0]+" bitterballen");
+			vart.reply(args[0]+"heeft " +bitbals["nederlands"].args[0]+" bitterballen");
 			
 			
 			
