@@ -276,8 +276,8 @@ async function infofunc (arg, by, room, cmd,vart) {
 			if(bitbals["nederlands"][args[0]]==undefined){
 				bitbals["nederlands"][args[0]]=0;
 			}
-			bitbals["nederlands"].args[0]=bitbals["nederlands"].args[0]+args[1];
-			vart.reply(args[0]+"heeft " +bitbals["nederlands"].args[0]+" bitterballen");
+			bitbals["nederlands"][args[0]]=bitbals["nederlands"][args[0]]+args[1];
+			vart.reply(args[0]+" heeft " +bitbals["nederlands"].args[0]+" bitterballen");
 			
 			
 			
