@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="../style.css">
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="../scripts/graphs.js"></script>
+		<title>{{room}} - Kid A</title>
+		<script>
+			function keyPressHandler(e) {
+				if (e.keyCode === 13) {
+					let newname = document.getElementById('nameinput').value.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+					window.location.href = window.location.href.replace('user={{user}}', 'user=' + newname);
+				}
+			}
+		</script>
+	</head>
+	
+	<body>
+		<div class="container">
+			<h1>Line count for {{user}} in {{room}} :</h1>
+			<div class="body"><input type="text" onkeypress="keyPressHandler(event)" id="nameinput" placeholder="{{user}}"></div>
+			{{#if total}}
+				<div id="linecount"></div>
+				<h3>Total line count: {{total}}</h3>
+			{{else}}
+				<h2>This user has no lines in the past month.</h2>
+			{{/if}}
+			{{#if seen}}
+				<h3>Last seen: {{parse_duration seen}} ago</h3>
+			{{/if}}
+		</div>
+
+		<script>
+				createBarGraph({{{dates}}}, {{{data}}}, '#linecount', 5);
+		</script>
+	</body>
+</html>
