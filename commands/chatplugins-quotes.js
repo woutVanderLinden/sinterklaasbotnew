@@ -277,7 +277,7 @@ async function infofunc (arg, by, room, cmd,vart) {
 				bitbals["nederlands"][args[0]]=0;
 			}
 			bitbals["nederlands"][args[0]]=bitbals["nederlands"][args[0]]+args[1];
-			vart.reply(args[0]+" heeft " +bitbals["nederlands"].args[0]+" bitterballen");
+			vart.reply(args[0]+" heeft " +bitbals["nederlands"][args[0]]+" bitterballen");
 			
 			
 			
