@@ -14,7 +14,33 @@
     "sentiment": "1.0.5",
     "serve-static": "^1.14.1",
     "thunk-redis": "1.7.3",
-    "valid-url": "^1.0.9"
+    "valid-url": "^1.0.9",
+     "sugar": "1.4.1",
+    "colors": "1.0.3",
+     "websocket": "1.0.33",
+	"express": "~4.17.1",
+	  "mongodb": "^3.6.4",
+
+
+   
+
+    
+    
+	 
+  },
+  "devDependencies": {
+	   "dotenv":"8.2.0",
+    "cache-swap": "~0.2.0",
+    "gulp": "~3.9.0",
+    "gulp-cache": "~0.4.0",
+    "gulp-jshint": "~2.0.0",
+    "gulp-jscs": "~3.0.2",
+    "gulp-replace": "~0.5.1",
+    "jshint-stylish": "~2.1.0",
+    "lazypipe": "~1.0.1",
+    "merge-stream": "~1.0.0",
+    "mocha": "~2.3.2"
+  
   },
   "engines": {
     "node": ">= 4.0.0"
