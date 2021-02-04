@@ -176,7 +176,7 @@ async function infofunc (arg, by, room, cmd,vart) {
 			if(infos["nederlands"]==undefined){
 				infos["nederlands"]={};
 			}
-			infos["nederlands"].args[0]=args[1];
+			infos["nederlands"][args[0]]=args[1];
 			vart.reply("added info to "+ args[0]);
 			
 			
@@ -199,7 +199,7 @@ async function infofunc (arg, by, room, cmd,vart) {
 			if(infos["nederlands"]==undefined){
 				infos["nederlands"]={};
 			}
-			infos["nederlands"].arg="";
+			infos["nederlands"][arg]="";
 			vart.reply("deleted info from "+ args);
 		
 		} else if (cmd === "uploadquotefile") {
@@ -218,7 +218,7 @@ async function infofunc (arg, by, room, cmd,vart) {
 				arg=toId(by);
 			}
 			let infos = await findOneListingByName(client,"info")
-			var info=infos["nederlands"].arg;
+			var info=infos["nederlands"][arg];
 			
 			
 			vart.reply("**"+arg+" :**"+ info);
