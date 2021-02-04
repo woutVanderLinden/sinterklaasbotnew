@@ -214,8 +214,10 @@ async function infofunc (arg, by, room, cmd,vart) {
 			
 		} else {
 			if (!vart.isRanked('voice')) return false;
-			if (arg=""){
+			if (arg==""){
+				
 				arg=toId(by);
+				console.log(arg);
 			}
 			let infos = await findOneListingByName(client,"info")
 			var info=infos["nederlands"][arg];
@@ -314,11 +316,12 @@ async function infofunc (arg, by, room, cmd,vart) {
 			await updateListingByName(client,"quotes" ,quotes);
 			
 		} else {
-			if (arg=""){
+			if (arg==""){
 				arg=toId(by);
+				console.log(arg);
 			}
 			let infos = await findOneListingByName(client,"bitterballen")
-			var nrbitterballen=infos["nederlands"].arg;
+			var nrbitterballen=infos["nederlands"][arg];
 			
 			
 			vart.reply(arg+" heeft "+nrbitterballen +" bitterballen");
