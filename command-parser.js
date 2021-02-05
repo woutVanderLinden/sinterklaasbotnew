@@ -13,7 +13,49 @@ var dynCommands = exports.dynCommands = {};
 var tempVar = exports.tempVar = '';
 
 /* Resource Monitor */
+async analyze(userstr, room, message, timestamp) {
+		let wrapper = new AnalyzerWrapper(null, null);
+		
+		for (let i in this.analyzers) {
+			wrapper.run(this.analyzers[i], userstr, room, message, null, timestamp);
+		}
+	}
+class AnalyzerWrapper {
+	constructor(userlists, settings) {
+		this.userlists = userlists;
+		this.data = analytics;
+		this.settings = settings;
 
+		this.canUse = permission => canUse(permission, this.userid, this.auth);
+	}
+
+	async display(analyzer, room) {
+		if (analyzer.rooms && !(analyzer.rooms.includes(room))) return;
+
+		return await analyzer.display.apply(this, [room]);
+	}
+
+	async run(analyzer, userstr, room, message, options, timestamp) {
+		this.options = options;
+
+		if (analyzer.rooms && !(analyzer.rooms.includes(room))) return;
+
+		if (!userstr) {
+			if (!analyzer.modnoteParser) return;
+			this.room = room;
+
+			analyzer.modnoteParser.apply(this, [message]);
+		} else {
+			if (!analyzer.parser) return;
+			this.auth = userstr[0];
+			this.username = userstr.substr(1);
+			this.userid = toId(userstr);
+			this.room = room;
+
+			analyzer.parser.apply(this, [message, timestamp]).catch(err => Output.errorMsg(err, 'Error in analyzer', {user: this.username, room: this.room}));
+		}
+	}
+}
 var resourceMonitor = exports.resourceMonitor = {
 	/* PM helper */
 	lasthelp: {},
@@ -121,6 +163,16 @@ var reloadTokens = exports.reloadTokens = function () {
 		commandTokens = exports.commandTokens = ['.'];
 	}
 };
+async parseTourCommand(roomid, command, rest) {
+		const data = rest.startsWith('{') || (rest.startsWith('[') && !rest.startsWith('[G')) ? JSON.parse(rest) : rest;
+		for (let i in this.plugins) {
+			if (this.plugins[i].tours && (!this.plugins[i].tours.rooms || this.plugins[i].tours.rooms.includes(roomid))) {
+				const options = await this.settings.lrange(`${roomid}:options`, 0, -1);
+				if (options.includes('disabletours')) return;
+				this.plugins[i].tours.listener.emit(command, roomid, data);
+			}
+		}
+	}
 
 reloadTokens();
 
