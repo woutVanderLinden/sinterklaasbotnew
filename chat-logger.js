@@ -1,6 +1,6 @@
 'use strict';
 
-const redis = require('./redis.js');
+
 
 const MINUTE = 1000 * 60;
 const MAX_PRUNE_AMOUNT = 1500;
@@ -15,8 +15,7 @@ function lastMonth(today, day, month) {
 
 class ChatLogger {
 	constructor() {
-		this.logs = redis.useDatabase('logs');
-		this.seen = redis.useDatabase('seen');
+		
 
 		this.queue = [];
 		this.queuedOperations = [];
@@ -27,14 +26,7 @@ class ChatLogger {
 			let oldqueue = this.queue;
 			this.queue = {};
 
-			if (Object.keys(oldqueue).length) {
-				await this.logs.multi();
-				for (let key in oldqueue) {
-					oldqueue[key].unshift(key);
-					this.logs.hmset.apply(this.logs, oldqueue[key]);
-				}
-				await this.logs.exec();
-			}
+			
 
 			this.queuedOperations.forEach(val => val());
 
@@ -84,8 +76,7 @@ class ChatLogger {
 
 		this.queue[key].push(`${leftpad(date.getUTCDate())}:${leftpad(date.getUTCMonth() + 1)}:${leftpad(date.getUTCHours())}:${leftpad(date.getMinutes())}:${leftpad(date.getSeconds())}`);
 		this.queue[key].push(Config.logMessages ? message : '1');
-
-		if (!ChatHandler.privateRooms.has(room)) this.seen.set(userid, timestamp);
+;
 	}
 
 	async getLineCount(room, userid) {
