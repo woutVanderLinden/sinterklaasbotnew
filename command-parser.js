@@ -13,13 +13,7 @@ var dynCommands = exports.dynCommands = {};
 var tempVar = exports.tempVar = '';
 
 /* Resource Monitor */
-async analyze(userstr, room, message, timestamp) {
-		let wrapper = new AnalyzerWrapper(null, null);
-		
-		for (let i in this.analyzers) {
-			wrapper.run(this.analyzers[i], userstr, room, message, null, timestamp);
-		}
-	}
+
 class AnalyzerWrapper {
 	constructor(userlists, settings) {
 		this.userlists = userlists;
@@ -113,7 +107,13 @@ var resourceMonitor = exports.resourceMonitor = {
 		return this.lockedlist[toId(user)];
 	}
 };
-
+async function analyze(userstr, room, message, timestamp) {
+		let wrapper = new AnalyzerWrapper(null, null);
+		
+		for (let i in this.analyzers) {
+			wrapper.run(this.analyzers[i], userstr, room, message, null, timestamp);
+		}
+	}
 /* Load commands */
 var loadCommands = exports.loadCommands = function (reloading) {
 	var errs = [];
