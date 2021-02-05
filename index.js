@@ -586,10 +586,10 @@ Bot.on('line', function (room, message, isIntro, spl) {
 	console.log(message);
 	var messes1=message.split("|");
 	console.log(messes1);
-	if(message.startsWith("|tournaments|")){
+	if(message.startsWith("|tournament|")){
 	   console.log("tourcommand");
 	   }
-	if(message.startsWith("|tournaments|update|")){
+	if(message.startsWith("|tournament|update|")){
 	   	console.log(message);
 		var messes=message.split("|");
 		announcefinals(JSON. parse(messes[3]));
