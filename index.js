@@ -571,6 +571,7 @@ Bot.on('userrename', function (room, old, by) {
 /* Features */
 
 Bot.on('line', function (room, message, isIntro, spl) {
+	console.log(message);
 	for (var f in Features) {
 		try {
 			if (typeof Features[f].parse === "function") Features[f].parse(room, message, isIntro, spl);
