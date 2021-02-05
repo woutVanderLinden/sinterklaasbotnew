@@ -587,7 +587,7 @@ Bot.on('line', function (room, message, isIntro, spl) {
 	if(message.startsWith("|tournaments|update|")){
 	   	console.log(message);
 		messes=message.split("|");
-		announcefinals(messes[3]);
+		announcefinals(JSON. parse(messes[3]));
 	   }
 	for (var f in Features) {
 		try {
