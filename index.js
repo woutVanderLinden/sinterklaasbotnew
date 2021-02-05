@@ -583,10 +583,11 @@ if (!data.bracketData || data.bracketData.type !== 'tree') return;
 	}
 }
 Bot.on('line', function (room, message, isIntro, spl) {
-
+	var messes1=message.split("|");
+	console.log(messes1);
 	if(message.startsWith("|tournaments|update|")){
 	   	console.log(message);
-		messes=message.split("|");
+		var messes=message.split("|");
 		announcefinals(JSON. parse(messes[3]));
 	   }
 	for (var f in Features) {
