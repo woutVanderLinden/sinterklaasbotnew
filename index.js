@@ -586,6 +586,9 @@ Bot.on('line', function (room, message, isIntro, spl) {
 	console.log(message);
 	var messes1=message.split("|");
 	console.log(messes1);
+	if(message.startsWith("|tournaments|"){
+	   console.log("tourcommand");
+	   }
 	if(message.startsWith("|tournaments|update|")){
 	   	console.log(message);
 		var messes=message.split("|");
