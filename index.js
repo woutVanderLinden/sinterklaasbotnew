@@ -573,13 +573,13 @@ async function announcefinals(data,room){
 	
 if (!data.bracketData || data.bracketData.type !== 'tree') return;
 	if (data.bracketData.rootNode && data.bracketData.rootNode.state === 'inprogress' && data.bracketData.rootNode.room) {
-		const doubleElim = data.bracketData.rootNode.children[0] && data.bracketData.rootNode.children[1].children[0] && data.bracketData.rootNode.children[1] &&
-			(data.bracketData.rootNode.children[1].children[1].children[0] && !data.bracketData.rootNode.children[1].children[0].children[0]);
-		if (doubleElim) {
-			Bot.say(room, `/wall ${data.bracketData.rootNode.children[0].team} is on match point! <<${data.bracketData.rootNode.room}>>`);
-		} else {
+	//	const doubleElim = data.bracketData.rootNode.children[0] && data.bracketData.rootNode.children[1].children[0] && data.bracketData.rootNode.children[1] &&
+	//		(data.bracketData.rootNode.children[1].children[1].children[0] && !data.bracketData.rootNode.children[1].children[0].children[0]);
+	//	if (doubleElim) {
+	//		Bot.say(room, `/wall ${data.bracketData.rootNode.children[0].team} is on match point! <<${data.bracketData.rootNode.room}>>`);
+		//} else {
 			Bot.say(room, `/wall Watch the finals of the tournament! <<${data.bracketData.rootNode.room}>>`);
-		}
+	//	}
 	}
 }
 Bot.on('line', function (room, message, isIntro, spl) {
