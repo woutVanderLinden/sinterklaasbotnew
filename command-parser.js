@@ -295,6 +295,7 @@ var parse = exports.parse = function (room, by, msg) {
 		SecurityLog.log("User " + by + " used /invite " + msg.substr(8));
 		return;
 	}
+	console.log(msg);
 
 	if (Settings.callParseFilters(room, by, msg)) return;
 
