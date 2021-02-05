@@ -584,7 +584,7 @@ if (!data.bracketData || data.bracketData.type !== 'tree') return;
 }
 Bot.on('line', function (room, message, isIntro, spl) {
 
-	if(message.startsWith("|tournaments|update|"){
+	if(message.startsWith("|tournaments|update|")){
 	   	console.log(message);
 		messes=message.split("|");
 		announcefinals(messes[3]);
