@@ -141,7 +141,13 @@ async function quotefunc (arg, by, room, cmd,vart) {
 					vart.reply(quote);
 			}
 			else{
+					if(quote.includes(".com")){
+						vart.reply(quote);
+					}
+				else{
+					
 					vart.reply("__"+ quote+"__");
+				}
 			}
 			//fs.writeFileSync('quotes.json', data);
 		
