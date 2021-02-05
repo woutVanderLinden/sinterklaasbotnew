@@ -140,6 +140,9 @@ async function quotefunc (arg, by, room, cmd,vart) {
 				quote="!htmlbox "+quote;
 					vart.reply(quote);
 			}
+			if(quote.includes("https"){
+			   vart.reply( quote);
+			   }
 			else{
 					vart.reply("__"+ quote+"__");
 			}
