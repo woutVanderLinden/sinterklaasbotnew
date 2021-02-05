@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../../style.css">
+        <title>Adding {{id}} entry - Kid A</title>
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Adding {{id}} entry</h1>
+
+            <form method="POST">
+                {{#each fields}}
+                    <h3>{{label}}</h3>
+                    {{#if_ends @key "info"}}
+                        <textarea style="margin: 0px 50px 10px;" name="{{@key}}" rows="6" cols="80">{{{value}}}</textarea>
+                    {{else}}
+                        <input style="margin: 0px 50px 10px;" type="text" name="{{@key}}" value="{{value}}">
+                    {{/if_ends}}
+                {{/each}}
+                <br/><br/><input type="submit" value="Submit">
+            </form>
+        </div>
+    </body>
+</html>
