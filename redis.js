@@ -31,17 +31,7 @@ module.exports = {
 			writeTables();
 		}
 
-		let client = redis.createClient({database: i, usePromise: true});
-		client.on('error', async error => {
-			Output.errorMsg(error, 'Received error from redis, restarting.');
-			if (!this.restarting) await this.restart();
-			client.clientConnect();
-		});
-		client.on('close', () => {
-			client.clientConnect();
-		});
-		this.databases[name] = client;
-		return client;
+	
 	},
 
 	restart() {
