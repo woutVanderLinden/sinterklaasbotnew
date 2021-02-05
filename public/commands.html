@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Command Help - Kid A</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h1>Kid A's command list:</h1>
+
+            <p class="note"><strong>NOTE:</strong> All commands require Voice or above in the current room, unless specified otherwise. Commands that require Voice will still work in PM for regular users.</p>
+
+            <div>
+                <h2 id="administrative">Administrative:</h2>
+                <p class="helptopic">
+                    <span>console:</span> Sends you a (temporary) link to the console output of the bot. Requires either global admin or for you to be the owner of the bot.
+                </p>
+                <p class="helptopic">
+                    <span>settings:</span> Gives you a link to a webpage where you can turn on and off commands and options for your room. This command can be used in PM, although the name of the room should be supplied as an argument in that case.
+                </p>
+                <p class="helptopic">
+                    <span>leave:</span> Makes the bot leave, and take the room off of autojoin (if autojoin is provided by inviting the bot). If the bot is set to autojoin by Config, the bot will leave, but rejoin next restart. Requires Room Owner in
+                    the room.
+                </p>
+                <p class="helptopic">
+                    <span>privateroom:</span> Toggles the privacy of a room. Requires Room Owner.
+                </p>
+            </div>
+            <div>
+                <h2 id="approvals">Approvals:</h2>
+                <p class="helptopic">
+                    <span>requestapproval url, description:</span> Requests approval to share a link in the chat.
+                </p>
+                <p class="helptopic">
+                    <span>link url, description:</span> Links a url in chat without requesting approval. Requires you to be whitelisted or have a rank in the room.
+                </p>
+                <p class="helptopic">
+                    <span>approve/reject:</span> Approves or rejects a url. Requires Room Driver.
+                </p>
+                <p class="helptopic">
+                    <span>whitelist username:</span> Whitelists a user for sharing links. Requires Room Driver.
+                </p>
+                <p class="helptopic">
+                    <span>viewwhitelist:</span> Shows you the list of all whitelisted users. Requires Room Driver.
+                </p>
+            </div>
+            <div>
+                <h2 id="hangman">Hangman:</h2>
+                <p class="helptopic">
+                    <span>addhangman room, solution, hint:</span> Adds a word to the list of possible words for .hangman. Requires Room Driver.
+                </p>
+                <p class="helptopic">
+                    <span>deletehangman room, word:</span> Deletes a word from list of possible words for .hangman. Requires Room Driver.
+                </p>
+                <p class="helptopic">
+                    <span>hangman:</span> Starts a hangman game with a random solution, selected from the list for this room.
+                </p>
+                <p class="helptopic">
+                    <span>viewhangman room:</span> Sends you a link to a page with all hangman words for the room. Requires Room Driver.
+                </p>
+            </div>
+            <div>
+                <h2 id="help">Help:</h2>
+                <p class="helptopic">
+                    <span>help (topic):</span> Links to the bot's documentation about a certain topic. For a list of topics, use .help without a topic specified.
+                </p>
+                <p class="helptopic">
+                    <span>git:</span> Returns a link to Kid A's github repository.
+                </p>
+                <p class="helptopic">
+                    <span>data:</span> Returns a link to the page with chat analytics of the current room.
+                </p>
+            </div>
+            <div>
+                <h2 id="LastFm">Last.fm:</h2>
+                <p class="helptopic">
+                    <span>lastfm (username):</span> Displays what the given last.fm username is currently listening to or has last listened to, and provides a link to their profile. If no username is provided, it will attempt to use your registered info.
+                    Options: lastfmhtmlbox - Uses a fancier htmlbox for displaying results. Requires the bot to have the bot rank, and is spammier.
+                </p>
+                <p class="helptopic">
+                    <span>track (artist - track name):</span> Searches for a track on last.fm, and provides a youtube link to the song as well. Options: lastfmhtmlbox - Uses a fancier htmlbox for displaying results. Requires the bot to have the bot rank,
+                    and is spammier.
+                </p>
+                <p class="helptopic">
+                    <span>registerlastfm (username):</span> Works only in PM. This will register the given last.fm username to your PS username, and allows you to use simple .lastfm to link to your last.fm page. To update information, simply use the command
+                    again with the updated last.fm username.
+                </p>
+            </div>
+            <div>
+                <h2 id="linecount">Linecount:</h2>
+                <p class="helptopic">
+                    <span>linecount (room, username):</span> Gives you a link to check the linecount of the given username in the given room the past month. Requires Room Driver.
+                </p>
+                <p class="helptopic">
+                    <span>topusers (room [, today|0-24]):</span> Shows the 5 most active users in the given room the past month. If 'today' is passed as an additional parameter, shows the most active users today. If a number between 0 and 24 is passed as an additional parameter, shows the most active users during that hour of the day (GMT). Requires Room Driver.
+                </p>
+            </div>
+            <div>
+                <h2 id="mail">Mail:</h2>
+                <p class="helptopic">
+                    <span>mail user, message</span> Sends a mail to user. Can only be used by roomstaff and global auth.
+                </p>
+            </div>
+            <div>
+                <h2 id="moderation">Moderation:</h2>
+                <p class="helptopic">
+                    Use the settings feature to edit settings for bot moderation in the rooms you're Room Owner in.
+                </p>
+                <p class="helptopic">
+                    <span>notol (room, user, description):</span> Adds the user to the zero tolerance list of the room, causing all punishments on the user to be harsher. Requires Room Moderator.
+                </p>
+                <p class="helptopic">
+                    <span>removenotol (room, user):</span> Removes the user from the zero tolerance list of the room. Requires Room Moderator.
+                </p>
+                <p class="helptopic">
+                    <span>viewnotol (room):</span> Shows the zero tolerance list of the room. Requires Room Driver.
+                </p>
+            </div>
+            <div>
+                <h2 id="profiles">Profiles:</h2>
+                <p class="helptopic">
+                    <span>profile (username):</span> Shows the user's profile, or your own profile if no username is supplied.
+                </p>
+                <p class="helptopic">
+                    <span>editprofile:</span> Sends you a link to edit or create your profile. Avatar on the profile is set to your current PS avatar when you press submit.
+                </p>
+            </div>
+            <div>
+                <h2 id="quotes">Quotes:</h2>
+                <p class="helptopic">
+                    <span>quote (quote):</span> Adds the given quote to the quote page for this room. Requires Room Driver in the room.
+                </p>
+                <p class="helptopic">
+                    <span>deletequote (quote):</span> Deletes the given quote from the quote page for this room. Requires Room Driver in the room.
+                </p>
+                <p class="helptopic">
+                    <span>quotes:</span> Provides a link to the quote page of the current room.
+                </p>
+                <p class="helptopic">
+                    <span>randquote:</span> Says a random quote from the quote page of the current room.
+                </p>
+            </div>
+            <div>
+                <h2 id="social">Social:</h2>
+                <p class="helptopic">
+                    <span>motd:</span> Displays the current message of the day for the room. This command can be used in PM by specifying the room after the command.<br/> Options: announcemotd - use /wall when displaying the motd.
+                </p>
+                <p class="helptopic">
+                    <span>motd (motd):</span> Sets the message of the day in the room to the specified message for the next 24 hours. Requires Room Moderator in the room.
+                </p>
+                <p class="helptopic">
+                    <span>clearmotd:</span> Clears the current motd of the room. Requires Room Moderator in the room.
+                </p>
+                <p class="helptopic">
+                    <span>repeat (interval, times, message):</span> Repeats a message times times in a room every interval minutes. Requires Room Driver in the room.
+                </p>
+                <p class="helptopic">
+                    <span>clearrepeat (message):</span> Stops a repeating message. Requires Room Driver in the room.
+                </p>
+                <p class="helptopic">
+                    <span>clearrepeats:</span> Stops all repeating messages in this room. Requires Room Driver in the room.
+                </p>
+                <p class="helptopic">
+                    <span>repeats (room):</span> Shows all repeats in a room, and allows you to remove specific ones. Requires Room Driver in the room.
+                </p>
+                <p class="helptopic">
+                    <span>throttlerepeats (room, start, end, amount):</span> Makes it so repeats only show 1/amount of times between start and end o'clock. Requires Room Owner.
+                </p>
+            </div>
+            <div>
+                <h2 id="tournaments">Tournaments:</h2>
+                <p class="helptopic">
+                    <span>whitelisttourhelper (room, user):</span> Whitelists a tour helper. Requires Room Owner.
+                </p>
+                <p class="helptopic">
+                    <span>unwhitelisttourhelper (room, user):</span> Unwhitelists a tour helper. Requires Room Owner.
+                </p>
+                <p class="helptopic">
+                    <span>tour simple|random|crazy:</span> Starts a standard tournament in a random format, chosen from a list of formats. Simple features common constructed formats as well as randbats. Random selects one of the randomized formats on PS, and is ideal for fast tours, since nobody is required to have a team. Crazy selects a random format from the list of crazy formats. These formats are intended to provide a creative and different way to play the game, while focusing less on having a fair and competitive tournament. These formats do often require a team to be built, so be prepared to give users some time to build before starting. Requires Tour helper.
+                </p>
+                <p class="helptopic">
+                    <span>tour leaderboard:</span> Starts a leaderboard tour which grants Arbitrary Points for people who do well. The format for leaderboard tours is set using <code>.tour set leaderboard, format</code> by a Room Owner. Additionally, adding "Leaderboard" to the name of a tour not created by Kid A using /tour name will make it count as a leaderboard tour, and give out points. Requires Tour helper.
+                </p>
+                <p class="helptopic">
+                    <span>tour set currency, (name):</span> Sets the name of the Arbitrary points used on the scoreboard. Requires Room Owner.
+                </p>
+                <p class="helptopic">
+                    <span>tour set shop, on|off:</span> Sets whether the scoreboard should indicate that points can be spent on prizes. Don't enable this if there are no prizes. Requires Room Owner.
+                </p>
+                <p class="helptopic">
+                    <span>addpoints (user, amount[, total]):</span> Adds points to user and total points to the total. If left out, total defaults to the amount. Requires Tour helper.
+                </p>   
+                <p class="helptopic">
+                    <span>removepoints (user, amount[, total]):</span> Removes points from user and total points from the total. If left out, total defaults to the amount. Requires Tour helper.
+                </p>
+                <p class="helptopic">
+                    <span>resetpoints [hard]:</span> Decays the points and deletes inactive users from the scoreboard. If the argument 'hard' is supplied, resets all points instead of merely decaying. Requires Room Owner.
+                </p>                     
+            </div>
+            <div>
+                <h2 id="userlist">Userlist:</h2>
+                <p class="helptopic">
+                    <span>addinfo (username), key:value[, key:value]:</span> Adds info to the userdata of the provided user. For example '.addinfo bumbadadabum, TCGO: bumbadadabum' will set 'bumbadadabum''s TCGO username to 'bumbadadabum', and will show
+                    up when doing .info bumbadadabum or .info bumbadadabum, tcgo. If the info already exists, it will override it. Requires Room Driver in the room.
+                </p>
+                <p class="helptopic">
+                    <span>removeinfo (username), key[, key]:</span> Removes the info associated with the given key(s) from the userdata of the given user. Requires Room Driver in the room.
+                </p>
+                <p class="helptopic">
+                    <span>info (username)[, key]:</span> Provides the info associated with the given username and key, or all info if no key is provided.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
