@@ -1,8 +1,0 @@
-<?xml version="1.0" standalone="yes"?>
-<DocumentElement>
-{{#each this}}
-  <Banlist>
-    <FC>{{this}}</FC>
-  </Banlist>
-{{/each}}
-</DocumentElement>
