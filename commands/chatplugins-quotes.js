@@ -221,7 +221,9 @@ async function infofunc (arg, by, room, cmd,vart) {
 				infos["nederlands"]={};
 			}
 			infos["nederlands"][arg]="";
-			vart.reply("deleted info from "+ args);
+			vart.reply("deleted info from "+ arg);
+			
+			await updateListingByName(client,"info" ,infos);
 		
 		} else if (cmd === "uploadquotefile") {
 			let rawdata = await fs.readFileSync('quotes.json');
