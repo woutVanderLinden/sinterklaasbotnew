@@ -83,11 +83,11 @@ async function samplefunc (arg, by, room, cmd,vart) {
 		
 		await client.connect();
 		await listDatabases(client);
-		if (cmd === "addsampe" || cmd === "setsample") {
+		if (cmd === "addsample" || cmd === "setsample") {
 			console.log("samplebeing added");
 			var args = arg.split(",");
 			if(args.length<2){
-				vart.reply("not enough arguments");
+				vart.reply("not enough arguments, arguments given "+args.length);
 			
 			}
 			else{
