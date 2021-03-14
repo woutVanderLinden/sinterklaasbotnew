@@ -54,7 +54,7 @@ exports.autoReloginDelay = 60 * 1000;
 * Rooms to join
 */
 
-exports.rooms =['dutch'];// ['dutch'];
+exports.rooms =['dutch','pet mods'];// ['dutch'];
 
 /*
 * exports.rooms = 'all'; //For joining all rooms
