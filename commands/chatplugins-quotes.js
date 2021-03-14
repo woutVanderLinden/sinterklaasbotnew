@@ -104,7 +104,7 @@ async function samplefunc (arg, by, room, cmd,vart) {
 				};
 			}
 			if(samples[args[0]]==undefined){
-				quotes[args[0]]=[];
+				samples[args[0]]=[];
 			}
 			samples[args[0]].push(args[1]);
 			vart.reply("added sample " +args[1]);
