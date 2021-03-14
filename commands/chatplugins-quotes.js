@@ -72,6 +72,104 @@ async function findOneListingByName(client, nameOfListing) {
     console.log(`${result.modifiedCount} document(s) was/were updated.`);
 
 }
+async function samplefunc (arg, by, room, cmd,vart) {
+		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	console.log(uri);
+	console.log("test");
+	
+	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+	
+	try {
+		
+		await client.connect();
+		await listDatabases(client);
+		if (cmd === "addsampe" || cmd === "setsample") {
+			console.log("samplebeing added");
+			var args = arg.split(",");
+			if(args.length<2){
+				vart.reply("not enough arguments");
+			
+			}
+			else{
+				
+			if (!vart.isRanked('driver')) return false;
+			
+			console.log("the client is "+client);
+			let samples = await findOneListingByName(client,"samples")
+			console.log(samples);
+			if(samples==undefined){
+				samples={
+					 name: 'samples'
+					
+				};
+			}
+			if(samples[args[0]]==undefined){
+				quotes[args[0]]=[];
+			}
+			samples[args[0]].push(args[1]);
+			vart.reply("added quote " +args[1]);
+			
+			
+			
+			
+			await updateListingByName(client,"samples" ,samples);
+			}
+			
+		} else if (cmd === "delsample") {
+			if (!vart.isRanked('driver')) return false;
+			var args = arg.split(",");
+			if(args.length<2){
+				vart.reply("not enough arguments");
+			
+			}
+			else{
+			let samples =await findOneListingByName(client,args[0])
+			
+			samples[args[0]].removeItemOnce(args[1]);
+			vart.reply("removed sample " +args[1]);
+			await updateListingByName(client,"samples" ,samples);
+			}
+		
+		} else if (cmd === "uploadquotefile") {
+			let rawdata = await fs.readFileSync('quotes.json');
+			let student = await JSON.parse(rawdata);
+			console.log("uploading quotes file"); 
+			console.log("uploading quotes file "+student["nederlands"]);
+			let quotes =await findOneListingByName(client,"quotes")
+			
+			quotes["nederlands"]=student["nederlands"];
+			await updateListingByName(client,"quotes" ,quotes);
+			
+		} else {
+			
+			if(arg!=""){
+				vart.reply("not enough arguments");
+			
+			}
+			else{
+			let samples =await findOneListingByName(client,"samples")
+			
+			var list=samples[arg];
+			var quote =  list[Math.floor(Math.random() * list.length)];
+			let data = JSON.stringify(samples);
+			
+				vart.reply( quote);
+				
+			//fs.writeFileSync('quotes.json', data);
+			}
+			
+		}
+	} catch (e) {
+
+    		console.error(e);
+
+	}
+		
+	finally{
+		await client.close();
+	}
+	
+}
 async function quotefunc (arg, by, room, cmd,vart) {
 		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 	console.log(uri);
@@ -438,6 +536,15 @@ module.exports = {
 	commands: {/*
 	* Quotes
 	*/
+	addsample: 'sample',
+	setquote: 'sample',
+	delsample: 'sample',
+	getsample: 'sample',
+	randsample: 'sample',
+	uploadquotefile:'sample',
+	sample: function (arg, by, room, cmd) {
+		samplefunc(arg,by,room,cmd,this);
+	},
 	addquote: 'quote',
 	setquote: 'quote',
 	delquote: 'quote',
