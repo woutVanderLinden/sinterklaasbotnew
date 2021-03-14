@@ -107,7 +107,7 @@ async function samplefunc (arg, by, room, cmd,vart) {
 				quotes[args[0]]=[];
 			}
 			samples[args[0]].push(args[1]);
-			vart.reply("added quote " +args[1]);
+			vart.reply("added sample " +args[1]);
 			
 			
 			
