@@ -142,7 +142,7 @@ async function samplefunc (arg, by, room, cmd,vart) {
 			
 		} else {
 			
-			if(arg!=""){
+			if(arg==""){
 				vart.reply("not enough arguments");
 			
 			}
