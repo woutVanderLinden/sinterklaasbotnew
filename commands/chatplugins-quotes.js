@@ -125,6 +125,7 @@ async function samplefunc (arg, by, room, cmd,vart) {
 			
 			}
 			else{
+				vart.reply("removing sample " +args[1]);
 			let samples =await findOneListingByName(client,args[0])
 			var newarg=toId(args[0]);
 			samples[newarg].removeItemOnce(args[1]);
