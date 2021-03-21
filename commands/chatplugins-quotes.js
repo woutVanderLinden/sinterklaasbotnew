@@ -95,6 +95,7 @@ async function samplefunc (arg, by, room, cmd,vart) {
 			if (!vart.isRanked('driver')) return false;
 			
 			console.log("the client is "+client);
+				
 			let samples = await findOneListingByName(client,"samples")
 			console.log(samples);
 			if(samples==undefined){
@@ -103,10 +104,11 @@ async function samplefunc (arg, by, room, cmd,vart) {
 					
 				};
 			}
-			if(samples[args[0]]==undefined){
-				samples[args[0]]=[];
+				var newarg=toId(args[0]);
+			if(samples[newarg]==undefined){
+				samples[newarg]=[];
 			}
-			samples[args[0]].push(args[1]);
+			samples[newarg].push(args[1]);
 			vart.reply("added sample " +args[1]);
 			
 			
@@ -124,8 +126,8 @@ async function samplefunc (arg, by, room, cmd,vart) {
 			}
 			else{
 			let samples =await findOneListingByName(client,args[0])
-			
-			samples[args[0]].removeItemOnce(args[1]);
+			var newarg=toId(args[0]);
+			samples[newarg].removeItemOnce(args[1]);
 			vart.reply("removed sample " +args[1]);
 			await updateListingByName(client,"samples" ,samples);
 			}
@@ -148,8 +150,8 @@ async function samplefunc (arg, by, room, cmd,vart) {
 			}
 			else{
 			let samples =await findOneListingByName(client,"samples")
-			
-			var list=samples[arg];
+			var newarg=toId(arg);
+			var list=samples[newarg];
 			var quote =  list[Math.floor(Math.random() * list.length)];
 			let data = JSON.stringify(samples);
 			
@@ -292,11 +294,12 @@ async function infofunc (arg, by, room, cmd,vart) {
 			if(infos["nederlands"]==undefined){
 				infos["nederlands"]={};
 			}
-			if(infos["nederlands"][args[0]]==undefined){
-				infos["nederlands"][args[0]]="";
-					infos["nederlands"][args[0]]=infos["nederlands"][args[0]]+" "+args[1];
+			var newarg=toId(args[0]);
+			if(infos["nederlands"][newarg]==undefined){
+				infos["nederlands"][newarg]="";
+					infos["nederlands"][newarg]=infos["nederlands"][newarg]+" "+args[1];
 			}else{
-					infos["nederlands"][args[0]]=infos["nederlands"][args[0]]+", "+args[1];
+					infos["nederlands"][newarg]=infos["nederlands"][newarg]+", "+args[1];
 			}
 			//infos["nederlands"][args[0]]=infos["nederlands"][args[0]]+" "+args[1];
 			vart.reply("added info to "+ args[0]);
@@ -321,7 +324,8 @@ async function infofunc (arg, by, room, cmd,vart) {
 			if(infos["nederlands"]==undefined){
 				infos["nederlands"]={};
 			}
-			infos["nederlands"][arg]="";
+			var newarg=toId(arg);
+			infos["nederlands"][newarg]="";
 			vart.reply("deleted info from "+ arg);
 			
 			await updateListingByName(client,"info" ,infos);
@@ -338,13 +342,14 @@ async function infofunc (arg, by, room, cmd,vart) {
 			
 		} else {
 			if (!vart.isRanked('voice')) return false;
+			var newarg=toId(arg);
 			if (arg==""){
 				
 				arg=toId(by);
 				console.log(arg);
 			}
 			let infos = await findOneListingByName(client,"info")
-			var info=infos["nederlands"][arg];
+			var info=infos["nederlands"][newarg];
 			
 			
 			vart.reply("**"+arg+" :**"+ info);
