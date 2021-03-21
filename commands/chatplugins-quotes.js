@@ -345,12 +345,13 @@ async function infofunc (arg, by, room, cmd,vart) {
 			
 		} else {
 			if (!vart.isRanked('voice')) return false;
-			var newarg=toId(arg);
+			
 			if (arg==""){
 				
 				arg=toId(by);
 				console.log(arg);
 			}
+			var newarg=toId(arg);
 			let infos = await findOneListingByName(client,"info")
 			var info=infos["nederlands"][newarg];
 			
