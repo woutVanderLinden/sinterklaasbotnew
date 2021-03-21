@@ -126,10 +126,11 @@ async function samplefunc (arg, by, room, cmd,vart) {
 			
 			}
 			else{
+				args[1] = args[1].replace(/ /g, '');
 				vart.reply("removing sample " +args[1]);
 			let samples =await findOneListingByName(client,args[0])
 			var newarg=toId(args[0]);
-				args[1] = args[1].replace(/ /g, '');
+			
 			samples[newarg].removeItemOnce(args[1]);
 			vart.reply("removed sample " +args[1]);
 			await updateListingByName(client,"samples" ,samples);
