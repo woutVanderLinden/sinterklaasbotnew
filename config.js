@@ -78,7 +78,8 @@ exports.initCmds = ['|/avatar 282']; // Other commands (avatar, blockchallenges,
 */
 
 exports.exceptions = {
-	 'kingbaruk': true
+	 'kingbaruk': true,
+	'cc': true
 	 
 };
 
