@@ -129,7 +129,7 @@ async function samplefunc (arg, by, room, cmd,vart) {
 				vart.reply("removing sample " +args[1]);
 			let samples =await findOneListingByName(client,args[0])
 			var newarg=toId(args[0]);
-				args[1] = args[1].replace(/\s/g, '');
+				args[1] = args[1].replace(/ /g, '');
 			samples[newarg].removeItemOnce(args[1]);
 			vart.reply("removed sample " +args[1]);
 			await updateListingByName(client,"samples" ,samples);
@@ -302,7 +302,14 @@ async function infofunc (arg, by, room, cmd,vart) {
 				infos["nederlands"][newarg]="";
 					infos["nederlands"][newarg]=infos["nederlands"][newarg]+" "+args[1];
 			}else{
+				if(infos["nederlands"][newarg]==""){
+					
+					infos["nederlands"][newarg]=infos["nederlands"][newarg]+" "+args[1];
+				}
+				else{
+					
 					infos["nederlands"][newarg]=infos["nederlands"][newarg]+", "+args[1];
+				}
 			}
 			//infos["nederlands"][args[0]]=infos["nederlands"][args[0]]+" "+args[1];
 			vart.reply("added info to "+ args[0]);
