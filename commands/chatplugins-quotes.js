@@ -238,12 +238,31 @@ async function quotefunc (arg, by, room, cmd,vart) {
 			let quotes =await findOneListingByName(client,"quotes")
 			
 			var list=quotes["nederlands"];
-			var quote =  list[Math.floor(Math.random() * list.length)];
-			let data = JSON.stringify(quotes);
-			if(quote.includes("porn")||quote.includes("rape")){
-				quote="!htmlbox "+quote;
-					vart.reply(quote);
+			
+			var quote="";
+			if(arg!=""){
+				var newlist=[];
+				
+				let data = JSON.stringify(quotes);
+				var i=0;
+				while(i<list.length){
+					var newquote =  list[i];
+					if(newquote.includes(arg){
+					   newlist.add(newquote);
+					   }
+				}
+				if(newlist.length==0){
+					vart.reply("no quote found with "+arg);
+					return;
+				}
+				
+				   quote =  newlist[Math.floor(Math.random() * newlist.length)];
 			}
+			else{
+				 quote =  list[Math.floor(Math.random() * list.length)];
+				let data = JSON.stringify(quotes);
+			}
+		
 			if(quote.includes("http")){
 			   vart.reply( quote);
 			   }
