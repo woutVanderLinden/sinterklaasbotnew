@@ -247,7 +247,7 @@ async function quotefunc (arg, by, room, cmd,vart) {
 				var i=0;
 				while(i<list.length){
 					var newquote =  list[i];
-					if(newquote.includes(arg)){
+					if(newquote.toLowerCase().includes(arg.toLowerCase())){
 					   newlist.push(newquote);
 					   
 					}
@@ -271,7 +271,10 @@ async function quotefunc (arg, by, room, cmd,vart) {
 			   vart.reply( quote);
 			   }
 			else{
+				if(quote!=""){
+					
 					vart.reply("__"+ quote+"__");
+				}
 			}
 			//fs.writeFileSync('quotes.json', data);
 		
