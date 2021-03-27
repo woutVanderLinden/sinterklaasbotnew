@@ -248,8 +248,10 @@ async function quotefunc (arg, by, room, cmd,vart) {
 				while(i<list.length){
 					var newquote =  list[i];
 					if(newquote.includes(arg){
-					   newlist.add(newquote);
-					   }
+					   newlist.push(newquote);
+					   
+					}
+					i++;
 				}
 				if(newlist.length==0){
 					vart.reply("no quote found with "+arg);
