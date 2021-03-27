@@ -247,7 +247,7 @@ async function quotefunc (arg, by, room, cmd,vart) {
 				var i=0;
 				while(i<list.length){
 					var newquote =  list[i];
-					if(newquote.includes(arg){
+					if(newquote.includes(arg)){
 					   newlist.push(newquote);
 					   
 					}
