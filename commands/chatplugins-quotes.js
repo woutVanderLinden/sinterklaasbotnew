@@ -255,10 +255,12 @@ async function quotefunc (arg, by, room, cmd,vart) {
 				}
 				if(newlist.length==0){
 					vart.reply("no quote found with "+arg);
-					return;
+					
 				}
+				else{
 				
 				   quote =  newlist[Math.floor(Math.random() * newlist.length)];
+				}
 			}
 			else{
 				 quote =  list[Math.floor(Math.random() * list.length)];
