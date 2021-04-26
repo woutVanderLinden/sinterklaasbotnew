@@ -373,7 +373,7 @@ var opts = {
 function startKeepAlive() {
     setInterval(function() {
         var options = {
-            host: 'newsinterklaasbot.herokuapp.com',
+            host: 'sinterklaasbot.herokuapp.com',
             port: 80,
             path: '/'
         };
