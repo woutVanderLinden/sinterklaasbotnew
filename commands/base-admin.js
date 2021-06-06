@@ -2,7 +2,7 @@
 	Admin Commands
 */
 
-
+const {MongoClient} = require('mongodb');
 exports.commands = {
 	c: 'custom',
 	
