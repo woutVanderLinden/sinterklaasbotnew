@@ -3,6 +3,52 @@
 */
 
 const {MongoClient} = require('mongodb');
+async function listDatabases(client){
+
+    databasesList = await client.db().admin().listDatabases();
+
+    console.log("Databases:");
+
+    databasesList.databases.forEach(db => console.log(` - ${db.name}`));
+
+};
+
+async function createListing(client, newListing){
+
+    const result = await client.db("TestDb").collection("quotes").insertOne(newListing);
+
+    console.log(`New listing created with the following id: ${result.insertedId}`);
+
+};
+
+async function findOneListingByName(client, nameOfListing) {
+
+    result = await client.db("TestDb").collection("quotes").findOne({ name: nameOfListing });
+
+    if (result) {
+
+        console.log(`Found a listing in the collection with the name '${nameOfListing}':`);
+
+        console.log(result);
+	return result;
+    } else {
+
+        console.log(`No listings found with the name '${nameOfListing}'`);
+
+    }
+
+}
+	async function updateListingByName(client, nameOfListing, updatedListing) {
+
+    result = await client.db("TestDb").collection("quotes")
+
+                        .updateOne({ name: nameOfListing }, { $set: updatedListing });
+
+    console.log(`${result.matchedCount} document(s) matched the query criteria.`);
+
+    console.log(`${result.modifiedCount} document(s) was/were updated.`);
+
+}
 exports.commands = {
 	c: 'custom',
 	
