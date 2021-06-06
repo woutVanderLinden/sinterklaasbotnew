@@ -8,7 +8,7 @@
 let todraftmons=[];
 let users=[];
 var http = require('http'); //importing http
-
+var packdrafting=false;
 
 
 startKeepAlive();
@@ -52,7 +52,7 @@ try {
 	global.users={};
 	global.picknr={};
 	global.possiblepicks={};
-	
+	global.packdrafting=false;
 	global.draftstarted={};
 	global.nextdrafter={};
 	global.draftedmons={};
