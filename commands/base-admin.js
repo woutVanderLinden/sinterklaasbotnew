@@ -373,7 +373,7 @@ exports.commands = {
 			}
 	},
 	startdraft: function (arg, by, room, cmd){
-		return this.reply("this feature is disabled");
+		
 		if (!this.isRanked('admin')) return false;
 		/*first load in the draft file list*/
 		//lets try that now
