@@ -344,7 +344,9 @@ exports.commands = {
 	},
 	
 	viewdraft: async function (arg, by, room, cmd){
-		
+	if (!by.startsWith("+")&&!by.startsWith("#")&&!by.startsWith("%")&&!by.startsWith("@")){
+					return false;
+				}	
 	const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 	console.log(uri);
 	console.log("test");
@@ -354,7 +356,14 @@ exports.commands = {
 	try {
 		await client.connect();
 		let quotes =await findOneListingByName(client,"pokemon");
-		var list=quotes["pokemon"][toId(by)];
+		var list;
+		if(arg==''){
+				var list=quotes["pokemon"][toId(by)];
+		}
+		else{
+				var list=quotes["pokemon"][toId(arg)];
+		}
+	
 			return this.reply(draftmonsprint2(list));
 	} catch (e) {
     		console.error(e);
