@@ -648,7 +648,7 @@ exports.commands = {
 				return this.reply(arg +' is no longer available.'+ name+' pick a different mon or check your spelling. ' );
 		}
 		let data = JSON.stringify(global.draftedmons);
-		
+		saveTeamsToCloud();
 		fs.writeFileSync('draftedmons.json', data);
 		 if(!packdrafting){
 			if(global.draftdirectionup[toId(room)]){
