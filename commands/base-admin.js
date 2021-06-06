@@ -831,6 +831,31 @@ function removeItemOnce(arr, value) {
   }
   return arr;
 };
+async  function saveTeamsToCloud(){
+	
+		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	console.log(uri);
+	console.log("test");
+	
+	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+	
+	try {
+		let quotes = await findOneListingByName(client,"draftedmons")
+			console.log(quotes);
+	
+			await updateListingByName(client,"draftedmons" ,quotes);
+	}
+	} catch (e) {
+
+    		console.error(e);
+
+	}
+		
+	finally{
+		await client.close();
+	}
+		
+};
 function startNewTier(room,by,elem){
 	//load mons of the new tierlist
 	//reshuffle list of users
