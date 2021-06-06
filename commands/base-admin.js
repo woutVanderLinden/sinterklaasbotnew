@@ -903,12 +903,12 @@ async  function saveTeamsToCloud(){
 	console.log("test");
 	
 	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
-	
+	await client.connect();
 	try {
 		let quotes = await findOneListingByName(client,"pokemon")
-			console.log(quotes);
-	
-			await updateListingByName(client,"pokemon" ,quotes);
+		console.log(quotes);
+		quotes["pokemon"]=draftedmons;
+		await updateListingByName(client,"pokemon" ,quotes);
 	
 	} catch (e) {
 
