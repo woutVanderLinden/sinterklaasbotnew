@@ -352,6 +352,7 @@ exports.commands = {
 	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
 	
 	try {
+		await client.connect();
 		let quotes =await findOneListingByName(client,"pokemon");
 		var list=quotes["pokemon"][toId(by)];
 			return this.reply(draftmonsprint(list));
