@@ -299,7 +299,28 @@ exports.commands = {
 	
 	viewdraft: function (arg, by, room, cmd){
 		
+		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	console.log(uri);
+	console.log("test");
+	
+	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+	
+	try {
+		let quotes =await findOneListingByName(client,"pokemon");
+		var list=quotes["pokemon"][toId(by)];
+			return this.reply(draftmonsprint(list));
+		} catch (e) {
+
+    		console.error(e);
+
+	}
 		
+	finally{
+		await client.close();
+	}
+		/*
+		await client.connect();
+		await listDatabases(client);
 		let rawdata = fs.readFileSync('draftedmons.json');
 		let student = JSON.parse(rawdata);
 		if(arg==''){
@@ -327,7 +348,7 @@ exports.commands = {
 				return this.reply(draftmonsprint2(student[toId(arg)]));
 			
 			}
-		}
+		}*/
 	},
 	viewdraft2: function (arg, by, room, cmd){
 		
