@@ -617,7 +617,7 @@ exports.commands = {
 			}
 		}
 		
-		
+		/*
 		if(toId(by)==toId(room)){
 				this.reply(draftmonsprint(draftmons["tierlist"][global.currenttier]["pokemon"]));
 		
@@ -625,7 +625,8 @@ exports.commands = {
 				this.reply(draftmonsprint2(draftmons["tierlist"][global.currenttier]["pokemon"]]));
 		
 			}
-			//pick a new six mons to draft
+
+*///pick a new six mons to draft
 			
 		return this.reply( name +' drafted '+arg+', the next drafter is '+list[global.nextdrafter[toId(room)]]);
 	//var list=global.users[toId(room)];
