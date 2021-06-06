@@ -299,7 +299,7 @@ exports.commands = {
 	
 	viewdraft: async function (arg, by, room, cmd){
 		
-		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 	console.log(uri);
 	console.log("test");
 	
@@ -309,12 +309,9 @@ exports.commands = {
 		let quotes =await findOneListingByName(client,"pokemon");
 		var list=quotes["pokemon"][toId(by)];
 			return this.reply(draftmonsprint(list));
-		} catch (e) {
-
+	} catch (e) {
     		console.error(e);
-
-	}
-		
+	}	
 	finally{
 		await client.close();
 	}
@@ -854,18 +851,18 @@ function removeItemOnce(arr, value) {
 };
 async  function saveTeamsToCloud(){
 	
-		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 	console.log(uri);
 	console.log("test");
 	
 	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
 	
 	try {
-		let quotes = await findOneListingByName(client,"draftedmons")
+		let quotes = await findOneListingByName(client,"pokemon")
 			console.log(quotes);
 	
-			await updateListingByName(client,"draftedmons" ,quotes);
-	}
+			await updateListingByName(client,"pokemon" ,quotes);
+	
 	} catch (e) {
 
     		console.error(e);
