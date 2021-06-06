@@ -204,7 +204,7 @@ exports.commands = {
 		global.currenttier[toId(room)]=0;
 		global.todraftmons[toId(room)]=student;
 		
-		
+		packdrafting=true;
 		
 		global.draftstarted[toId(room)]=true;
 		global.picknr[toId(room)]=0;
@@ -583,22 +583,24 @@ exports.commands = {
 				return this.reply(arg +' is no longer available.'+ name+' pick a different mon or check your spelling. ' );
 		}
 		let data = JSON.stringify(global.draftedmons);
+		
 		fs.writeFileSync('draftedmons.json', data);
-		//if(global.draftdirectionup[toId(room)]){
-		//	global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]+1;
-		//	if(global.nextdrafter[toId(room)]>=list.length){
-		//		global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]-1;
-		//		global.draftdirectionup[toId(room)]=false;
-		//		console.log("order changed  "+global.nextdrafter[toId(room)]);
+		 if(packdrafting){
+			if(global.draftdirectionup[toId(room)]){
+			global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]+1;
+			if(global.nextdrafter[toId(room)]>=list.length){
+				global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]-1;
+				global.draftdirectionup[toId(room)]=false;
+				console.log("order changed  "+global.nextdrafter[toId(room)]);
 				global.picknr[toId(room)]=global.picknr[toId(room)]+1;
 				if(global.picknr[toId(room)]>=draftmons["tierlist"][global.currenttier[toId(room)]]["picks"]){
 					this.reply( name +' drafted '+arg);
 					return startNewTier(room,by,this)
 				}
-		//	}
-		//	
-		//}
-		/*
+			}
+			
+		}
+		
 		else{
 			global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]-1;
 			if(global.nextdrafter[toId(room)]<0){
@@ -614,20 +616,22 @@ exports.commands = {
 				}
 			}
 		}
-		*/
+		
 		
 		if(toId(by)==toId(room)){
-				//this.reply(draftmonsprint(draftmons["tierlist"][global.currenttier]["pokemon"]));
+				this.reply(draftmonsprint(draftmons["tierlist"][global.currenttier]["pokemon"]));
 		
 			}else{
-				//this.reply(draftmonsprint2(draftmons["tierlist"][global.currenttier]["pokemon"]]));
+				this.reply(draftmonsprint2(draftmons["tierlist"][global.currenttier]["pokemon"]]));
 		
 			}
 			//pick a new six mons to draft
 			
-		//return this.reply( name +' drafted '+arg+', the next drafter is '+list[global.nextdrafter[toId(room)]]);
+		return this.reply( name +' drafted '+arg+', the next drafter is '+list[global.nextdrafter[toId(room)]]);
 	//var list=global.users[toId(room)];
-			var newlist=pickmultimons(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"],6,list);
+		 }
+		else{
+		var newlist=pickmultimons(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"],6,list);
 			global.possiblepicks=newlist;
 		if(toId(by)==toId(room)){
 				this.reply(draftmonsprint(newlist));
@@ -637,6 +641,7 @@ exports.commands = {
 		
 			}
 		return this.reply(' Choose next mon '+list[0]);
+		}
 	},
 
 	showsprite: function (arg, by, room, cmd) {
