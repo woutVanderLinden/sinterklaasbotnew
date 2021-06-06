@@ -880,7 +880,7 @@ function startNewTier(room,by,elem){
 		}
 	else{
 		global.possiblepicks=draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"];
-		global.todraftmons=draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"];
+		//global.todraftmons=draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"];
 		if(toId(by)==toId(room)){
 				elem.reply(draftmonsprint(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]));
 		
