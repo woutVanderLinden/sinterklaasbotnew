@@ -585,7 +585,7 @@ exports.commands = {
 		let data = JSON.stringify(global.draftedmons);
 		
 		fs.writeFileSync('draftedmons.json', data);
-		 if(packdrafting){
+		 if(!packdrafting){
 			if(global.draftdirectionup[toId(room)]){
 			global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]+1;
 			if(global.nextdrafter[toId(room)]>=list.length){
