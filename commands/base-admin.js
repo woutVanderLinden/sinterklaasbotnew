@@ -355,7 +355,7 @@ exports.commands = {
 		await client.connect();
 		let quotes =await findOneListingByName(client,"pokemon");
 		var list=quotes["pokemon"][toId(by)];
-			return this.reply(draftmonsprint(list));
+			return this.reply(draftmonsprint2(list));
 	} catch (e) {
     		console.error(e);
 	}	
