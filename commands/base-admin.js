@@ -954,7 +954,7 @@ function startNewTier(room,by,elem){
 		list=shuffle(list);
 		
 	var result='';
-		for (var i = 0; i < draftmons["length"]; i++) {
+		for (var i = 0; i < list.length; i++) {
 			console.log(list[i]);
     //Do something
 			
