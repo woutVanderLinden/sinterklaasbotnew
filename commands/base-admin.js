@@ -696,9 +696,12 @@ exports.commands = {
 					global.users[toId(room)]=[];
 					return elem.reply('The draft over is good luck and have fun ');
 				}
-				if(global.picknr[toId(room)]>=draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["picks"]){
-					this.reply( name +' drafted '+arg);
-					return startNewTier(room,by,this)
+				if(!pointdrafting){
+					
+					if(global.picknr[toId(room)]>=draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["picks"]){
+						this.reply( name +' drafted '+arg);
+						return startNewTier(room,by,this)
+					}
 				}
 			}
 			
