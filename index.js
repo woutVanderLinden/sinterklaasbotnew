@@ -583,14 +583,12 @@ if (!data.bracketData || data.bracketData.type !== 'tree') return;
 	}
 }
 Bot.on('line', function (room, message, isIntro, spl) {
-	console.log(message);
+	
 	var messes1=message.split("|");
-	console.log(messes1);
-	if(message.startsWith("|tournament|")){
-	   console.log("tourcommand");
-	   }
+
+	
 	if(message.startsWith("|tournament|update|")){
-	   	console.log(message);
+	   
 		var messes=message.split("|");
 		announcefinals(JSON. parse(messes[3]),room);
 	   }
