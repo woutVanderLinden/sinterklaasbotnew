@@ -440,6 +440,8 @@ exports.commands = {
 	},
 	draftable:'drafttable',
 	drafttable: function (arg, by, room, cmd){
+		if(arg==""){
+			
 		var draftmons=global.todraftmons[toId(room)];
 		if(toId(by)==toId(room)){
 				return this.reply(draftmonsprint(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"]));
@@ -448,6 +450,20 @@ exports.commands = {
 				return this.reply(draftmonsprint2(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"]));
 		
 			}
+		}
+		else{
+			//const str = 'abc efg';
+			const arg2 = arg.charAt(0).toUpperCase() + arg.slice(1);
+			console.log(arg2);
+			if(toId(by)==toId(room)){
+				return this.reply(draftmonsprint(draftmons["tierlist"][arg2]["pokemon"]));
+		
+			}else{
+				return this.reply(draftmonsprint2(draftmons["tierlist"][arg2]["pokemon"]));
+		
+			}
+		
+		}
 	},
 	startdraft: function (arg, by, room, cmd){
 		
