@@ -325,6 +325,7 @@ exports.commands = {
 			newuser["draftedmons"]=[];
 			global.users[toId(room)][toId(by)]=newuser;
 			//global.users.push(toId(by));
+			console.log(global.users[toId(room)]);
 			return this.reply(toId(by)+ " joined the draft")
 		}
 	},
