@@ -679,7 +679,11 @@ exports.commands = {
 				}
 				i++;
 			}
+			if(i!=100){
+				return this.reply(arg +' is no longer available.'+ name+' pick a different mon or check your spelling. ' );
+			}
 			
+					
 		}
 		let data = JSON.stringify(global.draftedmons);
 		saveTeamsToCloud();
