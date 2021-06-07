@@ -492,10 +492,10 @@ exports.commands = {
 		global.draftdirectionup[toId(room)]=true;
 		global.possiblepicks=draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"];
 		if(toId(by)==toId(room)){
-				this.reply(draftmonsprint(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]));
+				this.reply(draftmonsprint(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"]));
 		
 			}else{
-				this.reply(draftmonsprint2(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]));
+				this.reply(draftmonsprint2(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"]));
 		
 			}
 		return this.reply(' the next drafter is '+list[0]);
