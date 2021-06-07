@@ -461,7 +461,7 @@ exports.commands = {
 		global.currenttier[toId(room)]=1;
 	
 		global.todraftmons[toId(room)]=student;
-		global.pointdrafting=true:
+		global.pointdrafting=true;
 		/*then load the participant list*/
 		var list=global.turnorder[toId(room)];
 		console.log(list);
