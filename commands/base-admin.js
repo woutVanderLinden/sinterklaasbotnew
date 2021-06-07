@@ -1018,7 +1018,7 @@ function startNewTier(room,by,elem){
 	var draftmons=global.todraftmons[toId(room)];
 	global.currenttier[toId(room)]=global.currenttier[toId(room)]+1;
 	console.log("draftlenght"+draftmons["length"]+ " current tier " +global.currenttier[toId(room)]);
-	if(global.currenttier[toId(room)]>=draftmons["length"]){
+	if(global.currenttier[toId(room)]>draftmons["length"]){
 		global.pointdrafting=true;
 		global.pointpicks=0;
 		if(draftmons["freepicks"]<=global.pointpicks){
