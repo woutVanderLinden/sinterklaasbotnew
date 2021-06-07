@@ -51,6 +51,7 @@ try {
 	global.draftdirectionup={};
 	global.users={};
 	global.picknr={};
+	global.turnorder=[];
 	global.possiblepicks={};
 	global.packdrafting=false;
 	global.draftstarted={};
