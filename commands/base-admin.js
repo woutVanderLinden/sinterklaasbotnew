@@ -983,13 +983,13 @@ function startNewTier(room,by,elem){
 		return elem.reply(' Choose next mon '+list[0]);
 		}
 	else{
-		global.possiblepicks=draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"];
-		//global.todraftmons=draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"];
+		global.possiblepicks=draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"];
+		//global.todraftmons=draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"];
 		if(toId(by)==toId(room)){
-				elem.reply(draftmonsprint(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]));
+				elem.reply(draftmonsprint(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"]));
 		
 			}else{
-				elem.reply(draftmonsprint2(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]));
+				elem.reply(draftmonsprint2(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"]));
 		
 			}
 		return elem.reply(' the next drafter is '+list[0]);
