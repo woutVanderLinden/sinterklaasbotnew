@@ -694,7 +694,7 @@ exports.commands = {
 					global.picknr[toId(room)]=global.picknr[toId(room)]+1;
 					if(pointdrafting&&global.picknr[toId(room)]>=draftmons["freepicks"]){
 						global.users[toId(room)]=[];
-						return elem.reply('The draft over is good luck and have fun ');
+						return this.reply('The draft over is good luck and have fun ');
 					}
 					if(!pointdrafting){
 
@@ -717,7 +717,7 @@ exports.commands = {
 					global.picknr[toId(room)]=global.picknr[toId(room)]+1;
 					if(pointdrafting&&global.picknr[toId(room)]>=draftmons["freepicks"]){
 						global.users[toId(room)]=[];
-						return elem.reply('The draft over is good luck and have fun ');
+						return this.reply('The draft over is good luck and have fun ');
 					}
 					console.log("picknr is"+global.picknr[toId(room)]);
 					if(!pointdrafting){
