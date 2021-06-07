@@ -461,7 +461,7 @@ exports.commands = {
 		global.currenttier[toId(room)]=1;
 	
 		global.todraftmons[toId(room)]=student;
-		global.pointdrafting=true;
+		
 		/*then load the participant list*/
 		var list=global.turnorder[toId(room)];
 		console.log(list);
@@ -964,8 +964,13 @@ function startNewTier(room,by,elem){
 	global.currenttier[toId(room)]=global.currenttier[toId(room)]+1;
 	console.log("draftlenght"+draftmons["length"]+ " current tier " +global.currenttier[toId(room)]);
 	if(global.currenttier[toId(room)]>=draftmons["length"]){
-		global.users[toId(room)]=[];
-		return elem.reply('The draft over is good luck and have fun ');
+		global.pointdrafting=true;
+		global.pointpicks=0;
+		if(draftmons["freepicks"]<=global.pointpicks){
+			
+			global.users[toId(room)]=[];
+			return elem.reply('The draft over is good luck and have fun ');
+		}
 	}
 	//elem.reply('new tier started');
 	global.picknr[toId(room)]=0;
@@ -1003,7 +1008,8 @@ function startNewTier(room,by,elem){
 		return elem.reply(' Choose next mon '+list[0]);
 		}
 	else{
-		global.possiblepicks=draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"];
+		if(!pointdrafting){
+			global.possiblepicks=draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"];
 		//global.todraftmons=draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"];
 		if(toId(by)==toId(room)){
 				elem.reply(draftmonsprint(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"]));
@@ -1012,7 +1018,21 @@ function startNewTier(room,by,elem){
 				elem.reply(draftmonsprint2(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"]));
 		
 			}
-		return elem.reply(' the next drafter is '+list[0]);
+			return elem.reply(' the next drafter is '+list[0]);
+		}
+		else{
+			global.possiblepicks=draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"];
+		//global.todraftmons=draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"];
+		if(toId(by)==toId(room)){
+				//elem.reply(draftmonsprint(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"]));
+		
+			}else{
+				//elem.reply(draftmonsprint2(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"]));
+		
+			}
+			return elem.reply(' the next drafter is '+list[0]+ " ("+global.users[list[0]]["erekredieten"]+"Erekredieten left)";
+		}
+		
 	}
 };
 function jsUcfirst(string) 
