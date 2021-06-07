@@ -655,7 +655,7 @@ exports.commands = {
 		var draftmons=global.todraftmons[toId(room)];
 		if(global.possiblepicks.includes(arg)||(global.possiblepicks.includes('Silvally')&&args[0]=='Silvally')){
 			global.users[name]["draftedmons"].push(arg);
-			draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]=removeItemOnce(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"],arg);
+			draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"],arg);
 		
 		}
 		else{
@@ -672,7 +672,7 @@ exports.commands = {
 				global.draftdirectionup[toId(room)]=false;
 				console.log("order changed  "+global.nextdrafter[toId(room)]);
 				global.picknr[toId(room)]=global.picknr[toId(room)]+1;
-				if(global.picknr[toId(room)]>=draftmons["tierlist"][global.currenttier[toId(room)]]["picks"]){
+				if(global.picknr[toId(room)]>=draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["picks"]){
 					this.reply( name +' drafted '+arg);
 					return startNewTier(room,by,this)
 				}
