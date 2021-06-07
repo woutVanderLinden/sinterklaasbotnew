@@ -692,7 +692,7 @@ exports.commands = {
 					global.draftdirectionup[toId(room)]=false;
 					console.log("order changed  "+global.nextdrafter[toId(room)]);
 					global.picknr[toId(room)]=global.picknr[toId(room)]+1;
-					if(pointdrafting&&global.picknr[toId(room)]>draftmons["freepicks"]){
+					if(pointdrafting&&global.picknr[toId(room)]>=draftmons["freepicks"]){
 						global.users[toId(room)]=[];
 						return elem.reply('The draft over is good luck and have fun ');
 					}
@@ -715,15 +715,18 @@ exports.commands = {
 					global.draftdirectionup[toId(room)]=true;
 					console.log("order changed");
 					global.picknr[toId(room)]=global.picknr[toId(room)]+1;
-					if(pointdrafting&&global.picknr[toId(room)]>draftmons["freepicks"]){
+					if(pointdrafting&&global.picknr[toId(room)]>=draftmons["freepicks"]){
 						global.users[toId(room)]=[];
 						return elem.reply('The draft over is good luck and have fun ');
 					}
 					console.log("picknr is"+global.picknr[toId(room)]);
-					console.log("picknr is"+draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["picks"]);
-					if(global.picknr[toId(room)]>=draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["picks"]){
-						this.reply( name +' drafted '+arg);
-						return startNewTier(room,by,this)
+					if(!pointdrafting){
+
+						console.log("picknr is"+draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["picks"]);
+						if(global.picknr[toId(room)]>=draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["picks"]){
+							this.reply( name +' drafted '+arg);
+							return startNewTier(room,by,this)
+						}
 					}
 				}
 			}
