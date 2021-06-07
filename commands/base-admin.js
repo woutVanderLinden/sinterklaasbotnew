@@ -345,7 +345,37 @@ exports.commands = {
 		//console.log
 		return this.reply(result)
 	},
+	viewcredits: async function (arg, by, room, cmd){
+	if (!by.startsWith("+")&&!by.startsWith("#")&&!by.startsWith("%")&&!by.startsWith("@")){
+					return false;
+				}	
+	const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	console.log(uri);
+	console.log("test");
 	
+	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+	
+	try {
+		await client.connect();
+		let quotes =await findOneListingByName(client,"pokemon");
+		var list;
+		if(arg==''){
+				var creds=quotes["pokemon"][toId(by)]["erekredieten"];
+			 this.reply(toId(by) +" has " creds+" erekredieten left.");
+		}
+		else{
+				var creds=quotes["pokemon"][toId(arg)]["erekredieten"];
+			 this.reply(arg +" has " creds+" erekredieten left.");
+		}
+	
+			
+	} catch (e) {
+    		console.error(e);
+	}	
+	finally{
+		await client.close();
+	}
+	},
 	viewdraft: async function (arg, by, room, cmd){
 	if (!by.startsWith("+")&&!by.startsWith("#")&&!by.startsWith("%")&&!by.startsWith("@")){
 					return false;
