@@ -694,7 +694,7 @@ exports.commands = {
 					var currentscore=global.users[name]["erekredieten"];
 					var picksleft=draftmons["freepicks"]-global.picknr[toId(room)]-1;
 					console.log("freepicks "+draftmons["freepicks"]+" picknr: "+global.picknr[toId(room)]+" pickleft"+picksleft);
-					if(picksleft*40>=currentscore-pointscost){
+					if(picksleft*40>currentscore-pointscost){
 						return this.reply("please make sure you have at least "+picksleft*40+ "Erekredieten left" );
 					}
 					global.users[name]["erekredieten"]=global.users[name]["erekredieten"]-draftmons["tierlist"]["Tier"+i]["points"];
