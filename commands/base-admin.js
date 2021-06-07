@@ -668,13 +668,13 @@ exports.commands = {
 			var i=1;
 			while(i<=draftmons["length"]){
 				var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
-				if(global.possiblepic.includes(arg)||(global.possiblepic.includes('Silvally')&&args[0]=='Silvally')){
+				if(possiblepic.includes(arg)||(possiblepic.includes('Silvally')&&args[0]=='Silvally')){
 			
 					draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
 				
 					global.users[name]["erekredieten"]=global.users[name]["erekredieten"]-draftmons["tierlist"]["Tier"+i]["points"];
 					i=100;
-						this.reply( name +' payed '+draftmons["tierlist"]["Tier"+i]["points"]+ " erekredieten");
+						this.reply( name +' payed '+draftmons["tierlist"]["Tier"+i]["points"]+ " erekredieten. He has "+global.users[name]["erekredieten"]+ "points left");
 				}
 				i++;
 			}
