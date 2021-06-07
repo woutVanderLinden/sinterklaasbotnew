@@ -9,7 +9,7 @@ let todraftmons={};
 let users={};
 var http = require('http'); //importing http
 var packdrafting=false;
-
+var pointdrafting=false;
 
 startKeepAlive();
 function draftmons(arg) {
@@ -58,6 +58,7 @@ try {
 	global.nextdrafter={};
 	global.draftedmons={};
 	global.currenttier={};
+	global.pointdrafting=false;
 	global.colors = require('colors');
 	global.util = require('util');
 	global.fs = require('fs');
