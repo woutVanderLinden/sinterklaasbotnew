@@ -324,7 +324,7 @@ exports.commands = {
 			newuser["erekredieten"]=500;
 			newuser["draftedmons"]=[];
 			global.users[toId(room)][toId(by)]=newuser;
-			//global.users.push(toId(by));
+			global.turnorder.push(toId(by));
 			console.log(global.users[toId(room)]);
 			return this.reply(toId(by)+ " joined the draft")
 		}
@@ -333,7 +333,7 @@ exports.commands = {
 	seedrafters: function(arg, by, room, cmd){
 		console.log(global.users);
 		console.log(global.users[toId(room)]);
-		var list=global.users[toId(room)];
+		var list=global.users[toId(room)].keys;
 		var result='';
 		for (var i = 0; i < list.length; i++) {
 			console.log(list[i]);
@@ -463,7 +463,7 @@ exports.commands = {
 		global.todraftmons[toId(room)]=student;
 		
 		/*then load the participant list*/
-		var list=global.users[toId(room)];
+		var list=global.turnorder;
 		console.log(list);
 		list=shuffle(list);
 		console.log(list);
@@ -639,7 +639,7 @@ exports.commands = {
 			}
 			arg=arg.substring(1,arg.length);
 			
-			var list=global.users[toId(room)];
+			var list=global.turnorder;
 		if(list[global.nextdrafter[toId(room)]]!=toId(by)){
 				return this.reply('it is not your turn');
 	
@@ -947,7 +947,7 @@ function startNewTier(room,by,elem){
 	}
 	//elem.reply('new tier started');
 	global.picknr[toId(room)]=0;
-	var list=global.users[toId(room)];
+	var list=global.turnorder;
 		console.log(list);
 		list=shuffle(list);
 		
