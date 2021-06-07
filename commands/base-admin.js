@@ -646,7 +646,7 @@ exports.commands = {
 		}
 		
 		var name=toId(by);
-		
+		console.log(global.users);
 		if(global.users[name]["draftedmons"]==undefined){
 			global.users[name]["draftedmons"]=[];
 		}
