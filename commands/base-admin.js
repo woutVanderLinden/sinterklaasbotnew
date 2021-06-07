@@ -490,12 +490,14 @@ exports.commands = {
 		}
 		var draftmons=global.todraftmons[toId(room)];
 		global.draftdirectionup[toId(room)]=true;
-		global.possiblepicks=draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"];
+		var tiername="Tier"+global.currenttier[toId(room)];
+		console.log(tiername);
+		global.possiblepicks=draftmons["tierlist"][tiername]["pokemon"];
 		if(toId(by)==toId(room)){
-				this.reply(draftmonsprint(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"]));
+				this.reply(draftmonsprint(draftmons["tierlist"][tiername]["pokemon"]));
 		
 			}else{
-				this.reply(draftmonsprint2(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"]));
+				this.reply(draftmonsprint2(draftmons["tierlist"][tiername]["pokemon"]));
 		
 			}
 		return this.reply(' the next drafter is '+list[0]);
