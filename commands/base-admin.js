@@ -738,12 +738,13 @@ exports.commands = {
 			}
 
 *///pick a new six mons to draft
+			var username=list[global.nextdrafter[toId(room)]];
 			if(pointdrafting){
-				return this.reply( name +" drafted "+arg+", the next drafter is "+list[global.nextdrafter[toId(room)]]+ " he has "+global.users[list[global.nextdrafter[toId(room)]]["erekredieten"]+" erekredieten left");
+				return this.reply( name +" drafted "+arg+", the next drafter is "+username+ " he has "+global.users[username]["erekredieten"]+" erekredieten left");
 			}
 			else{
 
-				return this.reply( name +" drafted "+arg+", the next drafter is "+list[global.nextdrafter[toId(room)]]);
+				return this.reply( name +" drafted "+arg+", the next drafter is "+username]);
 			}
 	//var list=global.users[toId(room)];
 		 }
