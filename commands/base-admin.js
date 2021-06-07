@@ -320,8 +320,10 @@ exports.commands = {
 			return this.reply(toId(by)+ " already joined the draft")
 		}
 		else{
-			
-			global.users[toId(room)].push(toId(by));
+			var newuser={};
+			newuser["erekredieten"]=500;
+			newuser["draftedmons"]=[];
+			global.users[toId(room)][toId(by)]=newuser;
 			//global.users.push(toId(by));
 			return this.reply(toId(by)+ " joined the draft")
 		}
