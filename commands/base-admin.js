@@ -461,7 +461,7 @@ exports.commands = {
 		global.currenttier[toId(room)]=1;
 	
 		global.todraftmons[toId(room)]=student;
-		
+		global.pointdrafting=true:
 		/*then load the participant list*/
 		var list=global.turnorder[toId(room)];
 		console.log(list);
@@ -652,6 +652,7 @@ exports.commands = {
 		if(global.users[name]["draftedmons"]==undefined){
 			global.users[name]["draftedmons"]=[];
 		}
+		if(!pointdrafting){
 		var draftmons=global.todraftmons[toId(room)];
 		if(global.possiblepicks.includes(arg)||(global.possiblepicks.includes('Silvally')&&args[0]=='Silvally')){
 			global.users[name]["draftedmons"].push(arg);
@@ -660,6 +661,23 @@ exports.commands = {
 		}
 		else{
 				return this.reply(arg +' is no longer available.'+ name+' pick a different mon or check your spelling. ' );
+		}
+		} 
+		else{
+			var i=1;
+			while(i=<draftmons["length"]){
+				var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
+				if(global.possiblepic.includes(arg)||(global.possiblepic.includes('Silvally')&&args[0]=='Silvally')){
+			
+					draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
+				
+					global.users[name]["erekredieten"]=global.users[name]["erekredieten"]-draftmons["tierlist"]["Tier"+i]["points"];
+					i=100;
+						this.reply( name +' payed '+draftmons["tierlist"]["Tier"+i]["points"]+ " erekredieten");
+				}
+				i++;
+			}
+			
 		}
 		let data = JSON.stringify(global.draftedmons);
 		saveTeamsToCloud();
