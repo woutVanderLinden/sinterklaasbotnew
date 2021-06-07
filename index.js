@@ -6,7 +6,7 @@
 
 
 let todraftmons={};
-let users=[];
+let users={};
 var http = require('http'); //importing http
 var packdrafting=false;
 
