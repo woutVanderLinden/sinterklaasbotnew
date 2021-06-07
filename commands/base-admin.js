@@ -313,18 +313,18 @@ exports.commands = {
 		console.log('drafter added');
 		console.log(global.users);
 		console.log(global.users[toId(room)]);
-		if(global.users[toId(room)]==undefined){
-			global.users[toId(room)]=[];
+		if(global.turnorder[toId(room)]==undefined){
+			global.turnorder[toId(room)]=[];
 		}
-		if(global.users[toId(room)].includes(toId(by))){
+		if(global.turnorder[toId(room)].includes(toId(by))){
 			return this.reply(toId(by)+ " already joined the draft")
 		}
 		else{
 			var newuser={};
 			newuser["erekredieten"]=500;
 			newuser["draftedmons"]=[];
-			global.users[toId(room)][toId(by)]=newuser;
-			global.turnorder.push(toId(by));
+			global.users[toId(by)]=newuser;
+			global.turnorder[toId(room)].push(toId(by));
 			console.log(global.users[toId(room)]);
 			return this.reply(toId(by)+ " joined the draft")
 		}
