@@ -442,10 +442,10 @@ exports.commands = {
 	drafttable: function (arg, by, room, cmd){
 		var draftmons=global.todraftmons[toId(room)];
 		if(toId(by)==toId(room)){
-				return this.reply(draftmonsprint(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]));
+				return this.reply(draftmonsprint(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"]));
 		
 			}else{
-				return this.reply(draftmonsprint2(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]));
+				return this.reply(draftmonsprint2(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"]));
 		
 			}
 	},
@@ -490,7 +490,7 @@ exports.commands = {
 		}
 		var draftmons=global.todraftmons[toId(room)];
 		global.draftdirectionup[toId(room)]=true;
-		global.possiblepicks=draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"];
+		global.possiblepicks=draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"];
 		if(toId(by)==toId(room)){
 				this.reply(draftmonsprint(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]));
 		
@@ -940,8 +940,8 @@ function startNewTier(room,by,elem){
 	global.draftdirectionup[toId(room)]=true;
 	var draftmons=global.todraftmons[toId(room)];
 	global.currenttier[toId(room)]=global.currenttier[toId(room)]+1;
-	console.log(draftmons["tierlist"].length);
-	if(global.currenttier[toId(room)]>=draftmons["tierlist"].length){
+	console.log(draftmons["lenght"]);
+	if(global.currenttier[toId(room)]>=draftmons["lenght"]){
 		global.users[toId(room)]=[];
 		return elem.reply('The draft over is good luck and have fun ');
 	}
@@ -969,7 +969,7 @@ function startNewTier(room,by,elem){
 		if(packdrafting){
 		console.log(global.todraftmons);
 		
-			var newlist=pickmultimons(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"],6,list);
+			var newlist=pickmultimons(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"],6,list);
 			global.possiblepicks=newlist;
 		if(toId(by)==toId(room)){
 				elem.reply(draftmonsprint(newlist));
