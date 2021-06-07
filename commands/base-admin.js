@@ -673,8 +673,9 @@ exports.commands = {
 					draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
 				
 					global.users[name]["erekredieten"]=global.users[name]["erekredieten"]-draftmons["tierlist"]["Tier"+i]["points"];
-					i=100;
+				
 					this.reply( name +" payed "+draftmons["tierlist"]["Tier"+i]["points"]+ " erekredieten. He has "+global.users[name]["erekredieten"]+ "points left");
+					i=100;
 				}
 				i++;
 			}
