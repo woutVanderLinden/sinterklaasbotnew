@@ -361,11 +361,11 @@ exports.commands = {
 		var list;
 		if(arg==''){
 				var creds=quotes["pokemon"][toId(by)]["erekredieten"];
-			 this.reply(toId(by) +" has " creds+" erekredieten left.");
+			 this.reply(toId(by) +" has " +creds+" erekredieten left.");
 		}
 		else{
 				var creds=quotes["pokemon"][toId(arg)]["erekredieten"];
-			 this.reply(arg +" has " creds+" erekredieten left.");
+			 this.reply(arg +" has "+ creds+" erekredieten left.");
 		}
 	
 			
