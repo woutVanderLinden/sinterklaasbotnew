@@ -665,7 +665,7 @@ exports.commands = {
 		} 
 		else{
 			var i=1;
-			while(i=<draftmons["length"]){
+			while(i<=draftmons["length"]){
 				var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
 				if(global.possiblepic.includes(arg)||(global.possiblepic.includes('Silvally')&&args[0]=='Silvally')){
 			
