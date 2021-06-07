@@ -458,7 +458,7 @@ exports.commands = {
 		let rawdata = fs.readFileSync('DraftTest.json');
 		let student = JSON.parse(rawdata);
 		console.log(student);
-		global.currenttier[toId(room)]=0;
+		global.currenttier[toId(room)]=1;
 	
 		global.todraftmons[toId(room)]=student;
 		
