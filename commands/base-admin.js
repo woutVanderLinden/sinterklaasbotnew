@@ -463,7 +463,7 @@ exports.commands = {
 		global.todraftmons[toId(room)]=student;
 		
 		/*then load the participant list*/
-		var list=global.turnorder;
+		var list=global.turnorder[toId(room)];
 		console.log(list);
 		list=shuffle(list);
 		console.log(list);
@@ -639,7 +639,7 @@ exports.commands = {
 			}
 			arg=arg.substring(1,arg.length);
 			
-			var list=global.turnorder;
+			var list=global.turnorder[toId(room)]
 		if(list[global.nextdrafter[toId(room)]]!=toId(by)){
 				return this.reply('it is not your turn');
 	
@@ -947,7 +947,7 @@ function startNewTier(room,by,elem){
 	}
 	//elem.reply('new tier started');
 	global.picknr[toId(room)]=0;
-	var list=global.turnorder;
+	var list=global.turnorder[toId(room)]
 		console.log(list);
 		list=shuffle(list);
 		
