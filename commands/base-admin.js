@@ -361,10 +361,10 @@ exports.commands = {
 		let quotes =await findOneListingByName(client,"pokemon");
 		var list;
 		if(arg==''){
-				var list=quotes["pokemon"][toId(by)];
+				var list=quotes["pokemon"][toId(by)]["drafted"];
 		}
 		else{
-				var list=quotes["pokemon"][toId(arg)];
+				var list=quotes["pokemon"][toId(arg)]["drafted"];
 		}
 	
 			return this.reply(draftmonsprint2(list));
@@ -430,10 +430,10 @@ exports.commands = {
 		}
 		else{
 			if(toId(by)==toId(room)){
-				return this.reply(draftmonsprint3(student[arg]));
+				return this.reply(draftmonsprint3(student[arg]["drafted"]));
 			
 			}else{
-				return this.reply(draftmonsprint2(student[arg]));
+				return this.reply(draftmonsprint2(student[arg]["drafted"]));
 			
 			}
 		}
@@ -647,12 +647,12 @@ exports.commands = {
 		
 		var name=toId(by);
 		
-		if(global.draftedmons[name]==undefined){
-			global.draftedmons[name]=[];
+		if(global.users[name]["drafted"]==undefined){
+			global.users[name]["drafted"]=[];
 		}
 		var draftmons=global.todraftmons[toId(room)];
 		if(global.possiblepicks.includes(arg)||(global.possiblepicks.includes('Silvally')&&args[0]=='Silvally')){
-			draftedmons[name].push(arg);
+			global.users[name]["drafted"].push(arg);
 			draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]=removeItemOnce(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"],arg);
 		
 		}
@@ -919,7 +919,7 @@ async  function saveTeamsToCloud(){
 	try {
 		let quotes = await findOneListingByName(client,"pokemon")
 		console.log(quotes);
-		quotes["pokemon"]=draftedmons;
+		quotes["pokemon"]=global.users;
 		await updateListingByName(client,"pokemon" ,quotes);
 	
 	} catch (e) {
