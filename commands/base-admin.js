@@ -693,6 +693,7 @@ exports.commands = {
 					var pointscost=draftmons["tierlist"]["Tier"+i]["points"];
 					var currentscore=global.users[name]["erekredieten"];
 					var picksleft=draftmons["freepicks"]-global.picknr[toId(room)];
+					console.log("freepicks "+draftmons["freepicks"]+" picknr: "+global.picknr[toId(room)]+" pickleft"+picksleft);
 					if(picksleft*40>=currentscore-pointscost){
 						return this.reply("please make sure you have at least "+picksleft*40+ "Erekredieten left" );
 					}
