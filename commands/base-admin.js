@@ -647,12 +647,12 @@ exports.commands = {
 		
 		var name=toId(by);
 		
-		if(global.users[name]["drafted"]==undefined){
-			global.users[name]["drafted"]=[];
+		if(global.users[name]["draftedmons"]==undefined){
+			global.users[name]["draftedmons"]=[];
 		}
 		var draftmons=global.todraftmons[toId(room)];
 		if(global.possiblepicks.includes(arg)||(global.possiblepicks.includes('Silvally')&&args[0]=='Silvally')){
-			global.users[name]["drafted"].push(arg);
+			global.users[name]["draftedmons"].push(arg);
 			draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]=removeItemOnce(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"],arg);
 		
 		}
