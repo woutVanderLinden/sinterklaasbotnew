@@ -704,7 +704,7 @@ exports.commands = {
 				}
 				i++;
 			}
-			if(i!=100){
+			if(i!=101){
 				return this.reply(arg +' is no longer available.'+ name+' pick a different mon or check your spelling. ' );
 			}
 			
