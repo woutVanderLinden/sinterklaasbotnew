@@ -452,6 +452,7 @@ exports.commands = {
 			}
 		}
 		else{
+			arg=toId(arg);
 			//const str = 'abc efg';
 			const arg2 = arg.charAt(0).toUpperCase() + arg.slice(1);
 			
@@ -689,7 +690,12 @@ exports.commands = {
 				if(possiblepic.includes(arg)||(possiblepic.includes('Silvally')&&args[0]=='Silvally')){
 			
 					draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
-				
+					var pointscost=draftmons["tierlist"]["Tier"+i]["points"];
+					var currentscore=global.users[name]["erekredieten"];
+					var picksleft=draftmons["freepicks"]-global.picknr[toId(room)];
+					if(picksleft*40>=currentscore-pointscost){
+						return this.reply("please make sure you have at least "+picksleft*40+ "Erekredieten left" );
+					}
 					global.users[name]["erekredieten"]=global.users[name]["erekredieten"]-draftmons["tierlist"]["Tier"+i]["points"];
 				
 					this.reply( name +" payed "+draftmons["tierlist"]["Tier"+i]["points"]+ " erekredieten. He has "+global.users[name]["erekredieten"]+ " erekredieten left");
