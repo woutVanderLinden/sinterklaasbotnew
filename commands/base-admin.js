@@ -744,7 +744,7 @@ exports.commands = {
 			}
 			else{
 
-				return this.reply( name +" drafted "+arg+", the next drafter is "+username]);
+				return this.reply( name +" drafted "+arg+", the next drafter is "+username);
 			}
 	//var list=global.users[toId(room)];
 		 }
