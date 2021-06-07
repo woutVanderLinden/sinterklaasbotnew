@@ -361,10 +361,10 @@ exports.commands = {
 		let quotes =await findOneListingByName(client,"pokemon");
 		var list;
 		if(arg==''){
-				var list=quotes["pokemon"][toId(by)]["drafted"];
+				var list=quotes["pokemon"][toId(by)]["draftedmons"];
 		}
 		else{
-				var list=quotes["pokemon"][toId(arg)]["drafted"];
+				var list=quotes["pokemon"][toId(arg)]["draftedmons"];
 		}
 	
 			return this.reply(draftmonsprint2(list));
@@ -711,7 +711,7 @@ exports.commands = {
 					
 		}
 		let data = JSON.stringify(global.draftedmons);
-		saveTeamsToCloud();
+		
 		fs.writeFileSync('draftedmons.json', data);
 		if(!packdrafting){
 			if(global.draftdirectionup[toId(room)]){
@@ -723,6 +723,7 @@ exports.commands = {
 					global.picknr[toId(room)]=global.picknr[toId(room)]+1;
 					if(pointdrafting&&global.picknr[toId(room)]>=draftmons["freepicks"]){
 						global.users[toId(room)]=[];
+						saveTeamsToCloud();
 						return this.reply('The draft over is good luck and have fun ');
 					}
 					if(!pointdrafting){
@@ -746,6 +747,7 @@ exports.commands = {
 					global.picknr[toId(room)]=global.picknr[toId(room)]+1;
 					if(pointdrafting&&global.picknr[toId(room)]>=draftmons["freepicks"]){
 						global.users[toId(room)]=[];
+						saveTeamsToCloud();
 						return this.reply('The draft over is good luck and have fun ');
 					}
 					console.log("picknr is"+global.picknr[toId(room)]);
@@ -1010,6 +1012,7 @@ function startNewTier(room,by,elem){
 	//reshuffle list of users
 	//if last tier end draft
 	global.draftdirectionup[toId(room)]=true;
+	saveTeamsToCloud();
 	var draftmons=global.todraftmons[toId(room)];
 	global.currenttier[toId(room)]=global.currenttier[toId(room)]+1;
 	console.log("draftlenght"+draftmons["length"]+ " current tier " +global.currenttier[toId(room)]);
