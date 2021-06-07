@@ -942,8 +942,8 @@ function startNewTier(room,by,elem){
 	global.draftdirectionup[toId(room)]=true;
 	var draftmons=global.todraftmons[toId(room)];
 	global.currenttier[toId(room)]=global.currenttier[toId(room)]+1;
-	console.log("draftlenght"+draftmons["lenght"]+ " current tier " +global.currenttier[toId(room)]);
-	if(global.currenttier[toId(room)]>=draftmons["lenght"]){
+	console.log("draftlenght"+draftmons["length"]+ " current tier " +global.currenttier[toId(room)]);
+	if(global.currenttier[toId(room)]>=draftmons["length"]){
 		global.users[toId(room)]=[];
 		return elem.reply('The draft over is good luck and have fun ');
 	}
@@ -954,7 +954,7 @@ function startNewTier(room,by,elem){
 		list=shuffle(list);
 		
 	var result='';
-		for (var i = 0; i < draftmons["lenght"]; i++) {
+		for (var i = 0; i < draftmons["length"]; i++) {
 			console.log(list[i]);
     //Do something
 			
