@@ -692,6 +692,10 @@ exports.commands = {
 				global.draftdirectionup[toId(room)]=false;
 				console.log("order changed  "+global.nextdrafter[toId(room)]);
 				global.picknr[toId(room)]=global.picknr[toId(room)]+1;
+				if(pointdrafting&&global.picknr[toId(room)]>draftmons["freepicks"]){
+					global.users[toId(room)]=[];
+					return elem.reply('The draft over is good luck and have fun ');
+				}
 				if(global.picknr[toId(room)]>=draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["picks"]){
 					this.reply( name +' drafted '+arg);
 					return startNewTier(room,by,this)
