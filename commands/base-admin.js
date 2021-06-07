@@ -684,7 +684,7 @@ exports.commands = {
 		let data = JSON.stringify(global.draftedmons);
 		saveTeamsToCloud();
 		fs.writeFileSync('draftedmons.json', data);
-		 if(!packdrafting){
+		if(!packdrafting){
 			if(global.draftdirectionup[toId(room)]){
 				global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]+1;
 				if(global.nextdrafter[toId(room)]>=list.length){
@@ -738,13 +738,13 @@ exports.commands = {
 			}
 
 *///pick a new six mons to draft
-		if(pointdrafting){
-			return this.reply( name +" drafted "+arg+", the next drafter is "+list[global.nextdrafter[toId(room)]]+ " he has "+global.users[list[global.nextdrafter[toId(room)]]["erekredieten"]+"erekredieten left");
-		}
-		else{
-			
-			return this.reply( name +" drafted "+arg+", the next drafter is "+list[global.nextdrafter[toId(room)]]);
-		}
+			if(pointdrafting){
+				//return this.reply( name +" drafted "+arg+", the next drafter is "+list[global.nextdrafter[toId(room)]]+ " he has "+global.users[list[global.nextdrafter[toId(room)]]["erekredieten"]+" erekredieten left");
+			}
+			else{
+
+				//return this.reply( name +" drafted "+arg+", the next drafter is "+list[global.nextdrafter[toId(room)]]);
+			}
 	//var list=global.users[toId(room)];
 		 }
 		else{
