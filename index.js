@@ -10,7 +10,7 @@ let users={};
 var http = require('http'); //importing http
 var packdrafting=false;
 var pointdrafting=false;
-
+var pointpicks=0;
 startKeepAlive();
 function draftmons(arg) {
 	var result='';
@@ -46,7 +46,7 @@ function shuffle(array) {
 }
 try {
 	require('sugar');
-	
+	global.pointpicks=0;
 	global.todraftmons={};
 	global.draftdirectionup={};
 	global.users={};
