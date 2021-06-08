@@ -735,8 +735,8 @@ exports.commands = {
 				if(possiblepic.includes(arg)||(possiblepic.includes('Silvally')&&args[0]=='Silvally')){
 					if(global.users[name]["tieredpicks"].includes(i)){
 						
-						global.users[name]["tieredpicks"]=removeItemOnce(global.users[name]["tieredpicks"]);
-						this.reply( name +" used a tierpick to draft a tier "+i+ " erekredieten. (tierpicks "+global.users[name]["tieredpicks"]+ " )");
+						global.users[name]["tieredpicks"]=removeItemOnce(global.users[name]["tieredpicks"],i);
+						this.reply( name +" used a tierpick to draft a tier "+i+" "+arg+ " erekredieten. (tierpicks "+global.users[name]["tieredpicks"]+ " )");
 					
 					}
 					else{
