@@ -647,7 +647,7 @@ exports.commands = {
 				var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
 				if(possiblepic.includes(arg)||(possiblepic.includes('Silvally')&&args[0]=='Silvally')){
 					if(global.users[name]["tieredpicks"].includes(i)){
-						
+						draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
 						global.users[name]["tieredpicks"]=removeItemOnce(global.users[name]["tieredpicks"],i);
 						this.reply( name +" used a tierpick to draft a tier "+i+" "+arg+ "( erekredieten. "+global.users[name]["erekredieten"]+" tierpicks "+global.users[name]["tieredpicks"]+ " )");
 					
@@ -930,7 +930,7 @@ exports.commands = {
 				var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
 				if(possiblepic.includes(arg)||(possiblepic.includes('Silvally')&&args[0]=='Silvally')){
 					if(global.users[name]["tieredpicks"].includes(i)){
-						
+						draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
 						global.users[name]["tieredpicks"]=removeItemOnce(global.users[name]["tieredpicks"],i);
 						this.reply( name +" used a tierpick to draft a tier "+i+" "+arg+ " (erekredieten. "+global.users[name]["erekredieten"] +"tierpicks "+global.users[name]["tieredpicks"]+ " )");
 					
