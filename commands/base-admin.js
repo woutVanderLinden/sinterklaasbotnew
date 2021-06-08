@@ -358,7 +358,7 @@ exports.commands = {
 		if (args.length < 2) return this.reply("Usage: " + this.cmdToken + cmd + " [user], [creditstotake]");
 		global.users[name]["erekredieten"]=global.users[name]["erekredieten"]-parseInt( args[1]);
 					
-		this.reply(toId(by) +" took "+args[1]+ " erekredieten from "+args[0]; 
+		this.reply(toId(by) +" took "+args[1]+ " erekredieten from "+args[0]); 
 		
 	},
 	viewcredits: async function (arg, by, room, cmd){
