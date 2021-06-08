@@ -715,6 +715,7 @@ exports.commands = {
 		if(global.users[name]["draftedmons"]==undefined){
 			global.users[name]["draftedmons"]=[];
 		}
+		console.log("pointdrafting "+pointdrafting);
 		if(!pointdrafting){
 			var draftmons=global.todraftmons[toId(room)];
 			if(global.possiblepicks.includes(arg)||(global.possiblepicks.includes('Silvally')&&args[0]=='Silvally')){
