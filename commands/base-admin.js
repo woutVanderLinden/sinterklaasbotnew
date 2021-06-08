@@ -346,8 +346,8 @@ exports.commands = {
 	seedraft: 'seedrafters',
 	seedrafters: function(arg, by, room, cmd){
 		console.log(global.users);
-		console.log(global.users[toId(room)]);
-		var list=global.users[toId(room)].keys;
+		console.log(global.turnorder[toId(room)]);
+		var list=global.turnorder[toId(room)];
 		var result='';
 		for (var i = 0; i < list.length; i++) {
 			console.log(list[i]);
@@ -374,7 +374,7 @@ exports.commands = {
 		var args = arg.split(",");
 		if (args.length < 2) return this.reply("Usage: " + this.cmdToken + cmd + " [user], [tierpicktoremove]");
 			name=toId(args[0]);
-		global.users[name]["tieredpicks"]=removeItemOnce(global.users[name]["tieredpicks"], args[1]);
+		global.users[name]["tieredpicks"]=removeItemOnce(global.users[name]["tieredpicks"], parseInt(args[1]));
 					
 		this.reply(toId(by) +" took "+args[1]+ " tieredpick from "+args[0]); 
 		
@@ -649,7 +649,7 @@ exports.commands = {
 					if(global.users[name]["tieredpicks"].includes(i)){
 						
 						global.users[name]["tieredpicks"]=removeItemOnce(global.users[name]["tieredpicks"],i);
-						this.reply( name +" used a tierpick to draft a tier "+i+" "+arg+ " erekredieten. (tierpicks "+global.users[name]["tieredpicks"]+ " )");
+						this.reply( name +" used a tierpick to draft a tier "+i+" "+arg+ "( erekredieten. "+global.users[name]["erekredieten"]+" tierpicks "+global.users[name]["tieredpicks"]+ " )");
 					
 					}
 					else{
@@ -932,7 +932,7 @@ exports.commands = {
 					if(global.users[name]["tieredpicks"].includes(i)){
 						
 						global.users[name]["tieredpicks"]=removeItemOnce(global.users[name]["tieredpicks"],i);
-						this.reply( name +" used a tierpick to draft a tier "+i+" "+arg+ " erekredieten. (tierpicks "+global.users[name]["tieredpicks"]+ " )");
+						this.reply( name +" used a tierpick to draft a tier "+i+" "+arg+ " (erekredieten. "+global.users[name]["erekredieten"] +"tierpicks "+global.users[name]["tieredpicks"]+ " )");
 					
 					}
 					else{
@@ -1028,7 +1028,7 @@ exports.commands = {
 *///pick a new six mons to draft
 			var username=list[global.nextdrafter[toId(room)]];
 			if(pointdrafting){
-				return this.reply( name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["erekredieten"]+" )");
+				return this.reply( name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["tieredpicks"]+" )");
 			}
 			else{
 
