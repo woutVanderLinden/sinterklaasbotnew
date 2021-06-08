@@ -733,6 +733,7 @@ exports.commands = {
 				var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
 				if(possiblepic.includes(arg)||(possiblepic.includes('Silvally')&&args[0]=='Silvally')){
 					if(global.users[name]["tierpicks"].includes(i)){
+						
 						global.users[name]["tieredpicks"]=removeItemOnce(global.users[name]["tieredpicks"]);
 						this.reply( name +" used a tierpick to draft a tier "+i+ " erekredieten. (tierpicks "+global.users[name]["tieredpicks"]+ " )");
 					
