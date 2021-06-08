@@ -757,10 +757,7 @@ exports.commands = {
 	
 		}
 			var list=global.users[toId(room)];
-		if(list[global.nextdrafter[toId(room)]]!=toId(args[0])){
-				return this.reply('it is not your turn');
-	
-		}
+		
 		var name=toId(args[0]);
 		if(global.draftedmons[name]==undefined){
 			global.draftedmons[name]=[];
