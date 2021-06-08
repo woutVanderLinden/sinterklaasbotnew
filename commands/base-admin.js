@@ -293,8 +293,15 @@ exports.commands = {
 			return this.reply(arg+ " already joined the draft")
 		}
 		else{
+			var newuser={};
+			newuser["erekredieten"]=500;
+			newuser["draftedmons"]=[];
+			newuser["tieredpicks"]=global.todraftmons[toId(room)]["TierPicks"];
+			global.users[toId(by)]=newuser;
+			global.turnorder[toId(room)].push(toId(arg));
+			console.log(global.users[toId(room)]);
 			
-			global.users[toId(room)].push(arg);
+			//global.users[toId(room)].push(arg);
 			//global.users.push(toId(by));
 			return this.reply(arg+ " joined the draft")
 		}
@@ -764,7 +771,9 @@ exports.commands = {
 		}
 		args[1]=jsUcfirst(args[1]);
 		var draftmons=global.todraftmons[toId(room)];
-			global.users[name]["draftedmons"].push(args[1]);
+			
+					global.users[name]["draftedmons"].push(args[1]);
+			//global.users[name]["draftedmons"].push(args[1]);
 		//	draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]=removeItemOnce(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"],args[1]);
 		
 		
