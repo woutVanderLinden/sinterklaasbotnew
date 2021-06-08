@@ -765,7 +765,7 @@ exports.commands = {
 		args[1]=jsUcfirst(args[1]);
 		var draftmons=global.todraftmons[toId(room)];
 			global.users[name]["draftedmons"].push(args[1]);
-			draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]=removeItemOnce(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"],args[1]);
+		//	draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"]=removeItemOnce(draftmons["tierlist"][global.currenttier[toId(room)]]["pokemon"],args[1]);
 		
 		
 		if(!packdrafting){
