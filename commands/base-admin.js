@@ -663,7 +663,7 @@ exports.commands = {
 						}
 						global.users[name]["erekredieten"]=global.users[name]["erekredieten"]-draftmons["tierlist"]["Tier"+i]["points"];
 					
-						this.reply( name +" paid "+draftmons["tierlist"]["Tier"+i]["points"]+ " erekredieten.( Erekredieten "+global.users[name]["erekredieten"]+" tieredpicks:"+global.users[name]["erekredieten"]+ ")");
+						this.reply( name +" paid "+draftmons["tierlist"]["Tier"+i]["points"]+ " erekredieten.( Erekredieten "+global.users[name]["erekredieten"]+" tieredpicks:"+global.users[name]["tieredpicks"]+ ")");
 					
 					}
 					
@@ -745,7 +745,7 @@ exports.commands = {
 *///pick a new six mons to draft
 			var username=list[global.nextdrafter[toId(room)]];
 			if(pointdrafting){
-				return this.reply( name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["erekredieten"]+" )");
+				return this.reply( name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["tieredpicks"]+" )");
 			}
 			else{
 
@@ -852,7 +852,7 @@ exports.commands = {
 *///pick a new six mons to draft
 			var username=list[global.nextdrafter[toId(room)]];
 			if(pointdrafting){
-				return this.reply( name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["erekredieten"]+" )");
+				return this.reply( name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["tieredpicks"]+" )");
 			}
 			else{
 
