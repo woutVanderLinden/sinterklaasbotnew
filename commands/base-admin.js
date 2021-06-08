@@ -394,11 +394,11 @@ exports.commands = {
 		let quotes =await findOneListingByName(client,"pokemon");
 		var list;
 		if(arg==''){
-				var creds=quotes["pokemon"][toId(by)]["erekredieten"];
+				var creds=global.users[toId(arg)]["erekredieten"];
 			 this.reply(toId(by) +" has " +creds+" erekredieten left."+" and tieredpicks:"+global.users[toId(by)]["tieredpicks"]);
 		}
 		else{
-				var creds=quotes["pokemon"][toId(arg)]["erekredieten"];
+				var creds=global.users[toId(arg)]["erekredieten"];
 			 this.reply(arg +" has "+ creds+" erekredieten left"+" and tieredpicks:"+global.users[toId(arg)]["tieredpicks"]);
 		}
 	
@@ -946,7 +946,7 @@ exports.commands = {
 						}
 						global.users[name]["erekredieten"]=global.users[name]["erekredieten"]-draftmons["tierlist"]["Tier"+i]["points"];
 					
-						this.reply( name +" paid "+draftmons["tierlist"]["Tier"+i]["points"]+ " erekredieten.( Erekredieten "+global.users[name]["erekredieten"]+" tieredpicks:"+global.users[username]["tieredpicks"]+ ")");
+						this.reply( name +" paid "+draftmons["tierlist"]["Tier"+i]["points"]+ " erekredieten.( Erekredieten "+global.users[name]["erekredieten"]+" tieredpicks:"+global.users[name]["tieredpicks"]+ ")");
 					
 					}
 					
