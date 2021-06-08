@@ -394,7 +394,7 @@ exports.commands = {
 		let quotes =await findOneListingByName(client,"pokemon");
 		var list;
 		if(arg==''){
-				var creds=global.users[toId(arg)]["erekredieten"];
+				var creds=global.users[toId(by)]["erekredieten"];
 			 this.reply(toId(by) +" has " +creds+" erekredieten left."+" and tieredpicks:"+global.users[toId(by)]["tieredpicks"]);
 		}
 		else{
