@@ -395,11 +395,11 @@ exports.commands = {
 		var list;
 		if(arg==''){
 				var creds=quotes["pokemon"][toId(by)]["erekredieten"];
-			 this.reply(toId(by) +" has " +creds+" erekredieten left."+" and tieredpicks:"+global.users[toId(by)]["erekredieten"]);
+			 this.reply(toId(by) +" has " +creds+" erekredieten left."+" and tieredpicks:"+global.users[toId(by)]["tieredpicks"]);
 		}
 		else{
 				var creds=quotes["pokemon"][toId(arg)]["erekredieten"];
-			 this.reply(arg +" has "+ creds+" erekredieten left"+" and tieredpicks:"+global.users[toId(arg)]["erekredieten"]);
+			 this.reply(arg +" has "+ creds+" erekredieten left"+" and tieredpicks:"+global.users[toId(arg)]["tieredpicks"]);
 		}
 	
 			
