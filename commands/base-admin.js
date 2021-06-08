@@ -356,7 +356,7 @@ exports.commands = {
 	if (!this.isRanked('admin')) return false;
 		var args = arg.split(",");
 		if (args.length < 2) return this.reply("Usage: " + this.cmdToken + cmd + " [user], [creditstotake]");
-		global.users[name]["erekredieten"]=global.users[name]["erekredieten"]-(int) args[1];
+		global.users[name]["erekredieten"]=global.users[name]["erekredieten"]-parseInt( args[1]);
 					
 		this.reply(toId(by) +" took "+args[1]+ " erekredieten from "+args[0]; 
 		
