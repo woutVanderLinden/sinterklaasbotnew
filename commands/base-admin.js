@@ -4,11 +4,11 @@
 
 const {MongoClient} = require('mongodb');
 async function listDatabases(client){
-
+	//hinicework
     databasesList = await client.db().admin().listDatabases();
 
     console.log("Databases:");
-
+	console.log("try");
     databasesList.databases.forEach(db => console.log(` - ${db.name}`));
 
 };
