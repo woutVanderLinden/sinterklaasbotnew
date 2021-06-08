@@ -368,11 +368,11 @@ exports.commands = {
 		var list;
 		if(arg==''){
 				var creds=quotes["pokemon"][toId(by)]["erekredieten"];
-			 this.reply(toId(by) +" has " +creds+" erekredieten left.");
+			 this.reply(toId(by) +" has " +creds+" erekredieten left."+" and tieredpicks:"+global.users[username]["erekredieten"]);
 		}
 		else{
 				var creds=quotes["pokemon"][toId(arg)]["erekredieten"];
-			 this.reply(arg +" has "+ creds+" erekredieten left.");
+			 this.reply(arg +" has "+ creds+" erekredieten left"+" and tieredpicks:"+global.users[username]["erekredieten"]);
 		}
 	
 			
@@ -750,7 +750,7 @@ exports.commands = {
 						}
 						global.users[name]["erekredieten"]=global.users[name]["erekredieten"]-draftmons["tierlist"]["Tier"+i]["points"];
 					
-						this.reply( name +" paid "+draftmons["tierlist"]["Tier"+i]["points"]+ " erekredieten.( Erekredieten "+global.users[name]["erekredieten"]+ ")");
+						this.reply( name +" paid "+draftmons["tierlist"]["Tier"+i]["points"]+ " erekredieten.( Erekredieten "+global.users[name]["erekredieten"]+" tieredpicks:"+global.users[username]["erekredieten"]+ ")");
 					
 					}
 					
@@ -832,7 +832,7 @@ exports.commands = {
 *///pick a new six mons to draft
 			var username=list[global.nextdrafter[toId(room)]];
 			if(pointdrafting){
-				return this.reply( name +" drafted "+arg+", the next drafter is "+username+ " he has "+global.users[username]["erekredieten"]+" erekredieten left");
+				return this.reply( name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["erekredieten"]+" )");
 			}
 			else{
 
