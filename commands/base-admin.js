@@ -310,6 +310,12 @@ exports.commands = {
 		return this.reply("kicked "+arg );
 	},
 	joindraft: function (arg, by, room, cmd){
+			let rawdata = fs.readFileSync('DraftTest.json');
+		let student = JSON.parse(rawdata);
+		console.log(student);
+	
+	
+		global.todraftmons[toId(room)]=student;
 		console.log('drafter added');
 		console.log(global.users);
 		console.log(global.users[toId(room)]);
@@ -323,6 +329,7 @@ exports.commands = {
 			var newuser={};
 			newuser["erekredieten"]=500;
 			newuser["draftedmons"]=[];
+			newuser["tieredpicks"]=global.todraftmons[toId(room)]["TierPicks"];
 			global.users[toId(by)]=newuser;
 			global.turnorder[toId(room)].push(toId(by));
 			console.log(global.users[toId(room)]);
@@ -508,7 +515,7 @@ exports.commands = {
 		let student = JSON.parse(rawdata);
 		console.log(student);
 		global.currenttier[toId(room)]=1;
-	
+		pointdrafting=true;
 		global.todraftmons[toId(room)]=student;
 		
 		/*then load the participant list*/
@@ -689,6 +696,13 @@ exports.commands = {
 					arg=arg+'-'+jsUcfirst(args[i]);
 			}
 			arg=arg.substring(1,arg.length);
+			var args2=arg.split(" ");
+			arg='';
+			for (var i = 0; i < args2.length; i++) {
+					args2[i]=jsUcfirst(args2[i]);
+					arg=arg+'-'+jsUcfirst(args2[i]);
+			}
+			arg=arg.substring(1,arg.length);
 			
 			var list=global.turnorder[toId(room)]
 		if(list[global.nextdrafter[toId(room)]]!=toId(by)){
@@ -718,18 +732,27 @@ exports.commands = {
 			while(i<=draftmons["length"]){
 				var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
 				if(possiblepic.includes(arg)||(possiblepic.includes('Silvally')&&args[0]=='Silvally')){
+					if(global.users[name]["tierpicks"].includes(i)){
+						global.users[name]["tieredpicks"]=removeItemOnce(global.users[name]["tieredpicks"]);
+						this.reply( name +" used a tierpick to draft a tier "+i+ " erekredieten. (tierpicks "+global.users[name]["tieredpicks"]+ " )");
 					
-					draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
-					var pointscost=draftmons["tierlist"]["Tier"+i]["points"];
-					var currentscore=global.users[name]["erekredieten"];
-					var picksleft=draftmons["freepicks"]-global.picknr[toId(room)]-1;
-					console.log("freepicks "+draftmons["freepicks"]+" picknr: "+global.picknr[toId(room)]+" pickleft"+picksleft);
-					if(picksleft*40>currentscore-pointscost){
-						return this.reply("please make sure you have at least "+picksleft*40+ "Erekredieten left" );
 					}
-					global.users[name]["erekredieten"]=global.users[name]["erekredieten"]-draftmons["tierlist"]["Tier"+i]["points"];
+					else{
+						draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
+						var pointscost=draftmons["tierlist"]["Tier"+i]["points"];
+						var currentscore=global.users[name]["erekredieten"];
+						var picksleft=draftmons["freepicks"]-global.picknr[toId(room)]-1-global.users[name]["tierpicks"].length;
+						console.log("freepicks "+draftmons["freepicks"]+" picknr: "+global.picknr[toId(room)]+" pickleft"+picksleft);
+						if(picksleft*40>currentscore-pointscost){
+							return this.reply("please make sure you have at least "+picksleft*40+ "Erekredieten left" );
+						}
+						global.users[name]["erekredieten"]=global.users[name]["erekredieten"]-draftmons["tierlist"]["Tier"+i]["points"];
+					
+						this.reply( name +" paid "+draftmons["tierlist"]["Tier"+i]["points"]+ " erekredieten.( Erekredieten "+global.users[name]["erekredieten"]+ ")");
+					
+					}
+					
 					global.users[name]["draftedmons"].push(arg);
-					this.reply( name +" paid "+draftmons["tierlist"]["Tier"+i]["points"]+ " erekredieten. He has "+global.users[name]["erekredieten"]+ " erekredieten left");
 					i=100;
 				}
 				i++;
