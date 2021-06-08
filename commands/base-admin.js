@@ -700,7 +700,7 @@ exports.commands = {
 			arg='';
 			for (var i = 0; i < args2.length; i++) {
 					args2[i]=jsUcfirst(args2[i]);
-					arg=arg+'-'+jsUcfirst(args2[i]);
+					arg=arg+' '+jsUcfirst(args2[i]);
 			}
 			arg=arg.substring(1,arg.length);
 			console.log(arg);
