@@ -572,12 +572,15 @@ exports.commands = {
 		if (!this.isRanked('admin')) {return false;}
 		var args = arg.split(",");
 		console.log(args);
-		if (args.length < 2) return this.reply("Usage: " + this.cmdToken + cmd + " [user], [montopick]");
+		if (args.length < 2){
+			return this.reply("Usage: " + this.cmdToken + cmd + " [user], [montopick]");
+		}
 		if(!global.draftstarted[toId(room)]){
 				return this.reply('draft did not start yet');
 	
 		}
 		var list=global.users[toId(room)];
+		console.log(args);
 		if(list[global.nextdrafter[toId(room)]]!=toId(args[0])){
 				return this.reply('it is not your turn');
 	
