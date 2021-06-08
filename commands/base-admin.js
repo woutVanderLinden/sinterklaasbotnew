@@ -894,6 +894,12 @@ exports.commands = {
 			var args=arg.split("-");
 			arg='';
 			for (var i = 0; i < args.length; i++) {
+					if(args[i]="a"){
+						args[i]="alola";
+					}
+					if(args[i]="g"){
+						args[i]="galar";
+					}
 					args[i]=jsUcfirst(args[i]);
 					arg=arg+'-'+jsUcfirst(args[i]);
 			}
