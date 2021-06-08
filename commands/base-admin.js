@@ -581,10 +581,7 @@ exports.commands = {
 		}
 		var list=global.users[toId(room)];
 		console.log(args);
-		if(list[global.nextdrafter[toId(room)]]!=toId(args[0])){
-				return this.reply('it is not your turn');
-	
-		}
+		
 		var name=toId(args[0]);
 		arg=(args[1]);
 			var args3=arg.split("-");
