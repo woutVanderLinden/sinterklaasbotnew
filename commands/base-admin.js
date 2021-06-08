@@ -318,6 +318,9 @@ exports.commands = {
 	},
 	joindraft: function (arg, by, room, cmd){
 			let rawdata = fs.readFileSync('DraftTest.json');
+		if(global.draftstarted[toId(room)]==true){
+			return this.reply("draft already started");
+		}
 		let student = JSON.parse(rawdata);
 		console.log(student);
 	
@@ -535,6 +538,9 @@ exports.commands = {
 	startdraft: function (arg, by, room, cmd){
 		
 		if (!this.isRanked('admin')) return false;
+		if(global.draftstarted[toId(room)]==true){
+			return this.reply("draft already started");
+		}
 		/*first load in the draft file list*/
 		//lets try that now
 		console.log('started reading file');
