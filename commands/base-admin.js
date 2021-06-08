@@ -587,8 +587,8 @@ exports.commands = {
 			var args3=arg.split("-");
 			arg='';
 			for (var i = 0; i < args3.length; i++) {
-					args3[i]=jsUcfirst(args[i]);
-					arg=arg+'-'+jsUcfirst(args[i]);
+					args3[i]=jsUcfirst(args3[i]);
+					arg=arg+'-'+jsUcfirst(args3[i]);
 			}
 			arg=arg.substring(1,arg.length);
 			var args2=arg.split(" ");
