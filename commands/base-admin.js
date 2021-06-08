@@ -363,6 +363,7 @@ exports.commands = {
 	if (!this.isRanked('admin')) return false;
 		var args = arg.split(",");
 		if (args.length < 2) return this.reply("Usage: " + this.cmdToken + cmd + " [user], [creditstotake]");
+		name=toId(args[0]);
 		global.users[name]["erekredieten"]=global.users[name]["erekredieten"]-parseInt( args[1]);
 					
 		this.reply(toId(by) +" took "+args[1]+ " erekredieten from "+args[0]); 
@@ -371,7 +372,8 @@ exports.commands = {
 	taketierpicks: function (	arg, by, room, cmd){
 	if (!this.isRanked('admin')) return false;
 		var args = arg.split(",");
-		if (args.length < 2) return this.reply("Usage: " + this.cmdToken + cmd + " [user], [creditstotake]");
+		if (args.length < 2) return this.reply("Usage: " + this.cmdToken + cmd + " [user], [tierpicktoremove]");
+			name=toId(args[0]);
 		global.users[name]["tieredpicks"]=removeItemOnce(global.users[name]["tieredpicks"], args[1]);
 					
 		this.reply(toId(by) +" took "+args[1]+ " tieredpick from "+args[0]); 
