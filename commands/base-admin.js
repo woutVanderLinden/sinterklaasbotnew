@@ -569,24 +569,25 @@ exports.commands = {
 	},
 	forcepick: 'forcepickmon', 
 	forcepickmon:  function (arg, by, room, cmd) {
-		if (!this.isRanked('admin')) return false;
+		if (!this.isRanked('admin')) {return false;}
 		var args = arg.split(",");
+		console.log(args);
 		if (args.length < 2) return this.reply("Usage: " + this.cmdToken + cmd + " [user], [montopick]");
 		if(!global.draftstarted[toId(room)]){
 				return this.reply('draft did not start yet');
 	
 		}
-			var list=global.users[toId(room)];
+		var list=global.users[toId(room)];
 		if(list[global.nextdrafter[toId(room)]]!=toId(args[0])){
 				return this.reply('it is not your turn');
 	
 		}
 		var name=toId(args[0]);
 		arg=(args[1]);
-			var args=arg.split("-");
+			var args3=arg.split("-");
 			arg='';
-			for (var i = 0; i < args.length; i++) {
-					args[i]=jsUcfirst(args[i]);
+			for (var i = 0; i < args3.length; i++) {
+					args3[i]=jsUcfirst(args[i]);
 					arg=arg+'-'+jsUcfirst(args[i]);
 			}
 			arg=arg.substring(1,arg.length);
