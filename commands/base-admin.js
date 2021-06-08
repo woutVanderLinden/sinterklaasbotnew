@@ -606,7 +606,7 @@ exports.commands = {
 			}
 			arg=arg.substring(1,arg.length);
 			console.log(arg);
-			var list=global.turnorder[toId(room)]
+		var list=global.turnorder[toId(room)];
 		if(list[global.nextdrafter[toId(room)]]!=name){
 				return this.reply('it is not your turn');
 	
@@ -763,8 +763,8 @@ exports.commands = {
 				return this.reply('draft did not start yet');
 	
 		}
-			var list=global.users[toId(room)];
-		
+			//var list=global.users[toId(room)];
+		var list=global.turnorder[toId(room)]
 		var name=toId(args[0]);
 		if(global.draftedmons[name]==undefined){
 			global.draftedmons[name]=[];
