@@ -368,6 +368,15 @@ exports.commands = {
 		this.reply(toId(by) +" took "+args[1]+ " erekredieten from "+args[0]); 
 		
 	},
+	taketierpicks: function (	arg, by, room, cmd){
+	if (!this.isRanked('admin')) return false;
+		var args = arg.split(",");
+		if (args.length < 2) return this.reply("Usage: " + this.cmdToken + cmd + " [user], [creditstotake]");
+		global.users[name]["tieredpicks"]=removeItemOnce(global.users[name]["tieredpicks"], args[1]);
+					
+		this.reply(toId(by) +" took "+args[1]+ " tieredpick from "+args[0]); 
+		
+	},
 	viewcredits: async function (arg, by, room, cmd){
 	if (!by.startsWith("+")&&!by.startsWith("#")&&!by.startsWith("%")&&!by.startsWith("@")){
 					return false;
