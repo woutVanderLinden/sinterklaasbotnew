@@ -1128,37 +1128,40 @@ exports.commands = {
 		if(!typings.includes(mondata[currentmon]["Tyîng1"])){
 			typings.push(mondata[currentmon]["Tyîng1"]);
 		}
-		if(!typings.includes(mondata[currentmon]["Tyîng2"])){
-			typings.push(mondata[currentmon]["Tyîng2"]);
+		if(mondata[currentmon]["Tyîng 2"]!=undefined){
+			
+			if(!typings.includes(mondata[currentmon]["Tyîng 2"])){
+				typings.push(mondata[currentmon]["Tyîng 2"]);
+			}
 		}
-		totalhazards=totalhazards+currentmon["Entry Hazards"];
-		totalremovers=totalremovers+currentmon["Hazard Removal"];
-		totalitemremover=totalitemremover+currentmon["Item Remover"];
-		totalpivots=totalpivots+currentmon["Pivot"];
-		totalclerics=totalclerics+currentmon["Cleric"];
-		totalscarfs=totalscarfs+currentmon["Scarf"];
-		totalphysicals=totalphysicals+currentmon["Physical Sweeper"];
-		totalspecials=totalspecials+currentmon["Special Sweeper"];
-		totalphysicalb=totalphysicalb+currentmon["Physical Bulky Attacker"];
-		totalspecialb=totalspecialb+currentmon["Special Bulky Attacker"];
-		totalphysicalw=totalphysicalw+currentmon["Physical Wall"];
-		totalspecialw=totalspecialw+currentmon["Special Wall"];
-		totalphysicalup=totalphysicalup+currentmon["Physical Setup"];
-		totalspecialup=totalspecialup+currentmon["Special Setup"];
-		totalspeedup=totalspeedup+currentmon["Speed Setup"];
-		totalprio=totalprio+currentmon["Priority"];
-		totalstatus=totalstatus+currentmon["Status"];
-		totalscreen=totalscreen+currentmon["Screens"];
-		if(currentmon["Sun"]=6){
+		totalhazards=totalhazards+(currentmon["Entry Hazards"]||0);
+		totalremovers=totalremovers+(currentmon["Hazard Removal"]||0);
+		totalitemremover=totalitemremover+(currentmon["Item Remover"]||0);
+		totalpivots=totalpivots+(currentmon["Pivot"]||0);
+		totalclerics=totalclerics+(currentmon["Cleric"]||0);
+		totalscarfs=totalscarfs+(currentmon["Scarf"]||0);
+		totalphysicals=totalphysicals+(currentmon["Physical Sweeper"]||0);
+		totalspecials=totalspecials+(currentmon["Special Sweeper"]||0);
+		totalphysicalb=totalphysicalb+(currentmon["Physical Bulky Attacker"]||0);
+		totalspecialb=totalspecialb+(currentmon["Special Bulky Attacker"]||0);
+		totalphysicalw=totalphysicalw+(currentmon["Physical Wall"]||0);
+		totalspecialw=totalspecialw+(currentmon["Special Wall"]||0);
+		totalphysicalup=totalphysicalup+(currentmon["Physical Setup"]||0);
+		totalspecialup=totalspecialup+(currentmon["Special Setup"]||0);
+		totalspeedup=totalspeedup+(currentmon["Speed Setup"]||0);
+		totalprio=totalprio+(currentmon["Priority"]||0);
+		totalstatus=totalstatus+(currentmon["Status"]||0);
+		totalscreen=totalscreen+(currentmon["Screens"]||0);
+		if(currentmon["Sun"]==6){
 			hassun=false;
 		}
-		if(currentmon["Rain"]=6){
+		if((currentmon["Rain"]||0)==6){
 			hasrain=false;
 		}
-		if(currentmon["Hail"]=6){
+		if((currentmon["Hail"]||0)==6){
 			 hashail=false;
 		}
-		if(currentmon["Sand"]=6){
+		if((currentmon["Sand"]||0)==6){
 			 hassand=false;
 		}
 		i++;
