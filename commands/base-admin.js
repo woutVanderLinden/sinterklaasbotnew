@@ -1242,6 +1242,7 @@ exports.commands = {
 				else{
 					physicalt=physicalt+(global.mondata[monname]["Physical Bulky Attacker"]||0);
 				}
+				console.log("beforesetup"+t);
 				if(totalphysicalup>5){
 					var divider=totalphysicalup/5;
 					physicalt=physicalt+(global.mondata[monname]["Physical Setup"]||0)/divider;	
@@ -1249,6 +1250,7 @@ exports.commands = {
 				else{
 					physicalt=physicalt+(global.mondata[monname]["Physical Setup"]||0);
 				}
+				console.log("aftersetup"+t);
 				if(totalspecials>5){
 					var divider=totalspecials/5;
 					specialt=specialt+(global.mondata[monname]["Special Sweeper"]||0)/divider;	
@@ -1299,6 +1301,7 @@ exports.commands = {
 				else{
 					t=t+(global.mondata[monname]["Special Wall"]||0);
 				}
+				console.log("zfterwall"+t);
 				t=t+(global.mondata[monname]["Speed Setup"]||0);
 				if(totalprio>5){
 					var divider=totalprio/5;
@@ -1325,6 +1328,7 @@ exports.commands = {
 				if(hassand){
 					t=t+(global.mondata[monname]["Sand"]||0);
 				}
+				console.log(t);
 				t=100-t;
 				if(listsix.length<6){
 					listsix.push(t);
