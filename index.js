@@ -53,7 +53,7 @@ function shuffle(array) {
 }
 try {
 	
-	global.mondata=student;
+	
 	require('sugar');
 	global.pointpicks=0;
 	global.todraftmons={};
@@ -75,6 +75,7 @@ try {
 	global.PSClient = require('./showdown-client.js');
 	let rawdata = fs.readFileSync('resulttable.json');
 	let student = JSON.parse(rawdata);
+	global.mondata=student;
 } catch (e) {
 	console.log(e.stack);
 	console.log("ERROR: missing dependencies, try 'npm install'");
