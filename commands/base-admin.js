@@ -1087,9 +1087,7 @@ exports.commands = {
 	
 	},
 	readexceltest: function (arg, by, room, cmd) {
-		var reader = new FileReader();
-
-    		reader.onload = function(e) {
+		
 			var data = e.target.result;
 			 var workbook = XLSX.read(data, {
 				 type: 'binary'
@@ -1101,8 +1099,7 @@ exports.commands = {
 			var json_object = JSON.stringify(XL_row_object);
 			console.log(json_object);
 
-			})
-		}
+		
 	},
 
   
