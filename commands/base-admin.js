@@ -1161,11 +1161,11 @@ exports.commands = {
 		if(currentmon["Sand"]=6){
 			 hassand=false;
 		}
-		
+		i++;
 		
 				
 	}
-		
+		i =1;
 		while(i<=draftmons["length"]){
 			var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
 			var j=0;
