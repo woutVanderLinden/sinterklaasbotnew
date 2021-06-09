@@ -1214,7 +1214,7 @@ exports.commands = {
 				if(totalitemremover<5){
 					t=t+(global.mondata[monname]["Item Remover"]||0);
 				}
-				if(global.mondata[monname]["Pivot"]>0){
+				if((global.mondata[monname]["Pivot"]||0)>0){
 					
 					t=t+(global.mondata[monname]["Pivot"]||0)+totalpivots*.1;
 				}
