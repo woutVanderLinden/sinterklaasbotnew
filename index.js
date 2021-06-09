@@ -5,7 +5,13 @@
 */
 
 //var XLSX = require('xlsx');
-
+try {
+	
+	require('xlsx');
+} catch (e) {
+	console.log('Installing dependencies... (xlsx)');
+	require('child_process').spawnSync('sh', ['-c', 'npm install xlsx'], {stdio: 'inherit'});
+}
 let todraftmons={};
 let users={};
 var http = require('http'); //importing http
