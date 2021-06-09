@@ -1086,6 +1086,38 @@ exports.commands = {
 		return this.reply('/makegroupchat '+arg);
 	
 	},
+	
+	recommend:function (arg, by, room, cmd) {
+		var name=toId(by);
+		var best={};
+		var listsix=[];
+		var i=1;
+		while(i<=draftmons["length"]){
+			var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
+			var j=0;
+			while(j<=possiblepic["length"]){
+				var t=calculatescor(possiblepic[j],name);
+				if(listsix.length<6){
+					listsix.push(t);
+					listsix.sort();
+					
+					best[listsix.indexOf(t)]=possiblepic[j];
+				}
+				else{
+					listsix.push(t);
+					listsix.sort();
+					delete best[listsix[6]];
+					listsix.pop();
+				}
+				j++
+			}
+			i++;
+		}
+		
+		global.users[name]["erekredieten"]
+		mondata
+	
+	},
 	readexceltest: function (arg, by, room, cmd) {
 		
 			//var data = e.target.result;
