@@ -3,7 +3,11 @@
 
 	By: Ecuacion
 */
-var XLSX = require('xlsx');
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+<script>
+//var XLSX = require('xlsx');
 
 let todraftmons={};
 let users={};
@@ -725,3 +729,4 @@ if (AppOptions.testmode) {
 	Bot.connect();
 	Bot.startConnectionTimeOut();
 }
+</script>
