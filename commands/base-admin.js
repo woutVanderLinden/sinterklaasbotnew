@@ -1165,9 +1165,9 @@ exports.commands = {
 		
 				
 	}
-		i =1;
-		while(i<=draftmons["length"]){
-			var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
+		var g =1;
+		while(g<=draftmons["length"]){
+			var possiblepic=draftmons["tierlist"]["Tier"+g]["pokemon"];
 			var j=0;
 			while(j<=possiblepic["length"]){
 				var monname=possiblepic[j]
@@ -1335,7 +1335,7 @@ exports.commands = {
 				}
 				j++
 			}
-			i++;
+			g++;
 		}
 		var newlistsix=[];
 		var y=0;
