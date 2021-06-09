@@ -1093,11 +1093,228 @@ exports.commands = {
 		var best={};
 		var listsix=[];
 		var i=1;
+		
+		
+		
+		
+		
+		var typings=[];
+	var totalhazards=0;
+	var totalremovers=0;
+	var totalclerics=0;
+	var totalpivots=0;
+	var totalscarfs=0;
+	var totalitemremover=0;
+	var totalphysicals=0;
+	var totalspecials=0;
+	var totalphysicalb=0;
+	var totalspecialb=0;
+	var totalphysicalw=0;
+	var totalspecialw=0;
+	var totalphysicalup=0;
+	var totalspecialup=0;
+	var totalspeedup=0;
+	var totalprio=0;
+	var totalstatus=0;
+	var totalscreen=0;
+	var hassun=false;
+	var hasrain=false;
+	var hashail=false;
+	var hassand=false;
+	var monschosen=global.users[name]["draftedmons"];
+	var i=0;
+	while(i<monschosen.length){
+		var currentmon=monschosen[i];
+		if(!typings.includes(mondata[currentmon]["Tyîng1"])){
+			typings.push(mondata[currentmon]["Tyîng1"]);
+		}
+		if(!typings.includes(mondata[currentmon]["Tyîng2"])){
+			typings.push(mondata[currentmon]["Tyîng2"]);
+		}
+		totalhazards=totalhazards+currentmon["Entry Hazards"];
+		totalremovers=totalremovers+currentmon["Hazard Removal"];
+		totalitemremover=totalitemremover+currentmon["Item Remover"];
+		totalpivots=totalpivots+currentmon["Pivot"];
+		totalclerics=totalclerics+currentmon["Cleric"];
+		totalscarfs=totalscarfs+currentmon["Scarf"];
+		totalphysicals=totalphysicals+currentmon["Physical Sweeper"];
+		totalspecials=totalspecials+currentmon["Special Sweeper"];
+		totalphysicalb=totalphysicalb+currentmon["Physical Bulky Attacker"];
+		totalspecialb=totalspecialb+currentmon["Special Bulky Attacker"];
+		totalphysicalw=totalphysicalw+currentmon["Physical Wall"];
+		totalspecialw=totalspecialw+currentmon["Special Wall"];
+		totalphysicalup=totalphysicalup+currentmon["Physical Setup"];
+		totalspecialup=totalspecialup+currentmon["Special Setup"];
+		totalspeedup=totalspeedup+currentmon["Speed Setup"];
+		totalprio=totalprio+currentmon["Priority"];
+		totalstatus=totalstatus+currentmon["Status"];
+		totalscreen=totalscreen+currentmon["Screens"];
+		if(currentmon["Sun"]=6){
+			hassun=false;
+		}
+		if(currentmon["Rain"]=6){
+			hasrain=false;
+		}
+		if(currentmon["Hail"]=6){
+			 hashail=false;
+		}
+		if(currentmon["Sand"]=6){
+			 hassand=false;
+		}
+		
+		
+				
+	}
+		
 		while(i<=draftmons["length"]){
 			var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
 			var j=0;
 			while(j<=possiblepic["length"]){
-				var t=calculatescore(possiblepic[j],name);
+				var monname=possiblepic[j]
+				var t=0;
+				if(typings.includes(global.mondata[monname]["Typing1"])){
+					if(global.mondata[monname]["Typing2"]!=undefined){
+						if(global.mondata[monname].hasOwnProperty("Typing2")){
+							if(typings.includes(global.mondata[monname]["Typing2"])){
+
+							}
+							else{
+								t=t+5;
+							}
+						}
+						
+					}
+				}
+				else{
+					if(global.mondata[monname].hasOwnProperty("Typing2")){
+							if(typings.includes(global.mondata[monname]["Typing2"])){
+								t=t+5;
+							}
+							else{
+								t=t+20;
+							}
+						}
+					else{
+						t=t+15;
+					}
+				}
+				if(totalhazards<5){
+					t=t+global.mondata[monname]["Entry Hazards"];
+				 }
+				if(totalremovers<5){
+					t=t+global.mondata[monname]["Hazard Removal"];
+				 }
+				if(totalitemremover<5){
+					t=t+global.mondata[monname]["Item Remover"];
+				}
+				if(global.mondata[monname]["Pivot"]>0){
+					
+					t=t+global.mondata[monname]["Pivot"]+totalpivots*.1;
+				}
+				if(totalclerics<5){
+					t=t+global.mondata[monname]["Cleric"];
+				}
+				if(totalscarfs<5){
+					t=t+global.mondata[monname]["Scarf"];
+				}
+				var physicalt=0;
+				var specialt=0;
+				
+				if(totalphysicals>5){
+					var divider=	totalphysicals/5;
+					physicalt=physicalt+global.mondata[monname]["Physical Sweeper"]/divider;	
+				}
+				else{
+					physicalt=physicalt+global.mondata[monname]["Physical Sweeper"];
+				}
+				if(totalphysicalb>5){
+					var divider=	totalphysicalb/5;
+					physicalt=physicalt+global.mondata[monname]["Physical Bulky Attacker"]/divider;	
+				}
+				else{
+					physicalt=physicalt+global.mondata[monname]["Physical Bulky Attacker"];
+				}
+				if(totalphysicalup>5){
+					var divider=	totalphysicalup/5;
+					physicalt=physicalt+global.mondata[monname]["Physical Setup"]/divider;	
+				}
+				else{
+					physicalt=physicalt+global.mondata[monname]["Physical Setup"];
+				}
+				if(totalspecials>5){
+					var divider=	totalspecials/5;
+					specialt=specialt+global.mondata[monname]["Special Sweeper"]/divider;	
+				}
+				else{
+					specialt=specialt+global.mondata[monname]["Special Sweeper"];
+				}
+				if(totalspecialb>5){
+					var divider=	totalspecialb/5;
+					specialt=specialt+global.mondata[monname]["Special Bulky Attacker"]/divider;	
+				}
+				else{
+					specialt=specialt+global.mondata[monname]["Special Bulky Attacker"];
+				}
+				if(totalspecialup>5){
+					var divider=	totalspecialup/5;
+					specialt=specialt+global.mondata[monname]["Special Setup"]/divider;	
+				}
+				else{
+					specialt=specialt+global.mondata[monname]["Special Setup"];
+				}
+				
+					
+				
+				var totalphysical=totalphysicalup+totalphysicals+totalphysicalb;
+				var totalspecial=totalspecialup+totalspecials+totalspecialb;
+				
+				if(totalphysical+8<totalspecial){
+					specialt=specialt/2;
+				}
+				if(totalspecial+8<totalphysical){
+					physicalt=physicalt/2;
+				}
+				t=t+physicalt+specialt;
+				if(totalphysicalw>5){
+					var divider=	totalphysicalw/5;
+					t=t+global.mondata[monname]["Physical Wall"]/divider;	
+				}
+				else{
+					t=t+global.mondata[monname]["Physical Wall"];
+				}
+				if(totalspecialw>5){
+					var divider=	totalspecialw/5;
+					t=t+global.mondata[monname]["Special Wall"]/divider;	
+				}
+				else{
+					t=t+global.mondata[monname]["Special Wall"];
+				}
+				t=t+global.mondata[monname]["Speed Setup"];
+				if(totalprio>5){
+					var divider=	totalprio/5;
+					t=t+global.mondata[monname]["Priority"]/divider;	
+				}
+				else{
+					t=t+global.mondata[monname]["Priority"];
+				}
+				if(totalstatus<8){
+					t=t+global.mondata[monname]["Status"];
+				}
+				if(totalscreen<8){
+					t=t+global.mondata[monname]["Screens"];
+				}
+				if(hassun){
+					t=t+global.mondata[monname]["Sun"];
+				}
+				if(hasrain){
+					t=t+global.mondata[monname]["Rain"];
+				}
+				if(hashail){
+					t=t+global.mondata[monname]["Hail"];
+				}
+				if(hassand){
+					t=t+global.mondata[monname]["Sand"];
+				}
 				if(listsix.length<6){
 					listsix.push(t);
 					listsix.sort();
@@ -1106,7 +1323,7 @@ exports.commands = {
 				}
 				else{
 					while(listsix.includes(t)){
-						t=t-1;
+						t=t-0.1;
 					}
 					listsix.push(t);
 					listsix.sort();
@@ -1422,6 +1639,9 @@ function startNewTier(room,by,elem){
 	}
 };
 function calculatescore(monname,name){
+	
+	
+	
 	return 1;
 };
 function jsUcfirst(string) 
