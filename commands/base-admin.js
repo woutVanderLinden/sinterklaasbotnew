@@ -1086,7 +1086,27 @@ exports.commands = {
 		return this.reply('/makegroupchat '+arg);
 	
 	},
-	
+	readexceltest: function (arg, by, room, cmd) {
+		var reader = new FileReader();
+
+    		reader.onload = function(e) {
+      		var data = e.target.result;
+     		 var workbook = XLSX.read(data, {
+       			 type: 'binary'
+      		});
+		var sheetName="test.xlsx";
+     	 	workbook.SheetNames.forEach(function(sheetName) {
+        	// Here is your object
+        	var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
+        	var json_object = JSON.stringify(XL_row_object);
+        	console.log(json_object);
+
+     	 	})
+
+    	};
+
+  
+  };
 	battlepermissions: 'battleset',
 	battlesettings: 'battleset',
 	battleset: function (arg, by, room, cmd) {
