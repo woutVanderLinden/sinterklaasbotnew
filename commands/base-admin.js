@@ -1103,10 +1103,10 @@ exports.commands = {
 
      	 	})
 
-    	};
+    	},
 
   
-  };
+  
 	battlepermissions: 'battleset',
 	battlesettings: 'battleset',
 	battleset: function (arg, by, room, cmd) {
