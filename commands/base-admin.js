@@ -1096,7 +1096,7 @@ exports.commands = {
 			var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
 			var j=0;
 			while(j<=possiblepic["length"]){
-				var t=calculatescor(possiblepic[j],name);
+				var t=calculatescore(possiblepic[j],name);
 				if(listsix.length<6){
 					listsix.push(t);
 					listsix.sort();
@@ -1113,9 +1113,16 @@ exports.commands = {
 			}
 			i++;
 		}
-		
-		global.users[name]["erekredieten"]
-		mondata
+		var newlistsix=[];
+		var y=0;
+		while(y<=5){
+			newlistsix.push(best[listsix[y]]);
+			y++;
+		}
+		thislistsix
+		this.reply(draftmonsprint(newlistsix));
+		//global.users[name]["erekredieten"]
+		//mondata
 	
 	},
 	readexceltest: function (arg, by, room, cmd) {
@@ -1132,7 +1139,7 @@ exports.commands = {
 				var json_object = JSON.stringify(XL_row_object);
 				console.log(json_object);
 			});
-
+		
 		
 	},
 
@@ -1404,6 +1411,9 @@ function startNewTier(room,by,elem){
 		}
 		
 	}
+};
+function calculatescore(monname,name){
+	return 1;
 };
 function jsUcfirst(string) 
 {
