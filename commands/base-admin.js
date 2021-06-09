@@ -1325,7 +1325,7 @@ exports.commands = {
 				if(hassand){
 					t=t+(global.mondata[monname]["Sand"]||0);
 				}
-				t=-t;
+				t=100-t;
 				if(listsix.length<6){
 					listsix.push(t);
 					listsix.sort();
