@@ -1120,7 +1120,7 @@ exports.commands = {
 			newlistsix.push(best[listsix[y]]);
 			y++;
 		}
-		thislistsix
+		//thislistsix
 		this.reply(draftmonsprint(newlistsix));
 		//global.users[name]["erekredieten"]
 		//mondata
