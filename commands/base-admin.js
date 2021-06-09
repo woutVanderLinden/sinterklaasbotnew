@@ -1201,68 +1201,68 @@ exports.commands = {
 					}
 				}
 				if(totalhazards<5){
-					t=t+global.mondata[monname]["Entry Hazards"];
+					t=t+(global.mondata[monname]["Entry Hazards"]||0);
 				 }
 				if(totalremovers<5){
-					t=t+global.mondata[monname]["Hazard Removal"];
+					t=t+(global.mondata[monname]["Hazard Removal"]||0);
 				 }
 				if(totalitemremover<5){
-					t=t+global.mondata[monname]["Item Remover"];
+					t=t+(global.mondata[monname]["Item Remover"]||0);
 				}
 				if(global.mondata[monname]["Pivot"]>0){
 					
-					t=t+global.mondata[monname]["Pivot"]+totalpivots*.1;
+					t=t+(global.mondata[monname]["Pivot"]||0)+totalpivots*.1;
 				}
 				if(totalclerics<5){
-					t=t+global.mondata[monname]["Cleric"];
+					t=t+(global.mondata[monname]["Cleric"]||0);
 				}
 				if(totalscarfs<5){
-					t=t+global.mondata[monname]["Scarf"];
+					t=t+(global.mondata[monname]["Scarf"]||0);
 				}
 				var physicalt=0.0;
 				var specialt=0.0;
 				
 				if(totalphysicals>5){
-					var divider=	totalphysicals/5;
-					physicalt=physicalt+global.mondata[monname]["Physical Sweeper"]/divider;	
+					var divider=totalphysicals/5;
+					physicalt=physicalt+(global.mondata[monname]["Physical Sweeper"]||0)/divider;	
 				}
 				else{
-					physicalt=physicalt+global.mondata[monname]["Physical Sweeper"];
+					physicalt=physicalt+(global.mondata[monname]["Physical Sweeper"]||0);
 				}
 				if(totalphysicalb>5){
-					var divider=	totalphysicalb/5;
-					physicalt=physicalt+global.mondata[monname]["Physical Bulky Attacker"]/divider;	
+					var divider=totalphysicalb/5;
+					physicalt=physicalt+(global.mondata[monname]["Physical Bulky Attacker"]||0)/divider;	
 				}
 				else{
-					physicalt=physicalt+global.mondata[monname]["Physical Bulky Attacker"];
+					physicalt=physicalt+(global.mondata[monname]["Physical Bulky Attacker"]||0);
 				}
 				if(totalphysicalup>5){
-					var divider=	totalphysicalup/5;
-					physicalt=physicalt+global.mondata[monname]["Physical Setup"]/divider;	
+					var divider=totalphysicalup/5;
+					physicalt=physicalt+(global.mondata[monname]["Physical Setup"]||0)/divider;	
 				}
 				else{
-					physicalt=physicalt+global.mondata[monname]["Physical Setup"];
+					physicalt=physicalt+(global.mondata[monname]["Physical Setup"]||0);
 				}
 				if(totalspecials>5){
-					var divider=	totalspecials/5;
-					specialt=specialt+global.mondata[monname]["Special Sweeper"]/divider;	
+					var divider=totalspecials/5;
+					specialt=specialt+(global.mondata[monname]["Special Sweeper"]||0)/divider;	
 				}
 				else{
-					specialt=specialt+global.mondata[monname]["Special Sweeper"];
+					specialt=specialt+(global.mondata[monname]["Special Sweeper"]||0);
 				}
 				if(totalspecialb>5){
-					var divider=	totalspecialb/5;
-					specialt=specialt+global.mondata[monname]["Special Bulky Attacker"]/divider;	
+					var divider=totalspecialb/5;
+					specialt=specialt+(global.mondata[monname]["Special Bulky Attacker"]||0)/divider;	
 				}
 				else{
-					specialt=specialt+global.mondata[monname]["Special Bulky Attacker"];
+					specialt=specialt+(global.mondata[monname]["Special Bulky Attacker"]||0);
 				}
 				if(totalspecialup>5){
-					var divider=	totalspecialup/5;
-					specialt=specialt+global.mondata[monname]["Special Setup"]/divider;	
+					var divider=totalspecialup/5;
+					specialt=specialt+(global.mondata[monname]["Special Setup"]||0)/divider;	
 				}
 				else{
-					specialt=specialt+global.mondata[monname]["Special Setup"];
+					specialt=specialt+(global.mondata[monname]["Special Setup"]||0);
 				}
 				
 					
@@ -1278,44 +1278,44 @@ exports.commands = {
 				}
 				t=t+physicalt+specialt;
 				if(totalphysicalw>5){
-					var divider=	totalphysicalw/5;
-					t=t+global.mondata[monname]["Physical Wall"]/divider;	
+					var divider=totalphysicalw/5;
+					t=t+(global.mondata[monname]["Physical Wall"]||0)/divider;	
 				}
 				else{
-					t=t+global.mondata[monname]["Physical Wall"];
+					t=t+(global.mondata[monname]["Physical Wall"]||0);
 				}
 				if(totalspecialw>5){
-					var divider=	totalspecialw/5;
-					t=t+global.mondata[monname]["Special Wall"]/divider;	
+					var divider=totalspecialw/5;
+					t=t+(global.mondata[monname]["Special Wall"]||0)/divider;	
 				}
 				else{
-					t=t+global.mondata[monname]["Special Wall"];
+					t=t+(global.mondata[monname]["Special Wall"]||0);
 				}
 				t=t+global.mondata[monname]["Speed Setup"];
 				if(totalprio>5){
-					var divider=	totalprio/5;
-					t=t+global.mondata[monname]["Priority"]/divider;	
+					var divider=totalprio/5;
+					t=t+(global.mondata[monname]["Priority"]||0)/divider;	
 				}
 				else{
-					t=t+global.mondata[monname]["Priority"];
+					t=t+(global.mondata[monname]["Priority"]||0);
 				}
 				if(totalstatus<8){
-					t=t+global.mondata[monname]["Status"];
+					t=t+(global.mondata[monname]["Status"]||0);
 				}
 				if(totalscreen<8){
-					t=t+global.mondata[monname]["Screens"];
+					t=t+(global.mondata[monname]["Screens"]||0);
 				}
 				if(hassun){
-					t=t+global.mondata[monname]["Sun"];
+					t=t+(global.mondata[monname]["Sun"]||0);
 				}
 				if(hasrain){
-					t=t+global.mondata[monname]["Rain"];
+					t=t+(global.mondata[monname]["Rain"]||0);
 				}
 				if(hashail){
-					t=t+global.mondata[monname]["Hail"];
+					t=t+(global.mondata[monname]["Hail"]||0);
 				}
 				if(hassand){
-					t=t+global.mondata[monname]["Sand"];
+					t=t+(global.mondata[monname]["Sand"]||0);
 				}
 				if(listsix.length<6){
 					listsix.push(t);
