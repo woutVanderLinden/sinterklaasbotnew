@@ -1088,11 +1088,12 @@ exports.commands = {
 	},
 	readexceltest: function (arg, by, room, cmd) {
 		
-			var data = e.target.result;
+			//var data = e.target.result;
+			var data="test.xlsx";
 			 var workbook = XLSX.read(data, {
 				 type: 'binary'
 			});
-			var sheetName="test.xlsx";
+			
 			workbook.SheetNames.forEach(function(sheetName) {
 				// Here is your object
 				var XL_row_object = XLSX.utils.sheet_to_row_object_array(workbook.Sheets[sheetName]);
