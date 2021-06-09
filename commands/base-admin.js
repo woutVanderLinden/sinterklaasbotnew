@@ -1170,14 +1170,16 @@ exports.commands = {
 			console.log("g"+g);
 			var possiblepic=draftmons["tierlist"]["Tier"+g]["pokemon"];
 			var j=0;
+			
 			while(j<=possiblepic["length"]){
 				console.log("j"+j);
 				var monname=possiblepic[j]
 				var t=0.0;
+				console.log(monname);
 				if(typings.includes(global.mondata[monname]["Typing1"])){
-					if(global.mondata[monname]["Typing2"]!=undefined){
+					if(global.mondata[monname]["Typing 2"]!=undefined){
 						
-							if(typings.includes(global.mondata[monname]["Typing2"])){
+							if(typings.includes(global.mondata[monname]["Typing 2"])){
 
 							}
 							else{
@@ -1188,9 +1190,9 @@ exports.commands = {
 					}
 				}
 				else{
-					console.log(global.mondata[monname]["Typing2"]);
-					if(global.mondata[monname]["Typing2"]!=undefined){
-						if(typings.includes(global.mondata[monname]["Typing2"])){
+					console.log(global.mondata[monname]["Typing 2"]);
+					if(global.mondata[monname]["Typing 2"]!=undefined){
+						if(typings.includes(global.mondata[monname]["Typing 2"])){
 								t=t+5;
 						}
 							else{
@@ -1224,7 +1226,7 @@ exports.commands = {
 				}
 				var physicalt=0.0;
 				var specialt=0.0;
-					console.log("beforedivider1"+t+" "+physicalt);
+				
 				if(totalphysicals>5){
 					var divider=totalphysicals/5;
 					physicalt=physicalt+(global.mondata[monname]["Physical Sweeper"]||0)/divider;	
@@ -1232,7 +1234,7 @@ exports.commands = {
 				else{
 					physicalt=physicalt+(global.mondata[monname]["Physical Sweeper"]||0);
 				}
-				console.log("afterdivider1"+physicalt);
+				
 				if(totalphysicalb>5){
 					var divider=totalphysicalb/5;
 					physicalt=physicalt+(global.mondata[monname]["Physical Bulky Attacker"]||0)/divider;	
@@ -1280,9 +1282,9 @@ exports.commands = {
 				if(totalspecial+8<totalphysical){
 					physicalt=physicalt/2;
 				}
-				console.log("tbeforesum"+t)
+			
 				t=t+physicalt+specialt;
-				console.log("taftersum"+t)
+				
 				if(totalphysicalw>5){
 					var divider=totalphysicalw/5;
 					t=t+(global.mondata[monname]["Physical Wall"]||0)/divider;	
@@ -1330,7 +1332,7 @@ exports.commands = {
 					best[t]=possiblepic[j];
 				}
 				else{
-					console.log(t);
+					
 					while(listsix.includes(t)){
 						t=t-0.1;
 						
