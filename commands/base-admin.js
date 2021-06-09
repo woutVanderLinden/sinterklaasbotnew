@@ -1332,7 +1332,7 @@ exports.commands = {
 					t=t+(global.mondata[monname]["Sand"]||0);
 				}
 				console.log(t);
-				t=100-t;
+				t=99-t;
 				if(listsix.length<6){
 					listsix.push(t);
 					listsix.sort();
