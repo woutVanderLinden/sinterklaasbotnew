@@ -1128,7 +1128,7 @@ exports.commands = {
 		if(!typings.includes(mondata[currentmon]["Typing1"])){
 			typings.push(mondata[currentmon]["Typing1"]);
 		}
-		if(mondata[currentmon]["Tyîng 2"]!=undefined){
+		if(mondata[currentmon]["Typing 2"]!=undefined){
 			
 			if(!typings.includes(mondata[currentmon]["Typing 2"])){
 				typings.push(mondata[currentmon]["Typing 2"]);
