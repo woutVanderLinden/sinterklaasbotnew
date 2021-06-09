@@ -3,7 +3,7 @@
 
 	By: Ecuacion
 */
-
+var XLSX = require('xlsx');
 
 let todraftmons={};
 let users={};
