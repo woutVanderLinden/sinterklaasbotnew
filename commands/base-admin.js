@@ -1162,14 +1162,16 @@ exports.commands = {
 			 hassand=false;
 		}
 		i++;
-		
+		console.log(i);
 				
 	}
 		var g =1;
 		while(g<=draftmons["length"]){
+			console.log(g);
 			var possiblepic=draftmons["tierlist"]["Tier"+g]["pokemon"];
 			var j=0;
 			while(j<=possiblepic["length"]){
+				console.log(j);
 				var monname=possiblepic[j]
 				var t=0;
 				if(typings.includes(global.mondata[monname]["Typing1"])){
