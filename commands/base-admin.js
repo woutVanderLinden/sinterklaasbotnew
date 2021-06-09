@@ -1099,24 +1099,24 @@ exports.commands = {
 		
 		
 		var typings=[];
-	var totalhazards=0f;
-	var totalremovers=0f;
-	var totalclerics=0f;
-	var totalpivots=0f;
-	var totalscarfs=0f;
-	var totalitemremover=0f;
-	var totalphysicals=0f;
-	var totalspecials=0f;
-	var totalphysicalb=0f;
-	var totalspecialb=0f;
-	var totalphysicalw=0f;
-	var totalspecialw=0f;
-	var totalphysicalup=0f;
-	var totalspecialup=0f;
-	var totalspeedup=0f;
-	var totalprio=0f;
-	var totalstatus=0f;
-	var totalscreen=0f;
+	var totalhazards=0.0;
+	var totalremovers=0.0;
+	var totalclerics=0.0;
+	var totalpivots=0.0;
+	var totalscarfs=0.0;
+	var totalitemremover=0.0;
+	var totalphysicals=0.0;
+	var totalspecials=0.0;
+	var totalphysicalb=0.0;
+	var totalspecialb=0.0;
+	var totalphysicalw=0.0;
+	var totalspecialw=0.0;
+	var totalphysicalup=0.0;
+	var totalspecialup=0.0;
+	var totalspeedup=0.0;
+	var totalprio=0.0;
+	var totalstatus=0.0;
+	var totalscreen=0.0;
 	var hassun=false;
 	var hasrain=false;
 	var hashail=false;
@@ -1173,7 +1173,7 @@ exports.commands = {
 			while(j<=possiblepic["length"]){
 				console.log("j"+j);
 				var monname=possiblepic[j]
-				var t=0f;
+				var t=0.0;
 				if(typings.includes(global.mondata[monname]["Typing1"])){
 					if(global.mondata[monname]["Typing2"]!=undefined){
 						if(global.mondata[monname].hasOwnProperty("Typing2")){
@@ -1219,8 +1219,8 @@ exports.commands = {
 				if(totalscarfs<5){
 					t=t+global.mondata[monname]["Scarf"];
 				}
-				var physicalt=0f;
-				var specialt=0f;
+				var physicalt=0.0;
+				var specialt=0.0;
 				
 				if(totalphysicals>5){
 					var divider=	totalphysicals/5;
