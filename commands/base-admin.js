@@ -1326,6 +1326,7 @@ exports.commands = {
 				else{
 					while(listsix.includes(t)){
 						t=t-0.1;
+						console.log(t);
 					}
 					listsix.push(t);
 					listsix.sort();
