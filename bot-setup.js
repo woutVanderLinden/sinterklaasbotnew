@@ -23,6 +23,7 @@ var fs = require('fs');
 var sys = require('sys');
 var url = require('url');
 var http = require('http');
+var XLSX = require('xlsx');
 
 function scan (p) {
 	return readline.question(p);
