@@ -1088,6 +1088,7 @@ exports.commands = {
 	},
 	
 	recommend:function (arg, by, room, cmd) {
+		var draftmons=global.todraftmons[toId(room)];
 		var name=toId(by);
 		var best={};
 		var listsix=[];
