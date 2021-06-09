@@ -1176,22 +1176,23 @@ exports.commands = {
 				var t=0.0;
 				if(typings.includes(global.mondata[monname]["Typing1"])){
 					if(global.mondata[monname]["Typing2"]!=undefined){
-						if(global.mondata[monname].hasOwnProperty("Typing2")){
+						
 							if(typings.includes(global.mondata[monname]["Typing2"])){
 
 							}
 							else{
 								t=t+5;
 							}
-						}
+						
 						
 					}
 				}
 				else{
+					console.log(global.mondata[monname]["Typing2"]);
 					if(global.mondata[monname]["Typing2"]!=undefined){
-							if(typings.includes(global.mondata[monname]["Typing2"])){
+						if(typings.includes(global.mondata[monname]["Typing2"])){
 								t=t+5;
-							}
+						}
 							else{
 								t=t+20;
 							}
@@ -1279,7 +1280,9 @@ exports.commands = {
 				if(totalspecial+8<totalphysical){
 					physicalt=physicalt/2;
 				}
+				console.log("tbeforesum"+t)
 				t=t+physicalt+specialt;
+				console.log("taftersum"+t)
 				if(totalphysicalw>5){
 					var divider=totalphysicalw/5;
 					t=t+(global.mondata[monname]["Physical Wall"]||0)/divider;	
@@ -1294,7 +1297,7 @@ exports.commands = {
 				else{
 					t=t+(global.mondata[monname]["Special Wall"]||0);
 				}
-				t=t+global.mondata[monname]["Speed Setup"];
+				t=t+(global.mondata[monname]["Speed Setup"]||0);
 				if(totalprio>5){
 					var divider=totalprio/5;
 					t=t+(global.mondata[monname]["Priority"]||0)/divider;	
