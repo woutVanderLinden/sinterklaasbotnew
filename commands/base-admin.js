@@ -1105,10 +1105,15 @@ exports.commands = {
 					best[listsix.indexOf(t)]=possiblepic[j];
 				}
 				else{
+					while(listsix.includes(t)){
+						t=t-1;
+					}
 					listsix.push(t);
 					listsix.sort();
-					delete best[listsix[6]];
-					listsix.pop();
+					if(listsix.length>6){
+						delete best[listsix[6]];
+						listsix.pop();
+					}
 				}
 				j++
 			}
@@ -1116,6 +1121,8 @@ exports.commands = {
 		}
 		var newlistsix=[];
 		var y=0;
+		console.log(listsix);
+		console.log(best);
 		while(y<=5){
 			newlistsix.push(best[listsix[y]]);
 			y++;
