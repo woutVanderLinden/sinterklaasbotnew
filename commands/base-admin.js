@@ -1188,7 +1188,7 @@ exports.commands = {
 					}
 				}
 				else{
-					if(global.mondata[monname].hasOwnProperty("Typing2")){
+					if(global.mondata[monname]["Typing2"]!=undefined){
 							if(typings.includes(global.mondata[monname]["Typing2"])){
 								t=t+5;
 							}
@@ -1223,7 +1223,7 @@ exports.commands = {
 				}
 				var physicalt=0.0;
 				var specialt=0.0;
-				
+					console.log("beforedivider1"+t+" "+physicalt);
 				if(totalphysicals>5){
 					var divider=totalphysicals/5;
 					physicalt=physicalt+(global.mondata[monname]["Physical Sweeper"]||0)/divider;	
@@ -1231,6 +1231,7 @@ exports.commands = {
 				else{
 					physicalt=physicalt+(global.mondata[monname]["Physical Sweeper"]||0);
 				}
+				console.log("afterdivider1"+physicalt);
 				if(totalphysicalb>5){
 					var divider=totalphysicalb/5;
 					physicalt=physicalt+(global.mondata[monname]["Physical Bulky Attacker"]||0)/divider;	
