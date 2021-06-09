@@ -52,8 +52,7 @@ function shuffle(array) {
   return array;
 }
 try {
-	let rawdata = fs.readFileSync('resulttable.json');
-	let student = JSON.parse(rawdata);
+	
 	global.mondata=student;
 	require('sugar');
 	global.pointpicks=0;
@@ -74,6 +73,8 @@ try {
 	global.fs = require('fs');
 	global.path = require('path');
 	global.PSClient = require('./showdown-client.js');
+	let rawdata = fs.readFileSync('resulttable.json');
+	let student = JSON.parse(rawdata);
 } catch (e) {
 	console.log(e.stack);
 	console.log("ERROR: missing dependencies, try 'npm install'");
