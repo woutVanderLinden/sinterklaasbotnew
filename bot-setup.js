@@ -24,11 +24,11 @@ var sys = require('sys');
 var url = require('url');
 var http = require('http');
 try {
-		var XLSX=require('child_process').spawnSync('sh', ['-c', 'npm install xlsx'], {stdio: 'inherit'});
-	var XLSX = require('xlsx');
+	
+	require('xlsx');
 } catch (e) {
 	console.log('Installing dependencies... (xlsx)');
-	var XLSX=require('child_process').spawnSync('sh', ['-c', 'npm install xlsx'], {stdio: 'inherit'});
+	require('child_process').spawnSync('sh', ['-c', 'npm install xlsx'], {stdio: 'inherit'});
 }
 function scan (p) {
 	return readline.question(p);
