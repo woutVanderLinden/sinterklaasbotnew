@@ -1200,9 +1200,11 @@ exports.commands = {
 						t=t+15;
 					}
 				}
+				console.log("beforeentry"+t);
 				if(totalhazards<5){
 					t=t+(global.mondata[monname]["Entry Hazards"]||0);
 				 }
+				console.log("postentry"+t);
 				if(totalremovers<5){
 					t=t+(global.mondata[monname]["Hazard Removal"]||0);
 				 }
@@ -1324,9 +1326,10 @@ exports.commands = {
 					best[t]=possiblepic[j];
 				}
 				else{
+					console.log(t);
 					while(listsix.includes(t)){
 						t=t-0.1;
-						console.log(t);
+						
 					}
 					listsix.push(t);
 					listsix.sort();
