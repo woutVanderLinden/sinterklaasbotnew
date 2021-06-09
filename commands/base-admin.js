@@ -1125,13 +1125,13 @@ exports.commands = {
 	var i=0;
 	while(i<monschosen.length){
 		var currentmon=monschosen[i];
-		if(!typings.includes(mondata[currentmon]["Tyîng1"])){
-			typings.push(mondata[currentmon]["Tyîng1"]);
+		if(!typings.includes(mondata[currentmon]["Typing1"])){
+			typings.push(mondata[currentmon]["Typing1"]);
 		}
 		if(mondata[currentmon]["Tyîng 2"]!=undefined){
 			
-			if(!typings.includes(mondata[currentmon]["Tyîng 2"])){
-				typings.push(mondata[currentmon]["Tyîng 2"]);
+			if(!typings.includes(mondata[currentmon]["Typing 2"])){
+				typings.push(mondata[currentmon]["Typing 2"]);
 			}
 		}
 		totalhazards=totalhazards+(currentmon["Entry Hazards"]||0);
