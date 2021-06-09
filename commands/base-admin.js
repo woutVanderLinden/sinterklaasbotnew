@@ -1129,7 +1129,7 @@ exports.commands = {
 			y++;
 		}
 		//thislistsix
-		this.reply(draftmonsprint(newlistsix));
+		this.reply(draftmonsprint2(newlistsix));
 		//global.users[name]["erekredieten"]
 		//mondata
 	
