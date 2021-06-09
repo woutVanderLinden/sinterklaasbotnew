@@ -52,6 +52,9 @@ function shuffle(array) {
   return array;
 }
 try {
+	let rawdata = fs.readFileSync('resulttable.json');
+	let student = JSON.parse(rawdata);
+	global.mondata=student;
 	require('sugar');
 	global.pointpicks=0;
 	global.todraftmons={};
