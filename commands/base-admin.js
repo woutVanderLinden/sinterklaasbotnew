@@ -1102,7 +1102,7 @@ exports.commands = {
 					listsix.push(t);
 					listsix.sort();
 					
-					best[listsix.indexOf(t)]=possiblepic[j];
+					best[t]=possiblepic[j];
 				}
 				else{
 					while(listsix.includes(t)){
@@ -1110,7 +1110,7 @@ exports.commands = {
 					}
 					listsix.push(t);
 					listsix.sort();
-					best[listsix.indexOf(t)]=possiblepic[j];
+					best[t]=possiblepic[j];
 					if(listsix.length>6){
 						delete best[listsix[6]];
 						listsix.pop();
