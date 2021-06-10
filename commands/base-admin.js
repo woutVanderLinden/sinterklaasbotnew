@@ -1128,7 +1128,7 @@ exports.commands = {
 					pointrecommend=true;
 				}
 			}
-			
+			x++;
 		}
 		
 		var draftmons=[];
