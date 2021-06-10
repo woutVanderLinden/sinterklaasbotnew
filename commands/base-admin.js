@@ -1100,7 +1100,7 @@ exports.commands = {
 			arg=jsUcfirst(arg);
 			tierrecommend=true;
 		}
-		if(postypings.includes(jsUCfirst(arg)){
+		if(postypings.includes(jsUCfirst(arg))){
 			filtertypings.push(jsUCfirst(arg));   
 		}
 		if(!Number.isNaN(parseInt(arg))){
