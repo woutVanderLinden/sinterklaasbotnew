@@ -1100,8 +1100,9 @@ exports.commands = {
 			arg=jsUcfirst(arg);
 			tierrecommend=true;
 		}
-		if(postypings.includes(jsUCfirst(arg))){
-			filtertypings.push(jsUCfirst(arg));   
+		arg=jsUcfirst(arg);
+		if(postypings.includes(arg)){
+			filtertypings.push(arg);   
 		}
 		if(!Number.isNaN(parseInt(arg))){
 			if(maxpoints<40){
