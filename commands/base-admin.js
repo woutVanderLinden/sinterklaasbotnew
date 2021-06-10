@@ -1387,7 +1387,7 @@ exports.commands = {
 				if(listsix.length<6){
 					listsix.push(t);
 					listsix.sort();
-					
+					best[t]={};
 					best[t]["name"]=possiblepic[j];
 					best[t]["credits"]=possiblepic=draftmons["tierlist"]["Tier"+g]["points"];
 				}
@@ -1399,6 +1399,7 @@ exports.commands = {
 					}
 					listsix.push(t);
 					listsix.sort();
+					best[t]={};
 					best[t]["name"]=possiblepic[j];
 					best[t]["credits"]=possiblepic=draftmons["tierlist"]["Tier"+g]["points"];
 					if(listsix.length>6){
