@@ -1604,7 +1604,7 @@ function draftmonsprint3(arg){
 					var credits=arg[i]["credits"];
 			if(toId(by)==toId(room)){
 				result=result+
-				var word=+name+" ("+credits+" erekredieten),";
+				var word=name+" ("+credits+" erekredieten), ";
 					result=result+word;
 					
 			}
