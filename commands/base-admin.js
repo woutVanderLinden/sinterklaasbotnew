@@ -1106,10 +1106,10 @@ exports.commands = {
 		}
 		var draftmons=[];
 		if(toId(by)==toId(room)){
-			var draftmons=global.todraftmons[global.todraftmons.keys[0]];
+			draftmons=global.todraftmons[global.todraftmons.keys()[0]];
 		}
 		else{
-			var draftmons=global.todraftmons[toId(room)];
+			draftmons=global.todraftmons[toId(room)];
 		}
 		
 		var name=toId(by);
