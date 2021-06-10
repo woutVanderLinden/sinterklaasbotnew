@@ -1591,7 +1591,11 @@ function draftmonsprint3(arg){
 	};
  function draftmonsprint4(arg,by,room){
 		//arg=arg.sort();
-		var result='!htmlbox ';
+	 	var result="suggestions:";
+	 	if(toId(by)!=toId(room)){
+			result='!htmlbox ';
+		}
+
 		for (var i = 0; i <= 2; i++) {
 				console.log(arg[i]);
 		//Do something
@@ -1599,7 +1603,7 @@ function draftmonsprint3(arg){
 			var name=arg[i]["name"];
 					var credits=arg[i]["credits"];
 			if(toId(by)==toId(room)){
-				result=result+("suggestions:");
+				result=result+
 				var word=+name+" ("+credits+" erekredieten),";
 					result=result+word;
 					
