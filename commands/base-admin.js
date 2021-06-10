@@ -1388,7 +1388,8 @@ exports.commands = {
 					listsix.push(t);
 					listsix.sort();
 					
-					best[t]=possiblepic[j];
+					best[t]["name"]=possiblepic[j];
+					best[t]["credits"]=possiblepic=draftmons["tierlist"]["Tier"+g]["points"];
 				}
 				else{
 					
@@ -1398,7 +1399,8 @@ exports.commands = {
 					}
 					listsix.push(t);
 					listsix.sort();
-					best[t]=possiblepic[j];
+					best[t]["name"]=possiblepic[j];
+					best[t]["credits"]=possiblepic=draftmons["tierlist"]["Tier"+g]["points"];
 					if(listsix.length>6){
 						delete best[listsix[6]];
 						listsix.pop();
@@ -1408,17 +1410,20 @@ exports.commands = {
 			}
 			g++;
 		}
-		var newlistsix=[];
+		var newlistsix={};
 		var y=0;
 		console.log(listsix);
 		console.log(best);
 		shuffle(listsix);
 		while(y<=2){
-			newlistsix.push(best[listsix[y]]);
+			var newobj={};
+			newobj["name"]=best[listsix[y]]["name"];
+			newobj["credits"]=best[listsix[y]]["credits"];
+			newlistsix[y]=newobj;
 			y++;
 		}
 		//thislistsix
-		this.reply(draftmonsprint2(newlistsix));
+		this.reply(draftmonsprint4(newlistsix));
 		//global.users[name]["erekredieten"]
 		//mondata
 	
@@ -1552,6 +1557,24 @@ function draftmonsprint3(arg){
 				//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 					var name=arg[i];
 					var word='<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>,';
+					result=result+word;
+				
+				
+			}
+			result=result.substring(0,result.length-1);
+			result=result;
+		return result;
+	};
+ function draftmonsprint4(arg){
+		arg=arg.sort();
+		var result='!htmlbox ';
+			for (var i = 0; i < arg.length; i++) {
+				console.log(arg[i]);
+		//Do something
+				//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
+					var name=arg[i]["name"];
+					var credits=arg[i]["credits"];
+					var word='<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+"("+credits+"erekredieten)"+'</a>,';
 					result=result+word;
 				
 				
