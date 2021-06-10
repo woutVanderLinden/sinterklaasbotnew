@@ -1319,17 +1319,37 @@ exports.commands = {
 				if(totalscreen<8){
 					t=t+(global.mondata[monname]["Screens"]||0);
 				}
-				if(hassun){
-					t=t+(global.mondata[monname]["Sun"]||0);
+				if((global.mondata[monname]["Sun"]||0)==6){
+					t=t+3;
 				}
-				if(hasrain){
-					t=t+(global.mondata[monname]["Rain"]||0);
+				else{
+					if(hassun){
+						t=t+(global.mondata[monname]["Sun"]||0);
+					}
 				}
-				if(hashail){
-					t=t+(global.mondata[monname]["Hail"]||0);
+				if((global.mondata[monname]["Rain"]||0)==6){
+					t=t+3;
 				}
-				if(hassand){
-					t=t+(global.mondata[monname]["Sand"]||0);
+				else{
+					if(hasrain){
+						t=t+(global.mondata[monname]["Rain"]||0);
+					}
+				}
+				if((global.mondata[monname]["Hail"]||0)==6){
+					t=t+3;
+				}
+				else{
+					if(hashail){
+						t=t+(global.mondata[monname]["Hail"]||0);
+					}
+				}
+				if((global.mondata[monname]["Sand"]||0)==6){
+					t=t+3;
+				}
+				else{
+					if(hassand){
+						t=t+(global.mondata[monname]["Sand"]||0);
+					}
 				}
 				console.log(t);
 				t=99-t;
@@ -1361,7 +1381,8 @@ exports.commands = {
 		var y=0;
 		console.log(listsix);
 		console.log(best);
-		while(y<=5){
+		shuffle(listsix);
+		while(y<=2){
 			newlistsix.push(best[listsix[y]]);
 			y++;
 		}
