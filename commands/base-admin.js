@@ -1391,7 +1391,7 @@ exports.commands = {
 					best[t]={};
 					best[t]["name"]=possiblepic[j];
 					if(tierrecommend){
-						best[t]["credits"]=possiblepic=draftmons["tierlist"][arg]["points"];
+						best[t]["credits"]=draftmons["tierlist"][arg]["points"];
 					}
 					else{
 						best[t]["credits"]=draftmons["tierlist"]["Tier"+g]["points"];
@@ -1410,7 +1410,7 @@ exports.commands = {
 					best[t]={};
 					best[t]["name"]=possiblepic[j];
 					if(tierrecommend){
-						best[t]["credits"]=possiblepic=draftmons["tierlist"][arg]["points"];
+						best[t]["credits"]=draftmons["tierlist"][arg]["points"];
 					}
 					else{
 						best[t]["credits"]=draftmons["tierlist"]["Tier"+g]["points"];
