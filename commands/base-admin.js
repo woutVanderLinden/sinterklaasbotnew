@@ -1090,6 +1090,9 @@ exports.commands = {
 	recommend:function (arg, by, room, cmd) {
 		
 		arg=arg.toLowerCase();
+		var args = arg.split(",");
+		
+		
 		var tierrecommend=false;
 		var pointrecommend=false;
 		var maxpoints=0;
@@ -1097,30 +1100,37 @@ exports.commands = {
 		var filtertypings=[];
 		var posfilterroles=["entryhazards","hazardremoval","itemremover","pivot","cleric","pivot","scarf","physicalsweeper","specialsweeper","physicalbulkyattacker","specialbulkyattacker","physicalwall","specialwall","physicalsetup","specialsetup","status","priority","speedcontrol","sun","rain","hail","sand"];
 		var filterroles=[];
-		if(posfilterroles.includes(toId(arg))){
-			filterroles.push(toId(arg));
-		}
-		var draftsshown=3;
-		if(arg.includes("tier")){
-			arg=jsUcfirst(arg);
-			tierrecommend=true;
-		}
-		arg=jsUcfirst(arg);
-		if(postypings.includes(arg)){
-			filtertypings.push(arg);   
-		}
-		if(!Number.isNaN(parseInt(arg))){
-			if(maxpoints<40){
-			
-			
-			
-				draftsshown=parseInt(arg);
+		
+		var x=0;
+		while(x<args.length){
+			var argx=arg[x];
+			if(posfilterroles.includes(toId(argx))){
+				filterroles.push(toId(argx));
 			}
-			else{
-				maxpoints=parseInt(arg);
-				pointrecommend=true;
+			var draftsshown=3;
+			if(argx.includes("tier")){
+				argx=jsUcfirst(argx);
+				tierrecommend=true;
 			}
+			argx=jsUcfirst(argx);
+			if(postypings.includes(argx)){
+				filtertypings.push(argx);   
+			}
+			if(!Number.isNaN(parseInt(argx))){
+				if(maxpoints<40){
+
+
+
+					draftsshown=parseInt(argx);
+				}
+				else{
+					maxpoints=parseInt(argx);
+					pointrecommend=true;
+				}
+			}
+			
 		}
+		
 		var draftmons=[];
 		if(toId(by)==toId(room)){
 			draftmons=global.todraftmons[Object.keys(global.todraftmons)[0]];
