@@ -1111,7 +1111,7 @@ exports.commands = {
 		else{
 			draftmons=global.todraftmons[toId(room)];
 		}
-		
+		console.log(toId(by));
 		var name=toId(by);
 		var best={};
 		var listsix=[];
