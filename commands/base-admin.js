@@ -1207,7 +1207,8 @@ exports.commands = {
 			
 			while(j<possiblepic["length"]){
 				console.log("j"+j);
-				var monname=possiblepic[j]
+				console.log(possiblepic["length"]);
+				var monname=possiblepic[j];
 				var t=0.0;
 				console.log(monname);
 				if(typings.includes(global.mondata[monname]["Typing1"])){
@@ -1229,10 +1230,10 @@ exports.commands = {
 						if(typings.includes(global.mondata[monname]["Typing 2"])){
 								t=t+5;
 						}
-							else{
+						else{
 								t=t+20;
-							}
 						}
+					}
 					else{
 						t=t+15;
 					}
@@ -1402,13 +1403,13 @@ exports.commands = {
 					listsix.sort();
 					best[t]={};
 					best[t]["name"]=possiblepic[j];
-					best[t]["credits"]=possiblepic=draftmons["tierlist"]["Tier"+g]["points"];
+					best[t]["credits"]=draftmons["tierlist"]["Tier"+g]["points"];
 					if(listsix.length>6){
 						delete best[listsix[6]];
 						listsix.pop();
 					}
 				}
-				j++
+				j++;
 			}
 			g++;
 		}
