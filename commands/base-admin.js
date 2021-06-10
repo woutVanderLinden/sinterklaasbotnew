@@ -1390,7 +1390,7 @@ exports.commands = {
 					listsix.sort();
 					best[t]={};
 					best[t]["name"]=possiblepic[j];
-					best[t]["credits"]=possiblepic=draftmons["tierlist"]["Tier"+g]["points"];
+					best[t]["credits"]=draftmons["tierlist"]["Tier"+g]["points"];
 					console.log(best);
 				}
 				else{
