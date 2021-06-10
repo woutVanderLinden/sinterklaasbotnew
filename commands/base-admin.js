@@ -1262,7 +1262,7 @@ exports.commands = {
 				var specialt=0.0;
 				
 				if(totalphysicals>5){
-					var divider=totalphysicals/5;
+					var divider=totalphysicals/5+.5;
 					physicalt=physicalt+(global.mondata[monname]["Physical Sweeper"]||0)/divider;	
 				}
 				else{
@@ -1270,7 +1270,7 @@ exports.commands = {
 				}
 				
 				if(totalphysicalb>5){
-					var divider=totalphysicalb/5;
+					var divider=totalphysicalb/5+.5;
 					physicalt=physicalt+(global.mondata[monname]["Physical Bulky Attacker"]||0)/divider;	
 				}
 				else{
@@ -1278,7 +1278,7 @@ exports.commands = {
 				}
 				console.log("beforesetup"+t);
 				if(totalphysicalup>5){
-					var divider=totalphysicalup/5;
+					var divider=totalphysicalup/5+.5;
 					physicalt=physicalt+(global.mondata[monname]["Physical Setup"]||0)/divider;	
 				}
 				else{
@@ -1286,21 +1286,21 @@ exports.commands = {
 				}
 				console.log("aftersetup"+t);
 				if(totalspecials>5){
-					var divider=totalspecials/5;
+					var divider=totalspecials/5+.5;
 					specialt=specialt+(global.mondata[monname]["Special Sweeper"]||0)/divider;	
 				}
 				else{
 					specialt=specialt+(global.mondata[monname]["Special Sweeper"]||0);
 				}
 				if(totalspecialb>5){
-					var divider=totalspecialb/5;
+					var divider=totalspecialb/5+.5;
 					specialt=specialt+(global.mondata[monname]["Special Bulky Attacker"]||0)/divider;	
 				}
 				else{
 					specialt=specialt+(global.mondata[monname]["Special Bulky Attacker"]||0);
 				}
 				if(totalspecialup>5){
-					var divider=totalspecialup/5;
+					var divider=totalspecialup/5+.5;
 					specialt=specialt+(global.mondata[monname]["Special Setup"]||0)/divider;	
 				}
 				else{
@@ -1322,14 +1322,14 @@ exports.commands = {
 				t=t+physicalt+specialt;
 				
 				if(totalphysicalw>5){
-					var divider=totalphysicalw/5;
+					var divider=totalphysicalw/5+.5;
 					t=t+(global.mondata[monname]["Physical Wall"]||0)/divider;	
 				}
 				else{
 					t=t+(global.mondata[monname]["Physical Wall"]||0);
 				}
 				if(totalspecialw>5){
-					var divider=totalspecialw/5;
+					var divider=totalspecialw/5+.5;
 					t=t+(global.mondata[monname]["Special Wall"]||0)/divider;	
 				}
 				else{
@@ -1338,7 +1338,7 @@ exports.commands = {
 				console.log("zfterwall"+t);
 				t=t+(global.mondata[monname]["Speed Setup"]||0);
 				if(totalprio>5){
-					var divider=totalprio/5;
+					var divider=totalprio/5+.5;
 					t=t+(global.mondata[monname]["Priority"]||0)/divider;	
 				}
 				else{
