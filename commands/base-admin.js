@@ -1103,7 +1103,7 @@ exports.commands = {
 		
 		var x=0;
 		while(x<args.length){
-			var argx=arg[x];
+			var argx=args[x];
 			if(posfilterroles.includes(toId(argx))){
 				filterroles.push(toId(argx));
 			}
