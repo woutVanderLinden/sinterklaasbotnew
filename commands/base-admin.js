@@ -1414,12 +1414,14 @@ exports.commands = {
 			g++;
 		}
 		var newlistsix={};
+		var secondarg=[];
 		var y=0;
 		console.log(listsix);
 		console.log(best);
 		shuffle(listsix);
 		while(y<=2){
 			var newobj={};
+			
 			newobj["name"]=best[listsix[y]]["name"];
 			newobj["credits"]=best[listsix[y]]["credits"];
 			newlistsix[y]=newobj;
@@ -1571,7 +1573,7 @@ function draftmonsprint3(arg){
  function draftmonsprint4(arg){
 		//arg=arg.sort();
 		var result='!htmlbox ';
-			for (var i = 0; i < arg.length; i++) {
+			for (var i = 0; i =<: 2; i++) {
 				console.log(arg[i]);
 		//Do something
 				//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
