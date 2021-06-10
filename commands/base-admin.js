@@ -1181,7 +1181,7 @@ exports.commands = {
 			 hassand=false;
 		}
 		i++;
-		console.log("i"+i);
+	
 				
 	}
 		var g =1;
