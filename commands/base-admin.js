@@ -1603,7 +1603,7 @@ function draftmonsprint3(arg){
 			result='!htmlbox ';
 		}
 
-		for (var i = 0; i <= nrshown; i++) {
+		for (var i = 0; i < nrshown; i++) {
 				console.log(arg[i]);
 		//Do something
 				//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
