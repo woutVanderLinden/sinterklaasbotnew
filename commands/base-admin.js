@@ -1579,7 +1579,7 @@ function draftmonsprint3(arg){
 				//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 					var name=arg[i]["name"];
 					var credits=arg[i]["credits"];
-					var word='<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+"("+credits+"erekredieten)"+'</a>,';
+					var word='<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+" ("+credits+" erekredieten)"+'</a>,';
 					result=result+word;
 				
 				
