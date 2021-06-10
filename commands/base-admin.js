@@ -1104,7 +1104,14 @@ exports.commands = {
 				return this.reply("please give a valid minimum number of points");
 			}
 		}
-		var draftmons=global.todraftmons[toId(room)];
+		var draftmons=[];
+		if(toId(by)==toId(room)){
+			var draftmons=global.todraftmons[global.todraftmons.keys[0]];
+		}
+		else{
+			var draftmons=global.todraftmons[toId(room)];
+		}
+		
 		var name=toId(by);
 		var best={};
 		var listsix=[];
@@ -1440,7 +1447,7 @@ exports.commands = {
 			y++;
 		}
 		//thislistsix
-		this.reply(draftmonsprint4(newlistsix));
+		this.reply(draftmonsprint4(newlistsix,by,room));
 		//global.users[name]["erekredieten"]
 		//mondata
 	
@@ -1582,17 +1589,25 @@ function draftmonsprint3(arg){
 			result=result;
 		return result;
 	};
- function draftmonsprint4(arg){
+ function draftmonsprint4(arg,by,room){
 		//arg=arg.sort();
 		var result='!htmlbox ';
 		for (var i = 0; i <= 2; i++) {
 				console.log(arg[i]);
 		//Do something
 				//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
-					var name=arg[i]["name"];
+			var name=arg[i]["name"];
 					var credits=arg[i]["credits"];
-					var word='<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+" ("+credits+" erekredieten)"+'</a>,';
+			if(toId(by)==toId(room)){
+				result=result+("suggestions:");
+				var word=+name+" ("+credits+" erekredieten),";
 					result=result+word;
+					
+			}
+			else{
+				var word='<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+" ("+credits+" erekredieten)"+'</a>,';
+					result=result+word;
+			}
 				
 				
 			}
