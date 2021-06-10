@@ -1093,15 +1093,22 @@ exports.commands = {
 		var tierrecommend=false;
 		var pointrecommend=false;
 		var maxpoints=0;
+		var postypings=[""];
+		var draftsshown=3;
 		if(arg.includes("tier")){
 			arg=jsUcfirst(arg);
 			tierrecommend=true;
 		}
 		if(!Number.isNaN(parseInt(arg))){
-			maxpoints=parseInt(arg);
-			pointrecommend=true;
 			if(maxpoints<40){
-				return this.reply("please give a valid minimum number of points");
+			
+			
+			
+				draftsshown=parseInt(arg);
+			}
+			else{
+				maxpoints=parseInt(arg);
+				pointrecommend=true;
 			}
 		}
 		var draftmons=[];
@@ -1392,7 +1399,7 @@ exports.commands = {
 				}
 				console.log(t);
 				t=99-t;
-				if(listsix.length<6){
+				if(listsix.length<draftsshown+3){
 					listsix.push(t);
 					listsix.sort();
 					best[t]={};
@@ -1423,8 +1430,8 @@ exports.commands = {
 						best[t]["credits"]=draftmons["tierlist"]["Tier"+g]["points"];
 					}
 					
-					if(listsix.length>6){
-						delete best[listsix[6]];
+					if(listsix.length>draftsshown+3){
+						delete best[listsix[draftsshown+3]];
 						listsix.pop();
 					}
 				}
@@ -1438,7 +1445,7 @@ exports.commands = {
 		console.log(listsix);
 		console.log(best);
 		shuffle(listsix);
-		while(y<=2){
+		while(y<draftsshown){
 			var newobj={};
 			
 			newobj["name"]=best[listsix[y]]["name"];
