@@ -1567,7 +1567,7 @@ function draftmonsprint3(arg){
 		return result;
 	};
  function draftmonsprint4(arg){
-		arg=arg.sort();
+		//arg=arg.sort();
 		var result='!htmlbox ';
 			for (var i = 0; i < arg.length; i++) {
 				console.log(arg[i]);
