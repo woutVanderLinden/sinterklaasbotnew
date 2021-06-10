@@ -1095,6 +1095,11 @@ exports.commands = {
 		var maxpoints=0;
 		var postypings=["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
 		var filtertypings=[];
+		var posfilterroles=["entryhazards","hazardremoval","itemremover","pivot","cleric","pivot","scarf","physicalsweeper","specialsweeper","physicalbulkyattacker","specialbulkyattacker","physicalwall","specialwall","physicalsetup","specialsetup","status","priority","speedcontrol","sun","rain","hail","sand"];
+		var filterroles=[];
+		if(posfilterroles.includes(toId(arg))){
+			filterroles.push(toId(arg));
+		}
 		var draftsshown=3;
 		if(arg.includes("tier")){
 			arg=jsUcfirst(arg);
@@ -1169,34 +1174,34 @@ exports.commands = {
 				typings.push(mondata[currentmon]["Typing 2"]);
 			}
 		}
-		totalhazards=totalhazards+(currentmon["Entry Hazards"]||0);
-		totalremovers=totalremovers+(currentmon["Hazard Removal"]||0);
-		totalitemremover=totalitemremover+(currentmon["Item Remover"]||0);
-		totalpivots=totalpivots+(currentmon["Pivot"]||0);
-		totalclerics=totalclerics+(currentmon["Cleric"]||0);
-		totalscarfs=totalscarfs+(currentmon["Scarf"]||0);
-		totalphysicals=totalphysicals+(currentmon["Physical Sweeper"]||0);
-		totalspecials=totalspecials+(currentmon["Special Sweeper"]||0);
-		totalphysicalb=totalphysicalb+(currentmon["Physical Bulky Attacker"]||0);
-		totalspecialb=totalspecialb+(currentmon["Special Bulky Attacker"]||0);
-		totalphysicalw=totalphysicalw+(currentmon["Physical Wall"]||0);
-		totalspecialw=totalspecialw+(currentmon["Special Wall"]||0);
-		totalphysicalup=totalphysicalup+(currentmon["Physical Setup"]||0);
-		totalspecialup=totalspecialup+(currentmon["Special Setup"]||0);
-		totalspeedup=totalspeedup+(currentmon["Speed Setup"]||0);
-		totalprio=totalprio+(currentmon["Priority"]||0);
-		totalstatus=totalstatus+(currentmon["Status"]||0);
-		totalscreen=totalscreen+(currentmon["Screens"]||0);
-		if(currentmon["Sun"]==6){
+		totalhazards=totalhazards+(currentmon["entryhazards"]||0);
+		totalremovers=totalremovers+(currentmon["hazardremoval"]||0);
+		totalitemremover=totalitemremover+(currentmon["itemremover"]||0);
+		totalpivots=totalpivots+(currentmon["pivot"]||0);
+		totalclerics=totalclerics+(currentmon["cleric"]||0);
+		totalscarfs=totalscarfs+(currentmon["scarf"]||0);
+		totalphysicals=totalphysicals+(currentmon["physicalsweeper"]||0);
+		totalspecials=totalspecials+(currentmon["specialsweeper"]||0);
+		totalphysicalb=totalphysicalb+(currentmon["physicalbulkyattacker"]||0);
+		totalspecialb=totalspecialb+(currentmon["specialbulkyattacker"]||0);
+		totalphysicalw=totalphysicalw+(currentmon["physicalwall"]||0);
+		totalspecialw=totalspecialw+(currentmon["specialwall"]||0);
+		totalphysicalup=totalphysicalup+(currentmon["physicalsetup"]||0);
+		totalspecialup=totalspecialup+(currentmon["specialsetup"]||0);
+		totalspeedup=totalspeedup+(currentmon["speedcontrol"]||0);
+		totalprio=totalprio+(currentmon["priority"]||0);
+		totalstatus=totalstatus+(currentmon["status"]||0);
+		totalscreen=totalscreen+(currentmon["screens"]||0);
+		if(currentmon["sun"]==6){
 			hassun=false;
 		}
-		if((currentmon["Rain"]||0)==6){
+		if((currentmon["rain"]||0)==6){
 			hasrain=false;
 		}
-		if((currentmon["Hail"]||0)==6){
+		if((currentmon["hail"]||0)==6){
 			 hashail=false;
 		}
-		if((currentmon["Sand"]||0)==6){
+		if((currentmon["sand"]||0)==6){
 			 hassand=false;
 		}
 		i++;
@@ -1259,72 +1264,72 @@ exports.commands = {
 				}
 				console.log("beforeentry"+t);
 				if(totalhazards<5){
-					t=t+(global.mondata[monname]["Entry Hazards"]||0);
+					t=t+(global.mondata[monname]["entryhazards"]||0);
 				 }
 				console.log("postentry"+t);
 				if(totalremovers<5){
-					t=t+(global.mondata[monname]["Hazard Removal"]||0);
+					t=t+(global.mondata[monname]["hazardremoval"]||0);
 				 }
 				if(totalitemremover<5){
-					t=t+(global.mondata[monname]["Item Remover"]||0);
+					t=t+(global.mondata[monname]["itemremover"]||0);
 				}
-				if((global.mondata[monname]["Pivot"]||0)>0){
+				if((global.mondata[monname]["pivot"]||0)>0){
 					
-					t=t+(global.mondata[monname]["Pivot"]||0)+totalpivots*.1;
+					t=t+(global.mondata[monname]["pivot"]||0)+totalpivots*.1;
 				}
 				if(totalclerics<5){
-					t=t+(global.mondata[monname]["Cleric"]||0);
+					t=t+(global.mondata[monname]["cleric"]||0);
 				}
 				if(totalscarfs<5){
-					t=t+(global.mondata[monname]["Scarf"]||0);
+					t=t+(global.mondata[monname]["scarf"]||0);
 				}
 				var physicalt=0.0;
 				var specialt=0.0;
 				
 				if(totalphysicals>5){
 					var divider=totalphysicals/5+.5;
-					physicalt=physicalt+(global.mondata[monname]["Physical Sweeper"]||0)/divider;	
+					physicalt=physicalt+(global.mondata[monname]["physicalsweeper"]||0)/divider;	
 				}
 				else{
-					physicalt=physicalt+(global.mondata[monname]["Physical Sweeper"]||0);
+					physicalt=physicalt+(global.mondata[monname]["physicalsweeper"]||0);
 				}
 				
 				if(totalphysicalb>5){
 					var divider=totalphysicalb/5+.5;
-					physicalt=physicalt+(global.mondata[monname]["Physical Bulky Attacker"]||0)/divider;	
+					physicalt=physicalt+(global.mondata[monname]["physicalbulkyattacker"]||0)/divider;	
 				}
 				else{
-					physicalt=physicalt+(global.mondata[monname]["Physical Bulky Attacker"]||0);
+					physicalt=physicalt+(global.mondata[monname]["physicalbulkyattacker"]||0);
 				}
 				console.log("beforesetup"+t);
 				if(totalphysicalup>5){
 					var divider=totalphysicalup/5+.5;
-					physicalt=physicalt+(global.mondata[monname]["Physical Setup"]||0)/divider;	
+					physicalt=physicalt+(global.mondata[monname]["physicalsetup"]||0)/divider;	
 				}
 				else{
-					physicalt=physicalt+(global.mondata[monname]["Physical Setup"]||0);
+					physicalt=physicalt+(global.mondata[monname]["physicalsetup"]||0);
 				}
 				console.log("aftersetup"+t);
 				if(totalspecials>5){
 					var divider=totalspecials/5+.5;
-					specialt=specialt+(global.mondata[monname]["Special Sweeper"]||0)/divider;	
+					specialt=specialt+(global.mondata[monname]["specialsweeper"]||0)/divider;	
 				}
 				else{
-					specialt=specialt+(global.mondata[monname]["Special Sweeper"]||0);
+					specialt=specialt+(global.mondata[monname]["specialsweeper"]||0);
 				}
 				if(totalspecialb>5){
 					var divider=totalspecialb/5+.5;
-					specialt=specialt+(global.mondata[monname]["Special Bulky Attacker"]||0)/divider;	
+					specialt=specialt+(global.mondata[monname]["specialbulkyattacker"]||0)/divider;	
 				}
 				else{
-					specialt=specialt+(global.mondata[monname]["Special Bulky Attacker"]||0);
+					specialt=specialt+(global.mondata[monname]["specialbulkyattacker"]||0);
 				}
 				if(totalspecialup>5){
 					var divider=totalspecialup/5+.5;
-					specialt=specialt+(global.mondata[monname]["Special Setup"]||0)/divider;	
+					specialt=specialt+(global.mondata[monname]["specialsetup"]||0)/divider;	
 				}
 				else{
-					specialt=specialt+(global.mondata[monname]["Special Setup"]||0);
+					specialt=specialt+(global.mondata[monname]["specialsetup"]||0);
 				}
 				
 					
@@ -1343,63 +1348,63 @@ exports.commands = {
 				
 				if(totalphysicalw>5){
 					var divider=totalphysicalw/5+.5;
-					t=t+(global.mondata[monname]["Physical Wall"]||0)/divider;	
+					t=t+(global.mondata[monname]["physicalwall"]||0)/divider;	
 				}
 				else{
-					t=t+(global.mondata[monname]["Physical Wall"]||0);
+					t=t+(global.mondata[monname]["physicalwall"]||0);
 				}
 				if(totalspecialw>5){
 					var divider=totalspecialw/5+.5;
-					t=t+(global.mondata[monname]["Special Wall"]||0)/divider;	
+					t=t+(global.mondata[monname]["specialwall"]||0)/divider;	
 				}
 				else{
-					t=t+(global.mondata[monname]["Special Wall"]||0);
+					t=t+(global.mondata[monname]["specialwall"]||0);
 				}
 				console.log("zfterwall"+t);
-				t=t+(global.mondata[monname]["Speed Setup"]||0);
+				t=t+(global.mondata[monname]["speedcontrol"]||0);
 				if(totalprio>5){
 					var divider=totalprio/5+.5;
-					t=t+(global.mondata[monname]["Priority"]||0)/divider;	
+					t=t+(global.mondata[monname]["priority"]||0)/divider;	
 				}
 				else{
-					t=t+(global.mondata[monname]["Priority"]||0);
+					t=t+(global.mondata[monname]["priority"]||0);
 				}
 				if(totalstatus<8){
-					t=t+(global.mondata[monname]["Status"]||0);
+					t=t+(global.mondata[monname]["status"]||0);
 				}
 				if(totalscreen<8){
-					t=t+(global.mondata[monname]["Screens"]||0);
+					t=t+(global.mondata[monname]["screens"]||0);
 				}
-				if((global.mondata[monname]["Sun"]||0)==6){
+				if((global.mondata[monname]["sun"]||0)==6){
 					t=t+3;
 				}
 				else{
 					if(hassun){
-						t=t+(global.mondata[monname]["Sun"]||0);
+						t=t+(global.mondata[monname]["sun"]||0);
 					}
 				}
-				if((global.mondata[monname]["Rain"]||0)==6){
+				if((global.mondata[monname]["rain"]||0)==6){
 					t=t+3;
 				}
 				else{
 					if(hasrain){
-						t=t+(global.mondata[monname]["Rain"]||0);
+						t=t+(global.mondata[monname]["rain"]||0);
 					}
 				}
-				if((global.mondata[monname]["Hail"]||0)==6){
+				if((global.mondata[monname]["hail"]||0)==6){
 					t=t+3;
 				}
 				else{
 					if(hashail){
-						t=t+(global.mondata[monname]["Hail"]||0);
+						t=t+(global.mondata[monname]["hail"]||0);
 					}
 				}
-				if((global.mondata[monname]["Sand"]||0)==6){
+				if((global.mondata[monname]["sand"]||0)==6){
 					t=t+3;
 				}
 				else{
 					if(hassand){
-						t=t+(global.mondata[monname]["Sand"]||0);
+						t=t+(global.mondata[monname]["sand"]||0);
 					}
 				}
 				console.log(t);
@@ -1410,6 +1415,16 @@ exports.commands = {
 					else{
 						t=t*0;
 					}
+					
+				}if(filterroles.length>0){
+					var r=0;
+					while(r<filterroles.length){
+						if((global.mondata[monname][filterroles[r]]||0)==0){
+							t=t*0;
+						}
+						r++;
+					}
+					
 					
 				}
 				t=99-t;
