@@ -1111,6 +1111,7 @@ exports.commands = {
 			if(argx.includes("tier")){
 				argx=jsUcfirst(argx);
 				tierrecommend=true;
+				var tier=argx;
 			}
 			argx=jsUcfirst(argx);
 			if(postypings.includes(argx)){
@@ -1223,7 +1224,7 @@ exports.commands = {
 			console.log("g"+g);
 			var possiblepic=[];
 			if(tierrecommend){
-				possiblepic=draftmons["tierlist"][arg]["pokemon"];
+				possiblepic=draftmons["tierlist"][tier]["pokemon"];
 				g=100;
 			}
 			else{
@@ -1449,7 +1450,7 @@ exports.commands = {
 					best[t]={};
 					best[t]["name"]=possiblepic[j];
 					if(tierrecommend){
-						best[t]["credits"]=draftmons["tierlist"][arg]["points"];
+						best[t]["credits"]=draftmons["tierlist"][tier]["points"];
 					}
 					else{
 						best[t]["credits"]=draftmons["tierlist"]["Tier"+g]["points"];
@@ -1468,7 +1469,7 @@ exports.commands = {
 					best[t]={};
 					best[t]["name"]=possiblepic[j];
 					if(tierrecommend){
-						best[t]["credits"]=draftmons["tierlist"][arg]["points"];
+						best[t]["credits"]=draftmons["tierlist"][tier]["points"];
 					}
 					else{
 						best[t]["credits"]=draftmons["tierlist"]["Tier"+g]["points"];
