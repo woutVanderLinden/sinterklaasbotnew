@@ -1097,7 +1097,7 @@ exports.commands = {
 			arg=jsUcfirst(arg);
 			tierrecommend=true;
 		}
-		if(!parseInt(arg).isNaN()){
+		if(!Number.isNaN(parseInt(arg))){
 			maxpoints=parseInt(arg);
 			pointrecommend=true;
 			if(maxpoints<40){
