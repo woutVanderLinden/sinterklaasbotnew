@@ -1390,7 +1390,13 @@ exports.commands = {
 					listsix.sort();
 					best[t]={};
 					best[t]["name"]=possiblepic[j];
-					best[t]["credits"]=draftmons["tierlist"]["Tier"+g]["points"];
+					if(tierrecommend){
+						best[t]["credits"]=possiblepic=draftmons["tierlist"][arg]["points"];
+					}
+					else{
+						best[t]["credits"]=draftmons["tierlist"]["Tier"+g]["points"];
+					}
+					
 					console.log(best);
 				}
 				else{
@@ -1403,7 +1409,13 @@ exports.commands = {
 					listsix.sort();
 					best[t]={};
 					best[t]["name"]=possiblepic[j];
-					best[t]["credits"]=draftmons["tierlist"]["Tier"+g]["points"];
+					if(tierrecommend){
+						best[t]["credits"]=possiblepic=draftmons["tierlist"][arg]["points"];
+					}
+					else{
+						best[t]["credits"]=draftmons["tierlist"]["Tier"+g]["points"];
+					}
+					
 					if(listsix.length>6){
 						delete best[listsix[6]];
 						listsix.pop();
