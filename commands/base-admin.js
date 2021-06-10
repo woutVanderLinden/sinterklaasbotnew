@@ -1091,9 +1091,18 @@ exports.commands = {
 		
 		arg=arg.toLowerCase();
 		var tierrecommend=false;
+		var pointrecommend=false;
+		var maxpoints=0;
 		if(arg.includes("tier")){
 			arg=jsUcfirst(arg);
 			tierrecommend=true;
+		}
+		if(!parseInt(arg).isNaN()){
+			maxpoints=parseInt(arg);
+			pointrecommend=true;
+			if(maxpoints<40){
+				return this.reply("please give a valid minimum number of points");
+			}
 		}
 		var draftmons=global.todraftmons[toId(room)];
 		var name=toId(by);
@@ -1184,6 +1193,13 @@ exports.commands = {
 				g=100;
 			}
 			else{
+				if(pointrecommend){
+					while(possiblepic=draftmons["tierlist"]["Tier"+g]["points"]>maxpoints){
+						
+						g++
+					}
+					
+				}
 				possiblepic=draftmons["tierlist"]["Tier"+g]["pokemon"];
 			}
 			 
