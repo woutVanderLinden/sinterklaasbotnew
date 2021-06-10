@@ -1093,11 +1093,15 @@ exports.commands = {
 		var tierrecommend=false;
 		var pointrecommend=false;
 		var maxpoints=0;
-		var postypings=[""];
+		var postypings=["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
+		var filtertypings=[];
 		var draftsshown=3;
 		if(arg.includes("tier")){
 			arg=jsUcfirst(arg);
 			tierrecommend=true;
+		}
+		if(postypings.includes(jsUCfirst(arg)){
+			filtertypings.push(jsUCfirst(arg));   
 		}
 		if(!Number.isNaN(parseInt(arg))){
 			if(maxpoints<40){
@@ -1398,7 +1402,17 @@ exports.commands = {
 					}
 				}
 				console.log(t);
+				if(filtertypings.length>0){
+					if(filtertypings.includes(global.mondata[monname]["Typing 2"])||filtertypings.includes(global.mondata[monname]["Typing1"])){
+						
+					}
+					else{
+						t=t*0;
+					}
+					
+				}
 				t=99-t;
+				
 				if(listsix.length<draftsshown+3){
 					while(listsix.includes(t)){
 						t=t+0.1;
