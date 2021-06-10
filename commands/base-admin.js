@@ -1088,6 +1088,13 @@ exports.commands = {
 	},
 	
 	recommend:function (arg, by, room, cmd) {
+		
+		arg=arg.toLowerCase();
+		var tierrecommend=false;
+		if(arg.includes("tier")){
+			arg=jsUcfirst(arg);
+			tierrecommend=true;
+		}
 		var draftmons=global.todraftmons[toId(room)];
 		var name=toId(by);
 		var best={};
@@ -1171,7 +1178,15 @@ exports.commands = {
 		var g =1;
 		while(g<=draftmons["length"]){
 			console.log("g"+g);
-			var possiblepic=draftmons["tierlist"]["Tier"+g]["pokemon"];
+			var possiblepic=[];
+			if(tierrecommend){
+				possiblepic=draftmons["tierlist"][arg]["pokemon"];
+				g=100;
+			}
+			else{
+				possiblepic=draftmons["tierlist"]["Tier"+g]["pokemon"];
+			}
+			 
 			var j=0;
 			
 			while(j<possiblepic["length"]){
