@@ -1454,7 +1454,7 @@ exports.commands = {
 			y++;
 		}
 		//thislistsix
-		this.reply(draftmonsprint4(newlistsix,by,room));
+		this.reply(draftmonsprint4(newlistsix,draftsshown,by,room));
 		//global.users[name]["erekredieten"]
 		//mondata
 	
@@ -1596,14 +1596,14 @@ function draftmonsprint3(arg){
 			result=result;
 		return result;
 	};
- function draftmonsprint4(arg,by,room){
+ function draftmonsprint4(arg,nrshown,by,room){
 		//arg=arg.sort();
 	 	var result="suggestions:";
 	 	if(toId(by)!=toId(room)){
 			result='!htmlbox ';
 		}
 
-		for (var i = 0; i <= 2; i++) {
+		for (var i = 0; i <= nrshown; i++) {
 				console.log(arg[i]);
 		//Do something
 				//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
