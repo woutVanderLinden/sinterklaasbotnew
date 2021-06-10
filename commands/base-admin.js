@@ -1400,6 +1400,10 @@ exports.commands = {
 				console.log(t);
 				t=99-t;
 				if(listsix.length<draftsshown+3){
+					while(listsix.includes(t)){
+						t=t+0.1;
+						
+					}
 					listsix.push(t);
 					listsix.sort();
 					best[t]={};
