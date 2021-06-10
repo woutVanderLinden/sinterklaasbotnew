@@ -1118,10 +1118,7 @@ exports.commands = {
 				filtertypings.push(argx);   
 			}
 			if(!Number.isNaN(parseInt(argx))){
-				if(maxpoints<40){
-
-
-
+				if(parseInt(argx)<40){
 					draftsshown=parseInt(argx);
 				}
 				else{
