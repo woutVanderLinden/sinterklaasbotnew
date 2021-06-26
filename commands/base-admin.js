@@ -1990,8 +1990,8 @@ function calculatescore(room,monname,name){
 				
 			 
 			
-				console.log("j"+j);
-				console.log(possiblepic["length"]);
+				//console.log("j"+j);
+				//console.log(possiblepic["length"]);
 				//var monname=possiblepic[j];
 				var t=0.0;
 				console.log(monname);
