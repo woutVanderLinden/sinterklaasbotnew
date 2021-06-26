@@ -882,6 +882,9 @@ exports.commands = {
 	
 	},
 	
+	showmonscore:  function (arg, by, room, cmd) {
+		return this.reply(arg +" score is "+calculatescore(toId(arg),toId(by)));
+	},
 	pickmon: 'draft',
 	
 	
@@ -1737,6 +1740,8 @@ async  function saveTeamsToCloud(){
 	}
 		
 };
+function calculateMonScore(arg,by){
+};
 function startNewTier(room,by,elem){
 	//load mons of the new tierlist
 	//reshuffle list of users
@@ -1819,10 +1824,347 @@ function startNewTier(room,by,elem){
 	}
 };
 function calculatescore(monname,name){
+	var arg=""
+	arg=arg.toLowerCase();
+		var args = arg.split(",");
+		
+		
+		var tierrecommend=false;
+		var pointrecommend=false;
+		var maxpoints=0;
+		var postypings=["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
+		var filtertypings=[];
+		var posfilterroles=["entryhazards","hazardremoval","itemremover","pivot","cleric","pivot","scarf","physicalsweeper","specialsweeper","physicalbulkyattacker","specialbulkyattacker","physicalwall","specialwall","physicalsetup","specialsetup","status","priority","speedcontrol","sun","rain","hail","sand"];
+		var filterroles=[];
+		
+		var x=0;
+		while(x<args.length){
+			var argx=args[x];
+			if(posfilterroles.includes(toId(argx))){
+				filterroles.push(toId(argx));
+			}
+			var draftsshown=3;
+			if(argx.includes("tier")){
+				argx=jsUcfirst(argx);
+				tierrecommend=true;
+				var tier=argx;
+			}
+			argx=jsUcfirst(argx);
+			if(postypings.includes(argx)){
+				filtertypings.push(argx);   
+			}
+			if(!Number.isNaN(parseInt(argx))){
+				if(parseInt(argx)<40){
+					draftsshown=parseInt(argx);
+				}
+				else{
+					maxpoints=parseInt(argx);
+					pointrecommend=true;
+				}
+			}
+			x++;
+		}
+		
+		var draftmons=[];
+		if(toId(name)==toId(room)){
+			draftmons=global.todraftmons[Object.keys(global.todraftmons)[0]];
+		}
+		else{
+			draftmons=global.todraftmons[toId(room)];
+		}
+		console.log(toId(by));
+		//var name=toId(by);
+		var best={};
+		var listsix=[];
+		var i=1;
+		
+		
+		
+		
+		
+		var typings=[];
+	var totalhazards=0.0;
+	var totalremovers=0.0;
+	var totalclerics=0.0;
+	var totalpivots=0.0;
+	var totalscarfs=0.0;
+	var totalitemremover=0.0;
+	var totalphysicals=0.0;
+	var totalspecials=0.0;
+	var totalphysicalb=0.0;
+	var totalspecialb=0.0;
+	var totalphysicalw=0.0;
+	var totalspecialw=0.0;
+	var totalphysicalup=0.0;
+	var totalspecialup=0.0;
+	var totalspeedup=0.0;
+	var totalprio=0.0;
+	var totalstatus=0.0;
+	var totalscreen=0.0;
+	var hassun=false;
+	var hasrain=false;
+	var hashail=false;
+	var hassand=false;
+	var monschosen=global.users[name]["draftedmons"];
+	var i=0;
+	while(i<monschosen.length){
+		var currentmon=monschosen[i];
+		if(!typings.includes(mondata[currentmon]["Typing1"])){
+			typings.push(mondata[currentmon]["Typing1"]);
+		}
+		if(mondata[currentmon]["Typing 2"]!=undefined){
+			
+			if(!typings.includes(mondata[currentmon]["Typing 2"])){
+				typings.push(mondata[currentmon]["Typing 2"]);
+			}
+		}
+		totalhazards=totalhazards+(currentmon["entryhazards"]||0);
+		totalremovers=totalremovers+(currentmon["hazardremoval"]||0);
+		totalitemremover=totalitemremover+(currentmon["itemremover"]||0);
+		totalpivots=totalpivots+(currentmon["pivot"]||0);
+		totalclerics=totalclerics+(currentmon["cleric"]||0);
+		totalscarfs=totalscarfs+(currentmon["scarf"]||0);
+		totalphysicals=totalphysicals+(currentmon["physicalsweeper"]||0);
+		totalspecials=totalspecials+(currentmon["specialsweeper"]||0);
+		totalphysicalb=totalphysicalb+(currentmon["physicalbulkyattacker"]||0);
+		totalspecialb=totalspecialb+(currentmon["specialbulkyattacker"]||0);
+		totalphysicalw=totalphysicalw+(currentmon["physicalwall"]||0);
+		totalspecialw=totalspecialw+(currentmon["specialwall"]||0);
+		totalphysicalup=totalphysicalup+(currentmon["physicalsetup"]||0);
+		totalspecialup=totalspecialup+(currentmon["specialsetup"]||0);
+		totalspeedup=totalspeedup+(currentmon["speedcontrol"]||0);
+		totalprio=totalprio+(currentmon["priority"]||0);
+		totalstatus=totalstatus+(currentmon["status"]||0);
+		totalscreen=totalscreen+(currentmon["screens"]||0);
+		if(currentmon["sun"]==6){
+			hassun=false;
+		}
+		if((currentmon["rain"]||0)==6){
+			hasrain=false;
+		}
+		if((currentmon["hail"]||0)==6){
+			 hashail=false;
+		}
+		if((currentmon["sand"]||0)==6){
+			 hassand=false;
+		}
+		i++;
+	
+				
+	}
+		var g =1;
+		
+			console.log("g"+g);
+			var possiblepic=[];
+			
+				possiblepic=monname;
+				g=100;
+			
+			
+				
+			 
+			
+				console.log("j"+j);
+				console.log(possiblepic["length"]);
+				//var monname=possiblepic[j];
+				var t=0.0;
+				console.log(monname);
+				if(typings.includes(global.mondata[monname]["Typing1"])){
+					if(global.mondata[monname]["Typing 2"]!=undefined){
+						
+							if(typings.includes(global.mondata[monname]["Typing 2"])){
+
+							}
+							else{
+								t=t+5;
+							}
+						
+						
+					}
+				}
+				else{
+					console.log(global.mondata[monname]["Typing 2"]);
+					if(global.mondata[monname]["Typing 2"]!=undefined){
+						if(typings.includes(global.mondata[monname]["Typing 2"])){
+								t=t+5;
+						}
+						else{
+								t=t+20;
+						}
+					}
+					else{
+						t=t+15;
+					}
+				}
+				console.log("beforeentry"+t);
+				if(totalhazards<5){
+					t=t+(global.mondata[monname]["entryhazards"]||0);
+				 }
+				console.log("postentry"+t);
+				if(totalremovers<5){
+					t=t+(global.mondata[monname]["hazardremoval"]||0);
+				 }
+				if(totalitemremover<5){
+					t=t+(global.mondata[monname]["itemremover"]||0);
+				}
+				if((global.mondata[monname]["pivot"]||0)>0){
+					
+					t=t+(global.mondata[monname]["pivot"]||0)+totalpivots*.1;
+				}
+				if(totalclerics<5){
+					t=t+(global.mondata[monname]["cleric"]||0);
+				}
+				if(totalscarfs<5){
+					t=t+(global.mondata[monname]["scarf"]||0);
+				}
+				var physicalt=0.0;
+				var specialt=0.0;
+				
+				if(totalphysicals>5){
+					var divider=totalphysicals/5+.5;
+					physicalt=physicalt+(global.mondata[monname]["physicalsweeper"]||0)/divider;	
+				}
+				else{
+					physicalt=physicalt+(global.mondata[monname]["physicalsweeper"]||0);
+				}
+				
+				if(totalphysicalb>5){
+					var divider=totalphysicalb/5+.5;
+					physicalt=physicalt+(global.mondata[monname]["physicalbulkyattacker"]||0)/divider;	
+				}
+				else{
+					physicalt=physicalt+(global.mondata[monname]["physicalbulkyattacker"]||0);
+				}
+				console.log("beforesetup"+t);
+				if(totalphysicalup>5){
+					var divider=totalphysicalup/5+.5;
+					physicalt=physicalt+(global.mondata[monname]["physicalsetup"]||0)/divider;	
+				}
+				else{
+					physicalt=physicalt+(global.mondata[monname]["physicalsetup"]||0);
+				}
+				console.log("aftersetup"+t);
+				if(totalspecials>5){
+					var divider=totalspecials/5+.5;
+					specialt=specialt+(global.mondata[monname]["specialsweeper"]||0)/divider;	
+				}
+				else{
+					specialt=specialt+(global.mondata[monname]["specialsweeper"]||0);
+				}
+				if(totalspecialb>5){
+					var divider=totalspecialb/5+.5;
+					specialt=specialt+(global.mondata[monname]["specialbulkyattacker"]||0)/divider;	
+				}
+				else{
+					specialt=specialt+(global.mondata[monname]["specialbulkyattacker"]||0);
+				}
+				if(totalspecialup>5){
+					var divider=totalspecialup/5+.5;
+					specialt=specialt+(global.mondata[monname]["specialsetup"]||0)/divider;	
+				}
+				else{
+					specialt=specialt+(global.mondata[monname]["specialsetup"]||0);
+				}
+				
+					
+				
+				var totalphysical=totalphysicalup+totalphysicals+totalphysicalb;
+				var totalspecial=totalspecialup+totalspecials+totalspecialb;
+				
+				if(totalphysical+8<totalspecial){
+					specialt=specialt/2;
+				}
+				if(totalspecial+8<totalphysical){
+					physicalt=physicalt/2;
+				}
+			
+				t=t+physicalt+specialt;
+				
+				if(totalphysicalw>5){
+					var divider=totalphysicalw/5+.5;
+					t=t+(global.mondata[monname]["physicalwall"]||0)/divider;	
+				}
+				else{
+					t=t+(global.mondata[monname]["physicalwall"]||0);
+				}
+				if(totalspecialw>5){
+					var divider=totalspecialw/5+.5;
+					t=t+(global.mondata[monname]["specialwall"]||0)/divider;	
+				}
+				else{
+					t=t+(global.mondata[monname]["specialwall"]||0);
+				}
+				console.log("zfterwall"+t);
+				t=t+(global.mondata[monname]["speedcontrol"]||0);
+				if(totalprio>5){
+					var divider=totalprio/5+.5;
+					t=t+(global.mondata[monname]["priority"]||0)/divider;	
+				}
+				else{
+					t=t+(global.mondata[monname]["priority"]||0);
+				}
+				if(totalstatus<8){
+					t=t+(global.mondata[monname]["status"]||0);
+				}
+				if(totalscreen<8){
+					t=t+(global.mondata[monname]["screens"]||0);
+				}
+				if((global.mondata[monname]["sun"]||0)==6){
+					t=t+3;
+				}
+				else{
+					if(hassun){
+						t=t+(global.mondata[monname]["sun"]||0);
+					}
+				}
+				if((global.mondata[monname]["rain"]||0)==6){
+					t=t+3;
+				}
+				else{
+					if(hasrain){
+						t=t+(global.mondata[monname]["rain"]||0);
+					}
+				}
+				if((global.mondata[monname]["hail"]||0)==6){
+					t=t+3;
+				}
+				else{
+					if(hashail){
+						t=t+(global.mondata[monname]["hail"]||0);
+					}
+				}
+				if((global.mondata[monname]["sand"]||0)==6){
+					t=t+3;
+				}
+				else{
+					if(hassand){
+						t=t+(global.mondata[monname]["sand"]||0);
+					}
+				}
+				console.log(t);
+				if(filtertypings.length>0){
+					if(filtertypings.includes(global.mondata[monname]["Typing 2"])||filtertypings.includes(global.mondata[monname]["Typing1"])){
+						
+					}
+					else{
+						t=t*0;
+					}
+					
+				}if(filterroles.length>0){
+					var r=0;
+					while(r<filterroles.length){
+						if((global.mondata[monname][filterroles[r]]||0)==0){
+							t=t*0;
+						}
+						r++;
+					}
+					
+					
+				}
+				t=99-t;
 	
 	
-	
-	return 1;
+	return t;
 };
 function jsUcfirst(string) 
 {
