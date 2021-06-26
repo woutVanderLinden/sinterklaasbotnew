@@ -1898,7 +1898,7 @@ function calculatescore(room,monname,name){
 		else{
 			draftmons=global.todraftmons[toId(room)];
 		}
-		console.log(toId(by));
+		//console.log(toId();
 		//var name=toId(by);
 		var best={};
 		var listsix=[];
