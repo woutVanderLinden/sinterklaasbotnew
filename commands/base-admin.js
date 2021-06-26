@@ -316,7 +316,7 @@ exports.commands = {
 		}
 		return this.reply("kicked "+arg );
 	},
-	joindraft: function (arg, by, room, cmd){
+	joindraft: async function (arg, by, room, cmd){
 			let rawdata = fs.readFileSync('DraftTest.json');
 		if(global.users=={}){
 					/*first load in the draft file list*/
