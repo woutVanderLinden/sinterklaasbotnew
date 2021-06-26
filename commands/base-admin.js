@@ -909,7 +909,8 @@ exports.commands = {
 	},
 	
 	showmonscore:  function (arg, by, room, cmd) {
-		return this.reply(arg +" score is "+calculatescore(room,toId(arg),toId(by)));
+		arg=jsUcfirst(toId(arg));
+		return this.reply(arg +" score is "+calculatescore(room,arg,toId(by)));
 	},
 	pickmon: 'draft',
 	
@@ -1851,6 +1852,7 @@ function startNewTier(room,by,elem){
 };
 function calculatescore(room,monname,name){
 	var arg=""
+	
 	arg=arg.toLowerCase();
 		var args = arg.split(",");
 		
