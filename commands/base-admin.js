@@ -318,6 +318,31 @@ exports.commands = {
 	},
 	joindraft: function (arg, by, room, cmd){
 			let rawdata = fs.readFileSync('DraftTest.json');
+		if(global.users=={}){
+					/*first load in the draft file list*/
+		//lets try that now
+			console.log('started reading file');
+			const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+			console.log(uri);
+			console.log("test");
+
+			const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+
+			try {
+				await client.connect();
+				var quotes =await findOneListingByName(client,"pokemon");
+				global.users=quotes["pokemon"];
+
+
+				//return this.reply(draftmonsprint2(list));
+			} catch (e) {
+				console.error(e);
+			}	
+			finally{
+				await client.close();
+			}
+		}
+	
 		if(global.draftstarted[toId(room)]==true){
 			return this.reply("draft already started");
 		}
@@ -340,6 +365,7 @@ exports.commands = {
 			newuser["erekredieten"]=500;
 			newuser["draftedmons"]=[];
 			newuser["tieredpicks"]=global.todraftmons[toId(room)]["TierPicks"];
+			newuser["totaldraftscore"]=0;
 			global.users[toId(by)]=newuser;
 			global.turnorder[toId(room)].push(toId(by));
 			console.log(global.users[toId(room)]);
@@ -541,9 +567,8 @@ exports.commands = {
 		if(global.draftstarted[toId(room)]==true){
 			return this.reply("draft already started");
 		}
-		/*first load in the draft file list*/
-		//lets try that now
-		console.log('started reading file');
+		
+	
 		let rawdata = fs.readFileSync('DraftTest.json');
 		let student = JSON.parse(rawdata);
 		console.log(student);
@@ -574,9 +599,10 @@ exports.commands = {
 		console.log(global.todraftmons);
 		let rawdata2 = fs.readFileSync('draftedmons.json');
 		let student2 = JSON.parse(rawdata2);
-		if(global.draftedmons={}){
-			global.draftedmons=student2;
-		}
+		global.draftedmons=quotes;
+		//if(global.draftedmons={}){
+			
+		//}
 		var draftmons=global.todraftmons[toId(room)];
 		global.draftdirectionup[toId(room)]=true;
 		var tiername="Tier"+global.currenttier[toId(room)];
