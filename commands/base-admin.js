@@ -909,7 +909,7 @@ exports.commands = {
 	},
 	
 	showmonscore:  function (arg, by, room, cmd) {
-		return this.reply(arg +" score is "+calculatescore(toId(arg),toId(by)));
+		return this.reply(arg +" score is "+calculatescore(room,toId(arg),toId(by)));
 	},
 	pickmon: 'draft',
 	
@@ -1849,7 +1849,7 @@ function startNewTier(room,by,elem){
 		
 	}
 };
-function calculatescore(monname,name){
+function calculatescore(room,monname,name){
 	var arg=""
 	arg=arg.toLowerCase();
 		var args = arg.split(",");
