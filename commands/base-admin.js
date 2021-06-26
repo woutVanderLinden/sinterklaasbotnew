@@ -975,7 +975,7 @@ exports.commands = {
 						draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
 						global.users[name]["tieredpicks"]=removeItemOnce(global.users[name]["tieredpicks"],i);
 						this.reply( name +" used a tierpick to draft a tier "+i+" "+arg+ " (erekredieten. "+global.users[name]["erekredieten"] +"tierpicks "+global.users[name]["tieredpicks"]+ " )");
-					
+						global.users[name]["totaldraftscore"]=global.users[name]["totaldraftscore"]+calculatescore(room,arg,name);
 					}
 					else{
 						draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
@@ -989,7 +989,7 @@ exports.commands = {
 						global.users[name]["erekredieten"]=global.users[name]["erekredieten"]-draftmons["tierlist"]["Tier"+i]["points"];
 					
 						this.reply( name +" paid "+draftmons["tierlist"]["Tier"+i]["points"]+ " erekredieten.( Erekredieten "+global.users[name]["erekredieten"]+" tieredpicks:"+global.users[name]["tieredpicks"]+ ")");
-					
+						global.users[name]["totaldraftscore"]=global.users[name]["totaldraftscore"]+calculatescore(room,arg,name);
 					}
 					
 					global.users[name]["draftedmons"].push(arg);
@@ -2189,7 +2189,7 @@ function calculatescore(room,monname,name){
 					
 					
 				}
-				t=99-t;
+				
 	
 	
 	return t;
