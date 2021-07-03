@@ -298,7 +298,7 @@ exports.commands = {
 			newuser["draftedmons"]=[];
 			newuser["tieredpicks"]=global.todraftmons[toId(room)]["TierPicks"];
 			newuser["totaldraftscore"]=0;
-			global.users[toId(by)]=newuser;
+			global.users[toId(arg)]=newuser;
 			global.turnorder[toId(room)].push(toId(arg));
 			console.log(global.users[toId(room)]);
 			
