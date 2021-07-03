@@ -600,7 +600,7 @@ exports.commands = {
 		console.log(global.todraftmons);
 		let rawdata2 = fs.readFileSync('draftedmons.json');
 		let student2 = JSON.parse(rawdata2);
-		global.draftedmons=quotes;
+		//global.draftedmons=quotes;
 		//if(global.draftedmons={}){
 			
 		//}
