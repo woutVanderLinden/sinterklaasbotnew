@@ -1122,6 +1122,7 @@ exports.commands = {
 		
 		arg=arg.toLowerCase();
 		var args = arg.split(",");
+		
 		var filtered=false;
 		if (arg!=""){
 			filtered=true;
@@ -1134,12 +1135,17 @@ exports.commands = {
 		var filtertypings=[];
 		var posfilterroles=["entryhazards","hazardremoval","itemremover","pivot","cleric","pivot","scarf","physicalsweeper","specialsweeper","physicalbulkyattacker","specialbulkyattacker","physicalwall","specialwall","physicalsetup","specialsetup","status","priority","speedcontrol","sun","rain","hail","sand"];
 		var filterroles=[];
-		
+		var userlist=global.turnorder[toId(room)];
 		var x=0;
+		var name=toId(by);
 		while(x<args.length){
 			var argx=args[x];
+			
 			if(posfilterroles.includes(toId(argx))){
 				filterroles.push(toId(argx));
+			}
+			if(userlist.includes(toId(argx)){
+			   name=toId(argx);
 			}
 			var draftsshown=3;
 			if(argx.includes("tier")){
@@ -1171,7 +1177,8 @@ exports.commands = {
 			draftmons=global.todraftmons[toId(room)];
 		}
 		console.log(toId(by));
-		var name=toId(by);
+		
+		//var name=toId(by);
 		var best={};
 		var listsix=[];
 		var i=1;
