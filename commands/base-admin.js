@@ -460,8 +460,13 @@ exports.commands = {
 		else{
 				var list=quotes["pokemon"][toId(arg)]["draftedmons"];
 		}
-	
+		if(toId(by)==toId(room)){
+			return this.reply(draftmonsprint(list));
+		}else{
 			return this.reply(draftmonsprint2(list));
+		}
+	
+			
 	} catch (e) {
     		console.error(e);
 	}	
@@ -502,35 +507,38 @@ exports.commands = {
 	},
 	viewdraft2: function (arg, by, room, cmd){
 		
-		
-		let rawdata = fs.readFileSync('draftedmons.json');
-		let student = JSON.parse(rawdata);
-		if(arg==''){
-			if(toId(by)==toId(room)){
-				
-				return this.reply(draftmonsprint3(student[toId(by)]));
-		
-			}else{
-				
-				if (!by.startsWith("+")&&!by.startsWith("#")&&!by.startsWith("%")&&!by.startsWith("@")){
+		if (!by.startsWith("+")&&!by.startsWith("#")&&!by.startsWith("%")&&!by.startsWith("@")){
 					return false;
-				}
-				else{
-					
-					return this.reply(draftmonsprint2(student[toId(by)]));
-				}
-			}
-			
+				}	
+	const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	console.log(uri);
+	console.log("test");
+	
+	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+	
+	try {
+		await client.connect();
+		let quotes =await findOneListingByName(client,"pokemon");
+		var list;
+		if(arg==''){
+				var list=quotes["pokemon"][toId(by)]["draftedmons"];
 		}
 		else{
-			if(toId(by)==toId(room)){
-				return this.reply(draftmonsprint3(student[arg]["drafted"]));
-			
-			}else{
-				return this.reply(draftmonsprint2(student[arg]["drafted"]));
-			
-			}
+				var list=quotes["pokemon"][toId(arg)]["draftedmons"];
 		}
+		if(toId(by)==toId(room)){
+			return this.reply(draftmonsprint3(list));
+		}else{
+			return this.reply(draftmonsprint2(list));
+		}
+	
+			
+	} catch (e) {
+    		console.error(e);
+	}	
+	finally{
+		await client.close();
+	}
 	},
 	draftable:'drafttable',
 	drafttable: function (arg, by, room, cmd){
