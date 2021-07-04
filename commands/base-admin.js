@@ -505,7 +505,7 @@ exports.commands = {
 			}
 		}*/
 	},
-	viewdraft2: function (arg, by, room, cmd){
+	viewdraft2: async function (arg, by, room, cmd){
 		
 		if (!by.startsWith("+")&&!by.startsWith("#")&&!by.startsWith("%")&&!by.startsWith("@")){
 					return false;
