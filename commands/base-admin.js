@@ -1122,7 +1122,10 @@ exports.commands = {
 		
 		arg=arg.toLowerCase();
 		var args = arg.split(",");
-		
+		var filtered=false;
+		if (arg!=""){
+			filtered=true;
+		}
 		
 		var tierrecommend=false;
 		var pointrecommend=false;
@@ -1467,8 +1470,11 @@ exports.commands = {
 					
 				}
 				t=99-t;
-				
-				if(listsix.length<draftsshown+3){
+				var maxlength=draftsshown+3;
+				if(filtered){
+					maxlength=draftsshown;
+				}
+				if(listsix.length<maxlength){
 					while(listsix.includes(t)){
 						t=t+0.1;
 						
@@ -1502,11 +1508,19 @@ exports.commands = {
 					else{
 						best[t]["credits"]=draftmons["tierlist"]["Tier"+g]["points"];
 					}
-					
-					if(listsix.length>draftsshown+3){
-						delete best[listsix[draftsshown+3]];
-						listsix.pop();
+					if(filtered){
+						if(listsix.length>draftsshown){
+							delete best[listsix[draftsshown]];
+							listsix.pop();
+						}
 					}
+					else{
+						if(listsix.length>draftsshown+3){
+							delete best[listsix[draftsshown+3]];
+							listsix.pop();
+						}
+					}
+					
 				}
 				j++;
 			}
