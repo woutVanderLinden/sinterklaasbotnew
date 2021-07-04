@@ -1144,7 +1144,7 @@ exports.commands = {
 			if(posfilterroles.includes(toId(argx))){
 				filterroles.push(toId(argx));
 			}
-			if(userlist.includes(toId(argx)){
+			if(userlist.includes(toId(argx))){
 			   name=toId(argx);
 			}
 			var draftsshown=3;
