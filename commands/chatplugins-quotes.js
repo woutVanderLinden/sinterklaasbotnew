@@ -130,8 +130,7 @@ async function samplefunc (arg, by, room, cmd,vart) {
 				vart.reply("removing sample " +args[1]);
 			let samples =await findOneListingByName(client,args[0])
 			var newarg=toId(args[0]);
-			
-			samples[newarg].removeItemOnce(args[1]);
+			removeItemOnce(samples[newarg],args[1]);
 			vart.reply("removed sample " +args[1]);
 			await updateListingByName(client,"samples" ,samples);
 			}
@@ -218,7 +217,7 @@ async function quotefunc (arg, by, room, cmd,vart) {
 			
 			let quotes =await findOneListingByName(client,"quotes")
 			
-			quotes["nederlands"].removeItemOnce(arg);
+			removeItemOnce(quotes["nederlands"],arg);
 			vart.reply("removed quote " +arg);
 			await updateListingByName(client,"quotes" ,quotes);
 		
