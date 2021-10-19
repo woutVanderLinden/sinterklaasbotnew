@@ -12,7 +12,13 @@ async function listDatabases(client){
     databasesList.databases.forEach(db => console.log(` - ${db.name}`));
 
 };
-
+async function removeItemOnce(arr, value) {
+  var index = arr.indexOf(value);
+  if (index > -1) {
+    arr.splice(index, 1);
+  }
+  return arr;
+};
 async function createListing(client, newListing){
 
     const result = await client.db("TestDb").collection("quotes").insertOne(newListing);
@@ -1765,13 +1771,7 @@ function draftmonsprint3(arg){
 			result=result.substring(1,result.length);
 		return 'draft ' +result;
 	};
-function removeItemOnce(arr, value) {
-  var index = arr.indexOf(value);
-  if (index > -1) {
-    arr.splice(index, 1);
-  }
-  return arr;
-};
+
 async  function saveTeamsToCloud(){
 	
 	const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
