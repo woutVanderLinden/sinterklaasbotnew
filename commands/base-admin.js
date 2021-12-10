@@ -1831,7 +1831,8 @@ function generateMonsList(monlist,room){
 	while(!stopped) {
 		resultlist.push(pickmultimons(monlist["tierlist"][i]["picks"],monlist["tierlist"][i]["pokemon"],list));	
 		i++;
-		if(i>monlist["length"]){
+		console.log(monlist["length"]);
+		if(i>=monlist["length"]){
 			stopped=true;
 		}
 	}
