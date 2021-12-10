@@ -261,7 +261,7 @@ exports.commands = {
 		}
 		/*give everyone a monlist*/
 		this.reply("sending drafts");
-		pmlists(monlist);
+		pmlists(monlist,this);
 	},
 	
 	/*
@@ -2262,10 +2262,10 @@ function calculatescore(room,monname,name){
 	
 	return t;
 };
-function pmlists(monlists)
+function pmlists(monlists,vart)
 {
 	for(let i=0; i<global.users[toId(room)].length; i++){
-		this.sendPM(global.users[toId(room)][i],monlists[i]);
+		vart.sendPM(global.users[toId(room)][i],monlists[i]);
 	}
 };
 function jsUcfirst(string) 
