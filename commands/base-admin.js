@@ -1830,7 +1830,7 @@ function generateMonsList(monlist,room){
 	var i=1;
 	var list=global.turnorder[toId(room)];
 	while(!stopped) {
-		resultlist.concat(pickmultimons(monlist["tierlist"]["Tier"+i]["pokemon"],monlist["tierlist"]["Tier"+i]["picks"],list));	
+		resultlist.push.apply(resultlist,pickmultimons(monlist["tierlist"]["Tier"+i]["pokemon"],monlist["tierlist"]["Tier"+i]["picks"],list));	
 		i++;
 		console.log(i);
 		if(i>monlist["length"]){
