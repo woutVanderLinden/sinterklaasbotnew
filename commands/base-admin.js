@@ -2269,6 +2269,7 @@ function calculatescore(room,monname,name){
 function pmlists(monlists,room , vart)
 {
 	console.log(global.turnorder[toId(room)]);
+	console.log(monlists);
 	for(let i=0; i<global.turnorder[toId(room)].length; i++){
 		vart.sendPM(global.turnorder[toId(room)][i],monlists[i]);
 	}
