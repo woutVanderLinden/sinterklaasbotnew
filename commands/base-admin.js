@@ -250,7 +250,6 @@ exports.commands = {
 		global.currenttier[toId(room)]=0;
 		global.todraftmons[toId(room)]=student;
 		giftdrafting=true;
-mons		
 		global.draftstarted[toId(room)]=true;
 		global.picknr[toId(room)]=0;
 		var list=global.turnorder[toId(room)];
