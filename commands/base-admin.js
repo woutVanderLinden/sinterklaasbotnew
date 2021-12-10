@@ -264,7 +264,7 @@ exports.commands = {
 		}
 		/*give everyone a monlist*/
 		this.reply("sending drafts");
-		pmlists(monlist,this);
+		pmlists(monslists,this);
 	},
 	
 	/*
