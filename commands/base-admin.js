@@ -241,7 +241,29 @@ exports.commands = {
 	the following commands are used for drafting
 	*/
 	
-	
+	startgiftdraft: function(arg, by, room, cmd) {
+		if (!this.isRanked('admin')&& !toId(by) =="yveltalnl") return false;
+		console.log('started reading file');
+		let rawdata = fs.readFileSync('newdrafttest.json');
+		let student = JSON.parse(rawdata);
+		console.log(student);
+		global.currenttier[toId(room)]=0;
+		global.todraftmons[toId(room)]=student;
+		giftdrafting=true;
+		
+		global.draftstarted[toId(room)]=true;
+		global.picknr[toId(room)]=0;
+		var list=global.users[toId(room)];
+		var monslists=[];
+		for (var i = 0; i < list.length; i++) {
+			var monstodraft=generateMonsList(global.todraftmons[toId(room)]);
+			monslists.push(monstodraft);
+			/*pm them the list we can do this here*/
+		}
+		/*give everyone a monlist*/
+		this.reply("sending drafts");
+		pmlists(monlist);
+	}
 	
 	/*
 	the following commands are used for packdrafting
@@ -1799,6 +1821,20 @@ async  function saveTeamsToCloud(){
 };
 function calculateMonScore(arg,by){
 };
+function generateMonsList(monlist){
+	var resultlist=[];
+	var stopped=false;
+	var i=1;
+	while(!stopped) {
+
+		resultlist.push(pickmultimons(j,monlist["tierlist"]["Tier"+i]["pokemon"]),monlist);	
+		i++;
+		if(i>monlist["length"]){
+			stopped=true;
+		}
+	}
+	return resultlist;
+}
 function startNewTier(room,by,elem){
 	//load mons of the new tierlist
 	//reshuffle list of users
@@ -2223,6 +2259,11 @@ function calculatescore(room,monname,name){
 	
 	
 	return t;
+};
+function pmlists(monlists){
+	for(int i=0; i<global.users[toId(room)].length){
+		this.sendPM(global.users[toId(room][i],monlists[i]);
+	}
 };
 function jsUcfirst(string) 
 {
