@@ -263,7 +263,7 @@ exports.commands = {
 		/*give everyone a monlist*/
 		this.reply("sending drafts");
 		pmlists(monlist);
-	}
+	},
 	
 	/*
 	the following commands are used for packdrafting
