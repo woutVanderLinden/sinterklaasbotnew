@@ -259,9 +259,10 @@ exports.commands = {
 		global.monslists=[];
 		for (var i = 0; i < list.length; i++) {
 			global.monslists.push(generateMonsList(global.todraftmons[toId(room)],room));
-			
+			console.log(global.monslists);
 			/*pm them the list we can do this here*/
 		}
+		
 		/*give everyone a monlist*/
 		this.reply("sending drafts");
 		pmlists(global.monslists, room, this);
@@ -1835,7 +1836,9 @@ function generateMonsList(monlist,room){
 		if(i>monlist["length"]){
 			stopped=true;
 		}
+		console.log(resultlist);
 	}
+	console.log(resultlist);
 	return resultlist;
 }
 function startNewTier(room,by,elem){
