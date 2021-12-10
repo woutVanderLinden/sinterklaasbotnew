@@ -1827,8 +1827,9 @@ function generateMonsList(monlist){
 	var resultlist=[];
 	var stopped=false;
 	var i=1;
+	var list=global.turnorder[toId(room)];
 	while(!stopped) {
-		resultlist.push(pickmultimons(monlist["tierlist"][i]["picks"],monlist["tierlist"][i]["pokemon"],monlist));	
+		resultlist.push(pickmultimons(monlist["tierlist"][i]["picks"],monlist["tierlist"][i]["pokemon"],list));	
 		i++;
 		if(i>monlist["length"]){
 			stopped=true;
