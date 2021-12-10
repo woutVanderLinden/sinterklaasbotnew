@@ -2268,6 +2268,7 @@ function calculatescore(room,monname,name){
 };
 function pmlists(monlists,vart)
 {
+	console.log(global.users[toId(room)]);
 	for(let i=0; i<global.users[toId(room)].length; i++){
 		vart.sendPM(global.users[toId(room)][i],monlists[i]);
 	}
