@@ -251,7 +251,7 @@ exports.commands = {
 		console.log(student);
 		*/
 		global.currenttier[toId(room)]=0;
-		global.todraftmons[toId(room)]=student;
+		//global.todraftmons[toId(room)]=student;
 		giftdrafting=true;
 		global.draftstarted[toId(room)]=true;
 		global.picknr[toId(room)]=0;
