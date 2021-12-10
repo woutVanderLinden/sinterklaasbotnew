@@ -256,15 +256,15 @@ exports.commands = {
 		global.draftstarted[toId(room)]=true;
 		global.picknr[toId(room)]=0;
 		var list=global.turnorder[toId(room)];
-		var monslists=[];
+		global.monslists=[];
 		for (var i = 0; i < list.length; i++) {
-			var monstodraft=generateMonsList(global.todraftmons[toId(room)],room);
-			monslists.push(monstodraft);
+			global.monslists.push(generateMonsList(global.todraftmons[toId(room)],room));
+			
 			/*pm them the list we can do this here*/
 		}
 		/*give everyone a monlist*/
 		this.reply("sending drafts");
-		pmlists(monslists, room, this);
+		pmlists(global.monslists, room, this);
 	},
 	
 	/*
@@ -1778,6 +1778,7 @@ function draftmonsprint3(arg){
 			result.push(arg[x]);
 			arg.splice(x,1);
 	 	}
+		 console.log(result);
 	 	return result;
 	 }
  function draftmonsprint(arg){
