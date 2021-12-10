@@ -1764,25 +1764,21 @@ function draftmonsprint3(arg){
 	 function pickmultimons(arg,number,list){
 		 removedraftedspecies(arg,list);
 		var result=[];
-		
+		 console.log(arg);
+		 console.log(number);
 		//console.log(r);
-	 for(var i=0;i<number;i++){
-		var r=arg.length;
-		var x=Math.round(Math.random()*r);
-		if (x==r){
-			x--;
-		}
-		
-		console.log(x);
-		console.log(r);
-		result.push(arg[x]);
-		arg.splice(x,1);
-	
-		
-	 }
-	
-	 
-	 return result;
+	 	for(var i=0;i<number;i++){
+			var r=arg.length;
+			var x=Math.round(Math.random()*r);
+			if (x==r){
+				x--;
+			}
+			console.log(x);
+			console.log(r);
+			result.push(arg[x]);
+			arg.splice(x,1);
+	 	}
+	 	return result;
 	 }
  function draftmonsprint(arg){
 		arg=arg.sort();
@@ -1834,8 +1830,8 @@ function generateMonsList(monlist,room){
 	while(!stopped) {
 		resultlist.push(pickmultimons(monlist["tierlist"]["Tier"+i]["picks"],monlist["tierlist"]["Tier"+i]["pokemon"],list));	
 		i++;
-		console.log(monlist["length"]);
-		if(i>=monlist["length"]){
+		console.log(i);
+		if(i>monlist["length"]){
 			stopped=true;
 		}
 	}
