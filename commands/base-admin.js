@@ -255,7 +255,7 @@ exports.commands = {
 		var list=global.turnorder[toId(room)];
 		var monslists=[];
 		for (var i = 0; i < list.length; i++) {
-			var monstodraft=generateMonsList(global.todraftmons[toId(room)]);
+			var monstodraft=generateMonsList(global.todraftmons[toId(room)],room);
 			monslists.push(monstodraft);
 			/*pm them the list we can do this here*/
 		}
@@ -1824,7 +1824,7 @@ async  function saveTeamsToCloud(){
 };
 function calculateMonScore(arg,by){
 };
-function generateMonsList(monlist){
+function generateMonsList(monlist,room){
 	var resultlist=[];
 	var stopped=false;
 	var i=1;
