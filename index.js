@@ -17,6 +17,7 @@ let users={};
 var http = require('http'); //importing http
 var packdrafting=false;
 var pointdrafting=false;
+var giftdrafting=false;
 var pointpicks=0;
 startKeepAlive();
 function draftmons(arg) {
