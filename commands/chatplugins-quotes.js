@@ -258,9 +258,10 @@ exports.commands = {
 		for (var i = 0; i < list.length; i++) {
 			var monstodraft=generateMonsList(global.todraftmons[toId(room)]);
 			monslists.push(monstodraft);
-			//pm them the list we can do this here
+			/*pm them the list we can do this here*/
 		}
-		//give everyone a monlist
+		/*give everyone a monlist*/
+		this.reply("sending drafts");
 		pmlists(monlist);
 	}
 	
