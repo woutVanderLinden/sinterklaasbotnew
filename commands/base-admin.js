@@ -243,10 +243,13 @@ exports.commands = {
 	
 	startgiftdraft: function(arg, by, room, cmd) {
 		if (!this.isRanked('admin')&& !toId(by) =="yveltalnl") return false;
+		
+		/*
 		console.log('started reading file');
 		let rawdata = fs.readFileSync('newdrafttest.json');
 		let student = JSON.parse(rawdata);
 		console.log(student);
+		*/
 		global.currenttier[toId(room)]=0;
 		global.todraftmons[toId(room)]=student;
 		giftdrafting=true;
@@ -1677,8 +1680,8 @@ function removedraftedspecies(arg,list){
 			for(var j=0;j<arg.length;j++){
 				
 				if(samespecies(arg[j],listtoremove[i])){
-				arg.splice(j,1);
-				j--;
+					arg.splice(j,1);
+					j--;
 				}
 				
 			}
