@@ -1663,6 +1663,9 @@ function shuffle(array) {
 
 function removedraftedspecies(arg,list){
 	//var list=global.users[toId(room)];
+	if(list.length === 0){
+		return;
+	}
 	var name=toId(list[0]);
 
 	var listtoremove=global.draftedmons[name];
