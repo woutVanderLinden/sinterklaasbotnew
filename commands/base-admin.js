@@ -250,7 +250,7 @@ exports.commands = {
 		global.currenttier[toId(room)]=0;
 		global.todraftmons[toId(room)]=student;
 		giftdrafting=true;
-		
+mons		
 		global.draftstarted[toId(room)]=true;
 		global.picknr[toId(room)]=0;
 		var list=global.turnorder[toId(room)];
@@ -1826,7 +1826,7 @@ function generateMonsList(monlist){
 	var stopped=false;
 	var i=1;
 	while(!stopped) {
-		resultlist.push(pickmultimons(monlist["tierlist"]["Tier"+i]["picks"],monlist["tierlist"]["Tier"+i]["pokemon"],monlist)));	
+		resultlist.push(pickmultimons(monlist["tierlist"]["Tier"+i]["picks"],monlist["tierlist"]["Tier"+i]["pokemon"],monlist));	
 		i++;
 		if(i>monlist["length"]){
 			stopped=true;
