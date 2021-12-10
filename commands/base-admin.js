@@ -1663,7 +1663,6 @@ function shuffle(array) {
 
 function removedraftedspecies(arg,list){
 	//var list=global.users[toId(room)];
-	this.reply("list "+list);
 	if(list.length === 0){
 		return;
 	}
