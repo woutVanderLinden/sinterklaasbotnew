@@ -221,7 +221,7 @@ async function quotefunc (arg, by, room, cmd,vart) {
 			
 		} else if (cmd === "delquote") {
 			if (!vart.isRanked('driver')) return false;
-			
+			vart.reply("trying to delete quote " +arg);
 			let quotes =await findOneListingByName(client,"quotes")
 			
 			removeItemOnce(quotes["nederlands"],arg);
