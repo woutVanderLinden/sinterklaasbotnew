@@ -2260,9 +2260,10 @@ function calculatescore(room,monname,name){
 	
 	return t;
 };
-function pmlists(monlists){
-	for(int i=0; i<global.users[toId(room)].length; i++){
-		this.sendPM(global.users[toId(room][i],monlists[i]);
+function pmlists(monlists)
+{
+	for(let i=0; i<global.users[toId(room)].length; i++){
+		this.sendPM(global.users[toId(room)][i],monlists[i]);
 	}
 };
 function jsUcfirst(string) 
