@@ -1024,6 +1024,7 @@ exports.commands = {
 							for (var i = 0; i < global.turnorder.length; i++) {
 								global.drafted[i]=false;
 							}
+							console.log("secondlist "+global.monslists);
 							pmlists(global.monslists, this);
 						}
 					}
