@@ -993,7 +993,7 @@ exports.commands = {
 						var draftmons=global.todraftmons[toId(room)];
 						if(global.monslists[index].includes(arg)||(global.monslists[index].includes('Silvally')&&args[0]=='Silvally')){
 							global.users[name]["draftedmons"].push(arg);
-							global.monslists[index]=removeItemOnce(global.monslists[index],arg);
+							removeItemOnce(global.monslists[index],arg);
 							global.drafted[index]=true;
 							console.log(global.monslists[index]);
 							saveTeamsToCloud();
@@ -1868,7 +1868,7 @@ function draftmonsprint3(arg){
 				
 			}
 			result=result.substring(1,result.length);
-		return 'draft ' +result;
+		return '!code ' +result;
 	};
 
 async  function saveTeamsToCloud(){
