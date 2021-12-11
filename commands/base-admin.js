@@ -255,8 +255,7 @@ exports.commands = {
 		giftdrafting=true;
 		global.draftstarted[toId(room)]=true;
 		global.picknr[toId(room)]=0;
-		var list=global.turnorder[toId(room)];
-
+		var list=global.turnorder;
 
 		global.monslists=[];
 		for (var i = 0; i < list.length; i++) {
