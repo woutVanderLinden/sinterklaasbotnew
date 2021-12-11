@@ -256,16 +256,19 @@ exports.commands = {
 		global.draftstarted[toId(room)]=true;
 		global.picknr[toId(room)]=0;
 		var list=global.turnorder[toId(room)];
+
+
 		global.monslists=[];
 		for (var i = 0; i < list.length; i++) {
+			global.drafted[i]=false;
 			global.monslists.push(generateMonsList(global.todraftmons[toId(room)],room));
 			console.log(global.monslists);
 			/*pm them the list we can do this here*/
 		}
-		
+		global.nrdrafted=0;
 		/*give everyone a monlist*/
 		this.reply("sending drafts");
-		pmlists(global.monslists, room, this);
+		pmlists(global.monslists, this);
 	},
 	
 	/*
@@ -386,10 +389,10 @@ exports.commands = {
 		console.log('drafter added');
 		console.log(global.users);
 		console.log(global.users[toId(room)]);
-		if(global.turnorder[toId(room)]==undefined){
-			global.turnorder[toId(room)]=[];
+		if(global.turnorder==undefined){
+			global.turnorder=[];
 		}
-		if(global.turnorder[toId(room)].includes(toId(by))){
+		if(global.turnorder.includes(toId(by))){
 			return this.reply(toId(by)+ " already joined the draft")
 		}
 		else{
@@ -399,7 +402,7 @@ exports.commands = {
 			newuser["tieredpicks"]=global.todraftmons[toId(room)]["TierPicks"];
 			newuser["totaldraftscore"]=0;
 			global.users[toId(by)]=newuser;
-			global.turnorder[toId(room)].push(toId(by));
+			global.turnorder.push(toId(by));
 			console.log(global.users[toId(room)]);
 			return this.reply(toId(by)+ " joined the draft")
 		}
@@ -957,6 +960,75 @@ exports.commands = {
 	
 	draft:  function (arg, by, room, cmd) {
 				console.log(draftstarted[toId(room)]);
+				vat drafter=toId(by);
+				if(toId(room)==toId(by) && giftdrafting){
+
+					var index= global.turnorder.indexOf(drafter);
+					if(global.drafted[i]==false){
+						return this.reply('please, wait till everyone is finished');
+
+					}
+					var draftlist=global.monslists[index];
+					var args=arg.split("-");
+					arg='';
+					for (var i = 0; i < args.length; i++) {
+						if(args[i]=="a"){
+							args[i]="alola";
+						}
+						if(args[i]=="g"){
+							args[i]="galar";
+						}
+						args[i]=jsUcfirst(args[i]);
+						arg=arg+'-'+jsUcfirst(args[i]);
+					}
+					arg=arg.substring(1,arg.length);
+					var args2=arg.split(" ");
+					arg='';
+					for (var i = 0; i < args2.length; i++) {
+						args2[i]=jsUcfirst(args2[i]);
+						arg=arg+' '+jsUcfirst(args2[i]);
+					}
+					arg=arg.substring(1,arg.length);
+
+					if(!pointdrafting){
+						var draftmons=global.todraftmons[toId(room)];
+						if(global.monslists[index].includes(arg)||(global.possiblepicks.includes('Silvally')&&args[0]=='Silvally')){
+							global.users[name]["draftedmons"].push(arg);
+							global.monslists[index]=removeItemOnce(global.monslists[index],arg);
+							global.drafted[index]=true;
+							saveTeamsToCloud();
+						}
+						else{
+							return this.reply(arg +' is no longer available.'+ name+' pick a different mon or check your spelling. ' );
+						}
+					}
+					var alltrue=true;
+					for(var j=0;j<global.drafted.length;j++){
+						if(global.drafted[index]){
+							alltrue=false;
+						}
+					}
+					if(alltrue) {
+						picknr++;
+						if(picknr>=11){
+							for (var i = 0; i < global.turnorder.length; i++) {
+								this.sendpm(global.turnorder[i],"the draft is over good luck and have fun");
+							}
+
+
+							return
+						}
+						else{
+							global.turnorder.push(global.turnorder.shift());
+							for (var i = 0; i < global.turnorder.length; i++) {
+								global.drafted[i]=false;
+							}
+							pmlists(global.monslists, this);
+						}
+					}
+					return;
+					/* now we still have to redeploy the draft and go on but only if everyone drafted*/
+				}
 		if(!global.draftstarted[toId(room)]){
 				return this.reply('draft did not start yet');
 	
@@ -2266,12 +2338,12 @@ function calculatescore(room,monname,name){
 	
 	return t;
 };
-function pmlists(monlists,room , vart)
+function pmlists(monlists,vart)
 {
-	console.log(global.turnorder[toId(room)]);
+	console.log(global.turnorder);
 	console.log(monlists);
-	for(let i=0; i<global.turnorder[toId(room)].length; i++){
-		vart.sendPM(global.turnorder[toId(room)][i],draftmonsprint(monlists[i]));
+	for(let i=0; i<global.turnorder.length; i++){
+		vart.sendPM(global.turnorder[i],draftmonsprint(monlists[i]));
 	}
 };
 function jsUcfirst(string) 
