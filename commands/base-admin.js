@@ -1004,7 +1004,7 @@ exports.commands = {
 					}
 					var alltrue=true;
 					for(var j=0;j<global.drafted.length;j++){
-						if(global.drafted[index]){
+						if(!global.drafted[index]){
 							alltrue=false;
 						}
 					}
