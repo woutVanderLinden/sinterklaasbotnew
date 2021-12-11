@@ -991,10 +991,11 @@ exports.commands = {
 
 					if(!pointdrafting){
 						var draftmons=global.todraftmons[toId(room)];
-						if(global.monslists[index].includes(arg)||(global.possiblepicks.includes('Silvally')&&args[0]=='Silvally')){
+						if(global.monslists[index].includes(arg)||(global.monslists[index].includes('Silvally')&&args[0]=='Silvally')){
 							global.users[name]["draftedmons"].push(arg);
 							global.monslists[index]=removeItemOnce(global.monslists[index],arg);
 							global.drafted[index]=true;
+							console.log(global.monslists[index]);
 							saveTeamsToCloud();
 							this.reply('drafted '+arg);
 						}
@@ -1023,7 +1024,7 @@ exports.commands = {
 							for (var i = 0; i < global.turnorder.length; i++) {
 								global.drafted[i]=false;
 							}
-							pmlists(global.monslists[index], this);
+							pmlists(global.monslists, this);
 						}
 					}
 					return;
