@@ -256,7 +256,7 @@ exports.commands = {
 		global.draftstarted[toId(room)]=true;
 		global.picknr[toId(room)]=0;
 		var list=global.turnorder;
-
+		global.drafted=[];
 		global.monslists=[];
 		for (var i = 0; i < list.length; i++) {
 			global.drafted[i]=false;
