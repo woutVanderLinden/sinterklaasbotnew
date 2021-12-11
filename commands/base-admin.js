@@ -1023,7 +1023,7 @@ exports.commands = {
 							for (var i = 0; i < global.turnorder.length; i++) {
 								global.drafted[i]=false;
 							}
-							pmlists(global.monslists, this);
+							pmlists(global.monslists[index], this);
 						}
 					}
 					return;
