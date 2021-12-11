@@ -960,7 +960,7 @@ exports.commands = {
 	
 	draft:  function (arg, by, room, cmd) {
 				console.log(draftstarted[toId(room)]);
-				vat drafter=toId(by);
+				var drafter=toId(by);
 				if(toId(room)==toId(by) && giftdrafting){
 
 					var index= global.turnorder.indexOf(drafter);
