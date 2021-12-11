@@ -965,7 +965,7 @@ exports.commands = {
 
 					var index= global.turnorder.indexOf(drafter);
 					if(global.drafted[i]==false){
-						return this.reply('please, wait till everyone is finished');
+						return this.reply('please, wait untill everyone is finished');
 
 					}
 					var draftlist=global.monslists[index];
