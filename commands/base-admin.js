@@ -962,7 +962,7 @@ exports.commands = {
 				var name=toId(by);
 				if(giftdrafting){
 
-					var index= global.turnorder.indexOf(drafter);
+					var index= global.turnorder.indexOf(name);
 					if(global.drafted[i]==false){
 						return this.reply('please, wait untill everyone is finished');
 
@@ -996,6 +996,7 @@ exports.commands = {
 							global.monslists[index]=removeItemOnce(global.monslists[index],arg);
 							global.drafted[index]=true;
 							saveTeamsToCloud();
+							this.reply('drafted '+arg);
 						}
 						else{
 							return this.reply(arg +' is no longer available.'+ name+' pick a different mon or check your spelling. ' );
