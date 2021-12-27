@@ -246,7 +246,7 @@ exports.commands = {
 		
 		/*
 		console.log('started reading file');
-		let rawdata = fs.readFileSync('newdrafttest.json');
+		let rawdata = fs.readFileSync('newdrafttest2.json');
 		let student = JSON.parse(rawdata);
 		console.log(student);
 		*/
