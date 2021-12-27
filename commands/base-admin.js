@@ -351,7 +351,7 @@ exports.commands = {
 		return this.reply("kicked "+arg );
 	},
 	joindraft: async function (arg, by, room, cmd){
-			let rawdata = fs.readFileSync('DraftTest.json');
+			let rawdata = fs.readFileSync('DraftTest2.json');
 		if(global.users=={}){
 					/*first load in the draft file list*/
 		//lets try that now
