@@ -976,8 +976,8 @@ exports.commands = {
 				if(giftdrafting){
 
 					var index= global.turnorder.indexOf(name);
-					if(global.drafted[index]==false){
-						return this.reply('please, wait untill everyone is finished');
+					if(global.drafted[index]==true){
+						return this.reply('please, wait until everyone is finished');
 
 					}
 					var draftlist=global.monslists[index];
