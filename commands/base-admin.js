@@ -2350,7 +2350,7 @@ function calculatescore(room,monname,name){
 function pmlists(monlists,vart)
 {
 	console.log(global.turnorder);
-	console.log(monlists);
+	console.log(monlists +"hi");
 	var directionword = "down";
 	if(global.draftdirectionup){
 		directionword = "up"
