@@ -73,7 +73,7 @@ function startNewGiftTier(replier,room) {
 		console.log(global.monslists);
 		/*pm them the list we can do this here*/
 	}
-	global.currenttier[toId(room)]--;
+
 
 	/*give everyone a monlist*/
 	replier.reply("sending drafts");
@@ -1028,7 +1028,7 @@ exports.commands = {
 					if(alltrue) {
 						global.picknr[toId(room)]++;
 						if(global.picknr[toId(room)]>=global.tierPicks){
-
+							global.currenttier[toId(room)]--;
 							startNewGiftTier(this, room);
 						}
 						else{
