@@ -74,8 +74,8 @@ function startNewGiftTier(replier,room) {
 	}
 
 	/*give everyone a monlist*/
-	this.reply("sending drafts");
-	pmlists(global.monslists, this);
+	replier.reply("sending drafts");
+	pmlists(global.monslists, replier);
 }
 
 exports.commands = {
