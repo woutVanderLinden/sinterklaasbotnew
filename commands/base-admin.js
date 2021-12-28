@@ -269,7 +269,7 @@ exports.commands = {
 		
 		/*
 		console.log('started reading file');
-		let rawdata = fs.readFileSync('newdrafttest.json');
+		let rawdata = fs.readFileSync('newdrafttest2.json');
 		let student = JSON.parse(rawdata);
 		console.log(student);
 		*/
@@ -364,7 +364,7 @@ exports.commands = {
 		return this.reply("kicked "+arg );
 	},
 	joindraft: async function (arg, by, room, cmd){
-			let rawdata = fs.readFileSync('DraftTest.json');
+			let rawdata = fs.readFileSync('DraftTest2.json');
 		if(global.users=={}){
 					/*first load in the draft file list*/
 		//lets try that now
@@ -1018,7 +1018,7 @@ exports.commands = {
 					}
 					var alltrue=true;
 					for(var j=0;j<global.drafted.length;j++){
-						if(!global.drafted[index]){
+						if(!global.drafted[j]){
 							alltrue=false;
 						}
 					}

@@ -1,0 +1,35 @@
+{
+	
+	"tierlist":{"Tier1":{
+	
+	
+		"picks":2,
+		"points":180,
+		"pokemon":["Abra","Carvanha","Clamperl","Croagunk","Farfetch'd-Galar","Ferroseed","Foongus","Gothita","Grimer-Alola","Grookey","Magnemite","Mareanie","Mienfoo","Mudbray","Munchlax","Onix","Pawniard","Ponyta","Ponyta-Galar","Porygon","Shellder","Slowpoke","Snivy","Spritzee","Squirtle","Staryu","Taillow","Timburr","Tirtouga","Torchic","Trapinch","Vulpix","Vulpix-Alola","Wingull","Woobat"]
+		},
+		"Tier3":
+		{
+		"picks":3,
+		"points":120,
+		"pokemon":["Amaura","Anorith","Archen","Axew","Baltoy","Bulbasaur","Bunnelby","Chespin","Chimchar","Chinchou","Corphish","Cottonee","Cranidos","Cufant","Darumaka","Darumaka-Galar","Doduo","Drilbur","Dwebble","Elekid","Flabebe","Frillish","Golett","Growlithe","Hippopotas","Honedge","Houndour","Kabuto","Koffing","Krabby","Larvesta","Magby","Mankey","Mantyke","Meowth","Natu","Numel","Omanyte","Pancham","Pumpkaboo","Rattata-Alola","Sandile","Sandshrew","Sandshrew-Alola","Shellos","Sinistea","Skrelp","Snubbull","Solosis","Stunky","Teddiursa","Tentacool","Tirtouga","Torchic","Totodile","Trapinch","Treecko","Tyrunt","Zorua"]
+		},
+		"Tier3":
+		{
+		"picks":4,
+		"points":100,
+		"pokemon":["Aron","Arrokuda","Bagon","Bellsprout","Binacle","Bronzor","Budew","Buizel","Buneary","Charmander","Clobbopus","Crabrawler","Cubone","Cyndaquil","Deerling","Deino","Dewpider","Diglett","Diglett-Alola","Dratini","Drowzee","Duskull","Eevee","Elgyem","Fletchling","Froakie","Geodude-Alola","Gible","Goldeen","Grimer","Hatenna","Helioptile","Impidimp","Inkay","Joltik","Karrablast","Klink","Larvitar","Lileep","Litleo","Litten","Machop","Meowth-Alola","Meowth-Galar","Mime Jr.","Minccino","Morelull","Nosepass","Oddish","Phanpy","Phantump","Pikipek","Pineco","Remoraid","Riolu","Rowlet","Salandit","Sandygast","Scorbunny","Shelmet","Sizzlipede","Skorupi","Slowpoke-Galar","Smoochum","Snover","Stufful","Trubbish","Voltorb","Wailmer","Yamask","Yamask-Galar","Yungoos"]
+		},
+		 "Tier4":
+		{
+		"picks":4,
+		"points":60,
+		"pokemon":["Azurill","Barboach","Bergmite","Bidoof","Blitzle","Bonsly","Cacnea","Chewtle","Chikorita","Cubchoo","Dreepy","Ducklett","Ekans","Electrike","Espurr","Exeggcute","Fennekin","Finneon","Fomantis","Geodude","Glameow","Goomy","Gossifleur","Grubbin","Gulpin","Horsea","Jangmo-o","Lillipup","Litwick","Makuhita","Mareep","Milcery","Mudkip","Munna","Nidoran (F)","Nidoran (M)","Noibat","Oshawott","Panpour","Pansage","Pansear","Paras","Piplup","Poliwag","Popplio","Psyduck","Purrloin","Rattata","Rhyhorn","Rockruff","Roggenrola","Rolycoly","Rookidee","Seedot","Seel","Shieldon","Shinx","Shroomish","Shuppet","Silicobra","Skiddo","Snorunt","Sobble","Spearow","Spheal","Spinarak","Spoink","Starly","Surskit","Swablu","Swinub","Tepig","Togepi","Turtwig","Vanillite","Venipede","Venonat","Wimpod","Wooloo","Wooper","Yamper","Zigzagoon-Galar","Zubat"]
+		}
+		
+},
+
+	"freepicks":11,
+	"length":5,
+	"TierPicks":[1,2,3,3,4,5]
+	
+  }
