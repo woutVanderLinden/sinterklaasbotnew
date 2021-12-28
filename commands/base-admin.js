@@ -61,7 +61,6 @@ function startNewGiftTier(replier,room) {
 	global.nrdrafted=0;
 	global.monslists=[];
 	global.currenttier[toId(room)]++;
-	monlist["tierlist"]["Tier"+i]["picks"]
 	if(global.maxtier<global.currenttier){
 		return replier.reply("the draft is over")
 	}
