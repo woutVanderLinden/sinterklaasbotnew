@@ -55,6 +55,29 @@ async function findOneListingByName(client, nameOfListing) {
     console.log(`${result.modifiedCount} document(s) was/were updated.`);
 
 }
+
+function startNewGiftTier(replier,room) {
+	global.draftdirectionup[toId(room)]=global.draftdirectionup[toId(room)]!;
+	global.nrdrafted=0;
+	global.monslists=[];
+	global.currenttier[toId(room)]++;
+	monlist["tierlist"]["Tier"+i]["picks"]
+	if(global.maxtier<global.currenttier){
+		return replier.reply("the draft is over")
+	}
+	if(global.currenttier[toId(room)])
+	for (var i = 0; i < list.length; i++) {
+		global.drafted[i]=false;
+		global.monslists.push(generateMonsList(global.todraftmons[toId(room)],room));
+		console.log(global.monslists);
+		/*pm them the list we can do this here*/
+	}
+
+	/*give everyone a monlist*/
+	this.reply("sending drafts");
+	pmlists(global.monslists, this);
+}
+
 exports.commands = {
 	c: 'custom',
 	
@@ -257,17 +280,7 @@ exports.commands = {
 		global.picknr[toId(room)]=0;
 		var list=global.turnorder;
 		global.drafted=[];
-		global.monslists=[];
-		for (var i = 0; i < list.length; i++) {
-			global.drafted[i]=false;
-			global.monslists.push(generateMonsList(global.todraftmons[toId(room)],room));
-			console.log(global.monslists);
-			/*pm them the list we can do this here*/
-		}
-		global.nrdrafted=0;
-		/*give everyone a monlist*/
-		this.reply("sending drafts");
-		pmlists(global.monslists, this);
+		startNewGiftTier(this, room);
 	},
 	
 	/*
@@ -617,7 +630,7 @@ exports.commands = {
 		global.currenttier[toId(room)]=1;
 		pointdrafting=true;
 		global.todraftmons[toId(room)]=student;
-		
+		global.maxtier=student[length];
 		/*then load the participant list*/
 		var list=global.turnorder[toId(room)];
 		console.log(list);
@@ -963,7 +976,7 @@ exports.commands = {
 				if(giftdrafting){
 
 					var index= global.turnorder.indexOf(name);
-					if(global.drafted[i]==false){
+					if(global.drafted[index]==false){
 						return this.reply('please, wait untill everyone is finished');
 
 					}
@@ -1010,14 +1023,10 @@ exports.commands = {
 						}
 					}
 					if(alltrue) {
-						picknr++;
-						if(picknr>=11){
-							for (var i = 0; i < global.turnorder.length; i++) {
-								this.sendpm(global.turnorder[i],"the draft is over good luck and have fun");
-							}
+						global.picknr[toId(room)]++;
+						if(global.picknr[toId(room)]>=global.tierPicks){
 
-
-							return
+							startNewGiftTier(this, room);
 						}
 						else{
 							global.turnorder.push(global.turnorder.shift());
@@ -1799,8 +1808,8 @@ function draftmonsprint3(arg){
 					var name=arg[i];
 					var word='<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>,';
 					result=result+word;
-				
-				
+
+
 			}
 			result=result.substring(0,result.length-1);
 			result=result;
@@ -1903,15 +1912,13 @@ function generateMonsList(monlist,room){
 	var stopped=false;
 	var i=1;
 	var list=global.turnorder;
-	while(!stopped) {
-		resultlist.push.apply(resultlist,pickmultimons(monlist["tierlist"]["Tier"+i]["pokemon"],monlist["tierlist"]["Tier"+i]["picks"],list));	
-		i++;
+
+		resultlist.push.apply(resultlist,pickmultimons(monlist["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"],6,list));
+
 		console.log(i);
-		if(i>monlist["length"]){
-			stopped=true;
-		}
+
 		console.log(resultlist);
-	}
+
 	console.log(resultlist);
 	return resultlist;
 }
@@ -2344,9 +2351,17 @@ function pmlists(monlists,vart)
 {
 	console.log(global.turnorder);
 	console.log(monlists);
-	for(let i=0; i<global.turnorder.length; i++){
-		vart.sendPM(global.turnorder[i],draftmonsprint(monlists[i]));
+	var directionword = "down";
+	if(global.draftdirectionup){
+		directionword = "up"
 	}
+	var toreply= "!htmlbox Tier"+ global.currenttier[toId(room)]+ " "+directionword;
+	for(let i=0; i<global.turnorder.length; i++){
+		var word = "<p>"+ global.turnorder[i];
+		word = word+"<p>"+draftmonsprint(monlists[i])+"</p></p>";
+		toreply = toreply+word;
+	}
+	vart.reply(toreply);
 };
 function jsUcfirst(string) 
 {
