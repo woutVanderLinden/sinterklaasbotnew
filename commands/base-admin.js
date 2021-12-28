@@ -402,6 +402,7 @@ exports.commands = {
 		global.todraftmons[toId(room)]=student;
 		console.log('drafter added');
 		console.log(global.users);
+		global.maxtier=student[length];
 		console.log(global.users[toId(room)]);
 		if(global.turnorder==undefined){
 			global.turnorder=[];
