@@ -57,7 +57,7 @@ async function findOneListingByName(client, nameOfListing) {
 }
 
 function startNewGiftTier(replier,room) {
-	global.draftdirectionup[toId(room)]=global.draftdirectionup[toId(room)]!;
+	global.draftdirectionup[toId(room)]= !global.draftdirectionup[toId(room)];
 	global.nrdrafted=0;
 	global.monslists=[];
 	global.currenttier[toId(room)]++;
