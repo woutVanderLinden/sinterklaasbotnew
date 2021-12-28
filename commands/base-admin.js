@@ -2358,7 +2358,7 @@ function pmlists(monlists,room, vart)
 	var toreply= "!htmlbox Tier"+ global.currenttier[toId(room)]+ " "+directionword;
 	for(let i=0; i<global.turnorder.length; i++){
 		var word = "<p>"+ global.turnorder[i];
-		word = word+"<p>"+draftmonsprint(monlists[i])+"</p></p>";
+		word = word+"<p>"+draftmonsprint2(monlists[i])+"</p></p>";
 		toreply = toreply+word;
 	}
 	vart.reply(toreply);
