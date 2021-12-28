@@ -1032,6 +1032,10 @@ exports.commands = {
 							startNewGiftTier(this, room);
 						}
 						else{
+							if(!global.draftdirectionup){
+								global.turnorder.push(global.turnorder.shift());
+								global.turnorder.push(global.turnorder.shift());
+							}
 							global.turnorder.push(global.turnorder.shift());
 							for (var i = 0; i < global.turnorder.length; i++) {
 								global.drafted[i]=false;
