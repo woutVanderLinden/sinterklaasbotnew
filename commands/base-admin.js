@@ -61,9 +61,9 @@ function startNewGiftTier(replier,room) {
 	global.nrdrafted=0;
 	global.monslists=[];
 	global.picknr[toId(room)]=0;
-	global.currenttier[toId(room)]++;
+	global.currenttier[toId(room)]--;
 	global.tierPicks=global.todraftmons[toId(room)]["tierlist"]["Tier"+global.currenttier[toId(room)]]["picks"];
-	if(global.maxtier<global.currenttier[toId(room)]){
+	if(0 == global.currenttier[toId(room)]){
 		return replier.reply("the draft is over")
 	}
 	var list=global.turnorder;
@@ -275,7 +275,7 @@ exports.commands = {
 		let student = JSON.parse(rawdata);
 		console.log(student);
 		*/
-		global.currenttier[toId(room)]=0;
+		global.currenttier[toId(room)]=global.maxtier;
 		//global.todraftmons[toId(room)]=student;
 		giftdrafting=true;
 		global.draftstarted[toId(room)]=true;
@@ -2350,12 +2350,12 @@ function calculatescore(room,monname,name){
 	
 	return t;
 };
-function pmlists(monlists,room, vart)
+function pmlists(monlists, room, vart)
 {
 	console.log(global.turnorder);
 	console.log(monlists +"hi");
 	var directionword = "down";
-	if(global.draftdirectionup){
+	if(global.draftdirectionup[toId(room)]){
 		directionword = "up"
 	}
 	var toreply= "!htmlbox Tier"+ global.currenttier[toId(room)]+ " "+directionword;
