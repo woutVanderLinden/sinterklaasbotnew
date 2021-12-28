@@ -1030,6 +1030,7 @@ exports.commands = {
 						global.picknr[toId(room)]++;
 						if(global.picknr[toId(room)]>=global.tierPicks){
 							global.currenttier[toId(room)]--;
+							console.log("started new tier");
 							startNewGiftTier(this, room);
 						}
 						else{
