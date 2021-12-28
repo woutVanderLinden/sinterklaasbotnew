@@ -75,7 +75,7 @@ function startNewGiftTier(replier,room) {
 
 	/*give everyone a monlist*/
 	replier.reply("sending drafts");
-	pmlists(global.monslists, replier);
+	pmlists(global.monslists, room, replier);
 }
 
 exports.commands = {
@@ -1034,7 +1034,7 @@ exports.commands = {
 								global.drafted[i]=false;
 							}
 							console.log("secondlist "+global.monslists);
-							pmlists(global.monslists, this);
+							pmlists(global.monslists,room, this);
 						}
 					}
 					return;
@@ -2347,7 +2347,7 @@ function calculatescore(room,monname,name){
 	
 	return t;
 };
-function pmlists(monlists,vart)
+function pmlists(monlists,room, vart)
 {
 	console.log(global.turnorder);
 	console.log(monlists +"hi");
