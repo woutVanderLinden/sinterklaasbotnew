@@ -63,7 +63,7 @@ function startNewGiftTier(replier,room) {
 
 	global.currenttier[toId(room)]++;
 	global.tierPicks=global.todraftmons[toId(room)]["tierlist"]["Tier"+global.currenttier[toId(room)]]["picks"];
-	if(global.maxtier<global.currenttier){
+	if(global.maxtier<global.currenttier[toId(room)]){
 		return replier.reply("the draft is over")
 	}
 	var list=global.turnorder;
