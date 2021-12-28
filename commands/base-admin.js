@@ -64,6 +64,7 @@ function startNewGiftTier(replier,room) {
 	if(global.maxtier<global.currenttier){
 		return replier.reply("the draft is over")
 	}
+	var list=global.turnorder;
 	if(global.currenttier[toId(room)])
 	for (var i = 0; i < list.length; i++) {
 		global.drafted[i]=false;
@@ -277,7 +278,7 @@ exports.commands = {
 		giftdrafting=true;
 		global.draftstarted[toId(room)]=true;
 		global.picknr[toId(room)]=0;
-		var list=global.turnorder;
+
 		global.drafted=[];
 		startNewGiftTier(this, room);
 	},
