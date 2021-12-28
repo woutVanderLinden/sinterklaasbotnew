@@ -61,11 +61,12 @@ function startNewGiftTier(replier,room) {
 	global.nrdrafted=0;
 	global.monslists=[];
 	global.picknr[toId(room)]=0;
-	global.tierPicks=global.todraftmons[toId(room)]["tierlist"]["Tier"+global.currenttier[toId(room)]]["picks"];
-	console.log("ended "+ global.currenttier[toId(room)]);
 	if(0 == global.currenttier[toId(room)]){
 		return replier.reply("the draft is over")
 	}
+	global.tierPicks=global.todraftmons[toId(room)]["tierlist"]["Tier"+global.currenttier[toId(room)]]["picks"];
+	console.log("ended "+ global.currenttier[toId(room)]);
+
 	var list=global.turnorder;
 	if(global.currenttier[toId(room)])
 	for (var i = 0; i < list.length; i++) {
