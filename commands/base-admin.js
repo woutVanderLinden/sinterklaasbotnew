@@ -61,7 +61,6 @@ function startNewGiftTier(replier,room) {
 	global.nrdrafted=0;
 	global.monslists=[];
 	global.picknr[toId(room)]=0;
-	global.currenttier[toId(room)]--;
 	global.tierPicks=global.todraftmons[toId(room)]["tierlist"]["Tier"+global.currenttier[toId(room)]]["picks"];
 	if(0 == global.currenttier[toId(room)]){
 		return replier.reply("the draft is over")
@@ -74,6 +73,7 @@ function startNewGiftTier(replier,room) {
 		console.log(global.monslists);
 		/*pm them the list we can do this here*/
 	}
+	global.currenttier[toId(room)]--;
 
 	/*give everyone a monlist*/
 	replier.reply("sending drafts");
