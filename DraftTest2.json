@@ -5,13 +5,13 @@
 	
 		"picks":2,
 		"points":180,
-		"pokemon":["Abra","Carvanha","Clamperl","Croagunk","Farfetch'd-Galar","Ferroseed","Foongus","Grimer-Alola","Grookey","Magnemite","Mareanie","Mienfoo","Mudbray","Munchlax","Onix","Pawniard","Ponyta","Ponyta-Galar","Porygon","Shellder","Slowpoke","Snivy","Spritzee","Squirtle","Staryu","Taillow","Timburr","Tirtouga","Torchic","Trapinch","Vulpix","Vulpix-Alola","Wingull","Woobat"]
+		"pokemon":["Abra","Carvanha","Clamperl","Croagunk","Farfetch'd-Galar","Ferroseed","Foongus","Grimer-Alola","Grookey","Koffing","Magnemite","Mareanie","Mienfoo","Mudbray","Munchlax","Onix","Pawniard","Ponyta","Ponyta-Galar","Porygon","Shellder","Slowpoke","Snivy","Spritzee","Squirtle","Staryu","Taillow","Timburr","Tirtouga","Torchic","Trapinch","Vulpix","Vulpix-Alola","Wingull","Woobat"]
 		},
 		"Tier2":
 		{
 		"picks":3,
 		"points":120,
-		"pokemon":["Amaura","Anorith","Archen","Axew","Baltoy","Bulbasaur","Bunnelby","Chespin","Chimchar","Chinchou","Corphish","Cottonee","Cranidos","Cufant","Darumaka","Darumaka-Galar","Doduo","Drilbur","Dwebble","Elekid","Flabebe","Frillish","Golett","Growlithe","Hippopotas","Honedge","Houndour","Kabuto","Koffing","Krabby","Larvesta","Magby","Mankey","Mantyke","Meowth","Natu","Numel","Omanyte","Pancham","Pumpkaboo","Rattata-Alola","Sandile","Sandshrew","Sandshrew-Alola","Shellos","Sinistea","Skrelp","Snubbull","Solosis","Stunky","Teddiursa","Tentacool","Tirtouga","Torchic","Totodile","Trapinch","Treecko","Tyrunt","Zorua"]
+		"pokemon":["Amaura","Anorith","Archen","Axew","Baltoy","Bulbasaur","Bunnelby","Chespin","Chimchar","Chinchou","Corphish","Cottonee","Cranidos","Cufant","Darumaka","Darumaka-Galar","Doduo","Drilbur","Dwebble","Elekid","Flabebe","Frillish","Golett","Growlithe","Hippopotas","Honedge","Houndour","Kabuto","Krabby","Larvesta","Magby","Mankey","Mantyke","Meowth","Natu","Numel","Omanyte","Pancham","Pumpkaboo","Rattata-Alola","Sandile","Sandshrew","Sandshrew-Alola","Shellos","Sinistea","Skrelp","Snubbull","Solosis","Stunky","Teddiursa","Tentacool","Tirtouga","Torchic","Totodile","Trapinch","Treecko","Tyrunt","Zorua"]
 		},
 		"Tier3":
 		{
