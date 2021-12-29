@@ -2366,7 +2366,7 @@ function pmlists(monlists, room, vart)
 		directionword = "up"
 	}
 	var val= global.tierPicks-global.picknr[toId(room)];
-	var toreply= "!htmlbox Tier"+ global.currenttier[toId(room)]+ " "+directionword+ " picksleft"+val;
+	var toreply= "!htmlbox Tier"+ global.currenttier[toId(room)]+ " draftdirection: "+directionword+ " picksleft: +val;
 	console.log(toreply);
 	for(let i=0; i<global.turnorder.length; i++){
 		var word = "<p>"+ global.turnorder[i];
