@@ -2365,7 +2365,7 @@ function pmlists(monlists, room, vart)
 	if(global.draftdirectionup[toId(room)]){
 		directionword = "up"
 	}
-	var toreply= "!htmlbox Tier"+ global.currenttier[toId(room)]+ " "+directionword;
+	var toreply= "!htmlbox Tier"+ global.currenttier[toId(room)]+ " "+directionword+ " picksleft"+ global.tierPicks-global.picknr[toId(room)];
 	for(let i=0; i<global.turnorder.length; i++){
 		var word = "<p>"+ global.turnorder[i];
 		word = word+"<p>"+draftmonsprint2(monlists[i])+"</p></p>";
