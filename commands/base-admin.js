@@ -710,6 +710,79 @@ exports.commands = {
 			arg=arg.substring(1,arg.length);
 			console.log(arg);
 		var list=global.turnorder[toId(room)];
+        if(giftdrafting){
+
+            var index= global.turnorder.indexOf(name);
+            if(global.drafted[index]==true){
+                return this.reply('please, wait until everyone is finished');
+
+            }
+            var draftlist=global.monslists[index];
+            var args=arg.split("-");
+            arg='';
+            for (var i = 0; i < args.length; i++) {
+                if(args[i]=="a"){
+                    args[i]="alola";
+                }
+                if(args[i]=="g"){
+                    args[i]="galar";
+                }
+                args[i]=jsUcfirst(args[i]);
+                arg=arg+'-'+jsUcfirst(args[i]);
+            }
+            arg=arg.substring(1,arg.length);
+            var args2=arg.split(" ");
+            arg='';
+            for (var i = 0; i < args2.length; i++) {
+                args2[i]=jsUcfirst(args2[i]);
+                arg=arg+' '+jsUcfirst(args2[i]);
+            }
+            arg=arg.substring(1,arg.length);
+
+            if(!pointdrafting){
+                var draftmons=global.todraftmons[toId(room)];
+                if(global.monslists[index].includes(arg)||(global.monslists[index].includes('Silvally')&&args[0]=='Silvally')){
+                    global.users[name]["draftedmons"].push(arg);
+                    removeItemOnce(global.monslists[index],arg);
+                    global.drafted[index]=true;
+                    console.log(global.monslists[index]);
+                    saveTeamsToCloud();
+                    this.reply('drafted '+arg);
+                }
+                else{
+                    return this.reply(arg +' is no longer available.'+ name+' pick a different mon or check your spelling. ' );
+                }
+            }
+            var alltrue=true;
+            for(var j=0;j<global.drafted.length;j++){
+                if(!global.drafted[j]){
+                    alltrue=false;
+                }
+            }
+            if(alltrue) {
+                global.picknr[toId(room)]++;
+                if(global.picknr[toId(room)]>=global.tierPicks){
+                    global.currenttier[toId(room)]--;
+                    console.log("started new tier");
+                    startNewGiftTier(this, room);
+                }
+                else{
+                    if(!global.draftdirectionup){
+                        global.turnorder.push(global.turnorder.shift());
+                        global.turnorder.push(global.turnorder.shift());
+                    }
+                    global.turnorder.push(global.turnorder.shift());
+                    for (var i = 0; i < global.turnorder.length; i++) {
+                        global.drafted[i]=false;
+                    }
+                    console.log("secondlist "+global.monslists);
+                    pmlists(global.monslists,room, this);
+                }
+            }
+            return;
+            /* now we still have to redeploy the draft and go on but only if everyone drafted*/
+        }
+
 		if(list[global.nextdrafter[toId(room)]]!=name){
 				return this.reply('it is not your turn');
 	
