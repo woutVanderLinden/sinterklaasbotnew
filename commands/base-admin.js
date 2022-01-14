@@ -279,6 +279,7 @@ exports.commands = {
 		let student = JSON.parse(rawdata);
 		console.log(student);
 		*/
+		global.draftdirectionup[toId(room)]=true;
 		global.currenttier[toId(room)]=global.maxtier;
 		//global.todraftmons[toId(room)]=student;
 		giftdrafting=true;
@@ -287,6 +288,7 @@ exports.commands = {
 
 		global.drafted=[];
 		startNewGiftTier(this, room);
+		console.log(global.users[toId(by)]["draftedmons"]);
 	},
 	
 	/*
@@ -384,7 +386,7 @@ exports.commands = {
 			try {
 				await client.connect();
 				var quotes =await findOneListingByName(client,"pokemon");
-				global.users=quotes["pokemon"];
+				global.users=quotes;
 
 
 				//return this.reply(draftmonsprint2(list));
@@ -405,7 +407,7 @@ exports.commands = {
 	
 		global.todraftmons[toId(room)]=student;
 		console.log('drafter added');
-		console.log(global.users);
+		console.log(global.users[toId(by)]["draftedmons"]);
 		global.maxtier=student["length"];
 		console.log(global.users[toId(room)]);
 		if(global.turnorder==undefined){
@@ -770,12 +772,15 @@ exports.commands = {
                     startNewGiftTier(this, room);
                 }
                 else{
-                    if(global.draftdirectionup){
-						global.monslists = array_moveUp(global.monslists)
+                    if(global.draftdirectionup[toId(room)]){
 
+						global.monslists.push(global.monslists.shift());
                     }
                     else{
 						global.monslists.push(global.monslists.shift());
+						global.monslists.push(global.monslists.shift());
+						global.monslists.push(global.monslists.shift());
+
 					}
 
                     for (var i = 0; i < global.turnorder.length; i++) {
@@ -1120,12 +1125,15 @@ exports.commands = {
 							startNewGiftTier(this, room);
 						}
 						else{
-							if(global.draftdirectionup){
-								global.monslists = array_moveUp(global.monslists)
+							if(global.draftdirectionup[toId(room)]){
 
+								global.monslists.push(global.monslists.shift());
 							}
 							else{
 								global.monslists.push(global.monslists.shift());
+								global.monslists.push(global.monslists.shift());
+								global.monslists.push(global.monslists.shift());
+
 							}
 
 							for (var i = 0; i < global.turnorder.length; i++) {
@@ -1133,6 +1141,7 @@ exports.commands = {
 							}
 							console.log("secondlist "+global.monslists);
 							pmlists(global.monslists,room, this);
+							console.log(global.users[toId(by)]["draftedmons"]);
 						}
 					}
 					return;
@@ -2499,7 +2508,7 @@ function pmlists(monlists, room, vart)
 	}
 	vart.reply(toreply);
 };
-function array_moveUp(arr) {
+function array_moveDown(arr) {
 	var newarr=[];
 	var i=1;
 	while(i < arr.length){
