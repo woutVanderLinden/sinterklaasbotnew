@@ -770,11 +770,14 @@ exports.commands = {
                     startNewGiftTier(this, room);
                 }
                 else{
-                    if(!global.draftdirectionup){
-                        global.monslists.push(global.monslists.shift());
-                        global.monslists.push(global.monslists.shift());
+                    if(global.draftdirectionup){
+						global.monslists = array_moveUp(draftdirectionup)
+
                     }
-                    global.monslists.push(global.monslists.shift());
+                    else{
+						global.monslists.push(global.monslists.shift());
+					}
+
                     for (var i = 0; i < global.turnorder.length; i++) {
                         global.drafted[i]=false;
                     }
@@ -1118,10 +1121,11 @@ exports.commands = {
 						}
 						else{
 							if(global.draftdirectionup){
-								System.arraycopy(global.monslists, 0, global.monslists, 1, global.monslists.length-1);
+								global.monslists = array_moveUp(draftdirectionup)
+
 							}
 							else{
-								System.arraycopy(global.monslists, 1, global.monslists, 0, global.monslists.length-1);
+								global.monslists.push(global.monslists.shift());
 							}
 
 							for (var i = 0; i < global.turnorder.length; i++) {
@@ -2494,6 +2498,26 @@ function pmlists(monlists, room, vart)
 		toreply = toreply+word;
 	}
 	vart.reply(toreply);
+};
+function array_moveUp(arr) {
+	var newarr=[];
+	var i=1;
+	while(i < arr.length){
+		newarr.push(arr[i-1]);
+		i++
+	}
+	newarr.push(arr);
+	return newarr;
+};
+function array_movedown(arr) {
+	if (new_index >= arr.length) {
+		var k = new_index - arr.length + 1;
+		while (k--) {
+			arr.push(undefined);
+		}
+	}
+	arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
+	return arr; // for testing
 };
 function jsUcfirst(string) 
 {
