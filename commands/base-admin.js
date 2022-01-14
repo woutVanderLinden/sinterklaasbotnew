@@ -2481,6 +2481,7 @@ function pmlists(monlists, room, vart)
 		word = word+"<p>"+draftmonsprint5(monlists[i])+"</p></p></div>";
 		toreply = toreply+word;
 	}
+	vart.reply("!code "+ toreply);
 	vart.reply(toreply);
 };
 function jsUcfirst(string) 
