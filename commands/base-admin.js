@@ -771,7 +771,7 @@ exports.commands = {
                 }
                 else{
                     if(global.draftdirectionup){
-						global.monslists = array_moveUp(draftdirectionup)
+						global.monslists = array_moveUp(global.monslists)
 
                     }
                     else{
@@ -1121,7 +1121,7 @@ exports.commands = {
 						}
 						else{
 							if(global.draftdirectionup){
-								global.monslists = array_moveUp(draftdirectionup)
+								global.monslists = array_moveUp(global.monslists)
 
 							}
 							else{
@@ -2508,16 +2508,6 @@ function array_moveUp(arr) {
 	}
 	newarr.push(arr);
 	return newarr;
-};
-function array_movedown(arr) {
-	if (new_index >= arr.length) {
-		var k = new_index - arr.length + 1;
-		while (k--) {
-			arr.push(undefined);
-		}
-	}
-	arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
-	return arr; // for testing
 };
 function jsUcfirst(string) 
 {
