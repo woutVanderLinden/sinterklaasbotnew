@@ -369,7 +369,7 @@ exports.commands = {
 	},
 	joindraft: async function (arg, by, room, cmd){
 			let rawdata = fs.readFileSync('DraftTest2.json');
-		if(global.users=={}){
+		if(global.users=={} || global.users == null){
 					/*first load in the draft file list*/
 		//lets try that now
 			console.log('started reading file');
