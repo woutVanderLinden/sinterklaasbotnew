@@ -1929,6 +1929,23 @@ function draftmonsprint3(arg){
 			result=result;
 		return result;
 	};
+function draftmonsprint5(arg){
+	arg=arg.sort();
+	var result='';
+	for (var i = 0; i < arg.length; i++) {
+		console.log(arg[i]);
+		//Do something
+		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
+		var name=arg[i];
+		var word='<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>,';
+		result=result+word;
+
+
+	}
+	result=result.substring(0,result.length-1);
+	result=result;
+	return result;
+};
 	 function pickmultimons(arg,number,list){
 		 removedraftedspecies(arg,list);
 		var result=[];
@@ -2444,7 +2461,7 @@ function pmlists(monlists, room, vart)
 	console.log(toreply);
 	for(let i=0; i<global.turnorder.length; i++){
 		var word = "<p>"+ global.turnorder[i];
-		word = word+"<p>"+draftmonsprint2(monlists[i])+"</p></p>";
+		word = word+"<p>"+draftmonsprint5(monlists[i])+"</p></p>";
 		toreply = toreply+word;
 	}
 	vart.reply(toreply);
