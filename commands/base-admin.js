@@ -62,8 +62,8 @@ function startNewGiftTier(replier,room) {
 	global.monslists=[];
 	global.picknr[toId(room)]=0;
 	if(0 == global.currenttier[toId(room)]){
-		global.users={};
 		global.monslists=[];
+		global.draftstarted[toId(room)]=false;
 		return replier.reply("the draft is over")
 	}
 	global.tierPicks=global.todraftmons[toId(room)]["tierlist"]["Tier"+global.currenttier[toId(room)]]["picks"];
@@ -1117,11 +1117,13 @@ exports.commands = {
 							startNewGiftTier(this, room);
 						}
 						else{
-							if(!global.draftdirectionup){
-								global.monslists.push(global.monslists.shift());
-                                global.monslists.push(global.monslists.shift());
+							if(global.draftdirectionup){
+								System.arraycopy(global.monslists, 0, global.monslists, 1, global.monslists.length-1);
 							}
-                            global.monslists.push(global.monslists.shift());
+							else{
+								System.arraycopy(global.monslists, 1, global.monslists, 0, global.monslists.length-1);
+							}
+
 							for (var i = 0; i < global.turnorder.length; i++) {
 								global.drafted[i]=false;
 							}
@@ -1954,6 +1956,7 @@ function draftmonsprint5(arg){
 	result=result;
 	return result;
 };
+
 	 function pickmultimons(arg,number,list){
 		 removedraftedspecies(arg,list);
 		var result=[];
