@@ -421,14 +421,16 @@ exports.commands = {
 			return this.reply(toId(by)+ " already joined the draft")
 		}
 		else{
+			console.log(global.users["rillatesting"]);
 			var newuser={};
 			newuser["erekredieten"]=500;
 			newuser["draftedmons"]=[];
 			newuser["tieredpicks"]=global.todraftmons[toId(room)]["TierPicks"];
 			newuser["totaldraftscore"]=0;
 			global.users[toId(by)]=newuser;
+			console.log(global.users["rillatesting"]);
 			global.turnorder.push(toId(by));
-			console.log(global.users[toId(room)]);
+			console.log(global.users[toId(by)]);
 			return this.reply(toId(by)+ " joined the draft")
 		}
 	},
