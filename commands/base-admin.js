@@ -374,7 +374,7 @@ exports.commands = {
 	joindraft: async function (arg, by, room, cmd){
 
 		console.log(global.users);
-		if(global.users=={} || global.users == null || global.users== undefined){
+		if(global.users=={}){
 					/*first load in the draft file list*/
 		//lets try that now
 			console.log('started reading file');
