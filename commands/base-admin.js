@@ -372,7 +372,7 @@ exports.commands = {
 		return this.reply("kicked "+arg );
 	},
 	joindraft: async function (arg, by, room, cmd){
-			let rawdata = fs.readFileSync('DraftTest2.json');
+
 		if(global.users=={} || global.users == null){
 					/*first load in the draft file list*/
 		//lets try that now
@@ -386,7 +386,7 @@ exports.commands = {
 			try {
 				await client.connect();
 				var quotes =await findOneListingByName(client,"pokemon");
-				global.users=quotes;
+				global.users=quotes["pokemon"];
 
 
 				//return this.reply(draftmonsprint2(list));
@@ -401,13 +401,17 @@ exports.commands = {
 		if(global.draftstarted[toId(room)]==true){
 			return this.reply("draft already started");
 		}
+		else{
+
+		}
+		let rawdata = fs.readFileSync('DraftTest2.json');
 		let student = JSON.parse(rawdata);
 		console.log(student);
 	
 	
 		global.todraftmons[toId(room)]=student;
 		console.log('drafter added');
-		console.log(global.users[toId(by)]["draftedmons"]);
+		console.log('mons' + global.users);
 		global.maxtier=student["length"];
 		console.log(global.users[toId(room)]);
 		if(global.turnorder==undefined){
