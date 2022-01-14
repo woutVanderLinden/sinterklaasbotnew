@@ -2476,7 +2476,7 @@ function pmlists(monlists, room, vart)
 				}
 			}
 		}
-		var word = "<div style= border: 2px solid" + color+ "; padding: 10px;>";
+		var word = "<div style='border: 2px solid" + color+ "; padding: 2px;'>";
 		 word = "<p>"+ global.turnorder[i];
 		word = word+"<p>"+draftmonsprint5(monlists[i])+"</p></p></div>";
 		toreply = toreply+word;
