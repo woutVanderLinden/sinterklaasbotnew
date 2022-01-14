@@ -60,8 +60,9 @@ function startNewGiftTier(replier,room) {
 	global.draftdirectionup[toId(room)]= !global.draftdirectionup[toId(room)];
 	global.nrdrafted=0;
 	global.monslists=[];
-	global.users={};
+
 	if(0 == global.currenttier[toId(room)]){
+		global.users={};
 		global.monslists=[];
 		return replier.reply("the draft is over")
 	}
