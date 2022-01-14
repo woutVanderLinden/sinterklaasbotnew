@@ -2460,23 +2460,24 @@ function pmlists(monlists, room, vart)
 	var toreply= "!htmlbox Tier"+ global.currenttier[toId(room)]+ " draftdirection: "+directionword+ " picksleft:" +val;
 	console.log(toreply);
 	for(let i=0; i<global.turnorder.length; i++){
-		let color ="";
+		var word = "<div style='border: 2px solid "
+
 		if(i==1){
-			color="red";
+			word = word + "red background-color: rgb(255, 204, 204); padding: 2px;'>";
 		}
 		else{
 			if(i==2){
-				color="blue";
+				word = word + "blue background-color: rgb(153, 204, 255); padding: 2px;'>";
 			}
 			else{
 				if(i==3){
-					color="green";
+					word = word + "green background-color: rgb(153, 255, 153); padding: 2px;'>";
 				}else{
-					color="purple";
+					word = word + "purple background-color: rgb(204, 204, 255); padding: 2px;'>";
 				}
 			}
 		}
-		var word = "<div style='border: 2px solid" + color+ "; padding: 2px;'>";
+
 		 word = word+"<p>"+ global.turnorder[i];
 		word = word+"<p>"+draftmonsprint5(monlists[i])+"</p></p></div>";
 		toreply = toreply+word;
