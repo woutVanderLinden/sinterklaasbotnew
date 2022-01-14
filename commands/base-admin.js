@@ -724,6 +724,7 @@ exports.commands = {
                 if(args[i]=="a"){
                     args[i]="alola";
                 }
+
                 if(args[i]=="g"){
                     args[i]="galar";
                 }
@@ -768,10 +769,10 @@ exports.commands = {
                 }
                 else{
                     if(!global.draftdirectionup){
-                        global.turnorder.push(global.turnorder.shift());
-                        global.turnorder.push(global.turnorder.shift());
+                        global.monslists.push(global.monslists.shift());
+                        global.monslists.push(global.monslists.shift());
                     }
-                    global.turnorder.push(global.turnorder.shift());
+                    global.monslists.push(global.monslists.shift());
                     for (var i = 0; i < global.turnorder.length; i++) {
                         global.drafted[i]=false;
                     }
@@ -1109,10 +1110,10 @@ exports.commands = {
 						}
 						else{
 							if(!global.draftdirectionup){
-								global.turnorder.push(global.turnorder.shift());
-								global.turnorder.push(global.turnorder.shift());
+								global.monslists.push(global.monslists.shift());
+                                global.monslists.push(global.monslists.shift());
 							}
-							global.turnorder.push(global.turnorder.shift());
+                            global.monslists.push(global.monslists.shift());
 							for (var i = 0; i < global.turnorder.length; i++) {
 								global.drafted[i]=false;
 							}
