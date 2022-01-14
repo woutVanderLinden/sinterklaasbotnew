@@ -2463,17 +2463,17 @@ function pmlists(monlists, room, vart)
 		var word = "<div style='border: 2px solid "
 
 		if(i==1){
-			word = word + "red background-color: rgb(255, 204, 204); padding: 2px;'>";
+			word = word + "red; background-color: rgb(255, 204, 204); padding: 4px;'>";
 		}
 		else{
 			if(i==2){
-				word = word + "blue background-color: rgb(153, 204, 255); padding: 2px;'>";
+				word = word + "blue; background-color: rgb(153, 204, 255); padding: 4px;'>";
 			}
 			else{
 				if(i==3){
-					word = word + "green background-color: rgb(153, 255, 153); padding: 2px;'>";
+					word = word + "green; background-color: rgb(153, 255, 153); padding: 4px;'>";
 				}else{
-					word = word + "purple background-color: rgb(204, 204, 255); padding: 2px;'>";
+					word = word + "purple; background-color: rgb(204, 204, 255); padding: 4px;'>";
 				}
 			}
 		}
@@ -2482,7 +2482,6 @@ function pmlists(monlists, room, vart)
 		word = word+"<p>"+draftmonsprint5(monlists[i])+"</p></p></div>";
 		toreply = toreply+word;
 	}
-	vart.reply("!code "+ toreply);
 	vart.reply(toreply);
 };
 function jsUcfirst(string) 
