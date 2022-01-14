@@ -384,6 +384,7 @@ exports.commands = {
 			const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
 
 			try {
+
 				await client.connect();
 				var quotes =await findOneListingByName(client,"pokemon");
 				global.users=quotes["pokemon"];
@@ -404,6 +405,8 @@ exports.commands = {
 		else{
 
 		}
+		this.reply(global.users["rillatesting"]);
+		console.log('mons' + global.users["rillatesting"]);
 		let rawdata = fs.readFileSync('DraftTest2.json');
 		let student = JSON.parse(rawdata);
 		console.log(student);
