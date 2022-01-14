@@ -411,7 +411,7 @@ exports.commands = {
 	
 		global.todraftmons[toId(room)]=student;
 		console.log('drafter added');
-		console.log('mons' + global.users);
+		console.log('mons' + global.users["rillatesting"]);
 		global.maxtier=student["length"];
 		console.log(global.users[toId(room)]);
 		if(global.turnorder==undefined){
