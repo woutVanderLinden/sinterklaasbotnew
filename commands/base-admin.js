@@ -408,7 +408,7 @@ exports.commands = {
 
 		}
 
-		console.log('mons' + global.users["rillatesting"]["draftedmons"]);
+
 		let rawdata = fs.readFileSync('DraftTest2.json');
 		let student = JSON.parse(rawdata);
 		console.log(student);
@@ -416,7 +416,7 @@ exports.commands = {
 	
 		global.todraftmons[toId(room)]=student;
 		console.log('drafter added');
-		console.log('mons' + global.users["rillatesting"]);
+
 		global.maxtier=student["length"];
 		console.log(global.users[toId(room)]);
 		if(global.turnorder==undefined){
@@ -426,7 +426,7 @@ exports.commands = {
 			return this.reply(toId(by)+ " already joined the draft")
 		}
 		else{
-			console.log(global.users["rillatesting"]);
+
 			var newuser={};
 			newuser["erekredieten"]=500;
 			newuser["draftedmons"]=[];
