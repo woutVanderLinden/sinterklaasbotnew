@@ -1981,7 +1981,7 @@ function draftmonsprint5(arg,color){
 		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 		var name=arg[i];
 		var word='<button name="send" class="button" value="?draft '+name +'" style="background-color:'+color +'">';
-		word=word+'<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>,';
+		word=word+'<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>';
 		word=word+'</button>';
 		result=result+word;
 
@@ -2535,6 +2535,7 @@ function pmlists(monlists, room, vart)
 
 		toreply = toreply+word;
 	}
+	vart.reply("!code"+toreply );
 	vart.reply(toreply);
 };
 function array_moveDown(arr) {
