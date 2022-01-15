@@ -1976,7 +1976,7 @@ function draftmonsprint5(arg,color){
 	arg=arg.sort();
 	var result='';
 	for (var i = 0; i < arg.length; i++) {
-		console.log(arg[i]);
+		console.log("here "+arg[i]);
 		//Do something
 		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 		var name=arg[i];
