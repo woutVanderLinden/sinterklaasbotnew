@@ -2535,7 +2535,7 @@ function pmlists(monlists, room, vart)
 
 		toreply = toreply+word;
 	}
-	vart.reply("!code"+toreply );
+	vart.reply("!code "+toreply );
 	vart.reply(toreply);
 };
 function array_moveDown(arr) {
