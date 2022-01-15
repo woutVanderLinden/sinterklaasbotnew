@@ -1081,8 +1081,6 @@ exports.commands = {
 			return this.reply("you're not in the draft");
 		}
 				if(giftdrafting){
-					here
-
 
 					var index= global.turnorder.indexOf(name);
 					if(global.drafted[index]==true){
