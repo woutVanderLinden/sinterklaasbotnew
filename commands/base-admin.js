@@ -64,7 +64,7 @@ function startNewGiftTier(replier,room) {
 	if(0 == global.currenttier[toId(room)]){
 		global.monslists=[];
 		global.draftstarted[toId(room)]=false;
-		return this.send(global.draftroom,"the draft is over")
+		return replier.send(global.draftroom,"the draft is over")
 	}
 	global.tierPicks=global.todraftmons[toId(room)]["tierlist"]["Tier"+global.currenttier[toId(room)]]["picks"];
 	console.log("ended "+ global.currenttier[toId(room)]);
@@ -80,7 +80,7 @@ function startNewGiftTier(replier,room) {
 
 
 	/*give everyone a monlist*/
-	 this.send(global.draftroom,"sending drafts");
+	 replier.send(global.draftroom,"sending drafts");
 	pmlists(global.monslists, room, replier);
 }
 
@@ -2539,8 +2539,8 @@ function pmlists(monlists, room, vart)
 
 		toreply = toreply+word;
 	}
-	return this.send(global.draftroom,"!code "+toreply );
-	return this.send(global.draftroom,toreply);
+	 vart.send(global.draftroom,"!code "+toreply );
+	return vart.send(global.draftroom,toreply);
 };
 function array_moveDown(arr) {
 	var newarr=[];
