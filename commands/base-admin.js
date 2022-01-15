@@ -1152,7 +1152,7 @@ exports.commands = {
 								global.monslists.push(global.monslists.shift());
 
 							}
-
+//
 							for (var i = 0; i < global.turnorder.length; i++) {
 								global.drafted[i]=false;
 							}
