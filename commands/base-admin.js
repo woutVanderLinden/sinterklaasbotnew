@@ -64,7 +64,7 @@ function startNewGiftTier(replier,room) {
 	if(0 == global.currenttier[toId(room)]){
 		global.monslists=[];
 		global.draftstarted[toId(room)]=false;
-		return replier.reply("the draft is over")
+		return this.send(global.draftroom,"the draft is over")
 	}
 	global.tierPicks=global.todraftmons[toId(room)]["tierlist"]["Tier"+global.currenttier[toId(room)]]["picks"];
 	console.log("ended "+ global.currenttier[toId(room)]);
@@ -80,7 +80,7 @@ function startNewGiftTier(replier,room) {
 
 
 	/*give everyone a monlist*/
-	replier.reply("sending drafts");
+	 this.send(global.draftroom,"sending drafts");
 	pmlists(global.monslists, room, replier);
 }
 
@@ -402,7 +402,7 @@ exports.commands = {
 		}
 	
 		if(global.draftstarted[toId(room)]==true){
-			return this.reply("draft already started");
+			return this.send(global.draftroom,"draft already started");
 		}
 		else{
 
@@ -412,13 +412,13 @@ exports.commands = {
 		let rawdata = fs.readFileSync('DraftTest2.json');
 		let student = JSON.parse(rawdata);
 		console.log(student);
-	
-	
-		global.todraftmons[toId(room)]=student;
+
+
+		global.todraftmons[toId(global.draftroom)]=student;
 		console.log('drafter added');
 
 		global.maxtier=student["length"];
-		console.log(global.users[toId(room)]);
+		console.log(global.users[toId(global.draftroom)]);
 		if(global.turnorder==undefined){
 			global.turnorder=[];
 		}
@@ -430,10 +430,9 @@ exports.commands = {
 			var newuser={};
 			newuser["erekredieten"]=500;
 			newuser["draftedmons"]=[];
-			newuser["tieredpicks"]=global.todraftmons[toId(room)]["TierPicks"];
+			newuser["tieredpicks"]=global.todraftmons[toId(global.draftroom)]["TierPicks"];
 			newuser["totaldraftscore"]=0;
 			global.users[toId(by)]=newuser;
-			console.log(global.users["rillatesting"]);
 			global.turnorder.push(toId(by));
 			console.log(global.users[toId(by)]);
 			return this.reply(toId(by)+ " joined the draft")
@@ -1075,16 +1074,16 @@ exports.commands = {
 	
 	
 	draft:  function (arg, by, room, cmd) {
-				console.log(draftstarted[toId(room)]);
+				console.log(draftstarted[toId(global.draftroom)]);
 				var name=toId(by);
 		if(!global.turnorder.includes(name)){
-			return this.reply("you're not in the draft");
+			return this.reply("you're not in the draft " + name);
 		}
 				if(giftdrafting){
 
 					var index= global.turnorder.indexOf(name);
 					if(global.drafted[index]==true){
-						return this.reply('please, wait until everyone is finished');
+						return this.send(global.draftroom, 'please, wait until everyone is finished '+ name);
 
 					}
 					var draftlist=global.monslists[index];
@@ -1116,17 +1115,17 @@ exports.commands = {
 					arg=arg.substring(1,arg.length);
 
 					if(!pointdrafting){
-						var draftmons=global.todraftmons[toId(room)];
+						var draftmons=global.todraftmons[toId(global.draftroom)];
 						if(global.monslists[index].includes(arg)||(global.monslists[index].includes('Silvally')&&args[0]=='Silvally')){
 							global.users[name]["draftedmons"].push(arg);
 							removeItemOnce(global.monslists[index],arg);
 							global.drafted[index]=true;
 							console.log(global.monslists[index]);
 							saveTeamsToCloud();
-							this.reply('drafted '+arg);
+							this.send(global.draftroom, name + 'drafted '+arg);
 						}
 						else{
-							return this.reply(arg +' is no longer available.'+ name+' pick a different mon or check your spelling. ' );
+							return this.send(global.draftroom, arg +' is no longer available.'+ name+' pick a different mon or check your spelling. ' );
 						}
 					}
 					var alltrue=true;
@@ -1136,14 +1135,14 @@ exports.commands = {
 						}
 					}
 					if(alltrue) {
-						global.picknr[toId(room)]++;
-						if(global.picknr[toId(room)]>=global.tierPicks){
-							global.currenttier[toId(room)]--;
+						global.picknr[toId(global.draftroom)]++;
+						if(global.picknr[toId(global.draftroom)]>=global.tierPicks){
+							global.currenttier[toId(global.draftroom)]--;
 							console.log("started new tier");
-							startNewGiftTier(this, room);
+							startNewGiftTier(this, global.draftroom);
 						}
 						else{
-							if(global.draftdirectionup[toId(room)]){
+							if(global.draftdirectionup[toId(global.draftroom)]){
 
 								global.monslists.push(global.monslists.shift());
 							}
@@ -1158,7 +1157,7 @@ exports.commands = {
 								global.drafted[i]=false;
 							}
 							console.log("secondlist "+global.monslists);
-							pmlists(global.monslists,room, this);
+							pmlists(global.monslists,global.draftroom, this);
 							console.log(global.users[toId(by)]["draftedmons"]);
 						}
 					}
@@ -1363,6 +1362,11 @@ exports.commands = {
 		this.reply('/invite kingbaruk,'+'groupchat-sinterklaas-'+arg);
 		return this.reply('/makegroupchat '+arg);
 	
+	},
+	creategiftdraft:function (arg, by, room, cmd) {
+		global.draftroom= toId(room);
+		this.send(global.draftroom, '!htmlbox  <h1>Giftdraft</h1> <p>Press this button or ?joindraft to join </p> <button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?joindraft"> joindraft </button>' );
+
 	},
 	
 	recommend:function (arg, by, room, cmd) {
@@ -1978,7 +1982,7 @@ function draftmonsprint5(arg,color){
 		//Do something
 		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 		var name=arg[i];
-		var word='<button name="send" class="button" value="?draft '+name +'" style="background-color:'+color +'">';
+		var word='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas ?draft '+name +'" style="background-color:'+color +'">';
 		word=word+'<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>';
 		word=word+'</button>';
 		result=result+word;
@@ -2533,8 +2537,8 @@ function pmlists(monlists, room, vart)
 
 		toreply = toreply+word;
 	}
-	vart.reply("!code "+toreply );
-	vart.reply(toreply);
+	return this.send(global.draftroom,"!code "+toreply );
+	return this.send(global.draftroom,toreply);
 };
 function array_moveDown(arr) {
 	var newarr=[];
