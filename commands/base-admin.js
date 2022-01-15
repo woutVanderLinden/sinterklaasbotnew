@@ -374,12 +374,7 @@ exports.commands = {
 	joindraft: async function (arg, by, room, cmd){
 
 		console.log(global.users);
-		var bool = true;
-		for(var obj in global.users) {
-			if(obj.hasOwnProperty(prop))
-				bool = false;
-		}
-
+		var bool = JSON.stringify(global.users) === "{}";
 		if (bool){
 					/*first load in the draft file list*/
 		//lets try that now
@@ -412,7 +407,7 @@ exports.commands = {
 		else{
 
 		}
-		this.reply(global.users["rillatesting"]["draftedmons"]);
+
 		console.log('mons' + global.users["rillatesting"]["draftedmons"]);
 		let rawdata = fs.readFileSync('DraftTest2.json');
 		let student = JSON.parse(rawdata);
