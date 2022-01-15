@@ -212,6 +212,8 @@ var Context = exports.Context = (function () {
 	};
 
 	Context.prototype.sendReply = Context.prototype.reply = function (data) {
+		console.log(data);
+		console.log(this.room);
 		this.send(this.room, data);
 	};
 

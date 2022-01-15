@@ -1365,6 +1365,7 @@ exports.commands = {
 	},
 	creategiftdraft:function (arg, by, room, cmd) {
 		global.draftroom= toId(room);
+		this.reply("!htmlbox <p> hi </p>");
 		this.send(global.draftroom, '!htmlbox  <h1>Giftdraft</h1> <p>Press this button or ?joindraft to join </p> <button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?joindraft"> joindraft </button>' );
 
 	},
