@@ -608,6 +608,10 @@ exports.commands = {
 	},
 	draftable:'drafttable',
 	drafttable: function (arg, by, room, cmd){
+		if(giftdrafting){
+			pmlists(global.monslists,room, this);
+			return;
+		}
 		if(arg==""){
 			
 		var draftmons=global.todraftmons[toId(room)];
@@ -1073,7 +1077,12 @@ exports.commands = {
 	draft:  function (arg, by, room, cmd) {
 				console.log(draftstarted[toId(room)]);
 				var name=toId(by);
+		if(!global.turnorder.includes(name)){
+			return this.reply("you're not in the draft");
+		}
 				if(giftdrafting){
+					here
+
 
 					var index= global.turnorder.indexOf(name);
 					if(global.drafted[index]==true){
@@ -1963,7 +1972,7 @@ function draftmonsprint3(arg){
 			result=result;
 		return result;
 	};
-function draftmonsprint5(arg){
+function draftmonsprint5(arg,color){
 	arg=arg.sort();
 	var result='';
 	for (var i = 0; i < arg.length; i++) {
@@ -1971,7 +1980,9 @@ function draftmonsprint5(arg){
 		//Do something
 		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 		var name=arg[i];
-		var word='<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>,';
+		var word='<button name="send" class="button" value="?draft '+name +'" style="background-color:'+color +'">';
+		word=word+'<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>,';
+		word=word+'</button>';
 		result=result+word;
 
 
@@ -2499,22 +2510,29 @@ function pmlists(monlists, room, vart)
 
 		if(i==1){
 			word = word + "red; background-color: rgb(255, 204, 204); padding: 4px;'>";
+			word = word+"<p><b>"+ global.turnorder[i]+"</b>";
+			word = word+"<p>"+draftmonsprint5(monlists[i],"rgb(255, 204, 204)")+"</p></p></div>";
 		}
 		else{
 			if(i==2){
 				word = word + "blue; background-color: rgb(153, 204, 255); padding: 4px;'>";
+				word = word+"<p><b>"+ global.turnorder[i]+"</b>";
+				word = word+"<p>"+draftmonsprint5(monlists[i],"rgb(153, 204, 255)")+"</p></p></div>";
 			}
 			else{
 				if(i==3){
 					word = word + "green; background-color: rgb(153, 255, 153); padding: 4px;'>";
+					word = word+"<p><b>"+ global.turnorder[i]+"</b>";
+					word = word+"<p>"+draftmonsprint5(monlists[i],"rgb(153, 255, 153)")+"</p></p></div>";
 				}else{
 					word = word + "purple; background-color: rgb(204, 204, 255); padding: 4px;'>";
+					word = word+"<p><b>"+ global.turnorder[i]+"</b>";
+					word = word+"<p>"+draftmonsprint5(monlists[i], "rgb(204, 204, 255)")+"</p></p></div>";
 				}
 			}
 		}
 
-		 word = word+"<p><b>"+ global.turnorder[i]+"</b>";
-		word = word+"<p>"+draftmonsprint5(monlists[i])+"</p></p></div>";
+
 		toreply = toreply+word;
 	}
 	vart.reply(toreply);
