@@ -423,7 +423,7 @@ exports.commands = {
 			global.turnorder=[];
 		}
 		if(global.turnorder.includes(toId(by))){
-			return this.reply(toId(by)+ " already joined the draft")
+			return this.send(global.draftroom,toId(by)+ " already joined the draft")
 		}
 		else{
 
@@ -435,7 +435,7 @@ exports.commands = {
 			global.users[toId(by)]=newuser;
 			global.turnorder.push(toId(by));
 			console.log(global.users[toId(by)]);
-			return this.reply(toId(by)+ " joined the draft")
+			return this.send(global.draftroom,toId(by)+ " joined the draft")
 		}
 	},
 	seedraft: 'seedrafters',
