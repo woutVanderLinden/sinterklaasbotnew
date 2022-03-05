@@ -26,7 +26,7 @@ exports.commands = {
 	newtour: 'tournament',
 	tour: 'tournament',
 	tournament: function (arg, by, room, cmd) {
-		if (this.roomType !== 'chat' || (by !== 'AxCypher' && !this.can('tournament'))) return;
+		if (this.roomType !== 'chat' || (toId(by) !== 'axcypher' && toId(by) !== 'groteneus' && !this.can('tournament'))) return;
 		if (Features['tours'].tourData[room]) {
 			if (toId(arg) === 'end') return this.parse(this.cmdToken + 'tourend');
 			if (toId(arg) === 'start') return this.parse(this.cmdToken + 'tourstart');
