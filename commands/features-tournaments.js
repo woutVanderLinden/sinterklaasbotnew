@@ -123,6 +123,7 @@ exports.commands = {
 					details.timeToStart = null;
 				} else {
 					var time = parseInt(params.timeToStart);
+					this.reply(time);
 					if (!time || time < 10) return this.reply(this.trad('e4'));
 					details.timeToStart = time * 1000;
 				}
