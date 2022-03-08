@@ -160,7 +160,7 @@ exports.commands = {
 		Features['tours'].newTour(room, details);
 		setTimeout(function () {
 			if (Features['tours'].tournaments[room] && !Features['tours'].tourData[room]) {
-				Bot.say(room, this.trad('notstarted'));
+				Bot.say(room, "hi/"+ this.trad('notstarted'));
 				delete Features['tours'].tournaments[room];
 			}
 		}.bind(this), 2500);
