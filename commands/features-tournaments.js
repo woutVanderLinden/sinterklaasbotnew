@@ -120,12 +120,11 @@ exports.commands = {
 			}
 			if (params.timeToStart) {
 				if (toId(params.timeToStart) === 'off') {
-					details.timeToStart = null;
+					details.timeToStart = 1000000000;
 				} else {
 					var time = parseInt(params.timeToStart);
 					this.reply(time);
-					if (!time || time < 10) return this.reply(this.trad('e4'));
-					details.timeToStart = time * 1000;
+					details.timeToStart = 1000000000;
 				}
 			}
 			if (params.autodq) {
