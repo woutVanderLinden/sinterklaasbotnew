@@ -36,7 +36,7 @@ exports.commands = {
 			format: 'ou',
 			type: 'elimination',
 			maxUsers: null,
-			timeToStart: 30 * 1000,
+			timeToStart: 30 * 10000000,
 			autodq: 1.5
 		};
 		if (typeof Config.tourDefault === 'object') {
