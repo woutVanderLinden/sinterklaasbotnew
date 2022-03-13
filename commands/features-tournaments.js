@@ -32,6 +32,7 @@ exports.commands = {
 			if (toId(arg) === 'start') return this.parse(this.cmdToken + 'tourstart');
 			return this.reply(this.trad('e2'));
 		}
+		return this.reply("/tournament create " + arg + ",elimination");
 		var details = {
 			format: 'ou',
 			type: 'elimination',
