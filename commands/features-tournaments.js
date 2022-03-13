@@ -16,7 +16,7 @@ exports.commands = {
 
 	tourstart: 'tourend',
 	tourend: function (arg, by, room, cmd) {
-		if (this.roomType !== 'chat' || !this.can('tournament')) return;
+		if (this.roomType !== 'chat' || (toId(by) !== 'axcypher' && toId(by) !== 'groteneus' && !this.can('tournament'))) return;
 		if (!Features['tours'].tourData[room]) return this.reply(this.trad('err'));
 		if (cmd === 'tourstart' && Features['tours'].tourData[room].isStarted) return this.reply(this.trad('err2'));
 		this.reply("/tournament " + (cmd === 'tourend' ? 'end' : 'start'));
@@ -26,7 +26,7 @@ exports.commands = {
 	newtour: 'tournament',
 	tour: 'tournament',
 	tournament: function (arg, by, room, cmd) {
-		if (this.roomType !== 'chat' || !this.can('tournament')) return;
+		if (this.roomType !== 'chat' || (toId(by) !== 'axcypher' && toId(by) !== 'groteneus' && !this.can('tournament'))) return;
 		if (Features['tours'].tourData[room]) {
 			if (toId(arg) === 'end') return this.parse(this.cmdToken + 'tourend');
 			if (toId(arg) === 'start') return this.parse(this.cmdToken + 'tourstart');
@@ -37,7 +37,7 @@ exports.commands = {
 			format: 'ou',
 			type: 'elimination',
 			maxUsers: null,
-			timeToStart: 30 * 1000,
+			timeToStart: 30 * 10000000,
 			autodq: 1.5
 		};
 		if (typeof Config.tourDefault === 'object') {
@@ -121,11 +121,11 @@ exports.commands = {
 			}
 			if (params.timeToStart) {
 				if (toId(params.timeToStart) === 'off') {
-					details.timeToStart = null;
+					details.timeToStart = 1000000000;
 				} else {
 					var time = parseInt(params.timeToStart);
-					if (!time || time < 10) return this.reply(this.trad('e4'));
-					details.timeToStart = time * 1000;
+					this.reply(time);
+					details.timeToStart = 1000000000;
 				}
 			}
 			if (params.autodq) {
@@ -160,7 +160,7 @@ exports.commands = {
 		Features['tours'].newTour(room, details);
 		setTimeout(function () {
 			if (Features['tours'].tournaments[room] && !Features['tours'].tourData[room]) {
-				Bot.say(room, this.trad('notstarted'));
+				Bot.say(room, "hi/"+ this.trad('notstarted'));
 				delete Features['tours'].tournaments[room];
 			}
 		}.bind(this), 2500);
