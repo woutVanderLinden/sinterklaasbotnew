@@ -612,7 +612,7 @@ exports.commands = {
 			return;
 		}
 		var val= global.tierPicks-global.picknr[toId(room)];
-		var toreply= "!htmlbox Tier"+ arg + " draftdirection: "+directionword+ " picksleft:" +val;
+		var toreply= "!htmlbox Tier"+ arg + " picksleft:" +val;
 		if(arg==""){
 			
 		var draftmons=global.todraftmons[toId(room)];
