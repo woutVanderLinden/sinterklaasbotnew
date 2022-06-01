@@ -645,7 +645,7 @@ exports.commands = {
 			return this.reply("draft already started");
 		}
 		
-	
+	/*
 		let rawdata = fs.readFileSync('DraftTest.json');
 		let student = JSON.parse(rawdata);
 		console.log(student);
@@ -653,6 +653,8 @@ exports.commands = {
 		pointdrafting=true;
 		global.todraftmons[toId(room)]=student;
 		global.maxtier=student["length"];
+		°/
+	 */
 		/*then load the participant list*/
 		var list=global.turnorder[toId(room)];
 		console.log(list);
