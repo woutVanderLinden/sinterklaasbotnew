@@ -677,8 +677,7 @@ exports.commands = {
 		let rawdata2 = fs.readFileSync('draftedmons.json');
 		let student2 = JSON.parse(rawdata2);
 		//global.draftedmons=quotes;
-		//if(global.draftedmons={}){
-			
+		//if(global.draftedmons={});
 		//}
 		var draftmons=global.todraftmons[toId(room)];
 		global.draftdirectionup[toId(room)]=true;
