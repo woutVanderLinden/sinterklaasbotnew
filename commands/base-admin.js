@@ -1221,7 +1221,7 @@ exports.commands = {
 			}
 		} 
 		else{
-			var draftmons=global.todraftmons[global.draftroom];
+			var draftmons=global.todraftmons[toId(global.draftroom)];
 			var i=1;
 			console.log(draftmons);
 			while(i<=draftmons["length"]){
