@@ -615,10 +615,10 @@ exports.commands = {
 			
 		var draftmons=global.todraftmons[toId(room)];
 		if(toId(by)==toId(room)){
-				return this.reply(draftmonsprint(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"]));
+				return this.reply(draftmonsprint5(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"],"rgb(255, 204, 204)"));
 		
 			}else{
-				return this.reply(draftmonsprint2(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"]));
+				return this.reply(draftmonsprint5(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"],"rgb(255, 204, 204)"));
 		
 			}
 		}
@@ -630,10 +630,10 @@ exports.commands = {
 			var draftmons=global.todraftmons[toId(room)];
 			console.log(arg2);
 			if(toId(by)==toId(room)){
-				return this.reply(draftmonsprint(draftmons["tierlist"][arg2]["pokemon"]));
+				return this.reply(draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"],"rgb(255, 204, 204)"));
 		
 			}else{
-				return this.reply(draftmonsprint2(draftmons["tierlist"][arg2]["pokemon"]));
+				return this.reply(draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"],"rgb(255, 204, 204)"));
 		
 			}
 		
@@ -662,11 +662,8 @@ exports.commands = {
 		var result='';
 		for (var i = 0; i < list.length; i++) {
 			console.log(list[i]);
-    //Do something
-			
-				result=result+","+list[i];
-			
-			
+    		//Do something
+			result=result+","+list[i];
 		}
 		result=result.substring(1,result.length);
 		global.draftstarted[toId(room)]=true;
@@ -686,6 +683,7 @@ exports.commands = {
 		var tiername="Tier"+global.currenttier[toId(room)];
 		console.log(tiername);
 		global.possiblepicks=draftmons["tierlist"][tiername]["pokemon"];
+		/*
 		if(toId(by)==toId(room)){
 				this.reply(draftmonsprint(draftmons["tierlist"][tiername]["pokemon"]));
 		
@@ -693,6 +691,9 @@ exports.commands = {
 				this.reply(draftmonsprint2(draftmons["tierlist"][tiername]["pokemon"]));
 		
 			}
+
+		 */
+		this.reply("use ?draftable tier(x) to watch the corresponding tier. Or use the search or recommend function for a pick")
 		return this.reply(' the next drafter is '+list[0]);
 	},
 	forcepick: 'forcepickmon', 
@@ -1368,6 +1369,14 @@ exports.commands = {
 		console.log(global.draftroom);
 		this.reply("!htmlbox <p> hi </p>");
 		this.send(global.draftroom, '!htmlbox  <h1>Giftdraft</h1> <p>Press this button or ?joindraft to join </p> <button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?joindraft"> joindraft </button>' );
+
+	},
+
+	createdraft:function (arg, by, room, cmd) {
+		global.draftroom= room;
+		console.log(global.draftroom);
+		this.reply("!htmlbox <p> hi </p>");
+		this.send(global.draftroom, '!htmlbox  <h1>normal draft</h1> <p>Press this button or ?joindraft to join </p> <button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?joindraft"> joindraft </button>' );
 
 	},
 	
