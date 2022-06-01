@@ -1221,7 +1221,7 @@ exports.commands = {
 			}
 		} 
 		else{
-			var draftmons=global.todraftmons[globals.draftroom];
+			var draftmons=global.todraftmons[global.draftroom];
 			var i=1;
 			while(i<=draftmons["length"]){
 				var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
