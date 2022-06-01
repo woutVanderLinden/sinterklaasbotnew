@@ -1196,7 +1196,7 @@ exports.commands = {
 			}
 			arg=arg.substring(1,arg.length);
 			console.log(arg);
-			var list=global.turnorder[toId(room)]
+			var list=global.turnorder;
 		if(list[global.nextdrafter]!=toId(by)){
 				return this.reply('it is not your turn');
 	
@@ -1228,7 +1228,7 @@ exports.commands = {
 					if(global.users[name]["tieredpicks"].includes(i)){
 						draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
 						global.users[name]["tieredpicks"]=removeItemOnce(global.users[name]["tieredpicks"],i);
-						this.reply( name +" used a tierpick to draft a tier "+i+" "+arg+ " (erekredieten. "+global.users[name]["erekredieten"] +"tierpicks "+global.users[name]["tieredpicks"]+ " )");
+						return this.send(global.draftroom, name +" used a tierpick to draft a tier "+i+" "+arg+ " (erekredieten. "+global.users[name]["erekredieten"] +"tierpicks "+global.users[name]["tieredpicks"]+ " )");
 						global.users[name]["totaldraftscore"]=global.users[name]["totaldraftscore"]+calculatescore(room,arg,name);
 					}
 					else{
@@ -1241,8 +1241,8 @@ exports.commands = {
 							return this.reply("please make sure you have at least "+picksleft*40+ "Erekredieten left" );
 						}
 						global.users[name]["erekredieten"]=global.users[name]["erekredieten"]-draftmons["tierlist"]["Tier"+i]["points"];
-					
-						this.reply( name +" paid "+draftmons["tierlist"]["Tier"+i]["points"]+ " erekredieten.( Erekredieten "+global.users[name]["erekredieten"]+" tieredpicks:"+global.users[name]["tieredpicks"]+ ")");
+
+						return this.send(global.draftroom, name +" paid "+draftmons["tierlist"]["Tier"+i]["points"]+ " erekredieten.( Erekredieten "+global.users[name]["erekredieten"]+" tieredpicks:"+global.users[name]["tieredpicks"]+ ")");
 						global.users[name]["totaldraftscore"]=global.users[name]["totaldraftscore"]+calculatescore(room,arg,name);
 					}
 					
