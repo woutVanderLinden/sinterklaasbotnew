@@ -64,7 +64,7 @@ try {
 	global.turnorder=[];
 	global.possiblepicks={};
 	global.packdrafting=false;
-	global.draftstarted={};
+	global.draftstarted=false;
 	global.nextdrafter={};
 	global.draftedmons={};
 	global.currenttier={};

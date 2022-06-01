@@ -63,7 +63,7 @@ function startNewGiftTier(replier,room) {
 	global.picknr[toId(room)]=0;
 	if(0 == global.currenttier[toId(room)]){
 		global.monslists=[];
-		global.draftstarted[toId(room)]=false;
+		global.draftstarted=false;
 		return replier.send(global.draftroom,"the draft is over")
 	}
 	global.tierPicks=global.todraftmons[toId(room)]["tierlist"]["Tier"+global.currenttier[toId(room)]]["picks"];
@@ -283,7 +283,7 @@ exports.commands = {
 		global.currenttier[toId(room)]=global.maxtier;
 		//global.todraftmons[toId(room)]=student;
 		giftdrafting=true;
-		global.draftstarted[toId(room)]=true;
+		global.draftstarted=true;
 		global.picknr[toId(room)]=0;
 
 		global.drafted=[];
@@ -306,7 +306,7 @@ exports.commands = {
 		
 		packdrafting=true;
 		
-		global.draftstarted[toId(room)]=true;
+		global.draftstarted=true;
 		global.picknr[toId(room)]=0;
 		global.nextdrafter[toId(room)]=0;
 		//this.reply('draft order is '+result);
@@ -401,7 +401,7 @@ exports.commands = {
 			}
 		}
 	
-		if(global.draftstarted[toId(room)]==true){
+		if(global.draftstarted==true){
 			return this.send(global.draftroom,"draft already started");
 		}
 		else{
@@ -643,7 +643,7 @@ exports.commands = {
 	startdraft: function (arg, by, room, cmd){
 		
 		if (!this.isRanked('admin')) return false;
-		if(global.draftstarted[toId(room)]==true){
+		if(global.draftstarted==true){
 			return this.reply("draft already started");
 		}
 		
@@ -671,9 +671,10 @@ exports.commands = {
 			result=result+","+list[i];
 		}
 		result=result.substring(1,result.length);
-		global.draftstarted[toId(room)]=true;
+		global.draftstarted=true;
 		global.picknr[toId(room)]=0;
 		global.nextdrafter[toId(room)]=0;
+		global.draftstarted=true
 		this.reply('draft order is '+result);
 		console.log(draftstarted);
 		console.log(global.todraftmons);
@@ -708,7 +709,7 @@ exports.commands = {
 		if (args.length < 2){
 			return this.reply("Usage: " + this.cmdToken + cmd + " [user], [montopick]");
 		}
-		if(!global.draftstarted[toId(room)]){
+		if(!global.draftstarted){
 				return this.reply('draft did not start yet');
 	
 		}
@@ -965,7 +966,7 @@ exports.commands = {
 		if (!this.isRanked('admin')) return false;
 		var args = arg.split(",");
 		if (args.length < 2) return this.reply("Usage: " + this.cmdToken + cmd + " [user], [montopick]");
-		if(!global.draftstarted[toId(room)]){
+		if(!global.draftstarted){
 				return this.reply('draft did not start yet');
 	
 		}
@@ -1079,7 +1080,7 @@ exports.commands = {
 	
 	
 	draft:  function (arg, by, room, cmd) {
-				console.log(draftstarted[toId(global.draftroom)]);
+				console.log(draftstarted);
 				var name=toId(by);
 		if(!global.turnorder.includes(name)){
 			return this.reply("you're not in the draft " + name);
@@ -1169,7 +1170,7 @@ exports.commands = {
 					return;
 					/* now we still have to redeploy the draft and go on but only if everyone drafted*/
 				}
-		if(!global.draftstarted[toId(room)]){
+		if(!global.draftstarted){
 				return this.reply('draft did not start yet');
 	
 		}
@@ -2120,7 +2121,7 @@ function startNewTier(room,by,elem){
 			
 		}
 		result=result.substring(1,result.length);
-		global.draftstarted[toId(room)]=true;
+		global.draftstarted=true;
 		
 		global.nextdrafter[toId(room)]=0;
 		elem.reply('draft order is '+result);
