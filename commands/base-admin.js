@@ -1225,7 +1225,7 @@ exports.commands = {
 			var i=1;
 			while(i<=draftmons["length"]){
 				var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
-				if(possiblepic.includes(arg)||(possiblepic.includes('Silvally')&&args[0]=='Silvally')){
+				if(possiblepic.includes(arg)){
 					if(global.users[name]["tieredpicks"].includes(i)){
 						draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
 						global.users[name]["tieredpicks"]=removeItemOnce(global.users[name]["tieredpicks"],i);
