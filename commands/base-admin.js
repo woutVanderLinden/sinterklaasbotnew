@@ -684,7 +684,7 @@ exports.commands = {
 		global.draftdirectionup[toId(room)]=true;
 		var tiername="Tier"+global.currenttier[toId(room)];
 		console.log(tiername);
-		global.possiblepicks=draftmons["tierlist"][tiername]["pokemon"];
+		global.possiblepicks=draftmons["tierlist"];
 		/*
 		if(toId(by)==toId(room)){
 				this.reply(draftmonsprint(draftmons["tierlist"][tiername]["pokemon"]));
