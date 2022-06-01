@@ -626,7 +626,6 @@ exports.commands = {
 			arg=toId(arg);
 			//const str = 'abc efg';
 			const arg2 = arg.charAt(0).toUpperCase() + arg.slice(1);
-			
 			var draftmons=global.todraftmons[toId(room)];
 			console.log(arg2);
 			if(toId(by)==toId(room)){
