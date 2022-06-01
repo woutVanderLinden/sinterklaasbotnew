@@ -1223,6 +1223,7 @@ exports.commands = {
 		else{
 			var draftmons=global.todraftmons[global.draftroom];
 			var i=1;
+			console.log(draftmons);
 			while(i<=draftmons["length"]){
 				var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
 				if(possiblepic.includes(arg)){
