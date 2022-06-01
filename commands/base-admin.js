@@ -308,7 +308,7 @@ exports.commands = {
 		
 		global.draftstarted=true;
 		global.picknr[toId(room)]=0;
-		global.nextdrafter[toId(room)]=0;
+		global.nextdrafter=0;
 		//this.reply('draft order is '+result);
 		console.log(draftstarted);
 		console.log(global.todraftmons);
@@ -458,7 +458,7 @@ exports.commands = {
 	if (!this.isRanked('admin')) return false;
 		var args = arg.split(",");
 		if (args.length < 2) return this.reply("Usage: " + this.cmdToken + cmd + " [user], [creditstotake]");
-		name=toId(args[0]);
+		var name=toId(args[0]);
 		global.users[name]["erekredieten"]=global.users[name]["erekredieten"]-parseInt( args[1]);
 					
 		this.reply(toId(by) +" took "+args[1]+ " erekredieten from "+args[0]); 
@@ -468,7 +468,7 @@ exports.commands = {
 	if (!this.isRanked('admin')) return false;
 		var args = arg.split(",");
 		if (args.length < 2) return this.reply("Usage: " + this.cmdToken + cmd + " [user], [tierpicktoremove]");
-			name=toId(args[0]);
+			var name=toId(args[0]);
 		global.users[name]["tieredpicks"]=removeItemOnce(global.users[name]["tieredpicks"], parseInt(args[1]));
 					
 		this.reply(toId(by) +" took "+args[1]+ " tieredpick from "+args[0]); 
@@ -673,7 +673,7 @@ exports.commands = {
 		result=result.substring(1,result.length);
 		global.draftstarted=true;
 		global.picknr[toId(room)]=0;
-		global.nextdrafter[toId(room)]=0;
+		global.nextdrafter=0;
 		global.draftstarted=true
 		this.reply('draft order is '+result);
 		console.log(draftstarted);
@@ -814,7 +814,7 @@ exports.commands = {
             /* now we still have to redeploy the draft and go on but only if everyone drafted*/
         }
 
-		if(list[global.nextdrafter[toId(room)]]!=name){
+		if(list[global.nextdrafter]!=name){
 				return this.reply('it is not your turn');
 	
 		}
@@ -879,12 +879,12 @@ exports.commands = {
 		fs.writeFileSync('draftedmons.json', data);
 		if(!packdrafting){
 			if(global.draftdirectionup[toId(room)]){
-				global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]+1;
-				if(global.nextdrafter[toId(room)]>=list.length){
+				global.nextdrafter=global.nextdrafter+1;
+				if(global.nextdrafter>=list.length){
 					saveTeamsToCloud();
-					global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]-1;
+					global.nextdrafter=global.nextdrafter-1;
 					global.draftdirectionup[toId(room)]=false;
-					console.log("order changed  "+global.nextdrafter[toId(room)]);
+					console.log("order changed  "+global.nextdrafter);
 					global.picknr[toId(room)]=global.picknr[toId(room)]+1;
 					if(pointdrafting&&global.picknr[toId(room)]>=draftmons["freepicks"]){
 						saveTeamsToCloud();
@@ -905,10 +905,10 @@ exports.commands = {
 			}
 
 			else{
-				global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]-1;
-				if(global.nextdrafter[toId(room)]<0){
+				global.nextdrafter=global.nextdrafter-1;
+				if(global.nextdrafter<0){
 					saveTeamsToCloud();
-					global.nextdrafter[toId(room)]=0;
+					global.nextdrafter=0;
 					global.draftdirectionup[toId(room)]=true;
 					console.log("order changed");
 					global.picknr[toId(room)]=global.picknr[toId(room)]+1;
@@ -939,7 +939,7 @@ exports.commands = {
 			}
 
 *///pick a new six mons to draft
-			var username=list[global.nextdrafter[toId(room)]];
+			var username=list[global.nextdrafter];
 			if(pointdrafting){
 				return this.reply( name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["tieredpicks"]+" )");
 			}
@@ -986,12 +986,12 @@ exports.commands = {
 		
 		if(!packdrafting){
 			if(global.draftdirectionup[toId(room)]){
-				global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]+1;
-				if(global.nextdrafter[toId(room)]>=list.length){
+				global.nextdrafter=global.nextdrafter+1;
+				if(global.nextdrafter>=list.length){
 					saveTeamsToCloud();
-					global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]-1;
+					global.nextdrafter=global.nextdrafter-1;
 					global.draftdirectionup[toId(room)]=false;
-					console.log("order changed  "+global.nextdrafter[toId(room)]);
+					console.log("order changed  "+global.nextdrafter);
 					global.picknr[toId(room)]=global.picknr[toId(room)]+1;
 					if(pointdrafting&&global.picknr[toId(room)]>=draftmons["freepicks"]){
 						saveTeamsToCloud();
@@ -1012,10 +1012,10 @@ exports.commands = {
 			}
 
 			else{
-				global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]-1;
-				if(global.nextdrafter[toId(room)]<0){
+				global.nextdrafter=global.nextdrafter-1;
+				if(global.nextdrafter<0){
 					saveTeamsToCloud();
-					global.nextdrafter[toId(room)]=0;
+					global.nextdrafter=0;
 					global.draftdirectionup[toId(room)]=true;
 					console.log("order changed");
 					global.picknr[toId(room)]=global.picknr[toId(room)]+1;
@@ -1046,7 +1046,7 @@ exports.commands = {
 			}
 
 *///pick a new six mons to draft
-			var username=list[global.nextdrafter[toId(room)]];
+			var username=list[global.nextdrafter];
 			if(pointdrafting){
 				return this.reply( name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["tieredpicks"]+" )");
 			}
@@ -1068,7 +1068,7 @@ exports.commands = {
 			}
 			return this.reply(' Choose next mon '+list[0]);
 		}
-		return this.reply( name +' forcibly drafted alternative mon not on the list '+args[1]+ ', the next drafter is '+list[global.nextdrafter[toId(room)]]);
+		return this.reply( name +' forcibly drafted alternative mon not on the list '+args[1]+ ', the next drafter is '+list[global.nextdrafter]);
 	
 	},
 	
@@ -1196,7 +1196,7 @@ exports.commands = {
 			arg=arg.substring(1,arg.length);
 			console.log(arg);
 			var list=global.turnorder[toId(room)]
-		if(list[global.nextdrafter[toId(room)]]!=toId(by)){
+		if(list[global.nextdrafter]!=toId(by)){
 				return this.reply('it is not your turn');
 	
 		}
@@ -1261,12 +1261,12 @@ exports.commands = {
 		fs.writeFileSync('draftedmons.json', data);
 		if(!packdrafting){
 			if(global.draftdirectionup[toId(room)]){
-				global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]+1;
-				if(global.nextdrafter[toId(room)]>=list.length){
+				global.nextdrafter=global.nextdrafter+1;
+				if(global.nextdrafter>=list.length){
 					saveTeamsToCloud();
-					global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]-1;
+					global.nextdrafter=global.nextdrafter-1;
 					global.draftdirectionup[toId(room)]=false;
-					console.log("order changed  "+global.nextdrafter[toId(room)]);
+					console.log("order changed  "+global.nextdrafter);
 					global.picknr[toId(room)]=global.picknr[toId(room)]+1;
 					if(pointdrafting&&global.picknr[toId(room)]>=draftmons["freepicks"]){
 						saveTeamsToCloud();
@@ -1287,10 +1287,10 @@ exports.commands = {
 			}
 
 			else{
-				global.nextdrafter[toId(room)]=global.nextdrafter[toId(room)]-1;
-				if(global.nextdrafter[toId(room)]<0){
+				global.nextdrafter=global.nextdrafter-1;
+				if(global.nextdrafter<0){
 					saveTeamsToCloud();
-					global.nextdrafter[toId(room)]=0;
+					global.nextdrafter=0;
 					global.draftdirectionup[toId(room)]=true;
 					console.log("order changed");
 					global.picknr[toId(room)]=global.picknr[toId(room)]+1;
@@ -1321,7 +1321,7 @@ exports.commands = {
 			}
 
 *///pick a new six mons to draft
-			var username=list[global.nextdrafter[toId(room)]];
+			var username=list[global.nextdrafter];
 			if(pointdrafting){
 				return this.reply( name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["tieredpicks"]+" )");
 			}
@@ -2123,7 +2123,7 @@ function startNewTier(room,by,elem){
 		result=result.substring(1,result.length);
 		global.draftstarted=true;
 		
-		global.nextdrafter[toId(room)]=0;
+		global.nextdrafter=0;
 		elem.reply('draft order is '+result);
 	
 		if(packdrafting){
