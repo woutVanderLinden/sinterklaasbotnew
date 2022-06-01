@@ -656,7 +656,7 @@ exports.commands = {
 		°/
 	 */
 		/*then load the participant list*/
-		var list=global.turnorder[toId(room)];
+		var list=global.turnorder;
 		console.log(list);
 		list=shuffle(list);
 		console.log(list);
