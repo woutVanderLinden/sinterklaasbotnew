@@ -657,6 +657,7 @@ exports.commands = {
 	 */
 		/*then load the participant list*/
 		var list=global.turnorder;
+		giftdrafting=false;
 		console.log(list);
 		list=shuffle(list);
 		console.log(list);
