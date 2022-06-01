@@ -659,6 +659,7 @@ exports.commands = {
 		°/
 	 */
 		/*then load the participant list*/
+		global.pointdrafting=true;
 		global.tierPicks = todraftmons[toId(room)]["freepicks"];
 		var list=global.turnorder;
 		giftdrafting=false;
