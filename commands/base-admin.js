@@ -611,14 +611,16 @@ exports.commands = {
 			pmlists(global.monslists,room, this);
 			return;
 		}
+		var val= global.tierPicks-global.picknr[toId(room)];
+		var toreply= "!htmlbox Tier"+ arg + " draftdirection: "+directionword+ " picksleft:" +val;
 		if(arg==""){
 			
 		var draftmons=global.todraftmons[toId(room)];
 		if(toId(by)==toId(room)){
-				return this.reply(draftmonsprint5(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"],"rgb(255, 204, 204)"));
+				return this.reply(toreply+"<div>"+draftmonsprint5(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"],"rgb(255, 204, 204)")+ "</div>");
 		
 			}else{
-				return this.reply(draftmonsprint5(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"],"rgb(255, 204, 204)"));
+				return  this.reply(toreply+"<div>"+draftmonsprint5(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"],"rgb(255, 204, 204)")+ "</div>");
 		
 			}
 		}
@@ -629,10 +631,10 @@ exports.commands = {
 			var draftmons=global.todraftmons[toId(room)];
 			console.log(arg2);
 			if(toId(by)==toId(room)){
-				return this.reply(draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"],"rgb(255, 204, 204)"));
+				return  this.reply(toreply+"<div>"+draftmonsprint5(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"],"rgb(255, 204, 204)")+ "</div>");
 		
 			}else{
-				return this.reply(draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"],"rgb(255, 204, 204)"));
+				return  this.reply(toreply+"<div>"+draftmonsprint5(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"],"rgb(255, 204, 204)")+ "</div>");
 		
 			}
 		
@@ -656,6 +658,7 @@ exports.commands = {
 		°/
 	 */
 		/*then load the participant list*/
+		global.tierPicks = 11;
 		var list=global.turnorder;
 		giftdrafting=false;
 		console.log(list);
