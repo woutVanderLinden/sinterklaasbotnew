@@ -612,15 +612,15 @@ exports.commands = {
 			return;
 		}
 		var val= global.tierPicks-global.picknr[toId(room)];
-		var toreply= "!htmlbox Tier"+ arg + " picksleft:" +val;
+		var toreply= "!htmlbox Tier"+ arg + "drafter "+ list[global.nextdrafter] + " picksleft:" +val;
 		if(arg==""){
 			
 		var draftmons=global.todraftmons[toId(room)];
 		if(toId(by)==toId(room)){
-				return this.reply(toreply+"<div>"+draftmonsprint5(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"],"rgb(255, 204, 204)")+ "</div>");
+				return this.reply(toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprint5(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"],"rgb(255, 204, 204)")+ "</div>");
 		
 			}else{
-				return  this.reply(toreply+"<div>"+draftmonsprint5(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"],"rgb(255, 204, 204)")+ "</div>");
+				return  this.reply(toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprint5(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"],"rgb(255, 204, 204)")+ "</div>");
 		
 			}
 		}
@@ -631,10 +631,10 @@ exports.commands = {
 			var draftmons=global.todraftmons[toId(room)];
 			console.log(arg2);
 			if(toId(by)==toId(room)){
-				return  this.reply(toreply+"<div>"+draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"],"rgb(255, 204, 204)")+ "</div>");
+				return  this.reply(toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"],"rgb(255, 204, 204)")+ "</div>");
 		
 			}else{
-				return  this.reply(toreply+"<div>"+draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"],"rgb(255, 204, 204)")+ "</div>");
+				return  this.reply(toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"],"rgb(255, 204, 204)")+ "</div>");
 		
 			}
 		
