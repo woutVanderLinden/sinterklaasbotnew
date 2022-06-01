@@ -611,7 +611,7 @@ exports.commands = {
 			pmlists(global.monslists,room, this);
 			return;
 		}
-		var list=global.turnorder[toId(room)];
+		var list=global.turnorder;
 		var val= global.tierPicks-global.picknr[toId(room)];
 		var toreply= "!htmlbox Tier"+ arg + "drafter "+ list[global.nextdrafter] + " picksleft:" +val;
 		if(arg==""){
