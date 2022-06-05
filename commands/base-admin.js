@@ -348,7 +348,7 @@ exports.commands = {
 		}
 		else{
 			var newuser={};
-			newuser["erekredieten"]=500;
+			newuser["erekredieten"]=global.todraftmons[toId(global.draftroom)]["Points"];
 			newuser["draftedmons"]=[];
 			newuser["tieredpicks"]=global.todraftmons[toId(room)]["TierPicks"];
 			newuser["totaldraftscore"]=0;
@@ -409,7 +409,7 @@ exports.commands = {
 		}
 
 
-		let rawdata = fs.readFileSync('DraftTest2.json');
+		let rawdata = fs.readFileSync('DraftTest3.json');
 		let student = JSON.parse(rawdata);
 		console.log(student);
 
@@ -428,7 +428,7 @@ exports.commands = {
 		else{
 
 			var newuser={};
-			newuser["erekredieten"]=500;
+			newuser["erekredieten"]=global.todraftmons[toId(global.draftroom)]["Points"];
 			newuser["draftedmons"]=[];
 			newuser["tieredpicks"]=global.todraftmons[toId(global.draftroom)]["TierPicks"];
 			newuser["totaldraftscore"]=0;
