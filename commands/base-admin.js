@@ -1300,7 +1300,7 @@ exports.commands = {
 					global.nextdrafter=0;
 					global.draftdirectionup[toId(global.draftroom)]=true;
 					console.log("order changed");
-					global.picknr[toId(glo)]= global.picknr[toId(global.draftroom)]+1;
+					global.picknr[toId(global.draftroom)]= global.picknr[toId(global.draftroom)]+1;
 					if(pointdrafting&& global.picknr[toId(global.draftroom)]>=draftmons["freepicks"]){
 						global.users[toId(room)]=[];
 						//saveTeamsToCloud();
