@@ -1200,7 +1200,7 @@ exports.commands = {
 			console.log(arg);
 			var list=global.turnorder;
 		if(list[global.nextdrafter]!=toId(by)){
-				return this.reply(toId(global.draftroom),'it is not your turn');
+				return this.send(toId(global.draftroom),'it is not your turn');
 	
 		}
 		
@@ -1276,12 +1276,12 @@ exports.commands = {
 						saveTeamsToCloud();
 						global.users[toId(room)]=[];
 						
-						return this.reply(toId(global.draftroom),'The draft over is good luck and have fun ');
+						return this.send(toId(global.draftroom),'The draft over is good luck and have fun ');
 					}
 					if(!pointdrafting){
 
 						if(global.picknr[toId(room)]>=draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["picks"]){
-							this.reply( name +' drafted '+arg);
+							this.send(toId(global.draftroom), name +' drafted '+arg);
 							return startNewTier(room,by,this)
 						}
 					}
