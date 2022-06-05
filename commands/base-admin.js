@@ -1203,7 +1203,7 @@ exports.commands = {
 
 			console.log("drafter" + list[global.nextdrafter]);
 		if(list[global.nextdrafter]!=toId(by)){
-				return this.send(toId(global.draftroom),'it is not your turn');
+				return this.send(global.draftroom,'it is not your turn');
 	
 		}
 		
@@ -1330,11 +1330,11 @@ exports.commands = {
 *///pick a new six mons to draft
 			var username=list[global.nextdrafter];
 			if(pointdrafting){
-				return this.send(toId(global.draftroom), name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["tieredpicks"]+" )");
+				return this.send(global.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["tieredpicks"]+" )");
 			}
 			else{
 
-				return this.send(toId(global.draftroom), name +" drafted "+arg+", the next drafter is "+username);
+				return this.send(global.draftroom, name +" drafted "+arg+", the next drafter is "+username);
 			}
 	//var list=global.users[toId(room)];
 		 }
@@ -1348,7 +1348,7 @@ exports.commands = {
 				this.reply(draftmonsprint2(newlist));
 		
 			}
-		return this.send(toId(global.draftroom),' Choose next mon '+list[0]);
+		return this.send(global.draftroom,' Choose next mon '+list[0]);
 		}
 	},
 
