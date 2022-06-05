@@ -1187,8 +1187,10 @@ exports.commands = {
 					if(args[i]=="g"){
 						args[i]="galar";
 					}
-					args[i]=jsUcfirst(args[i]);
-					arg=arg+'-'+jsUcfirst(args[i]);
+					if(args[i]!="o") {
+						args[i] = jsUcfirst(args[i]);
+						arg = arg + '-' + jsUcfirst(args[i]);
+					}
 			}
 			arg=arg.substring(1,arg.length);
 			var args2=arg.split(" ");
