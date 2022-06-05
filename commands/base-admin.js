@@ -1174,6 +1174,7 @@ exports.commands = {
 					/* now we still have to redeploy the draft and go on but only if everyone drafted*/
 				}
 		if(!global.draftstarted){
+
 				return this.reply('draft did not start yet');
 	
 		}
@@ -1199,6 +1200,8 @@ exports.commands = {
 			arg=arg.substring(1,arg.length);
 			console.log(arg);
 			var list=global.turnorder;
+
+			console.log("drafter" + list[global.nextdrafter]);
 		if(list[global.nextdrafter]!=toId(by)){
 				return this.send(toId(global.draftroom),'it is not your turn');
 	
