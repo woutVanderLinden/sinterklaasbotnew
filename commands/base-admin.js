@@ -1241,7 +1241,7 @@ exports.commands = {
 						draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
 						var pointscost=draftmons["tierlist"]["Tier"+i]["points"];
 						var currentscore=global.users[name]["erekredieten"];
-						var picksleft=draftmons["freepicks"]-global.picknr[toId(global.draftroom)]-1-global.users[name]["tieredpicks"].length;
+						var picksleft=draftmons["freepicks"]-global.picknr[toId(global.draftroom)]-1-global.users[name]["tieredpicks"].length-1;
 						console.log("freepicks "+draftmons["freepicks"]+" picknr: "+global.picknr[toId(global.draftroom)]+" pickleft "+picksleft);
 						if(picksleft*40>currentscore-pointscost){
 							return this.reply("please make sure you have at least "+picksleft*40+ "Erekredieten left" );
