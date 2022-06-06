@@ -748,7 +748,7 @@ exports.commands = {
 
 		 */
 		this.reply("use ?draftable tier(x) to watch the corresponding tier. Or use the search or recommend function for a pick");
-		var word = '!htlmbox  <div><h1>' + list[0] + '</h1><h2>tierhelper</h2> ';
+		var word = '!htmlbox  <div><h1>' + list[0] + '</h1><h2>tierhelper</h2> ';
 		var index=1;
 		while (index<6){
 			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier'+ index +'" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
@@ -1405,7 +1405,7 @@ exports.commands = {
 			saveTeamsToCloud();
 			if(pointdrafting){
 				this.send(global.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["tieredpicks"]+" ) picks left: " + picksleft);
-				var word = '!htlmbox  <div><h1>' + username + '</h1><h2>tierhelper</h2> ';
+				var word = '!htmlbox  <div><h1>' + username + '</h1><h2>tierhelper</h2> ';
 				var index=1;
 				while (index<6){
 					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier'+ index +'" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
@@ -1415,7 +1415,7 @@ exports.commands = {
 				this.send(global.draftroom, word);
 			}
 			else{
-				var word = '!htlmbox  <div><h1>' + username + '</h1><h2>tierhelper</h2> ';
+				var word = '!htmlbox  <div><h1>' + username + '</h1><h2>tierhelper</h2> ';
 				var index=1;
 				while (index<6){
 					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier'+ index +'" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
