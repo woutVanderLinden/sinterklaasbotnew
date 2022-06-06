@@ -1559,6 +1559,7 @@ exports.commands = {
 		//global.users[name]["erekredieten"]
 		//mondata
 	},
+	draftweak: 'draftweakness',
 
 	draftweakness: function(arg, by, room, cmd){
 		var name=toId(by);
@@ -1611,7 +1612,7 @@ exports.commands = {
 			if(userlist.includes(toId(argx))){
 			   name=toId(argx);
 			}
-			var draftsshown=3;
+			var draftsshown=6;
 			if(argx.includes("tier")){
 				argx=toId(argx);
 				argx=jsUcfirst(argx);
@@ -1758,16 +1759,20 @@ exports.commands = {
 					var currentType = postypings[typePointer];
 					if(weaktable[currentType]<0){
 						if(table2[currentType]>=3){
-							t=t+10;
+							t=t+20;
 						} else{
 							if(table2[currentType]>0){
-								t=t+5;
+								t=t+10;
 							}
 						}
 					}
 					else{
+
 						if(table2[currentType]==2 && weaktable[currentType]>0){
 							t=t-5;
+						}
+						if(table2[currentType]>0 && weaktable[currentType]>0){
+							t=t-3;
 						}
 					}
 					typePointer++;
