@@ -1970,7 +1970,7 @@ exports.commands = {
 					
 					
 				}
-				t=99-t;
+				t=200-t;
 				var maxlength=draftsshown+3;
 				if(filtered){
 					maxlength=draftsshown;
