@@ -758,8 +758,15 @@ exports.commands = {
                 if(args[i]=="g"){
                     args[i]="galar";
                 }
-                args[i]=jsUcfirst(args[i]);
-                arg=arg+'-'+jsUcfirst(args[i]);
+
+				if(args[i]=="h"){
+					args[i]="hisui";
+				}
+				if(args[i]!="o"){
+					args[i]=jsUcfirst(args[i]);
+					arg=arg+'-'+jsUcfirst(args[i]);
+				}
+
             }
             arg=arg.substring(1,arg.length);
             var args2=arg.split(" ");
@@ -1238,7 +1245,7 @@ exports.commands = {
 			console.log(draftmons);
 			while(i<=draftmons["length"]){
 				var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
-				var picksleft=draftmons["freepicks"]-global.picknr[toId(global.draftroom)]-1-global.users[name]["tieredpicks"].length -1;
+				var picksleft=draftmons["freepicks"]-global.picknr[toId(global.draftroom)]-1-global.users[name]["tieredpicks"].length;
 				if(possiblepic.includes(arg)){
 					if(global.users[name]["tieredpicks"].includes(i)){
 						draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
@@ -1286,14 +1293,14 @@ exports.commands = {
 					 global.picknr[toId(global.draftroom)]= global.picknr[toId(global.draftroom)]+1;
 					if(pointdrafting&& global.picknr[toId(global.draftroom)]>=draftmons["freepicks"]){
 						saveTeamsToCloud();
-						global.users[toId(room)]=[];
+						global.users[toId(global.draftroom)]=[];
 						
-						return this.send(toId(global.draftroom),'The draft over is good luck and have fun ');
+						return this.send(global.draftroom,'The draft over is good luck and have fun ');
 					}
 					if(!pointdrafting){
 
 						if( global.picknr[toId(global.draftroom)]>=draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["picks"]){
-							this.send(toId(global.draftroom), name +' drafted '+arg);
+							this.send(global.draftroom, name +' drafted '+arg);
 							return startNewTier(room,by,this)
 						}
 					}
@@ -1311,9 +1318,9 @@ exports.commands = {
 					console.log("order changed");
 					global.picknr[toId(global.draftroom)]= global.picknr[toId(global.draftroom)]+1;
 					if(pointdrafting&& global.picknr[toId(global.draftroom)]>=draftmons["freepicks"]){
-						global.users[toId(room)]=[];
+						global.users[toId(global.draftroom)]=[];
 						//saveTeamsToCloud();
-						return this.send(toId(global.draftroom),'The draft over is good luck and have fun ');
+						return this.send(global.draftroom,'The draft over is good luck and have fun ');
 					}
 					console.log("picknr is"+ global.picknr[toId(global.draftroom)]);
 					if(!pointdrafting){
