@@ -1402,6 +1402,8 @@ exports.commands = {
 		var posfilterroles=["entryhazards","hazardremoval","itemremover","pivot","cleric","pivot","scarf","physicalsweeper","specialsweeper","physicalbulkyattacker","specialbulkyattacker","physicalwall","specialwall","physicalsetup","specialsetup","status","priority","speedcontrol","sun","rain","hail","sand"];
 		var filterroles=[];
 		var x =0;
+		var tierrecommend = false;
+		var pointrecommend = false;
 		while(x<args.length){
 			var argx=args[x];
 
