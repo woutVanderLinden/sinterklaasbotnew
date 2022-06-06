@@ -12526,6 +12526,35 @@
          "sun": 0
       }
    ,
+   "Shaymin":
+   {
+      "name": "Shaymin",
+      "Typing1": "Grass",
+      "Typing 2": "",
+      "physicalbulkyattacker": 0,
+      "specialbulkyattacker": 3,
+      "physicalwall": 0,
+      "physicalsetup": 0,
+      "priority": 0,
+      "specialsweeper": 1,
+      "specialsetup": 1,
+      "status": 0,
+      "itemremover": 0,
+      "scarf": 0,
+      "entryhazards": 0,
+      "pivot": 0,
+      "cleric": 0,
+      "specialwall": 0,
+      "hazardremoval": 0,
+      "physicalsweeper": 0,
+      "sand": 0,
+      "speedcontrol": 0,
+      "screens": 0,
+      "rain": 0,
+      "hail": 0,
+      "sun": 0
+   }
+,
    "Hoopa-Unbound": 
       {
          "name": "Hoopa-Unbound",
