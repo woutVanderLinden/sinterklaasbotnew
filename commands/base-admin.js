@@ -2794,6 +2794,9 @@ function weaknessForPokemon(monname)
 	var postypings=["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
 	var i=0;
 	var toreturn = {"Grass":0,"Fire":0,"Water":0,"Ice":0,"Bug":0,"Normal":0,"Flying":0,"Poison":0,"Psychic":0,"Ghost":0,"Fighting":0,"Rock":0,"Ground":0,"Electric":0,"Dragon":0,"Fairy":0,"Dark":0,"Steel":0};
+	console.log(global.weaknesssheet);
+	console.log(global.weaknesssheet["Grass"]);
+	console.log(global.weaknesssheet["Grass"]["Grass"]);
 	while(i<postypings.length) {
 		var weaknessToType = 0;
 
