@@ -1446,7 +1446,7 @@ exports.commands = {
 			draftmons=global.todraftmons[toId(room)];
 		}
 		while(g<=draftmons["length"]) {
-			console.log("g" + g);
+
 			var possiblepic = [];
 			if (tierrecommend) {
 				possiblepic = draftmons["tierlist"][tier]["pokemon"];
@@ -1464,8 +1464,8 @@ exports.commands = {
 			var j = 0;
 
 			while (j < possiblepic["length"]) {
-				console.log("j" + j);
-				console.log(possiblepic["length"]);
+
+				console.log(monname);
 				var monname = possiblepic[j];
 				var t=1.0;
 				if(filtertypings.length>0){
