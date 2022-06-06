@@ -666,6 +666,35 @@
       "sun": 0
    }
 ,
+   "Spinda":
+   {
+      "name": "Spinda",
+      "Typing1": "Normal",
+      "Typing 2": "",
+      "physicalbulkyattacker": 0,
+      "specialbulkyattacker": 0,
+      "physicalwall": 0,
+      "physicalsetup": 1,
+      "priority": 0,
+      "specialsweeper": 0,
+      "specialsetup": 0,
+      "status": 0,
+      "itemremover": 0,
+      "scarf": 0,
+      "entryhazards": 0,
+      "pivot": 0,
+      "cleric": 0,
+      "specialwall": 0,
+      "hazardremoval": 1,
+      "physicalsweeper": 0,
+      "sand": 0,
+      "speedcontrol": 0,
+      "screens": 0,
+      "rain": 0,
+      "hail": 0,
+      "sun": 0
+   }
+,
 
    "Kommo-o": 
       {
