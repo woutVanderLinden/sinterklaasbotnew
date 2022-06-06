@@ -1680,6 +1680,7 @@ exports.commands = {
 	var i=0;
 	while(i<monschosen.length){
 		var currentmon=monschosen[i];
+
 		if(!typings.includes(global.mondata[currentmon]["Typing1"])){
 			typings.push(global.mondata[currentmon]["Typing1"]);
 		}
@@ -1750,6 +1751,26 @@ exports.commands = {
 				var monname=possiblepic[j];
 				var t=0.0;
 				console.log(monname);
+				var weaktable = weaknessTable(name);
+				var table2 = weaknessForPokemon(monname);
+				var typePointer=0;
+				while(typePointer<postypings.length) {
+					var currentType = postypings[typePointer];
+					if(weaktable[currentType]<0){
+						if(table2[currentType]>=3){
+							t=t+10;
+						} else{
+							if(table2[currentType]>0){
+								t=t+5;
+							}
+						}
+					}
+					else{
+						if(table2[currentType]==2 && weaktable[currentType]>0){
+							t=t-5;
+						}
+					}
+				}
 				if(typings.includes(global.mondata[monname]["Typing1"])){
 					if(global.mondata[monname]["Typing 2"]!=undefined){
 						
@@ -2793,9 +2814,9 @@ function weaknessTable(name)
 function weaknessForPokemon(monname)
 {
 	var postypings=["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
-	var i=0;
-	var toreturn = {"Grass":0,"Fire":0,"Water":0,"Ice":0,"Bug":0,"Normal":0,"Flying":0,"Poison":0,"Psychic":0,"Ghost":0,"Fighting":0,"Rock":0,"Ground":0,"Electric":0,"Dragon":0,"Fairy":0,"Dark":0,"Steel":0};
 
+	var toreturn = {"Grass":0,"Fire":0,"Water":0,"Ice":0,"Bug":0,"Normal":0,"Flying":0,"Poison":0,"Psychic":0,"Ghost":0,"Fighting":0,"Rock":0,"Ground":0,"Electric":0,"Dragon":0,"Fairy":0,"Dark":0,"Steel":0};
+	var i=0;
 	while(i<postypings.length) {
 		var weaknessToType = 0;
 
