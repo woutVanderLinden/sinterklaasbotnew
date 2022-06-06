@@ -1399,7 +1399,7 @@ exports.commands = {
 		var filtertypings=[];
 		var posfilterroles=["entryhazards","hazardremoval","itemremover","pivot","cleric","pivot","scarf","physicalsweeper","specialsweeper","physicalbulkyattacker","specialbulkyattacker","physicalwall","specialwall","physicalsetup","specialsetup","status","priority","speedcontrol","sun","rain","hail","sand"];
 		var filterroles=[];
-
+		var x =0;
 		while(x<args.length){
 			var argx=args[x];
 
