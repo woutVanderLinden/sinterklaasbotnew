@@ -608,6 +608,36 @@
       "sun": 0
    }
 ,
+   "Castform":
+   {
+      "name": "Castform",
+      "Typing1": "Normal",
+      "Typing 2": "",
+      "physicalbulkyattacker": 0,
+      "specialbulkyattacker": 1,
+      "physicalwall": 0,
+      "physicalsetup": 0,
+      "priority": 0,
+      "specialsweeper": 0,
+      "specialsetup": 0,
+      "status": 0,
+      "itemremover": 0,
+      "scarf": 0,
+      "entryhazards": 0,
+      "pivot": 0,
+      "cleric": 0,
+      "specialwall": 0,
+      "hazardremoval": 0,
+      "physicalsweeper": 0,
+      "sand": 0,
+      "speedcontrol": 0,
+      "screens": 0,
+      "rain": 1,
+      "hail": 1,
+      "sun": 1
+   }
+,
+
    "Kommo-o": 
       {
          "name": "Kommo-o",
