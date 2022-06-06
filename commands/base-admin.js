@@ -2782,7 +2782,7 @@ function weaknessTable(name)
 		var weaknessForMon = weaknessForPokemon(monschosen[i]);
 		var j=0;
 		while(j<postypings.length) {
-			console.log(postypings[i] + "sum" +toreturn[postypings[i]]+ " "+ weaknessForMon[postypings[i);
+			console.log(postypings[i] + "sum" +toreturn[postypings[i]]+ " "+ weaknessForMon[postypings[i]]);
 			toreturn[postypings[i]] = toreturn[postypings[i]]+ weaknessForMon[postypings[i]];
 			j++;
 		}
