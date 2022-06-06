@@ -2785,6 +2785,7 @@ function weaknessTable(name)
 			toreturn[postypings[i]] = toreturn[postypings[i]]+ weaknessForMon[postypings[i]];
 			j++;
 		}
+		i++;
 	}
 	return toreturn;
 };
