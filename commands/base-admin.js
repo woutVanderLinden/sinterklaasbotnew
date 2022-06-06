@@ -1559,7 +1559,29 @@ exports.commands = {
 		//global.users[name]["erekredieten"]
 		//mondata
 	},
-	
+
+	draftweakness: function(arg, by, room, cmd){
+		var name=toId(by);
+		var weaktable = weaknessTable(name);
+		var postypings=["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
+
+		var word = '!htmlbox <div id="dvContents" style="border: 1px dotted black; padding: 5px; width:305px"> <table cellspacing="0" rules="all" border="1">';
+		var i =0;
+		while(i<6){
+			var j =0;
+			word= word+"<tr>";
+			while(j<3){
+				word= word+"<td>"+postypings[i*3+j] + weaktable[postypings[i*3+j]] + +"</td>";
+				j++
+			}
+			word= word+"</tr>";
+			i++
+		}
+		word= word + "</table> </div>"
+		return this.reply(word);
+	},
+
+
 	recommend:function (arg, by, room, cmd) {
 		
 		arg=arg.toLowerCase();
@@ -1591,10 +1613,12 @@ exports.commands = {
 			}
 			var draftsshown=3;
 			if(argx.includes("tier")){
+				argx=toId(argx);
 				argx=jsUcfirst(argx);
 				tierrecommend=true;
 				var tier=argx;
 			}
+			argx=toId(argx);
 			argx=jsUcfirst(argx);
 			if(postypings.includes(argx)){
 				filtertypings.push(argx);   
@@ -2746,4 +2770,39 @@ function array_moveDown(arr) {
 function jsUcfirst(string) 
 {
     return string.charAt(0).toUpperCase() + string.slice(1);
+};
+
+function weaknessTable(name)
+{
+	var postypings=["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
+	var monschosen=global.users[name]["draftedmons"];
+	var i=0;
+	var toreturn = {"Grass":0,"Fire":0,"Water":0,"Ice":0,"Bug":0,"Normal":0,"Flying":0,"Poison":0,"Psychic":0,"Ghost":0,"Fighting":0,"Rock":0,"Ground":0,"Electric":0,"Dragon":0,"Fairy":0,"Dark":0,"Steel":0};
+	while(i<monschosen.length) {
+		var weaknessForMon = weaknessForPokemon(monschosen[i]);
+		var j=0;
+		while(j<postypings.length) {
+			toreturn[postypings[i]] = toreturn[postypings[i]]+ weaknessForMon[postypings[i]];
+			j++;
+		}
+	}
+	return toreturn;
+};
+function weaknessForPokemon(pokemon)
+{
+	var postypings=["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
+	var monschosen=global.users[name]["draftedmons"];
+	var i=0;
+	var toreturn = {"Grass":0,"Fire":0,"Water":0,"Ice":0,"Bug":0,"Normal":0,"Flying":0,"Poison":0,"Psychic":0,"Ghost":0,"Fighting":0,"Rock":0,"Ground":0,"Electric":0,"Dragon":0,"Fairy":0,"Dark":0,"Steel":0};
+	while(i<postypings.length) {
+		var weaknessToType = 0;
+		 weaknessToType = global.weaknesssheet[postypings[i]][global.mondata[monname]["Typing 1"]];
+		 if(!global.mondata[monname]["Typing 2"].equals("")){
+			 weaknessToType += global.weaknesssheet[postypings[i]][global.mondata[monname]["Typing 2"]];
+		 }
+
+		 toreturn[postypings[i]]= weaknessToType;
+		 i++;
+	}
+	return toreturn;
 };

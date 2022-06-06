@@ -77,6 +77,10 @@ try {
 	let rawdata = fs.readFileSync('convertcsv.json');
 	let student = JSON.parse(rawdata);
 	global.mondata=student;
+
+	let rawdata2 = fs.readFileSync('weaknesssheet.json');
+	let student2 = JSON.parse(rawdata2);
+	global.weaknessheet=student2;
 } catch (e) {
 	console.log(e.stack);
 	console.log("ERROR: missing dependencies, try 'npm install'");
