@@ -1395,6 +1395,8 @@ exports.commands = {
 	},
 
 	search:function (arg, by, room, cmd) {
+		arg=arg.toLowerCase();
+		var args = arg.split(",");
 		var postypings=["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
 		var filtertypings=[];
 		var posfilterroles=["entryhazards","hazardremoval","itemremover","pivot","cleric","pivot","scarf","physicalsweeper","specialsweeper","physicalbulkyattacker","specialbulkyattacker","physicalwall","specialwall","physicalsetup","specialsetup","status","priority","speedcontrol","sun","rain","hail","sand"];
