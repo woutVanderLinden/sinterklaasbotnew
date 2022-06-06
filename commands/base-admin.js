@@ -1259,7 +1259,7 @@ exports.commands = {
 						var currentscore=global.users[name]["erekredieten"];
 
 						console.log("freepicks "+draftmons["freepicks"]+" picknr: "+global.picknr[toId(global.draftroom)]+" pickleft "+picksleft);
-						if(picksleft*40>currentscore-pointscost){
+						if(picksleft*40>currentscore-pointscost||picksleft<0){
 							return this.reply("please make sure you have at least "+picksleft*40+ " Erekredieten left" );
 						}
 						global.users[name]["erekredieten"]=global.users[name]["erekredieten"]-draftmons["tierlist"]["Tier"+i]["points"];
