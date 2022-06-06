@@ -335,7 +335,7 @@ exports.commands = {
 	
 	
 	
-	forcejoin:  function (arg, by, room, cmd) {
+	forcejoin:  async function (arg, by, room, cmd) {
 		if (!this.isRanked('admin')) return false;
 		if(arg==""){
 			return this.reply("no player mentioned")
@@ -347,14 +347,70 @@ exports.commands = {
 			return this.reply(arg+ " already joined the draft")
 		}
 		else{
-			var newuser={};
-			newuser["erekredieten"]=global.todraftmons[toId(global.draftroom)]["Points"];
-			newuser["draftedmons"]=[];
-			newuser["tieredpicks"]=global.todraftmons[toId(room)]["TierPicks"];
-			newuser["totaldraftscore"]=0;
-			global.users[toId(arg)]=newuser;
-			global.turnorder[toId(room)].push(toId(arg));
-			console.log(global.users[toId(room)]);
+			console.log(global.users);
+			var bool = JSON.stringify(global.users) === "{}";
+			if (bool){
+				/*first load in the draft file list*/
+				//lets try that now
+				console.log('started reading file');
+				const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+				console.log(uri);
+				console.log("test");
+
+				const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+
+				try {
+
+					await client.connect();
+					const quotes =await findOneListingByName(client,"pokemon");
+					global.users=quotes["pokemon"];
+
+
+					//return this.reply(draftmonsprint2(list));
+				} catch (e) {
+					console.error(e);
+				}
+				finally{
+					await client.close();
+				}
+			}
+
+			if(global.draftstarted==true){
+				return this.send(global.draftroom,"draft already started");
+			}
+			else{
+
+			}
+
+
+			let rawdata = fs.readFileSync('DraftTest3.json');
+			let student = JSON.parse(rawdata);
+			console.log(student);
+
+
+			global.todraftmons[toId(global.draftroom)]=student;
+			console.log('drafter added');
+
+			global.maxtier=student["length"];
+			console.log(global.users[toId(global.draftroom)]);
+			if(global.turnorder==undefined){
+				global.turnorder=[];
+			}
+			if(global.turnorder.includes(toId(by))){
+				return this.send(global.draftroom,toId(by)+ " already joined the draft")
+			}
+			else{
+
+				var newuser={};
+				newuser["erekredieten"]=global.todraftmons[toId(global.draftroom)]["Points"];
+				newuser["draftedmons"]=[];
+				newuser["tieredpicks"]=global.todraftmons[toId(global.draftroom)]["TierPicks"];
+				newuser["totaldraftscore"]=0;
+				global.users[toId(arg)]=newuser;
+				global.turnorder[toId(room)].push(toId(arg));
+				console.log(global.users[toId(room)]);
+				return this.send(global.draftroom,toId(by)+ " joined the draft")
+			}
 			
 			//global.users[toId(room)].push(arg);
 			//global.users.push(toId(by));
