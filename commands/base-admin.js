@@ -1486,9 +1486,7 @@ exports.commands = {
 				}
 				t=99-t;
 				var maxlength=draftsshown+3;
-				if(filtered){
-					maxlength=draftsshown;
-				}
+				maxlength=draftsshown;
 				if(listsix.length<maxlength){
 					while(listsix.includes(t)){
 						t=t+0.1;
