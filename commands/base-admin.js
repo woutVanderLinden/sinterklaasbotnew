@@ -1429,7 +1429,7 @@ exports.commands = {
 			}
 			x++;
 		}
-
+		var g =1;
 		while(g<=draftmons["length"]) {
 			console.log("g" + g);
 			var possiblepic = [];
