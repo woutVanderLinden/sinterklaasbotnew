@@ -1418,10 +1418,12 @@ exports.commands = {
 			}
 			var draftsshown=6;
 			if(argx.includes("tier")){
+				argx=toId(argx);
 				argx=jsUcfirst(argx);
 				tierrecommend=true;
 				var tier=argx;
 			}
+			argx=toId(argx);
 			argx=jsUcfirst(argx);
 			if(postypings.includes(argx)){
 				filtertypings.push(argx);
@@ -2137,7 +2139,7 @@ function draftmonsprint3(arg){
 		//arg=arg.sort();
 	 	var result="suggestions:";
 	 	if(toId(by)!=toId(room)){
-			result='!htmlbox "<div  style=\'color: black; border: 2px solid red; background-color: rgb(204, 255, 204); padding: 4px;\'>";';
+			result='!htmlbox <div  style=\'color: black; border: 2px solid red; background-color: rgb(204, 255, 204); padding: 4px;\'>';
 		}
 
 		for (var i = 0; i < nrshown; i++) {
