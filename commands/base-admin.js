@@ -2827,7 +2827,7 @@ function weaknessForPokemon(monname)
 		var weaknessToType = 0;
 
 		 weaknessToType += global.weaknesssheet[postypings[i]][global.mondata[monname]["Typing1"]];
-		 if(!global.mondata[monname]["Typing 2"]===""){
+		 if(global.mondata[monname]["Typing 2"]!=""){
 			 weaknessToType += global.weaknesssheet[postypings[i]][global.mondata[monname]["Typing 2"]];
 		 }
 
