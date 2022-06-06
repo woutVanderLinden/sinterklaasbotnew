@@ -1752,8 +1752,8 @@ exports.commands = {
 				var monname=possiblepic[j];
 				var t=0.0;
 				console.log(monname);
-				var weaktable = weaknessTable(name);
-				var table2 = weaknessForPokemon(monname);
+				var table2 = weaknessTable(name);
+				var weaktable = weaknessForPokemon(monname);
 				var typePointer=0;
 				while(typePointer<postypings.length) {
 					var currentType = postypings[typePointer];
@@ -2809,7 +2809,6 @@ function weaknessTable(name)
 		var weaknessForMon = weaknessForPokemon(monschosen[i]);
 		var j=0;
 		while(j<postypings.length) {
-			console.log(postypings[j] + "sum" +toreturn[postypings[j]]+ " "+ weaknessForMon[postypings[j]]);
 			toreturn[postypings[j]] = toreturn[postypings[j]]+ weaknessForMon[postypings[j]];
 			j++;
 		}
