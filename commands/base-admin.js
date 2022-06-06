@@ -1405,8 +1405,8 @@ exports.commands = {
 			saveTeamsToCloud();
 			if(pointdrafting){
 				var list=global.users[username]["draftedmons"];
-				this.send(global.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["tieredpicks"]+" ) picks left: " + picksleft);
-				var word = '!htmlbox  <div><h1>' + username + '<div>'+ draftmonsprint2(list) +'</div></h1><h2>tierhelper</h2> ';
+				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint2(list) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.users[username]["erekredieten"]+' tieredpicks: '+global.users[username]["tieredpicks"]+'</div> ';
+				var index=1;
 				word=word+"<div>";
 				while (index<6){
 					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier'+ index +'" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
@@ -1416,19 +1416,20 @@ exports.commands = {
 				word=word+"<div>";
 				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 255, 204)">recommend </button>';
 
-				var index=1;
-				while (index<6){
-					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier'+ index +'" style="background-color: rgb(204, 255, 204)">recommend Tier'+index+"</button>";
-					index++;
+				var index2=1;
+				while (index2<6){
+					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier'+ index2 +'" style="background-color: rgb(204, 204, 255)">recommend Tier'+index2+"</button>";
+					index2++;
 				}
 				word=word+"</div>";
 				word=word+"</div>";
 				console.log(word);
 				this.send(global.draftroom, word);
+				this.send(global.draftroom, word);
 			}
 			else{
 				var list=global.users[username]["draftedmons"];
-				var word = '!htmlbox  <div><h1>' + username +'<div>'+ draftmonsprint2(list) +'</div></h1><h2>tierhelper <div> Erekredieten: '+global.users[username]["erekredieten"]+' tieredpicks: '+global.users[username]["tieredpicks"]+'</div></h2> ';
+				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint2(list) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.users[username]["erekredieten"]+' tieredpicks: '+global.users[username]["tieredpicks"]+'</div> ';
 				var index=1;
 				word=word+"<div>";
 				while (index<6){
@@ -1439,10 +1440,10 @@ exports.commands = {
 				word=word+"<div>";
 				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 255, 204)">recommend </button>';
 
-				var index=1;
-				while (index<6){
-					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier'+ index +'" style="background-color: rgb(204, 255, 204)">recommend Tier'+index+"</button>";
-					index++;
+				var index2=1;
+				while (index2<6){
+					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier'+ index2 +'" style="background-color: rgb(204, 204, 255)">recommend Tier'+index2+"</button>";
+					index2++;
 				}
 				word=word+"</div>";
 				word=word+"</div>";
@@ -2149,7 +2150,7 @@ exports.commands = {
 			y++;
 		}
 		//thislistsix
-		this.reply(draftmonsprint4(newlistsix,draftsshown,by,room));
+		this.send(global.draftroom, draftmonsprint4(newlistsix,draftsshown,by,global.draftroom));
 		//global.users[name]["erekredieten"]
 		//mondata
 	
@@ -2294,6 +2295,24 @@ function draftmonsprint3(arg){
 			result=result;
 		return result;
 	};
+
+function draftmonsprint6(arg){
+	arg=arg.sort();
+	var result='';
+	for (var i = 0; i < arg.length; i++) {
+		console.log(arg[i]);
+		//Do something
+		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
+		var name=arg[i];
+		var word='<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>,';
+		result=result+word;
+
+
+	}
+	result=result.substring(0,result.length-1);
+	result=result;
+	return result;
+};
  function draftmonsprint4(arg,nrshown,by,room){
 		//arg=arg.sort();
 	 	var result="suggestions:";
