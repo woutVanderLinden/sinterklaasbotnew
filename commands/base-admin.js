@@ -405,7 +405,7 @@ exports.commands = {
 				newuser["tieredpicks"]=global.todraftmons[toId(global.draftroom)]["TierPicks"];
 				newuser["totaldraftscore"]=0;
 				global.users[toId(arg)]=newuser;
-				global.turnorder[toId(room)].push(toId(arg));
+				global.turnorder.push(toId(arg));
 				console.log(global.users[toId(room)]);
 				return this.send(global.draftroom,toId(by)+ " joined the draft")
 			}
