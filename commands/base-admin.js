@@ -1039,7 +1039,7 @@ exports.commands = {
 	
 		}
 			//var list=global.users[toId(room)];
-		var list=global.turnorder[toId(room)]
+		var list=global.turnorder
 		var name=toId(args[0]);
 		if(global.draftedmons[name]==undefined){
 			global.draftedmons[name]=[];
