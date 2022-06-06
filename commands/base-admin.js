@@ -1571,7 +1571,7 @@ exports.commands = {
 			var j =0;
 			word= word+"<tr>";
 			while(j<3){
-				word= word+"<td>"+postypings[i*3+j]+ ": " + weaktable[postypings[i*3+j]] + +"</td>";
+				word= word+"<td>"+postypings[i*3+j]+ ": " + weaktable[postypings[i*3+j]] +"</td>";
 				j++
 			}
 			word= word+"</tr>";
@@ -2782,8 +2782,8 @@ function weaknessTable(name)
 		var weaknessForMon = weaknessForPokemon(monschosen[i]);
 		var j=0;
 		while(j<postypings.length) {
-			console.log(postypings[i] + "sum" +toreturn[postypings[i]]+ " "+ weaknessForMon[postypings[i]]);
-			toreturn[postypings[i]] = toreturn[postypings[i]]+ weaknessForMon[postypings[i]];
+			console.log(postypings[j] + "sum" +toreturn[postypings[j]]+ " "+ weaknessForMon[postypings[j]]);
+			toreturn[postypings[j]] = toreturn[postypings[j]]+ weaknessForMon[postypings[j]];
 			j++;
 		}
 		i++;
@@ -2795,18 +2795,15 @@ function weaknessForPokemon(monname)
 	var postypings=["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
 	var i=0;
 	var toreturn = {"Grass":0,"Fire":0,"Water":0,"Ice":0,"Bug":0,"Normal":0,"Flying":0,"Poison":0,"Psychic":0,"Ghost":0,"Fighting":0,"Rock":0,"Ground":0,"Electric":0,"Dragon":0,"Fairy":0,"Dark":0,"Steel":0};
-	console.log(global.weaknesssheet);
-	console.log(global.weaknesssheet["Grass"]);
-	console.log(global.weaknesssheet["Grass"]["Grass"]);
+
 	while(i<postypings.length) {
 		var weaknessToType = 0;
-		console.log(postypings[i]);
-		console.log(global.mondata[monname]["Typing1"]);
+
 		 weaknessToType += global.weaknesssheet[postypings[i]][global.mondata[monname]["Typing1"]];
 		 if(!global.mondata[monname]["Typing 2"]===""){
 			 weaknessToType += global.weaknesssheet[postypings[i]][global.mondata[monname]["Typing 2"]];
 		 }
-		console.log(weaknessToType);
+
 		 toreturn[postypings[i]]= weaknessToType;
 		 i++;
 	}
