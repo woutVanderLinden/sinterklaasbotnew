@@ -1464,9 +1464,8 @@ exports.commands = {
 			var j = 0;
 
 			while (j < possiblepic["length"]) {
-
-				console.log(monname);
 				var monname = possiblepic[j];
+				console.log(monname);
 				var t=1.0;
 				if(filtertypings.length>0){
 					if(filtertypings.includes(global.mondata[monname]["Typing 2"])||filtertypings.includes(global.mondata[monname]["Typing1"])){
@@ -1478,6 +1477,7 @@ exports.commands = {
 
 				}if(filterroles.length>0){
 					var r=0;
+
 					while(r<filterroles.length){
 						if((global.mondata[monname][filterroles[r]]||0)==0){
 							t=t*0;
