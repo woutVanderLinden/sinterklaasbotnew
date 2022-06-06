@@ -1405,7 +1405,7 @@ exports.commands = {
 			saveTeamsToCloud();
 			if(pointdrafting){
 				this.send(global.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["tieredpicks"]+" ) picks left: " + picksleft);
-				var word = '!htmlbox  <div><h1>' + username + '</h1><h2>tierhelper</h2> ';
+				var word = '!htmlbox  <div><h1>' + username + '<div>'+ draftmonsprint2(username) +'</div></h1><h2>tierhelper</h2> ';
 				var index=1;
 				while (index<6){
 					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier'+ index +'" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
@@ -1415,12 +1415,23 @@ exports.commands = {
 				this.send(global.draftroom, word);
 			}
 			else{
-				var word = '!htmlbox  <div><h1>' + username + '</h1><h2>tierhelper</h2> ';
+				var word = '!htmlbox  <div><h1>' + username +'<div>'+ draftmonsprint2(username) +'</div></h1><h2>tierhelper <div> Erekredieten: '+global.users[username]["erekredieten"]+' tieredpicks: '+global.users[username]["tieredpicks"]+'</div></h2> ';
 				var index=1;
+				word=word+"<div>";
 				while (index<6){
 					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier'+ index +'" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
 					index++;
 				}
+				word=word+"</div>";
+				word=word+"<div>";
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 255, 204)">recommend </button>';
+
+				var index=1;
+				while (index<6){
+					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier'+ index +'" style="background-color: rgb(204, 255, 204)">recommend Tier'+index+"</button>";
+					index++;
+				}
+				word=word+"</div>";
 				word=word+"</div>";
 				this.send(global.draftroom, word);
 				return this.send(global.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " picks left: " + picksleft);
