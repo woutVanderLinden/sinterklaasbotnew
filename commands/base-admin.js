@@ -333,8 +333,6 @@ exports.commands = {
 		return this.reply('use ?draft {pokemonname} to draft your mons, Choose next mon '+list[0]);
 	},
 	
-	
-	
 	forcejoin:  async function (arg, by, room, cmd) {
 		if (!this.isRanked('admin')) return false;
 		if(arg==""){
