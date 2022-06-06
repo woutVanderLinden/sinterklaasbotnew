@@ -668,32 +668,21 @@ exports.commands = {
 		var list=global.turnorder;
 		var val= global.tierPicks- global.picknr[toId(global.draftroom)];
 		var toreply= "!htmlbox Tier"+ arg + "drafter "+ list[global.nextdrafter] + " picksleft:" +val;
-		if(arg==""){
-			
+		arg=toId(arg);
+		//const str = 'abc efg';
+		const arg2 = arg.charAt(0).toUpperCase() + arg.slice(1);
 		var draftmons=global.todraftmons[toId(room)];
+		console.log(arg2);
 		if(toId(by)==toId(room)){
-				return this.reply(toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprint5(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"],"rgb(255, 204, 204)")+ "</div>");
-		
-			}else{
-				return  this.reply(toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprint5(draftmons["tierlist"]["Tier"+global.currenttier[toId(room)]]["pokemon"],"rgb(255, 204, 204)")+ "</div>");
-		
-			}
+			return  this.send(global.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"],"rgb(255, 204, 204)")+ "</div>");
+
+		}else{
+			return  this.send(global.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"],"rgb(255, 204, 204)")+ "</div>");
+
 		}
-		else{
-			arg=toId(arg);
-			//const str = 'abc efg';
-			const arg2 = arg.charAt(0).toUpperCase() + arg.slice(1);
-			var draftmons=global.todraftmons[toId(room)];
-			console.log(arg2);
-			if(toId(by)==toId(room)){
-				return  this.reply(toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"],"rgb(255, 204, 204)")+ "</div>");
+
 		
-			}else{
-				return  this.reply(toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"],"rgb(255, 204, 204)")+ "</div>");
-		
-			}
-		
-		}
+
 	},
 	startdraft: function (arg, by, room, cmd){
 		
@@ -1009,7 +998,7 @@ exports.commands = {
 *///pick a new six mons to draft
 			var username=list[global.nextdrafter];
 			if(pointdrafting){
-				return this.reply(toId(global.draftroom), name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["tieredpicks"]+" )");
+				return this.reply( name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["tieredpicks"]+" )");
 			}
 			else{
 
@@ -1027,7 +1016,7 @@ exports.commands = {
 				this.reply(draftmonsprint2(newlist));
 		
 			}
-		return this.reply(toId(global.draftroom),' Choose next mon '+list[0]);
+		return this.reply(' Choose next mon '+list[0]);
 		}
 	},
 	forcepickaltmon:  function (arg, by, room, cmd) {
@@ -1406,7 +1395,14 @@ exports.commands = {
 			picksleft = draftmons["freepicks"]-global.picknr[toId(global.draftroom)];
 			saveTeamsToCloud();
 			if(pointdrafting){
-				return this.send(global.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["tieredpicks"]+" ) picks left: " + picksleft);
+				this.send(global.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["tieredpicks"]+" ) picks left: " + picksleft);
+				var word = '!htlmbox  <div><h1>' + username + '</h1><h2>tierhelper</h2> ';
+				var index=1;
+				while (index<6){
+					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier'+ index +'" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
+				}
+
+				this.send(global.draftroom, word);
 			}
 			else{
 
@@ -1424,7 +1420,7 @@ exports.commands = {
 				this.reply(draftmonsprint2(newlist));
 		
 			}
-		return this.send(global.draftroom,' Choose next mon '+list[0]);
+		return  this.send(global.draftroom,' Choose next mon '+list[0]);
 		}
 	},
 
