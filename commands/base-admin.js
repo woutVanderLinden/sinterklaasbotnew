@@ -1393,6 +1393,161 @@ exports.commands = {
 		this.send(global.draftroom, '!htmlbox  <h1>normal draft</h1> <p>Press this button or ?joindraft to join </p> <button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?joindraft"> joindraft </button>' );
 
 	},
+
+	search:function (arg, by, room, cmd) {
+		var postypings=["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
+		var filtertypings=[];
+		var posfilterroles=["entryhazards","hazardremoval","itemremover","pivot","cleric","pivot","scarf","physicalsweeper","specialsweeper","physicalbulkyattacker","specialbulkyattacker","physicalwall","specialwall","physicalsetup","specialsetup","status","priority","speedcontrol","sun","rain","hail","sand"];
+		var filterroles=[];
+
+		while(x<args.length){
+			var argx=args[x];
+
+			if(posfilterroles.includes(toId(argx))){
+				filterroles.push(toId(argx));
+			}
+			var draftsshown=6;
+			if(argx.includes("tier")){
+				argx=jsUcfirst(argx);
+				tierrecommend=true;
+				var tier=argx;
+			}
+			argx=jsUcfirst(argx);
+			if(postypings.includes(argx)){
+				filtertypings.push(argx);
+			}
+			if(!Number.isNaN(parseInt(argx))){
+				if(parseInt(argx)<40){
+					draftsshown=parseInt(argx);
+				}
+				else{
+					maxpoints=parseInt(argx);
+					pointrecommend=true;
+				}
+			}
+			x++;
+		}
+
+		while(g<=draftmons["length"]) {
+			console.log("g" + g);
+			var possiblepic = [];
+			if (tierrecommend) {
+				possiblepic = draftmons["tierlist"][tier]["pokemon"];
+				g = 100;
+			} else {
+				if (pointrecommend) {
+					while (possiblepic = draftmons["tierlist"]["Tier" + g]["points"] > maxpoints) {
+
+						g++
+					}
+
+				}
+				possiblepic = draftmons["tierlist"]["Tier" + g]["pokemon"];
+			}
+			var j = 0;
+
+			while (j < possiblepic["length"]) {
+				console.log("j" + j);
+				console.log(possiblepic["length"]);
+				var monname = possiblepic[j];
+				var t=1.0;
+				if(filtertypings.length>0){
+					if(filtertypings.includes(global.mondata[monname]["Typing 2"])||filtertypings.includes(global.mondata[monname]["Typing1"])){
+
+					}
+					else{
+						t=t*0;
+					}
+
+				}if(filterroles.length>0){
+					var r=0;
+					while(r<filterroles.length){
+						if((global.mondata[monname][filterroles[r]]||0)==0){
+							t=t*0;
+						}
+						r++;
+					}
+
+
+				}
+				t=99-t;
+				var maxlength=draftsshown+3;
+				if(filtered){
+					maxlength=draftsshown;
+				}
+				if(listsix.length<maxlength){
+					while(listsix.includes(t)){
+						t=t+0.1;
+
+					}
+					listsix.push(t);
+					listsix.sort();
+					best[t]={};
+					best[t]["name"]=possiblepic[j];
+					if(tierrecommend){
+						best[t]["credits"]=draftmons["tierlist"][tier]["points"];
+					}
+					else{
+						best[t]["credits"]=draftmons["tierlist"]["Tier"+g]["points"];
+					}
+
+					console.log(best);
+				}
+				else{
+
+					while(listsix.includes(t)){
+						t=t+0.1;
+
+					}
+					listsix.push(t);
+					listsix.sort();
+					best[t]={};
+					best[t]["name"]=possiblepic[j];
+					if(tierrecommend){
+						best[t]["credits"]=draftmons["tierlist"][tier]["points"];
+					}
+					else{
+						best[t]["credits"]=draftmons["tierlist"]["Tier"+g]["points"];
+					}
+					if(filtered){
+						if(listsix.length>draftsshown){
+							delete best[listsix[draftsshown]];
+							listsix.pop();
+						}
+					}
+					else{
+						if(listsix.length>draftsshown+3){
+							delete best[listsix[draftsshown+3]];
+							listsix.pop();
+						}
+					}
+
+				}
+				j++;
+			}
+			g++;
+		}
+		var newlistsix={};
+		var secondarg=[];
+		var y=0;
+		console.log(listsix);
+		console.log(best);
+		shuffle(listsix);
+		while(y<draftsshown){
+			var newobj={};
+
+			newobj["name"]=best[listsix[y]]["name"];
+			newobj["credits"]=best[listsix[y]]["credits"];
+			newlistsix[y]=newobj;
+			y++;
+		}
+		//thislistsix
+		return  this.reply(toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprint5(newlistsix,"rgb(255, 204, 204)")+ "</div>");
+
+		//this.reply(draftmonsprint4(newlistsix,draftsshown,by,room));
+		//global.users[name]["erekredieten"]
+		//mondata
+	},
 	
 	recommend:function (arg, by, room, cmd) {
 		
@@ -1518,16 +1673,16 @@ exports.commands = {
 		totalstatus=totalstatus+(currentmon["status"]||0);
 		totalscreen=totalscreen+(currentmon["screens"]||0);
 		if(currentmon["sun"]==6){
-			hassun=false;
+			hassun=true;
 		}
 		if((currentmon["rain"]||0)==6){
-			hasrain=false;
+			hasrain=true;
 		}
 		if((currentmon["hail"]||0)==6){
-			 hashail=false;
+			 hashail=true;
 		}
 		if((currentmon["sand"]||0)==6){
-			 hassand=false;
+			 hassand=true;
 		}
 		i++;
 	
@@ -1600,7 +1755,7 @@ exports.commands = {
 				}
 				if((global.mondata[monname]["pivot"]||0)>0){
 					
-					t=t+(global.mondata[monname]["pivot"]||0)+totalpivots*.1;
+					t=t+(global.mondata[monname]["pivot"]||0);
 				}
 				if(totalclerics<5){
 					t=t+(global.mondata[monname]["cleric"]||0);
