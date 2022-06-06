@@ -1,5 +1,5 @@
 {
-   "Aegislash": [
+   "Aegislash": 
       {
          "name": "Aegislash",
          "Typing1": "Steel",
@@ -27,8 +27,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Alakazam": [
+   ,
+   "Alakazam": 
       {
          "name": "Alakazam",
          "Typing1": "Psychic",
@@ -56,8 +56,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Blacephalon": [
+   ,
+   "Blacephalon": 
       {
          "name": "Blacephalon",
          "Typing1": "Ghost",
@@ -85,8 +85,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Blissey": [
+   ,
+   "Blissey": 
       {
          "name": "Blissey",
          "Typing1": "Normal",
@@ -114,8 +114,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Celesteela": [
+   ,
+   "Celesteela": 
       {
          "name": "Celesteela",
          "Typing1": "Steel",
@@ -143,8 +143,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Chansey": [
+   ,
+   "Chansey": 
       {
          "name": "Chansey",
          "Typing1": "Normal",
@@ -172,8 +172,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Clefable": [
+   ,
+   "Clefable": 
       {
          "name": "Clefable",
          "Typing1": "Fairy",
@@ -201,8 +201,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Corviknight": [
+   ,
+   "Corviknight": 
       {
          "name": "Corviknight",
          "Typing1": "Steel",
@@ -230,8 +230,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Darmanitan-Galarzen": [
+   ,
+   "Darmanitan-Galarzen": 
       {
          "name": "Darmanitan-Galarzen",
          "Typing1": "Ice",
@@ -259,8 +259,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Dragapult": [
+   ,
+   "Dragapult": 
       {
          "name": "Dragapult",
          "Typing1": "Dragon",
@@ -288,8 +288,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Dragonite": [
+   ,
+   "Dragonite": 
       {
          "name": "Dragonite",
          "Typing1": "Dragon",
@@ -317,8 +317,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Landorus": [
+   ,
+   "Landorus": 
       {
          "name": "Landorus",
          "Typing1": "Ground",
@@ -346,8 +346,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Excadrill": [
+   ,
+   "Excadrill": 
       {
          "name": "Excadrill",
          "Typing1": "Ground",
@@ -375,8 +375,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Ferrothorn": [
+   ,
+   "Ferrothorn": 
       {
          "name": "Ferrothorn",
          "Typing1": "Steel",
@@ -404,8 +404,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Garchomp": [
+   ,
+   "Garchomp": 
       {
          "name": "Garchomp",
          "Typing1": "Dragon",
@@ -433,8 +433,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Hawlucha": [
+   ,
+   "Hawlucha": 
       {
          "name": "Hawlucha",
          "Typing1": "Fighting",
@@ -462,8 +462,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Heatran": [
+   ,
+   "Heatran": 
       {
          "name": "Heatran",
          "Typing1": "Fire",
@@ -491,8 +491,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Hydreigon": [
+   ,
+   "Hydreigon": 
       {
          "name": "Hydreigon",
          "Typing1": "Dragon",
@@ -520,8 +520,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Jirachi": [
+   ,
+   "Jirachi": 
       {
          "name": "Jirachi",
          "Typing1": "Steel",
@@ -549,8 +549,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Kartana": [
+   ,
+   "Kartana": 
       {
          "name": "Kartana",
          "Typing1": "Steel",
@@ -578,8 +578,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Kommo-o": [
+   ,
+   "Kommo-o": 
       {
          "name": "Kommo-o",
          "Typing1": "Fighting",
@@ -607,8 +607,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Kyurem": [
+   ,
+   "Kyurem": 
       {
          "name": "Kyurem",
          "Typing1": "Dragon",
@@ -636,8 +636,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Landorus-Therian": [
+   ,
+   "Landorus-Therian": 
       {
          "name": "Landorus-Therian",
          "Typing1": "Ground",
@@ -665,8 +665,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Latias": [
+   ,
+   "Latias": 
       {
          "name": "Latias",
          "Typing1": "Dragon",
@@ -694,8 +694,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Latios": [
+   ,
+   "Latios": 
       {
          "name": "Latios",
          "Typing1": "Dragon",
@@ -723,8 +723,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Melmetal": [
+   ,
+   "Melmetal": 
       {
          "name": "Melmetal",
          "Typing1": "Steel",
@@ -752,8 +752,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Necrozma": [
+   ,
+   "Necrozma": 
       {
          "name": "Necrozma",
          "Typing1": "Psychic",
@@ -781,8 +781,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Rillaboom": [
+   ,
+   "Rillaboom": 
       {
          "name": "Rillaboom",
          "Typing1": "Grass",
@@ -810,8 +810,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Salamence": [
+   ,
+   "Salamence": 
       {
          "name": "Salamence",
          "Typing1": "Dragon",
@@ -839,8 +839,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Tapu Bulu": [
+   ,
+   "Tapu Bulu": 
       {
          "name": "Tapu Bulu",
          "Typing1": "Fairy",
@@ -868,8 +868,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Tapu Fini": [
+   ,
+   "Tapu Fini": 
       {
          "name": "Tapu Fini",
          "Typing1": "Fairy",
@@ -897,8 +897,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Tapu Koko": [
+   ,
+   "Tapu Koko": 
       {
          "name": "Tapu Koko",
          "Typing1": "Fairy",
@@ -926,8 +926,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Tapu Lele": [
+   ,
+   "Tapu Lele": 
       {
          "name": "Tapu Lele",
          "Typing1": "Fairy",
@@ -955,8 +955,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Terrakion": [
+   ,
+   "Terrakion": 
       {
          "name": "Terrakion",
          "Typing1": "Ground",
@@ -984,8 +984,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Tornadus-Therian": [
+   ,
+   "Tornadus-Therian": 
       {
          "name": "Tornadus-Therian",
          "Typing1": "Flying",
@@ -1013,8 +1013,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Toxapex": [
+   ,
+   "Toxapex": 
       {
          "name": "Toxapex",
          "Typing1": "Water",
@@ -1042,8 +1042,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Tyranitar": [
+   ,
+   "Tyranitar": 
       {
          "name": "Tyranitar",
          "Typing1": "Rock",
@@ -1071,8 +1071,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Urshifu-Rapid-Strike": [
+   ,
+   "Urshifu-Rapid-Strike": 
       {
          "name": "Urshifu-Rapid-Strike",
          "Typing1": "Water",
@@ -1100,8 +1100,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Victini": [
+   ,
+   "Victini": 
       {
          "name": "Victini",
          "Typing1": "Fire",
@@ -1129,8 +1129,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Volcarona": [
+   ,
+   "Volcarona": 
       {
          "name": "Volcarona",
          "Typing1": "Fire",
@@ -1158,8 +1158,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Zapdos": [
+   ,
+   "Zapdos": 
       {
          "name": "Zapdos",
          "Typing1": "Electric",
@@ -1187,8 +1187,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Zapdos-Galar": [
+   ,
+   "Zapdos-Galar": 
       {
          "name": "Zapdos-Galar",
          "Typing1": "Fighting",
@@ -1216,8 +1216,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Zeraora": [
+   ,
+   "Zeraora": 
       {
          "name": "Zeraora",
          "Typing1": "Electric",
@@ -1245,8 +1245,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Amoonguss": [
+   ,
+   "Amoonguss": 
       {
          "name": "Amoonguss",
          "Typing1": "Grass",
@@ -1274,8 +1274,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Arcanine": [
+   ,
+   "Arcanine": 
       {
          "name": "Arcanine",
          "Typing1": "Fire",
@@ -1303,8 +1303,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Azelf": [
+   ,
+   "Azelf": 
       {
          "name": "Azelf",
          "Typing1": "Psychic",
@@ -1332,8 +1332,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Azumarill": [
+   ,
+   "Azumarill": 
       {
          "name": "Azumarill",
          "Typing1": "Water",
@@ -1361,8 +1361,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Barraskewda": [
+   ,
+   "Barraskewda": 
       {
          "name": "Barraskewda",
          "Typing1": "Water",
@@ -1390,8 +1390,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Bisharp": [
+   ,
+   "Bisharp": 
       {
          "name": "Bisharp",
          "Typing1": "Dark",
@@ -1419,8 +1419,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Blastoise": [
+   ,
+   "Blastoise": 
       {
          "name": "Blastoise",
          "Typing1": "Water",
@@ -1448,8 +1448,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Buzzwole": [
+   ,
+   "Buzzwole": 
       {
          "name": "Buzzwole",
          "Typing1": "Fighting",
@@ -1477,8 +1477,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Celebi": [
+   ,
+   "Celebi": 
       {
          "name": "Celebi",
          "Typing1": "Grass",
@@ -1506,8 +1506,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Cinderace": [
+   ,
+   "Cinderace": 
       {
          "name": "Cinderace",
          "Typing1": "Fire",
@@ -1535,8 +1535,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Cloyster": [
+   ,
+   "Cloyster": 
       {
          "name": "Cloyster",
          "Typing1": "Water",
@@ -1564,8 +1564,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Cobalion": [
+   ,
+   "Cobalion": 
       {
          "name": "Cobalion",
          "Typing1": "Fighting",
@@ -1593,8 +1593,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Conkeldurr": [
+   ,
+   "Conkeldurr": 
       {
          "name": "Conkeldurr",
          "Typing1": "Fighting",
@@ -1622,8 +1622,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Crawdaunt": [
+   ,
+   "Crawdaunt": 
       {
          "name": "Crawdaunt",
          "Typing1": "Water",
@@ -1651,8 +1651,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Cresselia": [
+   ,
+   "Cresselia": 
       {
          "name": "Cresselia",
          "Typing1": "Psychic",
@@ -1680,8 +1680,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Darmanitan": [
+   ,
+   "Darmanitan": 
       {
          "name": "Darmanitan",
          "Typing1": "Fire",
@@ -1709,8 +1709,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Diggersby": [
+   ,
+   "Diggersby": 
       {
          "name": "Diggersby",
          "Typing1": "Ground",
@@ -1738,8 +1738,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Ditto": [
+   ,
+   "Ditto": 
       {
          "name": "Ditto",
          "Typing1": "Normal",
@@ -1767,8 +1767,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Dracozolt": [
+   ,
+   "Dracozolt": 
       {
          "name": "Dracozolt",
          "Typing1": "Electric",
@@ -1796,8 +1796,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Entei": [
+   ,
+   "Entei": 
       {
          "name": "Entei",
          "Typing1": "Fire",
@@ -1825,8 +1825,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Gengar": [
+   ,
+   "Gengar": 
       {
          "name": "Gengar",
          "Typing1": "Ghost",
@@ -1854,8 +1854,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Goodra": [
+   ,
+   "Goodra": 
       {
          "name": "Goodra",
          "Typing1": "Dragon",
@@ -1883,8 +1883,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Grimmsnarl": [
+   ,
+   "Grimmsnarl": 
       {
          "name": "Grimmsnarl",
          "Typing1": "Dark",
@@ -1912,8 +1912,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Gyarados": [
+   ,
+   "Gyarados": 
       {
          "name": "Gyarados",
          "Typing1": "Water",
@@ -1941,8 +1941,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Hatterene": [
+   ,
+   "Hatterene": 
       {
          "name": "Hatterene",
          "Typing1": "Psychic",
@@ -1970,8 +1970,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Haxorus": [
+   ,
+   "Haxorus": 
       {
          "name": "Haxorus",
          "Typing1": "Dragon",
@@ -1999,8 +1999,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Hippowdon": [
+   ,
+   "Hippowdon": 
       {
          "name": "Hippowdon",
          "Typing1": "Ground",
@@ -2028,8 +2028,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Indeedee": [
+   ,
+   "Indeedee": 
       {
          "name": "Indeedee",
          "Typing1": "Normal",
@@ -2057,8 +2057,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Keldeo": [
+   ,
+   "Keldeo": 
       {
          "name": "Keldeo",
          "Typing1": "Water",
@@ -2086,8 +2086,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Kingdra": [
+   ,
+   "Kingdra": 
       {
          "name": "Kingdra",
          "Typing1": "Dragon",
@@ -2115,8 +2115,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Krookodile": [
+   ,
+   "Krookodile": 
       {
          "name": "Krookodile",
          "Typing1": "Dark",
@@ -2144,8 +2144,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Magnezone": [
+   ,
+   "Magnezone": 
       {
          "name": "Magnezone",
          "Typing1": "Electric",
@@ -2173,8 +2173,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Mamoswine": [
+   ,
+   "Mamoswine": 
       {
          "name": "Mamoswine",
          "Typing1": "Ground",
@@ -2202,8 +2202,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Mandibuzz": [
+   ,
+   "Mandibuzz": 
       {
          "name": "Mandibuzz",
          "Typing1": "Flying",
@@ -2231,8 +2231,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Metagross": [
+   ,
+   "Metagross": 
       {
          "name": "Metagross",
          "Typing1": "Steel",
@@ -2260,8 +2260,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Milotic": [
+   ,
+   "Milotic": 
       {
          "name": "Milotic",
          "Typing1": "Water",
@@ -2289,8 +2289,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Mimikyu": [
+   ,
+   "Mimikyu": 
       {
          "name": "Mimikyu",
          "Typing1": "Ghost",
@@ -2318,8 +2318,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Moltres": [
+   ,
+   "Moltres": 
       {
          "name": "Moltres",
          "Typing1": "Flying",
@@ -2347,8 +2347,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Nidoking": [
+   ,
+   "Nidoking": 
       {
          "name": "Nidoking",
          "Typing1": "Ground",
@@ -2376,8 +2376,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Nidoqueen": [
+   ,
+   "Nidoqueen": 
       {
          "name": "Nidoqueen",
          "Typing1": "Ground",
@@ -2405,8 +2405,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Nihilego": [
+   ,
+   "Nihilego": 
       {
          "name": "Nihilego",
          "Typing1": "Rock",
@@ -2434,8 +2434,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Ninetales-Alola": [
+   ,
+   "Ninetales-Alola": 
       {
          "name": "Ninetales-Alola",
          "Typing1": "Fairy",
@@ -2463,8 +2463,8 @@
          "hail": 6,
          "sun": 0
       }
-   ],
-   "Obstagoon": [
+   ,
+   "Obstagoon": 
       {
          "name": "Obstagoon",
          "Typing1": "Normal",
@@ -2492,8 +2492,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Pelipper": [
+   ,
+   "Pelipper": 
       {
          "name": "Pelipper",
          "Typing1": "Water",
@@ -2521,8 +2521,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Porygon-Z": [
+   ,
+   "Porygon-Z": 
       {
          "name": "Porygon-Z",
          "Typing1": "Normal",
@@ -2550,8 +2550,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Porygon2": [
+   ,
+   "Porygon2": 
       {
          "name": "Porygon2",
          "Typing1": "Normal",
@@ -2579,8 +2579,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Primarina": [
+   ,
+   "Primarina": 
       {
          "name": "Primarina",
          "Typing1": "Water",
@@ -2608,8 +2608,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Raikou": [
+   ,
+   "Raikou": 
       {
          "name": "Raikou",
          "Typing1": "Electric",
@@ -2637,8 +2637,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Regieleki": [
+   ,
+   "Regieleki": 
       {
          "name": "Regieleki",
          "Typing1": "Electric",
@@ -2666,8 +2666,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Reuniclus": [
+   ,
+   "Reuniclus": 
       {
          "name": "Reuniclus",
          "Typing1": "Psychic",
@@ -2695,8 +2695,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Rotom-Heat": [
+   ,
+   "Rotom-Heat": 
       {
          "name": "Rotom-Heat",
          "Typing1": "Electric",
@@ -2724,8 +2724,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Rotom-Wash": [
+   ,
+   "Rotom-Wash": 
       {
          "name": "Rotom-Wash",
          "Typing1": "Electric",
@@ -2753,8 +2753,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Scizor": [
+   ,
+   "Scizor": 
       {
          "name": "Scizor",
          "Typing1": "Bug",
@@ -2782,8 +2782,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Scolipede": [
+   ,
+   "Scolipede": 
       {
          "name": "Scolipede",
          "Typing1": "Bug",
@@ -2811,8 +2811,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Silvally": [
+   ,
+   "Silvally": 
       {
          "name": "Silvally",
          "Typing1": "Normal",
@@ -2840,8 +2840,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Skarmory": [
+   ,
+   "Skarmory": 
       {
          "name": "Skarmory",
          "Typing1": "Steel",
@@ -2869,8 +2869,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Slowbro": [
+   ,
+   "Slowbro": 
       {
          "name": "Slowbro",
          "Typing1": "Psychic",
@@ -2898,8 +2898,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Slowbro-Galar": [
+   ,
+   "Slowbro-Galar": 
       {
          "name": "Slowbro-Galar",
          "Typing1": "Psychic",
@@ -2927,8 +2927,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Slowking": [
+   ,
+   "Slowking": 
       {
          "name": "Slowking",
          "Typing1": "Psychic",
@@ -2956,8 +2956,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Slowking-Galar": [
+   ,
+   "Slowking-Galar": 
       {
          "name": "Slowking-Galar",
          "Typing1": "Psychic",
@@ -2985,8 +2985,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Snorlax": [
+   ,
+   "Snorlax": 
       {
          "name": "Snorlax",
          "Typing1": "Normal",
@@ -3014,8 +3014,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Stakataka": [
+   ,
+   "Stakataka": 
       {
          "name": "Stakataka",
          "Typing1": "Steel",
@@ -3043,8 +3043,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Suicune": [
+   ,
+   "Suicune": 
       {
          "name": "Suicune",
          "Typing1": "Water",
@@ -3072,8 +3072,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Swampert": [
+   ,
+   "Swampert": 
       {
          "name": "Swampert",
          "Typing1": "Water",
@@ -3101,8 +3101,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Sylveon": [
+   ,
+   "Sylveon": 
       {
          "name": "Sylveon",
          "Typing1": "Fairy",
@@ -3130,8 +3130,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Tangrowth": [
+   ,
+   "Tangrowth": 
       {
          "name": "Tangrowth",
          "Typing1": "Grass",
@@ -3159,8 +3159,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Thundurus": [
+   ,
+   "Thundurus": 
       {
          "name": "Thundurus",
          "Typing1": "Electric",
@@ -3188,8 +3188,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Thundurus-Therian": [
+   ,
+   "Thundurus-Therian": 
       {
          "name": "Thundurus-Therian",
          "Typing1": "Electric",
@@ -3217,8 +3217,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Togekiss": [
+   ,
+   "Togekiss": 
       {
          "name": "Togekiss",
          "Typing1": "Fairy",
@@ -3246,8 +3246,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Torkoal": [
+   ,
+   "Torkoal": 
       {
          "name": "Torkoal",
          "Typing1": "Fire",
@@ -3275,8 +3275,8 @@
          "hail": 0,
          "sun": 6
       }
-   ],
-   "Tornadus": [
+   ,
+   "Tornadus": 
       {
          "name": "Tornadus",
          "Typing1": "Flying",
@@ -3304,8 +3304,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Toxtricity": [
+   ,
+   "Toxtricity": 
       {
          "name": "Toxtricity",
          "Typing1": "Electric",
@@ -3333,8 +3333,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Venusaur": [
+   ,
+   "Venusaur": 
       {
          "name": "Venusaur",
          "Typing1": "Grass",
@@ -3362,8 +3362,8 @@
          "hail": 0,
          "sun": 4
       }
-   ],
-   "Volcanion": [
+   ,
+   "Volcanion": 
       {
          "name": "Volcanion",
          "Typing1": "Fire",
@@ -3391,8 +3391,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Weavile": [
+   ,
+   "Weavile": 
       {
          "name": "Weavile",
          "Typing1": "Dark",
@@ -3420,8 +3420,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Xurkitree": [
+   ,
+   "Xurkitree": 
       {
          "name": "Xurkitree",
          "Typing1": "Electric",
@@ -3449,8 +3449,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Zarude": [
+   ,
+   "Zarude": 
       {
          "name": "Zarude",
          "Typing1": "Grass",
@@ -3478,8 +3478,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Aerodactyl": [
+   ,
+   "Aerodactyl": 
       {
          "name": "Aerodactyl",
          "Typing1": "Rock",
@@ -3507,8 +3507,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Araquanid": [
+   ,
+   "Araquanid": 
       {
          "name": "Araquanid",
          "Typing1": "Water",
@@ -3536,8 +3536,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Arctozolt": [
+   ,
+   "Arctozolt": 
       {
          "name": "Arctozolt",
          "Typing1": "Ice",
@@ -3565,8 +3565,8 @@
          "hail": 5,
          "sun": 0
       }
-   ],
-   "Articuno-Galar": [
+   ,
+   "Articuno-Galar": 
       {
          "name": "Articuno-Galar",
          "Typing1": "Psychic",
@@ -3594,8 +3594,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Bewear": [
+   ,
+   "Bewear": 
       {
          "name": "Bewear",
          "Typing1": "Normal",
@@ -3623,8 +3623,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Blaziken": [
+   ,
+   "Blaziken": 
       {
          "name": "Blaziken",
          "Typing1": "Fire",
@@ -3652,8 +3652,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Bronzong": [
+   ,
+   "Bronzong": 
       {
          "name": "Bronzong",
          "Typing1": "Steel",
@@ -3681,8 +3681,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Chandelure": [
+   ,
+   "Chandelure": 
       {
          "name": "Chandelure",
          "Typing1": "Fire",
@@ -3710,8 +3710,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Comfey": [
+   ,
+   "Comfey": 
       {
          "name": "Comfey",
          "Typing1": "Fairy",
@@ -3739,8 +3739,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Copperajah": [
+   ,
+   "Copperajah": 
       {
          "name": "Copperajah",
          "Typing1": "Steel",
@@ -3768,8 +3768,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Crobat": [
+   ,
+   "Crobat": 
       {
          "name": "Crobat",
          "Typing1": "Poison",
@@ -3797,8 +3797,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Decidueye": [
+   ,
+   "Decidueye": 
       {
          "name": "Decidueye",
          "Typing1": "Ghost",
@@ -3826,8 +3826,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Dhelmise": [
+   ,
+   "Dhelmise": 
       {
          "name": "Dhelmise",
          "Typing1": "Ghost",
@@ -3855,8 +3855,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Diancie": [
+   ,
+   "Diancie": 
       {
          "name": "Diancie",
          "Typing1": "Rock",
@@ -3884,8 +3884,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Dragalge": [
+   ,
+   "Dragalge": 
       {
          "name": "Dragalge",
          "Typing1": "Dragon",
@@ -3913,8 +3913,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Druddigon": [
+   ,
+   "Druddigon": 
       {
          "name": "Druddigon",
          "Typing1": "Dragon",
@@ -3942,8 +3942,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Duraludon": [
+   ,
+   "Duraludon": 
       {
          "name": "Duraludon",
          "Typing1": "Dragon",
@@ -3971,8 +3971,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Durant": [
+   ,
+   "Durant": 
       {
          "name": "Durant",
          "Typing1": "Steel",
@@ -4000,8 +4000,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Escavalier": [
+   ,
+   "Escavalier": 
       {
          "name": "Escavalier",
          "Typing1": "Steel",
@@ -4029,8 +4029,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Espeon": [
+   ,
+   "Espeon": 
       {
          "name": "Espeon",
          "Typing1": "Psychic",
@@ -4058,8 +4058,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Flygon": [
+   ,
+   "Flygon": 
       {
          "name": "Flygon",
          "Typing1": "Ground",
@@ -4087,8 +4087,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Galvantula": [
+   ,
+   "Galvantula": 
       {
          "name": "Galvantula",
          "Typing1": "Electric",
@@ -4116,8 +4116,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Gardevoir": [
+   ,
+   "Gardevoir": 
       {
          "name": "Gardevoir",
          "Typing1": "Fairy",
@@ -4145,8 +4145,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Gastrodon": [
+   ,
+   "Gastrodon": 
       {
          "name": "Gastrodon",
          "Typing1": "Ground",
@@ -4174,8 +4174,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Gigalith": [
+   ,
+   "Gigalith": 
       {
          "name": "Gigalith",
          "Typing1": "Rock",
@@ -4203,8 +4203,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Glastrier": [
+   ,
+   "Glastrier": 
       {
          "name": "Glastrier",
          "Typing1": "Ice",
@@ -4232,8 +4232,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Golurk": [
+   ,
+   "Golurk": 
       {
          "name": "Golurk",
          "Typing1": "Ground",
@@ -4261,8 +4261,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Heliolisk": [
+   ,
+   "Heliolisk": 
       {
          "name": "Heliolisk",
          "Typing1": "Normal",
@@ -4290,8 +4290,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Heracross": [
+   ,
+   "Heracross": 
       {
          "name": "Heracross",
          "Typing1": "Bug",
@@ -4319,8 +4319,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Hitmonlee": [
+   ,
+   "Hitmonlee": 
       {
          "name": "Hitmonlee",
          "Typing1": "Fighting",
@@ -4348,8 +4348,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Hitmontop": [
+   ,
+   "Hitmontop": 
       {
          "name": "Hitmontop",
          "Typing1": "Fighting",
@@ -4377,8 +4377,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Incineroar": [
+   ,
+   "Incineroar": 
       {
          "name": "Incineroar",
          "Typing1": "Dark",
@@ -4406,8 +4406,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Indeedee-F": [
+   ,
+   "Indeedee-F": 
       {
          "name": "Indeedee-F",
          "Typing1": "Normal",
@@ -4435,8 +4435,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Inteleon": [
+   ,
+   "Inteleon": 
       {
          "name": "Inteleon",
          "Typing1": "Water",
@@ -4464,8 +4464,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Jellicent": [
+   ,
+   "Jellicent": 
       {
          "name": "Jellicent",
          "Typing1": "Water",
@@ -4493,8 +4493,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Klefki": [
+   ,
+   "Klefki": 
       {
          "name": "Klefki",
          "Typing1": "Steel",
@@ -4522,8 +4522,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Lucario": [
+   ,
+   "Lucario": 
       {
          "name": "Lucario",
          "Typing1": "Steel",
@@ -4551,8 +4551,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Lycanroc-Dusk": [
+   ,
+   "Lycanroc-Dusk": 
       {
          "name": "Lycanroc-Dusk",
          "Typing1": "Rock",
@@ -4580,8 +4580,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Machamp": [
+   ,
+   "Machamp": 
       {
          "name": "Machamp",
          "Typing1": "Fighting",
@@ -4609,8 +4609,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Magneton": [
+   ,
+   "Magneton": 
       {
          "name": "Magneton",
          "Typing1": "Steel",
@@ -4638,8 +4638,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Mantine": [
+   ,
+   "Mantine": 
       {
          "name": "Mantine",
          "Typing1": "Water",
@@ -4667,8 +4667,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Marowak-Alola": [
+   ,
+   "Marowak-Alola": 
       {
          "name": "Marowak-Alola",
          "Typing1": "Ghost",
@@ -4696,8 +4696,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Mesprit": [
+   ,
+   "Mesprit": 
       {
          "name": "Mesprit",
          "Typing1": "Psychic",
@@ -4725,8 +4725,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Mienshao": [
+   ,
+   "Mienshao": 
       {
          "name": "Mienshao",
          "Typing1": "Fighting",
@@ -4754,8 +4754,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Miltank": [
+   ,
+   "Miltank": 
       {
          "name": "Miltank",
          "Typing1": "Normal",
@@ -4783,8 +4783,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Moltres-Galar": [
+   ,
+   "Moltres-Galar": 
       {
          "name": "Moltres-Galar",
          "Typing1": "Dark",
@@ -4812,8 +4812,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Mudsdale": [
+   ,
+   "Mudsdale": 
       {
          "name": "Mudsdale",
          "Typing1": "Ground",
@@ -4841,8 +4841,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Ninetales": [
+   ,
+   "Ninetales": 
       {
          "name": "Ninetales",
          "Typing1": "Fire",
@@ -4870,8 +4870,8 @@
          "hail": 0,
          "sun": 6
       }
-   ],
-   "Noivern": [
+   ,
+   "Noivern": 
       {
          "name": "Noivern",
          "Typing1": "Dragon",
@@ -4899,8 +4899,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Pangoro": [
+   ,
+   "Pangoro": 
       {
          "name": "Pangoro",
          "Typing1": "Dark",
@@ -4928,8 +4928,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Politoed": [
+   ,
+   "Politoed": 
       {
          "name": "Politoed",
          "Typing1": "Water",
@@ -4957,8 +4957,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Polteageist": [
+   ,
+   "Polteageist": 
       {
          "name": "Polteageist",
          "Typing1": "Ghost",
@@ -4986,8 +4986,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Raichu-Alola": [
+   ,
+   "Raichu-Alola": 
       {
          "name": "Raichu-Alola",
          "Typing1": "Electric",
@@ -5015,8 +5015,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Regidrago": [
+   ,
+   "Regidrago": 
       {
          "name": "Regidrago",
          "Typing1": "Dragon",
@@ -5044,8 +5044,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Registeel": [
+   ,
+   "Registeel": 
       {
          "name": "Registeel",
          "Typing1": "Steel",
@@ -5073,8 +5073,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Rhyperior": [
+   ,
+   "Rhyperior": 
       {
          "name": "Rhyperior",
          "Typing1": "Rock",
@@ -5102,8 +5102,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Ribombee": [
+   ,
+   "Ribombee": 
       {
          "name": "Ribombee",
          "Typing1": "Fairy",
@@ -5131,8 +5131,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Roserade": [
+   ,
+   "Roserade": 
       {
          "name": "Roserade",
          "Typing1": "Grass",
@@ -5160,8 +5160,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Rotom-Mow": [
+   ,
+   "Rotom-Mow": 
       {
          "name": "Rotom-Mow",
          "Typing1": "Electric",
@@ -5189,8 +5189,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Salazzle": [
+   ,
+   "Salazzle": 
       {
          "name": "Salazzle",
          "Typing1": "Fire",
@@ -5218,8 +5218,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Seismitoad": [
+   ,
+   "Seismitoad": 
       {
          "name": "Seismitoad",
          "Typing1": "Water",
@@ -5247,8 +5247,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Sharpedo": [
+   ,
+   "Sharpedo": 
       {
          "name": "Sharpedo",
          "Typing1": "Water",
@@ -5276,8 +5276,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Sigilyph": [
+   ,
+   "Sigilyph": 
       {
          "name": "Sigilyph",
          "Typing1": "Psychic",
@@ -5305,8 +5305,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Sirfetchd": [
+   ,
+   "Sirfetchd": 
       {
          "name": "Sirfetchd",
          "Typing1": "Fighting",
@@ -5334,8 +5334,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Slurpuff": [
+   ,
+   "Slurpuff": 
       {
          "name": "Slurpuff",
          "Typing1": "Fairy",
@@ -5363,8 +5363,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Starmie": [
+   ,
+   "Starmie": 
       {
          "name": "Starmie",
          "Typing1": "Water",
@@ -5392,8 +5392,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Talonflame": [
+   ,
+   "Talonflame": 
       {
          "name": "Talonflame",
          "Typing1": "Fire",
@@ -5421,8 +5421,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Tentacruel": [
+   ,
+   "Tentacruel": 
       {
          "name": "Tentacruel",
          "Typing1": "Water",
@@ -5450,8 +5450,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Toxicroak": [
+   ,
+   "Toxicroak": 
       {
          "name": "Toxicroak",
          "Typing1": "Poison",
@@ -5479,8 +5479,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Tsareena": [
+   ,
+   "Tsareena": 
       {
          "name": "Tsareena",
          "Typing1": "Grass",
@@ -5508,8 +5508,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Tyrantrum": [
+   ,
+   "Tyrantrum": 
       {
          "name": "Tyrantrum",
          "Typing1": "Rock",
@@ -5537,8 +5537,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Umbreon": [
+   ,
+   "Umbreon": 
       {
          "name": "Umbreon",
          "Typing1": "Dark",
@@ -5566,8 +5566,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Uxie": [
+   ,
+   "Uxie": 
       {
          "name": "Uxie",
          "Typing1": "Psychic",
@@ -5595,8 +5595,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Vanilluxe": [
+   ,
+   "Vanilluxe": 
       {
          "name": "Vanilluxe",
          "Typing1": "Ice",
@@ -5624,8 +5624,8 @@
          "hail": 6,
          "sun": 0
       }
-   ],
-   "Vaporeon": [
+   ,
+   "Vaporeon": 
       {
          "name": "Vaporeon",
          "Typing1": "Water",
@@ -5653,8 +5653,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Vikavolt": [
+   ,
+   "Vikavolt": 
       {
          "name": "Vikavolt",
          "Typing1": "Bug",
@@ -5682,8 +5682,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Virizion": [
+   ,
+   "Virizion": 
       {
          "name": "Virizion",
          "Typing1": "Grass",
@@ -5711,8 +5711,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Weezing-Galar": [
+   ,
+   "Weezing-Galar": 
       {
          "name": "Weezing-Galar",
          "Typing1": "Poison",
@@ -5740,8 +5740,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Whimsicott": [
+   ,
+   "Whimsicott": 
       {
          "name": "Whimsicott",
          "Typing1": "Grass",
@@ -5769,8 +5769,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Zoroark": [
+   ,
+   "Zoroark": 
       {
          "name": "Zoroark",
          "Typing1": "Dark",
@@ -5798,8 +5798,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Zygarde-10": [
+   ,
+   "Zygarde-10": 
       {
          "name": "Zygarde-10",
          "Typing1": "Ground",
@@ -5827,8 +5827,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Absol": [
+   ,
+   "Absol": 
       {
          "name": "Absol",
          "Typing1": "Dark",
@@ -5856,8 +5856,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Accelgor": [
+   ,
+   "Accelgor": 
       {
          "name": "Accelgor",
          "Typing1": "Bug",
@@ -5885,8 +5885,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Aggron": [
+   ,
+   "Aggron": 
       {
          "name": "Aggron",
          "Typing1": "Steel",
@@ -5914,8 +5914,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Alcremie": [
+   ,
+   "Alcremie": 
       {
          "name": "Alcremie",
          "Typing1": "Fairy",
@@ -5943,8 +5943,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Appletun": [
+   ,
+   "Appletun": 
       {
          "name": "Appletun",
          "Typing1": "Grass",
@@ -5972,8 +5972,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Archeops": [
+   ,
+   "Archeops": 
       {
          "name": "Archeops",
          "Typing1": "Rock",
@@ -6001,8 +6001,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Arctovish": [
+   ,
+   "Arctovish": 
       {
          "name": "Arctovish",
          "Typing1": "Water",
@@ -6030,8 +6030,8 @@
          "hail": 3,
          "sun": 0
       }
-   ],
-   "Aromatisse": [
+   ,
+   "Aromatisse": 
       {
          "name": "Aromatisse",
          "Typing1": "Fairy",
@@ -6059,8 +6059,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Articuno": [
+   ,
+   "Articuno": 
       {
          "name": "Articuno",
          "Typing1": "Ice",
@@ -6088,8 +6088,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Audino": [
+   ,
+   "Audino": 
       {
          "name": "Audino",
          "Typing1": "Normal",
@@ -6117,8 +6117,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Avalugg": [
+   ,
+   "Avalugg": 
       {
          "name": "Avalugg",
          "Typing1": "Ice",
@@ -6146,8 +6146,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Barbaracle": [
+   ,
+   "Barbaracle": 
       {
          "name": "Barbaracle",
          "Typing1": "Rock",
@@ -6175,8 +6175,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Boltund": [
+   ,
+   "Boltund": 
       {
          "name": "Boltund",
          "Typing1": "Electric",
@@ -6204,8 +6204,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Braviary": [
+   ,
+   "Braviary": 
       {
          "name": "Braviary",
          "Typing1": "Normal",
@@ -6233,8 +6233,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Centiskorch": [
+   ,
+   "Centiskorch": 
       {
          "name": "Centiskorch",
          "Typing1": "Fire",
@@ -6262,8 +6262,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Charizard": [
+   ,
+   "Charizard": 
       {
          "name": "Charizard",
          "Typing1": "Flying",
@@ -6291,8 +6291,8 @@
          "hail": 0,
          "sun": 5
       }
-   ],
-   "Cinccino": [
+   ,
+   "Cinccino": 
       {
          "name": "Cinccino",
          "Typing1": "Normal",
@@ -6320,8 +6320,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Clawitzer": [
+   ,
+   "Clawitzer": 
       {
          "name": "Clawitzer",
          "Typing1": "Water",
@@ -6349,8 +6349,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Claydol": [
+   ,
+   "Claydol": 
       {
          "name": "Claydol",
          "Typing1": "Ground",
@@ -6378,8 +6378,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Coalossal": [
+   ,
+   "Coalossal": 
       {
          "name": "Coalossal",
          "Typing1": "Rock",
@@ -6407,8 +6407,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Cofagrigus": [
+   ,
+   "Cofagrigus": 
       {
          "name": "Cofagrigus",
          "Typing1": "Ghost",
@@ -6436,8 +6436,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Corsola-Galar": [
+   ,
+   "Corsola-Galar": 
       {
          "name": "Corsola-Galar",
          "Typing1": "Ghost",
@@ -6465,8 +6465,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Cradily": [
+   ,
+   "Cradily": 
       {
          "name": "Cradily",
          "Typing1": "Rock",
@@ -6494,8 +6494,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Crustle": [
+   ,
+   "Crustle": 
       {
          "name": "Crustle",
          "Typing1": "Rock",
@@ -6523,8 +6523,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Cursola": [
+   ,
+   "Cursola": 
       {
          "name": "Cursola",
          "Typing1": "Ghost",
@@ -6552,8 +6552,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Doublade": [
+   ,
+   "Doublade": 
       {
          "name": "Doublade",
          "Typing1": "Ghost",
@@ -6581,8 +6581,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Drampa": [
+   ,
+   "Drampa": 
       {
          "name": "Drampa",
          "Typing1": "Normal",
@@ -6610,8 +6610,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Drapion": [
+   ,
+   "Drapion": 
       {
          "name": "Drapion",
          "Typing1": "Dark",
@@ -6639,8 +6639,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Drednaw": [
+   ,
+   "Drednaw": 
       {
          "name": "Drednaw",
          "Typing1": "Water",
@@ -6668,8 +6668,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Drifblim": [
+   ,
+   "Drifblim": 
       {
          "name": "Drifblim",
          "Typing1": "Ghost",
@@ -6697,8 +6697,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Dubwool": [
+   ,
+   "Dubwool": 
       {
          "name": "Dubwool",
          "Typing1": "Normal",
@@ -6726,8 +6726,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Dusclops": [
+   ,
+   "Dusclops": 
       {
          "name": "Dusclops",
          "Typing1": "Ghost",
@@ -6755,8 +6755,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Dusknoir": [
+   ,
+   "Dusknoir": 
       {
          "name": "Dusknoir",
          "Typing1": "Ghost",
@@ -6784,8 +6784,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Eldegoss": [
+   ,
+   "Eldegoss": 
       {
          "name": "Eldegoss",
          "Typing1": "Grass",
@@ -6813,8 +6813,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Electivire": [
+   ,
+   "Electivire": 
       {
          "name": "Electivire",
          "Typing1": "Electric",
@@ -6842,8 +6842,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Exeggutor-Alola": [
+   ,
+   "Exeggutor-Alola": 
       {
          "name": "Exeggutor-Alola",
          "Typing1": "Grass",
@@ -6871,8 +6871,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Exploud": [
+   ,
+   "Exploud": 
       {
          "name": "Exploud",
          "Typing1": "Normal",
@@ -6900,8 +6900,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Falinks": [
+   ,
+   "Falinks": 
       {
          "name": "Falinks",
          "Typing1": "Fighting",
@@ -6929,8 +6929,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Flapple": [
+   ,
+   "Flapple": 
       {
          "name": "Flapple",
          "Typing1": "Grass",
@@ -6958,8 +6958,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Froslass": [
+   ,
+   "Froslass": 
       {
          "name": "Froslass",
          "Typing1": "Ice",
@@ -6987,8 +6987,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Frosmoth": [
+   ,
+   "Frosmoth": 
       {
          "name": "Frosmoth",
          "Typing1": "Ice",
@@ -7016,8 +7016,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Gallade": [
+   ,
+   "Gallade": 
       {
          "name": "Gallade",
          "Typing1": "Fighting",
@@ -7045,8 +7045,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Garbodor": [
+   ,
+   "Garbodor": 
       {
          "name": "Garbodor",
          "Typing1": "Poison",
@@ -7074,8 +7074,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Golbat": [
+   ,
+   "Golbat": 
       {
          "name": "Golbat",
          "Typing1": "Poison",
@@ -7103,8 +7103,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Golisopod": [
+   ,
+   "Golisopod": 
       {
          "name": "Golisopod",
          "Typing1": "Water",
@@ -7132,8 +7132,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Gourgeist": [
+   ,
+   "Gourgeist": 
       {
          "name": "Gourgeist",
          "Typing1": "Ghost",
@@ -7161,8 +7161,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Gurdurr": [
+   ,
+   "Gurdurr": 
       {
          "name": "Gurdurr",
          "Typing1": "Fighting",
@@ -7190,8 +7190,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Guzzlord": [
+   ,
+   "Guzzlord": 
       {
          "name": "Guzzlord",
          "Typing1": "Dark",
@@ -7219,8 +7219,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Jolteon": [
+   ,
+   "Jolteon": 
       {
          "name": "Jolteon",
          "Typing1": "Electric",
@@ -7248,8 +7248,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Kabutops": [
+   ,
+   "Kabutops": 
       {
          "name": "Kabutops",
          "Typing1": "Water",
@@ -7277,8 +7277,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Kangaskhan": [
+   ,
+   "Kangaskhan": 
       {
          "name": "Kangaskhan",
          "Typing1": "Normal",
@@ -7306,8 +7306,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Kingler": [
+   ,
+   "Kingler": 
       {
          "name": "Kingler",
          "Typing1": "Water",
@@ -7335,8 +7335,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Lanturn": [
+   ,
+   "Lanturn": 
       {
          "name": "Lanturn",
          "Typing1": "Electric",
@@ -7364,8 +7364,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Lickilicky": [
+   ,
+   "Lickilicky": 
       {
          "name": "Lickilicky",
          "Typing1": "Normal",
@@ -7393,8 +7393,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Linoone": [
+   ,
+   "Linoone": 
       {
          "name": "Linoone",
          "Typing1": "Normal",
@@ -7422,8 +7422,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Ludicolo": [
+   ,
+   "Ludicolo": 
       {
          "name": "Ludicolo",
          "Typing1": "Water",
@@ -7451,8 +7451,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Lycanroc": [
+   ,
+   "Lycanroc": 
       {
          "name": "Lycanroc",
          "Typing1": "Rock",
@@ -7480,8 +7480,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Magmortar": [
+   ,
+   "Magmortar": 
       {
          "name": "Magmortar",
          "Typing1": "Fire",
@@ -7509,8 +7509,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Malamar": [
+   ,
+   "Malamar": 
       {
          "name": "Malamar",
          "Typing1": "Dark",
@@ -7538,8 +7538,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Marowak": [
+   ,
+   "Marowak": 
       {
          "name": "Marowak",
          "Typing1": "Ground",
@@ -7567,8 +7567,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Meowstic": [
+   ,
+   "Meowstic": 
       {
          "name": "Meowstic",
          "Typing1": "Psychic",
@@ -7596,8 +7596,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Meowstic-f": [
+   ,
+   "Meowstic-f": 
       {
          "name": "Meowstic-f",
          "Typing1": "Psychic",
@@ -7625,8 +7625,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Morpeko": [
+   ,
+   "Morpeko": 
       {
          "name": "Morpeko",
          "Typing1": "Electric",
@@ -7654,8 +7654,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Mr. Mime-Galar": [
+   ,
+   "Mr. Mime-Galar": 
       {
          "name": "Mr. Mime-Galar",
          "Typing1": "Ice",
@@ -7683,8 +7683,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Mr. Rime": [
+   ,
+   "Mr. Rime": 
       {
          "name": "Mr. Rime",
          "Typing1": "Ice",
@@ -7712,8 +7712,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Musharna": [
+   ,
+   "Musharna": 
       {
          "name": "Musharna",
          "Typing1": "Psychic",
@@ -7741,8 +7741,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Ninjask": [
+   ,
+   "Ninjask": 
       {
          "name": "Ninjask",
          "Typing1": "Bug",
@@ -7770,8 +7770,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Omastar": [
+   ,
+   "Omastar": 
       {
          "name": "Omastar",
          "Typing1": "Water",
@@ -7799,8 +7799,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Orbeetle": [
+   ,
+   "Orbeetle": 
       {
          "name": "Orbeetle",
          "Typing1": "Psychic",
@@ -7828,8 +7828,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Palossand": [
+   ,
+   "Palossand": 
       {
          "name": "Palossand",
          "Typing1": "Ground",
@@ -7857,8 +7857,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Passimian": [
+   ,
+   "Passimian": 
       {
          "name": "Passimian",
          "Typing1": "Fighting",
@@ -7886,8 +7886,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Perrserker": [
+   ,
+   "Perrserker": 
       {
          "name": "Perrserker",
          "Typing1": "Steel",
@@ -7915,8 +7915,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Persian-Alola": [
+   ,
+   "Persian-Alola": 
       {
          "name": "Persian-Alola",
          "Typing1": "Dark",
@@ -7944,8 +7944,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Piloswine": [
+   ,
+   "Piloswine": 
       {
          "name": "Piloswine",
          "Typing1": "Ice",
@@ -7973,8 +7973,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Pincurchin": [
+   ,
+   "Pincurchin": 
       {
          "name": "Pincurchin",
          "Typing1": "Electric",
@@ -8002,8 +8002,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Pinsir": [
+   ,
+   "Pinsir": 
       {
          "name": "Pinsir",
          "Typing1": "Bug",
@@ -8031,8 +8031,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Poliwrath": [
+   ,
+   "Poliwrath": 
       {
          "name": "Poliwrath",
          "Typing1": "Water",
@@ -8060,8 +8060,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Quagsire": [
+   ,
+   "Quagsire": 
       {
          "name": "Quagsire",
          "Typing1": "Water",
@@ -8089,8 +8089,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Qwilfish": [
+   ,
+   "Qwilfish": 
       {
          "name": "Qwilfish",
          "Typing1": "Water",
@@ -8118,8 +8118,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Raboot": [
+   ,
+   "Raboot": 
       {
          "name": "Raboot",
          "Typing1": "Fire",
@@ -8147,8 +8147,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Rapidash-Galar": [
+   ,
+   "Rapidash-Galar": 
       {
          "name": "Rapidash-Galar",
          "Typing1": "Psychic",
@@ -8176,8 +8176,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Regirock": [
+   ,
+   "Regirock": 
       {
          "name": "Regirock",
          "Typing1": "Rock",
@@ -8205,8 +8205,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Rhydon": [
+   ,
+   "Rhydon": 
       {
          "name": "Rhydon",
          "Typing1": "Rock",
@@ -8234,8 +8234,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Rotom-Fan": [
+   ,
+   "Rotom-Fan": 
       {
          "name": "Rotom-Fan",
          "Typing1": "Electric",
@@ -8263,8 +8263,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Rotom-Frost": [
+   ,
+   "Rotom-Frost": 
       {
          "name": "Rotom-Frost",
          "Typing1": "Electric",
@@ -8292,8 +8292,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Runerigus": [
+   ,
+   "Runerigus": 
       {
          "name": "Runerigus",
          "Typing1": "Ghost",
@@ -8321,8 +8321,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Sableye": [
+   ,
+   "Sableye": 
       {
          "name": "Sableye",
          "Typing1": "Ghost",
@@ -8350,8 +8350,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Sandaconda": [
+   ,
+   "Sandaconda": 
       {
          "name": "Sandaconda",
          "Typing1": "Ground",
@@ -8379,8 +8379,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Sandslash-Alola": [
+   ,
+   "Sandslash-Alola": 
       {
          "name": "Sandslash-Alola",
          "Typing1": "Ice",
@@ -8408,8 +8408,8 @@
          "hail": 5,
          "sun": 0
       }
-   ],
-   "Sawk": [
+   ,
+   "Sawk": 
       {
          "name": "Sawk",
          "Typing1": "Fighting",
@@ -8437,8 +8437,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Sceptile": [
+   ,
+   "Sceptile": 
       {
          "name": "Sceptile",
          "Typing1": "Grass",
@@ -8466,8 +8466,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Scrafty": [
+   ,
+   "Scrafty": 
       {
          "name": "Scrafty",
          "Typing1": "Fighting",
@@ -8495,8 +8495,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Scyther": [
+   ,
+   "Scyther": 
       {
          "name": "Scyther",
          "Typing1": "Bug",
@@ -8524,8 +8524,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Shiftry": [
+   ,
+   "Shiftry": 
       {
          "name": "Shiftry",
          "Typing1": "Grass",
@@ -8553,8 +8553,8 @@
          "hail": 0,
          "sun": 5
       }
-   ],
-   "Skuntank": [
+   ,
+   "Skuntank": 
       {
          "name": "Skuntank",
          "Typing1": "Poison",
@@ -8582,8 +8582,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Sneasel": [
+   ,
+   "Sneasel": 
       {
          "name": "Sneasel",
          "Typing1": "Dark",
@@ -8611,8 +8611,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Spiritomb": [
+   ,
+   "Spiritomb": 
       {
          "name": "Spiritomb",
          "Typing1": "Dark",
@@ -8640,8 +8640,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Steelix": [
+   ,
+   "Steelix": 
       {
          "name": "Steelix",
          "Typing1": "Steel",
@@ -8669,8 +8669,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Stoutland": [
+   ,
+   "Stoutland": 
       {
          "name": "Stoutland",
          "Typing1": "Normal",
@@ -8698,8 +8698,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Swoobat": [
+   ,
+   "Swoobat": 
       {
          "name": "Swoobat",
          "Typing1": "Psychic",
@@ -8727,8 +8727,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Tangela": [
+   ,
+   "Tangela": 
       {
          "name": "Tangela",
          "Typing1": "Grass",
@@ -8756,8 +8756,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Tauros": [
+   ,
+   "Tauros": 
       {
          "name": "Tauros",
          "Typing1": "Normal",
@@ -8785,8 +8785,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Thwackey": [
+   ,
+   "Thwackey": 
       {
          "name": "Thwackey",
          "Typing1": "Grass",
@@ -8814,8 +8814,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Togedemaru": [
+   ,
+   "Togedemaru": 
       {
          "name": "Togedemaru",
          "Typing1": "Steel",
@@ -8843,8 +8843,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Turtonator": [
+   ,
+   "Turtonator": 
       {
          "name": "Turtonator",
          "Typing1": "Fire",
@@ -8872,8 +8872,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Vileplume": [
+   ,
+   "Vileplume": 
       {
          "name": "Vileplume",
          "Typing1": "Grass",
@@ -8901,8 +8901,8 @@
          "hail": 0,
          "sun": 3
       }
-   ],
-   "Weezing": [
+   ,
+   "Weezing": 
       {
          "name": "Weezing",
          "Typing1": "Poison",
@@ -8930,8 +8930,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Xatu": [
+   ,
+   "Xatu": 
       {
          "name": "Xatu",
          "Typing1": "Psychic",
@@ -8959,8 +8959,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Abomasnow": [
+   ,
+   "Abomasnow": 
       {
          "name": "Abomasnow",
          "Typing1": "Grass",
@@ -8988,8 +8988,8 @@
          "hail": 6,
          "sun": 0
       }
-   ],
-   "Altaria": [
+   ,
+   "Altaria": 
       {
          "name": "Altaria",
          "Typing1": "Dragon",
@@ -9017,8 +9017,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Armaldo": [
+   ,
+   "Armaldo": 
       {
          "name": "Armaldo",
          "Typing1": "Rock",
@@ -9046,8 +9046,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Aurorus": [
+   ,
+   "Aurorus": 
       {
          "name": "Aurorus",
          "Typing1": "Rock",
@@ -9075,8 +9075,8 @@
          "hail": 6,
          "sun": 0
       }
-   ],
-   "Basculin": [
+   ,
+   "Basculin": 
       {
          "name": "Basculin",
          "Typing1": "Water",
@@ -9104,8 +9104,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Beartic": [
+   ,
+   "Beartic": 
       {
          "name": "Beartic",
          "Typing1": "Ice",
@@ -9133,8 +9133,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Beheeyem": [
+   ,
+   "Beheeyem": 
       {
          "name": "Beheeyem",
          "Typing1": "Psychic",
@@ -9162,8 +9162,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Bellossom": [
+   ,
+   "Bellossom": 
       {
          "name": "Bellossom",
          "Typing1": "Grass",
@@ -9191,8 +9191,8 @@
          "hail": 0,
          "sun": 1
       }
-   ],
-   "Bouffalant": [
+   ,
+   "Bouffalant": 
       {
          "name": "Bouffalant",
          "Typing1": "Normal",
@@ -9220,8 +9220,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Butterfree": [
+   ,
+   "Butterfree": 
       {
          "name": "Butterfree",
          "Typing1": "Bug",
@@ -9249,8 +9249,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Calyrex": [
+   ,
+   "Calyrex": 
       {
          "name": "Calyrex",
          "Typing1": "Grass",
@@ -9278,8 +9278,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Carbink": [
+   ,
+   "Carbink": 
       {
          "name": "Carbink",
          "Typing1": "Rock",
@@ -9307,8 +9307,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Carracosta": [
+   ,
+   "Carracosta": 
       {
          "name": "Carracosta",
          "Typing1": "Rock",
@@ -9336,8 +9336,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Charjabug": [
+   ,
+   "Charjabug": 
       {
          "name": "Charjabug",
          "Typing1": "Electric",
@@ -9365,8 +9365,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Cherrim": [
+   ,
+   "Cherrim": 
       {
          "name": "Cherrim",
          "Typing1": "Grass",
@@ -9394,8 +9394,8 @@
          "hail": 0,
          "sun": 1
       }
-   ],
-   "Clefairy": [
+   ,
+   "Clefairy": 
       {
          "name": "Clefairy",
          "Typing1": "Fairy",
@@ -9423,8 +9423,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Combusken": [
+   ,
+   "Combusken": 
       {
          "name": "Combusken",
          "Typing1": "Fighting",
@@ -9452,8 +9452,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Corsola": [
+   ,
+   "Corsola": 
       {
          "name": "Corsola",
          "Typing1": "Water",
@@ -9481,8 +9481,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Cramorant": [
+   ,
+   "Cramorant": 
       {
          "name": "Cramorant",
          "Typing1": "Water",
@@ -9510,8 +9510,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Cryogonal": [
+   ,
+   "Cryogonal": 
       {
          "name": "Cryogonal",
          "Typing1": "Ice",
@@ -9539,8 +9539,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Dedenne": [
+   ,
+   "Dedenne": 
       {
          "name": "Dedenne",
          "Typing1": "Fairy",
@@ -9568,8 +9568,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Delibird": [
+   ,
+   "Delibird": 
       {
          "name": "Delibird",
          "Typing1": "Ice",
@@ -9597,8 +9597,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Dragonair": [
+   ,
+   "Dragonair": 
       {
          "name": "Dragonair",
          "Typing1": "Dragon",
@@ -9626,8 +9626,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Drakloak": [
+   ,
+   "Drakloak": 
       {
          "name": "Drakloak",
          "Typing1": "Dragon",
@@ -9655,8 +9655,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Dugtrio": [
+   ,
+   "Dugtrio": 
       {
          "name": "Dugtrio",
          "Typing1": "Ground",
@@ -9684,8 +9684,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Dugtrio-Alola": [
+   ,
+   "Dugtrio-Alola": 
       {
          "name": "Dugtrio-Alola",
          "Typing1": "Ground",
@@ -9713,8 +9713,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Dunsparce": [
+   ,
+   "Dunsparce": 
       {
          "name": "Dunsparce",
          "Typing1": "Normal",
@@ -9742,8 +9742,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Duosion": [
+   ,
+   "Duosion": 
       {
          "name": "Duosion",
          "Typing1": "Psychic",
@@ -9771,8 +9771,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Eiscue": [
+   ,
+   "Eiscue": 
       {
          "name": "Eiscue",
          "Typing1": "Ice",
@@ -9800,8 +9800,8 @@
          "hail": 1,
          "sun": 0
       }
-   ],
-   "Electabuzz": [
+   ,
+   "Electabuzz": 
       {
          "name": "Electabuzz",
          "Typing1": "Electric",
@@ -9829,8 +9829,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Emolga": [
+   ,
+   "Emolga": 
       {
          "name": "Emolga",
          "Typing1": "Electric",
@@ -9858,8 +9858,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Exeggutor": [
+   ,
+   "Exeggutor": 
       {
          "name": "Exeggutor",
          "Typing1": "Grass",
@@ -9887,8 +9887,8 @@
          "hail": 0,
          "sun": 4
       }
-   ],
-   "Farfetchd": [
+   ,
+   "Farfetchd": 
       {
          "name": "Farfetchd",
          "Typing1": "Normal",
@@ -9916,8 +9916,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Ferroseed": [
+   ,
+   "Ferroseed": 
       {
          "name": "Ferroseed",
          "Typing1": "Bug",
@@ -9945,8 +9945,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Flareon": [
+   ,
+   "Flareon": 
       {
          "name": "Flareon",
          "Typing1": "Fire",
@@ -9974,8 +9974,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Fraxure": [
+   ,
+   "Fraxure": 
       {
          "name": "Fraxure",
          "Typing1": "Dragon",
@@ -10003,8 +10003,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Gabite": [
+   ,
+   "Gabite": 
       {
          "name": "Gabite",
          "Typing1": "Dragon",
@@ -10032,8 +10032,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Glaceon": [
+   ,
+   "Glaceon": 
       {
          "name": "Glaceon",
          "Typing1": "Ice",
@@ -10061,8 +10061,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Glalie": [
+   ,
+   "Glalie": 
       {
          "name": "Glalie",
          "Typing1": "Ice",
@@ -10090,8 +10090,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Golduck": [
+   ,
+   "Golduck": 
       {
          "name": "Golduck",
          "Typing1": "Water",
@@ -10119,8 +10119,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Gothitelle": [
+   ,
+   "Gothitelle": 
       {
          "name": "Gothitelle",
          "Typing1": "Psychic",
@@ -10148,8 +10148,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Grapploct": [
+   ,
+   "Grapploct": 
       {
          "name": "Grapploct",
          "Typing1": "Fighting",
@@ -10177,8 +10177,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Greedent": [
+   ,
+   "Greedent": 
       {
          "name": "Greedent",
          "Typing1": "Normal",
@@ -10206,8 +10206,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Hakamo-o": [
+   ,
+   "Hakamo-o": 
       {
          "name": "Hakamo-o",
          "Typing1": "Dragon",
@@ -10235,8 +10235,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Hattrem": [
+   ,
+   "Hattrem": 
       {
          "name": "Hattrem",
          "Typing1": "Psychic",
@@ -10264,8 +10264,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Haunter": [
+   ,
+   "Haunter": 
       {
          "name": "Haunter",
          "Typing1": "Ghost",
@@ -10293,8 +10293,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Heatmor": [
+   ,
+   "Heatmor": 
       {
          "name": "Heatmor",
          "Typing1": "Fire",
@@ -10322,8 +10322,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Hippopotas": [
+   ,
+   "Hippopotas": 
       {
          "name": "Hippopotas",
          "Typing1": "Ground",
@@ -10351,8 +10351,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Hitmonchan": [
+   ,
+   "Hitmonchan": 
       {
          "name": "Hitmonchan",
          "Typing1": "Fighting",
@@ -10380,8 +10380,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Jynx": [
+   ,
+   "Jynx": 
       {
          "name": "Jynx",
          "Typing1": "Psychic",
@@ -10409,8 +10409,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Kadabra": [
+   ,
+   "Kadabra": 
       {
          "name": "Kadabra",
          "Typing1": "Psychic",
@@ -10438,8 +10438,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Klinklang": [
+   ,
+   "Klinklang": 
       {
          "name": "Klinklang",
          "Typing1": "Steel",
@@ -10467,8 +10467,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Lapras": [
+   ,
+   "Lapras": 
       {
          "name": "Lapras",
          "Typing1": "Water",
@@ -10496,8 +10496,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Leafeon": [
+   ,
+   "Leafeon": 
       {
          "name": "Leafeon",
          "Typing1": "Grass",
@@ -10525,8 +10525,8 @@
          "hail": 0,
          "sun": 3
       }
-   ],
-   "Lickitung": [
+   ,
+   "Lickitung": 
       {
          "name": "Lickitung",
          "Typing1": "Normal",
@@ -10554,8 +10554,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Liepard": [
+   ,
+   "Liepard": 
       {
          "name": "Liepard",
          "Typing1": "Dark",
@@ -10583,8 +10583,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Lilligant": [
+   ,
+   "Lilligant": 
       {
          "name": "Lilligant",
          "Typing1": "Grass",
@@ -10612,8 +10612,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Linoone-Galar": [
+   ,
+   "Linoone-Galar": 
       {
          "name": "Linoone-Galar",
          "Typing1": "Dark",
@@ -10641,8 +10641,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Lopunny": [
+   ,
+   "Lopunny": 
       {
          "name": "Lopunny",
          "Typing1": "Normal",
@@ -10670,8 +10670,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Lunatone": [
+   ,
+   "Lunatone": 
       {
          "name": "Lunatone",
          "Typing1": "Psychic",
@@ -10699,8 +10699,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Lurantis": [
+   ,
+   "Lurantis": 
       {
          "name": "Lurantis",
          "Typing1": "Grass",
@@ -10728,8 +10728,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Luxray": [
+   ,
+   "Luxray": 
       {
          "name": "Luxray",
          "Typing1": "Electric",
@@ -10757,8 +10757,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Lycanroc-Midnight": [
+   ,
+   "Lycanroc-Midnight": 
       {
          "name": "Lycanroc-Midnight",
          "Typing1": "Rock",
@@ -10786,8 +10786,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Machoke": [
+   ,
+   "Machoke": 
       {
          "name": "Machoke",
          "Typing1": "Fighting",
@@ -10815,8 +10815,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Magmar": [
+   ,
+   "Magmar": 
       {
          "name": "Magmar",
          "Typing1": "Fire",
@@ -10844,8 +10844,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Manectric": [
+   ,
+   "Manectric": 
       {
          "name": "Manectric",
          "Typing1": "Electric",
@@ -10873,8 +10873,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Maractus": [
+   ,
+   "Maractus": 
       {
          "name": "Maractus",
          "Typing1": "Grass",
@@ -10902,8 +10902,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Mareanie": [
+   ,
+   "Mareanie": 
       {
          "name": "Mareanie",
          "Typing1": "Water",
@@ -10931,8 +10931,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Marshtomp": [
+   ,
+   "Marshtomp": 
       {
          "name": "Marshtomp",
          "Typing1": "Water",
@@ -10960,8 +10960,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Mawile": [
+   ,
+   "Mawile": 
       {
          "name": "Mawile",
          "Typing1": "Steel",
@@ -10989,8 +10989,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Metang": [
+   ,
+   "Metang": 
       {
          "name": "Metang",
          "Typing1": "Steel",
@@ -11018,8 +11018,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Mr. Mime": [
+   ,
+   "Mr. Mime": 
       {
          "name": "Mr. Mime",
          "Typing1": "Psychic",
@@ -11047,8 +11047,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Munchlax": [
+   ,
+   "Munchlax": 
       {
          "name": "Munchlax",
          "Typing1": "Normal",
@@ -11076,8 +11076,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Noctowl": [
+   ,
+   "Noctowl": 
       {
          "name": "Noctowl",
          "Typing1": "Normal",
@@ -11105,8 +11105,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Nuzleaf": [
+   ,
+   "Nuzleaf": 
       {
          "name": "Nuzleaf",
          "Typing1": "Dark",
@@ -11134,8 +11134,8 @@
          "hail": 0,
          "sun": 2
       }
-   ],
-   "Octillery": [
+   ,
+   "Octillery": 
       {
          "name": "Octillery",
          "Typing1": "Water",
@@ -11163,8 +11163,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Oranguru": [
+   ,
+   "Oranguru": 
       {
          "name": "Oranguru",
          "Typing1": "Normal",
@@ -11192,8 +11192,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Persian": [
+   ,
+   "Persian": 
       {
          "name": "Persian",
          "Typing1": "Normal",
@@ -11221,8 +11221,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Pikachu": [
+   ,
+   "Pikachu": 
       {
          "name": "Pikachu",
          "Typing1": "Electric",
@@ -11250,8 +11250,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Porygon": [
+   ,
+   "Porygon": 
       {
          "name": "Porygon",
          "Typing1": "Normal",
@@ -11279,8 +11279,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Pyukumuku": [
+   ,
+   "Pyukumuku": 
       {
          "name": "Pyukumuku",
          "Typing1": "Water",
@@ -11308,8 +11308,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Raichu": [
+   ,
+   "Raichu": 
       {
          "name": "Raichu",
          "Typing1": "Electric",
@@ -11337,8 +11337,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Rapidash": [
+   ,
+   "Rapidash": 
       {
          "name": "Rapidash",
          "Typing1": "Fire",
@@ -11366,8 +11366,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Regice": [
+   ,
+   "Regice": 
       {
          "name": "Regice",
          "Typing1": "Ice",
@@ -11395,8 +11395,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Regigigas": [
+   ,
+   "Regigigas": 
       {
          "name": "Regigigas",
          "Typing1": "Normal",
@@ -11424,8 +11424,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Relicanth": [
+   ,
+   "Relicanth": 
       {
          "name": "Relicanth",
          "Typing1": "Water",
@@ -11453,8 +11453,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Roselia": [
+   ,
+   "Roselia": 
       {
          "name": "Roselia",
          "Typing1": "Grass",
@@ -11482,8 +11482,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Rotom": [
+   ,
+   "Rotom": 
       {
          "name": "Rotom",
          "Typing1": "Electric",
@@ -11511,8 +11511,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Sandslash": [
+   ,
+   "Sandslash": 
       {
          "name": "Sandslash",
          "Typing1": "Ground",
@@ -11540,8 +11540,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Seaking": [
+   ,
+   "Seaking": 
       {
          "name": "Seaking",
          "Typing1": "Water",
@@ -11569,8 +11569,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Shedinja": [
+   ,
+   "Shedinja": 
       {
          "name": "Shedinja",
          "Typing1": "Ghost",
@@ -11598,8 +11598,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Shiinotic": [
+   ,
+   "Shiinotic": 
       {
          "name": "Shiinotic",
          "Typing1": "Grass",
@@ -11627,6 +11627,7 @@
          "hail": 0,
          "sun": 0
       },
+      "Shiinotic":
       {
          "name": "Shiinotic",
          "Typing1": "Grass",
@@ -11654,8 +11655,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Shuckle": [
+   ,
+   "Shuckle": 
       {
          "name": "Shuckle",
          "Typing1": "Rock",
@@ -11683,8 +11684,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Solrock": [
+   ,
+   "Solrock": 
       {
          "name": "Solrock",
          "Typing1": "Rock",
@@ -11712,8 +11713,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Stonjourner": [
+   ,
+   "Stonjourner": 
       {
          "name": "Stonjourner",
          "Typing1": "Rock",
@@ -11741,8 +11742,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Stunfisk": [
+   ,
+   "Stunfisk": 
       {
          "name": "Stunfisk",
          "Typing1": "Ground",
@@ -11770,8 +11771,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Stunfisk-Galar": [
+   ,
+   "Stunfisk-Galar": 
       {
          "name": "Stunfisk-Galar",
          "Typing1": "Ground",
@@ -11799,8 +11800,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Sudowoodo": [
+   ,
+   "Sudowoodo": 
       {
          "name": "Sudowoodo",
          "Typing1": "Rock",
@@ -11828,8 +11829,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Thievul": [
+   ,
+   "Thievul": 
       {
          "name": "Thievul",
          "Typing1": "Dark",
@@ -11857,8 +11858,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Throh": [
+   ,
+   "Throh": 
       {
          "name": "Throh",
          "Typing1": "Fighting",
@@ -11886,8 +11887,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Togetic": [
+   ,
+   "Togetic": 
       {
          "name": "Togetic",
          "Typing1": "Fairy",
@@ -11915,8 +11916,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Torracat": [
+   ,
+   "Torracat": 
       {
          "name": "Torracat",
          "Typing1": "Fire",
@@ -11944,8 +11945,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Trevenant": [
+   ,
+   "Trevenant": 
       {
          "name": "Trevenant",
          "Typing1": "Ghost",
@@ -11973,8 +11974,8 @@
          "hail": 0,
          "sun": 1
       }
-   ],
-   "Type: Null": [
+   ,
+   "Type: Null": 
       {
          "name": "Type: Null",
          "Typing1": "Normal",
@@ -12002,8 +12003,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Unfezant": [
+   ,
+   "Unfezant": 
       {
          "name": "Unfezant",
          "Typing1": "Normal",
@@ -12031,8 +12032,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Vespiquen": [
+   ,
+   "Vespiquen": 
       {
          "name": "Vespiquen",
          "Typing1": "Bug",
@@ -12060,8 +12061,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Vullaby": [
+   ,
+   "Vullaby": 
       {
          "name": "Vullaby",
          "Typing1": "Dark",
@@ -12089,8 +12090,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Wailord": [
+   ,
+   "Wailord": 
       {
          "name": "Wailord",
          "Typing1": "Water",
@@ -12118,8 +12119,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Walrein": [
+   ,
+   "Walrein": 
       {
          "name": "Walrein",
          "Typing1": "Water",
@@ -12147,8 +12148,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Wartortle": [
+   ,
+   "Wartortle": 
       {
          "name": "Wartortle",
          "Typing1": "Water",
@@ -12176,8 +12177,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Whirlipede": [
+   ,
+   "Whirlipede": 
       {
          "name": "Whirlipede",
          "Typing1": "Poison",
@@ -12205,8 +12206,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Whiscash": [
+   ,
+   "Whiscash": 
       {
          "name": "Whiscash",
          "Typing1": "Ground",
@@ -12234,8 +12235,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Wigglytuff": [
+   ,
+   "Wigglytuff": 
       {
          "name": "Wigglytuff",
          "Typing1": "Normal",
@@ -12263,8 +12264,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Wishiwashi": [
+   ,
+   "Wishiwashi": 
       {
          "name": "Wishiwashi",
          "Typing1": "Water",
@@ -12292,8 +12293,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Wobbuffet": [
+   ,
+   "Wobbuffet": 
       {
          "name": "Wobbuffet",
          "Typing1": "Psychic",
@@ -12321,8 +12322,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Basculegion": [
+   ,
+   "Basculegion": 
       {
          "name": "Basculegion",
          "Typing1": "Water",
@@ -12350,8 +12351,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Deoxys-Defense": [
+   ,
+   "Deoxys-Defense": 
       {
          "name": "Deoxys-Defense",
          "Typing1": "Psychic",
@@ -12379,8 +12380,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Deoxys-Speed": [
+   ,
+   "Deoxys-Speed": 
       {
          "name": "Deoxys-Speed",
          "Typing1": "Psychic",
@@ -12408,8 +12409,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Enamorus": [
+   ,
+   "Enamorus": 
       {
          "name": "Enamorus",
          "Typing1": "Fairy",
@@ -12437,8 +12438,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Enamorus-Therian": [
+   ,
+   "Enamorus-Therian": 
       {
          "name": "Enamorus-Therian",
          "Typing1": "Fairy",
@@ -12466,8 +12467,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Gliscor": [
+   ,
+   "Gliscor": 
       {
          "name": "Gliscor",
          "Typing1": "Ground",
@@ -12495,8 +12496,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Goodra-Hisui": [
+   ,
+   "Goodra-Hisui": 
       {
          "name": "Goodra-Hisui",
          "Typing1": "Dragon",
@@ -12524,8 +12525,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Hoopa-Unbound": [
+   ,
+   "Hoopa-Unbound": 
       {
          "name": "Hoopa-Unbound",
          "Typing1": "Psychic",
@@ -12553,8 +12554,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Spectrier": [
+   ,
+   "Spectrier": 
       {
          "name": "Spectrier",
          "Typing1": "Ghost",
@@ -12582,8 +12583,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Ursaluna": [
+   ,
+   "Ursaluna": 
       {
          "name": "Ursaluna",
          "Typing1": "Normal",
@@ -12611,8 +12612,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Alomomola": [
+   ,
+   "Alomomola": 
       {
          "name": "Alomomola",
          "Typing1": "Water",
@@ -12640,8 +12641,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Breloom": [
+   ,
+   "Breloom": 
       {
          "name": "Breloom",
          "Typing1": "Fighting",
@@ -12669,8 +12670,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Empoleon": [
+   ,
+   "Empoleon": 
       {
          "name": "Empoleon",
          "Typing1": "Water",
@@ -12698,8 +12699,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Greninja": [
+   ,
+   "Greninja": 
       {
          "name": "Greninja",
          "Typing1": "Water",
@@ -12727,8 +12728,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Infernape": [
+   ,
+   "Infernape": 
       {
          "name": "Infernape",
          "Typing1": "Fire",
@@ -12756,8 +12757,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Kleavor": [
+   ,
+   "Kleavor": 
       {
          "name": "Kleavor",
          "Typing1": "Bug",
@@ -12785,8 +12786,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Manaphy": [
+   ,
+   "Manaphy": 
       {
          "name": "Manaphy",
          "Typing1": "Water",
@@ -12814,8 +12815,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Meloetta": [
+   ,
+   "Meloetta": 
       {
          "name": "Meloetta",
          "Typing1": "Normal",
@@ -12843,8 +12844,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Muk-Alola": [
+   ,
+   "Muk-Alola": 
       {
          "name": "Muk-Alola",
          "Typing1": "Dark",
@@ -12872,8 +12873,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Overqwil": [
+   ,
+   "Overqwil": 
       {
          "name": "Overqwil",
          "Typing1": "Dark",
@@ -12901,8 +12902,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Serperior": [
+   ,
+   "Serperior": 
       {
          "name": "Serperior",
          "Typing1": "Grass",
@@ -12930,8 +12931,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Sneasler": [
+   ,
+   "Sneasler": 
       {
          "name": "Sneasler",
          "Typing1": "Poison",
@@ -12959,8 +12960,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Staraptor": [
+   ,
+   "Staraptor": 
       {
          "name": "Staraptor",
          "Typing1": "Normal",
@@ -12988,8 +12989,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Zoroark-Hisui": [
+   ,
+   "Zoroark-Hisui": 
       {
          "name": "Zoroark-Hisui",
          "Typing1": "Normal",
@@ -13017,8 +13018,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Chesnaught": [
+   ,
+   "Chesnaught": 
       {
          "name": "Chesnaught",
          "Typing1": "Fighting",
@@ -13046,8 +13047,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Decidueye-Hisui": [
+   ,
+   "Decidueye-Hisui": 
       {
          "name": "Decidueye-Hisui",
          "Typing1": "Fighting",
@@ -13075,8 +13076,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Delphox": [
+   ,
+   "Delphox": 
       {
          "name": "Delphox",
          "Typing1": "Psychic",
@@ -13104,8 +13105,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Donphan": [
+   ,
+   "Donphan": 
       {
          "name": "Donphan",
          "Typing1": "Ground",
@@ -13133,8 +13134,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Florges": [
+   ,
+   "Florges": 
       {
          "name": "Florges",
          "Typing1": "Fairy",
@@ -13162,8 +13163,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Forretress": [
+   ,
+   "Forretress": 
       {
          "name": "Forretress",
          "Typing1": "Steel",
@@ -13191,8 +13192,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Honchkrow": [
+   ,
+   "Honchkrow": 
       {
          "name": "Honchkrow",
          "Typing1": "Dark",
@@ -13220,8 +13221,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Hoopa": [
+   ,
+   "Hoopa": 
       {
          "name": "Hoopa",
          "Typing1": "Ghost",
@@ -13249,8 +13250,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Lilligant-Hisui": [
+   ,
+   "Lilligant-Hisui": 
       {
          "name": "Lilligant-Hisui",
          "Typing1": "Grass",
@@ -13278,8 +13279,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Medicham": [
+   ,
+   "Medicham": 
       {
          "name": "Medicham",
          "Typing1": "Psychic",
@@ -13307,8 +13308,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Samurott-Hisui": [
+   ,
+   "Samurott-Hisui": 
       {
          "name": "Samurott-Hisui",
          "Typing1": "Water",
@@ -13336,8 +13337,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Smeargle": [
+   ,
+   "Smeargle": 
       {
          "name": "Smeargle",
          "Typing1": "Normal",
@@ -13365,8 +13366,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Yanmega": [
+   ,
+   "Yanmega": 
       {
          "name": "Yanmega",
          "Typing1": "Bug",
@@ -13394,8 +13395,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Ambipom": [
+   ,
+   "Ambipom": 
       {
          "name": "Ambipom",
          "Typing1": "Normal",
@@ -13423,8 +13424,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Arcanine-Hisui": [
+   ,
+   "Arcanine-Hisui": 
       {
          "name": "Arcanine-Hisui",
          "Typing1": "Fire",
@@ -13452,8 +13453,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Avalugg-Hisui": [
+   ,
+   "Avalugg-Hisui": 
       {
          "name": "Avalugg-Hisui",
          "Typing1": "Ice",
@@ -13481,8 +13482,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Braviary-Hisui": [
+   ,
+   "Braviary-Hisui": 
       {
          "name": "Braviary-Hisui",
          "Typing1": "Flying",
@@ -13510,8 +13511,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Eelektross": [
+   ,
+   "Eelektross": 
       {
          "name": "Eelektross",
          "Typing1": "Electric",
@@ -13539,8 +13540,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Dodrio": [
+   ,
+   "Dodrio": 
       {
          "name": "Dodrio",
          "Typing1": "Flying",
@@ -13568,8 +13569,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Electrode-Hisui": [
+   ,
+   "Electrode-Hisui": 
       {
          "name": "Electrode-Hisui",
          "Typing1": "Electric",
@@ -13597,8 +13598,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Emboar": [
+   ,
+   "Emboar": 
       {
          "name": "Emboar",
          "Typing1": "Fire",
@@ -13626,8 +13627,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Granbull": [
+   ,
+   "Granbull": 
       {
          "name": "Granbull",
          "Typing1": "Fairy",
@@ -13655,8 +13656,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Hariyama": [
+   ,
+   "Hariyama": 
       {
          "name": "Hariyama",
          "Typing1": "Fighting",
@@ -13684,8 +13685,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Komala": [
+   ,
+   "Komala": 
       {
          "name": "Komala",
          "Typing1": "Normal",
@@ -13713,8 +13714,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Minior": [
+   ,
+   "Minior": 
       {
          "name": "Minior",
          "Typing1": "Rock",
@@ -13742,8 +13743,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Mismagius": [
+   ,
+   "Mismagius": 
       {
          "name": "Mismagius",
          "Typing1": "Ghost",
@@ -13771,8 +13772,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Muk": [
+   ,
+   "Muk": 
       {
          "name": "Muk",
          "Typing1": "Poison",
@@ -13800,8 +13801,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Qwilfish-Hisui": [
+   ,
+   "Qwilfish-Hisui": 
       {
          "name": "Qwilfish-Hisui",
          "Typing1": "Poison",
@@ -13829,8 +13830,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Samurott": [
+   ,
+   "Samurott": 
       {
          "name": "Samurott",
          "Typing1": "Water",
@@ -13858,8 +13859,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Sneasel-Hisui": [
+   ,
+   "Sneasel-Hisui": 
       {
          "name": "Sneasel-Hisui",
          "Typing1": "Poison",
@@ -13887,8 +13888,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Venomoth": [
+   ,
+   "Venomoth": 
       {
          "name": "Venomoth",
          "Typing1": "Bug",
@@ -13916,8 +13917,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Ampharos": [
+   ,
+   "Ampharos": 
       {
          "name": "Ampharos",
          "Typing1": "Electric",
@@ -13945,8 +13946,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Arbok": [
+   ,
+   "Arbok": 
       {
          "name": "Arbok",
          "Typing1": "Poison",
@@ -13974,8 +13975,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Ariados": [
+   ,
+   "Ariados": 
       {
          "name": "Ariados",
          "Typing1": "Poison",
@@ -14003,8 +14004,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Banette": [
+   ,
+   "Banette": 
       {
          "name": "Banette",
          "Typing1": "Ghost",
@@ -14032,8 +14033,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Beautifly": [
+   ,
+   "Beautifly": 
       {
          "name": "Beautifly",
          "Typing1": "Bug",
@@ -14061,8 +14062,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Beedrill": [
+   ,
+   "Beedrill": 
       {
          "name": "Beedrill",
          "Typing1": "Poison",
@@ -14090,8 +14091,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Bibarel": [
+   ,
+   "Bibarel": 
       {
          "name": "Bibarel",
          "Typing1": "Water",
@@ -14119,8 +14120,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Bruxish": [
+   ,
+   "Bruxish": 
       {
          "name": "Bruxish",
          "Typing1": "Water",
@@ -14148,8 +14149,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Cacturne": [
+   ,
+   "Cacturne": 
       {
          "name": "Cacturne",
          "Typing1": "Dark",
@@ -14177,8 +14178,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Camerupt": [
+   ,
+   "Camerupt": 
       {
          "name": "Camerupt",
          "Typing1": "Fire",
@@ -14206,8 +14207,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Carnivine": [
+   ,
+   "Carnivine": 
       {
          "name": "Carnivine",
          "Typing1": "Grass",
@@ -14235,8 +14236,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Chatot": [
+   ,
+   "Chatot": 
       {
          "name": "Chatot",
          "Typing1": "Flying",
@@ -14264,8 +14265,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Chimecho": [
+   ,
+   "Chimecho": 
       {
          "name": "Chimecho",
          "Typing1": "Psychic",
@@ -14293,8 +14294,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Crabominable": [
+   ,
+   "Crabominable": 
       {
          "name": "Crabominable",
          "Typing1": "Ice",
@@ -14322,8 +14323,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Delcatty": [
+   ,
+   "Delcatty": 
       {
          "name": "Delcatty",
          "Typing1": "Normal",
@@ -14351,8 +14352,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Dewgong": [
+   ,
+   "Dewgong": 
       {
          "name": "Dewgong",
          "Typing1": "Water",
@@ -14380,8 +14381,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Dustox": [
+   ,
+   "Dustox": 
       {
          "name": "Dustox",
          "Typing1": "Poison",
@@ -14409,8 +14410,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Electrode": [
+   ,
+   "Electrode": 
       {
          "name": "Electrode",
          "Typing1": "Electric",
@@ -14438,8 +14439,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Fearow": [
+   ,
+   "Fearow": 
       {
          "name": "Fearow",
          "Typing1": "Normal",
@@ -14467,8 +14468,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Floatzel": [
+   ,
+   "Floatzel": 
       {
          "name": "Floatzel",
          "Typing1": "Water",
@@ -14496,8 +14497,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Furfrou": [
+   ,
+   "Furfrou": 
       {
          "name": "Furfrou",
          "Typing1": "Normal",
@@ -14525,8 +14526,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Girafarig": [
+   ,
+   "Girafarig": 
       {
          "name": "Girafarig",
          "Typing1": "Normal",
@@ -14554,8 +14555,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Gogoat": [
+   ,
+   "Gogoat": 
       {
          "name": "Gogoat",
          "Typing1": "Grass",
@@ -14583,8 +14584,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Golem": [
+   ,
+   "Golem": 
       {
          "name": "Golem",
          "Typing1": "Rock",
@@ -14612,8 +14613,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Golem-Alola": [
+   ,
+   "Golem-Alola": 
       {
          "name": "Golem-Alola",
          "Typing1": "Rock",
@@ -14641,8 +14642,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Gorebyss": [
+   ,
+   "Gorebyss": 
       {
          "name": "Gorebyss",
          "Typing1": "Water",
@@ -14670,8 +14671,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Grumpig": [
+   ,
+   "Grumpig": 
       {
          "name": "Grumpig",
          "Typing1": "Psychic",
@@ -14699,8 +14700,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Gumshoos": [
+   ,
+   "Gumshoos": 
       {
          "name": "Gumshoos",
          "Typing1": "Normal",
@@ -14728,8 +14729,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Houndoom": [
+   ,
+   "Houndoom": 
       {
          "name": "Houndoom",
          "Typing1": "Fire",
@@ -14757,8 +14758,8 @@
          "hail": 0,
          "sun": 2
       }
-   ],
-   "Huntail": [
+   ,
+   "Huntail": 
       {
          "name": "Huntail",
          "Typing1": "Water",
@@ -14786,8 +14787,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Hypno": [
+   ,
+   "Hypno": 
       {
          "name": "Hypno",
          "Typing1": "Psychic",
@@ -14815,8 +14816,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Illumise": [
+   ,
+   "Illumise": 
       {
          "name": "Illumise",
          "Typing1": "Bug",
@@ -14844,8 +14845,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Volbeat": [
+   ,
+   "Volbeat": 
       {
          "name": "Volbeat",
          "Typing1": "Bug",
@@ -14873,8 +14874,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Jumpluff": [
+   ,
+   "Jumpluff": 
       {
          "name": "Jumpluff",
          "Typing1": "Grass",
@@ -14902,8 +14903,8 @@
          "hail": 0,
          "sun": 1
       }
-   ],
-   "Kecleon": [
+   ,
+   "Kecleon": 
       {
          "name": "Kecleon",
          "Typing1": "Normal",
@@ -14931,8 +14932,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Kricketune": [
+   ,
+   "Kricketune": 
       {
          "name": "Kricketune",
          "Typing1": "Bug",
@@ -14960,8 +14961,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Leavanny": [
+   ,
+   "Leavanny": 
       {
          "name": "Leavanny",
          "Typing1": "Bug",
@@ -14989,8 +14990,8 @@
          "hail": 0,
          "sun": 4
       }
-   ],
-   "Ledian": [
+   ,
+   "Ledian": 
       {
          "name": "Ledian",
          "Typing1": "Bug",
@@ -15018,8 +15019,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Luvdisc": [
+   ,
+   "Luvdisc": 
       {
          "name": "Luvdisc",
          "Typing1": "Water",
@@ -15047,8 +15048,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Magcargo": [
+   ,
+   "Magcargo": 
       {
          "name": "Magcargo",
          "Typing1": "Fire",
@@ -15076,8 +15077,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Masquerain": [
+   ,
+   "Masquerain": 
       {
          "name": "Masquerain",
          "Typing1": "Bug",
@@ -15105,8 +15106,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Feraligatr": [
+   ,
+   "Feraligatr": 
       {
          "name": "Feraligatr",
          "Typing1": "Water",
@@ -15134,8 +15135,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Typhlosion": [
+   ,
+   "Typhlosion": 
       {
          "name": "Typhlosion",
          "Typing1": "Fire",
@@ -15163,8 +15164,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Meganium": [
+   ,
+   "Meganium": 
       {
          "name": "Meganium",
          "Typing1": "Grass",
@@ -15192,8 +15193,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Typhlosion-Hisui": [
+   ,
+   "Typhlosion-Hisui": 
       {
          "name": "Typhlosion-Hisui",
          "Typing1": "Fire",
@@ -15221,8 +15222,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Lumineon": [
+   ,
+   "Lumineon": 
       {
          "name": "Lumineon",
          "Typing1": "Water",
@@ -15250,8 +15251,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Mightyena": [
+   ,
+   "Mightyena": 
       {
          "name": "Mightyena",
          "Typing1": "Dark",
@@ -15279,8 +15280,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Misdreavus": [
+   ,
+   "Misdreavus": 
       {
          "name": "Misdreavus",
          "Typing1": "Ghost",
@@ -15308,8 +15309,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Monferno": [
+   ,
+   "Monferno": 
       {
          "name": "Monferno",
          "Typing1": "Fire",
@@ -15337,8 +15338,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Mothim": [
+   ,
+   "Mothim": 
       {
          "name": "Mothim",
          "Typing1": "Bug",
@@ -15366,8 +15367,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Murkrow": [
+   ,
+   "Murkrow": 
       {
          "name": "Murkrow",
          "Typing1": "Dark",
@@ -15395,8 +15396,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Pachirisu": [
+   ,
+   "Pachirisu": 
       {
          "name": "Pachirisu",
          "Typing1": "Electric",
@@ -15424,8 +15425,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Parasect": [
+   ,
+   "Parasect": 
       {
          "name": "Parasect",
          "Typing1": "Grass",
@@ -15453,8 +15454,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Phione": [
+   ,
+   "Phione": 
       {
          "name": "Phione",
          "Typing1": "Water",
@@ -15482,8 +15483,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Pidgeot": [
+   ,
+   "Pidgeot": 
       {
          "name": "Pidgeot",
          "Typing1": "Flying",
@@ -15511,8 +15512,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Primeape": [
+   ,
+   "Primeape": 
       {
          "name": "Primeape",
          "Typing1": "Fighting",
@@ -15540,8 +15541,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Probopass": [
+   ,
+   "Probopass": 
       {
          "name": "Probopass",
          "Typing1": "Rock",
@@ -15569,8 +15570,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Purugly": [
+   ,
+   "Purugly": 
       {
          "name": "Purugly",
          "Typing1": "Normal",
@@ -15598,8 +15599,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Pyroar": [
+   ,
+   "Pyroar": 
       {
          "name": "Pyroar",
          "Typing1": "Normal",
@@ -15627,8 +15628,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Quilladin": [
+   ,
+   "Quilladin": 
       {
          "name": "Quilladin",
          "Typing1": "Grass",
@@ -15656,8 +15657,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Bastiodon": [
+   ,
+   "Bastiodon": 
       {
          "name": "Bastiodon",
          "Typing1": "Rock",
@@ -15685,8 +15686,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Rampardos": [
+   ,
+   "Rampardos": 
       {
          "name": "Rampardos",
          "Typing1": "Rock",
@@ -15714,8 +15715,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Raticate": [
+   ,
+   "Raticate": 
       {
          "name": "Raticate",
          "Typing1": "Normal",
@@ -15743,8 +15744,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Raticate-Alola": [
+   ,
+   "Raticate-Alola": 
       {
          "name": "Raticate-Alola",
          "Typing1": "Normal",
@@ -15772,8 +15773,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Sawsbuck": [
+   ,
+   "Sawsbuck": 
       {
          "name": "Sawsbuck",
          "Typing1": "Normal",
@@ -15801,8 +15802,8 @@
          "hail": 0,
          "sun": 2
       }
-   ],
-   "Seviper": [
+   ,
+   "Seviper": 
       {
          "name": "Seviper",
          "Typing1": "Poison",
@@ -15830,8 +15831,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Simipour": [
+   ,
+   "Simipour": 
       {
          "name": "Simipour",
          "Typing1": "Water",
@@ -15859,8 +15860,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Simisage": [
+   ,
+   "Simisage": 
       {
          "name": "Simisage",
          "Typing1": "Grass",
@@ -15888,8 +15889,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Simisear": [
+   ,
+   "Simisear": 
       {
          "name": "Simisear",
          "Typing1": "Fire",
@@ -15917,8 +15918,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Slaking": [
+   ,
+   "Slaking": 
       {
          "name": "Slaking",
          "Typing1": "Normal",
@@ -15946,8 +15947,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Stantler": [
+   ,
+   "Stantler": 
       {
          "name": "Stantler",
          "Typing1": "Normal",
@@ -15975,8 +15976,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Sunflora": [
+   ,
+   "Sunflora": 
       {
          "name": "Sunflora",
          "Typing1": "Grass",
@@ -16004,8 +16005,8 @@
          "hail": 0,
          "sun": 4
       }
-   ],
-   "Swalot": [
+   ,
+   "Swalot": 
       {
          "name": "Swalot",
          "Typing1": "Poison",
@@ -16033,8 +16034,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Swanna": [
+   ,
+   "Swanna": 
       {
          "name": "Swana",
          "Typing1": "Water",
@@ -16062,8 +16063,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Torterra": [
+   ,
+   "Torterra": 
       {
          "name": "Torterra",
          "Typing1": "Grass",
@@ -16091,8 +16092,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Toucannon": [
+   ,
+   "Toucannon": 
       {
          "name": "Toucannon",
          "Typing1": "Normal",
@@ -16120,8 +16121,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Tropius": [
+   ,
+   "Tropius": 
       {
          "name": "Tropius",
          "Typing1": "Grass",
@@ -16149,8 +16150,8 @@
          "hail": 0,
          "sun": 3
       }
-   ],
-   "Ursaring": [
+   ,
+   "Ursaring": 
       {
          "name": "Ursaring",
          "Typing1": "Normal",
@@ -16178,8 +16179,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Victreebel": [
+   ,
+   "Victreebel": 
       {
          "name": "Victreebel",
          "Typing1": "Grass",
@@ -16207,8 +16208,8 @@
          "hail": 0,
          "sun": 4
       }
-   ],
-   "Vigoroth": [
+   ,
+   "Vigoroth": 
       {
          "name": "Vigoroth",
          "Typing1": "Normal",
@@ -16236,8 +16237,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Vivillon": [
+   ,
+   "Vivillon": 
       {
          "name": "Vivillon",
          "Typing1": "Bug",
@@ -16265,8 +16266,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Watchog": [
+   ,
+   "Watchog": 
       {
          "name": "Watchog",
          "Typing1": "Normal",
@@ -16294,8 +16295,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Wormadam": [
+   ,
+   "Wormadam": 
       {
          "name": "Wormadam",
          "Typing1": "Bug",
@@ -16323,8 +16324,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Wormadam-Sandy": [
+   ,
+   "Wormadam-Sandy": 
       {
          "name": "Wormadam-Sandy",
          "Typing1": "Bug",
@@ -16352,8 +16353,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Wormadam-Trash": [
+   ,
+   "Wormadam-Trash": 
       {
          "name": "Wormadam-Trash",
          "Typing1": "Bug",
@@ -16381,8 +16382,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Wyrdeer": [
+   ,
+   "Wyrdeer": 
       {
          "name": "Wyrdeer",
          "Typing1": "Normal",
@@ -16410,8 +16411,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Zangoose": [
+   ,
+   "Zangoose": 
       {
          "name": "Zangoose",
          "Typing1": "Normal",
@@ -16439,8 +16440,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Zebstrika": [
+   ,
+   "Zebstrika": 
       {
          "name": "Zebstrika",
          "Typing1": "Electric",
@@ -16468,8 +16469,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Zorua-Hisui": [
+   ,
+   "Zorua-Hisui": 
       {
          "name": "Zorua-Hisui",
          "Typing1": "Normal",
@@ -16497,8 +16498,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Morgrem": [
+   ,
+   "Morgrem": 
       {
          "name": "Morgrem",
          "Typing1": "Fairy",
@@ -16526,8 +16527,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Swellow": [
+   ,
+   "Swellow": 
       {
          "name": "Swellow",
          "Typing1": "Normal",
@@ -16555,8 +16556,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Furret": [
+   ,
+   "Furret": 
       {
          "name": "Furret",
          "Typing1": "Normal",
@@ -16584,8 +16585,8 @@
          "hail": 0,
          "sun": 0
       }
-   ],
-   "Gligar": [
+   ,
+   "Gligar": 
       {
          "name": "Gligar",
          "Typing1": "Ground",
@@ -16613,5 +16614,34 @@
          "hail": 0,
          "sun": 0
       }
-   ]
+   ,
+   "Urshifu": 
+      {
+         "name": "Urshifu",
+         "Typing1": "Dark",
+         "Typing 2": "Fighting",
+         "physicalbulkyattacker": 4,
+         "specialbulkyattacker": 0,
+         "physicalwall": 0,
+         "physicalsetup": 3,
+         "priority": 3,
+         "specialsweeper": 0,
+         "specialsetup": 0,
+         "status": 0,
+         "itemremover": 0,
+         "scarf": 0,
+         "entryhazards": 0,
+         "pivot": 2,
+         "cleric": 0,
+         "specialwall": 0,
+         "hazardremoval": 0,
+         "physicalsweeper": 0,
+         "sand": 0,
+         "speedcontrol": 0,
+         "screens": 0,
+         "rain": 0,
+         "hail": 0,
+         "sun": 0
+      }
+   
 }
