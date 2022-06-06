@@ -671,7 +671,7 @@ exports.commands = {
 		arg=toId(arg);
 		//const str = 'abc efg';
 		const arg2 = arg.charAt(0).toUpperCase() + arg.slice(1);
-		var draftmons=global.todraftmons[toId(room)];
+		var draftmons=global.todraftmons[toId(global.draftroom)];
 		console.log(arg2);
 		if(toId(by)==toId(room)){
 			return  this.send(global.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"],"rgb(255, 204, 204)")+ "</div>");
