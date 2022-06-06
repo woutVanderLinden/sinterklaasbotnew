@@ -2779,9 +2779,10 @@ function weaknessTable(name)
 	var i=0;
 	var toreturn = {"Grass":0,"Fire":0,"Water":0,"Ice":0,"Bug":0,"Normal":0,"Flying":0,"Poison":0,"Psychic":0,"Ghost":0,"Fighting":0,"Rock":0,"Ground":0,"Electric":0,"Dragon":0,"Fairy":0,"Dark":0,"Steel":0};
 	while(i<monschosen.length) {
-		var weaknessForMon = weaknessForPokemon(monschosen[i], global);
+		var weaknessForMon = weaknessForPokemon(monschosen[i]);
 		var j=0;
 		while(j<postypings.length) {
+			console.log(postypings[i] + "sum" +toreturn[postypings[i]]+ " "+ weaknessForMon[postypings[i);
 			toreturn[postypings[i]] = toreturn[postypings[i]]+ weaknessForMon[postypings[i]];
 			j++;
 		}
@@ -2799,8 +2800,9 @@ function weaknessForPokemon(monname)
 	console.log(global.weaknesssheet["Grass"]["Grass"]);
 	while(i<postypings.length) {
 		var weaknessToType = 0;
-
-		 weaknessToType = global.weaknesssheet[postypings[i]][global.mondata[monname]["Typing 1"]];
+		console.log(postypings[i]);
+		console.log(global.mondata[monname]["Typing 1"]);
+		 weaknessToType += global.weaknesssheet[postypings[i]][global.mondata[monname]["Typing 1"]];
 		 if(!global.mondata[monname]["Typing 2"]===""){
 			 weaknessToType += global.weaknesssheet[postypings[i]][global.mondata[monname]["Typing 2"]];
 		 }
