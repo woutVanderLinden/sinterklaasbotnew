@@ -2137,7 +2137,7 @@ function draftmonsprint3(arg){
 		//arg=arg.sort();
 	 	var result="suggestions:";
 	 	if(toId(by)!=toId(room)){
-			result='!htmlbox "<div  style=\'color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;\'>";';
+			result='!htmlbox "<div  style=\'color: black; border: 2px solid red; background-color: rgb(204, 255, 204); padding: 4px;\'>";';
 		}
 
 		for (var i = 0; i < nrshown; i++) {
@@ -2153,7 +2153,7 @@ function draftmonsprint3(arg){
 					
 			}
 			else{
-				var word='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +'">';
+				var word='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color: rgb(204, 255, 204) ">';
 				word=word+'<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>';
 				word=word+'</button>';
 				result=result+word;
