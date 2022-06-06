@@ -1762,18 +1762,21 @@ exports.commands = {
 							t=t+20;
 						} else{
 							if(table2[currentType]>0){
+								console.log("count" +currentType +" "+  t);
 								t=t+10;
 							}
 						}
 					}
 					else{
+						if(weaktable[currentType]>0){
+							if(table2[currentType]==2){
+								t=t-5;
+							}
+							if(table2[currentType]>0){
+								t=t-3;
+							}
+						}
 
-						if(table2[currentType]==2 && weaktable[currentType]>0){
-							t=t-5;
-						}
-						if(table2[currentType]>0 && weaktable[currentType]>0){
-							t=t-3;
-						}
 					}
 					typePointer++;
 				}
