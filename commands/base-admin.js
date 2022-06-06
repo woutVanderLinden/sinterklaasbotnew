@@ -1404,7 +1404,7 @@ exports.commands = {
 			picksleft = draftmons["freepicks"]-global.picknr[toId(global.draftroom)];
 			saveTeamsToCloud();
 			if(pointdrafting){
-				var list=quotes["pokemon"][toId(username)]["draftedmons"];
+				var list=global.users[username]["draftedmons"];
 				this.send(global.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["tieredpicks"]+" ) picks left: " + picksleft);
 				var word = '!htmlbox  <div><h1>' + username + '<div>'+ draftmonsprint2(list) +'</div></h1><h2>tierhelper</h2> ';
 				word=word+"<div>";
@@ -1427,7 +1427,7 @@ exports.commands = {
 				this.send(global.draftroom, word);
 			}
 			else{
-				var list=quotes["pokemon"][toId(username)]["draftedmons"];
+				var list=global.users[username]["draftedmons"];
 				var word = '!htmlbox  <div><h1>' + username +'<div>'+ draftmonsprint2(list) +'</div></h1><h2>tierhelper <div> Erekredieten: '+global.users[username]["erekredieten"]+' tieredpicks: '+global.users[username]["tieredpicks"]+'</div></h2> ';
 				var index=1;
 				word=word+"<div>";
