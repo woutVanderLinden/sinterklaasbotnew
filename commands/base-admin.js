@@ -1339,6 +1339,7 @@ exports.commands = {
 *///pick a new six mons to draft
 
 			var username=list[global.nextdrafter];
+			picksleft = draftmons["freepicks"]-global.picknr[toId(global.draftroom)]
 			if(pointdrafting){
 				return this.send(global.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["tieredpicks"]+" ) picks left: " + picksleft);
 			}
