@@ -1571,7 +1571,7 @@ exports.commands = {
 			var j =0;
 			word= word+"<tr>";
 			while(j<3){
-				word= word+"<td>"+postypings[i*3+j] + weaktable[postypings[i*3+j]] + +"</td>";
+				word= word+"<td>"+postypings[i*3+j]+ ": " + weaktable[postypings[i*3+j]] + +"</td>";
 				j++
 			}
 			word= word+"</tr>";
@@ -2796,11 +2796,12 @@ function weaknessForPokemon(pokemon)
 	var toreturn = {"Grass":0,"Fire":0,"Water":0,"Ice":0,"Bug":0,"Normal":0,"Flying":0,"Poison":0,"Psychic":0,"Ghost":0,"Fighting":0,"Rock":0,"Ground":0,"Electric":0,"Dragon":0,"Fairy":0,"Dark":0,"Steel":0};
 	while(i<postypings.length) {
 		var weaknessToType = 0;
+
 		 weaknessToType = global.weaknesssheet[postypings[i]][global.mondata[monname]["Typing 1"]];
 		 if(!global.mondata[monname]["Typing 2"].equals("")){
 			 weaknessToType += global.weaknesssheet[postypings[i]][global.mondata[monname]["Typing 2"]];
 		 }
-
+		console.log(weaknessToType);
 		 toreturn[postypings[i]]= weaknessToType;
 		 i++;
 	}
