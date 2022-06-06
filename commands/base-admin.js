@@ -1430,6 +1430,16 @@ exports.commands = {
 			x++;
 		}
 		var g =1;
+		var draftmons=[];
+		var best={};
+		var listsix=[];
+		var i=1;
+		if(toId(by)==toId(room)){
+			draftmons=global.todraftmons[Object.keys(global.todraftmons)[0]];
+		}
+		else{
+			draftmons=global.todraftmons[toId(room)];
+		}
 		while(g<=draftmons["length"]) {
 			console.log("g" + g);
 			var possiblepic = [];
@@ -1511,19 +1521,10 @@ exports.commands = {
 					else{
 						best[t]["credits"]=draftmons["tierlist"]["Tier"+g]["points"];
 					}
-					if(filtered){
-						if(listsix.length>draftsshown){
-							delete best[listsix[draftsshown]];
-							listsix.pop();
-						}
+					if(listsix.length>draftsshown){
+						delete best[listsix[draftsshown]];
+						listsix.pop();
 					}
-					else{
-						if(listsix.length>draftsshown+3){
-							delete best[listsix[draftsshown+3]];
-							listsix.pop();
-						}
-					}
-
 				}
 				j++;
 			}
@@ -1544,7 +1545,7 @@ exports.commands = {
 			y++;
 		}
 		//thislistsix
-		return  this.reply(toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprint5(newlistsix,"rgb(255, 204, 204)")+ "</div>");
+		return  this.reply("!htmlbox <div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprint5(newlistsix,"rgb(255, 204, 204)")+ "</div>");
 
 		//this.reply(draftmonsprint4(newlistsix,draftsshown,by,room));
 		//global.users[name]["erekredieten"]
