@@ -755,6 +755,7 @@ exports.commands = {
 			index++;
 		}
 		word=word+"</div>";
+		console.log(word);
 		this.send(global.draftroom, word);
 		return this.reply(' the next drafter is '+list[0]);
 	},
