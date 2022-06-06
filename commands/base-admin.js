@@ -1760,7 +1760,7 @@ exports.commands = {
 							t=t+20;
 						} else{
 							if(table2[currentType]>0){
-								console.log("count" +currentType +" "+  t);
+
 								t=t+10;
 							}
 						}
@@ -1778,6 +1778,7 @@ exports.commands = {
 					}
 					typePointer++;
 				}
+				console.log("scorehere:" +currentType +" "+  t);
 				if(typings.includes(global.mondata[monname]["Typing1"])){
 					if(global.mondata[monname]["Typing 2"]!=undefined){
 						
