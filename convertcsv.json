@@ -579,6 +579,35 @@
          "sun": 0
       }
    ,
+   "Oricorio":
+   {
+      "name": "Oricorio",
+      "Typing1": "Flying",
+      "Typing 2": "Fire",
+      "physicalbulkyattacker": 0,
+      "specialbulkyattacker": 0,
+      "physicalwall": 0,
+      "physicalsetup": 1,
+      "priority": 0,
+      "specialsweeper": 3,
+      "specialsetup": 0,
+      "status": 0,
+      "itemremover": 0,
+      "scarf": 1,
+      "entryhazards": 0,
+      "pivot": 0,
+      "cleric": 0,
+      "specialwall": 0,
+      "hazardremoval": 1,
+      "physicalsweeper": 0,
+      "sand": 0,
+      "speedcontrol": 0,
+      "screens": 0,
+      "rain": 0,
+      "hail": 0,
+      "sun": 0
+   }
+,
    "Kommo-o": 
       {
          "name": "Kommo-o",
