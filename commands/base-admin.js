@@ -2788,7 +2788,7 @@ function weaknessTable(name)
 	}
 	return toreturn;
 };
-function weaknessForPokemon(pokemon)
+function weaknessForPokemon(monname)
 {
 	var postypings=["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
 	var i=0;
