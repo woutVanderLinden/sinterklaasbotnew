@@ -752,6 +752,7 @@ exports.commands = {
 		var index=1;
 		while (index<6){
 			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier'+ index +'" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
+			index++;
 		}
 		word=word+"</div>";
 		this.send(global.draftroom, word);
@@ -1407,6 +1408,7 @@ exports.commands = {
 				var index=1;
 				while (index<6){
 					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier'+ index +'" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
+					index++;
 				}
 				word=word+"</div>";
 				this.send(global.draftroom, word);
@@ -1416,6 +1418,7 @@ exports.commands = {
 				var index=1;
 				while (index<6){
 					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier'+ index +'" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
+					index++;
 				}
 				word=word+"</div>";
 				this.send(global.draftroom, word);
