@@ -1108,6 +1108,9 @@ exports.commands = {
 						if(args[i]=="g"){
 							args[i]="galar";
 						}
+						if(args[i]=="h"){
+							args[i]="hisui";
+						}
 						if(args[i]=="o"){
 							args[i]="o";
 						}
