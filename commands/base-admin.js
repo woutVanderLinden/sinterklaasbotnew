@@ -1770,6 +1770,7 @@ exports.commands = {
 							t=t-5;
 						}
 					}
+					typePointer++;
 				}
 				if(typings.includes(global.mondata[monname]["Typing1"])){
 					if(global.mondata[monname]["Typing 2"]!=undefined){
