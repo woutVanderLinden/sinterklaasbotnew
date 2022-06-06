@@ -407,7 +407,7 @@ exports.commands = {
 				global.users[toId(arg)]=newuser;
 				global.turnorder.push(toId(arg));
 				console.log(global.users[toId(room)]);
-				return this.send(global.draftroom,toId(by)+ " joined the draft")
+				return this.send(global.draftroom,toId(arg)+ " joined the draft")
 			}
 			
 			//global.users[toId(room)].push(arg);
@@ -793,7 +793,7 @@ exports.commands = {
 			}
 			arg=arg.substring(1,arg.length);
 			console.log(arg);
-		var list=global.turnorder[toId(room)];
+		var list=global.turnorder;
         if(giftdrafting){
 
             var index= global.turnorder.indexOf(name);
