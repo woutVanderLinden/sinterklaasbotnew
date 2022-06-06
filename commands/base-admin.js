@@ -683,6 +683,9 @@ exports.commands = {
 		console.log(global.todraftmons);
 		let rawdata2 = fs.readFileSync('draftedmons.json');
 		let student2 = JSON.parse(rawdata2);
+
+		//let rawdata3 = fs.readFileSync('convertcsv.json');
+		//global.mondata = JSON.parse(rawdata3);
 		//global.draftedmons=quotes;
 		//if(global.draftedmons={});
 		//}
@@ -1648,13 +1651,13 @@ exports.commands = {
 	var i=0;
 	while(i<monschosen.length){
 		var currentmon=monschosen[i];
-		if(!typings.includes(mondata[currentmon]["Typing1"])){
-			typings.push(mondata[currentmon]["Typing1"]);
+		if(!typings.includes(global.mondata[currentmon]["Typing1"])){
+			typings.push(global.mondata[currentmon]["Typing1"]);
 		}
-		if(mondata[currentmon]["Typing 2"]!=undefined){
+		if(global.mondata[currentmon]["Typing 2"]!=undefined){
 			
-			if(!typings.includes(mondata[currentmon]["Typing 2"])){
-				typings.push(mondata[currentmon]["Typing 2"]);
+			if(!typings.includes(global.mondata[currentmon]["Typing 2"])){
+				typings.push(global.mondata[currentmon]["Typing 2"]);
 			}
 		}
 		totalhazards=totalhazards+(currentmon["entryhazards"]||0);

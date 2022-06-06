@@ -74,7 +74,7 @@ try {
 	global.fs = require('fs');
 	global.path = require('path');
 	global.PSClient = require('./showdown-client.js');
-	let rawdata = fs.readFileSync('resulttable.json');
+	let rawdata = fs.readFileSync('convertcsv.json');
 	let student = JSON.parse(rawdata);
 	global.mondata=student;
 } catch (e) {
