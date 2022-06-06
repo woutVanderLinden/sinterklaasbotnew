@@ -1238,6 +1238,7 @@ exports.commands = {
 			console.log(draftmons);
 			while(i<=draftmons["length"]){
 				var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
+				var picksleft=draftmons["freepicks"]-global.picknr[toId(global.draftroom)]-1-global.users[name]["tieredpicks"].length -1;
 				if(possiblepic.includes(arg)){
 					if(global.users[name]["tieredpicks"].includes(i)){
 						draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
@@ -1249,7 +1250,7 @@ exports.commands = {
 						draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
 						var pointscost=draftmons["tierlist"]["Tier"+i]["points"];
 						var currentscore=global.users[name]["erekredieten"];
-						var picksleft=draftmons["freepicks"]-global.picknr[toId(global.draftroom)]-1-global.users[name]["tieredpicks"].length -1;
+
 						console.log("freepicks "+draftmons["freepicks"]+" picknr: "+global.picknr[toId(global.draftroom)]+" pickleft "+picksleft);
 						if(picksleft*40>currentscore-pointscost){
 							return this.reply("please make sure you have at least "+picksleft*40+ " Erekredieten left" );
@@ -1336,13 +1337,14 @@ exports.commands = {
 			}
 
 *///pick a new six mons to draft
+
 			var username=list[global.nextdrafter];
 			if(pointdrafting){
-				return this.send(global.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["tieredpicks"]+" )");
+				return this.send(global.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.users[username]["erekredieten"]+" tieredpicks:"+global.users[username]["tieredpicks"]+" ) picks left: " + picksleft);
 			}
 			else{
 
-				return this.send(global.draftroom, name +" drafted "+arg+", the next drafter is "+username);
+				return this.send(global.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " picks left: " + picksleft);
 			}
 	//var list=global.users[toId(room)];
 		 }
@@ -1685,7 +1687,7 @@ exports.commands = {
 		if(!typings.includes(global.mondata[currentmon]["Typing1"])){
 			typings.push(global.mondata[currentmon]["Typing1"]);
 		}
-		if(global.mondata[currentmon]["Typing 2"]!=undefined){
+		if(global.mondata[currentmon]["Typing 2"]!=""){
 			
 			if(!typings.includes(global.mondata[currentmon]["Typing 2"])){
 				typings.push(global.mondata[currentmon]["Typing 2"]);
