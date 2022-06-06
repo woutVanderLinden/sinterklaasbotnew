@@ -1599,7 +1599,7 @@ exports.commands = {
 		var filtertypings=[];
 		var posfilterroles=["entryhazards","hazardremoval","itemremover","pivot","cleric","pivot","scarf","physicalsweeper","specialsweeper","physicalbulkyattacker","specialbulkyattacker","physicalwall","specialwall","physicalsetup","specialsetup","status","priority","speedcontrol","sun","rain","hail","sand"];
 		var filterroles=[];
-		var userlist=global.turnorder[toId(room)];
+		var userlist=global.turnorder;
 		var x=0;
 		var name=toId(by);
 		while(x<args.length){
