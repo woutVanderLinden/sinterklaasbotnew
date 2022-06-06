@@ -1743,9 +1743,7 @@ exports.commands = {
 				}
 				possiblepic=draftmons["tierlist"]["Tier"+g]["pokemon"];
 			}
-			 
 			var j=0;
-			
 			while(j<possiblepic["length"]){
 				console.log("j"+j);
 				console.log(possiblepic["length"]);
