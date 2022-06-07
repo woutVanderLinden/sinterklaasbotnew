@@ -1501,7 +1501,7 @@ exports.commands = {
 			picksleft = draftmons["freepicks"]-global.picknr[toId(global.draftroom)];
 			saveTeamsToCloud();
 			if(pointdrafting){
-				var list=global.users[username]["draftedmons"];
+				var newlist=global.users[username]["draftedmons"];
 				var val= global.tierPicks- global.picknr[toId(global.draftroom)];
 				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.users[username]["erekredieten"]+' tieredpicks: '+global.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
 				word=word+"<div>";
@@ -1525,7 +1525,7 @@ exports.commands = {
 
 			}
 			else{
-				var list=global.users[username]["draftedmons"];
+				var newlist=global.users[username]["draftedmons"];
 				var val= global.tierPicks- global.picknr[toId(global.draftroom)];
 				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.users[username]["erekredieten"]+' tieredpicks: '+global.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
 				word=word+"<div>";
