@@ -1885,7 +1885,10 @@ exports.commands = {
 	var i=0;
 	while(i<monschosen.length){
 		var currentmon=monschosen[i];
-
+		if(!(currentmon in global.mondata)){
+			i++;
+			continue;
+		}
 		if(!typings.includes(global.mondata[currentmon]["Typing1"])){
 			typings.push(global.mondata[currentmon]["Typing1"]);
 		}
@@ -2707,6 +2710,11 @@ function calculatescore(room,monname,name){
 	var i=0;
 	while(i<monschosen.length){
 		var currentmon=monschosen[i];
+		var currentmon=monschosen[i];
+		if(!(currentmon in global.mondata)){
+			i++;
+			continue;
+		}
 		if(!typings.includes(mondata[currentmon]["Typing1"])){
 			typings.push(mondata[currentmon]["Typing1"]);
 		}
