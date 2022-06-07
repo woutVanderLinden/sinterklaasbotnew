@@ -3056,11 +3056,13 @@ function weaknessForPokemon(monname)
 	var i=0;
 	while(i<postypings.length) {
 		var weaknessToType = 0;
+		if(monbame in  global.mondata){
+			weaknessToType += global.weaknesssheet[postypings[i]][global.mondata[monname]["Typing1"]];
+			if(global.mondata[monname]["Typing 2"]!=""){
+				weaknessToType += global.weaknesssheet[postypings[i]][global.mondata[monname]["Typing 2"]];
+			}
 
-		 weaknessToType += global.weaknesssheet[postypings[i]][global.mondata[monname]["Typing1"]];
-		 if(global.mondata[monname]["Typing 2"]!=""){
-			 weaknessToType += global.weaknesssheet[postypings[i]][global.mondata[monname]["Typing 2"]];
-		 }
+		}
 
 		 toreturn[postypings[i]]= weaknessToType;
 		 i++;
