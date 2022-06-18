@@ -11716,34 +11716,35 @@
          "sun": 0
       }
    ,
-   "Shiinotic": 
-      {
-         "name": "Shiinotic",
-         "Typing1": "Grass",
-         "Typing 2": "Fairy",
-         "physicalbulkyattacker": 0,
-         "specialbulkyattacker": 2,
-         "physicalwall": 2,
-         "physicalsetup": 0,
-         "priority": 0,
-         "specialsweeper": 0,
-         "specialsetup": 0,
-         "status": 4,
-         "itemremover": 0,
-         "scarf": 0,
-         "entryhazards": 0,
-         "pivot": 0,
-         "cleric": 0,
-         "specialwall": 0,
-         "hazardremoval": 0,
-         "physicalsweeper": 0,
-         "sand": 0,
-         "speedcontrol": 0,
-         "screens": 0,
-         "rain": 0,
-         "hail": 0,
-         "sun": 0
-      },
+   "Croagunk":
+   {
+      "name": "Croagunk",
+      "Typing1": "Poison",
+      "Typing 2": "Fighting",
+      "physicalbulkyattacker": 0,
+      "specialbulkyattacker": 0,
+      "physicalwall": 0,
+      "physicalsetup": 0,
+      "priority": 0,
+      "specialsweeper": 0,
+      "specialsetup": 1,
+      "status": 0,
+      "itemremover": 0,
+      "scarf": 0,
+      "entryhazards": 0,
+      "pivot": 0,
+      "cleric": 0,
+      "specialwall": 0,
+      "hazardremoval": 0,
+      "physicalsweeper": 0,
+      "sand": 0,
+      "speedcontrol": 0,
+      "screens": 0,
+      "rain": 0,
+      "hail": 0,
+      "sun": 0
+   }
+   ,
       "Shiinotic":
       {
          "name": "Shiinotic",
