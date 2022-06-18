@@ -425,7 +425,7 @@ exports.commands = {
 		}
 		return this.reply("kicked "+arg );
 	},
-	joindraft: async function (arg, by, room, cmd){
+	joindraft:  function (arg, by, room, cmd){
 
 		console.log(global.users);
 		var bool = JSON.stringify(global.users) === "{}";
