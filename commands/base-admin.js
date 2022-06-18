@@ -425,7 +425,7 @@ exports.commands = {
 		}
 		return this.reply("kicked "+arg );
 	},
-	joindraft:  function (arg, by, room, cmd){
+	joindraft: async function (arg, by, room, cmd){
 
 		console.log(global.users);
 		var bool = JSON.stringify(global.users) === "{}";
@@ -473,9 +473,7 @@ exports.commands = {
 
 		global.maxtier=student["length"];
 		console.log(global.users[toId(global.draftroom)]);
-		if(global.turnorder==undefined){
-			global.turnorder=[];
-		}
+
 		if(global.turnorder.includes(toId(by))){
 			return this.send(global.draftroom,toId(by)+ " already joined the draft")
 		}
@@ -1599,6 +1597,9 @@ exports.commands = {
 	createdraft:function (arg, by, room, cmd) {
 		global.draftroom= room;
 		console.log(global.draftroom);
+		if(global.turnorder==undefined){
+			global.turnorder=[];
+		}
 		this.reply("!htmlbox <p> hi </p>");
 		this.send(global.draftroom, '!htmlbox  <h1>normal draft</h1> <p>Press this button or ?joindraft to join </p> <button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?joindraft"> joindraft </button>' );
 
