@@ -493,8 +493,8 @@ exports.commands = {
 	seedraft: 'seedrafters',
 	seedrafters: function(arg, by, room, cmd){
 		console.log(global.users);
-		console.log(global.turnorder[toId(room)]);
-		var list=global.turnorder[toId(room)];
+		console.log(global.turnorder);
+		var list=global.turnorder;
 		var result='';
 		for (var i = 0; i < list.length; i++) {
 			console.log(list[i]);
