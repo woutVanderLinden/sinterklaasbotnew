@@ -305,7 +305,6 @@ exports.commands = {
 		global.draftvalues.todraftmons[toId(room)]=student;
 		
 		packdrafting=true;
-		
 		global.draftvalues.draftstarted=true;
 		 global.draftvalues.picknr[toId(global.draftvalues.draftroom)]=0;
 		global.draftvalues.nextdrafter=0;
