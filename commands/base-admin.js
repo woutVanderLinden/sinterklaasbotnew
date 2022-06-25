@@ -673,6 +673,7 @@ exports.commands = {
 		finally {
 			await client.close();
 		}
+		var username=list[global.draftvalues.nextdrafter];
 		this.send(global.draftvalues.draftroom,username + " turn");
 		if(global.draftvalues.pointdrafting){
 
