@@ -282,7 +282,7 @@ exports.commands = {
 		global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
 		global.draftvalues.currenttier[toId(room)]=global.draftvalues.maxtier;
 		//global.draftvalues.todraftmons[toId(room)]=student;
-		giftdrafting=true;
+		global.draftvalues.giftdrafting=true;
 		global.draftvalues.draftstarted=true;
 		 global.draftvalues.picknr[toId(global.draftvalues.draftroom)]=0;
 
@@ -633,7 +633,7 @@ exports.commands = {
 	},
 	draftable:'drafttable',
 	drafttable: function (arg, by, room, cmd){
-		if(giftdrafting){
+		if(global.draftvalues.giftdrafting){
 			pmlists(global.draftvalues.monslists,room, this);
 			return;
 		}
@@ -778,7 +778,7 @@ exports.commands = {
 		global.draftvalues.pointdrafting=true;
 		global.draftvalues.tierPicks = global.draftvalues.todraftmons[toId(room)]["freepicks"];
 		var list=global.draftvalues.turnorder;
-		giftdrafting=false;
+		global.draftvalues.giftdrafting=false;
 		console.log(list);
 		list=shuffle(list);
 		console.log(list);
@@ -879,7 +879,7 @@ exports.commands = {
 			arg=arg.substring(1,arg.length);
 			console.log(arg);
 		var list=global.draftvalues.turnorder;
-        if(giftdrafting){
+        if(global.draftvalues.giftdrafting){
 
             var index= global.draftvalues.turnorder.indexOf(name);
             if(global.draftvalues.drafted[index]==true){
@@ -1322,7 +1322,7 @@ exports.commands = {
 		if(!global.draftvalues.turnorder.includes(name)){
 			return this.reply("you're not in the draft " + name);
 		}
-				if(giftdrafting){
+				if(global.draftvalues.giftdrafting){
 
 					var index= global.draftvalues.turnorder.indexOf(name);
 					if(global.draftvalues.drafted[index]==true){
