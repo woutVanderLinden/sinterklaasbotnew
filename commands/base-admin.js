@@ -310,7 +310,7 @@ exports.commands = {
 		 global.draftvalues.picknr[toId(global.draftvalues.draftroom)]=0;
 		global.draftvalues.nextdrafter=0;
 		//this.reply('draft order is '+result);
-		console.log(draftstarted);
+		console.log(global.draftvalues.draftstarted);
 		console.log(global.draftvalues.todraftmons);
 		let rawdata2 = fs.readFileSync('draftedmons.json');
 		let student2 = JSON.parse(rawdata2);
@@ -794,7 +794,7 @@ exports.commands = {
 		global.draftvalues.nextdrafter=0;
 		global.draftvalues.draftstarted=true
 		this.reply('draft order is '+result);
-		console.log(draftstarted);
+		console.log(global.draftvalues.draftstarted);
 		console.log(global.draftvalues.todraftmons);
 		let rawdata2 = fs.readFileSync('draftedmons.json');
 		let student2 = JSON.parse(rawdata2);
