@@ -658,6 +658,11 @@ exports.commands = {
 
 	},
 	continuedraft:async function (arg, by, room, cmd) {
+		console.log('started reading file');
+		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+		console.log(uri);
+		console.log("test");
+
 		const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
 
 		try {
@@ -738,6 +743,8 @@ exports.commands = {
 				const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 				console.log(uri);
 				console.log("test");
+				const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+
 				await client.connect();
 				const quotes =await findOneListingByName(client,"pokemon");
 				global.users=quotes["pokemon"];
