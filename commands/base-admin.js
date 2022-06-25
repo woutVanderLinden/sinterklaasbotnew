@@ -2800,13 +2800,13 @@ function calculatescore(room,monname,name){
 			i++;
 			continue;
 		}
-		if(!typings.includes(mondata[currentmon]["Typing1"])){
+		if(!typings.includes(global.draftvalues.mondata[currentmon]["Typing1"])){
 			typings.push(mondata[currentmon]["Typing1"]);
 		}
 		if(mondata[currentmon]["Typing 2"]!=undefined){
 			
-			if(!typings.includes(mondata[currentmon]["Typing 2"])){
-				typings.push(mondata[currentmon]["Typing 2"]);
+			if(!typings.includes(global.draftvalues.mondata[currentmon]["Typing 2"])){
+				typings.push(global.draftvalues.mondata[currentmon]["Typing 2"]);
 			}
 		}
 		totalhazards=totalhazards+(currentmon["entryhazards"]||0);
