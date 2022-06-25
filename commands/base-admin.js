@@ -1315,7 +1315,7 @@ exports.commands = {
 	
 	
 	draft:  function (arg, by, room, cmd) {
-				console.log(draftstarted);
+
 				var name=toId(by);
 		if(!global.draftvalues.turnorder.includes(name)){
 			return this.reply("you're not in the draft " + name);
