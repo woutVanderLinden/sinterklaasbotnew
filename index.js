@@ -56,19 +56,19 @@ try {
 	
 	
 	require('sugar');
-	global.pointpicks=0;
-	global.todraftmons={};
-	global.draftdirectionup={};
-	global.users={};
-	global.picknr={};
-	global.turnorder=[];
-	global.possiblepicks={};
-	global.packdrafting=false;
-	global.draftstarted=false;
-	global.nextdrafter={};
-	global.draftedmons={};
-	global.currenttier={};
-	global.pointdrafting=false;
+	global.draftvalues.pointpicks=0;
+	global.draftvalues.todraftmons={};
+	global.draftvalues.draftdirectionup={};
+	global.draftvalues.users={};
+	global.draftvalues.picknr={};
+	global.draftvalues.turnorder=[];
+	global.draftvalues.possiblepicks={};
+	global.draftvalues.packdrafting=false;
+	global.draftvalues.draftstarted=false;
+	global.draftvalues.nextdrafter={};
+	global.draftvalues.draftedmons={};
+	global.draftvalues.currenttier={};
+	global.draftvalues.pointdrafting=false;
 	global.colors = require('colors');
 	global.util = require('util');
 	global.fs = require('fs');
@@ -76,11 +76,11 @@ try {
 	global.PSClient = require('./showdown-client.js');
 	let rawdata = fs.readFileSync('convertcsv.json');
 	let student = JSON.parse(rawdata);
-	global.mondata=student;
+	global.draftvalues.mondata=student;
 
 	let rawdata2 = fs.readFileSync('weaknesssheet.json');
 	let student2 = JSON.parse(rawdata2);
-	global.weaknesssheet=student2;
+	global.draftvalues.weaknesssheet=student2;
 } catch (e) {
 	console.log(e.stack);
 	console.log("ERROR: missing dependencies, try 'npm install'");
