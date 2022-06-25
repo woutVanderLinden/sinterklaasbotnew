@@ -672,7 +672,7 @@ exports.commands = {
 			global= quotes["cache"];
 		}
 		finally {
-			awaitclient.close();
+			await client.close();
 		}
 		this.send(global.draftroom,username + " turn");
 		if(pointdrafting){
