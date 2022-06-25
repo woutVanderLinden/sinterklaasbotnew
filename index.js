@@ -56,6 +56,7 @@ try {
 	
 	
 	require('sugar');
+	global.draftvalues = {};
 	global.draftvalues.pointpicks=0;
 	global.draftvalues.todraftmons={};
 	global.draftvalues.draftdirectionup={};
