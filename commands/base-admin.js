@@ -425,35 +425,10 @@ exports.commands = {
 		}
 		return this.reply("kicked "+arg );
 	},
-	joindraft: async function (arg, by, room, cmd){
+	joindraft:  function (arg, by, room, cmd){
 
 		console.log(global.users);
-		var bool = JSON.stringify(global.users) === "{}";
-		if (bool){
-					/*first load in the draft file list*/
-		//lets try that now
-			console.log('started reading file');
-			const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
-			console.log(uri);
-			console.log("test");
 
-			const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
-
-			try {
-
-				await client.connect();
-				const quotes =await findOneListingByName(client,"pokemon");
-				global.users=quotes["pokemon"];
-
-
-				//return this.reply(draftmonsprint2(list));
-			} catch (e) {
-				console.error(e);
-			}	
-			finally{
-				await client.close();
-			}
-		}
 	
 		if(global.draftstarted==true){
 			return this.send(global.draftroom,"draft already started");
@@ -682,12 +657,104 @@ exports.commands = {
 		
 
 	},
-	startdraft: function (arg, by, room, cmd){
-		
+	continuedraft:async function (arg, by, room, cmd) {
+		const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+
+		try {
+			await client.connect();
+			let quotes = await findOneListingByName(client,"pokemon")
+			console.log(quotes);
+			global= quotes["cache"];
+		}
+		finally {
+			awaitclient.close();
+		}
+		this.send(global.draftroom,username + " turn");
+		if(pointdrafting){
+
+			var newlist=global.users[username]["draftedmons"];
+			var val= global.tierPicks- global.picknr[toId(global.draftroom)];
+			var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.users[username]["erekredieten"]+' tieredpicks: '+global.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
+			word=word+"<div>";
+			while (index<6){
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier'+ index +'" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
+				index++;
+			}
+			word=word+"</div>";
+			word=word+"<div>";
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
+
+			var index2=1;
+			while (index2<6){
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier'+ index2 +'" style="background-color: rgb(204, 204, 255)">recommend Tier'+index2+"</button>";
+				index2++;
+			}
+			word=word+"</div>";
+			word=word+"</div>";
+			console.log(word);
+			this.send(global.draftroom, word);
+
+		}
+		else{
+			var newlist=global.users[username]["draftedmons"];
+			var val= global.tierPicks- global.picknr[toId(global.draftroom)];
+			var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.users[username]["erekredieten"]+' tieredpicks: '+global.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
+			word=word+"<div>";
+			while (index<6){
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier'+ index +'" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
+				index++;
+			}
+			word=word+"</div>";
+			word=word+"<div>";
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
+
+			var index2=1;
+			while (index2<6){
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier'+ index2 +'" style="background-color: rgb(204, 204, 255)">recommend Tier'+index2+"</button>";
+				index2++;
+			}
+			word=word+"</div>";
+			word=word+"</div>";
+			console.log(word);
+			this.send(global.draftroom, word);
+			return this.send(global.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " picks left: " + picksleft);
+		}
+		},
+
+	startdraft: async function (arg, by, room, cmd){
+
 		if (!this.isRanked('admin')) return false;
 		if(global.draftstarted==true){
 			return this.reply("draft already started");
 		}
+
+		var bool = JSON.stringify(global.users) === "{}";
+		if (bool){
+			/*first load in the draft file list*/
+			//lets try that now
+
+			try {
+				console.log('started reading file');
+				const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+				console.log(uri);
+				console.log("test");
+				await client.connect();
+				const quotes =await findOneListingByName(client,"pokemon");
+				global.users=quotes["pokemon"];
+
+
+				//return this.reply(draftmonsprint2(list));
+			} catch (e) {
+				console.error(e);
+			}
+			finally{
+				await client.close();
+			}
+			const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+
+
+		}
+
 		
 	/*
 		let rawdata = fs.readFileSync('DraftTest.json');
@@ -705,7 +772,7 @@ exports.commands = {
 		var list=global.turnorder;
 		giftdrafting=false;
 		console.log(list);
-		//list=shuffle(list);
+		list=shuffle(list);
 		console.log(list);
 		var result='';
 		for (var i = 0; i < list.length; i++) {
@@ -1498,7 +1565,9 @@ exports.commands = {
 			var username=list[global.nextdrafter];
 			picksleft = draftmons["freepicks"]-global.picknr[toId(global.draftroom)];
 			saveTeamsToCloud();
+			this.send(global.draftroom,username + " turn");
 			if(pointdrafting){
+
 				var newlist=global.users[username]["draftedmons"];
 				var val= global.tierPicks- global.picknr[toId(global.draftroom)];
 				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.users[username]["erekredieten"]+' tieredpicks: '+global.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
@@ -1582,9 +1651,15 @@ exports.commands = {
 	makegroupchat: function (arg, by, room, cmd) {
 		if (!this.isRanked('admin')) return false;
 		this.reply('groupchat made');
-		this.reply('/invite kingbaruk,'+'groupchat-sinterklaas-'+arg);
+		this.send('/invite kingbaruk,'+'groupchat-sinterklaas-'+arg);
 		return this.reply('/makegroupchat '+arg);
 	
+	},
+	invite: function (arg, by, room, cmd) {
+		if (!this.isRanked('admin')) return false;
+		this.reply('invite made');
+		return this.send('/invite '+ arg);
+
 	},
 	creategiftdraft:function (arg, by, room, cmd) {
 		global.draftroom= room;
@@ -2513,6 +2588,7 @@ async  function saveTeamsToCloud(){
 		let quotes = await findOneListingByName(client,"pokemon")
 		console.log(quotes);
 		quotes["pokemon"]=global.users;
+		quotes["cache"]=global;
 		await updateListingByName(client,"pokemon" ,quotes);
 	
 	} catch (e) {
