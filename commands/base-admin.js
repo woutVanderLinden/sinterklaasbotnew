@@ -705,7 +705,7 @@ exports.commands = {
 		var list=global.turnorder;
 		giftdrafting=false;
 		console.log(list);
-		list=shuffle(list);
+		//list=shuffle(list);
 		console.log(list);
 		var result='';
 		for (var i = 0; i < list.length; i++) {
