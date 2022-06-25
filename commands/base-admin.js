@@ -2801,7 +2801,7 @@ function calculatescore(room,monname,name){
 			continue;
 		}
 		if(!typings.includes(global.draftvalues.mondata[currentmon]["Typing1"])){
-			typings.push(mondata[currentmon]["Typing1"]);
+			typings.push(global.draftvalues.mondata[currentmon]["Typing1"]);
 		}
 		if(mondata[currentmon]["Typing 2"]!=undefined){
 			
