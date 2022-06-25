@@ -304,7 +304,7 @@ exports.commands = {
 		global.draftvalues.currenttier[toId(room)]=0;
 		global.draftvalues.todraftmons[toId(room)]=student;
 		
-		packdrafting=true;
+		global.draftvalues.packdrafting=true;
 		global.draftvalues.draftstarted=true;
 		 global.draftvalues.picknr[toId(global.draftvalues.draftroom)]=0;
 		global.draftvalues.nextdrafter=0;
@@ -1027,7 +1027,7 @@ exports.commands = {
 		let data = JSON.stringify(global.draftvalues.draftedmons);
 		
 		fs.writeFileSync('draftedmons.json', data);
-		if(!packdrafting){
+		if(!global.draftvalues.packdrafting){
 			if(global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]){
 				global.draftvalues.nextdrafter=global.draftvalues.nextdrafter+1;
 				if(global.draftvalues.nextdrafter>=list.length){
@@ -1177,7 +1177,7 @@ exports.commands = {
 		//	draftmons["tierlist"][global.draftvalues.currenttier[toId(room)]]["pokemon"]=removeItemOnce(draftmons["tierlist"][global.draftvalues.currenttier[toId(room)]]["pokemon"],args[1]);
 		
 		
-		if(!packdrafting){
+		if(!global.draftvalues.packdrafting){
 			if(global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]){
 				global.draftvalues.nextdrafter=global.draftvalues.nextdrafter+1;
 				if(global.draftvalues.nextdrafter>=list.length){
@@ -1504,7 +1504,7 @@ exports.commands = {
 		let data = JSON.stringify(global.draftvalues.draftedmons);
 		
 		fs.writeFileSync('draftedmons.json', data);
-		if(!packdrafting){
+		if(!global.draftvalues.packdrafting){
 			if(global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]){
 				global.draftvalues.nextdrafter=global.draftvalues.nextdrafter+1;
 				if(global.draftvalues.nextdrafter>=list.length){
@@ -2664,7 +2664,7 @@ function startNewTier(room,by,elem){
 		global.draftvalues.nextdrafter=0;
 		elem.reply('draft order is '+result);
 	
-		if(packdrafting){
+		if(global.draftvalues.packdrafting){
 		console.log(global.draftvalues.todraftmons);
 		
 			var newlist=pickmultimons(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["pokemon"],6,list);
