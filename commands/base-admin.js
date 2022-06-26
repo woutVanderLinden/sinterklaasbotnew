@@ -1659,8 +1659,8 @@ exports.commands = {
 	makegroupchat: function (arg, by, room, cmd) {
 		if (!this.isRanked('admin')) return false;
 		this.reply('groupchat made');
+		this.reply('/makegroupchat '+arg);
 		this.send('/invite kingbaruk,'+'groupchat-sinterklaas-'+arg);
-		return this.reply('/makegroupchat '+arg);
 	
 	},
 	invite: function (arg, by, room, cmd) {
