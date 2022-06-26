@@ -1650,7 +1650,7 @@ exports.commands = {
 
 	},
 
-	createdraft:function (arg, by, room, cmd) {
+	createdraft:async function (arg, by, room, cmd) {
 		var bool = JSON.stringify(global.draftvalues.users) === "{}";
 		if (bool){
 			/*first load in the draft file list*/
