@@ -1675,8 +1675,6 @@ exports.commands = {
 			finally{
 				await client.close();
 			}
-
-
 		}
 		global.draftvalues.draftroom= room;
 		console.log(global.draftvalues.draftroom);
