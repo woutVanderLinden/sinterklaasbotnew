@@ -393,7 +393,7 @@ var opts = {
 function startKeepAlive() {
     setInterval(function() {
         var options = {
-            host: 'sinterklaasbot.herokuapp.com',
+            host: 'sinterklaasthebot.herokuapp.com',
             port: 80,
             path: '/'
         };
