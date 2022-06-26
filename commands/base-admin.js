@@ -446,7 +446,7 @@ exports.commands = {
 		console.log('drafter added');
 
 		global.draftvalues.maxtier=student["length"];
-		console.log(global.draftvalues.users[toId(global.draftvalues.draftroom)]);
+
 
 		if(global.draftvalues.turnorder.includes(toId(by))){
 			return this.send(global.draftvalues.draftroom,toId(by)+ " already joined the draft")
@@ -734,34 +734,7 @@ exports.commands = {
 			return this.reply("draft already started");
 		}
 
-		var bool = JSON.stringify(global.draftvalues.users) === "{}";
-		if (bool){
-			/*first load in the draft file list*/
-			//lets try that now
 
-			try {
-				console.log('started reading file');
-				const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
-				console.log(uri);
-				console.log("test");
-				const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
-
-				await client.connect();
-				const quotes =await findOneListingByName(client,"pokemon");
-				global.draftvalues.users=quotes["pokemon"];
-
-
-				//return this.reply(draftmonsprint2(list));
-			} catch (e) {
-				console.error(e);
-			}
-			finally{
-				await client.close();
-			}
-			const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
-
-
-		}
 
 		
 	/*
@@ -1678,6 +1651,34 @@ exports.commands = {
 	},
 
 	createdraft:function (arg, by, room, cmd) {
+		var bool = JSON.stringify(global.draftvalues.users) === "{}";
+		if (bool){
+			/*first load in the draft file list*/
+			//lets try that now
+
+			try {
+				console.log('started reading file');
+				const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+				console.log(uri);
+				console.log("test");
+				const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+
+				await client.connect();
+				const quotes =await findOneListingByName(client,"pokemon");
+				global.draftvalues.users=quotes["pokemon"];
+
+
+				//return this.reply(draftmonsprint2(list));
+			} catch (e) {
+				console.error(e);
+			}
+			finally{
+				await client.close();
+			}
+			const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+
+
+		}
 		global.draftvalues.draftroom= room;
 		console.log(global.draftvalues.draftroom);
 		if(global.draftvalues.turnorder==undefined){
