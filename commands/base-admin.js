@@ -1492,7 +1492,7 @@ exports.commands = {
 		var list=global.draftvalues.turnorder;
 		global.draftvalues.nextdrafter=global.draftvalues.nextdrafter++;
 		var username=list[global.draftvalues.nextdrafter];
-		var picksleft = global.draftvalues.nrofpicks - newlist.length;
+		var picksleft = global.draftvalues.nrofpicks - global.draftvalues.users[name]["draftedmons"].length;
 		if(picksleft<1){
 			global.draftvalues.turnorder.remove(name);
 			console.log("turnorder " + global.draftvalues.turnorder);
