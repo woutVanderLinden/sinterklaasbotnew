@@ -1475,7 +1475,7 @@ exports.commands = {
 			while(i<=draftmons["length"]){
 				var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
 				var creditsleft = global.draftvalues.users[name]["Points"]
-				var picksleft=draftmons["freepicks"]-global.draftvalues.picknr[toId(global.draftvalues.draftroom)]-1-global.draftvalues.users[name]["tieredpicks"].length;
+				//var picksleft=draftmons["freepicks"]-global.draftvalues.picknr[toId(global.draftvalues.draftroom)]-1-global.draftvalues.users[name]["tieredpicks"].length;
 				if(possiblepic.includes(arg)){
 
 					draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
