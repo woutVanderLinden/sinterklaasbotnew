@@ -1493,10 +1493,17 @@ exports.commands = {
 		global.draftvalues.nextdrafter=global.draftvalues.nextdrafter++;
 		var username=list[global.draftvalues.nextdrafter];
 		var picksleft = global.draftvalues.nrofpicks - global.draftvalues.users[name]["draftedmons"].length;
+		console.log("pickslef " + global.draftvalues.turnorder);
 		if(picksleft<1){
 			global.draftvalues.turnorder.remove(name);
 			console.log("turnorder " + global.draftvalues.turnorder);
 			global.draftvalues.nextdrafter--;
+			if(list.length == 0){
+				global.draftvalues.users[toId(global.draftvalues.draftroom)]=[];
+				//saveTeamsToCloud();
+				global.draftvalues.draftstarted=false;
+				return this.send(global.draftvalues.draftroom,'The draft over is good luck and have fun ');
+			}
 		}
 		if(global.draftvalues.nextdrafter > global.draftvalues.length){
 			saveTeamsToCloud();
@@ -1509,12 +1516,7 @@ exports.commands = {
 			global.draftvalues.picknr[toId(global.draftvalues.draftroom)]= global.draftvalues.picknr[toId(global.draftvalues.draftroom)]+1;
 
 
-			if(list.length == 0){
-				global.draftvalues.users[toId(global.draftvalues.draftroom)]=[];
-				//saveTeamsToCloud();
-				global.draftvalues.draftstarted=false;
-				return this.send(global.draftvalues.draftroom,'The draft over is good luck and have fun ');
-			}
+
 			console.log("picknr is"+ global.draftvalues.picknr[toId(global.draftvalues.draftroom)]);
 
 		}
