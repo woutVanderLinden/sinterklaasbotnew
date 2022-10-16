@@ -1423,10 +1423,16 @@ exports.commands = {
 		if(global.draftvalues.nextdrafter<global.draftvalues.length){
 			saveTeamsToCloud();
 			global.draftvalues.nextdrafter=0;
+			if(global.currentStartScore>0){
+				global.currentStartScore = global.currentStartScore - 10;
+			}
 			//global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
 			//console.log("order changed");
 			global.draftvalues.picknr[toId(global.draftvalues.draftroom)]= global.draftvalues.picknr[toId(global.draftvalues.draftroom)]+1;
-			if(global.draftvalues.pointdrafting&& global.draftvalues.picknr[toId(global.draftvalues.draftroom)]>=draftmons["freepicks"]){
+			if(global.draftvalues.users[name]["draftedmons"].length == draftmons["freepicks"]){
+				global.draftvalues.turnorder.remove(name)
+			}
+			if(list.length == 0){
 				global.draftvalues.users[toId(global.draftvalues.draftroom)]=[];
 				//saveTeamsToCloud();
 				global.draftvalues.draftstarted=false;
@@ -1440,8 +1446,8 @@ exports.commands = {
 		var val= global.draftvalues.tierPicks- global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
 		var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
 		word=word+"<div>";
-		while (index<6){
-			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier'+ index +'" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
+		while (index<2){
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable List of Pokemon" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
 			index++;
 		}
 		word=word+"</div>";
@@ -1449,10 +1455,7 @@ exports.commands = {
 		word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
 
 		var index2=1;
-		while (index2<6){
-			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier'+ index2 +'" style="background-color: rgb(204, 204, 255)">recommend Tier'+index2+"</button>";
-			index2++;
-		}
+
 		word=word+"</div>";
 		word=word+"</div>";
 		console.log(word);
