@@ -1492,7 +1492,12 @@ exports.commands = {
 		var list=global.draftvalues.turnorder;
 		global.draftvalues.nextdrafter=global.draftvalues.nextdrafter++;
 		var username=list[global.draftvalues.nextdrafter];
-		if(global.draftvalues.nextdrafter<global.draftvalues.length){
+		if(picksleft<1){
+			global.draftvalues.turnorder.remove(name);
+			console.log("turnorder " + global.draftvalues.turnorder);
+			global.draftvalues.nextdrafter--;
+		}
+		if(global.draftvalues.nextdrafter > global.draftvalues.length){
 			saveTeamsToCloud();
 			global.draftvalues.nextdrafter=0;
 			if(global.currentStartScore>0){
@@ -1502,11 +1507,7 @@ exports.commands = {
 			//console.log("order changed");
 			global.draftvalues.picknr[toId(global.draftvalues.draftroom)]= global.draftvalues.picknr[toId(global.draftvalues.draftroom)]+1;
 			var picksleft = global.draftvalues.nrofpicks - newlist.length;
-			if(picksleft<1){
-				global.draftvalues.turnorder.remove(name);
-				console.log("turnorder " + global.draftvalues.turnorder);
-				global.draftvalues.nextdrafter--;
-			}
+
 			if(list.length == 0){
 				global.draftvalues.users[toId(global.draftvalues.draftroom)]=[];
 				//saveTeamsToCloud();
