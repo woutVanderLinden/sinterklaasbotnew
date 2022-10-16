@@ -14,7 +14,7 @@ try {
 }
 let todraftmons={};
 let users={};
-let passedusers=[];
+let passedusers = [];
 var http = require('http'); //importing http
 var packdrafting=false;
 var pointdrafting=false;

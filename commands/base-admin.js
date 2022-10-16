@@ -1468,7 +1468,7 @@ exports.commands = {
 		if(global.auctionDrafting){
 			var index= global.draftvalues.turnorder.indexOf(name);
 
-			global.passedusers.length = 0;
+			global.passedusers = [];
 			var draftmons=global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)];
 			var i=1;
 			console.log(draftmons);
