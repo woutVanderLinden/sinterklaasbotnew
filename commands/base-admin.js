@@ -1419,6 +1419,7 @@ exports.commands = {
 		global.auctioning = false;
 
 		global.draftvalues.nextdrafter=global.draftvalues.nextdrafter++;
+		var username=list[global.draftvalues.nextdrafter];
 		if(global.draftvalues.nextdrafter<global.draftvalues.length){
 			saveTeamsToCloud();
 			global.draftvalues.nextdrafter=0;
@@ -1434,6 +1435,7 @@ exports.commands = {
 			console.log("picknr is"+ global.draftvalues.picknr[toId(global.draftvalues.draftroom)]);
 
 		}
+
 		var newlist=global.draftvalues.users[username]["draftedmons"];
 		var val= global.draftvalues.tierPicks- global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
 		var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
