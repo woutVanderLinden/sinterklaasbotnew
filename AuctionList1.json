@@ -3,13 +3,13 @@
 	"tierlist":{"Tier1":{
 	
 	
-		"picks":10,
+		"picks":3,
 		"points":100,
 		"pokemon":["Aegislash","Alakazam","Blacephalon","Blissey","Celesteela","Chansey","Clefable","Corviknight","Darmanitan-Galarzen","Dragapult","Dragonite","Landorus","Excadrill","Ferrothorn","Garchomp","Hawlucha","Heatran","Hydreigon","Jirachi","Kartana","Kommo-o","Kyurem","Landorus-Therian","Latias","Latios","Melmetal","Necrozma","Rillaboom","Salamence","Tapu Bulu","Tapu Fini","Tapu Koko","Tapu Lele","Terrakion","Tornadus-Therian","Toxapex","Tyranitar","Urshifu-Rapid-Strike","Victini","Volcarona","Zapdos","Zapdos-Galar","Zeraora"]
 		}
 },
 
-	"freepicks":10,
+	"freepicks":3,
 	"length":1,
 	"Points":1600
 	

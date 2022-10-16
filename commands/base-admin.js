@@ -1531,6 +1531,7 @@ exports.commands = {
 		word=word+"</div>";
 		console.log(word);
 		this.send(global.draftvalues.draftroom, word);
+		var picksleft = draftmons["freepicks"] - newlist.length;
 		return this.send(global.draftvalues.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " picks left: " + picksleft);
 	},
 	toggleauction:  function (arg, by, room, cmd) {
