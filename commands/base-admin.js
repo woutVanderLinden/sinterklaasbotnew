@@ -1467,10 +1467,7 @@ exports.commands = {
 		arg=arg.substring(1,arg.length);
 		if(global.auctionDrafting){
 			var index= global.draftvalues.turnorder.indexOf(name);
-			if(global.draftvalues.drafted[index]==true){
-				return this.send(global.draftvalues.draftroom, 'please, wait until everyone is finished '+ name);
-
-			}
+			
 			global.passedusers.length = 0;
 			var draftmons=global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)];
 			var i=1;
