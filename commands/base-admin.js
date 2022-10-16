@@ -1503,7 +1503,9 @@ exports.commands = {
 			global.draftvalues.picknr[toId(global.draftvalues.draftroom)]= global.draftvalues.picknr[toId(global.draftvalues.draftroom)]+1;
 			var picksleft = global.draftvalues.nrofpicks - newlist.length;
 			if(picksleft<1){
-				global.draftvalues.turnorder.remove(name)
+				global.draftvalues.turnorder.remove(name);
+				console.log("turnorder " + global.draftvalues.turnorder);
+				global.draftvalues.nextdrafter--;
 			}
 			if(list.length == 0){
 				global.draftvalues.users[toId(global.draftvalues.draftroom)]=[];
