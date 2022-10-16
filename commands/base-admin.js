@@ -1417,7 +1417,7 @@ exports.commands = {
 		global.draftvalues.users[name]["totaldraftscore"]=global.draftvalues.users[name]["totaldraftscore"]+calculatescore(room,nominatedmon,name);
 		global.draftvalues.users[name]["draftedmons"].push(nominatedmon);
 		global.auctioning = false;
-
+		var list=global.draftvalues.turnorder;
 		global.draftvalues.nextdrafter=global.draftvalues.nextdrafter++;
 		var username=list[global.draftvalues.nextdrafter];
 		if(global.draftvalues.nextdrafter<global.draftvalues.length){
