@@ -435,14 +435,6 @@ exports.commands = {
 		else{
 
 		}
-
-
-		let rawdata = fs.readFileSync('DraftTest3.json');
-		let student = JSON.parse(rawdata);
-		console.log(student);
-
-
-		global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)]=student;
 		console.log('drafter added');
 
 		global.draftvalues.maxtier=student["length"];
@@ -546,7 +538,7 @@ exports.commands = {
 	
 	try {
 		await client.connect();
-		let quotes =await findOneListingByName(client,"pokemon");
+		let quotes = await findOneListingByName(client,"pokemon");
 		var list;
 		if(arg==''){
 				var list=quotes["pokemon"][toId(by)]["draftedmons"];
@@ -730,6 +722,100 @@ exports.commands = {
 		}
 		},
 
+	startauctiondraft: async function (arg, by, room, cmd){
+
+		if (!this.isRanked('admin')) return false;
+		if(global.draftvalues.draftstarted==true){
+			return this.reply("draft already started");
+		}
+
+
+
+
+		/*
+            let rawdata = fs.readFileSync('DraftTest.json');
+            let student = JSON.parse(rawdata);
+            console.log(student);
+            global.draftvalues.currenttier[toId(room)]=1;
+            pointdrafting=true;
+            global.draftvalues.todraftmons[toId(room)]=student;
+            global.draftvalues.maxtier=student["length"];
+            °/
+         */
+		/*then load the participant list*/
+
+		global.draftvalues.tierPicks = global.draftvalues.todraftmons[toId(room)]["freepicks"];
+		var list=global.draftvalues.turnorder;
+		global.draftvalues.giftdrafting=false;
+		console.log(list);
+		list=shuffle(list);
+		console.log(list);
+		var result='';
+		for (var i = 0; i < list.length; i++) {
+			console.log(list[i]);
+			//Do something
+			result=result+","+list[i];
+		}
+		result=result.substring(1,result.length);
+		global.draftvalues.draftstarted=true;
+		global.draftvalues.picknr[toId(global.draftvalues.draftroom)] = 0;
+
+		global.draftvalues.nextdrafter=0;
+		global.draftvalues.draftstarted=true
+		this.reply('draft order is '+result);
+		console.log(global.draftvalues.draftstarted);
+		console.log(global.draftvalues.todraftmons);
+
+
+		//let rawdata3 = fs.readFileSync('convertcsv.json');
+		//global.draftvalues.mondata = JSON.parse(rawdata3);
+		//global.draftvalues.draftedmons=quotes;
+		//if(global.draftvalues.draftedmons={});
+		//}
+		var draftmons=global.draftvalues.todraftmons[toId(room)];
+		global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
+		var tiername="Tier"+global.draftvalues.currenttier[toId(room)];
+		//global.draftvalues.cur[toId(room)]
+		console.log(tiername);
+		global.draftvalues.possiblepicks=draftmons["tierlist"];
+		global.currentStartScore = draftmons["tierlist"]["Tier1"]["Points"];
+		/*
+		if(toId(by)==toId(room)){
+				this.reply(draftmonsprint(draftmons["tierlist"][tiername]["pokemon"]));
+
+			}else{
+				this.reply(draftmonsprint2(draftmons["tierlist"][tiername]["pokemon"]));
+
+			}
+
+		 */
+		this.reply("use ?draftable tier(x) to watch the corresponding tier. Or use the search or recommend function for a pick");
+		var username = list[0];
+		var newlist=global.draftvalues.users[username]["draftedmons"];
+		var val= global.draftvalues.tierPicks- global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
+		var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';
+		var index=1;
+		word=word+"<div>";
+		while (index<6){
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier'+ index +'" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
+			index++;
+		}
+		word=word+"</div>";
+		word=word+"<div>";
+		word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
+
+		var index2=1;
+		while (index2<6){
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier'+ index2 +'" style="background-color: rgb(204, 204, 255)">recommend Tier'+index2+"</button>";
+			index2++;
+		}
+		word=word+"</div>";
+		word=word+"</div>";
+		console.log(word);
+		this.send(global.draftvalues.draftroom, word);
+		return this.reply(' the next drafter is '+list[0]);
+	},
+
 	startdraft: async function (arg, by, room, cmd){
 
 		if (!this.isRanked('admin')) return false;
@@ -751,7 +837,7 @@ exports.commands = {
 		°/
 	 */
 		/*then load the participant list*/
-		global.draftvalues.pointdrafting=true;
+
 		global.draftvalues.tierPicks = global.draftvalues.todraftmons[toId(room)]["freepicks"];
 		var list=global.draftvalues.turnorder;
 		global.draftvalues.giftdrafting=false;
@@ -824,7 +910,7 @@ exports.commands = {
 	},
 	forcepick: 'forcepickmon', 
 	forcepickmon:  function (arg, by, room, cmd) {
-		if (!this.isRanked('admin')) {return false;}
+		if (!this.isRanked('admin') || global.auctionDrafting) {return false;}
 		var args = arg.split(",");
 		console.log(args);
 		if (args.length < 2){
@@ -1289,8 +1375,57 @@ exports.commands = {
 		arg=jsUcfirst(toId(arg));
 		return this.reply(arg +" score is "+calculatescore(room,arg,toId(by)));
 	},
+	pass: function (arg, by, room, cmd) {
+		if(!global.draftvalues.turnorder.includes(name)){
+			return this.reply("you're not in the draft " + name);
+		}
+		global.passedusers.push(toId(by));
+	},
+	nominatedmon:  function (arg, by, room, cmd) {
+		this.send("!dt "+ global.nominatedmon);
+		return this.reply("The current highest bid on this mon " + currentscore + " from "+ global.currentHighestBidder);
+	},
+	offer: bid,
+	bid:  function (arg, by, room, cmd) {
+		var value = parseInt(arg);
+		if(value > global.currentscore){
+			global.currentscore = value;
+			global.currentHighestBidder = toId(by);
+		}
+		this.send("!dt "+ global.nominatedmon);
+		return this.reply("The current highest bid on this mon " + currentscore + " from "+ global.currentHighestBidder);
+	},
+	offermore: bidmore,
+	bidmore:  function (arg, by, room, cmd) {
+		var value = 300;
+		if(arg ==""){
+			value = parseInt(arg);
+		}
+		if(value < global.currentscore +10){
+			value = global.currentscore+10;
+			global.currentscore = value;
+			global.currentHighestBidder = toId(by);
+		}
+		this.send("!dt "+ global.nominatedmon);
+		return this.reply("The current highest bid on this mon " + currentscore + " from "+ global.currentHighestBidder);
+	},
+	endbid:  function (arg, by, room, cmd) {
+		if (!this.isRanked('admin') || global.auctionDrafting) {return false;}
+		var name = global.currentHighestBidder
+		global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"]-currentscore;
+		this.send(global.draftvalues.draftroom, name +" paid "+currentscore+ " erekredieten for "+ arg +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")");
+		global.draftvalues.users[name]["totaldraftscore"]=global.draftvalues.users[name]["totaldraftscore"]+calculatescore(room,arg,name);
+		global.draftvalues.users[name]["draftedmons"].push(arg);
+		global.auctioning = false;
+	},
+	toggleauction:  function (arg, by, room, cmd) {
+		if (!this.isRanked('admin') || global.auctionDrafting) {return false;}
+		global.auctioning = !global.auctioning;
+		return this.reply("auctioning set to" + global.auctioning);
+	},
+
 	pickmon: 'draft',
-	
+	nominate: 'draft',
 	
 	draft:  function (arg, by, room, cmd) {
 
@@ -1298,6 +1433,73 @@ exports.commands = {
 		if(!global.draftvalues.turnorder.includes(name)){
 			return this.reply("you're not in the draft " + name);
 		}
+		if(global.auctioning){
+			return this.reply("wait till this auction is done " + name);
+		}
+		var args=arg.split("-");
+		arg='';
+		for (var i = 0; i < args.length; i++) {
+			if(args[i]=="a"){
+				args[i]="alola";
+			}
+			if(args[i]=="g"){
+				args[i]="galar";
+			}
+			if(args[i]=="h"){
+				args[i]="hisui";
+			}
+			if(args[i]=="o"){
+				args[i]="o";
+			}
+			else{
+				args[i]=jsUcfirst(args[i]);
+			}
+
+			arg=arg+'-'+args[i];
+		}
+		arg=arg.substring(1,arg.length);
+		var args2=arg.split(" ");
+		arg='';
+		for (var i = 0; i < args2.length; i++) {
+			args2[i]=jsUcfirst(args2[i]);
+			arg=arg+' '+jsUcfirst(args2[i]);
+		}
+		arg=arg.substring(1,arg.length);
+		if(global.auctionDrafting){
+			var index= global.draftvalues.turnorder.indexOf(name);
+			if(global.draftvalues.drafted[index]==true){
+				return this.send(global.draftvalues.draftroom, 'please, wait until everyone is finished '+ name);
+
+			}
+			global.passedusers.length = 0;
+			var draftmons=global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)];
+			var i=1;
+			console.log(draftmons);
+			while(i<=draftmons["length"]){
+				var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
+				var creditsleft = global.draftvalues.users[name]["Points"]
+				var picksleft=draftmons["freepicks"]-global.draftvalues.picknr[toId(global.draftvalues.draftroom)]-1-global.draftvalues.users[name]["tieredpicks"].length;
+				if(possiblepic.includes(arg)){
+
+					draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
+					this.send(global.draftvalues.draftroom, name +" nominated "+i+" "+arg+ " for "+ global.currentStartScore);
+
+					global.nominatedmon = arg;
+					global.currentscore = global.currentStartScore;
+					global.currentHighestBidder = toId(by);
+					this.send("!dt "+ global.nominatedmon);
+					i=100;
+				}
+				i++;
+			}
+			if(i!=101){
+				return this.reply(arg +' is no longer available.'+ name+' pick a different mon or check your spelling. ' );
+			}
+			return;
+
+		}
+		//let data = JSON.stringify(global.draftvalues.draftedmons);
+
 				if(global.draftvalues.giftdrafting){
 
 					var index= global.draftvalues.turnorder.indexOf(name);
@@ -1306,35 +1508,7 @@ exports.commands = {
 
 					}
 					var draftlist=global.draftvalues.monslists[index];
-					var args=arg.split("-");
-					arg='';
-					for (var i = 0; i < args.length; i++) {
-						if(args[i]=="a"){
-							args[i]="alola";
-						}
-						if(args[i]=="g"){
-							args[i]="galar";
-						}
-						if(args[i]=="h"){
-							args[i]="hisui";
-						}
-						if(args[i]=="o"){
-							args[i]="o";
-						}
-						else{
-							args[i]=jsUcfirst(args[i]);
-						}
 
-						arg=arg+'-'+args[i];
-					}
-					arg=arg.substring(1,arg.length);
-					var args2=arg.split(" ");
-					arg='';
-					for (var i = 0; i < args2.length; i++) {
-						args2[i]=jsUcfirst(args2[i]);
-						arg=arg+' '+jsUcfirst(args2[i]);
-					}
-					arg=arg.substring(1,arg.length);
 
 					if(!global.draftvalues.pointdrafting){
 						var draftmons=global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)];
@@ -1391,29 +1565,6 @@ exports.commands = {
 				return this.reply('draft did not start yet');
 	
 		}
-			var args=arg.split("-");
-			arg='';
-			for (var i = 0; i < args.length; i++) {
-					if(args[i]=="a"){
-						args[i]="alola";
-					}
-					if(args[i]=="g"){
-						args[i]="galar";
-					}
-					if(args[i]!="o") {
-						args[i] = jsUcfirst(args[i]);
-						arg = arg + '-' + jsUcfirst(args[i]);
-					}
-			}
-			arg=arg.substring(1,arg.length);
-			var args2=arg.split(" ");
-			arg='';
-			for (var i = 0; i < args2.length; i++) {
-					args2[i]=jsUcfirst(args2[i]);
-					arg=arg+' '+jsUcfirst(args2[i]);
-			}
-			arg=arg.substring(1,arg.length);
-			console.log(arg);
 			var list=global.draftvalues.turnorder;
 
 			console.log("drafter" + list[global.draftvalues.nextdrafter]);
@@ -1653,6 +1804,53 @@ exports.commands = {
 
 	},
 
+	createauctiondraft:async function (arg, by, room, cmd) {
+		global.draftvalues.draftroom= room;
+		global.auctionDrafting = true;
+		var bool = JSON.stringify(global.draftvalues.users) === "{}";
+		if (bool){
+			/*first load in the draft file list*/
+			//lets try that now
+			console.log('started reading file');
+			const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+			console.log(uri);
+			console.log("test");
+			const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+
+			try {
+
+				await client.connect();
+				const quotes =await findOneListingByName(client,"pokemon");
+				global.draftvalues.users=quotes["pokemon"];
+
+
+				//return this.reply(draftmonsprint2(list));
+			} catch (e) {
+				console.error(e);
+			}
+			finally{
+				await client.close();
+			}
+		}
+		let rawdata = fs.readFileSync('AuctionList1.json');
+		if(arg != ""){
+			let rawdata = fs.readFileSync(arg + '.json');
+		}
+
+		let student = JSON.parse(rawdata);
+		console.log(student);
+		global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)]=student;
+		global.draftvalues.draftroom= room;
+		console.log(global.draftvalues.draftroom);
+		if(global.draftvalues.turnorder==undefined){
+			global.draftvalues.turnorder=[];
+		}
+		console.log(global.draftvalues.draftroom);
+		this.reply("!htmlbox <p> hi </p>");
+		this.send(global.draftvalues.draftroom, '!htmlbox  <h1>Auctiondraft</h1> <p>Press this button or ?joindraft to join </p> <button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?joindraft"> joindraft </button>' );
+
+	},
+
 	createdraft:async function (arg, by, room, cmd) {
 		var bool = JSON.stringify(global.draftvalues.users) === "{}";
 		if (bool){
@@ -1679,6 +1877,14 @@ exports.commands = {
 				await client.close();
 			}
 		}
+		else{
+
+		}
+		let rawdata = fs.readFileSync('DraftTest3.json');
+		let student = JSON.parse(rawdata);
+		console.log(student);
+		global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)]=student;
+		global.draftvalues.pointdrafting=true;
 		global.draftvalues.draftroom= room;
 		console.log(global.draftvalues.draftroom);
 		if(global.draftvalues.turnorder==undefined){

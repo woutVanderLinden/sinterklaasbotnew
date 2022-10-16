@@ -14,10 +14,18 @@ try {
 }
 let todraftmons={};
 let users={};
+let passedusers=[];
 var http = require('http'); //importing http
 var packdrafting=false;
 var pointdrafting=false;
+var auctioning=false;
+var nominatedmon="";
 var giftdrafting=false;
+var currentStartScore=100;
+var currentscore=0;
+var currentHighestBidder="";
+var postypings=["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
+var auctiondrafting=false;
 var pointpicks=0;
 startKeepAlive();
 function draftmons(arg) {
