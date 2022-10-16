@@ -778,7 +778,7 @@ exports.commands = {
 		//global.draftvalues.cur[toId(room)]
 		console.log(tiername);
 		global.draftvalues.possiblepicks=draftmons["tierlist"];
-		global.currentStartScore = draftmons["tierlist"]["Tier1"]["Points"];
+		global.currentStartScore = draftmons["tierlist"]["Tier1"]["points"];
 		/*
 		if(toId(by)==toId(room)){
 				this.reply(draftmonsprint(draftmons["tierlist"][tiername]["pokemon"]));
@@ -1479,7 +1479,7 @@ exports.commands = {
 				if(possiblepic.includes(arg)){
 
 					draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
-					this.send(global.draftvalues.draftroom, name +" nominated "+i+" "+arg+ " for "+ global.currentStartScore);
+					this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentStartScore);
 
 					global.nominatedmon = arg;
 					global.currentscore = global.currentStartScore;
