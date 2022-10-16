@@ -1501,7 +1501,8 @@ exports.commands = {
 			//global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
 			//console.log("order changed");
 			global.draftvalues.picknr[toId(global.draftvalues.draftroom)]= global.draftvalues.picknr[toId(global.draftvalues.draftroom)]+1;
-			if(global.draftvalues.users[name]["draftedmons"].length == draftmons["freepicks"]){
+			var picksleft = global.draftvalues.nrofpicks - newlist.length;
+			if(picksleft<1){
 				global.draftvalues.turnorder.remove(name)
 			}
 			if(list.length == 0){
