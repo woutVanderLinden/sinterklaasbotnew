@@ -857,6 +857,7 @@ exports.commands = {
 			//global.draftvalues.cur[toId(room)]
 			console.log(tiername);
 			global.draftvalues.possiblepicks=draftmons["tierlist"];
+			global.draftvalues.nrofpicks=draftmons["freepicks"];
 			global.currentStartScore = draftmons["tierlist"]["Tier1"]["points"];
 			/*
             if(toId(by)==toId(room)){
@@ -1253,7 +1254,7 @@ exports.commands = {
 			else{
 
 				var newlist=global.draftvalues.users[username]["draftedmons"];
-				var val= global.draftvalues.tierPicks- global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
+				var val= global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
 				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
 				word=word+"<div>";
 				while (index<6){
@@ -1402,7 +1403,7 @@ exports.commands = {
 			}
 			else{
 				var newlist=global.draftvalues.users[username]["draftedmons"];
-				var val= global.draftvalues.tierPicks- global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
+				var val= global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
 				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
 				word=word+"<div>";
 				while (index<6){
@@ -1514,6 +1515,7 @@ exports.commands = {
 		}
 
 		var newlist=global.draftvalues.users[username]["draftedmons"];
+		var picksleft = global.draftvalues.nrofpicks - newlist.length;
 		var val= global.draftvalues.tierPicks- global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
 		var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
 		word=word+"<div>";
@@ -1531,7 +1533,7 @@ exports.commands = {
 		word=word+"</div>";
 		console.log(word);
 		this.send(global.draftvalues.draftroom, word);
-		var picksleft = draftmons["freepicks"] - newlist.length;
+
 		return this.send(global.draftvalues.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " picks left: " + picksleft);
 	},
 	toggleauction:  function (arg, by, room, cmd) {
