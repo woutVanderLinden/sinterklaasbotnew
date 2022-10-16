@@ -1492,6 +1492,7 @@ exports.commands = {
 		var list=global.draftvalues.turnorder;
 		global.draftvalues.nextdrafter=global.draftvalues.nextdrafter++;
 		var username=list[global.draftvalues.nextdrafter];
+		var picksleft = global.draftvalues.nrofpicks - newlist.length;
 		if(picksleft<1){
 			global.draftvalues.turnorder.remove(name);
 			console.log("turnorder " + global.draftvalues.turnorder);
@@ -1506,7 +1507,7 @@ exports.commands = {
 			//global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
 			//console.log("order changed");
 			global.draftvalues.picknr[toId(global.draftvalues.draftroom)]= global.draftvalues.picknr[toId(global.draftvalues.draftroom)]+1;
-			var picksleft = global.draftvalues.nrofpicks - newlist.length;
+
 
 			if(list.length == 0){
 				global.draftvalues.users[toId(global.draftvalues.draftroom)]=[];
