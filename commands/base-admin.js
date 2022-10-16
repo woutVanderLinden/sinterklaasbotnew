@@ -1385,7 +1385,7 @@ exports.commands = {
 		this.send("!dt "+ global.nominatedmon);
 		return this.reply("The current highest bid on this mon " + currentscore + " from "+ global.currentHighestBidder);
 	},
-	offer: bid,
+	offer: 'bid',
 	bid:  function (arg, by, room, cmd) {
 		var value = parseInt(arg);
 		if(value > global.currentscore){
@@ -1395,7 +1395,7 @@ exports.commands = {
 		this.send("!dt "+ global.nominatedmon);
 		return this.reply("The current highest bid on this mon " + currentscore + " from "+ global.currentHighestBidder);
 	},
-	offermore: bidmore,
+	offermore: 'bidmore',
 	bidmore:  function (arg, by, room, cmd) {
 		var value = 300;
 		if(arg ==""){
