@@ -822,7 +822,9 @@ exports.commands = {
 		if(global.draftvalues.draftstarted==true){
 			return this.reply("draft already started");
 		}
-
+		if(global.auctionDrafting){
+			return startauctiondraft(arg, by, room, cmd);
+		}
 
 
 		
