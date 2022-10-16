@@ -1382,8 +1382,8 @@ exports.commands = {
 		global.passedusers.push(toId(by));
 	},
 	nominatedmon:  function (arg, by, room, cmd) {
-		this.send("!dt "+ global.nominatedmon);
-		return this.reply("The current highest bid on this mon " + currentscore + " from "+ global.currentHighestBidder);
+		this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
+		return this.reply("The current highest bid on " + nominatedmon + " is "+ currentscore + " from "+ global.currentHighestBidder);
 	},
 	offer: 'bid',
 	bid:  function (arg, by, room, cmd) {
@@ -1392,8 +1392,8 @@ exports.commands = {
 			global.currentscore = value;
 			global.currentHighestBidder = toId(by);
 		}
-		this.send("!dt "+ global.nominatedmon);
-		return this.reply("The current highest bid on this mon " + currentscore + " from "+ global.currentHighestBidder);
+		this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
+		return this.reply("The current highest bid on " + nominatedmon + " is "+ currentscore + " from "+ global.currentHighestBidder);
 	},
 	offermore: 'bidmore',
 	bidmore:  function (arg, by, room, cmd) {
@@ -1406,8 +1406,8 @@ exports.commands = {
 			global.currentscore = value;
 			global.currentHighestBidder = toId(by);
 		}
-		this.send("!dt "+ global.nominatedmon);
-		return this.reply("The current highest bid on this mon " + currentscore + " from "+ global.currentHighestBidder);
+		this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
+		return this.reply("The current highest bid on " + nominatedmon + " is "+ currentscore + " from "+ global.currentHighestBidder);
 	},
 	endbid:  function (arg, by, room, cmd) {
 		if (!this.isRanked('admin') || global.auctionDrafting) {return false;}
@@ -1480,9 +1480,10 @@ exports.commands = {
 
 					draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
 					this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentStartScore);
-
+					this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
 					global.nominatedmon = arg;
 					global.currentscore = global.currentStartScore;
+					global.auctioning = true;
 					global.currentHighestBidder = toId(by);
 					this.send("!dt "+ global.nominatedmon);
 					i=100;
