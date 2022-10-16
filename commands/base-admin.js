@@ -437,7 +437,7 @@ exports.commands = {
 		}
 		console.log('drafter added');
 
-		global.draftvalues.maxtier=student["length"];
+		//global.draftvalues.maxtier=student["length"];
 
 
 		if(global.draftvalues.turnorder.includes(toId(by))){
