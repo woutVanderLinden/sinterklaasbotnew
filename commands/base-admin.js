@@ -823,7 +823,7 @@ exports.commands = {
 			return this.reply("draft already started");
 		}
 		if(global.auctionDrafting){
-			return startauctiondraft(arg, by, room, cmd);
+			return this.startauctiondraft(arg, by, room, cmd);
 		}
 
 
