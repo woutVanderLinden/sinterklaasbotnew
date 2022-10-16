@@ -823,7 +823,76 @@ exports.commands = {
 			return this.reply("draft already started");
 		}
 		if(global.auctionDrafting){
-			return this.startauctiondraft(arg, by, room, cmd);
+			global.draftvalues.tierPicks = global.draftvalues.todraftmons[toId(room)]["freepicks"];
+			var list=global.draftvalues.turnorder;
+			global.draftvalues.giftdrafting=false;
+			console.log(list);
+			list=shuffle(list);
+			console.log(list);
+			var result='';
+			for (var i = 0; i < list.length; i++) {
+				console.log(list[i]);
+				//Do something
+				result=result+","+list[i];
+			}
+			result=result.substring(1,result.length);
+			global.draftvalues.draftstarted=true;
+			global.draftvalues.picknr[toId(global.draftvalues.draftroom)] = 0;
+
+			global.draftvalues.nextdrafter=0;
+			global.draftvalues.draftstarted=true
+			this.reply('draft order is '+result);
+			console.log(global.draftvalues.draftstarted);
+			console.log(global.draftvalues.todraftmons);
+
+
+			//let rawdata3 = fs.readFileSync('convertcsv.json');
+			//global.draftvalues.mondata = JSON.parse(rawdata3);
+			//global.draftvalues.draftedmons=quotes;
+			//if(global.draftvalues.draftedmons={});
+			//}
+			var draftmons=global.draftvalues.todraftmons[toId(room)];
+			global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
+			var tiername="Tier"+global.draftvalues.currenttier[toId(room)];
+			//global.draftvalues.cur[toId(room)]
+			console.log(tiername);
+			global.draftvalues.possiblepicks=draftmons["tierlist"];
+			global.currentStartScore = draftmons["tierlist"]["Tier1"]["points"];
+			/*
+            if(toId(by)==toId(room)){
+                    this.reply(draftmonsprint(draftmons["tierlist"][tiername]["pokemon"]));
+
+                }else{
+                    this.reply(draftmonsprint2(draftmons["tierlist"][tiername]["pokemon"]));
+
+                }
+
+             */
+			this.reply("use ?draftable tier(x) to watch the corresponding tier. Or use the search or recommend function for a pick");
+			var username = list[0];
+			var newlist=global.draftvalues.users[username]["draftedmons"];
+			var val= global.draftvalues.tierPicks- global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
+			var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';
+			var index=1;
+			word=word+"<div>";
+			while (index<6){
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier'+ index +'" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
+				index++;
+			}
+			word=word+"</div>";
+			word=word+"<div>";
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
+
+			var index2=1;
+			while (index2<6){
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier'+ index2 +'" style="background-color: rgb(204, 204, 255)">recommend Tier'+index2+"</button>";
+				index2++;
+			}
+			word=word+"</div>";
+			word=word+"</div>";
+			console.log(word);
+			this.send(global.draftvalues.draftroom, word);
+			return this.reply(' the next drafter is '+list[0]);
 		}
 
 
