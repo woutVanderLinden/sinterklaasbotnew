@@ -1410,7 +1410,7 @@ exports.commands = {
 		return this.reply("The current highest bid on " + nominatedmon + " is "+ currentscore + " from "+ global.currentHighestBidder);
 	},
 	endbid:  function (arg, by, room, cmd) {
-		if (!this.isRanked('admin') || global.auctionDrafting) {return false;}
+		if (!this.isRanked('admin') || !global.auctionDrafting) {return false;}
 		var name = global.currentHighestBidder
 		global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"]-currentscore;
 		this.send(global.draftvalues.draftroom, name +" paid "+currentscore+ " erekredieten for "+ arg +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")");
@@ -1480,12 +1480,11 @@ exports.commands = {
 
 					draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
 					this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentStartScore);
-					this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
 					global.nominatedmon = arg;
 					global.currentscore = global.currentStartScore;
 					global.auctioning = true;
 					global.currentHighestBidder = toId(by);
-					this.send("!dt "+ global.nominatedmon);
+					this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
 					i=100;
 				}
 				i++;
