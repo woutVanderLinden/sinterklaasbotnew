@@ -1587,11 +1587,9 @@ exports.commands = {
 			//global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
 			//console.log("order changed");
 			global.draftvalues.picknr[toId(global.draftvalues.draftroom)]= global.draftvalues.picknr[toId(global.draftvalues.draftroom)]+1;
-
-
-
 			console.log("picknr is"+ global.draftvalues.picknr[toId(global.draftvalues.draftroom)]);
 		}
+		username=list[global.draftvalues.nextdrafter];
 		console.log("next drafter "+global.draftvalues.nextdrafter);
 		var newlist=global.draftvalues.users[username]["draftedmons"];
 		var picksleft = global.draftvalues.nrofpicks - newlist.length;
