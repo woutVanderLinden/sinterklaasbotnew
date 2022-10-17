@@ -1474,7 +1474,7 @@ exports.commands = {
 					return this.send(global.draftvalues.draftroom,'The draft over is good luck and have fun ');
 				}
 			}
-			if(global.draftvalues.nextdrafter > global.draftvalues.length - 1){
+			if(global.draftvalues.nextdrafter > global.draftvalues.turnorder.length - 1){
 				saveTeamsToCloud();
 				console.log("next drafter in biglist "+global.draftvalues.nextdrafter);
 				global.draftvalues.nextdrafter=0;
@@ -1578,7 +1578,7 @@ exports.commands = {
 				return this.send(global.draftvalues.draftroom,'The draft over is good luck and have fun ');
 			}
 		}
-		if(global.draftvalues.nextdrafter > global.draftvalues.length - 1){
+		if(global.draftvalues.nextdrafter > global.draftvalues.turnorder.length - 1){
 			saveTeamsToCloud();
 			console.log("next drafter in biglist "+global.draftvalues.nextdrafter);
 			global.draftvalues.nextdrafter=0;
