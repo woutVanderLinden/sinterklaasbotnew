@@ -1457,7 +1457,7 @@ exports.commands = {
 			global.draftvalues.users[name]["draftedmons"].push(nominatedmon);
 			global.auctioning = false;
 			var list=global.draftvalues.turnorder;
-			global.draftvalues.nextdrafter=global.draftvalues.nextdrafter++;
+			global.draftvalues.nextdrafter=global.draftvalues.nextdrafter+1;
 			var username=list[global.draftvalues.nextdrafter];
 			var picksleft = global.draftvalues.nrofpicks - global.draftvalues.users[name]["draftedmons"].length;
 			console.log("pickslef " + global.draftvalues.turnorder);
@@ -1472,7 +1472,7 @@ exports.commands = {
 					return this.send(global.draftvalues.draftroom,'The draft over is good luck and have fun ');
 				}
 			}
-			if(global.draftvalues.nextdrafter > global.draftvalues.length){
+			if(global.draftvalues.nextdrafter > global.draftvalues.length-1){
 				saveTeamsToCloud();
 				global.draftvalues.nextdrafter=0;
 				if(global.currentStartScore>0){
@@ -1487,7 +1487,7 @@ exports.commands = {
 				console.log("picknr is"+ global.draftvalues.picknr[toId(global.draftvalues.draftroom)]);
 
 			}
-
+			username=list[global.draftvalues.nextdrafter];
 			var newlist=global.draftvalues.users[username]["draftedmons"];
 			var picksleft = global.draftvalues.nrofpicks - newlist.length;
 			var val= global.draftvalues.tierPicks- global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
@@ -1548,6 +1548,7 @@ exports.commands = {
 	},
 	endbid:  function (arg, by, room, cmd) {
 		if (!this.isRanked('admin') || !global.auctionDrafting) {return false;}
+		console.log("nextdrafter " + global.draftvalues.nextdrafter);
 		var name = global.currentHighestBidder;
 		global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"]-currentscore;
 		this.send(global.draftvalues.draftroom, name +" paid "+currentscore+ " erekredieten for "+ nominatedmon +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")");
@@ -1571,7 +1572,7 @@ exports.commands = {
 				return this.send(global.draftvalues.draftroom,'The draft over is good luck and have fun ');
 			}
 		}
-		if(global.draftvalues.nextdrafter >= global.draftvalues.length){
+		if(global.draftvalues.nextdrafter > global.draftvalues.length - 1){
 			saveTeamsToCloud();
 			console.log("next drafter in biglist "+global.nextdrafter);
 			global.draftvalues.nextdrafter=0;
