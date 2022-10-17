@@ -837,11 +837,12 @@ exports.commands = {
 			global.draftvalues.picknr[toId(global.draftvalues.draftroom)] = 0;
 
 			global.draftvalues.nextdrafter=0;
+
 			global.draftvalues.draftstarted=true
 			this.reply('draft order is '+result);
 			console.log(global.draftvalues.draftstarted);
 			console.log(global.draftvalues.todraftmons);
-
+			console.log(global.draftvalues.nextdrafter);
 
 			//let rawdata3 = fs.readFileSync('convertcsv.json');
 			//global.draftvalues.mondata = JSON.parse(rawdata3);
