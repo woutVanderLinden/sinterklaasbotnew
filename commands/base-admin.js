@@ -1160,7 +1160,7 @@ exports.commands = {
 		if(!global.draftvalues.packdrafting){
 			if(global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]){
 				global.draftvalues.nextdrafter=global.draftvalues.nextdrafter+1;
-				if(global.draftvalues.nextdrafter>=list.length){
+				if(global.draftvalues.nextdrafter>list.length-1){
 					saveTeamsToCloud();
 					global.draftvalues.nextdrafter=global.draftvalues.nextdrafter-1;
 					global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=false;
@@ -1555,7 +1555,7 @@ exports.commands = {
 		global.draftvalues.users[name]["draftedmons"].push(nominatedmon);
 		global.auctioning = false;
 		var list=global.draftvalues.turnorder;
-		global.draftvalues.nextdrafter=global.draftvalues.nextdrafter+1;
+		global.draftvalues.nextdrafter++;
 		var username=list[global.draftvalues.nextdrafter];
 		var picksleft = global.draftvalues.nrofpicks - global.draftvalues.users[name]["draftedmons"].length;
 		console.log("pickslef " + global.draftvalues.turnorder);
