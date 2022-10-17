@@ -1451,21 +1451,22 @@ exports.commands = {
 		}
 		global.passedusers.push(toId(by));
 		if(global.passedusers.length == global.draftvalues.turnorder.length){
-			var name = global.currentHighestBidder
+			var name = global.currentHighestBidder;
 			global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"]-currentscore;
 			this.send(global.draftvalues.draftroom, name +" paid "+currentscore+ " erekredieten for "+ nominatedmon +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")");
 			global.draftvalues.users[name]["totaldraftscore"]=global.draftvalues.users[name]["totaldraftscore"]+calculatescore(room,nominatedmon,name);
 			global.draftvalues.users[name]["draftedmons"].push(nominatedmon);
 			global.auctioning = false;
 			var list=global.draftvalues.turnorder;
-			global.draftvalues.nextdrafter=global.draftvalues.nextdrafter+1;
+			global.draftvalues.nextdrafter = global.draftvalues.nextdrafter + 1;
 			var username=list[global.draftvalues.nextdrafter];
 			var picksleft = global.draftvalues.nrofpicks - global.draftvalues.users[name]["draftedmons"].length;
 			console.log("pickslef " + global.draftvalues.turnorder);
 			if(picksleft<1){
 				global.draftvalues.turnorder.remove(name);
 				console.log("turnorder " + global.draftvalues.turnorder);
-				global.draftvalues.nextdrafter = global.draftvalues.nextdrafter -1;
+				global.draftvalues.nextdrafter = global.draftvalues.nextdrafter - 1;
+				username=list[global.draftvalues.nextdrafter];
 				if(list.length == 0){
 					global.draftvalues.users[toId(global.draftvalues.draftroom)]=[];
 					//saveTeamsToCloud();
@@ -1473,9 +1474,11 @@ exports.commands = {
 					return this.send(global.draftvalues.draftroom,'The draft over is good luck and have fun ');
 				}
 			}
-			if(global.draftvalues.nextdrafter > global.draftvalues.length-1){
+			if(global.draftvalues.nextdrafter > global.draftvalues.length - 1){
 				saveTeamsToCloud();
+				console.log("next drafter in biglist "+global.nextdrafter);
 				global.draftvalues.nextdrafter=0;
+				username=list[global.draftvalues.nextdrafter];
 				if(global.currentStartScore>0){
 					global.currentStartScore = global.currentStartScore - 10;
 				}
@@ -1488,7 +1491,7 @@ exports.commands = {
 				console.log("picknr is"+ global.draftvalues.picknr[toId(global.draftvalues.draftroom)]);
 
 			}
-			username=list[global.draftvalues.nextdrafter];
+			console.log("next drafter "+global.draftvalues.nextdrafter);
 			var newlist=global.draftvalues.users[username]["draftedmons"];
 			var picksleft = global.draftvalues.nrofpicks - newlist.length;
 			var val= global.draftvalues.tierPicks- global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
@@ -1557,14 +1560,14 @@ exports.commands = {
 		global.draftvalues.users[name]["draftedmons"].push(nominatedmon);
 		global.auctioning = false;
 		var list=global.draftvalues.turnorder;
-		global.draftvalues.nextdrafter = global.draftvalues.nextdrafter+1;
+		global.draftvalues.nextdrafter = global.draftvalues.nextdrafter + 1;
 		var username=list[global.draftvalues.nextdrafter];
 		var picksleft = global.draftvalues.nrofpicks - global.draftvalues.users[name]["draftedmons"].length;
 		console.log("pickslef " + global.draftvalues.turnorder);
 		if(picksleft<1){
 			global.draftvalues.turnorder.remove(name);
 			console.log("turnorder " + global.draftvalues.turnorder);
-			global.draftvalues.nextdrafter = global.draftvalues.nextdrafter-1;
+			global.draftvalues.nextdrafter = global.draftvalues.nextdrafter - 1;
 			username=list[global.draftvalues.nextdrafter];
 			if(list.length == 0){
 				global.draftvalues.users[toId(global.draftvalues.draftroom)]=[];
@@ -1590,7 +1593,7 @@ exports.commands = {
 			console.log("picknr is"+ global.draftvalues.picknr[toId(global.draftvalues.draftroom)]);
 
 		}
-		console.log("next drafter "+global.nextdrafter);
+		console.log("next drafter "+global.draftvalues.nextdrafter);
 		var newlist=global.draftvalues.users[username]["draftedmons"];
 		var picksleft = global.draftvalues.nrofpicks - newlist.length;
 		var val= global.draftvalues.tierPicks- global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
