@@ -1476,7 +1476,7 @@ exports.commands = {
 			}
 			if(global.draftvalues.nextdrafter > global.draftvalues.length - 1){
 				saveTeamsToCloud();
-				console.log("next drafter in biglist "+global.nextdrafter);
+				console.log("next drafter in biglist "+global.draftvalues.nextdrafter);
 				global.draftvalues.nextdrafter=0;
 				username=list[global.draftvalues.nextdrafter];
 				if(global.currentStartScore>0){
@@ -1578,7 +1578,7 @@ exports.commands = {
 		}
 		if(global.draftvalues.nextdrafter > global.draftvalues.length - 1){
 			saveTeamsToCloud();
-			console.log("next drafter in biglist "+global.nextdrafter);
+			console.log("next drafter in biglist "+global.draftvalues.nextdrafter);
 			global.draftvalues.nextdrafter=0;
 			username=list[global.draftvalues.nextdrafter];
 			if(global.currentStartScore>0){
