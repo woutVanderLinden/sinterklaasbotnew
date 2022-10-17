@@ -1554,7 +1554,7 @@ exports.commands = {
 	},
 	endbid:  function (arg, by, room, cmd) {
 		if (!this.isRanked('admin') || !global.auctionDrafting) {return false;}
-		var name = global.currentHighestBidder
+		var name = global.currentHighestBidder;
 		global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"]-currentscore;
 		this.send(global.draftvalues.draftroom, name +" paid "+currentscore+ " erekredieten for "+ nominatedmon +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")");
 		global.draftvalues.users[name]["totaldraftscore"]=global.draftvalues.users[name]["totaldraftscore"]+calculatescore(room,nominatedmon,name);
