@@ -1561,6 +1561,7 @@ exports.commands = {
 		global.auctioning = false;
 		var list=global.draftvalues.turnorder;
 		global.draftvalues.nextdrafter = global.draftvalues.nextdrafter + 1;
+		console.log("nextdrafter " + global.draftvalues.nextdrafter);
 		var username=list[global.draftvalues.nextdrafter];
 		var picksleft = global.draftvalues.nrofpicks - global.draftvalues.users[name]["draftedmons"].length;
 		console.log("pickslef " + global.draftvalues.turnorder);
@@ -1568,6 +1569,7 @@ exports.commands = {
 			global.draftvalues.turnorder.remove(name);
 			console.log("turnorder " + global.draftvalues.turnorder);
 			global.draftvalues.nextdrafter = global.draftvalues.nextdrafter - 1;
+			console.log("nextdrafter " + global.draftvalues.nextdrafter);
 			username=list[global.draftvalues.nextdrafter];
 			if(list.length == 0){
 				global.draftvalues.users[toId(global.draftvalues.draftroom)]=[];
@@ -1580,6 +1582,7 @@ exports.commands = {
 			saveTeamsToCloud();
 			console.log("next drafter in biglist "+global.draftvalues.nextdrafter);
 			global.draftvalues.nextdrafter=0;
+			console.log("nextdrafter " + global.draftvalues.nextdrafter);
 			username=list[global.draftvalues.nextdrafter];
 			if(global.currentStartScore>0){
 				global.currentStartScore = global.currentStartScore - 10;
