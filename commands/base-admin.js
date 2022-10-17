@@ -1571,8 +1571,9 @@ exports.commands = {
 				return this.send(global.draftvalues.draftroom,'The draft over is good luck and have fun ');
 			}
 		}
-		if(global.draftvalues.nextdrafter > global.draftvalues.length){
+		if(global.draftvalues.nextdrafter >= global.draftvalues.length){
 			saveTeamsToCloud();
+			console.log("next drafter in biglist "+global.nextdrafter);
 			global.draftvalues.nextdrafter=0;
 			username=list[global.draftvalues.nextdrafter];
 			if(global.currentStartScore>0){
@@ -1587,7 +1588,7 @@ exports.commands = {
 			console.log("picknr is"+ global.draftvalues.picknr[toId(global.draftvalues.draftroom)]);
 
 		}
-
+		console.log("next drafter "+global.nextdrafter);
 		var newlist=global.draftvalues.users[username]["draftedmons"];
 		var picksleft = global.draftvalues.nrofpicks - newlist.length;
 		var val= global.draftvalues.tierPicks- global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
