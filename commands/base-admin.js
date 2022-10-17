@@ -876,19 +876,19 @@ exports.commands = {
 			var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';
 			var index=1;
 			word=word+"<div>";
-			while (index<6){
-				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier'+ index +'" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
+
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Show list" style="background-color: rgb(204, 255, 204)">Tier1</button>";
 				index++;
-			}
+
 			word=word+"</div>";
 			word=word+"<div>";
 			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
 
 			var index2=1;
-			while (index2<6){
-				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier'+ index2 +'" style="background-color: rgb(204, 204, 255)">recommend Tier'+index2+"</button>";
+
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier'+ index2 +'" style="background-color: rgb(204, 204, 255)">recommend "</button>";
 				index2++;
-			}
+
 			word=word+"</div>";
 			word=word+"</div>";
 			console.log(word);
@@ -1561,7 +1561,7 @@ exports.commands = {
 		global.draftvalues.users[name]["draftedmons"].push(nominatedmon);
 		global.auctioning = false;
 		var list=global.draftvalues.turnorder;
-		global.draftvalues.nextdrafter=global.draftvalues.nextdrafter++;
+		global.draftvalues.nextdrafter=global.draftvalues.nextdrafter+1;
 		var username=list[global.draftvalues.nextdrafter];
 		var picksleft = global.draftvalues.nrofpicks - global.draftvalues.users[name]["draftedmons"].length;
 		console.log("pickslef " + global.draftvalues.turnorder);
