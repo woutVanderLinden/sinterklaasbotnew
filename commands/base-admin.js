@@ -1675,13 +1675,14 @@ exports.commands = {
 				if(possiblepic.includes(arg)){
 
 					draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
-					this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentStartScore);
+
 					global.nominatedmon = arg;
 					global.currentscore = global.currentStartScore;
 					if(global.currentStartScore > global.draftvalues.users[name]["erekredieten"]){
 						this.reply("you don't have enough credits staring offer will be 0");
 						global.currentscore = 0;
 					}
+					this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentscore);
 					global.auctioning = true;
 					global.currentHighestBidder = toId(by);
 					this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
