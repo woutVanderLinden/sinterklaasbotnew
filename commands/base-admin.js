@@ -1591,7 +1591,6 @@ exports.commands = {
 
 
 			console.log("picknr is"+ global.draftvalues.picknr[toId(global.draftvalues.draftroom)]);
-
 		}
 		console.log("next drafter "+global.draftvalues.nextdrafter);
 		var newlist=global.draftvalues.users[username]["draftedmons"];
