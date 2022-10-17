@@ -1682,10 +1682,9 @@ exports.commands = {
 						this.reply("you don't have enough credits staring offer will be 0");
 						global.currentscore = 0;
 					}
-					th
 					global.auctioning = true;
 					global.currentHighestBidder = toId(by);
-					is.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
+					this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
 					i=100;
 				}
 				i++;
