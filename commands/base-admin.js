@@ -1451,7 +1451,71 @@ exports.commands = {
 		if(!global.draftvalues.turnorder.includes(name)){
 			return this.reply("you're not in the draft " + name);
 		}
+		if(toId(by) == global.currentHighestBidder){
+			return this.reply("You're the highest bidder currently you can't pass");
+		}
 		global.passedusers.push(toId(by));
+		if(global.passedusers.length == global.draftvalues.turnorder.length){
+			var name = global.currentHighestBidder
+			global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"]-currentscore;
+			this.send(global.draftvalues.draftroom, name +" paid "+currentscore+ " erekredieten for "+ nominatedmon +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")");
+			global.draftvalues.users[name]["totaldraftscore"]=global.draftvalues.users[name]["totaldraftscore"]+calculatescore(room,nominatedmon,name);
+			global.draftvalues.users[name]["draftedmons"].push(nominatedmon);
+			global.auctioning = false;
+			var list=global.draftvalues.turnorder;
+			global.draftvalues.nextdrafter=global.draftvalues.nextdrafter++;
+			var username=list[global.draftvalues.nextdrafter];
+			var picksleft = global.draftvalues.nrofpicks - global.draftvalues.users[name]["draftedmons"].length;
+			console.log("pickslef " + global.draftvalues.turnorder);
+			if(picksleft<1){
+				global.draftvalues.turnorder.remove(name);
+				console.log("turnorder " + global.draftvalues.turnorder);
+				global.draftvalues.nextdrafter--;
+				if(list.length == 0){
+					global.draftvalues.users[toId(global.draftvalues.draftroom)]=[];
+					//saveTeamsToCloud();
+					global.draftvalues.draftstarted=false;
+					return this.send(global.draftvalues.draftroom,'The draft over is good luck and have fun ');
+				}
+			}
+			if(global.draftvalues.nextdrafter > global.draftvalues.length){
+				saveTeamsToCloud();
+				global.draftvalues.nextdrafter=0;
+				if(global.currentStartScore>0){
+					global.currentStartScore = global.currentStartScore - 10;
+				}
+				//global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
+				//console.log("order changed");
+				global.draftvalues.picknr[toId(global.draftvalues.draftroom)]= global.draftvalues.picknr[toId(global.draftvalues.draftroom)]+1;
+
+
+
+				console.log("picknr is"+ global.draftvalues.picknr[toId(global.draftvalues.draftroom)]);
+
+			}
+
+			var newlist=global.draftvalues.users[username]["draftedmons"];
+			var picksleft = global.draftvalues.nrofpicks - newlist.length;
+			var val= global.draftvalues.tierPicks- global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
+			var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
+			word=word+"<div>";
+			while (index<2){
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable List of Pokemon" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
+				index++;
+			}
+			word=word+"</div>";
+			word=word+"<div>";
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
+
+			var index2=1;
+
+			word=word+"</div>";
+			word=word+"</div>";
+			console.log(word);
+			this.send(global.draftvalues.draftroom, word);
+
+			return this.send(global.draftvalues.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " picks left: " + picksleft);
+		}
 	},
 	nominatedmon:  function (arg, by, room, cmd) {
 		this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
@@ -1460,6 +1524,10 @@ exports.commands = {
 	offer: 'bid',
 	bid:  function (arg, by, room, cmd) {
 		var value = parseInt(arg);
+		var name = toId(by);
+		if(value > global.draftvalues.users[name]["erekredieten"]){
+			return this.reply("you don't have enough credits");
+		}
 		if(value > global.currentscore){
 			global.currentscore = value;
 			global.currentHighestBidder = toId(by);
@@ -1472,6 +1540,9 @@ exports.commands = {
 		var value = 300;
 		if(arg ==""){
 			value = parseInt(arg);
+		}
+		if(value > global.draftvalues.users[name]["erekredieten"]){
+			return this.reply("you don't have enough credits");
 		}
 		if(value < global.currentscore +10){
 			value = global.currentscore+10;
@@ -1607,9 +1678,14 @@ exports.commands = {
 					this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentStartScore);
 					global.nominatedmon = arg;
 					global.currentscore = global.currentStartScore;
+					if(global.currentStartScore > global.draftvalues.users[name]["erekredieten"]){
+						this.reply("you don't have enough credits staring offer will be 0");
+						global.currentscore = 0;
+					}
+					th
 					global.auctioning = true;
 					global.currentHighestBidder = toId(by);
-					this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
+					is.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
 					i=100;
 				}
 				i++;
