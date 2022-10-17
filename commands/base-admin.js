@@ -1456,9 +1456,11 @@ exports.commands = {
 			this.send(global.draftvalues.draftroom, name +" paid "+currentscore+ " erekredieten for "+ nominatedmon +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")");
 			global.draftvalues.users[name]["totaldraftscore"]=global.draftvalues.users[name]["totaldraftscore"]+calculatescore(room,nominatedmon,name);
 			global.draftvalues.users[name]["draftedmons"].push(nominatedmon);
+			saveTeamsToCloud();
 			global.auctioning = false;
 			var list=global.draftvalues.turnorder;
 			global.draftvalues.nextdrafter = global.draftvalues.nextdrafter + 1;
+			console.log("nextdrafter " + global.draftvalues.nextdrafter);
 			var username=list[global.draftvalues.nextdrafter];
 			var picksleft = global.draftvalues.nrofpicks - global.draftvalues.users[name]["draftedmons"].length;
 			console.log("pickslef " + global.draftvalues.turnorder);
@@ -1466,6 +1468,7 @@ exports.commands = {
 				global.draftvalues.turnorder.remove(name);
 				console.log("turnorder " + global.draftvalues.turnorder);
 				global.draftvalues.nextdrafter = global.draftvalues.nextdrafter - 1;
+				console.log("nextdrafter " + global.draftvalues.nextdrafter);
 				username=list[global.draftvalues.nextdrafter];
 				if(list.length == 0){
 					global.draftvalues.users[toId(global.draftvalues.draftroom)]=[];
@@ -1478,6 +1481,7 @@ exports.commands = {
 				saveTeamsToCloud();
 				console.log("next drafter in biglist "+global.draftvalues.nextdrafter);
 				global.draftvalues.nextdrafter=0;
+				console.log("nextdrafter " + global.draftvalues.nextdrafter);
 				username=list[global.draftvalues.nextdrafter];
 				if(global.currentStartScore>0){
 					global.currentStartScore = global.currentStartScore - 10;
@@ -1485,12 +1489,9 @@ exports.commands = {
 				//global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
 				//console.log("order changed");
 				global.draftvalues.picknr[toId(global.draftvalues.draftroom)]= global.draftvalues.picknr[toId(global.draftvalues.draftroom)]+1;
-
-
-
 				console.log("picknr is"+ global.draftvalues.picknr[toId(global.draftvalues.draftroom)]);
-
 			}
+			username=list[global.draftvalues.nextdrafter];
 			console.log("next drafter "+global.draftvalues.nextdrafter);
 			var newlist=global.draftvalues.users[username]["draftedmons"];
 			var picksleft = global.draftvalues.nrofpicks - newlist.length;
@@ -1498,7 +1499,7 @@ exports.commands = {
 			var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
 			word=word+"<div>";
 			while (index<2){
-				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1" style="background-color: rgb(204, 255, 204)">show list</button>';
 				index++;
 			}
 			word=word+"</div>";
@@ -1558,6 +1559,7 @@ exports.commands = {
 		this.send(global.draftvalues.draftroom, name +" paid "+currentscore+ " erekredieten for "+ nominatedmon +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")");
 		global.draftvalues.users[name]["totaldraftscore"]=global.draftvalues.users[name]["totaldraftscore"]+calculatescore(room,nominatedmon,name);
 		global.draftvalues.users[name]["draftedmons"].push(nominatedmon);
+		saveTeamsToCloud();
 		global.auctioning = false;
 		var list=global.draftvalues.turnorder;
 		global.draftvalues.nextdrafter = global.draftvalues.nextdrafter + 1;
