@@ -1563,7 +1563,7 @@ exports.commands = {
 			global.draftvalues.turnorder.remove(name);
 			console.log("turnorder " + global.draftvalues.turnorder);
 			global.draftvalues.nextdrafter--;
-			var username=list[global.draftvalues.nextdrafter];
+			username=list[global.draftvalues.nextdrafter];
 			if(list.length == 0){
 				global.draftvalues.users[toId(global.draftvalues.draftroom)]=[];
 				//saveTeamsToCloud();
@@ -1574,7 +1574,7 @@ exports.commands = {
 		if(global.draftvalues.nextdrafter > global.draftvalues.length){
 			saveTeamsToCloud();
 			global.draftvalues.nextdrafter=0;
-			var username=list[global.draftvalues.nextdrafter];
+			username=list[global.draftvalues.nextdrafter];
 			if(global.currentStartScore>0){
 				global.currentStartScore = global.currentStartScore - 10;
 			}
