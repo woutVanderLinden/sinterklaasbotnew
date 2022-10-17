@@ -1464,7 +1464,7 @@ exports.commands = {
 			if(picksleft<1){
 				global.draftvalues.turnorder.remove(name);
 				console.log("turnorder " + global.draftvalues.turnorder);
-				global.draftvalues.nextdrafter--;
+				global.draftvalues.nextdrafter = global.draftvalues.nextdrafter -1;
 				if(list.length == 0){
 					global.draftvalues.users[toId(global.draftvalues.draftroom)]=[];
 					//saveTeamsToCloud();
@@ -1556,14 +1556,14 @@ exports.commands = {
 		global.draftvalues.users[name]["draftedmons"].push(nominatedmon);
 		global.auctioning = false;
 		var list=global.draftvalues.turnorder;
-		global.draftvalues.nextdrafter++;
+		global.draftvalues.nextdrafter = global.draftvalues.nextdrafter+1;
 		var username=list[global.draftvalues.nextdrafter];
 		var picksleft = global.draftvalues.nrofpicks - global.draftvalues.users[name]["draftedmons"].length;
 		console.log("pickslef " + global.draftvalues.turnorder);
 		if(picksleft<1){
 			global.draftvalues.turnorder.remove(name);
 			console.log("turnorder " + global.draftvalues.turnorder);
-			global.draftvalues.nextdrafter--;
+			global.draftvalues.nextdrafter = global.draftvalues.nextdrafter-1;
 			username=list[global.draftvalues.nextdrafter];
 			if(list.length == 0){
 				global.draftvalues.users[toId(global.draftvalues.draftroom)]=[];
