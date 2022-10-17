@@ -1498,7 +1498,7 @@ exports.commands = {
 			var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
 			word=word+"<div>";
 			while (index<2){
-				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable List of Pokemon" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
 				index++;
 			}
 			word=word+"</div>";
@@ -1600,7 +1600,7 @@ exports.commands = {
 		var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
 		word=word+"<div>";
 		while (index<2){
-			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable List of Pokemon" style="background-color: rgb(204, 255, 204)">Tier'+index+"</button>";
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1" style="background-color: rgb(204, 255, 204)">show list</button>';
 			index++;
 		}
 		word=word+"</div>";
