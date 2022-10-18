@@ -1538,9 +1538,11 @@ exports.commands = {
 	bidmore:  function (arg, by, room, cmd) {
 		var value = 300;
 		var name = toId(by);
+		console.log(arg);
 		if(arg != ""){
 			value = parseInt(arg);
 		}
+		console.log(value);
 		if(value > global.draftvalues.users[name]["erekredieten"]){
 			return this.reply("you don't have enough credits");
 		}
