@@ -752,12 +752,7 @@ exports.commands = {
 			word=word+"</div>";
 			word=word+"<div>";
 			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
-
-			var index2=1;
-			while (index2<6){
-				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier'+ index2 +'" style="background-color: rgb(204, 204, 255)">recommend </button>';
-				index2++;
-			}
+			
 			word=word+"</div>";
 			word=word+"</div>";
 			console.log(word);
@@ -897,10 +892,7 @@ exports.commands = {
 		word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
 
 		var index2=1;
-		while (index2<6){
-			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier'+ index2 +'" style="background-color: rgb(204, 204, 255)">recommend </button>';
-			index2++;
-		}
+
 		word=word+"</div>";
 		word=word+"</div>";
 		console.log(word);
