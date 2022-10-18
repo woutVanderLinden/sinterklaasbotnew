@@ -1439,10 +1439,12 @@ exports.commands = {
 	},
 	
 	showmonscore:  function (arg, by, room, cmd) {
+		arg = global.nominatedmon;
 		arg=jsUcfirst(toId(arg));
 		return this.reply(arg +" score is "+calculatescore(room,arg,toId(by)));
 	},
 	pass: function (arg, by, room, cmd) {
+		var name = toId(by);
 		if(!global.draftvalues.turnorder.includes(name)){
 			return this.reply("you're not in the draft " + name);
 		}
