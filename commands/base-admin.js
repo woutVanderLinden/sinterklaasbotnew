@@ -1526,6 +1526,9 @@ exports.commands = {
 	bid:  function (arg, by, room, cmd) {
 		var value = parseInt(arg);
 		var name = toId(by);
+		if(!global.draftvalues.turnorder.includes(name)){
+			return this.reply("you're not in the draft " + name);
+		}
 		if(value > global.draftvalues.users[name]["erekredieten"]){
 			return this.reply("you don't have enough credits");
 		}
@@ -1540,6 +1543,9 @@ exports.commands = {
 	bidmore:  function (arg, by, room, cmd) {
 		var value = 300;
 		var name = toId(by);
+		if(!global.draftvalues.turnorder.includes(name)){
+			return this.reply("you're not in the draft " + name);
+		}
 		console.log(arg);
 		if(arg != ""){
 			value = parseInt(arg);
