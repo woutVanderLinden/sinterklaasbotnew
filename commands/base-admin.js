@@ -1546,7 +1546,7 @@ exports.commands = {
 		if(value > global.draftvalues.users[name]["erekredieten"]){
 			return this.reply("you don't have enough credits");
 		}
-		if(value > global.currentscore +10){
+		if(value > global.currentscore +9){
 			value = global.currentscore+10;
 			global.currentscore = value;
 			global.currentHighestBidder = toId(by);
