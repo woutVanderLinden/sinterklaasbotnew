@@ -1637,6 +1637,8 @@ exports.commands = {
 		if(global.auctioning){
 			return this.reply("wait till this auction is done " + name);
 		}
+		var list=global.draftvalues.turnorder;
+
 		if(list[global.draftvalues.nextdrafter]!=toId(by)){
 			return this.send(global.draftvalues.draftroom,'it is not your turn');
 
@@ -1772,8 +1774,6 @@ exports.commands = {
 				return this.reply('draft did not start yet');
 	
 		}
-			var list=global.draftvalues.turnorder;
-
 			console.log("drafter" + list[global.draftvalues.nextdrafter]);
 		if(list[global.draftvalues.nextdrafter]!=toId(by)){
 				return this.send(global.draftvalues.draftroom,'it is not your turn');
