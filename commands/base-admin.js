@@ -1452,7 +1452,7 @@ exports.commands = {
 			return this.reply("You're the highest bidder currently you can't pass");
 		}
 		global.passedusers.push(toId(by));
-		if(global.passedusers.length == global.draftvalues.turnorder.length){
+		if(global.passedusers.length == global.draftvalues.turnorder.length-1){
 			var name = global.currentHighestBidder;
 			global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"]-currentscore;
 			this.send(global.draftvalues.draftroom, name +" paid "+currentscore+ " erekredieten for "+ nominatedmon +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")");
