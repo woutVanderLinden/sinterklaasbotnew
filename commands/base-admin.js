@@ -873,7 +873,7 @@ exports.commands = {
 		//global.draftvalues.cur[toId(room)]
 		console.log(tiername);
 		global.draftvalues.possiblepicks=draftmons["tierlist"];
-		global.currentStartScore = draftmons["tierlist"]["Tier1"]["points"];
+		global.draftvalues.currentStartScore = draftmons["tierlist"]["Tier1"]["points"];
 		/*
 		if(toId(by)==toId(room)){
 				this.reply(draftmonsprint(draftmons["tierlist"][tiername]["pokemon"]));
@@ -951,7 +951,7 @@ exports.commands = {
 			console.log(tiername);
 			global.draftvalues.possiblepicks=draftmons["tierlist"];
 			global.draftvalues.nrofpicks=draftmons["freepicks"];
-			global.currentStartScore = draftmons["tierlist"]["Tier1"]["points"];
+			global.draftvalues.currentStartScore = draftmons["tierlist"]["Tier1"]["points"];
 			/*
             if(toId(by)==toId(room)){
                     this.reply(draftmonsprint(draftmons["tierlist"][tiername]["pokemon"]));
@@ -1580,8 +1580,8 @@ exports.commands = {
 				global.draftvalues.nextdrafter=0;
 				console.log("nextdrafter " + global.draftvalues.nextdrafter);
 				username=list[global.draftvalues.nextdrafter];
-				if(global.currentStartScore>0){
-					global.currentStartScore = global.currentStartScore - 10;
+				if(global.draftvalues.currentStartScore>0){
+					global.draftvalues.currentStartScore = global.draftvalues.currentStartScore - 10;
 				}
 				//global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
 				//console.log("order changed");
@@ -1692,8 +1692,8 @@ exports.commands = {
 			global.draftvalues.nextdrafter=0;
 			console.log("nextdrafter " + global.draftvalues.nextdrafter);
 			username=list[global.draftvalues.nextdrafter];
-			if(global.currentStartScore>0){
-				global.currentStartScore = global.currentStartScore - 10;
+			if(global.draftvalues.currentStartScore>0){
+				global.draftvalues.currentStartScore = global.draftvalues.currentStartScore - 10;
 			}
 			//global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
 			//console.log("order changed");
@@ -1793,8 +1793,8 @@ exports.commands = {
 					draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
 
 					global.nominatedmon = arg;
-					global.currentscore = global.currentStartScore;
-					if(global.currentStartScore > global.draftvalues.users[name]["erekredieten"]){
+					global.currentscore = global.draftvalues.currentStartScore;
+					if(global.draftvalues.currentStartScore > global.draftvalues.users[name]["erekredieten"]){
 						this.reply("you don't have enough credits staring offer will be 0");
 						global.currentscore = 0;
 					}
