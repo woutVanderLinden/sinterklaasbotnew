@@ -1538,7 +1538,7 @@ exports.commands = {
 	bidmore:  function (arg, by, room, cmd) {
 		var value = 300;
 		var name = toId(by);
-		if(arg ==""){
+		if(arg != ""){
 			value = parseInt(arg);
 		}
 		if(value > global.draftvalues.users[name]["erekredieten"]){
@@ -1636,6 +1636,10 @@ exports.commands = {
 		}
 		if(global.auctioning){
 			return this.reply("wait till this auction is done " + name);
+		}
+		if(list[global.draftvalues.nextdrafter]!=toId(by)){
+			return this.send(global.draftvalues.draftroom,'it is not your turn');
+
 		}
 		var args=arg.split("-");
 		arg='';
