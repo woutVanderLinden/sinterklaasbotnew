@@ -742,7 +742,7 @@ exports.commands = {
 		var list=global.draftvalues.turnorder;
 		var username=list[global.draftvalues.nextdrafter];
 		this.send(global.draftvalues.draftroom,username + " turn");
-		if(global.draftvalues.auctionDrafting) {
+		if(global.auctionDrafting) {
 			var newlist=global.draftvalues.users[username]["draftedmons"];
 			var val= global.draftvalues.tierPicks- global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
 			var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';
