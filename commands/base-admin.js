@@ -1537,6 +1537,7 @@ exports.commands = {
 	offermore: 'bidmore',
 	bidmore:  function (arg, by, room, cmd) {
 		var value = 300;
+		var name = toId(by);
 		if(arg ==""){
 			value = parseInt(arg);
 		}
