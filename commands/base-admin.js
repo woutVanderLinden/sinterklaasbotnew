@@ -3018,7 +3018,7 @@ function draftmonsprint3(arg){
 		arg=arg.sort();
 		var result='!htmlbox ';
 		if(type != undefined){
-			result = result+ '<div style=\'color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;> Terralyze type: <psicon type="'+type+'" style="vertical-align:0px;margin: 0px" /></div>';
+			result = result+ '<div style="color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;"> Terralyze type: <psicon type="'+type+'" style="vertical-align:0px;margin: 0px" /></div>';
 		}
 
 			for (var i = 0; i < arg.length; i++) {
@@ -3103,7 +3103,7 @@ function draftmonsprint5(arg,color){
 		//Do something
 		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 		var name=arg[i];
-		var word='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +';  text-shadow: 2px 1px 0px '+ color2+'; font-size: 10pt; font-weight: bold;">';
+		var word='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +';  text-shadow: 1px 1px 1px '+ color2+'; font-size: 10pt; font-weight: bold;">';
 		word=word+'<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>';
 		word=word+'</button>';
 		result=result+word;
