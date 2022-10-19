@@ -3018,7 +3018,7 @@ function draftmonsprint3(arg){
 		arg=arg.sort();
 		var result='!htmlbox ';
 		if(type != undefined){
-			result = result+ '<div> Terralyze type: <psicon type="'+type+'" style="vertical-align:-7px;margin:-2px" /></div>"';
+			result = result+ '<div style=\'color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;> Terralyze type: <psicon type="'+type+'" style="vertical-align:0px;margin: 0px" /></div>';
 		}
 
 			for (var i = 0; i < arg.length; i++) {
