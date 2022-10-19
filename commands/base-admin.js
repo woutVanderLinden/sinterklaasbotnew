@@ -982,9 +982,9 @@ exports.commands = {
 			word=word+"</div>";
 			console.log(word);
 			this.send(global.draftvalues.draftroom, word);
-			var typeword = "!htmlbox  <div>" + printPosTypes + "</div>"
-			console.log(typeword);
-			return this.reply(typeword);
+			var typeword = "!htmlbox  <div>" + printPosTypes() + "</div>"
+			console.log("types " + typeword);
+			this.reply(typeword);
 			return this.reply(' the next drafter is '+list[0]);
 		}
 
