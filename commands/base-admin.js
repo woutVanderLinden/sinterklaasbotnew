@@ -1673,6 +1673,7 @@ exports.commands = {
 		if (!this.isRanked('admin') || !global.auctionDrafting) {return false;}
 		console.log("nextdrafter " + global.draftvalues.nextdrafter);
 		var name = global.currentHighestBidder;
+		var list=global.draftvalues.turnorder;
 		global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"]-currentscore;
 		if(global.draftvalues.typedrafting){
 			global.draftvalues.typeturnorder.remove(name);
@@ -1694,7 +1695,7 @@ exports.commands = {
 			global.draftvalues.users[name]["draftedmons"].push(nominatedmon);
 			saveTeamsToCloud();
 			global.auctioning = false;
-			var list=global.draftvalues.turnorder;
+
 			global.draftvalues.nextdrafter = global.draftvalues.nextdrafter + 1;
 			var username=list[global.draftvalues.nextdrafter];
 			var picksleft = global.draftvalues.nrofpicks - global.draftvalues.users[name]["draftedmons"].length;
