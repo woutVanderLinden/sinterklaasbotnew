@@ -86,6 +86,9 @@ try {
 	let rawdata = fs.readFileSync('convertcsv.json');
 	let student = JSON.parse(rawdata);
 	global.draftvalues.mondata=student;
+	let colordata = fs.readFileSync('TypingsToColor.json');
+	let colors = JSON.parse(colordata);
+	global.draftvalues.typingcolors=colors;
 
 	let rawdata2 = fs.readFileSync('weaknesssheet.json');
 	let student2 = JSON.parse(rawdata2);
