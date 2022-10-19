@@ -3108,7 +3108,7 @@ function printPosTypes(){
 		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 		var name=arg[i];
 		var word='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +'">';
-		word=word+'psicon type="'+name+'" style="vertical-align:-7px;margin:-2px" />';
+		word=word+'<psicon type="'+name+'" style="vertical-align:-7px;margin:-2px" />';
 		word=word+'</button>';
 		result=result+word;
 
