@@ -3103,7 +3103,7 @@ function draftmonsprint5(arg,color){
 		//Do something
 		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 		var name=arg[i];
-		var word='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +' "; border: 2px solid '+ color2+'">';
+		var word='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +'; border: 2px solid '+ color2+'">';
 		word=word+'<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>';
 		word=word+'</button>';
 		result=result+word;
