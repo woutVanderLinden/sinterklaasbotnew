@@ -899,7 +899,7 @@ exports.commands = {
 		console.log(word);
 		this.send(global.draftvalues.draftroom, word);
 
-		var typeword = "!htmlbox  <div>" + printPosTypes + "</div>"
+		var typeword = "!htmlbox  <div>" + printPosTypes() + "</div>"
 		return this.reply(typeword);
 		return this.reply(' the next drafter is '+list[0]);
 
@@ -916,6 +916,7 @@ exports.commands = {
 			global.draftvalues.typeturnorder = global.draftvalues.turnorder;
 			global.draftvalues.tierPicks = global.draftvalues.todraftmons[toId(room)]["freepicks"];
 			var list=global.draftvalues.turnorder;
+			global.draftvalues.availableTypes = global.postypings;
 			global.draftvalues.giftdrafting=false;
 			console.log(list);
 			list=shuffle(list);
@@ -3098,7 +3099,7 @@ function draftmonsprint5(arg,color){
 };
 
 function printPosTypes(){
-	var arg=postypings.sort();
+	var arg=global.draftvalues.availableTypes.sort();
 	var result='';
 	for (var i = 0; i < arg.length; i++) {
 		console.log("here "+arg[i]);
