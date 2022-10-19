@@ -836,7 +836,7 @@ exports.commands = {
          */
 		/*then load the participant list*/
 		global.draftvalues.typedrafting=true;
-		global.draftvalues.typeturnorder = global.draftvalues.turnorder;
+		global.draftvalues.typeturnorder = [...turnorder];
 		global.draftvalues.availableTypes = ["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
 		global.draftvalues.tierPicks = global.draftvalues.todraftmons[toId(room)]["freepicks"];
 		var list=global.draftvalues.turnorder;
@@ -1731,7 +1731,7 @@ exports.commands = {
 
 
 		username=list[global.draftvalues.nextdrafter];
-		console.log("next drafter "+global.draftvalues.nextdrafter);
+		console.log("next drafter "+global.draftvalues.nextdrafter + username);
 		var newlist=global.draftvalues.users[username]["draftedmons"];
 		var picksleft = global.draftvalues.nrofpicks - newlist.length;
 		var val= global.draftvalues.tierPicks- global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
