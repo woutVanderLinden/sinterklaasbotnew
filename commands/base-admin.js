@@ -1763,8 +1763,7 @@ exports.commands = {
 	nominate: 'draft',
 	
 	draft:  function (arg, by, room, cmd) {
-
-				var name=toId(by);
+		var name=toId(by);
 		if(!global.draftvalues.turnorder.includes(name)){
 			return this.reply("you're not in the draft " + name);
 		}
@@ -1775,13 +1774,13 @@ exports.commands = {
 
 		if(list[global.draftvalues.nextdrafter]!=toId(by)){
 			return this.send(global.draftvalues.draftroom,'it is not your turn');
-
 		}
 		if(global.draftvalues.typedrafting){
 			if(global.draftvalues.availableTypes.includes(arg)){
 
 				global.nominatedType = toId(arg);
 				global.currentscore = 0;
+				global.currentHighestBidder = name;
 				return this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentscore);
 			}
 			return this.send(global.draftvalues.draftroom, "That is not a type");
