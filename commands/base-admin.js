@@ -834,7 +834,7 @@ exports.commands = {
 		/*then load the participant list*/
 		global.draftvalues.typedrafting=true;
 		global.draftvalues.typeturnorder = global.draftvalues.turnorder;
-		global.draftvalues.availableTypes = postypings;
+		global.draftvalues.availableTypes = ["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
 		global.draftvalues.tierPicks = global.draftvalues.todraftmons[toId(room)]["freepicks"];
 		var list=global.draftvalues.turnorder;
 		global.draftvalues.giftdrafting=false;
@@ -916,7 +916,7 @@ exports.commands = {
 			global.draftvalues.typeturnorder = global.draftvalues.turnorder;
 			global.draftvalues.tierPicks = global.draftvalues.todraftmons[toId(room)]["freepicks"];
 			var list=global.draftvalues.turnorder;
-			global.draftvalues.availableTypes = global.postypings;
+			global.draftvalues.availableTypes = ["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
 			global.draftvalues.giftdrafting=false;
 			console.log(list);
 			list=shuffle(list);
