@@ -1553,53 +1553,79 @@ exports.commands = {
 			return this.reply("You're the highest bidder currently you can't pass");
 		}
 		global.passedusers.push(toId(by));
-		if(global.passedusers.length == global.draftvalues.turnorder.length-1){
-			var name = global.currentHighestBidder;
-			global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"]-currentscore;
-			this.send(global.draftvalues.draftroom, name +" paid "+currentscore+ " erekredieten for "+ nominatedmon +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")");
-			global.draftvalues.users[name]["totaldraftscore"]=global.draftvalues.users[name]["totaldraftscore"]+calculatescore(room,nominatedmon,name);
-			global.draftvalues.users[name]["draftedmons"].push(nominatedmon);
-			saveTeamsToCloud();
-			global.auctioning = false;
-			var list=global.draftvalues.turnorder;
-			global.draftvalues.nextdrafter = global.draftvalues.nextdrafter + 1;
+		if(global.passedusers.length == global.draftvalues.turnorder.length-1 || (global.auctionDrafting && global.passedusers.length == global.draftvalues.typeturnorder.length-1)){
+			if (!this.isRanked('admin') || !global.auctionDrafting) {return false;}
 			console.log("nextdrafter " + global.draftvalues.nextdrafter);
-			var username=list[global.draftvalues.nextdrafter];
-			var picksleft = global.draftvalues.nrofpicks - global.draftvalues.users[name]["draftedmons"].length;
-			console.log("pickslef " + global.draftvalues.turnorder);
-			if(picksleft<1){
-				global.draftvalues.turnorder.remove(name);
-				console.log("turnorder " + global.draftvalues.turnorder);
-				global.draftvalues.nextdrafter = global.draftvalues.nextdrafter - 1;
-				console.log("nextdrafter " + global.draftvalues.nextdrafter);
-				username=list[global.draftvalues.nextdrafter];
-				if(list.length == 0){
-					global.draftvalues.users[toId(global.draftvalues.draftroom)]=[];
+			var name = global.currentHighestBidder;
+			var list=global.draftvalues.turnorder;
+			global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"]-currentscore;
+			if(global.draftvalues.typedrafting){
+				global.draftvalues.typeturnorder.remove(name);
+				this.send(global.draftvalues.draftroom, name +" paid "+currentscore+ " erekredieten for "+ nominatedType +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")");
+				global.draftvalues.nextdrafter = global.draftvalues.nextdrafter + 1;
+				global.draftvalues.users[name]["TerralyzeType"] = nominatedType;
+				if(global.draftvalues.typeturnorder == 0){
+					global.draftvalues.typedrafting=false;
 					//saveTeamsToCloud();
-					global.draftvalues.draftstarted=false;
-					return this.send(global.draftvalues.draftroom,'The draft over is good luck and have fun ');
+					global.draftvalues.nextdrafter = 0;
+				}
+				else{
+					return;
 				}
 			}
-			if(global.draftvalues.nextdrafter > global.draftvalues.turnorder.length - 1){
+			else{
+				this.send(global.draftvalues.draftroom, name +" paid "+currentscore+ " erekredieten for "+ nominatedmon +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")");
+				global.draftvalues.users[name]["totaldraftscore"]=global.draftvalues.users[name]["totaldraftscore"]+calculatescore(room,nominatedmon,name);
+				global.draftvalues.users[name]["draftedmons"].push(nominatedmon);
 				saveTeamsToCloud();
-				console.log("next drafter in biglist "+global.draftvalues.nextdrafter);
-				global.draftvalues.nextdrafter=0;
-				console.log("nextdrafter " + global.draftvalues.nextdrafter);
-				username=list[global.draftvalues.nextdrafter];
-				if(global.draftvalues.currentStartScore>0){
-					global.draftvalues.currentStartScore = global.draftvalues.currentStartScore - 10;
+				global.auctioning = false;
+
+				global.draftvalues.nextdrafter = global.draftvalues.nextdrafter + 1;
+				var username=list[global.draftvalues.nextdrafter];
+				var picksleft = global.draftvalues.nrofpicks - global.draftvalues.users[name]["draftedmons"].length;
+				console.log("pickslef " + global.draftvalues.turnorder);
+				if(picksleft<1){
+					global.draftvalues.turnorder.remove(name);
+					console.log("turnorder " + global.draftvalues.turnorder);
+					console.log("nextdrafter " + global.draftvalues.nextdrafter);
+					username=list[global.draftvalues.nextdrafter];
+					if(list.length == 0){
+						global.draftvalues.users[toId(global.draftvalues.draftroom)]=[];
+						//saveTeamsToCloud();
+						global.draftvalues.draftstarted=false;
+						return this.send(global.draftvalues.draftroom,'The draft over is good luck and have fun ');
+					}
 				}
-				//global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
-				//console.log("order changed");
-				global.draftvalues.picknr[toId(global.draftvalues.draftroom)]= global.draftvalues.picknr[toId(global.draftvalues.draftroom)]+1;
-				console.log("picknr is"+ global.draftvalues.picknr[toId(global.draftvalues.draftroom)]);
+				if(global.draftvalues.nextdrafter > global.draftvalues.turnorder.length - 1){
+					saveTeamsToCloud();
+					console.log("next drafter in biglist "+global.draftvalues.nextdrafter);
+					global.draftvalues.nextdrafter=0;
+					console.log("nextdrafter " + global.draftvalues.nextdrafter);
+					username=list[global.draftvalues.nextdrafter];
+					if(global.draftvalues.currentStartScore>0){
+						global.draftvalues.currentStartScore = global.draftvalues.currentStartScore - 10;
+					}
+					//global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
+					//console.log("order changed");
+					global.draftvalues.picknr[toId(global.draftvalues.draftroom)]= global.draftvalues.picknr[toId(global.draftvalues.draftroom)]+1;
+					console.log("picknr is"+ global.draftvalues.picknr[toId(global.draftvalues.draftroom)]);
+				}
 			}
+
+
+
 			username=list[global.draftvalues.nextdrafter];
-			console.log("next drafter "+global.draftvalues.nextdrafter);
+			console.log("next drafter "+global.draftvalues.nextdrafter + username);
 			var newlist=global.draftvalues.users[username]["draftedmons"];
 			var picksleft = global.draftvalues.nrofpicks - newlist.length;
 			var val= global.draftvalues.tierPicks- global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
-			var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
+			var type = global.draftvalues.users[username]["TerralyzeType"];
+			var insert ="";
+			if(type != undefined){
+				insert = result+ '<div style="color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;"> Terastalyze type: <psicon type="'+type+'" style="vertical-align:0px;margin: 0px" /></div>';
+			}
+
+			var word = '!htmlbox  <div><h1>' + username +insert+'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
 			word=word+"<div>";
 			while (index<2){
 				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1" style="background-color: rgb(204, 255, 204)">show list</button>';
@@ -1627,7 +1653,7 @@ exports.commands = {
 	bid:  function (arg, by, room, cmd) {
 		var value = parseInt(arg);
 		var name = toId(by);
-		if(!global.draftvalues.turnorder.includes(name)){
+		if(!global.draftvalues.turnorder.includes(name) || (global.draftvalues.typedrafting && !global.draftvalues.typeturnorder.includes(name))){
 			return this.reply("you're not in the draft " + name);
 		}
 		if(value > global.draftvalues.users[name]["erekredieten"]){
@@ -1647,7 +1673,7 @@ exports.commands = {
 	bidmore:  function (arg, by, room, cmd) {
 		var value = 300;
 		var name = toId(by);
-		if(!global.draftvalues.turnorder.includes(name)){
+		if(!global.draftvalues.turnorder.includes(name) || (global.draftvalues.typedrafting && !global.draftvalues.typeturnorder.includes(name) )){
 			return this.reply("you're not in the draft " + name);
 		}
 		console.log(arg);
@@ -1735,7 +1761,13 @@ exports.commands = {
 		var newlist=global.draftvalues.users[username]["draftedmons"];
 		var picksleft = global.draftvalues.nrofpicks - newlist.length;
 		var val= global.draftvalues.tierPicks- global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
-		var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
+		var type = global.draftvalues.users[username]["TerralyzeType"];
+		var insert ="";
+		if(type != undefined){
+			insert = result+ '<div style="color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;"> Terastalyze type: <psicon type="'+type+'" style="vertical-align:0px;margin: 0px" /></div>';
+		}
+
+		var word = '!htmlbox  <div><h1>' + username +insert+'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
 		word=word+"<div>";
 		while (index<2){
 			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1" style="background-color: rgb(204, 255, 204)">show list</button>';
@@ -3018,7 +3050,7 @@ function draftmonsprint3(arg){
 		arg=arg.sort();
 		var result='!htmlbox ';
 		if(type != undefined){
-			result = result+ '<div style="color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;"> Terralyze type: <psicon type="'+type+'" style="vertical-align:0px;margin: 0px" /></div>';
+			result = result+ '<div style="color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;"> Terastalyze type: <psicon type="'+type+'" style="vertical-align:0px;margin: 0px" /></div>';
 		}
 
 			for (var i = 0; i < arg.length; i++) {
@@ -3028,8 +3060,6 @@ function draftmonsprint3(arg){
 					var name=arg[i];
 					var word='<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>,';
 					result=result+word;
-
-
 			}
 			result=result.substring(0,result.length-1);
 			result=result;
