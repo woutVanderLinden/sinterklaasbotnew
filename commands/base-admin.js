@@ -916,7 +916,7 @@ exports.commands = {
 		}
 		if(global.auctionDrafting){
 			global.draftvalues.typedrafting=true;
-			global.draftvalues.typeturnorder = global.draftvalues.turnorder;
+			global.draftvalues.typeturnorder = [...global.draftvalues.turnorder];
 			global.draftvalues.tierPicks = global.draftvalues.todraftmons[toId(room)]["freepicks"];
 			var list=global.draftvalues.turnorder;
 			global.draftvalues.availableTypes = ["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
