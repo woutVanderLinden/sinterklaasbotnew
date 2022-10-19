@@ -3082,7 +3082,7 @@ function draftmonsprint5(arg,color){
 	arg=arg.sort();
 	//color = global.draftvalues.typingcolors[typing];
 	var color2 = "rgb(0,0,0)";
-	if(!typings.includes(global.draftvalues.mondata[currentmon]["Typing1"])){
+	if(global.draftvalues.mondata[currentmon]["Typing1"]!=undefined){
 		color = global.draftvalues.typingcolors[global.draftvalues.mondata[currentmon]["Typing1"]];
 	}
 	if(global.draftvalues.mondata[currentmon]["Typing 2"]!=undefined){
