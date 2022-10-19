@@ -540,16 +540,19 @@ exports.commands = {
 		await client.connect();
 		let quotes = await findOneListingByName(client,"pokemon");
 		var list;
+		var type;
 		if(arg==''){
-				var list=quotes["pokemon"][toId(by)]["draftedmons"];
+				type=quotes["pokemon"][toId(by)]["TerralyzeType"];
+				list=quotes["pokemon"][toId(by)]["draftedmons"];
 		}
 		else{
-				var list=quotes["pokemon"][toId(arg)]["draftedmons"];
+			type=quotes["pokemon"][toId(arg)]["TerralyzeType"];
+				list=quotes["pokemon"][toId(arg)]["draftedmons"];
 		}
 		if(toId(by)==toId(room)){
 			return this.reply(draftmonsprint(list));
 		}else{
-			return this.reply(draftmonsprint2(list));
+			return this.reply(draftmonsprint2(type,list));
 		}
 	
 			
@@ -3011,9 +3014,13 @@ function draftmonsprint3(arg){
 			result=result;
 		return result;
 	};
- function draftmonsprint2(arg){
+ function draftmonsprint2(type, arg){
 		arg=arg.sort();
 		var result='!htmlbox ';
+		if(type != undefined){
+			result = result+ '<div> Terralyze type: <psicon type="'+type+'" style="vertical-align:-7px;margin:-2px" /></div>"';
+		}
+
 			for (var i = 0; i < arg.length; i++) {
 				console.log(arg[i]);
 		//Do something
@@ -3096,7 +3103,7 @@ function draftmonsprint5(arg,color){
 		//Do something
 		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 		var name=arg[i];
-		var word='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +' border-color:'+ color2+'">';
+		var word='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +' "; border: 2px solid '+ color2+'">';
 		word=word+'<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>';
 		word=word+'</button>';
 		result=result+word;
@@ -3125,7 +3132,6 @@ function printPosTypes(){
 
 	}
 	result=result.substring(0,result.length-1);
-	result=result;
 	return result;
 };
 
