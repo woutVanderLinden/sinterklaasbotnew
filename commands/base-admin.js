@@ -1622,10 +1622,10 @@ exports.commands = {
 			var type = global.draftvalues.users[username]["TerralyzeType"];
 			var insert ="";
 			if(type != undefined){
-				insert = result+ '<div style="color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;"> Terastalyze type: <psicon type="'+type+'" style="vertical-align:0px;margin: 0px" /></div>';
+				insert = '<div style="color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;"> Terastalyze type: <psicon type="'+type+'" style="vertical-align:0px;margin: 0px" /></div>';
 			}
 
-			var word = '!htmlbox  <div><h1>' + username +insert+'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
+			var word = '!htmlbox  <div><h1>' + username +'</h1>'+insert+'<div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
 			word=word+"<div>";
 			while (index<2){
 				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1" style="background-color: rgb(204, 255, 204)">show list</button>';
@@ -1764,10 +1764,10 @@ exports.commands = {
 		var type = global.draftvalues.users[username]["TerralyzeType"];
 		var insert ="";
 		if(type != undefined){
-			insert = result+ '<div style="color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;"> Terastalyze type: <psicon type="'+type+'" style="vertical-align:0px;margin: 0px" /></div>';
+			insert = '<div style="color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;"> Terastalyze type: <psicon type="'+type+'" style="vertical-align:0px;margin: 0px" /></div>';
 		}
 
-		var word = '!htmlbox  <div><h1>' + username +insert+'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
+		var word = '!htmlbox  <div><h1>' + username+ '</h1>'+insert+'<div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
 		word=word+"<div>";
 		while (index<2){
 			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1" style="background-color: rgb(204, 255, 204)">show list</button>';
