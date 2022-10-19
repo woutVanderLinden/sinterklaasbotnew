@@ -1775,7 +1775,7 @@ exports.commands = {
 
 		}
 		if(global.draftvalues.typedrafting){
-			if(global.draftvalues.availableTypes.includes(toId(arg))){
+			if(global.draftvalues.availableTypes.includes(arg)){
 
 				global.nominatedType = toId(arg);
 				global.currentscore = 0;
@@ -3080,13 +3080,22 @@ function draftmonsprint6(arg){
 	};
 function draftmonsprint5(arg,color){
 	arg=arg.sort();
+	color = global.draftvalues.typingcolors[typing];
+	var color2 = "rgb(0,0,0)";
+	if(!typings.includes(global.draftvalues.mondata[currentmon]["Typing1"])){
+		color = global.draftvalues.typingcolors[global.draftvalues.mondata[currentmon]["Typing1"]];
+	}
+	if(global.draftvalues.mondata[currentmon]["Typing 2"]!=undefined){
+		color2 = global.draftvalues.typingcolors[global.draftvalues.mondata[currentmon]["Typing 2"]];
+	}
+
 	var result='';
 	for (var i = 0; i < arg.length; i++) {
 		console.log("here "+arg[i]);
 		//Do something
 		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 		var name=arg[i];
-		var word='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +'">';
+		var word='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +' border-color:'+ color2+'">';
 		word=word+'<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>';
 		word=word+'</button>';
 		result=result+word;
@@ -3107,7 +3116,7 @@ function printPosTypes(){
 		//Do something
 		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 		var name=arg[i];
-		var word='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +'">';
+		var word='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+ name +'" style="background-color:'+color +'">';
 		word=word+'<psicon type="'+name+'" style="vertical-align:-7px;margin:-2px" />';
 		word=word+'</button>';
 		result=result+word;
