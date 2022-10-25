@@ -1622,7 +1622,7 @@ exports.commands = {
 			var type = global.draftvalues.users[username]["TerralyzeType"];
 			var insert ="";
 			if(type != undefined){
-				insert = '<div style="color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;"> Terastalyze type: <psicon type="'+type+'" style="vertical-align:0px;margin: 0px" /></div>';
+				insert = '<div style="color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;"> Terastalyze type: <psicon type="'+type+'" style="vertical-align:-2px;margin: 0px" /></div>';
 			}
 
 			var word = '!htmlbox  <div><h1>' + username +'</h1>'+insert+'<div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
@@ -1764,7 +1764,7 @@ exports.commands = {
 		var type = global.draftvalues.users[username]["TerralyzeType"];
 		var insert ="";
 		if(type != undefined){
-			insert = '<div style="color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;"> Terastalyze type: <psicon type="'+type+'" style="vertical-align:0px;margin: 0px" /></div>';
+			insert = '<div style="color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;"> Terastalyze type: <psicon type="'+type+'" style="vertical-align:-2px;margin: 0px" /></div>';
 		}
 
 		var word = '!htmlbox  <div><h1>' + username+ '</h1>'+insert+'<div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
@@ -1810,7 +1810,7 @@ exports.commands = {
 		}
 		if(global.draftvalues.typedrafting){
 			if(global.draftvalues.availableTypes.includes(arg)){
-
+				global.passedusers = [];
 				global.nominatedType = toId(arg);
 				global.currentscore = 0;
 				global.currentHighestBidder = name;
@@ -3050,7 +3050,7 @@ function draftmonsprint3(arg){
 		arg=arg.sort();
 		var result='!htmlbox ';
 		if(type != undefined){
-			result = result+ '<div style="color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;"> Terastalyze type: <psicon type="'+type+'" style="vertical-align:0px;margin: 0px" /></div>';
+			result = result+ '<div style="color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;"> Terastalyze type: <psicon type="'+type+'" style="vertical-align:-2px;margin: 0px" /></div>';
 		}
 
 			for (var i = 0; i < arg.length; i++) {
@@ -3134,7 +3134,7 @@ function draftmonsprint5(arg,color){
 		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 		var name=arg[i];
 		var word="";
-		if(color2 == "rgb(0,0,0)"){
+		if(global.draftvalues.mondata[arg[i]]["Typing 2"]==undefined){
 			word ='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +'; font-size: 10pt; font-weight: bold;">';
 		}
 		else{
