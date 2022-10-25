@@ -1570,6 +1570,31 @@ exports.commands = {
 					global.draftvalues.nextdrafter = 0;
 				}
 				else{
+					this.reply("use ?draftable tier(x) to watch the corresponding tier. Or use the search or recommend function for a pick");
+					var username = list[0];
+					var newlist=global.draftvalues.users[username]["draftedmons"];
+					var val= global.draftvalues.tierPicks- global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
+					var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';
+					var index=1;
+					word=word+"<div>";
+
+					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1" style="background-color: rgb(204, 255, 204)">Show List</button>';
+					index++;
+
+					word=word+"</div>";
+					word=word+"<div>";
+					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
+
+					index2++;
+
+					word=word+"</div>";
+					word=word+"</div>";
+					console.log(word);
+					this.send(global.draftvalues.draftroom, word);
+					var typeword = "!htmlbox  <div>" + printPosTypes() + "</div>"
+					console.log("types " + typeword);
+					this.reply(typeword);
+					return this.reply(' the next drafter is '+list[0]);
 					return;
 				}
 			}
@@ -1700,6 +1725,7 @@ exports.commands = {
 		console.log("nextdrafter " + global.draftvalues.nextdrafter);
 		var name = global.currentHighestBidder;
 		var list=global.draftvalues.turnorder;
+		global.passedusers = [];
 		global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"]-currentscore;
 		if(global.draftvalues.typedrafting){
 			global.draftvalues.typeturnorder.remove(name);
@@ -1712,6 +1738,31 @@ exports.commands = {
 				global.draftvalues.nextdrafter = 0;
 			}
 			else{
+				this.reply("use ?draftable tier(x) to watch the corresponding tier. Or use the search or recommend function for a pick");
+				var username = list[0];
+				var newlist=global.draftvalues.users[username]["draftedmons"];
+				var val= global.draftvalues.tierPicks- global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
+				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';
+				var index=1;
+				word=word+"<div>";
+
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1" style="background-color: rgb(204, 255, 204)">Show List</button>';
+				index++;
+
+				word=word+"</div>";
+				word=word+"<div>";
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
+
+				index2++;
+
+				word=word+"</div>";
+				word=word+"</div>";
+				console.log(word);
+				this.send(global.draftvalues.draftroom, word);
+				var typeword = "!htmlbox  <div>" + printPosTypes() + "</div>"
+				console.log("types " + typeword);
+				this.reply(typeword);
+				return this.reply(' the next drafter is '+list[0]);
 				return;
 			}
 		}
@@ -1814,6 +1865,7 @@ exports.commands = {
 				global.nominatedType = toId(arg);
 				global.currentscore = 0;
 				global.currentHighestBidder = name;
+				setTimeout(() => this.send(global.draftvalues.draftroom, "?endbid"), 30000)
 				return this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentscore);
 			}
 			return this.send(global.draftvalues.draftroom, "That is not a type");
@@ -3138,7 +3190,7 @@ function draftmonsprint5(arg,color){
 			word ='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +'; font-size: 10pt; font-weight: bold;">';
 		}
 		else{
-			word ='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +';  text-shadow: 1px 1px 1px '+ color2+'; font-size: 10pt; font-weight: bold;">';
+			word ='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +'; font-size: 10pt; font-weight: bold;">';
 		}
 		word=word+'<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>';
 		word=word+'</button>';
