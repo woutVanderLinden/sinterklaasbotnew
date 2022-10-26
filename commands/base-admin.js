@@ -3593,7 +3593,7 @@ function endbid()
 	global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"]-currentscore;
 	if(global.draftvalues.typedrafting){
 		global.draftvalues.typeturnorder.remove(name);
-
+		global.draftvalues.availableTypes.remove(nominatedType);
 		global.draftvalues.nextdrafter = global.draftvalues.nextdrafter + 1;
 		global.draftvalues.users[name]["TerralyzeType"] = nominatedType;
 		if(global.draftvalues.typeturnorder.length == 0){
