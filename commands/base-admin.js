@@ -1641,6 +1641,7 @@ exports.commands = {
 				global.nominatedType = toId(arg);
 				global.currentscore = 0;
 				global.currentHighestBidder = name;
+				global.draftvalues.availableTypes.remove(arg)
 				var timeout = 30000 + Math.random() * 30000;
 				setTimeout(() => this.send(global.draftvalues.draftroom,endbid()), timeout)
 				return this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentscore);
