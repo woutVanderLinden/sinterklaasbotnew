@@ -1642,7 +1642,7 @@ exports.commands = {
 				global.currentscore = 0;
 				global.currentHighestBidder = name;
 				global.draftvalues.availableTypes.remove(arg)
-				var timeout = 3000 + Math.random() * 10000;
+				var timeout = 10000 + Math.random() * 25000;
 				setTimeout(() => this.send(global.draftvalues.draftroom,endbid()), timeout)
 				return this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentscore);
 			}
@@ -1701,7 +1701,10 @@ exports.commands = {
 					this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentscore);
 					global.auctioning = true;
 					global.currentHighestBidder = toId(by);
+					var timeout = 10000 + Math.random() * 25000;
+					setTimeout(() => this.send(global.draftvalues.draftroom,endbid()), timeout)
 					this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
+					return;
 					i=100;
 				}
 				i++;
