@@ -1648,6 +1648,9 @@ exports.commands = {
 			return this.send(global.draftvalues.draftroom,'it is not your turn');
 		}
 		if(global.draftvalues.typedrafting){
+			if(global.draftvalues.typeturnorder[global.draftvalues.nextdrafter]!=toId(by)){
+				return this.send(global.draftvalues.draftroom,'it is not your turn');
+			}
 			if(global.draftvalues.availableTypes.includes(arg)){
 				global.passedusers = [];
 				global.nominatedType = toId(arg);
