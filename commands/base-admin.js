@@ -3596,16 +3596,19 @@ function endbid()
 		this.send(global.draftvalues.draftroom, name +" paid "+currentscore+ " erekredieten for "+ nominatedType +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")");
 		global.draftvalues.nextdrafter = global.draftvalues.nextdrafter + 1;
 		global.draftvalues.users[name]["TerralyzeType"] = nominatedType;
-		if(global.draftvalues.typeturnorder == 0){
+		if(global.draftvalues.typeturnorder.length == 0){
 			global.draftvalues.typedrafting=false;
 			//saveTeamsToCloud();
 			global.draftvalues.nextdrafter = 0;
 		}
 		else{
+			if(global.draftvalues.nextdrafter>global.draftvalues.typeturnorder.length-1){
+				global.draftvalues.nextdrafter = 0;
+			}
 			this.reply("use ?draftable tier(x) to watch the corresponding tier. Or use the search or recommend function for a pick");
 			var username = list[0];
-			var newlist=global.draftvalues.users[username]["draftedmons"];
-			var val= global.draftvalues.tierPicks- global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
+			var newlist = global.draftvalues.users[username]["draftedmons"];
+			var val= global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
 			var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';
 			var index=1;
 			word=word+"<div>";
