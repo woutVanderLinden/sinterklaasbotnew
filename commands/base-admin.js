@@ -1642,7 +1642,7 @@ exports.commands = {
 				global.currentscore = 0;
 				global.currentHighestBidder = name;
 				global.draftvalues.availableTypes.remove(arg)
-				var timeout = 30000 + Math.random() * 30000;
+				var timeout = 3000 + Math.random() * 10000;
 				setTimeout(() => this.send(global.draftvalues.draftroom,endbid()), timeout)
 				return this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentscore);
 			}
@@ -3631,7 +3631,7 @@ function endbid()
 			//console.log("types " + typeword);
 			//this.reply(typeword);
 			//return reply(' the next drafter is '+list[0]);
-			typeword = name +" paid "+currentscore+ " erekredieten for "+ nominatedType +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")\n"+typeword;
+			typeword = name +" paid "+global.currentscore+ " erekredieten for "+ global.nominatedType +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")\n"+typeword;
 			return typeword;
 		}
 	}
@@ -3654,7 +3654,7 @@ function endbid()
 				global.draftvalues.users[toId(global.draftvalues.draftroom)]=[];
 				//saveTeamsToCloud();
 				global.draftvalues.draftstarted=false;
-				return name +" paid "+currentscore+ " erekredieten for "+ nominatedmon +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +") \n" + 'The draft over is good luck and have fun ';
+				return name +" paid "+ global.currentscore+ " erekredieten for "+ global.nominatedmon +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +") \n" + 'The draft over is good luck and have fun ';
 			}
 		}
 		if(global.draftvalues.nextdrafter > global.draftvalues.turnorder.length - 1){
@@ -3701,7 +3701,7 @@ function endbid()
 	word=word+"</div>";
 	word=word+"</div>";
 	console.log(word);
-	return name +" paid "+currentscore+ " erekredieten for "+ nominatedmon +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +") \n" +word;
+	return name +" paid "+global.draftvalues.currentscore+ " erekredieten for "+ global.nominatedmon +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +") \n" +word;
 
 	//return this.send(global.draftvalues.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " picks left: " + picksleft);
 };
