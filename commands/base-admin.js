@@ -3596,6 +3596,7 @@ function endbid()
 	global.passedusers = [];
 	global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"]-currentscore;
 	if(global.draftvalues.typedrafting){
+		var list=global.draftvalues.typeturnorder;
 		global.draftvalues.typeturnorder.remove(name);
 		global.draftvalues.availableTypes.remove(nominatedType);
 		global.draftvalues.nextdrafter = global.draftvalues.nextdrafter + 1;
