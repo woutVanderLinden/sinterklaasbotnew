@@ -1632,7 +1632,7 @@ exports.commands = {
 		}
 		var list=global.draftvalues.turnorder;
 
-		if(list[global.draftvalues.nextdrafter]!=toId(by)){
+		if(list[global.draftvalues.nextdrafter]!=toId(by) && !global.draftvalues.typedrafting){
 			return this.send(global.draftvalues.draftroom,'it is not your turn');
 		}
 		if(global.draftvalues.typedrafting){
@@ -3611,7 +3611,7 @@ function endbid()
 				global.draftvalues.nextdrafter = 0;
 			}
 			//this.reply("use ?draftable tier(x) to watch the corresponding tier. Or use the search or recommend function for a pick");
-			var username = list[0];
+			var username = list[global.draftvalues.nextdrafter];
 			var newlist = global.draftvalues.users[username]["draftedmons"];
 			var val= global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
 			var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';
