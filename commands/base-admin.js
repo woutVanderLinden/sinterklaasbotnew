@@ -1556,7 +1556,7 @@ exports.commands = {
 		this.reply(toId(by)+" passed");
 		if(global.passedusers.length == global.draftvalues.turnorder.length-1 || (global.auctionDrafting && global.passedusers.length == global.draftvalues.typeturnorder.length-1)){
 			if(global.draftvalues.typedrafting) {
-				this.send(global.draftvalues.draftroom,endbid(global.nominatedtype));
+				this.send(global.draftvalues.draftroom,endbid(global.nominatedType));
 			}
 			else{
 				this.send(global.draftvalues.draftroom,endbid(global.nominatedmon));
