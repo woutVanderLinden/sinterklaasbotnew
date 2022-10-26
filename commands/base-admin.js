@@ -3605,7 +3605,7 @@ function endbid()
 			if(global.draftvalues.nextdrafter>global.draftvalues.typeturnorder.length-1){
 				global.draftvalues.nextdrafter = 0;
 			}
-			this.reply("use ?draftable tier(x) to watch the corresponding tier. Or use the search or recommend function for a pick");
+			//this.reply("use ?draftable tier(x) to watch the corresponding tier. Or use the search or recommend function for a pick");
 			var username = list[0];
 			var newlist = global.draftvalues.users[username]["draftedmons"];
 			var val= global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
