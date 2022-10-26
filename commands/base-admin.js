@@ -3593,7 +3593,7 @@ function endbid()
 	global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"]-currentscore;
 	if(global.draftvalues.typedrafting){
 		global.draftvalues.typeturnorder.remove(name);
-		this.send(global.draftvalues.draftroom, name +" paid "+currentscore+ " erekredieten for "+ nominatedType +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")");
+
 		global.draftvalues.nextdrafter = global.draftvalues.nextdrafter + 1;
 		global.draftvalues.users[name]["TerralyzeType"] = nominatedType;
 		if(global.draftvalues.typeturnorder.length == 0){
@@ -3630,11 +3630,11 @@ function endbid()
 			//console.log("types " + typeword);
 			//this.reply(typeword);
 			//return reply(' the next drafter is '+list[0]);
+			typeword = global.draftvalues.draftroom, name +" paid "+currentscore+ " erekredieten for "+ nominatedType +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")\n"+typeword;
 			return typeword;
 		}
 	}
 	else{
-		this.send(global.draftvalues.draftroom, name +" paid "+currentscore+ " erekredieten for "+ nominatedmon +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")");
 		global.draftvalues.users[name]["totaldraftscore"]=global.draftvalues.users[name]["totaldraftscore"]+calculatescore(room,nominatedmon,name);
 		global.draftvalues.users[name]["draftedmons"].push(nominatedmon);
 		saveTeamsToCloud();
@@ -3653,7 +3653,7 @@ function endbid()
 				global.draftvalues.users[toId(global.draftvalues.draftroom)]=[];
 				//saveTeamsToCloud();
 				global.draftvalues.draftstarted=false;
-				return 'The draft over is good luck and have fun ';
+				return global.draftvalues.draftroom, name +" paid "+currentscore+ " erekredieten for "+ nominatedmon +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +") \n" + 'The draft over is good luck and have fun ';
 			}
 		}
 		if(global.draftvalues.nextdrafter > global.draftvalues.turnorder.length - 1){
@@ -3700,7 +3700,7 @@ function endbid()
 	word=word+"</div>";
 	word=word+"</div>";
 	console.log(word);
-	return word;
+	return global.draftvalues.draftroom, name +" paid "+currentscore+ " erekredieten for "+ nominatedmon +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +") \n" +word;
 
 	//return this.send(global.draftvalues.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " picks left: " + picksleft);
 };
