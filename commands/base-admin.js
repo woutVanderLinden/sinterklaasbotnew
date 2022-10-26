@@ -3678,7 +3678,7 @@ function endbid()
 	}
 
 
-
+	var list=global.draftvalues.turnorder;
 	username=list[global.draftvalues.nextdrafter];
 	console.log("next drafter "+global.draftvalues.nextdrafter + username);
 	var newlist=global.draftvalues.users[username]["draftedmons"];
