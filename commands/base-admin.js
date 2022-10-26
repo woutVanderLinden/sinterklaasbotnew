@@ -1555,7 +1555,7 @@ exports.commands = {
 		global.passedusers.push(toId(by));
 		this.reply(toId(by)+" passed");
 		if(global.passedusers.length == global.draftvalues.turnorder.length-1 || (global.auctionDrafting && global.passedusers.length == global.draftvalues.typeturnorder.length-1)){
-			endbid();
+			this.send(global.draftvalues.draftroom,endbid());
 		}
 	},
 	nominatedmon:  function (arg, by, room, cmd) {
@@ -1610,7 +1610,7 @@ exports.commands = {
 	},
 	endbid:  function (arg, by, room, cmd) {
 		if (!this.isRanked('admin') || !global.auctionDrafting) {return false;}
-		endbid();
+		this.send(global.draftvalues.draftroom,endbid());
 		return;
 	},
 	toggleauction:  function (arg, by, room, cmd) {
@@ -1642,7 +1642,7 @@ exports.commands = {
 				global.currentscore = 0;
 				global.currentHighestBidder = name;
 				var timeout = 30000 + Math.random() * 30000;
-				setTimeout(() => endbid(), timeout)
+				setTimeout(() => this.send(global.draftvalues.draftroom,endbid()), timeout)
 				return this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentscore);
 			}
 			return this.send(global.draftvalues.draftroom, "That is not a type");
@@ -3624,13 +3624,13 @@ function endbid()
 
 			word=word+"</div>";
 			word=word+"</div>";
-			console.log(word);
-			this.send(global.draftvalues.draftroom, word);
-			var typeword = "!htmlbox  <div>" + printPosTypes() + "</div>"
-			console.log("types " + typeword);
-			this.reply(typeword);
-			return this.reply(' the next drafter is '+list[0]);
-			return;
+			//console.log(word);
+			//this.send(global.draftvalues.draftroom, word);
+			var typeword = "!htmlbox  <div><h1>"+ username +"</h1>" + printPosTypes() + "</div>"
+			//console.log("types " + typeword);
+			//this.reply(typeword);
+			//return reply(' the next drafter is '+list[0]);
+			return typeword;
 		}
 	}
 	else{
@@ -3653,7 +3653,7 @@ function endbid()
 				global.draftvalues.users[toId(global.draftvalues.draftroom)]=[];
 				//saveTeamsToCloud();
 				global.draftvalues.draftstarted=false;
-				return this.send(global.draftvalues.draftroom,'The draft over is good luck and have fun ');
+				return 'The draft over is good luck and have fun ';
 			}
 		}
 		if(global.draftvalues.nextdrafter > global.draftvalues.turnorder.length - 1){
@@ -3700,9 +3700,9 @@ function endbid()
 	word=word+"</div>";
 	word=word+"</div>";
 	console.log(word);
-	this.send(global.draftvalues.draftroom, word);
+	return word;
 
-	return this.send(global.draftvalues.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " picks left: " + picksleft);
+	//return this.send(global.draftvalues.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " picks left: " + picksleft);
 };
 function weaknessForPokemon(monname)
 {
