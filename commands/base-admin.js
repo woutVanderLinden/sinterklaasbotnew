@@ -3640,7 +3640,7 @@ function endbid()
 		}
 	}
 	else{
-		global.draftvalues.users[name]["totaldraftscore"]=global.draftvalues.users[name]["totaldraftscore"]+calculatescore(room,nominatedmon,name);
+		global.draftvalues.users[name]["totaldraftscore"]=global.draftvalues.users[name]["totaldraftscore"]+calculatescore(global.draftvalues.draftroom,nominatedmon,name);
 		global.draftvalues.users[name]["draftedmons"].push(nominatedmon);
 		saveTeamsToCloud();
 		global.auctioning = false;
