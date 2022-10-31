@@ -1188,9 +1188,13 @@ exports.commands = {
 					this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentscore);
 					global.auctioning = true;
 					global.currentHighestBidder = name;
-					var timeout = 10000 + Math.random() * 25000;
 					var monname = global.nominatedmon;
-					setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname)), timeout)
+					global.timeout = 5000 + Math.random() * 2000;
+
+					if(global.timingout != undefined){
+						clearTimeout(global.timingout);
+					}
+					global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname)), timeout)
 					this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
 					return;
 					i=100;
@@ -1678,9 +1682,20 @@ exports.commands = {
 			global.currentHighestBidder = toId(by);
 		}
 		if(!global.draftvalues.typedrafting){
-			this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
+			this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);global.timeout = 5000 + Math.random() * 2000;
+			var monname = nominatedmon;
+			if(global.timingout != undefined){
+				clearTimeout(global.timingout);
+			}
+			global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname)), timeout)
 			return this.reply("The current highest bid on " + nominatedmon + " is "+ currentscore + " from "+ global.currentHighestBidder);
 		}
+		this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);global.timeout = 5000 + Math.random() * 2000;
+		var monname = global.nominatedType;
+		if(global.timingout != undefined){
+			clearTimeout(global.timingout);
+		}
+		global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname)), timeout)
 		return this.reply("The current highest bid on " + global.nominatedType + " is "+ currentscore + " from "+ global.currentHighestBidder);
 	},
 	offermore: 'bidmore',
@@ -1705,8 +1720,20 @@ exports.commands = {
 		}
 		if(!global.draftvalues.typedrafting) {
 			this.send(global.draftvalues.draftroom, "!dt " + global.nominatedmon);
+			this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);global.timeout = 5000 + Math.random() * 2000;
+			var monname = nominatedmon;
+			if(global.timingout != undefined){
+				clearTimeout(global.timingout);
+			}
+			global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname)), timeout)
 			return this.reply("The current highest bid on " + nominatedmon + " is "+ currentscore + " from "+ global.currentHighestBidder);
 		}
+		this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);global.timeout = 5000 + Math.random() * 2000;
+		var monname = global.nominatedType;
+		if(global.timingout != undefined){
+			clearTimeout(global.timingout);
+		}
+		global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname)), timeout)
 		return this.reply("The current highest bid on " + global.nominatedType + " is "+ currentscore + " from "+ global.currentHighestBidder);
 	},
 	endbid:  function (arg, by, room, cmd) {
@@ -1751,7 +1778,6 @@ exports.commands = {
 				global.currentscore = 0;
 				global.currentHighestBidder = name;
 				global.draftvalues.availableTypes.remove(arg)
-				var timeout = 10000 + Math.random() * 25000;
 				var nomtype = global.nominatedType;
 				if(global.draftvalues.typedrafting) {
 					nomtype = global.nominatedType;
@@ -1759,7 +1785,12 @@ exports.commands = {
 				else{
 					nomtype = global.nominatedmon;
 				}
-				setTimeout(() => this.send(global.draftvalues.draftroom,endbid(nomtype)), timeout)
+				global.timeout = 5000 + Math.random() * 2000;
+
+				if(global.timingout != undefined){
+					clearTimeout(global.timingout);
+				}
+				global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname)), timeout)
 				return this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentscore);
 			}
 			return this.send(global.draftvalues.draftroom, "That is not a type");
