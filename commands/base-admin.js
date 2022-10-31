@@ -1109,6 +1109,101 @@ exports.commands = {
 			arg=arg.substring(1,arg.length);
 			console.log(arg);
 		var list=global.draftvalues.turnorder;
+
+		if(list[global.draftvalues.nextdrafter]!=toId(by) && !global.draftvalues.typedrafting){
+			return this.send(global.draftvalues.draftroom,'it is not your turn');
+		}
+		if(global.draftvalues.typedrafting){
+			if(global.draftvalues.typeturnorder[global.draftvalues.nextdrafter]!=toId(by)){
+				return this.send(global.draftvalues.draftroom,'it is not your turn');
+			}
+			if(global.draftvalues.availableTypes.includes(arg)){
+				global.passedusers = [];
+				global.nominatedType = toId(arg);
+				global.currentscore = 0;
+				global.currentHighestBidder = name;
+				global.draftvalues.availableTypes.remove(arg)
+				var timeout = 10000 + Math.random() * 25000;
+				var nomtype = global.nominatedType;
+				if(global.draftvalues.typedrafting) {
+					nomtype = global.nominatedType;
+				}
+				else{
+					nomtype = global.nominatedmon;
+				}
+				setTimeout(() => this.send(global.draftvalues.draftroom,endbid(nomtype)), timeout)
+				return this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentscore);
+			}
+			return this.send(global.draftvalues.draftroom, "That is not a type");
+		}
+		var args=arg.split("-");
+		arg='';
+		for (var i = 0; i < args.length; i++) {
+			if(args[i]=="a"){
+				args[i]="alola";
+			}
+			if(args[i]=="g"){
+				args[i]="galar";
+			}
+			if(args[i]=="h"){
+				args[i]="hisui";
+			}
+			if(args[i]=="o"){
+				args[i]="o";
+			}
+			else{
+				args[i]=jsUcfirst(args[i]);
+			}
+
+			arg=arg+'-'+args[i];
+		}
+		arg=arg.substring(1,arg.length);
+		var args2=arg.split(" ");
+		arg='';
+		for (var i = 0; i < args2.length; i++) {
+			args2[i]=jsUcfirst(args2[i]);
+			arg=arg+' '+jsUcfirst(args2[i]);
+		}
+		arg=arg.substring(1,arg.length);
+		if(global.auctionDrafting){
+			var index= global.draftvalues.turnorder.indexOf(name);
+
+			global.passedusers = [];
+			var draftmons=global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)];
+			var i=1;
+			console.log(draftmons);
+			while(i<=draftmons["length"]){
+				var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
+				var creditsleft = global.draftvalues.users[name]["Points"]
+				//var picksleft=draftmons["freepicks"]-global.draftvalues.picknr[toId(global.draftvalues.draftroom)]-1-global.draftvalues.users[name]["tieredpicks"].length;
+				if(possiblepic.includes(arg)){
+
+					draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
+
+					global.nominatedmon = arg;
+					global.currentscore = global.draftvalues.currentStartScore;
+					if(global.draftvalues.currentStartScore > global.draftvalues.users[name]["erekredieten"]){
+						this.reply("you don't have enough credits staring offer will be 0");
+						global.currentscore = 0;
+					}
+					this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentscore);
+					global.auctioning = true;
+					global.currentHighestBidder = toId(by);
+					var timeout = 10000 + Math.random() * 25000;
+					var monname = global.nominatedmon;
+					setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname)), timeout)
+					this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
+					return;
+					i=100;
+				}
+				i++;
+			}
+			if(i!=101){
+				return this.reply(arg +' is no longer available.'+ name+' pick a different mon or check your spelling. ' );
+			}
+			return;
+
+		}
         if(global.draftvalues.giftdrafting){
 
             var index= global.draftvalues.turnorder.indexOf(name);
