@@ -1109,7 +1109,7 @@ exports.commands = {
 			arg=arg.substring(1,arg.length);
 			console.log(arg);
 		var list=global.draftvalues.turnorder;
-		if(list[global.draftvalues.nextdrafter]!=toId(by) && !global.draftvalues.typedrafting){
+		if(list[global.draftvalues.nextdrafter]!=name && !global.draftvalues.typedrafting){
 			return this.send(global.draftvalues.draftroom,'it is not your turn');
 		}
 		if(global.draftvalues.typedrafting){
@@ -1187,7 +1187,7 @@ exports.commands = {
 					}
 					this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentscore);
 					global.auctioning = true;
-					global.currentHighestBidder = toId(by);
+					global.currentHighestBidder = name;
 					var timeout = 10000 + Math.random() * 25000;
 					var monname = global.nominatedmon;
 					setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname)), timeout)
