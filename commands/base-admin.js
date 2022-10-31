@@ -1078,7 +1078,7 @@ exports.commands = {
 	},
 	forcepick: 'forcepickmon', 
 	forcepickmon:  function (arg, by, room, cmd) {
-		if (!this.isRanked('admin') || global.auctionDrafting) {return false;}
+		if (!this.isRanked('admin')) {return false;}
 		var args = arg.split(",");
 		console.log(args);
 		if (args.length < 2){
