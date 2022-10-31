@@ -1109,12 +1109,11 @@ exports.commands = {
 			arg=arg.substring(1,arg.length);
 			console.log(arg);
 		var list=global.draftvalues.turnorder;
-
 		if(list[global.draftvalues.nextdrafter]!=toId(by) && !global.draftvalues.typedrafting){
 			return this.send(global.draftvalues.draftroom,'it is not your turn');
 		}
 		if(global.draftvalues.typedrafting){
-			if(global.draftvalues.typeturnorder[global.draftvalues.nextdrafter]!=toId(by)){
+			if(global.draftvalues.typeturnorder[global.draftvalues.nextdrafter]!=name){
 				return this.send(global.draftvalues.draftroom,'it is not your turn');
 			}
 			if(global.draftvalues.availableTypes.includes(arg)){
