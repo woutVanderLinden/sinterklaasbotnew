@@ -1686,8 +1686,9 @@ exports.commands = {
 			global.currentHighestBidder = toId(by);
 		}
 		if(!global.draftvalues.typedrafting){
-			this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);global.timeout = 5000 + Math.random() * 2000;
-			var monname = nominatedType;
+			this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
+			global.timeout = 5000 + Math.random() * 2000;
+			var monname = global.nominatedmon;
 			if(global.timingout != undefined){
 				clearTimeout(global.timingout);
 			}
@@ -1695,13 +1696,14 @@ exports.commands = {
 			global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname, curscore)), global.timeout)
 			return this.reply("The current highest bid on " + nominatedmon + " is "+ currentscore + " from "+ global.currentHighestBidder);
 		}
-		this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);global.timeout = 5000 + Math.random() * 2000;
+		this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
+		global.timeout = 5000 + Math.random() * 2000;
 		var monname = global.nominatedType;
 		if(global.timingout != undefined){
 			clearTimeout(global.timingout);
 		}
 		var curscore = global.currentscore;
-		global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname, curscore)), global.timeout)
+		global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(nominatedType, curscore)), global.timeout)
 		return this.reply("The current highest bid on " + global.nominatedType + " is "+ currentscore + " from "+ global.currentHighestBidder);
 	},
 	offermore: 'bidmore',
