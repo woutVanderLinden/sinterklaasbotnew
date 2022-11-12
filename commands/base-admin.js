@@ -1196,7 +1196,7 @@ exports.commands = {
 						clearTimeout(global.timingout);
 					}
 					var curscore = global.currentscore;
-					global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname, curscore)), timeout)
+					global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname, curscore)), global.timeout)
 					this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
 					return;
 					i=100;
@@ -1692,7 +1692,7 @@ exports.commands = {
 				clearTimeout(global.timingout);
 			}
 			var curscore = global.currentscore;
-			global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname, curscore)), timeout)
+			global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname, curscore)), global.timeout)
 			return this.reply("The current highest bid on " + nominatedmon + " is "+ currentscore + " from "+ global.currentHighestBidder);
 		}
 		this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);global.timeout = 5000 + Math.random() * 2000;
@@ -1701,7 +1701,7 @@ exports.commands = {
 			clearTimeout(global.timingout);
 		}
 		var curscore = global.currentscore;
-		global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname, curscore)), timeout)
+		global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname, curscore)), global.timeout)
 		return this.reply("The current highest bid on " + global.nominatedType + " is "+ currentscore + " from "+ global.currentHighestBidder);
 	},
 	offermore: 'bidmore',
@@ -1732,7 +1732,7 @@ exports.commands = {
 				clearTimeout(global.timingout);
 			}
 			var curscore = global.currentscore;
-			global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname,curscore)), timeout)
+			global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname,curscore)), global.timeout)
 			return this.reply("The current highest bid on " + nominatedmon + " is "+ currentscore + " from "+ global.currentHighestBidder);
 		}
 		this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);global.timeout = 5000 + Math.random() * 2000;
@@ -1741,7 +1741,7 @@ exports.commands = {
 			clearTimeout(global.timingout);
 		}
 		var curscore = global.currentscore;
-		global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname, curscore)), timeout)
+		global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname, curscore)), global.timeout)
 		return this.reply("The current highest bid on " + global.nominatedType + " is "+ currentscore + " from "+ global.currentHighestBidder);
 	},
 	endbid:  function (arg, by, room, cmd) {
