@@ -1130,7 +1130,8 @@ exports.commands = {
 				else{
 					nomtype = global.nominatedmon;
 				}
-				setTimeout(() => this.send(global.draftvalues.draftroom,endbid(nomtype)), timeout)
+				var curscore = global.currentscore;
+				setTimeout(() => this.send(global.draftvalues.draftroom,endbid(nomtype, curscore)), timeout)
 				return this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentscore);
 			}
 			return this.send(global.draftvalues.draftroom, "That is not a type");
@@ -1194,7 +1195,8 @@ exports.commands = {
 					if(global.timingout != undefined){
 						clearTimeout(global.timingout);
 					}
-					global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname)), timeout)
+					var curscore = global.currentscore;
+					global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname, curscore)), timeout)
 					this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
 					return;
 					i=100;
@@ -1653,11 +1655,13 @@ exports.commands = {
 		global.passedusers.push(toId(by));
 		this.reply(toId(by)+" passed");
 		if(global.passedusers.length == global.draftvalues.turnorder.length-1 || (global.auctionDrafting && global.passedusers.length == global.draftvalues.typeturnorder.length-1)){
+			var curscore = global.currentscore;
 			if(global.draftvalues.typedrafting) {
-				this.send(global.draftvalues.draftroom,endbid(global.nominatedType));
+
+				this.send(global.draftvalues.draftroom,endbid(global.nominatedType,curscore));
 			}
 			else{
-				this.send(global.draftvalues.draftroom,endbid(global.nominatedmon));
+				this.send(global.draftvalues.draftroom,endbid(global.nominatedmon,curscore));
 			}
 
 			//this.send(global.draftvalues.draftroom,endbid(global.nominatedmon));
@@ -1687,7 +1691,8 @@ exports.commands = {
 			if(global.timingout != undefined){
 				clearTimeout(global.timingout);
 			}
-			global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname)), timeout)
+			var curscore = global.currentscore;
+			global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname, curscore)), timeout)
 			return this.reply("The current highest bid on " + nominatedmon + " is "+ currentscore + " from "+ global.currentHighestBidder);
 		}
 		this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);global.timeout = 5000 + Math.random() * 2000;
@@ -1695,7 +1700,8 @@ exports.commands = {
 		if(global.timingout != undefined){
 			clearTimeout(global.timingout);
 		}
-		global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname)), timeout)
+		var curscore = global.currentscore;
+		global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname, curscore)), timeout)
 		return this.reply("The current highest bid on " + global.nominatedType + " is "+ currentscore + " from "+ global.currentHighestBidder);
 	},
 	offermore: 'bidmore',
@@ -1725,7 +1731,8 @@ exports.commands = {
 			if(global.timingout != undefined){
 				clearTimeout(global.timingout);
 			}
-			global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname)), timeout)
+			var curscore = global.currentscore;
+			global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname,curscore)), timeout)
 			return this.reply("The current highest bid on " + nominatedmon + " is "+ currentscore + " from "+ global.currentHighestBidder);
 		}
 		this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);global.timeout = 5000 + Math.random() * 2000;
@@ -1733,16 +1740,18 @@ exports.commands = {
 		if(global.timingout != undefined){
 			clearTimeout(global.timingout);
 		}
-		global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname)), timeout)
+		var curscore = global.currentscore;
+		global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname, curscore)), timeout)
 		return this.reply("The current highest bid on " + global.nominatedType + " is "+ currentscore + " from "+ global.currentHighestBidder);
 	},
 	endbid:  function (arg, by, room, cmd) {
 		if (!this.isRanked('admin') || !global.auctionDrafting) {return false;}
+		var curscore = global.currentscore;
 		if(global.draftvalues.typedrafting) {
-			this.send(global.draftvalues.draftroom,endbid(global.nominatedtype));
+			this.send(global.draftvalues.draftroom,endbid(global.nominatedtype,curscore));
 		}
 		else{
-			this.send(global.draftvalues.draftroom,endbid(global.nominatedmon));
+			this.send(global.draftvalues.draftroom,endbid(global.nominatedmon,curscore));
 		}
 		return;
 	},
@@ -1790,7 +1799,8 @@ exports.commands = {
 				if(global.timingout != undefined){
 					clearTimeout(global.timingout);
 				}
-				global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(nomtype)), timeout)
+				var curscore = global.currentscore;
+				global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(nomtype, curscore)), timeout)
 				return this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentscore);
 			}
 			return this.send(global.draftvalues.draftroom, "That is not a type");
@@ -1850,7 +1860,8 @@ exports.commands = {
 					global.currentHighestBidder = toId(by);
 					var timeout = 10000 + Math.random() * 25000;
 					var monname = global.nominatedmon;
-					setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname)), timeout)
+					var curscore = global.currentscore;
+					setTimeout(() => this.send(global.draftvalues.draftroom,endbid(monname,curscore)), timeout)
 					this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);
 					return;
 					i=100;
@@ -3736,12 +3747,15 @@ function weaknessTable(name)
 	}
 	return toreturn;
 };
-function endbid(arg)
+function endbid(arg, arg2)
 {
 	if(arg != global.nominatedmon && ! global.draftvalues.typedrafting){
 		return;
 	}
 	if(arg != global.nominatedType && global.draftvalues.typedrafting){
+		return;
+	}
+	if(arg2 != global.currentscore){
 		return;
 	}
 	console.log("nextdrafter " + global.draftvalues.nextdrafter);
@@ -3790,6 +3804,8 @@ function endbid(arg)
 			//this.reply(typeword);
 			//return reply(' the next drafter is '+list[0]);
 			typeword = name +" paid "+global.currentscore+ " erekredieten for "+ global.nominatedType +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")\n"+typeword;
+			global.nominatedType = "";
+			global.nominatedmon = "";
 			return typeword;
 		}
 	}
@@ -3859,7 +3875,10 @@ function endbid(arg)
 	word=word+"</div>";
 	word=word+"</div>";
 	console.log(word);
-	return name +" paid "+global.draftvalues.currentscore+ " erekredieten for "+ global.nominatedmon +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +") \n" +word;
+	word =  name +" paid "+global.draftvalues.currentscore+ " erekredieten for "+ global.nominatedmon +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +") \n" +word;
+	global.nominatedType = "";
+	global.nominatedmon = "";
+	return word;
 
 	//return this.send(global.draftvalues.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " picks left: " + picksleft);
 };
