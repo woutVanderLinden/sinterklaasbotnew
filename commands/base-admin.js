@@ -1725,8 +1725,8 @@ exports.commands = {
 			global.currentHighestBidder = toId(by);
 		}
 		if(!global.draftvalues.typedrafting) {
-			this.send(global.draftvalues.draftroom, "!dt " + global.nominatedmon);
-			this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);global.timeout = 5000 + Math.random() * 2000;
+			this.send(global.draftvalues.draftroom, "!dt " + global.nominatedType);
+			global.timeout = 5000 + Math.random() * 2000;
 			var monname = nominatedmon;
 			if(global.timingout != undefined){
 				clearTimeout(global.timingout);
