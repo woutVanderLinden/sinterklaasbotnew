@@ -1683,7 +1683,7 @@ exports.commands = {
 		}
 		if(!global.draftvalues.typedrafting){
 			this.send(global.draftvalues.draftroom, "!dt "+ global.nominatedmon);global.timeout = 5000 + Math.random() * 2000;
-			var monname = nominatedmon;
+			var monname = nominatedType;
 			if(global.timingout != undefined){
 				clearTimeout(global.timingout);
 			}
@@ -1785,7 +1785,7 @@ exports.commands = {
 				else{
 					nomtype = global.nominatedmon;
 				}
-				global.timeout = 5000 + Math.random() * 2000;
+				global.timeout = 10000 + Math.random() * 2000;
 
 				if(global.timingout != undefined){
 					clearTimeout(global.timingout);
