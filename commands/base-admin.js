@@ -1800,7 +1800,7 @@ exports.commands = {
 					clearTimeout(global.timingout);
 				}
 				var curscore = global.currentscore;
-				global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(nomtype, curscore)), timeout)
+				global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(nomtype, curscore)), global.timeout)
 				return this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentscore);
 			}
 			return this.send(global.draftvalues.draftroom, "That is not a type");
