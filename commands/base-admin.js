@@ -1790,7 +1790,7 @@ exports.commands = {
 				if(global.timingout != undefined){
 					clearTimeout(global.timingout);
 				}
-				global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(nomType)), timeout)
+				global.timingout = setTimeout(() => this.send(global.draftvalues.draftroom,endbid(nomtype)), timeout)
 				return this.send(global.draftvalues.draftroom, name +" nominated "+arg+ " for "+ global.currentscore);
 			}
 			return this.send(global.draftvalues.draftroom, "That is not a type");
