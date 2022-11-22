@@ -22872,5 +22872,34 @@
          "hail": 0,
          "sun": 0
       }
+   ],
+   "Cyclizar": [
+      {
+         "name": "Cyclizar",
+         "Typing1": "Normal",
+         "Typing 2": "Dragon",
+         "physicalbulkyattacker": 0,
+         "specialbulkyattacker": 0,
+         "physicalwall": 0,
+         "physicalsetup": 0,
+         "priority": 0,
+         "specialsweeper": 2,
+         "specialsetup": 0,
+         "status": 0,
+         "itemremover": 0,
+         "scarf": 0,
+         "entryhazards": 0,
+         "pivot": 5,
+         "cleric": 0,
+         "specialwall": 0,
+         "hazardremoval": 0,
+         "physicalsweeper": 0,
+         "sand": 0,
+         "speedcontrol": 0,
+         "screens": 0,
+         "rain": 0,
+         "hail": 0,
+         "sun": 0
+      }
    ]
 }
