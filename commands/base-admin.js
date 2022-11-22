@@ -2209,7 +2209,7 @@ exports.commands = {
 			}
 		}
 		let word = 'AuctionList1.json'
-
+		console.log(arg);
 		if(arg != undefined && arg != ""){
 			word = arg + '.json';
 		}
