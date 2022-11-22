@@ -83,7 +83,7 @@ try {
 	global.fs = require('fs');
 	global.path = require('path');
 	global.PSClient = require('./showdown-client.js');
-	let rawdata = fs.readFileSync('convertcsv.json');
+	let rawdata = fs.readFileSync('convertcsvnew.json');
 	let student = JSON.parse(rawdata);
 	global.draftvalues.mondata=student;
 	let colordata = fs.readFileSync('TypingsToColor.json');

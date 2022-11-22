@@ -3,13 +3,13 @@
 	"tierlist":{"Tier1":{
 	
 	
-		"picks":3,
+		"picks":10,
 		"points":100,
-		"pokemon":["Aegislash","Alakazam","Blacephalon","Blissey","Celesteela","Chansey","Clefable","Corviknight","Darmanitan-Galar","Dragapult","Dragonite","Landorus","Excadrill","Ferrothorn","Garchomp","Hawlucha","Heatran","Hydreigon","Jirachi","Kartana","Kommo-o","Kyurem","Landorus-Therian","Latias","Latios","Melmetal","Necrozma","Rillaboom","Salamence","Tapu Bulu","Tapu Fini","Tapu Koko","Tapu Lele","Terrakion","Tornadus-Therian","Toxapex","Tyranitar","Urshifu-Rapid-Strike","Victini","Volcarona","Zapdos","Zapdos-Galar","Zeraora"]
+		"pokemon":["Arboliva","Arcanine","Barraskewda","Baxcalibur","Bruxish","Camerupt","Ceruledge","Clawitzer","Copperajah","Cyclizar","Dedenne","Delibird","Dragalge","Dragonite","Drednaw","Dudunsparce","Eiscue","Espathra","Espeon","Farigiraf","Flamigo","Flareon","Florges","Gallade","Garchomp","Garganacl","Gastrodon","Gengar","Glaceon","Gogoat","Gothitelle","Grafaiai","Grumpig","Gyarados","Hariyama","Haxorus","Honchkrow","Hydreigon","Hypno","IronBundle","IronJugulis","Kingambit","Klawf","Klefki","Komala","Lurantis","Luxray","Lycanroc","Mabosstiff","Masquerain","Maushold","Mismagius","Mudsdale","Muk","Oranguru","Pachirisu","Palafin","Pelipper","Pikachu","Primeape","Pyroar","Quaquaval","Qwilfish","Rabsca","Rotom-Fan","Tauros-Paldeawater","Sableye","Salazzle","Sandaconda","ScreamTail","Scyther","Slaking","Sneasel","Squawkabilly","Stantler","Staraptor","Sunflora","Tatsugiri-Droopy","Tsareena","Umbreon","Venomoth","Vespiquen","Wugtrio","Zoroark"]
 		}
 },
 
-	"freepicks":3,
+	"freepicks":10,
 	"length":1,
 	"Points":1600
 	
