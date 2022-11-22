@@ -2210,7 +2210,7 @@ exports.commands = {
 		}
 		let rawdata = fs.readFileSync('AuctionList1.json');
 		if(arg != ""){
-			let rawdata = fs.readFileSync(arg + '.json');
+			 rawdata = fs.readFileSync(arg + '.json');
 		}
 
 		let student = JSON.parse(rawdata);
@@ -3751,7 +3751,7 @@ function weaknessTable(name)
 };
 function endbid(arg, arg2)
 {
-	if(arg != global.nominatedmon && ! global.draftvalues.typedrafting){
+	if(arg != global.nominatedmon && !global.draftvalues.typedrafting){
 		return;
 	}
 	if(arg != global.nominatedType && global.draftvalues.typedrafting){
@@ -3805,7 +3805,11 @@ function endbid(arg, arg2)
 			//console.log("types " + typeword);
 			//this.reply(typeword);
 			//return reply(' the next drafter is '+list[0]);
-			typeword = name +" paid "+global.currentscore+ " erekredieten for "+ global.nominatedType +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")\n"+typeword;
+			var cardraft = nominatedmon;
+			if(global.draftvalues.typedrafting){
+				cardraft = nominatedType;
+			}
+			typeword = name +" paid "+currentscore+ " erekredieten for "+ nominatedType +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")\n"+typeword;
 			global.nominatedType = "";
 			global.nominatedmon = "";
 			return typeword;
