@@ -3811,7 +3811,7 @@ function endbid(arg, arg2)
 				cardraft = global.draftvalues.users[name]["TerralyzeType"];
 			}
 			var score = global.currentscore
-			typeword = name +" paid "+currentscore+ " erekredieten for "+ cardraft +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")\n"+typeword;
+			typeword = name +" paid "+arg2+ " erekredieten for "+ arg +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")\n"+typeword;
 			global.nominatedType = "";
 			global.nominatedmon = "";
 			return typeword;
@@ -3836,7 +3836,7 @@ function endbid(arg, arg2)
 				global.draftvalues.users[toId(global.draftvalues.draftroom)]=[];
 				//saveTeamsToCloud();
 				global.draftvalues.draftstarted=false;
-				return name +" paid "+ global.currentscore+ " erekredieten for "+ global.nominatedmon +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +") \n" + 'The draft over is good luck and have fun ';
+				return name +" paid "+ arg2+ " erekredieten for "+ arg +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +") \n" + 'The draft over is good luck and have fun ';
 			}
 		}
 		if(global.draftvalues.nextdrafter > global.draftvalues.turnorder.length - 1){
@@ -3883,7 +3883,7 @@ function endbid(arg, arg2)
 	word=word+"</div>";
 	word=word+"</div>";
 	console.log(word);
-	word =  name +" paid "+global.draftvalues.currentscore+ " erekredieten for "+ global.nominatedmon +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +") \n" +word;
+	word =  name +" paid "+arg2+ " erekredieten for "+ arg +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +") \n" +word;
 	global.nominatedType = "";
 	global.nominatedmon = "";
 	return word;
