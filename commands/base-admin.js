@@ -3810,7 +3810,8 @@ function endbid(arg, arg2)
 			if(global.draftvalues.typedrafting){
 				cardraft = global.nominatedType;
 			}
-			typeword = name +" paid "+global.currentscore+ " erekredieten for "+ global.nominatedType +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")\n"+typeword;
+			var score = global.currentscore
+			typeword = name +" paid "+score+ " erekredieten for "+ cardraft +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")\n"+typeword;
 			global.nominatedType = "";
 			global.nominatedmon = "";
 			return typeword;
