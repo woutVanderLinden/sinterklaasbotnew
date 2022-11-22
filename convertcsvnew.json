@@ -21135,9 +21135,9 @@
          "sun": 0
       }
    ],
-   "Wo-Chien": [
+   "WoChien": [
       {
-         "name": "Wo-Chien",
+         "name": "WoChien",
          "Typing1": "Dark",
          "Typing 2": "Grass",
          "physicalbulkyattacker": 3,
@@ -21164,9 +21164,9 @@
          "sun": 0
       }
    ],
-   "Chien-Pao": [
+   "ChienPao": [
       {
-         "name": "Chien-Pao",
+         "name": "ChienPao",
          "Typing1": "Dark",
          "Typing 2": "Ice",
          "physicalbulkyattacker": 0,
@@ -21193,9 +21193,9 @@
          "sun": 0
       }
    ],
-   "Ting-Lu": [
+   "TingLu": [
       {
-         "name": "Ting-Lu",
+         "name": "TingLu",
          "Typing1": "Dark",
          "Typing 2": "Fire",
          "physicalbulkyattacker": 4,
@@ -21222,9 +21222,9 @@
          "sun": 0
       }
    ],
-   "Chi-Yu": [
+   "ChiYu": [
       {
-         "name": "Chi-Yu",
+         "name": "ChiYu",
          "Typing1": "Dark",
          "Typing 2": "Fire",
          "physicalbulkyattacker": 0,

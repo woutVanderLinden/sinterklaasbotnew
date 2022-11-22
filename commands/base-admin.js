@@ -3769,9 +3769,9 @@ function endbid(arg, arg2)
 	if(global.draftvalues.typedrafting){
 		var list=global.draftvalues.typeturnorder;
 		global.draftvalues.typeturnorder.remove(name);
-		global.draftvalues.availableTypes.remove(nominatedType);
+		global.draftvalues.availableTypes.remove(global.nominatedType);
 		global.draftvalues.nextdrafter = global.draftvalues.nextdrafter + 1;
-		global.draftvalues.users[name]["TerralyzeType"] = nominatedType;
+		global.draftvalues.users[name]["TerralyzeType"] = global.nominatedType;
 		if(global.draftvalues.typeturnorder.length == 0){
 			global.draftvalues.typedrafting=false;
 			//saveTeamsToCloud();
@@ -3806,11 +3806,11 @@ function endbid(arg, arg2)
 			//console.log("types " + typeword);
 			//this.reply(typeword);
 			//return reply(' the next drafter is '+list[0]);
-			var cardraft = nominatedmon;
+			var cardraft = global.nominatedmon;
 			if(global.draftvalues.typedrafting){
-				cardraft = nominatedType;
+				cardraft = global.nominatedType;
 			}
-			typeword = name +" paid "+currentscore+ " erekredieten for "+ nominatedType +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")\n"+typeword;
+			typeword = name +" paid "+global.currentscore+ " erekredieten for "+ global.nominatedType +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")\n"+typeword;
 			global.nominatedType = "";
 			global.nominatedmon = "";
 			return typeword;
