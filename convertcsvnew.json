@@ -11191,9 +11191,9 @@
          "sun": 0
       }
    ],
-   "Tauros-PaldeaFire":[
+   "Tauros-Paldeafire":[
       {
-         "name": "Tauros-PaldeaFire",
+         "name": "Tauros-Paldeafire",
          "Typing1": "Fighting",
          "Typing 2": "Fire",
          "physicalbulkyattacker": 0,
@@ -11220,9 +11220,9 @@
          "sun": 0
       }
    ],
-   "Tauros-PaldeaWater":[
+   "Tauros-Paldeawater":[
       {
-         "name": "Tauros-PaldeaWater",
+         "name": "Tauros-Paldeawater",
          "Typing1": "Fighting",
          "Typing 2": "Water",
          "physicalbulkyattacker": 0,
