@@ -3808,10 +3808,10 @@ function endbid(arg, arg2)
 			//return reply(' the next drafter is '+list[0]);
 			var cardraft = global.nominatedmon;
 			if(global.draftvalues.typedrafting){
-				cardraft = global.nominatedType;
+				cardraft = global.draftvalues.users[name]["TerralyzeType"];
 			}
 			var score = global.currentscore
-			typeword = name +" paid "+score+ " erekredieten for "+ cardraft +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")\n"+typeword;
+			typeword = name +" paid "+currentscore+ " erekredieten for "+ cardraft +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"] +")\n"+typeword;
 			global.nominatedType = "";
 			global.nominatedmon = "";
 			return typeword;
