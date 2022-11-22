@@ -2208,11 +2208,12 @@ exports.commands = {
 				await client.close();
 			}
 		}
-		let rawdata = fs.readFileSync('AuctionList1.json');
-		if(arg != ""){
-			 rawdata = fs.readFileSync(arg + '.json');
-		}
+		let word = 'AuctionList1.json'
 
+		if(arg != undefined && arg != ""){
+			word = arg + '.json';
+		}
+		let rawdata = fs.readFileSync(word);
 		let student = JSON.parse(rawdata);
 		console.log(student);
 		global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)]=student;
