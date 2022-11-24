@@ -187,7 +187,7 @@ async function quotefunc (arg, by, room, cmd,vart) {
 	console.log(uri);
 	console.log("test");
 	
-	const client = new MongoClient(uri, { useNewUrlParser: true });
+	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
 	
 	try {
 		
