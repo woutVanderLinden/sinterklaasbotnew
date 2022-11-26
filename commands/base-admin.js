@@ -1717,7 +1717,7 @@ exports.commands = {
 		if(!global.draftvalues.turnorder.includes(name) || (global.draftvalues.typedrafting && !global.draftvalues.typeturnorder.includes(name) )){
 			return this.reply("you're not in the draft " + name);
 		}
-		if(global.nominatedType = "" && global.nominatedmon == ""){
+		if(global.nominatedType == "" && global.nominatedmon == ""){
 			return this.reply("There is nothing being auctioned");
 		}
 		console.log(arg);
