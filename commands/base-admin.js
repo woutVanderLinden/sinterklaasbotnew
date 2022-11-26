@@ -836,7 +836,7 @@ exports.commands = {
          */
 		/*then load the participant list*/
 		global.draftvalues.typedrafting=true;
-		global.draftvalues.typeturnorder = [...turnorder];
+
 		global.draftvalues.availableTypes = ["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
 		global.draftvalues.tierPicks = global.draftvalues.todraftmons[toId(room)]["freepicks"];
 		var list=global.draftvalues.turnorder;
@@ -850,6 +850,7 @@ exports.commands = {
 			//Do something
 			result=result+","+list[i];
 		}
+		global.draftvalues.typeturnorder = [...turnorder];
 		result=result.substring(1,result.length);
 		global.draftvalues.draftstarted=true;
 		global.draftvalues.picknr[toId(global.draftvalues.draftroom)] = 0;
@@ -1678,6 +1679,9 @@ exports.commands = {
 		if(!global.draftvalues.turnorder.includes(name) || (global.draftvalues.typedrafting && !global.draftvalues.typeturnorder.includes(name))){
 			return this.reply("you're not in the draft " + name);
 		}
+		if(global.nominatedType = "" && global.nominatedmon == ""){
+			return this.reply("There is nothing being auctioned");
+		}
 		if(value > global.draftvalues.users[name]["erekredieten"]){
 			return this.reply("you don't have enough credits");
 		}
@@ -1712,6 +1716,9 @@ exports.commands = {
 		var name = toId(by);
 		if(!global.draftvalues.turnorder.includes(name) || (global.draftvalues.typedrafting && !global.draftvalues.typeturnorder.includes(name) )){
 			return this.reply("you're not in the draft " + name);
+		}
+		if(global.nominatedType = "" && global.nominatedmon == ""){
+			return this.reply("There is nothing being auctioned");
 		}
 		console.log(arg);
 		if(arg != ""){
