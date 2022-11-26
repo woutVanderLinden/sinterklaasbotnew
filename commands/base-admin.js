@@ -1725,11 +1725,12 @@ exports.commands = {
 			value = parseInt(arg);
 		}
 		console.log(value);
-		if(value > global.draftvalues.users[name]["erekredieten"]){
-			return this.reply("you don't have enough credits");
-		}
+
 		if(value > global.currentscore +9){
 			value = global.currentscore+10;
+			if(value > global.draftvalues.users[name]["erekredieten"]){
+				return this.reply("you don't have enough credits");
+			}
 			global.currentscore = value;
 			global.currentHighestBidder = toId(by);
 		}
