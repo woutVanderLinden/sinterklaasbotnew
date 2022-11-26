@@ -5,8 +5,8 @@
 	
 		"picks":10,
 		"points":100,
-		"pokemon":["Arboliva","Arcanine","Barraskewda","Baxcalibur","Bruxish","Camerupt","Ceruledge","Clawitzer","Copperajah","Cyclizar","Dedenne","Delibird","Dragalge","Dragonite","Drednaw","Dudunsparce","Eiscue","Espathra","Espeon","Farigiraf","Flamigo","Flareon","Florges","Gallade","Garchomp","Garganacl","Gastrodon","Gengar","Glaceon","Gogoat","Gothitelle","Grafaiai","Grumpig","Gyarados","Hariyama","Haxorus","Honchkrow","Hydreigon","Hypno","IronBundle","IronJugulis","Kingambit","Klawf","Klefki","Komala","Lurantis","Luxray","Lycanroc","Mabosstiff","Masquerain","Maushold","Mismagius","Mudsdale","Muk","Oranguru","Pachirisu","Palafin","Pelipper","Pikachu","Primeape","Pyroar","Quaquaval","Qwilfish","Rabsca","Rotom-Fan","Tauros-Paldeawater","Sableye","Salazzle","Sandaconda","ScreamTail","Scyther","Slaking","Sneasel","Squawkabilly","Stantler","Staraptor","Sunflora","Tatsugiri-Droopy","Tsareena","Umbreon","Venomoth","Vespiquen","Wugtrio","Zoroark"]
-		}
+		"pokemon":["Arboliva","Arcanine","Barraskewda","Baxcalibur","Brambleghast","BruteBonnet","Bruxish","Camerupt","Ceruledge","Clawitzer","Copperajah","Cyclizar","Delibird","Dragalge","RoaringMoon","Drednaw","Dudunsparce","Eiscue","Espeon","Farigiraf","Flamigo","Flareon","Florges","Gallade","Garchomp","Garganacl","Gastrodon","Gengar","Glaceon","Gogoat","Gothitelle","Grafaiai","GreatTusk","Grumpig","Gyarados","Hariyama","Haxorus","Honchkrow","Hydreigon","Hypno","IronHands","IronJugulis","IronTreads","Kingambit","Klawf","Klefki","Lokix","Lurantis","Luxray","Lycanroc","Mabosstiff","Maushold","Mismagius","Mudsdale","Muk","Oranguru","Pachirisu","Pawmot","Pelipper","Primeape","Pyroar","Quaquaval","Qwilfish","Rabsca","Rotom-Fan","Sableye","Salazzle","Sandaconda","Scovillain","ScreamTail","Scyther","Slaking","Squawkabilly","Stantler","Staraptor","Tauros-Paldeawater","Torkoal","Tsareena","Umbreon","Veluza","Venomoth","Vespiquen","Wugtrio","Zoroark"]
+	}
 },
 
 	"freepicks":10,
