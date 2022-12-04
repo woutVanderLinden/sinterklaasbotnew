@@ -3778,7 +3778,7 @@ function endbid(arg, arg2)
 		var list=global.draftvalues.typeturnorder;
 		global.draftvalues.typeturnorder.remove(name);
 		global.draftvalues.availableTypes.remove(global.nominatedType);
-		global.draftvalues.nextdrafter = global.draftvalues.nextdrafter + 1;
+		//global.draftvalues.nextdrafter = global.draftvalues.nextdrafter + 1;
 		global.draftvalues.users[name]["TerralyzeType"] = global.nominatedType;
 		if(global.draftvalues.typeturnorder.length == 0){
 			global.draftvalues.typedrafting=false;
