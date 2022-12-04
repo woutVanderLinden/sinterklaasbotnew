@@ -1783,6 +1783,10 @@ exports.commands = {
 			return this.reply("wait till this auction is done " + name);
 		}
 		var list=global.draftvalues.turnorder;
+		if(global.draftvalues.typedrafting){
+			 list=global.draftvalues.typeturnorder;
+		}
+
 
 		if(list[global.draftvalues.nextdrafter]!=toId(by) && !global.draftvalues.typedrafting){
 			return this.send(global.draftvalues.draftroom,'it is not your turn');
