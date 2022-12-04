@@ -917,13 +917,14 @@ exports.commands = {
 		}
 		if(global.auctionDrafting){
 			global.draftvalues.typedrafting=true;
-			global.draftvalues.typeturnorder = [...global.draftvalues.turnorder];
+
 			global.draftvalues.tierPicks = global.draftvalues.todraftmons[toId(room)]["freepicks"];
 			var list=global.draftvalues.turnorder;
 			global.draftvalues.availableTypes = ["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
 			global.draftvalues.giftdrafting=false;
 			console.log(list);
 			list=shuffle(list);
+			global.draftvalues.typeturnorder = [...list];
 			console.log(list);
 			var result='';
 			for (var i = 0; i < list.length; i++) {
@@ -3782,7 +3783,7 @@ function endbid(arg, arg2)
 		var list=global.draftvalues.typeturnorder;
 		global.draftvalues.typeturnorder.remove(name);
 		global.draftvalues.availableTypes.remove(global.nominatedType);
-		//global.draftvalues.nextdrafter = global.draftvalues.nextdrafter + 1;
+		global.draftvalues.nextdrafter = global.draftvalues.nextdrafter + 1;
 		global.draftvalues.users[name]["TerralyzeType"] = global.nominatedType;
 		if(global.draftvalues.typeturnorder.length == 0){
 			global.draftvalues.typedrafting=false;
