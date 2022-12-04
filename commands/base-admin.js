@@ -2216,7 +2216,7 @@ exports.commands = {
 				await client.close();
 			}
 		}
-		let word = 'AuctionList1.json'
+		let word = 'AuctionList2.json'
 		console.log(arg);
 		if(arg != undefined && arg != ""){
 			word = arg + '.json';
