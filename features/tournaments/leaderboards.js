@@ -221,11 +221,68 @@ var addUser = exports.addUser = function (room, user, type, auxData) {
 var writeResults = exports.writeResults = function (room, results) {
 	if (!results) return;
 	for (var i = 0; i < results.players.length; i++) addUser(room, results.players[i], 'A');
-	if (results.winner) addUser(room, results.winner, 'W');
-	if (results.finalist) addUser(room, results.finalist, 'F');
-	for (var i = 0; i < results.semiFinalists.length; i++) addUser(room, results.semiFinalists[i], 'S');
+	if (results.winner) addbitterballen(results.winner, 5);
+	if (results.finalist) addbitterballen(results.finalist, 3);
+	for (var i = 0; i < results.semiFinalists.length; i++) addbitterballen(results.semiFinalists[i], 5)
 	for (var user in results.general) addUser(room, user, 'B', results.general[user]);
 };
+
+const {MongoClient} = require('mongodb');
+const uri ="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+
+
+async function addbitterballen (name, amount) {
+	const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	console.log(uri);
+	console.log("test");
+
+	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+
+	try {
+		await client.connect();
+		await listDatabases(client);
+		console.log(cmd);
+
+			console.log("info added");
+			console.log("the client is "+client);
+			let bitbals = await findOneListingByName(client,"bitterballen")
+			console.log(bitbals);
+			var thename = toId(name);
+			if(bitbals==undefined){
+				infos={
+					name: 'bitterballen',
+					'nederlands':{}
+
+				};
+			}
+			if(bitbals["nederlands"]==undefined){
+				bitbals["nederlands"]={};
+			}
+			if(bitbals["nederlands"][thename]==undefined){
+				bitbals["nederlands"][thename]=0;
+			}
+
+				var initialInt = parseInt(bitbals["nederlands"][args[0]]);
+				if(initialInt.isNaN()){
+					initialInt = 0;
+				}
+				bitbals["nederlands"][thename]=initialInt+amount;
+				vart.reply(thename+" heeft " +parseInt(bitbals["nederlands"][args[0]])+" bitterballen");
+
+				await updateListingByName(client,"bitterballen" ,bitbals);
+
+
+	} catch (e) {
+
+		console.error(e);
+
+	}
+
+	finally{
+		await client.close();
+	}
+
+}
 
 exports.onTournamentEnd = function (room, data) {
 	if (!isConfigured(room)) return;
