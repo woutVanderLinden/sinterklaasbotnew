@@ -254,12 +254,12 @@ exports.commands = {
 
 					var word = "!htmlbox <table>";
 					var i = 0;
-					for (var sliceitem in items) {
+					while (i < items.length) {
 						i++;
 						if(i>5){
 							break;
 						}
-						word = word + "<tr><td>" + sliceitem[0] + "</td>" + "<td>" + sliceitem[1] + "</td></tr>";
+						word = word + "<tr><td>" + items[i][0] + "</td>" + "<td>" + items[i][1] + "</td></tr>";
 					}
 					word = word += "</table> ";
 					console.log(word);
