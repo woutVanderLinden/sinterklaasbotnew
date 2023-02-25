@@ -452,7 +452,7 @@ async function infofunc (arg, by, room, cmd,vart) {
 			if(bitbals["nederlands"][thename]==undefined){
 				bitbals["nederlands"][thename]=0;
 			}
-			if(isNaN(parseInt(args[1]))){
+			if(!isNaN(parseInt(args[1]))){
 				var initialInt = parseInt(bitbals["nederlands"][args[0]]);
 				if(isNaN(initialInt)){
 					initialInt = 0;
