@@ -438,6 +438,7 @@ async function infofunc (arg, by, room, cmd,vart) {
 			console.log("the client is "+client);
 			let bitbals = await findOneListingByName(client,"bitterballen")
 			console.log(bitbals);
+			var thename = toId(args[0]);
 			if(bitbals==undefined){
 				infos={
 					 name: 'bitterballen',
@@ -448,16 +449,25 @@ async function infofunc (arg, by, room, cmd,vart) {
 			if(bitbals["nederlands"]==undefined){
 				bitbals["nederlands"]={};
 			}
-			if(bitbals["nederlands"][args[0]]==undefined){
-				bitbals["nederlands"][args[0]]=0;
+			if(bitbals["nederlands"][thename]==undefined){
+				bitbals["nederlands"][thename]=0;
 			}
-			bitbals["nederlands"][args[0]]=parseInt(bitbals["nederlands"][args[0]])+parseInt(args[1]);
-			vart.reply(args[0]+" heeft " +parseInt(bitbals["nederlands"][args[0]])+" bitterballen");
+			if(parseInt(args[1]).isNaN()){
+				var initialInt = parseInt(bitbals["nederlands"][args[0]]);
+				if(initialInt.isNaN()){
+					initialInt = 0;
+				}
+				bitbals["nederlands"][thename]=initialInt+parseInt(args[1]);
+				vart.reply(thename+" heeft " +parseInt(bitbals["nederlands"][args[0]])+" bitterballen");
+
+				await updateListingByName(client,"bitterballen" ,bitbals);
+			}
+
 			
 			
 			
 			
-			await updateListingByName(client,"bitterballen" ,bitbals);
+
 			
 		} else if (cmd === "delinfo") {
 			if (!vart.isRanked('driver')) return false;
