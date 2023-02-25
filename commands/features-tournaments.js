@@ -256,8 +256,9 @@ exports.commands = {
 					for (var sliceitem in sliced) {
 						word = word + "<tr><td>" + sliceitem[0] + "</td>" + "<td>" + sliceitem[1] + "</td></tr>";
 					}
-					word = word += "</table> "
-					this.reply(word);
+					word = word += "</table> ";
+					console.log(word);
+					//this.reply(word);
 				} catch (e) {
 
 					console.error(e);
