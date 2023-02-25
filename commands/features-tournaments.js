@@ -225,31 +225,49 @@ exports.commands = {
 				this.restrictReply("**" + Tools.toName(tryGetRoomName(tarRoom)) + "** | " + topResults.join(", "), "rank");
 				break;
 			case "table":
-				let bitbals = await findOneListingByName(client,"bitterballen")
-				console.log(bitbals);
-				// Create items array
-				var items = Object.keys(bitbals["nederlands"]).map(function(key) {
-					return [key, bitbals["nederlands"][key]];
-				});
+				const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+				console.log(uri);
+				console.log("test");
+
+				const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
+
+				try {
+
+					await client.connect();
+					let bitbals = await findOneListingByName(client, "bitterballen")
+					console.log(bitbals);
+					// Create items array
+					var items = Object.keys(bitbals["nederlands"]).map(function (key) {
+						return [key, bitbals["nederlands"][key]];
+					});
 
 // Sort the array based on the second element
-				items.sort(function(first, second) {
-					return second[1] - first[1];
-				});
+					items.sort(function (first, second) {
+						return second[1] - first[1];
+					});
 
 // Create a new array with only the first 5 items
-				var sliced = items.slice(0, 5);
+					var sliced = items.slice(0, 5);
 
-				var word = "!htmlbox <table><tr>";
-				for (const sliceitem in sliced) {
-					word = word + "<td>"+sliceitem[0]+"</td>";
+					var word = "!htmlbox <table><tr>";
+					for (const sliceitem in sliced) {
+						word = word + "<td>" + sliceitem[0] + "</td>";
+					}
+					word += word + "</tr><tr>";
+					for (const sliceitem in sliced) {
+						word = word + "<td>" + sliceitem[1] + "</td>";
+					}
+					word = word += "</tr></table> "
+					this.reply(word);
+				} catch (e) {
+
+					console.error(e);
+
 				}
-				word += word+ "</tr><tr>";
-				for (const sliceitem in sliced) {
-					word = word + "<td>"+sliceitem[1]+"</td>";
+
+				finally{
+					await client.close();
 				}
-				word =word += "</tr></table> "
-				this.reply(word);
 				break;
 			case "reset":
 				if (!this.isExcepted) return false;

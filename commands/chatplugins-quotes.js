@@ -85,10 +85,10 @@ async function samplefunc (arg, by, room, cmd,vart) {
 	console.log("test");
 	
 	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
-	
-	try {
-		
-		await client.connect();
+
+		try {
+
+			await client.connect();
 		await listDatabases(client);
 		if (cmd === "addsample" || cmd === "setsample") {
 			console.log("samplebeing added");
