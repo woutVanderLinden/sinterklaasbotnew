@@ -237,10 +237,11 @@ exports.commands = {
 					let bitbals = await findOneListingByName(client, "bitterballen")
 					console.log(bitbals);
 					// Create items array
+					console.log(bitbals["nederlands"]);
 					var items = Object.keys(bitbals["nederlands"]).map(function (key) {
 						return [key, bitbals["nederlands"][key]];
 					});
-
+					console.log(items);
 // Sort the array based on the second element
 					items.sort(function (first, second) {
 						return second[1] - first[1];
@@ -253,7 +254,7 @@ exports.commands = {
 					for (const sliceitem in sliced) {
 						word = word + "<td>" + sliceitem[0] + "</td>";
 					}
-					word += word + "</tr><tr>";
+					word = word + "</tr><tr>";
 					for (const sliceitem in sliced) {
 						word = word + "<td>" + sliceitem[1] + "</td>";
 					}
