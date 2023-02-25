@@ -20,7 +20,6 @@ var save = exports.save = function () {
 };
 
 var isConfigured = exports.isConfigured = function (room) {
-	if ((!Config.leaderboards || !Config.leaderboards[room]) && (!Settings.settings.leaderboards || !Settings.settings.leaderboards[room])) return false;
 	return true;
 };
 

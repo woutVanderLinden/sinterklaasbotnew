@@ -186,7 +186,7 @@ exports.commands = {
 	ranking: 'leaderboard',
 	top: 'leaderboard',
 	leaderboards: 'leaderboard',
-	leaderboard: function (arg, by, room, cmd) {
+	leaderboard: async function (arg, by, room, cmd) {
 		var args = arg.split(",");
 		var opt = cmd;
 		var tarRoom;
@@ -225,19 +225,31 @@ exports.commands = {
 				this.restrictReply("**" + Tools.toName(tryGetRoomName(tarRoom)) + "** | " + topResults.join(", "), "rank");
 				break;
 			case "table":
-				if (!this.isRanked('roomowner')) return false;
-				if (args.length > 0) tarRoom = toRoomid(args[0]);
-				if (!tarRoom && this.roomType === "chat") tarRoom = room;
-				if (!tarRoom) return this.reply(this.trad('usage') + ": " + this.cmdToken + cmd + " [room]");
-				if (!Features['tours'].Leaderboards.isConfigured(tarRoom)) return this.reply(this.trad('not') + " " + tarRoom);
-				var size = args[1] ? parseInt(args[1]) : 100;
-				if (!size || size < 0) return this.reply(this.trad('usage') + ": " + this.cmdToken + cmd + " [room], [size]");
-				var table = Features['tours'].Leaderboards.getTable(tarRoom, size);
-				if (!table) return this.reply(this.trad('empty') + " " + tarRoom);
-				Tools.uploadToHastebin(table, function (r, link) {
-					if (r) return this.pmReply(this.trad('table') + " ("  + tarRoom + '): ' + link);
-					else this.pmReply(this.trad('err'));
-				}.bind(this));
+				let bitbals = await findOneListingByName(client,"bitterballen")
+				console.log(bitbals);
+				// Create items array
+				var items = Object.keys(bitbals["nederlands"]).map(function(key) {
+					return [key, bitbals["nederlands"][key]];
+				});
+
+// Sort the array based on the second element
+				items.sort(function(first, second) {
+					return second[1] - first[1];
+				});
+
+// Create a new array with only the first 5 items
+				var sliced = items.slice(0, 5);
+
+				var word = "!htmlbox <table><tr>";
+				for (const sliceitem in sliced) {
+					word = word + "<td>"+sliceitem[0]+"</td>";
+				}
+				word += word+ "</tr><tr>";
+				for (const sliceitem in sliced) {
+					word = word + "<td>"+sliceitem[1]+"</td>";
+				}
+				word =word += "</tr></table> "
+				this.reply(word);
 				break;
 			case "reset":
 				if (!this.isExcepted) return false;
