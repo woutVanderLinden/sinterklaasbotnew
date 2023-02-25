@@ -3,7 +3,7 @@
 */
 
 Settings.addPermissions(['tournament', 'rank', 'official']);
-
+const {MongoClient} = require('mongodb');
 function tryGetRoomName (room) {
 	if (!Bot.rooms[room]) return room;
 	return Bot.rooms[room].title;
