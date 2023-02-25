@@ -248,7 +248,7 @@ exports.commands = {
 					items = items.sort(function (first, second) {
 						return parseInt(second[1]) - parseInt(first[1]);
 					});
-
+					console.log(items);
 // Create a new array with only the first 5 items
 					var sliced = items.slice(0, 5);
 
