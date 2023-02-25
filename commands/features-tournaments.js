@@ -238,6 +238,8 @@ exports.commands = {
 					console.log(bitbals);
 					// Create items array
 					console.log(bitbals["nederlands"]);
+					Object.keys("jstring");
+					console.log(Object.keys(bitbals["nederlands"]));
 					var items = Object.keys(bitbals["nederlands"]).map(function (key) {
 						return [key, bitbals["nederlands"][key]];
 					});
