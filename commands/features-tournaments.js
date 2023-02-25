@@ -252,15 +252,11 @@ exports.commands = {
 // Create a new array with only the first 5 items
 					var sliced = items.slice(0, 5);
 
-					var word = "!htmlbox <table><tr>";
-					for (const sliceitem in sliced) {
-						word = word + "<td>" + sliceitem[0] + "</td>";
+					var word = "!htmlbox <table>";
+					for (var sliceitem in sliced) {
+						word = word + "<tr><td>" + sliceitem[0] + "</td>" + "<td>" + sliceitem[1] + "</td></tr>";
 					}
-					word = word + "</tr><tr>";
-					for (const sliceitem in sliced) {
-						word = word + "<td>" + sliceitem[1] + "</td>";
-					}
-					word = word += "</tr></table> "
+					word = word += "</table> "
 					this.reply(word);
 				} catch (e) {
 
