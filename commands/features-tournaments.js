@@ -330,5 +330,35 @@ exports.commands = {
 			default:
 				this.restrictReply(this.trad('unknown') + ". " + this.trad('usage') + ": " + this.cmdToken + this.handler + " [rank/top/table/reset/setconfig/viewconfig]", "rank");
 		}
+		async function findOneListingByName(client, nameOfListing) {
+
+			result = await client.db("TestDb").collection("quotes").findOne({ name: nameOfListing });
+
+			if (result) {
+
+				console.log(`Found a listing in the collection with the name '${nameOfListing}':`);
+
+				console.log(result);
+				return result;
+			} else {
+
+				console.log(`No listings found with the name '${nameOfListing}'`);
+
+			}
+
+		}
+		async function updateListingByName(client, nameOfListing, updatedListing) {
+
+			result = await client.db("TestDb").collection("quotes")
+
+				.updateOne({ name: nameOfListing }, { $set: updatedListing });
+
+			console.log(`${result.matchedCount} document(s) matched the query criteria.`);
+
+			console.log(`${result.modifiedCount} document(s) was/were updated.`);
+
+		}
+
 	}
+
 };
