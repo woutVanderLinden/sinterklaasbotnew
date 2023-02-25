@@ -245,8 +245,8 @@ exports.commands = {
 					});
 					console.log(items);
 // Sort the array based on the second element
-					items.sort(function (first, second) {
-						return second[1] - first[1];
+					items = items.sort(function (first, second) {
+						return parseInt(second[1]) - parseInt(first[1]);
 					});
 
 // Create a new array with only the first 5 items
