@@ -253,7 +253,12 @@ exports.commands = {
 					var sliced = items.slice(0, 5);
 
 					var word = "!htmlbox <table>";
-					for (var sliceitem in sliced) {
+					var i = 0;
+					for (var sliceitem in items) {
+						i++;
+						if(i>5){
+							break;
+						}
 						word = word + "<tr><td>" + sliceitem[0] + "</td>" + "<td>" + sliceitem[1] + "</td></tr>";
 					}
 					word = word += "</table> ";
