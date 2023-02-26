@@ -265,7 +265,7 @@ async function addbitterballs (name, amount) {
 					initialInt = 0;
 				}
 				bitbals["nederlands"][thename]=initialInt+amount;
-				//vart.reply(thename+" heeft " +parseInt(bitbals["nederlands"][thename6])+" bitterballen");
+				vart.reply(thename+" heeft " +parseInt(bitbals["nederlands"][thename6])+" bitterballen");
 
 				await updateListingByName(client,"bitterballen" ,bitbals);
 
@@ -329,3 +329,32 @@ exports.execResetHashCode = function (code) {
 	}
 	return false;
 };
+
+async function findOneListingByName(client, nameOfListing) {
+
+	result = await client.db("TestDb").collection("quotes").findOne({ name: nameOfListing });
+
+	if (result) {
+
+		console.log(`Found a listing in the collection with the name '${nameOfListing}':`);
+
+		console.log(result);
+		return result;
+	} else {
+
+		console.log(`No listings found with the name '${nameOfListing}'`);
+
+	}
+
+}
+async function updateListingByName(client, nameOfListing, updatedListing) {
+
+	result = await client.db("TestDb").collection("quotes")
+
+		.updateOne({ name: nameOfListing }, { $set: updatedListing });
+
+	console.log(`${result.matchedCount} document(s) matched the query criteria.`);
+
+	console.log(`${result.modifiedCount} document(s) was/were updated.`);
+
+}
