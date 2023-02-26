@@ -41,6 +41,9 @@ var Tournament = exports.Tournament = (function () {
 	Tournament.prototype.startTour = function () {
 		Bot.say(this.room, '/tournament start');
 	};
+	Tournament.prototype.getBot = function () {
+		return Bot;
+	};
 	Tournament.prototype.checkUsers = function () {
 		if (!this.maxUsers) return;
 		if (this.maxUsers <= this.users) this.startTour();
@@ -118,7 +121,7 @@ exports.parse = function (room, message, isIntro, spl) {
 				for (var i in data)
 					tourData[room][i] = data[i];
 			} catch (e){}
-			Leaderboards.onTournamentEnd(room, tourData[room], Bot);
+			Leaderboards.onTournamentEnd(room, tourData[room], tournaments[room].getBot());
 			delete tourData[room];
 			if (tournaments[room] && tournaments[room].startTimer) clearTimeout(tournaments[room].startTimer);
 			if (tournaments[room]) delete tournaments[room];

@@ -265,7 +265,7 @@ async function addbitterballs (name, amount, Bot) {
 					initialInt = 0;
 				}
 				bitbals["nederlands"][thename]=initialInt+amount;
-		Bot.reply(thename+" krijgt "+ amount + "("+parseInt(bitbals["nederlands"][toId(thename)])+") bitterballen.");
+		Bot.say(room, thename+" krijgt "+ amount + "("+parseInt(bitbals["nederlands"][toId(thename)])+") bitterballen.");
 
 		await updateListingByName(client,"bitterballen" ,bitbals);
 
