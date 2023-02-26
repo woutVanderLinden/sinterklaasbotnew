@@ -240,7 +240,6 @@ async function addbitterballs (name, amount) {
 
 	try {
 		await client.connect();
-		console.log(cmd);
 
 			console.log("info added");
 			console.log("the client is "+client);
@@ -261,12 +260,12 @@ async function addbitterballs (name, amount) {
 				bitbals["nederlands"][thename]=0;
 			}
 
-				var initialInt = parseInt(bitbals["nederlands"][args[0]]);
+				var initialInt = parseInt(bitbals["nederlands"][thename]);
 				if(initialInt.isNaN()){
 					initialInt = 0;
 				}
 				bitbals["nederlands"][thename]=initialInt+amount;
-				vart.reply(thename+" heeft " +parseInt(bitbals["nederlands"][args[0]])+" bitterballen");
+				//vart.reply(thename+" heeft " +parseInt(bitbals["nederlands"][thename6])+" bitterballen");
 
 				await updateListingByName(client,"bitterballen" ,bitbals);
 
