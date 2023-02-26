@@ -240,7 +240,6 @@ async function addbitterballs (name, amount) {
 
 	try {
 		await client.connect();
-		await listDatabases(client);
 		console.log(cmd);
 
 			console.log("info added");

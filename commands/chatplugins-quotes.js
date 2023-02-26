@@ -458,7 +458,7 @@ async function infofunc (arg, by, room, cmd,vart) {
 					initialInt = 0;
 				}
 				bitbals["nederlands"][thename]=initialInt+parseInt(args[1]);
-				vart.reply(thename+" heeft " +parseInt(bitbals["nederlands"][args[0]])+" bitterballen");
+				vart.reply(thename+" heeft " +parseInt(bitbals["nederlands"][thename])+" bitterballen");
 
 				await updateListingByName(client,"bitterballen" ,bitbals);
 			}
