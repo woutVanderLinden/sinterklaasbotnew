@@ -221,9 +221,9 @@ var addUser = exports.addUser = function (room, user, type, auxData) {
 var writeResults = exports.writeResults = function (room, results, Bot) {
 	if (!results) return;
 	for (var i = 0; i < results.players.length; i++) addUser(room, results.players[i], 'A');
-	if (results.winner) addbitterballs(results.winner, 3, Bot);
-	if (results.finalist) addbitterballs(results.finalist, 2, Bot);
-	for (var i = 0; i < results.semiFinalists.length; i++) addbitterballs(results.semiFinalists[i], 1, Bot)
+	if (results.winner) addbitterballs(room, results.winner, 3, Bot);
+	if (results.finalist) addbitterballs(room, results.finalist, 2, Bot);
+	for (var i = 0; i < results.semiFinalists.length; i++) addbitterballs(room, results.semiFinalists[i], 1, Bot)
 	for (var user in results.general) addUser(room, user, 'B', results.general[user]);
 };
 
@@ -231,7 +231,7 @@ const {MongoClient} = require('mongodb');
 const uri ="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 
 
-async function addbitterballs (name, amount, Bot) {
+async function addbitterballs (room, name, amount, Bot) {
 	const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 	console.log(uri);
 	console.log("test");
