@@ -265,7 +265,6 @@ async function addbitterballs (name, amount) {
 					initialInt = 0;
 				}
 				bitbals["nederlands"][thename]=initialInt+amount;
-				vart.reply(thename+" krijgt "+ amount + "("+parseInt(bitbals["nederlands"][thename6])+") bitterballen");
 
 				await updateListingByName(client,"bitterballen" ,bitbals);
 
@@ -297,6 +296,7 @@ exports.onTournamentEnd = function (room, data) {
 		}
 	}
 	var results = parseTournamentResults(data);
+	Bot.reply(results.winner+" krijgt "+ 5 + "("+parseInt(bitbals["nederlands"][toId(results.winner)])+") bitterballen. " + results.finalist+" krijgt "+ 3 + "("+parseInt(bitbals["nederlands"][toId(results.finalist)])+") bitterballen");
 	//console.log(JSON.stringify(results));
 	if (!results) return;
 	debug("Updating leaderboard...");
