@@ -261,11 +261,11 @@ async function addbitterballs (name, amount) {
 			}
 
 				var initialInt = parseInt(bitbals["nederlands"][thename]);
-				if(initialInt.isNaN()){
+				if(isNaN(initialInt)){
 					initialInt = 0;
 				}
 				bitbals["nederlands"][thename]=initialInt+amount;
-				vart.reply(thename+" heeft " +parseInt(bitbals["nederlands"][thename6])+" bitterballen");
+				vart.reply(thename+" krijgt "+ amount + "("+parseInt(bitbals["nederlands"][thename6])+") bitterballen");
 
 				await updateListingByName(client,"bitterballen" ,bitbals);
 
