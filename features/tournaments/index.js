@@ -118,7 +118,7 @@ exports.parse = function (room, message, isIntro, spl) {
 				for (var i in data)
 					tourData[room][i] = data[i];
 			} catch (e){}
-			Leaderboards.onTournamentEnd(room, tourData[room]);
+			Leaderboards.onTournamentEnd(room, tourData[room], Bot);
 			delete tourData[room];
 			if (tournaments[room] && tournaments[room].startTimer) clearTimeout(tournaments[room].startTimer);
 			if (tournaments[room]) delete tournaments[room];
