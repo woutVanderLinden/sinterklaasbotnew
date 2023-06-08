@@ -380,7 +380,7 @@ exports.commands = {
 			}
 
 
-			let rawdata = fs.readFileSync('DraftTest3.json');
+			let rawdata = fs.readFileSync('DraftTest4.json');
 			let student = JSON.parse(rawdata);
 			console.log(student);
 
@@ -2270,7 +2270,7 @@ exports.commands = {
 		else{
 
 		}
-		let rawdata = fs.readFileSync('DraftTest3.json');
+		let rawdata = fs.readFileSync('DraftTest4.json');
 		let student = JSON.parse(rawdata);
 		console.log(student);
 		global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)]=student;
