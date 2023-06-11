@@ -2273,6 +2273,7 @@ exports.commands = {
 		let rawdata = fs.readFileSync('DraftTest4.json');
 		let student = JSON.parse(rawdata);
 		console.log(student);
+		global.draftvalues.draftroom = toId(room);
 		global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)]=student;
 		global.draftvalues.pointdrafting=true;
 		global.draftvalues.draftroom= room;
