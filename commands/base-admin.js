@@ -2662,7 +2662,7 @@ exports.commands = {
 					}
 					typePointer++;
 				}
-				console.log("scorehere:" +currentType +" "+  t);
+				console.log("scorehere:" +currentType +" "+  t + " " + monname);
 				if(typings.includes(global.draftvalues.mondata[monname]["Typing1"])){
 					if(global.draftvalues.mondata[monname]["Typing 2"]!=undefined){
 						

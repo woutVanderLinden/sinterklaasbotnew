@@ -12447,10 +12447,10 @@
          "Typing1": "Water",
          "Typing 2": "Ghost",
          "physicalbulkyattacker": 4,
-         "specialbulkyattacker": 3,
+         "specialbulkyattacker": 2,
          "physicalwall": 0,
          "physicalsetup": 0,
-         "priority": 5,
+         "priority": 3,
          "specialsweeper": 0,
          "specialsetup": 0,
          "status": 0,
@@ -12470,6 +12470,35 @@
          "sun": 0
       }
    ,
+   "Basculegion-f":
+   {
+      "name": "Basculegion-f",
+      "Typing1": "Water",
+      "Typing 2": "Ghost",
+      "physicalbulkyattacker": 2,
+      "specialbulkyattacker": 4,
+      "physicalwall": 0,
+      "physicalsetup": 0,
+      "priority": 3,
+      "specialsweeper": 4,
+      "specialsetup": 0,
+      "status": 0,
+      "itemremover": 0,
+      "scarf": 4,
+      "entryhazards": 0,
+      "pivot": 4,
+      "cleric": 0,
+      "specialwall": 0,
+      "hazardremoval": 0,
+      "physicalsweeper": 0,
+      "sand": 0,
+      "speedcontrol": 0,
+      "screens": 0,
+      "rain": 3,
+      "hail": 0,
+      "sun": 0
+   }
+,
    "Deoxys-Defense": 
       {
          "name": "Deoxys-Defense",
