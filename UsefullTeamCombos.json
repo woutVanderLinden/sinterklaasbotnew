@@ -1,0 +1,26 @@
+{
+	
+	"tierlist":{
+		"nuzleaf5":["Dragapult","Melmetal","Porygon2","Slowking","Zarude","Comfey","Rotom-Fan","Sandaconda","Passimian","Weezing","Coalossal"],
+		"Monkey5": ["Landorus-Therian","Latias","Primarina","Infernape","Tangrowth","Copperajah","Abomasnow","Accelgor","Rhydon","Sandslash-Alola","Electabuzz"],
+		"Idiot5": ["Kartana","Tapu Koko","Crawdaunt","Mamoswine","Rotom-Heat","Hitmonlee","Sigilyph","Haunter","Kingler","Crustle","Type: Null"],
+		"Wubben5": ["Buzzwole","Ferrothorn","Milotic","Sylveon","Rhyperior","Drapion","Yanmega","Ambipom","Turtonator","Zebstrika","Mr. Mime-Galar"],
+		"Gangster5": ["Gliscor","Zeraora","Goodra","Metagross","Overqwil","Dhelmise","Magmortar","Sneasel-Hisui","Kabutops","Granbull","Pinsir"],
+		"Rayan5": ["Corviknight","Deoxys-Speed","Breloom","Weezing-Galar","Zoroark-Hisui","Vaporeon","Arcanine-Hisui","Qwilfish-Hisui","Sandaconda","Tangela","Luxray"],
+		"Yoyoyoeri5": ["Rillaboom","Tyranitar","Dracozolt","Landorus","Primarina","Espeon","Marowak-Alola","Doublade","Vivillon","Sandslash","Thievul"],
+		"Yveltalnl5": ["Tapu Fini","Deoxys-Speed","Haxorus","Silvally","Bronzong","Samurott-Hisui","Talonflame","Hariyama","Lickilicky","Raichu","Torterra"],
+		"J0rdy5": ["Kyurem","Tornadus-Therian","Slowbro","Tapu Bulu","Drapion","Donphan","Sirfetchd","Mismagius","Miltank","Rapidash","Togedemaru"],
+		"Kingbaruk5": ["Celesteela","Latios","Scolipede","Swampert","Electrode-Hisui","Glastrier","Pangoro","Aromatisse","Spiritomb","Pyroar","Rotom"],
+		"Michielleus5": ["Excadrill","Tornadus-Therian","Azumarill","Durant","Mimikyu","Gigalith","Rotom-Mow","Persian-Alola","Cryogonal","Eldegoss","Kadabra"],
+		"QuinnXD5": ["Dragapult","Empoleon","Moltres-Galar","Swampert","Tapu Bulu","Slowbro-Galar","Talonflame","Zoroark","Sneasel-Hisui","Carracosta","Rotom"],
+		"Esca5": ["Aegislash","Victini","Enamorus-Therian","Sneasler","Thundurus","Seismitoad","Tsareena","Guzzlord","Glalie","Carracosta","Ursaring"],
+		"Xander5": ["Tapu Lele","Nidoking","Zoroark-Hisui","Incineroar","Regieleki","Araquanid","Registeel","Chesnaught","Drampa","Drifblim","Stonjourner"],
+		"Sobble5": ["Zeraora","Enamorus-Therian","Infernape","Mamoswine","Rotom-Wash","Slowking-Galar","Noivern","Gourgeist-Large","Orbeetle","Steelix","Type: Null"]
+
+},
+
+	"freepicks":10,
+	"length":1,
+	"Points":1600
+	
+  }

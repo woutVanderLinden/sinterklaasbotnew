@@ -2468,6 +2468,11 @@ exports.commands = {
 		return this.reply(word);
 	},
 
+	similar:function (arg, by, room, cmd) {
+		arg=arg.toLowerCase();
+		var args = arg.split(",");
+		return this.replt("similarity between" + args[0] + "and " + args[1]+ "is" + similar(toId(args[0]), toId(args[1])));
+	},
 
 	recommend:function (arg, by, room, cmd) {
 		
@@ -2561,18 +2566,19 @@ exports.commands = {
 	var monschosen=global.draftvalues.users[name]["draftedmons"];
 	var i=0;
 	while(i<monschosen.length){
-		var currentmon=monschosen[i];
+		var currentmonname=monschosen[i];
+		currentmon = global.draftvalues.mondata[currentmonname];
 		if(!(currentmon in global.draftvalues.mondata)){
 			i++;
 			continue;
 		}
-		if(!typings.includes(global.draftvalues.mondata[currentmon]["Typing1"])){
-			typings.push(global.draftvalues.mondata[currentmon]["Typing1"]);
+		if(!typings.includes(global.draftvalues.mondata[currentmonname]["Typing1"])){
+			typings.push(global.draftvalues.mondata[currentmonname]["Typing1"]);
 		}
-		if(global.draftvalues.mondata[currentmon]["Typing 2"]!=""){
+		if(global.draftvalues.mondata[currentmonname]["Typing 2"]!=""){
 			
-			if(!typings.includes(global.draftvalues.mondata[currentmon]["Typing 2"])){
-				typings.push(global.draftvalues.mondata[currentmon]["Typing 2"]);
+			if(!typings.includes(global.draftvalues.mondata[currentmonname]["Typing 2"])){
+				typings.push(global.draftvalues.mondata[currentmonname]["Typing 2"]);
 			}
 		}
 		totalhazards=totalhazards+(currentmon["entryhazards"]||0);
@@ -3904,6 +3910,66 @@ function endbid(arg, arg2)
 
 	//return this.send(global.draftvalues.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " picks left: " + picksleft);
 };
+
+function similar(monname1,monname2){
+	var score =0;
+	score = score + typeSimilarity(monname1,monname2);
+	score = score + roleSimilarity(monname1,monname2)
+	return score;
+}
+function roleSimilarity(monname1, monname2) {
+	var score = 0;
+	var posfilterroles=["entryhazards","hazardremoval","itemremover","pivot","cleric","pivot","scarf","physicalsweeper","specialsweeper","physicalbulkyattacker","specialbulkyattacker","physicalwall","specialwall","physicalsetup","specialsetup","status","priority","speedcontrol","sun","rain","hail","sand"];
+	var i=0;
+	var maxi = global.draftvalues.mondata[monname1][posfilterroles[0]];
+	var maxstrung = posfilterroles[0];
+	var maxii = global.draftvalues.mondata[monname1][posfilterroles[1]];
+	var maxiistrung = posfilterroles[1];
+	while(i<posfilterroles.length) {
+		if(global.draftvalues.mondata[monname][posfilterroles[i]]>maxi){
+			maxiistrung = maxstrung;
+			maxii = maxi;
+			maxstrung = posfilterroles[i];
+			maxi = global.draftvalues.mondata[monname][posfilterroles[i]];
+		}
+	}
+	score = score + 40*global.draftvalues.mondata[monname2][maxstrung];
+	score = score + 40*global.draftvalues.mondata[monname2][maxiistrung];
+	global.draftvalues.mondata[monname]["entryhazards"]
+	return score;
+}
+
+function typeSimilarity(monname1, monname2)
+{
+	var score =0;
+	if(global.draftvalues.mondata[monname1] != undefined && global.draftvalues.mondata[monname1]["Typing1"]!=undefined){
+		if(global.draftvalues.mondata[monname2] != undefined &&global.draftvalues.mondata[monname2]["Typing1"]!=undefined){
+
+			if(global.draftvalues.mondata[monname1]["Typing1"] = global.draftvalues.mondata[monname2]["Typing1"]){
+				score = score + 50;
+			}
+			if(global.draftvalues.mondata[monname2]["Typing 2"]!=undefined){
+
+				if(global.draftvalues.mondata[monname1]["Typing1"] = global.draftvalues.mondata[monname2]["Typing 2"]){
+					score = score + 50;
+				}
+			}
+		}
+		if(global.draftvalues.mondata[monname1]["Typing 2"]!=undefined){
+
+			if(global.draftvalues.mondata[monname1]["Typing 2"] = global.draftvalues.mondata[monname2]["Typing1"]){
+				score = score + 50;
+			}
+			if(global.draftvalues.mondata[monname2]["Typing 2"]!=undefined){
+
+				if(global.draftvalues.mondata[monname1]["Typing 2"] = global.draftvalues.mondata[monname2]["Typing 2"]){
+					score = score + 50;
+				}
+			}
+		}
+	}
+	return score;
+}
 function weaknessForPokemon(monname)
 {
 	var postypings=["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
