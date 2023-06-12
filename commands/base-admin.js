@@ -3926,11 +3926,11 @@ function roleSimilarity(monname1, monname2) {
 	var maxii = global.draftvalues.mondata[monname1][posfilterroles[1]];
 	var maxiistrung = posfilterroles[1];
 	while(i<posfilterroles.length) {
-		if(global.draftvalues.mondata[monname][posfilterroles[i]]>maxi){
+		if(global.draftvalues.mondata[monname1][posfilterroles[i]]>maxi){
 			maxiistrung = maxstrung;
 			maxii = maxi;
 			maxstrung = posfilterroles[i];
-			maxi = global.draftvalues.mondata[monname][posfilterroles[i]];
+			maxi = global.draftvalues.mondata[monname1][posfilterroles[i]];
 		}
 	}
 	score = score + 40*global.draftvalues.mondata[monname2][maxstrung];
