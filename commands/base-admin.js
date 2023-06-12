@@ -3913,7 +3913,7 @@ function endbid(arg, arg2)
 };
 
 function similar(monname1,monname2){
-	var score =0;
+	var score = 0;
 	score = score + typeSimilarity(monname1,monname2);
 	score = score + roleSimilarity(monname1,monname2);
 	return score;
@@ -3934,8 +3934,8 @@ function roleSimilarity(monname1, monname2) {
 			maxi = global.draftvalues.mondata[monname1][posfilterroles[i]];
 		}
 	}
-	score = score + 40*global.draftvalues.mondata[monname2][maxstrung];
-	score = score + 40*global.draftvalues.mondata[monname2][maxiistrung];
+	score = score + 40 * global.draftvalues.mondata[monname2][maxstrung];
+	score = score + 40 * global.draftvalues.mondata[monname2][maxiistrung];
 	global.draftvalues.mondata[monname]["entryhazards"]
 	return score;
 }
@@ -3943,27 +3943,27 @@ function roleSimilarity(monname1, monname2) {
 function typeSimilarity(monname1, monname2)
 {
 	var score =0;
-	if(global.draftvalues.mondata[monname1] != undefined && global.draftvalues.mondata[monname1]["Typing1"]!=undefined){
-		if(global.draftvalues.mondata[monname2] != undefined &&global.draftvalues.mondata[monname2]["Typing1"]!=undefined){
+	if(global.draftvalues.mondata[monname1] != undefined && global.draftvalues.mondata[monname1]["Typing1"] != undefined){
+		if(global.draftvalues.mondata[monname2] != undefined && global.draftvalues.mondata[monname2]["Typing1"] != undefined){
 
-			if(global.draftvalues.mondata[monname1]["Typing1"] = global.draftvalues.mondata[monname2]["Typing1"]){
+			if(global.draftvalues.mondata[monname1]["Typing1"] == global.draftvalues.mondata[monname2]["Typing1"]){
 				score = score + 50;
 			}
-			if(global.draftvalues.mondata[monname2]["Typing 2"]!=undefined){
+			if(global.draftvalues.mondata[monname2]["Typing 2"] != undefined){
 
-				if(global.draftvalues.mondata[monname1]["Typing1"] = global.draftvalues.mondata[monname2]["Typing 2"]){
+				if(global.draftvalues.mondata[monname1]["Typing1"] == global.draftvalues.mondata[monname2]["Typing 2"]){
 					score = score + 50;
 				}
 			}
 		}
-		if(global.draftvalues.mondata[monname1]["Typing 2"]!=undefined){
+		if(global.draftvalues.mondata[monname1]["Typing 2"] != undefined){
 
-			if(global.draftvalues.mondata[monname1]["Typing 2"] = global.draftvalues.mondata[monname2]["Typing1"]){
+			if(global.draftvalues.mondata[monname1]["Typing 2"] == global.draftvalues.mondata[monname2]["Typing1"]){
 				score = score + 50;
 			}
 			if(global.draftvalues.mondata[monname2]["Typing 2"]!=undefined){
 
-				if(global.draftvalues.mondata[monname1]["Typing 2"] = global.draftvalues.mondata[monname2]["Typing 2"]){
+				if(global.draftvalues.mondata[monname1]["Typing 2"] == global.draftvalues.mondata[monname2]["Typing 2"]){
 					score = score + 50;
 				}
 			}
@@ -3981,7 +3981,7 @@ function weaknessForPokemon(monname)
 		var weaknessToType = 0;
 		if(monname in  global.draftvalues.mondata){
 			weaknessToType += global.draftvalues.weaknesssheet[postypings[i]][global.draftvalues.mondata[monname]["Typing1"]];
-			if(global.draftvalues.mondata[monname]["Typing 2"]!=""){
+			if(global.draftvalues.mondata[monname]["Typing 2"] != ""){
 				weaknessToType += global.draftvalues.weaknesssheet[postypings[i]][global.draftvalues.mondata[monname]["Typing 2"]];
 			}
 
