@@ -11249,6 +11249,35 @@
          "sun": 0
       }
    ],
+   "Toedscruel":[
+      {
+         "name": "Toedscruel",
+         "Typing1": "Grass",
+         "Typing 2": "Ground",
+         "physicalbulkyattacker": 0,
+         "specialbulkyattacker": 3,
+         "physicalwall": 0,
+         "physicalsetup": 0,
+         "priority": 0,
+         "specialsweeper": 0,
+         "specialsetup": 0,
+         "status": 4,
+         "itemremover": 0,
+         "scarf": 2,
+         "entryhazards": 0,
+         "pivot": 0,
+         "cleric": 0,
+         "specialwall": 0,
+         "hazardremoval": 4,
+         "physicalsweeper": 0,
+         "sand": 0,
+         "speedcontrol": 0,
+         "screens": 0,
+         "rain": 0,
+         "hail": 0,
+         "sun": 0
+      }
+   ],
    "Tauros-paldeawater":[
       {
          "name": "Tauros-paldeawater",
