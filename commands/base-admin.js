@@ -2471,7 +2471,7 @@ exports.commands = {
 	similar:function (arg, by, room, cmd) {
 		arg=arg.toLowerCase();
 		var args = arg.split(",");
-		return this.replt("similarity between" + args[0] + "and " + args[1]+ "is" + similar(jsUcfirst(toId(args[0])), jsUcfirst(toId(args[1]))));
+		return this.reply("similarity between" + args[0] + "and " + args[1]+ "is" + similar(jsUcfirst(toId(args[0])), jsUcfirst(toId(args[1]))));
 	},
 
 	recommend:function (arg, by, room, cmd) {
@@ -3914,7 +3914,7 @@ function endbid(arg, arg2)
 function similar(monname1,monname2){
 	var score =0;
 	score = score + typeSimilarity(monname1,monname2);
-	score = score + roleSimilarity(monname1,monname2)
+	score = score + roleSimilarity(monname1,monname2);
 	return score;
 }
 function roleSimilarity(monname1, monname2) {
