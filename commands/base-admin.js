@@ -2471,7 +2471,7 @@ exports.commands = {
 	similar:function (arg, by, room, cmd) {
 		arg=arg.toLowerCase();
 		var args = arg.split(",");
-		return this.replt("similarity between" + args[0] + "and " + args[1]+ "is" + similar(toId(args[0]), toId(args[1])));
+		return this.replt("similarity between" + args[0] + "and " + args[1]+ "is" + similar(jsUcfirst(toId(args[0])), jsUcfirst(toId(args[1]))));
 	},
 
 	recommend:function (arg, by, room, cmd) {
