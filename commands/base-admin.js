@@ -3933,6 +3933,7 @@ function roleSimilarity(monname1, monname2) {
 			maxstrung = posfilterroles[i];
 			maxi = global.draftvalues.mondata[monname1][posfilterroles[i]];
 		}
+		i++;
 	}
 	score = score + 40 * global.draftvalues.mondata[monname2][maxstrung];
 	score = score + 40 * global.draftvalues.mondata[monname2][maxiistrung];
