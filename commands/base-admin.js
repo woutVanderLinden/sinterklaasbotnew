@@ -3912,10 +3912,10 @@ function endbid(arg, arg2)
 	//return this.send(global.draftvalues.draftroom, name +" drafted "+arg+", the next drafter is "+username+ " picks left: " + picksleft);
 };
 
-function similar(monname1,monname2){
+function similar(monname1, monname2){
 	var score = 0;
-	score = score + typeSimilarity(monname1,monname2);
-	score = score + roleSimilarity(monname1,monname2);
+	score = score + typeSimilarity(monname1, monname2);
+	score = score + roleSimilarity(monname1, monname2);
 	console.log(global.draftvalues.mondata);
 	return score;
 }
@@ -3923,22 +3923,22 @@ function roleSimilarity(monname1, monname2) {
 	var score = 0;
 	var posfilterroles=["entryhazards","hazardremoval","itemremover","pivot","cleric","pivot","scarf","physicalsweeper","specialsweeper","physicalbulkyattacker","specialbulkyattacker","physicalwall","specialwall","physicalsetup","specialsetup","status","priority","speedcontrol","sun","rain","hail","sand"];
 	var i=0;
-	var maxi = global.draftvalues.mondata[monname1][posfilterroles[0]];
+	var maxi = global.draftvalues.mondata[monname1][0][posfilterroles[0]];
 	console.log( "maxi "+ maxi);
 	var maxstrung = posfilterroles[0];
-	var maxii = global.draftvalues.mondata[monname1][posfilterroles[1]];
+	var maxii = global.draftvalues.mondata[monname1][0][posfilterroles[1]];
 	var maxiistrung = posfilterroles[1];
 	while(i<posfilterroles.length) {
-		if(global.draftvalues.mondata[monname1][posfilterroles[i]] >= maxi){
+		if(global.draftvalues.mondata[monname1][0][posfilterroles[i]] >= maxi){
 			maxiistrung = maxstrung;
 			maxii = maxi;
 			maxstrung = posfilterroles[i];
-			maxi = global.draftvalues.mondata[monname1][posfilterroles[i]];
+			maxi = global.draftvalues.mondata[monname1][0][posfilterroles[i]];
 		}
 		i++;
 	}
-	score = score + 40 * (global.draftvalues.mondata[monname2][maxstrung]||0);
-	score = score + 40 * (global.draftvalues.mondata[monname2][maxiistrung]||0);
+	score = score + 40 * (global.draftvalues.mondata[monname2][0][maxstrung]||0);
+	score = score + 40 * (global.draftvalues.mondata[monname2][0][maxiistrung]||0);
 	console.log("role " + maxstrung + " " + maxiistrung+ " score: " + score);
 	return score;
 }
@@ -3946,28 +3946,28 @@ function roleSimilarity(monname1, monname2) {
 function typeSimilarity(monname1, monname2)
 {
 	var score =0;
-	console.log( monname1 + "type1 "+ global.draftvalues.mondata[monname1]["Typing1"]);
-	if(global.draftvalues.mondata[monname1] != undefined && global.draftvalues.mondata[monname1]["Typing1"] != undefined){
-		if(global.draftvalues.mondata[monname2] != undefined && global.draftvalues.mondata[monname2]["Typing1"] != undefined){
+	console.log( monname1 + "type1 "+ global.draftvalues.mondata[monname1][0]["Typing1"]);
+	if(global.draftvalues.mondata[monname1] != undefined && global.draftvalues.mondata[monname1][0]["Typing1"] != undefined){
+		if(global.draftvalues.mondata[monname2] != undefined && global.draftvalues.mondata[monname2][0]["Typing1"] != undefined){
 
-			if(global.draftvalues.mondata[monname1]["Typing1"] == global.draftvalues.mondata[monname2]["Typing1"]){
+			if(global.draftvalues.mondata[monname1][0]["Typing1"] == global.draftvalues.mondata[monname2][0]["Typing1"]){
 				score = score + 50;
 			}
-			if(global.draftvalues.mondata[monname2]["Typing 2"] != undefined){
+			if(global.draftvalues.mondata[monname2][0]["Typing 2"] != undefined){
 
-				if(global.draftvalues.mondata[monname1]["Typing1"] == global.draftvalues.mondata[monname2]["Typing 2"]){
+				if(global.draftvalues.mondata[monname1][0]["Typing1"] == global.draftvalues.mondata[monname2][0]["Typing 2"]){
 					score = score + 50;
 				}
 			}
 		}
-		if(global.draftvalues.mondata[monname1]["Typing 2"] != undefined){
+		if(global.draftvalues.mondata[monname1][0]["Typing 2"] != undefined){
 
-			if(global.draftvalues.mondata[monname1]["Typing 2"] == global.draftvalues.mondata[monname2]["Typing1"]){
+			if(global.draftvalues.mondata[monname1][0]["Typing 2"] == global.draftvalues.mondata[monname2][0]["Typing1"]){
 				score = score + 50;
 			}
-			if(global.draftvalues.mondata[monname2]["Typing 2"]!=undefined){
+			if(global.draftvalues.mondata[monname2][0]["Typing 2"]!=undefined){
 
-				if(global.draftvalues.mondata[monname1]["Typing 2"] == global.draftvalues.mondata[monname2]["Typing 2"]){
+				if(global.draftvalues.mondata[monname1][0]["Typing 2"] == global.draftvalues.mondata[monname2][0]["Typing 2"]){
 					score = score + 50;
 				}
 			}
