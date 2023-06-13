@@ -3923,11 +3923,12 @@ function roleSimilarity(monname1, monname2) {
 	var posfilterroles=["entryhazards","hazardremoval","itemremover","pivot","cleric","pivot","scarf","physicalsweeper","specialsweeper","physicalbulkyattacker","specialbulkyattacker","physicalwall","specialwall","physicalsetup","specialsetup","status","priority","speedcontrol","sun","rain","hail","sand"];
 	var i=0;
 	var maxi = global.draftvalues.mondata[monname1][posfilterroles[0]];
+	console.log( "maxi "+ maxi);
 	var maxstrung = posfilterroles[0];
 	var maxii = global.draftvalues.mondata[monname1][posfilterroles[1]];
 	var maxiistrung = posfilterroles[1];
 	while(i<posfilterroles.length) {
-		if(global.draftvalues.mondata[monname1][posfilterroles[i]]>maxi){
+		if(global.draftvalues.mondata[monname1][posfilterroles[i]] >= maxi){
 			maxiistrung = maxstrung;
 			maxii = maxi;
 			maxstrung = posfilterroles[i];
@@ -3944,6 +3945,7 @@ function roleSimilarity(monname1, monname2) {
 function typeSimilarity(monname1, monname2)
 {
 	var score =0;
+	console.log( "type1 "+ global.draftvalues.mondata[monname1]["Typing1"]);
 	if(global.draftvalues.mondata[monname1] != undefined && global.draftvalues.mondata[monname1]["Typing1"] != undefined){
 		if(global.draftvalues.mondata[monname2] != undefined && global.draftvalues.mondata[monname2]["Typing1"] != undefined){
 
