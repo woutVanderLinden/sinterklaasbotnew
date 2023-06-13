@@ -2472,7 +2472,7 @@ exports.commands = {
 		arg=arg.toLowerCase();
 		var args = arg.split(",");
 		console.log(similar(jsUcfirst(toId(args[0])), jsUcfirst(toId(args[1]))));
-		return this.reply("similarity between" + args[0] + " and " + args[1]+ " is " + similar(jsUcfirst(toId(args[0])), jsUcfirst(toId(args[1]))));
+		return this.reply("similarity between " + args[0] + " and " + args[1]+ " is " + similar(jsUcfirst(toId(args[0])), jsUcfirst(toId(args[1]))));
 	},
 
 	recommend:function (arg, by, room, cmd) {
@@ -3935,8 +3935,8 @@ function roleSimilarity(monname1, monname2) {
 		}
 		i++;
 	}
-	score = score + 40 * global.draftvalues.mondata[monname2][maxstrung];
-	score = score + 40 * global.draftvalues.mondata[monname2][maxiistrung];
+	score = score + 40 * (global.draftvalues.mondata[monname2][maxstrung]||0);
+	score = score + 40 * (global.draftvalues.mondata[monname2][maxiistrung]||0);
 	return score;
 }
 
