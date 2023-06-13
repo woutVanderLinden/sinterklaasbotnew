@@ -3945,7 +3945,7 @@ function roleSimilarity(monname1, monname2) {
 function typeSimilarity(monname1, monname2)
 {
 	var score =0;
-	console.log( "type1 "+ global.draftvalues.mondata[monname1]["Typing1"]);
+	console.log( monname1 + "type1 "+ global.draftvalues.mondata[monname1]["Typing1"]);
 	if(global.draftvalues.mondata[monname1] != undefined && global.draftvalues.mondata[monname1]["Typing1"] != undefined){
 		if(global.draftvalues.mondata[monname2] != undefined && global.draftvalues.mondata[monname2]["Typing1"] != undefined){
 
