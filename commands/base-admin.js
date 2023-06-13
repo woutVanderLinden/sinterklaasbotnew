@@ -3937,7 +3937,6 @@ function roleSimilarity(monname1, monname2) {
 	}
 	score = score + 40 * global.draftvalues.mondata[monname2][maxstrung];
 	score = score + 40 * global.draftvalues.mondata[monname2][maxiistrung];
-	global.draftvalues.mondata[monname]["entryhazards"]
 	return score;
 }
 
