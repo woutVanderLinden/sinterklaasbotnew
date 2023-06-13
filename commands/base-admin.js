@@ -3916,6 +3916,7 @@ function similar(monname1,monname2){
 	var score = 0;
 	score = score + typeSimilarity(monname1,monname2);
 	score = score + roleSimilarity(monname1,monname2);
+	console.log(global.draftvalues.mondata);
 	return score;
 }
 function roleSimilarity(monname1, monname2) {
