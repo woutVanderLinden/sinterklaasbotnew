@@ -3937,6 +3937,7 @@ function roleSimilarity(monname1, monname2) {
 	}
 	score = score + 40 * (global.draftvalues.mondata[monname2][maxstrung]||0);
 	score = score + 40 * (global.draftvalues.mondata[monname2][maxiistrung]||0);
+	console.log("role " + maxstrung + " " + maxiistrung+ " score: " + score);
 	return score;
 }
 
@@ -3969,6 +3970,7 @@ function typeSimilarity(monname1, monname2)
 			}
 		}
 	}
+	console.log("typesim " + score);
 	return score;
 }
 function weaknessForPokemon(monname)
