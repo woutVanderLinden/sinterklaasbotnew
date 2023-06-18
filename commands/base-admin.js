@@ -2551,7 +2551,7 @@ exports.commands = {
 				while(i<monschosen.length) {
 					var  l = 0;
 					while (l < teamlist[key].length) {
-						var score = similar(teamdict[key[l]], possiblepic)
+						var score = similar(teamdict[key][l], possiblepic)
 						if (score > max) {
 							max = score;
 							mostsimilar = l;
