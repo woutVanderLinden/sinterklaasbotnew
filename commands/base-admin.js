@@ -2975,7 +2975,7 @@ exports.commands = {
 		response = response + draftmonsprintroles(newlistsix, filterroles[filterrolesnumber],draftsshown,by,global.draftvalues.draftroom);
 		filterrolesnumber++;
 	}
-	response = ' <div  style=\'color: black; border: 2px solid red; background-color: rgb(204, 255, 204); padding: 4px;\'>'+ response + '</div>';
+	response = '!htmlbox <div  style=\'color: black; border: 2px solid red; background-color: rgb(204, 255, 204); padding: 4px;\'>'+ response + '</div>';
 		//thislistsix
 		console.log(response);
 		this.send(global.draftvalues.draftroom, response);
@@ -3148,7 +3148,7 @@ function draftmonsprintroles(arg,role,nrshown,by,room){
 	var result="suggestions:";
 
 	if(toId(by)!=toId(room)){
-		result=' <div  style=\'color: black; border: 2px solid red; background-color: rgb(204, 255, 204); padding: 4px;\'>' + '<h2>'+role+ ':</h2>';
+		result=' <div  style=\'color: black; border: 2px solid red; background-color: rgb(204, 255, 204); padding: 4px;\'>' + '<p>'+role+'</p>' ;
 	}
 
 	for (var i = 0; i < nrshown; i++) {
