@@ -2568,6 +2568,7 @@ exports.commands = {
 			var index = values.indexOf(Math.max(values));
 			var teamKeyChosen = Object.keys(teamdict)[index];
 			var teamChosen = teamlist[teamKeyChosen];
+			console.log(index + "  "+ teamKeyChosen + " " + teamChosen);
 			if((chosensimilarmon in global.draftvalues.mondata)){
 				chosensimilarmon = teamChosen[getRandomInt(teamChosen.length)];
 				//pikachu
