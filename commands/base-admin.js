@@ -2568,7 +2568,7 @@ exports.commands = {
 			var index = values.indexOf(Math.max(values));
 
 			if((chosensimilarmon in global.draftvalues.mondata)){
-				chosensimilarmon = teamlist[index][getRandomInt(teamlist[index].length)];
+				chosensimilarmon = Object.keys(teamdict)[index][getRandomInt(teamlist[index].length)];
 				//pikachu
 				filterroles = mostProminentRole(chosensimilarmon);
 			}
