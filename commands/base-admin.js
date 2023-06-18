@@ -2567,12 +2567,12 @@ exports.commands = {
 				console.log(values);
 				k++;
 			}
-			var index = values.indexOf(Math.max(values));
+			var index = values.indexOf(Math.max.apply(Math,values));
 			var teamKeyChosen = Object.keys(teamdict)[index];
 			var teamChosen = teamlist[teamKeyChosen];
 			console.log(index + "  "+ teamKeyChosen + " " + teamChosen);
 			if((chosensimilarmon in global.draftvalues.mondata)){
-				chosensimilarmon = teamChosen[getRandomInt(teamChosen.length)];
+				chosensimilarmon = teamChosen[Math.floor(Math.random()*teamChosen.length)];
 				//pikachu
 				filterroles = mostProminentRole(chosensimilarmon);
 			}
