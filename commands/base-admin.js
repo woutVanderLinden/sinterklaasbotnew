@@ -2539,18 +2539,19 @@ exports.commands = {
 			var k =0;
 			var values = [];
 			var teamdict = global.draftvalues.prevteams["teamlist"];
-			var teamlist = [...global.draftvalues.prevteams["teamlist"].keys()];
+			var teamlist = {};
 			var chosensimilarmon = "";
 
-			while(k<teamlist.length){
+			for(var key in teamdict){
 				var score = 0;
 				var mostsimilar = 0;
 				var max = 0;
+				teamlist[key] = [...teamdict[key]]
 				var i=0;
 				while(i<monschosen.length) {
 					var  l = 0;
 					while (l < teamlist[k].length) {
-						var score = similar(teamdict[teamlist[k][l]], possiblepic)
+						var score = similar(teamdict[key[l]], possiblepic)
 						if (score > max) {
 							max = score;
 							mostsimilar = l;
@@ -2558,7 +2559,7 @@ exports.commands = {
 						l++;
 					}
 					score= score + max;
-					teamlist[k].splice(mostsimilar, 1);
+					teamlist[key].splice(mostsimilar, 1);
 					i++;
 				}
 				values[k] = score;
