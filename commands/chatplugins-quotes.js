@@ -418,7 +418,6 @@ async function infofunc (arg, by, room, cmd,vart) {
 	async function bitterballenfunc (arg, by, room, cmd,vart) {
 		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 	console.log(uri);
-	console.log("test");
 	
 	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
 	
@@ -426,7 +425,6 @@ async function infofunc (arg, by, room, cmd,vart) {
 		
 		await client.connect();
 		await listDatabases(client);
-		console.log(cmd);
 		if (cmd === "addbitterballen") {
 			console.log("info added");
 			
@@ -437,7 +435,6 @@ async function infofunc (arg, by, room, cmd,vart) {
 			}
 			console.log("the client is "+client);
 			let bitbals = await findOneListingByName(client,"bitterballen")
-			console.log(bitbals);
 			var thename = toId(args[0]);
 			if(bitbals==undefined){
 				infos={
@@ -473,7 +470,6 @@ async function infofunc (arg, by, room, cmd,vart) {
 			if (!vart.isRanked('driver')) return false;
 			
 			let infos = await findOneListingByName(client,"info")
-			console.log(quotes);
 			if(infos==undefined){
 				infos={
 					 name: 'bitterballen',
@@ -491,8 +487,6 @@ async function infofunc (arg, by, room, cmd,vart) {
 		} else if (cmd === "uploadquotefile") {
 			let rawdata = await fs.readFileSync('quotes.json');
 			let student = await JSON.parse(rawdata);
-			console.log("uploading quotes file"); 
-			console.log("uploading quotes file "+student["nederlands"]);
 			let quotes =await findOneListingByName(client,"quotes")
 			
 			quotes["nederlands"]=student["nederlands"];
@@ -501,7 +495,6 @@ async function infofunc (arg, by, room, cmd,vart) {
 		} else {
 			if (arg==""){
 				arg=toId(by);
-				console.log(arg);
 			}
 			let infos = await findOneListingByName(client,"bitterballen")
 			var nrbitterballen=infos["nederlands"][arg];
@@ -528,8 +521,7 @@ async function infofunc (arg, by, room, cmd,vart) {
 async function dbconnect(){
 
 	const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
-	console.log(uri);
-	console.log("test");
+
 	
 	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
 	
@@ -550,7 +542,7 @@ async function dbconnect(){
 	
 	
 }
-console.log('connecting');
+
 dbconnect();
 async function disconnect(client){
 	
