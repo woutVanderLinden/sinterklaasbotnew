@@ -2585,6 +2585,7 @@ exports.commands = {
 			else{
 				filterroles = posfilterroles[Math.floor(Math.random()*posfilterroles.length)];
 			}
+			filterroles.push("none")
 		}
 
 
@@ -2886,9 +2887,11 @@ exports.commands = {
 					//t = t + similar(monname,chosensimilarmon);
 				}
 				if (filterroles.length > 0) {
-					var r = 0;
-					if ((global.draftvalues.mondata[monname][0][filterroles[filterrolesnumber]] || 0) == 0) {
-						t = t * 0;
+					if(filterroles[filterrolesnumber] != "none"){
+						var r = 0;
+						if ((global.draftvalues.mondata[monname][0][filterroles[filterrolesnumber]] || 0) == 0) {
+							t = t * 0;
+						}
 					}
 				}
 				if(t == 0){
@@ -4046,7 +4049,7 @@ function typeSimilarity(monname1, monname2)
 				}
 			}
 		}
-		if("Typing 2" in global.draftvalues.mondata[monname1][0]["Typing 2"]){
+		if("Typing 2" in global.draftvalues.mondata[monname1][0]){
 
 			if(global.draftvalues.mondata[monname1][0]["Typing 2"] == global.draftvalues.mondata[monname2][0]["Typing1"]){
 				score = score + 10;
