@@ -2566,8 +2566,7 @@ exports.commands = {
 				k++;
 			}
 			var index = values.indexOf(Math.max(values));
-			var currentmonname=monschosen[i];
-			currentmon = global.draftvalues.mondata[currentmonname][0];
+
 			if((chosensimilarmon in global.draftvalues.mondata)){
 				chosensimilarmon = teamlist[index][getRandomInt(teamlist[index].length)];
 				//pikachu
@@ -2618,7 +2617,9 @@ exports.commands = {
 	var filterrolesnumber = 0;
 
 	while (i<monschosen.length){
-		var currentmon = monschosen[i];
+		var currentmon ="";
+		var currentmonname=monschosen[i];
+		currentmon = global.draftvalues.mondata[currentmonname][0];
 		if(!global.draftvalues.mondata.includes(currentmon)){
 			i++;
 			continue;
