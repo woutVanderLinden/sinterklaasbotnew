@@ -2968,7 +2968,8 @@ exports.commands = {
 		filterrolesnumber++;
 	}
 	response = '!htmlbox <div  style=\'color: black; border: 2px solid red; background-color: rgb(204, 255, 204); padding: 4px;\'>'+ response + '</div>';
-		//thislistsix
+	console.log(response);
+	//thislistsix
 		this.send(global.draftvalues.draftroom, response);
 		//global.draftvalues.users[name]["erekredieten"]
 		//mondata
@@ -4055,7 +4056,7 @@ function typeSimilarity(monname1, monname2)
 			if(global.draftvalues.mondata[monname1][0]["Typing 2"] == global.draftvalues.mondata[monname2][0]["Typing1"]){
 				score = score + 10;
 			}
-			if("Typing 2" in global.draftvalues.mondata[monname2][0]["Typing 2"]){
+			if("Typing 2" in global.draftvalues.mondata[monname2][0]){
 
 				if(global.draftvalues.mondata[monname1][0]["Typing 2"] == global.draftvalues.mondata[monname2][0]["Typing 2"]){
 					score = score + 10;
