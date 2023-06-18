@@ -2562,7 +2562,9 @@ exports.commands = {
 					teamlist[key].splice(mostsimilar, 1);
 					i++;
 				}
+				console.log(values);
 				values[k] = score;
+				console.log(values);
 				k++;
 			}
 			var index = values.indexOf(Math.max(values));
