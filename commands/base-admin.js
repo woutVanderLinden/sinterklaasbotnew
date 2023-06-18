@@ -2538,7 +2538,7 @@ exports.commands = {
 		if(filterroles.length == 0){
 			var k =0;
 			var values = [];
-			var teamlist = [...global.draftvalues.prevteams["teamlist"]];
+			var teamlist = [...global.draftvalues.prevteams["teamlist"].values()];
 			var chosensimilarmon = "";
 
 			while(k<teamlist.length){
