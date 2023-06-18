@@ -3143,26 +3143,26 @@ function draftmonsprintroles(arg,role,nrshown,by,room){
 		result=' <div  style=\'color: black; border: 2px solid red; background-color: rgb(204, 255, 204); padding: 4px;\'>' + '<p>'+global.draftvalues.NameData[role]+'</p>' ;
 	}
 
-	for (var i = 0; i < nrshown && i< arg.length; i++) {
-		console.log(arg[i]);
-		//Do something
-		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
-		var name=arg[i]["name"];
-		var credits=arg[i]["credits"];
-		if(toId(by)==toId(room)){
+	for (var i = 0; i < nrshown; i++) {
+		if(i in arg){
+			console.log(arg[i]);
+			//Do something
+			//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
+			var name=arg[i]["name"];
+			var credits=arg[i]["credits"];
+			if(toId(by)==toId(room)){
 
-			var word=name+" ("+credits+" erekredieten), ";
-			result=result+word;
+				var word=name+" ("+credits+" erekredieten), ";
+				result=result+word;
 
+			}
+			else{
+				var word='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color: rgb(204, 255, 204) ">';
+				word=word+'<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>';
+				word=word+'</button>';
+				result=result+word;
+			}
 		}
-		else{
-			var word='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color: rgb(204, 255, 204) ">';
-			word=word+'<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>';
-			word=word+'</button>';
-			result=result+word;
-		}
-
-
 	}
 	//result=result.substring(0,result.length-1);
 	result=result + "</div>";
