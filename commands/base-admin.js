@@ -2932,7 +2932,7 @@ exports.commands = {
 
 					}
 					listsix.push(t);
-					listsix.sort((a, b) => -(a>b)||+(a<b));
+					listsix.sort((a, b) => a>b);
 					best[t] = {};
 					best[t]["name"] = possiblepic[j];
 					if (tierrecommend) {
