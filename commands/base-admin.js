@@ -4011,9 +4011,7 @@ function mostProminentRole(monname1) {
 		}
 		i++;
 	}
-	score = score + 40 * (global.draftvalues.mondata[monname2][0][maxstrung]||0);
-	score = score + 40 * (global.draftvalues.mondata[monname2][0][maxiistrung]||0);
-	console.log("role " + maxstrung + " " + maxiistrung+ " score: " + score);
+	console.log("role " + maxstrung + " " + maxiistrung);
 	return [maxstrung, maxiistrung];
 }
 
