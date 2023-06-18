@@ -2915,7 +2915,7 @@ exports.commands = {
 
 					}
 					listsix.push(t);
-					listsix.sort();
+					listsix.sort((a, b) => -(a>b)||+(a<b));
 					best[t] = {};
 					best[t]["name"] = possiblepic[j];
 					if (tierrecommend) {
@@ -2932,7 +2932,7 @@ exports.commands = {
 
 					}
 					listsix.push(t);
-					listsix.sort();
+					listsix.sort((a, b) => -(a>b)||+(a<b));
 					best[t] = {};
 					best[t]["name"] = possiblepic[j];
 					if (tierrecommend) {
