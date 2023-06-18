@@ -2909,7 +2909,7 @@ exports.commands = {
 					maxlength = draftsshown;
 				}
 				if (listsix.length < maxlength) {
-					while (listsix.includes(t)) {
+					while (t in listsix) {
 						t = t + 0.1;
 
 					}
@@ -2926,7 +2926,7 @@ exports.commands = {
 					console.log(best);
 				} else {
 
-					while (listsix.includes(t)) {
+					while (t in listsix) {
 						t = t + 0.1;
 
 					}
