@@ -2889,6 +2889,9 @@ exports.commands = {
 					}
 
 				}
+				if(chosensimilarmon in global.draftvalues.mondata){
+					t = t + similar(monname,chosensimilarmon);
+				}
 				if (filterroles.length > 0) {
 					var r = 0;
 					while (r < filterroles.length) {
@@ -2900,9 +2903,7 @@ exports.commands = {
 
 
 				}
-				if(chosensimilarmon in global.draftvalues.mondata){
-					t = t + similar(monname,chosensimilarmon);
-				}
+
 				t = 10000 - t;
 				var maxlength = draftsshown + 3;
 				if (filtered) {
@@ -2976,6 +2977,7 @@ exports.commands = {
 	}
 	response = ' <div  style=\'color: black; border: 2px solid red; background-color: rgb(204, 255, 204); padding: 4px;\'>'+ response + '</div>';
 		//thislistsix
+		console.log(response);
 		this.send(global.draftvalues.draftroom, response);
 		//global.draftvalues.users[name]["erekredieten"]
 		//mondata
