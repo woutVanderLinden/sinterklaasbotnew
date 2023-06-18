@@ -2563,14 +2563,20 @@ exports.commands = {
 				values[k] = score;
 				k++;
 			}
+			var index = values.indexOf(Math.max(values));
+			var currentmonname=monschosen[i];
+			currentmon = global.draftvalues.mondata[currentmonname][0];
+			if((chosensimilarmon in global.draftvalues.mondata)){
+				chosensimilarmon = teamlist[index][getRandomInt(teamlist[index].length)];
+				//pikachu
+				filterroles = mostProminentRole(chosensimilarmon);
+			}
+			else{
+				filterroles =["hazardremoval"];
+			}
 		}
 
-		var index = values.indexOf(Math.max(values));
-		var currentmonname=monschosen[i];
-		currentmon = global.draftvalues.mondata[currentmonname][0];
-		while(!(chosensimilarmon in global.draftvalues.mondata)){
-			chosensimilarmon = teamlist[index][getRandomInt(teamlist[index].length)];
-		}
+
 		var draftmons=[];
 		if(toId(by)==toId(room)){
 			draftmons=global.draftvalues.todraftmons[Object.keys(global.draftvalues.todraftmons)[0]];
@@ -3980,7 +3986,7 @@ function similar(monname1, monname2){
 	score = score + roleSimilarity(monname1, monname2);
 	return score;
 }
-function mostProminentRole(monname1, monname2) {
+function mostProminentRole(monname1) {
 	var score = 0;
 	var posfilterroles=["entryhazards","hazardremoval","itemremover","pivot","cleric","pivot","scarf","physicalsweeper","specialsweeper","physicalbulkyattacker","specialbulkyattacker","physicalwall","specialwall","physicalsetup","specialsetup","status","priority","speedcontrol","sun","rain","hail","sand"];
 	var i=0;
