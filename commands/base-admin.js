@@ -4080,6 +4080,7 @@ function weaknessForPokemon(monname)
 	var i=0;
 	while(i<postypings.length) {
 		var weaknessToType = 0;
+		console.log(monname);
 		if(monname in  global.draftvalues.mondata){
 			weaknessToType += global.draftvalues.weaknesssheet[postypings[i]][global.draftvalues.mondata[monname][0]["Typing1"]];
 			if(global.draftvalues.mondata[monname][0]["Typing 2"] != ""){
