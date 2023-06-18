@@ -2904,6 +2904,10 @@ exports.commands = {
 
 				}
 				console.log("score after filter" + t);
+				if(t == 0){
+					j++;
+					continue;
+				}
 				t = 90000 - t;
 				var maxlength = draftsshown + 3;
 				if (filtered) {
