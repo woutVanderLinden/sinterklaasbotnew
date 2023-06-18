@@ -3164,7 +3164,7 @@ function draftmonsprintroles(arg,role,nrshown,by,room){
 
 
 	}
-	result=result.substring(0,result.length-1);
+	//result=result.substring(0,result.length-1);
 	result=result + "</div>";
 	return result;
 };
