@@ -2894,12 +2894,11 @@ exports.commands = {
 				}
 				if (filterroles.length > 0) {
 					var r = 0;
-					while (r < filterroles.length) {
-						if ((global.draftvalues.mondata[monname][0][filterroles[r]] || 0) == 0) {
-							t = t * 0;
-						}
-						r++;
+					if ((global.draftvalues.mondata[monname][0][filterroles[filterrolesnumber]] || 0) == 0) {
+						t = t * 0;
 					}
+
+
 
 
 				}
