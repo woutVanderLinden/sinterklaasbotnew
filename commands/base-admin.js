@@ -2478,13 +2478,18 @@ exports.commands = {
 	recommend:function (arg, by, room, cmd) {
 		
 		arg=arg.toLowerCase();
+		var name=toId(by);
 		var args = arg.split(",");
 		
 		var filtered=false;
 		if (arg!=""){
 			filtered=true;
 		}
-		var monschosen=global.draftvalues.users[name]["draftedmons"];
+		var monschosen = [];
+		if('draftedmons' in global.draftvalues.users[name]){
+			monschosen=global.draftvalues.users[name]["draftedmons"];
+		}
+
 
 	var response = "";
 
@@ -2497,7 +2502,7 @@ exports.commands = {
 		var filterroles=[];
 		var userlist=global.draftvalues.turnorder;
 		var x=0;
-		var name=toId(by);
+
 		while(x<args.length){
 			var argx=args[x];
 			
