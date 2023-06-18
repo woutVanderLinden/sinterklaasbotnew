@@ -1,0 +1,26 @@
+{
+
+	"entryhazards": "Entry Hazard Setter:"
+	,"hazardremoval": "Entry Hazard Remover:"
+	,"itemremover" : "Item Remover"
+	,"pivot": "Pivot"
+	,"cleric": "Cleric"
+	,"scarf": "Scarf User",
+	"physicalsweeper": "Physical Sweeper",
+	"specialsweeper": "Special Sweeper",
+	"physicalbulkyattacker": "Physical Attacker",
+	"specialbulkyattacker":  "Special Attacker",
+	"physicalwall": "Physical Wall",
+	"specialwall": "Special Wall",
+	"physicalsetup": "Physical Setup",
+	"specialsetup": "Special Setup",
+	"status": "Status Spreader",
+	"priority": "Priority User",
+	"speedcontrol": "Speed Control",
+	"sun": "Sun",
+	"rain" : "Rain",
+	"hail": "Hail",
+	"sand":  "Sandstorm",
+	"none":  "General Recommendations"
+
+}

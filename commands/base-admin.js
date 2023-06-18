@@ -3140,7 +3140,7 @@ function draftmonsprintroles(arg,role,nrshown,by,room){
 	var result="suggestions:";
 
 	if(toId(by)!=toId(room)){
-		result=' <div  style=\'color: black; border: 2px solid red; background-color: rgb(204, 255, 204); padding: 4px;\'>' + '<p>'+role+'</p>' ;
+		result=' <div  style=\'color: black; border: 2px solid red; background-color: rgb(204, 255, 204); padding: 4px;\'>' + '<p>'+global.draftvalues.NameData[role]+'</p>' ;
 	}
 
 	for (var i = 0; i < nrshown; i++) {
