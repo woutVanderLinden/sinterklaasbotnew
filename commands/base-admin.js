@@ -2538,7 +2538,8 @@ exports.commands = {
 		if(filterroles.length == 0){
 			var k =0;
 			var values = [];
-			var teamlist = [...global.draftvalues.prevteams["teamlist"].values()];
+			var teamdict = global.draftvalues.prevteams["teamlist"];
+			var teamlist = [...global.draftvalues.prevteams["teamlist"].keys()];
 			var chosensimilarmon = "";
 
 			while(k<teamlist.length){
@@ -2549,7 +2550,7 @@ exports.commands = {
 				while(i<monschosen.length) {
 					var  l = 0;
 					while (l < teamlist[k].length) {
-						var score = similar(teamlist[k][l], possiblepic)
+						var score = similar(teamdict[teamlist[k][l]], possiblepic)
 						if (score > max) {
 							max = score;
 							mostsimilar = l;
