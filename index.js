@@ -93,8 +93,8 @@ try {
 	let colors = JSON.parse(colordata);
 	global.draftvalues.typingcolors=colors;
 	let nameData = fs.readFileSync('ToName.json');
-	let namedata = JSON.parse(nameData);
-	global.draftvalues.NameData=namedata;
+	let namedatajson = JSON.parse(nameData);
+	global.draftvalues.NameData=namedatajson;
 
 	let rawdata2 = fs.readFileSync('weaknesssheet.json');
 	let student2 = JSON.parse(rawdata2);

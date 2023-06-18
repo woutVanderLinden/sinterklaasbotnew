@@ -2955,7 +2955,7 @@ exports.commands = {
 		var secondarg = [];
 		var y = 0;
 		shuffle(listsix);
-		while (y < draftsshown) {
+		while (y < draftsshown && y< listsix.length) {
 			var newobj = {};
 
 			newobj["name"] = best[listsix[y]]["name"];
