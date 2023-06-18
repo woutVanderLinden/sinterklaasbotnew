@@ -2883,17 +2883,13 @@ exports.commands = {
 
 				}
 				if(chosensimilarmon in global.draftvalues.mondata){
-					t = t + similar(monname,chosensimilarmon);
+					//t = t + similar(monname,chosensimilarmon);
 				}
 				if (filterroles.length > 0) {
 					var r = 0;
 					if ((global.draftvalues.mondata[monname][0][filterroles[filterrolesnumber]] || 0) == 0) {
 						t = t * 0;
 					}
-
-
-
-
 				}
 				if(t == 0){
 					j++;
