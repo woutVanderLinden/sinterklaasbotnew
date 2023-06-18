@@ -2900,7 +2900,7 @@ exports.commands = {
 
 
 				}
-				if(global.draftvalues.mondata.includes(chosensimilarmon)){
+				if(chosensimilarmon in global.draftvalues.mondata){
 					t = t + similar(monname,chosensimilarmon);
 				}
 				t = 10000 - t;
