@@ -2629,7 +2629,7 @@ exports.commands = {
 	while (i<monschosen.length){
 		var currentmon ="";
 		var currentmonname=monschosen[i];
-		if(!currentmonnames in global.draftvalues.mondata){
+		if(!currentmonname in global.draftvalues.mondata){
 			i++;
 			continue;
 		}
