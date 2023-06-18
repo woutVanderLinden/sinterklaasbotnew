@@ -2892,7 +2892,7 @@ exports.commands = {
 				if(chosensimilarmon in global.draftvalues.mondata){
 					t = t + similar(monname,chosensimilarmon);
 				}
-				console.log("score after similar" + t);
+				console.log("score after similar" + t + " and filtering on "+ [filterroles[filterrolesnumber]]);
 				if (filterroles.length > 0) {
 					var r = 0;
 					if ((global.draftvalues.mondata[monname][0][filterroles[filterrolesnumber]] || 0) == 0) {
