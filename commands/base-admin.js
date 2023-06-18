@@ -2550,6 +2550,7 @@ exports.commands = {
 				var i=0;
 				while(i<monschosen.length) {
 					var  l = 0;
+					var possiblepic = monschosen[i];
 					while (l < teamlist[key].length) {
 						var score = similar(teamdict[key][l], possiblepic)
 						if (score > max) {
@@ -2585,7 +2586,7 @@ exports.commands = {
 			else{
 				filterroles = posfilterroles[Math.floor(Math.random()*posfilterroles.length)];
 			}
-			filterroles.push("none")
+			filterroles.unshift("none")
 		}
 
 
