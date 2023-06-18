@@ -2955,7 +2955,7 @@ exports.commands = {
 		var secondarg = [];
 		var y = 0;
 		shuffle(listsix);
-		while (y < draftsshown && y< listsix.length) {
+		while (y < draftsshown && y < listsix.length) {
 			var newobj = {};
 
 			newobj["name"] = best[listsix[y]]["name"];
@@ -3143,7 +3143,7 @@ function draftmonsprintroles(arg,role,nrshown,by,room){
 		result=' <div  style=\'color: black; border: 2px solid red; background-color: rgb(204, 255, 204); padding: 4px;\'>' + '<p>'+global.draftvalues.NameData[role]+'</p>' ;
 	}
 
-	for (var i = 0; i < nrshown; i++) {
+	for (var i = 0; i < nrshown && i< arg.length; i++) {
 		console.log(arg[i]);
 		//Do something
 		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
