@@ -2562,17 +2562,23 @@ exports.commands = {
 					teamlist[key].splice(mostsimilar, 1);
 					i++;
 				}
-				console.log(values);
 				values[k] = score;
-				console.log(values);
 				k++;
 			}
-			var index = values.indexOf(Math.max.apply(Math,values));
+			var maxscore = Math.max.apply(Math,values);
+			console.log("max "+ maxscore);
+			var index = values.indexOf(maxscore);
+			if(maxscore == values[0] && maxscore == values [1]){
+				index = Math.floor(Math.random()*values.length);
+			}
 			var teamKeyChosen = Object.keys(teamdict)[index];
 			var teamChosen = teamlist[teamKeyChosen];
-			console.log(index + "  "+ teamKeyChosen + " " + teamChosen);
+
 			if((chosensimilarmon in global.draftvalues.mondata)){
-				chosensimilarmon = teamChosen[Math.floor(Math.random()*teamChosen.length)];
+				var randmon =Math.floor(Math.random()*teamChosen.length);
+				console.log(randmon);
+				chosensimilarmon = teamChosen[randmon];
+				console.log(chosensimilarmon);
 				//pikachu
 				filterroles = mostProminentRole(chosensimilarmon);
 			}
@@ -2589,8 +2595,6 @@ exports.commands = {
 		else{
 			draftmons=global.draftvalues.todraftmons[toId(room)];
 		}
-		console.log(toId(by));
-		
 		//var name=toId(by);
 		var best={};
 		var listsix=[];
@@ -2676,8 +2680,7 @@ exports.commands = {
 	while (filterrolesnumber < filterroles.length) {
 		var g = 1;
 		listsix = [];
-		while (g <= draftmons["length"]) {
-			console.log("g" + g);
+		while (g <= draftmons["length"]) {;
 			var possiblepic = [];
 			if (tierrecommend) {
 				possiblepic = draftmons["tierlist"][tier]["pokemon"];
@@ -2694,11 +2697,8 @@ exports.commands = {
 			}
 			var j = 0;
 			while (j < possiblepic["length"]) {
-				console.log("j" + j);
-				console.log(possiblepic["length"]);
 				var monname = possiblepic[j];
 				var t = 0.0;
-				console.log(monname);
 				var table2 = weaknessTable(name);
 				var weaktable = weaknessForPokemon(monname);
 				var typePointer = 0;
@@ -2726,7 +2726,6 @@ exports.commands = {
 					}
 					typePointer++;
 				}
-				console.log("scorehere:" + currentType + " " + t + " " + monname);
 				if (typings.includes(global.draftvalues.mondata[monname][0]["Typing1"])) {
 					if (global.draftvalues.mondata[monname][0]["Typing 2"] != undefined) {
 
@@ -2739,7 +2738,6 @@ exports.commands = {
 
 					}
 				} else {
-					console.log(global.draftvalues.mondata[monname][0]["Typing 2"]);
 					if (global.draftvalues.mondata[monname][0]["Typing 2"] != undefined) {
 						if (typings.includes(global.draftvalues.mondata[monname][0]["Typing 2"])) {
 							t = t + 5;
@@ -2750,11 +2748,9 @@ exports.commands = {
 						t = t + 15;
 					}
 				}
-				console.log("beforeentry" + t);
 				if (totalhazards < 5) {
 					t = t + (global.draftvalues.mondata[monname][0]["entryhazards"] || 0);
 				}
-				console.log("postentry" + t);
 				if (totalremovers < 5) {
 					t = t + (global.draftvalues.mondata[monname][0]["hazardremoval"] || 0);
 				}
@@ -2787,14 +2783,12 @@ exports.commands = {
 				} else {
 					physicalt = physicalt + (global.draftvalues.mondata[monname][0]["physicalbulkyattacker"] || 0);
 				}
-				console.log("beforesetup" + t);
 				if (totalphysicalup > 5) {
 					var divider = totalphysicalup / 5 + .5;
 					physicalt = physicalt + (global.draftvalues.mondata[monname][0]["physicalsetup"] || 0) / divider;
 				} else {
 					physicalt = physicalt + (global.draftvalues.mondata[monname][0]["physicalsetup"] || 0);
 				}
-				console.log("aftersetup" + t);
 				if (totalspecials > 5) {
 					var divider = totalspecials / 5 + .5;
 					specialt = specialt + (global.draftvalues.mondata[monname][0]["specialsweeper"] || 0) / divider;
@@ -2839,7 +2833,6 @@ exports.commands = {
 				} else {
 					t = t + (global.draftvalues.mondata[monname][0]["specialwall"] || 0);
 				}
-				console.log("zfterwall" + t);
 				t = t + (global.draftvalues.mondata[monname][0]["speedcontrol"] || 0);
 				if (totalprio > 5) {
 					var divider = totalprio / 5 + .5;
@@ -2881,7 +2874,6 @@ exports.commands = {
 						t = t + (global.draftvalues.mondata[monname][0]["sand"] || 0);
 					}
 				}
-				console.log("score before filter" + t);
 				if (filtertypings.length > 0) {
 					if (filtertypings.includes(global.draftvalues.mondata[monname][0]["Typing 2"]) || filtertypings.includes(global.draftvalues.mondata[monname][0]["Typing1"])) {
 
@@ -2893,7 +2885,6 @@ exports.commands = {
 				if(chosensimilarmon in global.draftvalues.mondata){
 					t = t + similar(monname,chosensimilarmon);
 				}
-				console.log("score after similar" + t + " and filtering on "+ [filterroles[filterrolesnumber]]);
 				if (filterroles.length > 0) {
 					var r = 0;
 					if ((global.draftvalues.mondata[monname][0][filterroles[filterrolesnumber]] || 0) == 0) {
@@ -2904,7 +2895,6 @@ exports.commands = {
 
 
 				}
-				console.log("score after filter" + t);
 				if(t == 0){
 					j++;
 					continue;
@@ -2929,7 +2919,6 @@ exports.commands = {
 						best[t]["credits"] = draftmons["tierlist"]["Tier" + g]["points"];
 					}
 
-					console.log(best);
 				} else {
 
 					while (listsix.includes(t)) {
@@ -2965,8 +2954,6 @@ exports.commands = {
 		var newlistsix = {};
 		var secondarg = [];
 		var y = 0;
-		console.log(listsix);
-		console.log(best);
 		shuffle(listsix);
 		while (y < draftsshown) {
 			var newobj = {};
@@ -2982,7 +2969,6 @@ exports.commands = {
 	}
 	response = '!htmlbox <div  style=\'color: black; border: 2px solid red; background-color: rgb(204, 255, 204); padding: 4px;\'>'+ response + '</div>';
 		//thislistsix
-		console.log(response);
 		this.send(global.draftvalues.draftroom, response);
 		//global.draftvalues.users[name]["erekredieten"]
 		//mondata
