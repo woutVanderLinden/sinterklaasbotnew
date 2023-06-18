@@ -2629,11 +2629,11 @@ exports.commands = {
 	while (i<monschosen.length){
 		var currentmon ="";
 		var currentmonname=monschosen[i];
-		currentmon = global.draftvalues.mondata[currentmonname][0];
-		if(!global.draftvalues.mondata.includes(currentmon)){
+		if(!currentmonnames in global.draftvalues.mondata){
 			i++;
 			continue;
 		}
+		currentmon = global.draftvalues.mondata[currentmonname][0];
 		var listmax = Math.max(values);
 
 		if(!typings.includes(global.draftvalues.mondata[currentmonname][0]["Typing1"])){
