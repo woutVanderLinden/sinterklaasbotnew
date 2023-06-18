@@ -2880,7 +2880,7 @@ exports.commands = {
 						t = t + (global.draftvalues.mondata[monname][0]["sand"] || 0);
 					}
 				}
-				console.log(t);
+				console.log("score before filter" + t);
 				if (filtertypings.length > 0) {
 					if (filtertypings.includes(global.draftvalues.mondata[monname][0]["Typing 2"]) || filtertypings.includes(global.draftvalues.mondata[monname][0]["Typing1"])) {
 
@@ -2892,6 +2892,7 @@ exports.commands = {
 				if(chosensimilarmon in global.draftvalues.mondata){
 					t = t + similar(monname,chosensimilarmon);
 				}
+				console.log("score after similar" + t);
 				if (filterroles.length > 0) {
 					var r = 0;
 					if ((global.draftvalues.mondata[monname][0][filterroles[filterrolesnumber]] || 0) == 0) {
@@ -2902,7 +2903,7 @@ exports.commands = {
 
 
 				}
-
+				console.log("score after filter" + t);
 				t = 10000 - t;
 				var maxlength = draftsshown + 3;
 				if (filtered) {
