@@ -2593,7 +2593,7 @@ exports.commands = {
 		
 		//var name=toId(by);
 		var best={};
-		var listsix={};
+		var listsix=[];
 		var i=1;
 		var typings=[];
 	var totalhazards=0.0;
@@ -2909,7 +2909,7 @@ exports.commands = {
 					maxlength = draftsshown;
 				}
 				if (listsix.length < maxlength) {
-					while (t in listsix) {
+					while (listsix.includes(t)) {
 						t = t + 0.1;
 
 					}
@@ -2926,7 +2926,7 @@ exports.commands = {
 					console.log(best);
 				} else {
 
-					while (t in listsix) {
+					while (listsix.includes(t)) {
 						t = t + 0.1;
 
 					}
