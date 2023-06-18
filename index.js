@@ -86,6 +86,9 @@ try {
 	let rawdata = fs.readFileSync('convertcsvnew.json');
 	let student = JSON.parse(rawdata);
 	global.draftvalues.mondata=student;
+	let rawdata3 = fs.readFileSync('UsefullTeamCombos.json');
+	let student3 = JSON.parse(rawdata3);
+	global.draftvalues.prevteams=student3;
 	let colordata = fs.readFileSync('TypingsToColor.json');
 	let colors = JSON.parse(colordata);
 	global.draftvalues.typingcolors=colors;

@@ -2359,7 +2359,7 @@ exports.commands = {
 				console.log(monname);
 				var t=1.0;
 				if(filtertypings.length>0){
-					if(filtertypings.includes(global.draftvalues.mondata[monname]["Typing 2"])||filtertypings.includes(global.draftvalues.mondata[monname]["Typing1"])){
+					if(filtertypings.includes(global.draftvalues.mondata[monname][0]["Typing 2"])||filtertypings.includes(global.draftvalues.mondata[monname][0]["Typing1"])){
 
 					}
 					else{
@@ -2370,7 +2370,7 @@ exports.commands = {
 					var r=0;
 
 					while(r<filterroles.length){
-						if((global.draftvalues.mondata[monname][filterroles[r]]||0)==0){
+						if((global.draftvalues.mondata[monname][0][filterroles[r]]||0)==0){
 							t=t*0;
 						}
 						r++;
@@ -2484,7 +2484,10 @@ exports.commands = {
 		if (arg!=""){
 			filtered=true;
 		}
-		
+		var monschosen=global.draftvalues.users[name]["draftedmons"];
+
+	var response = "";
+
 		var tierrecommend=false;
 		var pointrecommend=false;
 		var maxpoints=0;
@@ -2527,7 +2530,42 @@ exports.commands = {
 			}
 			x++;
 		}
-		
+		if(filterroles.length == 0){
+			var k =0;
+			var values = [];
+			var teamlist = [...global.draftvalues.prevteams["teamlist"]];
+			var chosensimilarmon = "";
+
+			while(k<teamlist.length){
+				var score = 0;
+				var mostsimilar = 0;
+				var max = 0;
+				var i=0;
+				while(i<monschosen.length) {
+					var  l = 0;
+					while (l < teamlist[k].length) {
+						var score = similar(teamlist[k][l], possiblepic)
+						if (score > max) {
+							max = score;
+							mostsimilar = l;
+						}
+						l++;
+					}
+					score= score + max;
+					teamlist[k].splice(mostsimilar, 1);
+					i++;
+				}
+				values[k] = score;
+				k++;
+			}
+		}
+
+		var index = values.indexOf(Math.max(values));
+		var currentmonname=monschosen[i];
+		currentmon = global.draftvalues.mondata[currentmonname][0];
+		while(!(chosensimilarmon in global.draftvalues.mondata)){
+			chosensimilarmon = teamlist[index][getRandomInt(teamlist[index].length)];
+		}
 		var draftmons=[];
 		if(toId(by)==toId(room)){
 			draftmons=global.draftvalues.todraftmons[Object.keys(global.draftvalues.todraftmons)[0]];
@@ -2539,7 +2577,7 @@ exports.commands = {
 		
 		//var name=toId(by);
 		var best={};
-		var listsix=[];
+		var listsix={};
 		var i=1;
 		var typings=[];
 	var totalhazards=0.0;
@@ -2564,22 +2602,23 @@ exports.commands = {
 	var hasrain=false;
 	var hashail=false;
 	var hassand=false;
-	var monschosen=global.draftvalues.users[name]["draftedmons"];
-	var i=0;
-	while(i<monschosen.length){
-		var currentmonname=monschosen[i];
-		currentmon = global.draftvalues.mondata[currentmonname];
-		if(!(currentmon in global.draftvalues.mondata)){
+	var filterrolesnumber = 0;
+
+	while (i<monschosen.length){
+		var currentmon = monschosen[i];
+		if(!global.draftvalues.mondata.includes(currentmon)){
 			i++;
 			continue;
 		}
-		if(!typings.includes(global.draftvalues.mondata[currentmonname]["Typing1"])){
-			typings.push(global.draftvalues.mondata[currentmonname]["Typing1"]);
+		var listmax = Math.max(values);
+
+		if(!typings.includes(global.draftvalues.mondata[currentmonname][0]["Typing1"])){
+			typings.push(global.draftvalues.mondata[currentmonname][0]["Typing1"]);
 		}
 		if(global.draftvalues.mondata[currentmonname]["Typing 2"]!=""){
 			
-			if(!typings.includes(global.draftvalues.mondata[currentmonname]["Typing 2"])){
-				typings.push(global.draftvalues.mondata[currentmonname]["Typing 2"]);
+			if(!typings.includes(global.draftvalues.mondata[currentmonname][0]["Typing 2"])){
+				typings.push(global.draftvalues.mondata[currentmonname][0]["Typing 2"]);
 			}
 		}
 		totalhazards=totalhazards+(currentmon["entryhazards"]||0);
@@ -2616,325 +2655,310 @@ exports.commands = {
 	
 				
 	}
-		var g =1;
-		while(g<=draftmons["length"]){
-			console.log("g"+g);
-			var possiblepic=[];
-			if(tierrecommend){
-				possiblepic=draftmons["tierlist"][tier]["pokemon"];
-				g=100;
-			}
-			else{
-				if(pointrecommend){
-					while(possiblepic=draftmons["tierlist"]["Tier"+g]["points"]>maxpoints){
-						
+	while (filterrolesnumber < filterroles.length) {
+		var g = 1;
+		while (g <= draftmons["length"]) {
+			console.log("g" + g);
+			var possiblepic = [];
+			if (tierrecommend) {
+				possiblepic = draftmons["tierlist"][tier]["pokemon"];
+				g = 100;
+			} else {
+				if (pointrecommend) {
+					while (possiblepic = draftmons["tierlist"]["Tier" + g]["points"] > maxpoints) {
+
 						g++
 					}
-					
+
 				}
-				possiblepic=draftmons["tierlist"]["Tier"+g]["pokemon"];
+				possiblepic = draftmons["tierlist"]["Tier" + g]["pokemon"];
 			}
-			var j=0;
-			while(j<possiblepic["length"]){
-				console.log("j"+j);
+			var j = 0;
+			while (j < possiblepic["length"]) {
+				console.log("j" + j);
 				console.log(possiblepic["length"]);
-				var monname=possiblepic[j];
-				var t=0.0;
+				var monname = possiblepic[j];
+				var t = 0.0;
 				console.log(monname);
 				var table2 = weaknessTable(name);
 				var weaktable = weaknessForPokemon(monname);
-				var typePointer=0;
-				while(typePointer<postypings.length) {
+				var typePointer = 0;
+				while (typePointer < postypings.length) {
 					var currentType = postypings[typePointer];
-					if(weaktable[currentType]<0){
-						if(table2[currentType]>=3){
-							t=t+20;
-						} else{
-							if(table2[currentType]>0){
+					if (weaktable[currentType] < 0) {
+						if (table2[currentType] >= 3) {
+							t = t + 20;
+						} else {
+							if (table2[currentType] > 0) {
 
-								t=t+10;
+								t = t + 10;
 							}
 						}
-					}
-					else{
-						if(weaktable[currentType]>0){
-							if(table2[currentType]==2){
-								t=t-5;
+					} else {
+						if (weaktable[currentType] > 0) {
+							if (table2[currentType] == 2) {
+								t = t - 5;
 							}
-							if(table2[currentType]>0){
-								t=t-3;
+							if (table2[currentType] > 0) {
+								t = t - 3;
 							}
 						}
 
 					}
 					typePointer++;
 				}
-				console.log("scorehere:" +currentType +" "+  t + " " + monname);
-				if(typings.includes(global.draftvalues.mondata[monname]["Typing1"])){
-					if(global.draftvalues.mondata[monname]["Typing 2"]!=undefined){
-						
-							if(typings.includes(global.draftvalues.mondata[monname]["Typing 2"])){
+				console.log("scorehere:" + currentType + " " + t + " " + monname);
+				if (typings.includes(global.draftvalues.mondata[monname][0]["Typing1"])) {
+					if (global.draftvalues.mondata[monname][0]["Typing 2"] != undefined) {
 
-							}
-							else{
-								t=t+5;
-							}
-						
-						
-					}
-				}
-				else{
-					console.log(global.draftvalues.mondata[monname]["Typing 2"]);
-					if(global.draftvalues.mondata[monname]["Typing 2"]!=undefined){
-						if(typings.includes(global.draftvalues.mondata[monname]["Typing 2"])){
-								t=t+5;
+						if (typings.includes(global.draftvalues.mondata[monname]["Typing 2"])) {
+
+						} else {
+							t = t + 5;
 						}
-						else{
-								t=t+20;
+
+
+					}
+				} else {
+					console.log(global.draftvalues.mondata[monname][0]["Typing 2"]);
+					if (global.draftvalues.mondata[monname][0]["Typing 2"] != undefined) {
+						if (typings.includes(global.draftvalues.mondata[monname][0]["Typing 2"])) {
+							t = t + 5;
+						} else {
+							t = t + 20;
 						}
-					}
-					else{
-						t=t+15;
-					}
-				}
-				console.log("beforeentry"+t);
-				if(totalhazards<5){
-					t=t+(global.draftvalues.mondata[monname]["entryhazards"]||0);
-				 }
-				console.log("postentry"+t);
-				if(totalremovers<5){
-					t=t+(global.draftvalues.mondata[monname]["hazardremoval"]||0);
-				 }
-				if(totalitemremover<5){
-					t=t+(global.draftvalues.mondata[monname]["itemremover"]||0);
-				}
-				if((global.draftvalues.mondata[monname]["pivot"]||0)>0){
-					
-					t=t+(global.draftvalues.mondata[monname]["pivot"]||0);
-				}
-				if(totalclerics<5){
-					t=t+(global.draftvalues.mondata[monname]["cleric"]||0);
-				}
-				if(totalscarfs<5){
-					t=t+(global.draftvalues.mondata[monname]["scarf"]||0);
-				}
-				var physicalt=0.0;
-				var specialt=0.0;
-				
-				if(totalphysicals>5){
-					var divider=totalphysicals/5+.5;
-					physicalt=physicalt+(global.draftvalues.mondata[monname]["physicalsweeper"]||0)/divider;
-				}
-				else{
-					physicalt=physicalt+(global.draftvalues.mondata[monname]["physicalsweeper"]||0);
-				}
-				
-				if(totalphysicalb>5){
-					var divider=totalphysicalb/5+.5;
-					physicalt=physicalt+(global.draftvalues.mondata[monname]["physicalbulkyattacker"]||0)/divider;
-				}
-				else{
-					physicalt=physicalt+(global.draftvalues.mondata[monname]["physicalbulkyattacker"]||0);
-				}
-				console.log("beforesetup"+t);
-				if(totalphysicalup>5){
-					var divider=totalphysicalup/5+.5;
-					physicalt=physicalt+(global.draftvalues.mondata[monname]["physicalsetup"]||0)/divider;
-				}
-				else{
-					physicalt=physicalt+(global.draftvalues.mondata[monname]["physicalsetup"]||0);
-				}
-				console.log("aftersetup"+t);
-				if(totalspecials>5){
-					var divider=totalspecials/5+.5;
-					specialt=specialt+(global.draftvalues.mondata[monname]["specialsweeper"]||0)/divider;
-				}
-				else{
-					specialt=specialt+(global.draftvalues.mondata[monname]["specialsweeper"]||0);
-				}
-				if(totalspecialb>5){
-					var divider=totalspecialb/5+.5;
-					specialt=specialt+(global.draftvalues.mondata[monname]["specialbulkyattacker"]||0)/divider;
-				}
-				else{
-					specialt=specialt+(global.draftvalues.mondata[monname]["specialbulkyattacker"]||0);
-				}
-				if(totalspecialup>5){
-					var divider=totalspecialup/5+.5;
-					specialt=specialt+(global.draftvalues.mondata[monname]["specialsetup"]||0)/divider;
-				}
-				else{
-					specialt=specialt+(global.draftvalues.mondata[monname]["specialsetup"]||0);
-				}
-				
-					
-				
-				var totalphysical=totalphysicalup+totalphysicals+totalphysicalb;
-				var totalspecial=totalspecialup+totalspecials+totalspecialb;
-				
-				if(totalphysical+8<totalspecial){
-					specialt=specialt/2;
-				}
-				if(totalspecial+8<totalphysical){
-					physicalt=physicalt/2;
-				}
-			
-				t=t+physicalt+specialt;
-				
-				if(totalphysicalw>5){
-					var divider=totalphysicalw/5+.5;
-					t=t+(global.draftvalues.mondata[monname]["physicalwall"]||0)/divider;
-				}
-				else{
-					t=t+(global.draftvalues.mondata[monname]["physicalwall"]||0);
-				}
-				if(totalspecialw>5){
-					var divider=totalspecialw/5+.5;
-					t=t+(global.draftvalues.mondata[monname]["specialwall"]||0)/divider;
-				}
-				else{
-					t=t+(global.draftvalues.mondata[monname]["specialwall"]||0);
-				}
-				console.log("zfterwall"+t);
-				t=t+(global.draftvalues.mondata[monname]["speedcontrol"]||0);
-				if(totalprio>5){
-					var divider=totalprio/5+.5;
-					t=t+(global.draftvalues.mondata[monname]["priority"]||0)/divider;
-				}
-				else{
-					t=t+(global.draftvalues.mondata[monname]["priority"]||0);
-				}
-				if(totalstatus<8){
-					t=t+(global.draftvalues.mondata[monname]["status"]||0);
-				}
-				if(totalscreen<8){
-					t=t+(global.draftvalues.mondata[monname]["screens"]||0);
-				}
-				if((global.draftvalues.mondata[monname]["sun"]||0)==6){
-					t=t+3;
-				}
-				else{
-					if(hassun){
-						t=t+(global.draftvalues.mondata[monname]["sun"]||0);
+					} else {
+						t = t + 15;
 					}
 				}
-				if((global.draftvalues.mondata[monname]["rain"]||0)==6){
-					t=t+3;
+				console.log("beforeentry" + t);
+				if (totalhazards < 5) {
+					t = t + (global.draftvalues.mondata[monname][0]["entryhazards"] || 0);
 				}
-				else{
-					if(hasrain){
-						t=t+(global.draftvalues.mondata[monname]["rain"]||0);
+				console.log("postentry" + t);
+				if (totalremovers < 5) {
+					t = t + (global.draftvalues.mondata[monname][0]["hazardremoval"] || 0);
+				}
+				if (totalitemremover < 5) {
+					t = t + (global.draftvalues.mondata[monname][0]["itemremover"] || 0);
+				}
+				if ((global.draftvalues.mondata[monname][0]["pivot"] || 0) > 0) {
+
+					t = t + (global.draftvalues.mondata[monname][0]["pivot"] || 0);
+				}
+				if (totalclerics < 5) {
+					t = t + (global.draftvalues.mondata[monname][0]["cleric"] || 0);
+				}
+				if (totalscarfs < 5) {
+					t = t + (global.draftvalues.mondata[monname][0]["scarf"] || 0);
+				}
+				var physicalt = 0.0;
+				var specialt = 0.0;
+
+				if (totalphysicals > 5) {
+					var divider = totalphysicals / 5 + .5;
+					physicalt = physicalt + (global.draftvalues.mondata[monname][0]["physicalsweeper"] || 0) / divider;
+				} else {
+					physicalt = physicalt + (global.draftvalues.mondata[monname][0]["physicalsweeper"] || 0);
+				}
+
+				if (totalphysicalb > 5) {
+					var divider = totalphysicalb / 5 + .5;
+					physicalt = physicalt + (global.draftvalues.mondata[monname][0]["physicalbulkyattacker"] || 0) / divider;
+				} else {
+					physicalt = physicalt + (global.draftvalues.mondata[monname][0]["physicalbulkyattacker"] || 0);
+				}
+				console.log("beforesetup" + t);
+				if (totalphysicalup > 5) {
+					var divider = totalphysicalup / 5 + .5;
+					physicalt = physicalt + (global.draftvalues.mondata[monname][0]["physicalsetup"] || 0) / divider;
+				} else {
+					physicalt = physicalt + (global.draftvalues.mondata[monname][0]["physicalsetup"] || 0);
+				}
+				console.log("aftersetup" + t);
+				if (totalspecials > 5) {
+					var divider = totalspecials / 5 + .5;
+					specialt = specialt + (global.draftvalues.mondata[monname][0]["specialsweeper"] || 0) / divider;
+				} else {
+					specialt = specialt + (global.draftvalues.mondata[monname][0]["specialsweeper"] || 0);
+				}
+				if (totalspecialb > 5) {
+					var divider = totalspecialb / 5 + .5;
+					specialt = specialt + (global.draftvalues.mondata[monname][0]["specialbulkyattacker"] || 0) / divider;
+				} else {
+					specialt = specialt + (global.draftvalues.mondata[monname][0]["specialbulkyattacker"] || 0);
+				}
+				if (totalspecialup > 5) {
+					var divider = totalspecialup / 5 + .5;
+					specialt = specialt + (global.draftvalues.mondata[monname][0]["specialsetup"] || 0) / divider;
+				} else {
+					specialt = specialt + (global.draftvalues.mondata[monname][0]["specialsetup"] || 0);
+				}
+
+
+				var totalphysical = totalphysicalup + totalphysicals + totalphysicalb;
+				var totalspecial = totalspecialup + totalspecials + totalspecialb;
+
+				if (totalphysical + 8 < totalspecial) {
+					specialt = specialt / 2;
+				}
+				if (totalspecial + 8 < totalphysical) {
+					physicalt = physicalt / 2;
+				}
+
+				t = t + physicalt + specialt;
+
+				if (totalphysicalw > 5) {
+					var divider = totalphysicalw / 5 + .5;
+					t = t + (global.draftvalues.mondata[monname][0]["physicalwall"] || 0) / divider;
+				} else {
+					t = t + (global.draftvalues.mondata[monname][0]["physicalwall"] || 0);
+				}
+				if (totalspecialw > 5) {
+					var divider = totalspecialw / 5 + .5;
+					t = t + (global.draftvalues.mondata[monname][0]["specialwall"] || 0) / divider;
+				} else {
+					t = t + (global.draftvalues.mondata[monname][0]["specialwall"] || 0);
+				}
+				console.log("zfterwall" + t);
+				t = t + (global.draftvalues.mondata[monname][0]["speedcontrol"] || 0);
+				if (totalprio > 5) {
+					var divider = totalprio / 5 + .5;
+					t = t + (global.draftvalues.mondata[monname][0]["priority"] || 0) / divider;
+				} else {
+					t = t + (global.draftvalues.mondata[monname][0]["priority"] || 0);
+				}
+				if (totalstatus < 8) {
+					t = t + (global.draftvalues.mondata[monname][0]["status"] || 0);
+				}
+				if (totalscreen < 8) {
+					t = t + (global.draftvalues.mondata[monname][0]["screens"] || 0);
+				}
+				if ((global.draftvalues.mondata[monname][0]["sun"] || 0) == 6) {
+					t = t + 3;
+				} else {
+					if (hassun) {
+						t = t + (global.draftvalues.mondata[monname][0]["sun"] || 0);
 					}
 				}
-				if((global.draftvalues.mondata[monname]["hail"]||0)==6){
-					t=t+3;
-				}
-				else{
-					if(hashail){
-						t=t+(global.draftvalues.mondata[monname]["hail"]||0);
+				if ((global.draftvalues.mondata[monname][0]["rain"] || 0) == 6) {
+					t = t + 3;
+				} else {
+					if (hasrain) {
+						t = t + (global.draftvalues.mondata[monname][0]["rain"] || 0);
 					}
 				}
-				if((global.draftvalues.mondata[monname]["sand"]||0)==6){
-					t=t+3;
+				if ((global.draftvalues.mondata[monname][0]["hail"] || 0) == 6) {
+					t = t + 3;
+				} else {
+					if (hashail) {
+						t = t + (global.draftvalues.mondata[monname][0]["hail"] || 0);
+					}
 				}
-				else{
-					if(hassand){
-						t=t+(global.draftvalues.mondata[monname]["sand"]||0);
+				if ((global.draftvalues.mondata[monname][0]["sand"] || 0) == 6) {
+					t = t + 3;
+				} else {
+					if (hassand) {
+						t = t + (global.draftvalues.mondata[monname][0]["sand"] || 0);
 					}
 				}
 				console.log(t);
-				if(filtertypings.length>0){
-					if(filtertypings.includes(global.draftvalues.mondata[monname]["Typing 2"])||filtertypings.includes(global.draftvalues.mondata[monname]["Typing1"])){
-						
+				if (filtertypings.length > 0) {
+					if (filtertypings.includes(global.draftvalues.mondata[monname][0]["Typing 2"]) || filtertypings.includes(global.draftvalues.mondata[monname][0]["Typing1"])) {
+
+					} else {
+						t = t * 0;
 					}
-					else{
-						t=t*0;
-					}
-					
-				}if(filterroles.length>0){
-					var r=0;
-					while(r<filterroles.length){
-						if((global.draftvalues.mondata[monname][filterroles[r]]||0)==0){
-							t=t*0;
+
+				}
+				if (filterroles.length > 0) {
+					var r = 0;
+					while (r < filterroles.length) {
+						if ((global.draftvalues.mondata[monname][0][filterroles[r]] || 0) == 0) {
+							t = t * 0;
 						}
 						r++;
 					}
-					
-					
+
+
 				}
-				t=200-t;
-				var maxlength=draftsshown+3;
-				if(filtered){
-					maxlength=draftsshown;
+				if(global.draftvalues.mondata.includes(chosensimilarmon)){
+					t = t + similar(monname,chosensimilarmon);
 				}
-				if(listsix.length<maxlength){
-					while(listsix.includes(t)){
-						t=t+0.1;
-						
+				t = 10000 - t;
+				var maxlength = draftsshown + 3;
+				if (filtered) {
+					maxlength = draftsshown;
+				}
+				if (listsix.length < maxlength) {
+					while (listsix.includes(t)) {
+						t = t + 0.1;
+
 					}
 					listsix.push(t);
 					listsix.sort();
-					best[t]={};
-					best[t]["name"]=possiblepic[j];
-					if(tierrecommend){
-						best[t]["credits"]=draftmons["tierlist"][tier]["points"];
+					best[t] = {};
+					best[t]["name"] = possiblepic[j];
+					if (tierrecommend) {
+						best[t]["credits"] = draftmons["tierlist"][tier]["points"];
+					} else {
+						best[t]["credits"] = draftmons["tierlist"]["Tier" + g]["points"];
 					}
-					else{
-						best[t]["credits"]=draftmons["tierlist"]["Tier"+g]["points"];
-					}
-					
+
 					console.log(best);
-				}
-				else{
-					
-					while(listsix.includes(t)){
-						t=t+0.1;
-						
+				} else {
+
+					while (listsix.includes(t)) {
+						t = t + 0.1;
+
 					}
 					listsix.push(t);
 					listsix.sort();
-					best[t]={};
-					best[t]["name"]=possiblepic[j];
-					if(tierrecommend){
-						best[t]["credits"]=draftmons["tierlist"][tier]["points"];
+					best[t] = {};
+					best[t]["name"] = possiblepic[j];
+					if (tierrecommend) {
+						best[t]["credits"] = draftmons["tierlist"][tier]["points"];
+					} else {
+						best[t]["credits"] = draftmons["tierlist"]["Tier" + g]["points"];
 					}
-					else{
-						best[t]["credits"]=draftmons["tierlist"]["Tier"+g]["points"];
-					}
-					if(filtered){
-						if(listsix.length>draftsshown){
+					if (filtered) {
+						if (listsix.length > draftsshown) {
 							delete best[listsix[draftsshown]];
 							listsix.pop();
 						}
-					}
-					else{
-						if(listsix.length>draftsshown+3){
-							delete best[listsix[draftsshown+3]];
+					} else {
+						if (listsix.length > draftsshown + 3) {
+							delete best[listsix[draftsshown + 3]];
 							listsix.pop();
 						}
 					}
-					
+
 				}
 				j++;
 			}
 			g++;
 		}
-		var newlistsix={};
-		var secondarg=[];
-		var y=0;
+		var newlistsix = {};
+		var secondarg = [];
+		var y = 0;
 		console.log(listsix);
 		console.log(best);
 		shuffle(listsix);
-		while(y<draftsshown){
-			var newobj={};
-			
-			newobj["name"]=best[listsix[y]]["name"];
-			newobj["credits"]=best[listsix[y]]["credits"];
-			newlistsix[y]=newobj;
+		while (y < draftsshown) {
+			var newobj = {};
+
+			newobj["name"] = best[listsix[y]]["name"];
+			newobj["credits"] = best[listsix[y]]["credits"];
+			newlistsix[y] = newobj;
 			y++;
 		}
+
+		response = response + draftmonsprintroles(newlistsix, filterroles[filterrolesnumber],draftsshown,by,global.draftvalues.draftroom);
+		filterrolesnumber++;
+	}
+	response = ' <div  style=\'color: black; border: 2px solid red; background-color: rgb(204, 255, 204); padding: 4px;\'>'+ response + '</div>';
 		//thislistsix
-		this.send(global.draftvalues.draftroom, draftmonsprint4(newlistsix,draftsshown,by,global.draftvalues.draftroom));
+		this.send(global.draftvalues.draftroom, response);
 		//global.draftvalues.users[name]["erekredieten"]
 		//mondata
 	
@@ -3097,6 +3121,39 @@ function draftmonsprint6(arg){
 	}
 	result=result.substring(0,result.length-1);
 	result=result;
+	return result;
+};
+function draftmonsprintroles(arg,role,nrshown,by,room){
+	//arg=arg.sort();
+	var result="suggestions:";
+
+	if(toId(by)!=toId(room)){
+		result=' <div  style=\'color: black; border: 2px solid red; background-color: rgb(204, 255, 204); padding: 4px;\'>' + '<h2>'+role+ ':</h2>';
+	}
+
+	for (var i = 0; i < nrshown; i++) {
+		console.log(arg[i]);
+		//Do something
+		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
+		var name=arg[i]["name"];
+		var credits=arg[i]["credits"];
+		if(toId(by)==toId(room)){
+
+			var word=name+" ("+credits+" erekredieten), ";
+			result=result+word;
+
+		}
+		else{
+			var word='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color: rgb(204, 255, 204) ">';
+			word=word+'<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>';
+			word=word+'</button>';
+			result=result+word;
+		}
+
+
+	}
+	result=result.substring(0,result.length-1);
+	result=result + "</div>";
 	return result;
 };
  function draftmonsprint4(arg,nrshown,by,room){
@@ -3916,9 +3973,32 @@ function similar(monname1, monname2){
 	var score = 0;
 	score = score + typeSimilarity(monname1, monname2);
 	score = score + roleSimilarity(monname1, monname2);
-	console.log(global.draftvalues.mondata);
 	return score;
 }
+function mostProminentRole(monname1, monname2) {
+	var score = 0;
+	var posfilterroles=["entryhazards","hazardremoval","itemremover","pivot","cleric","pivot","scarf","physicalsweeper","specialsweeper","physicalbulkyattacker","specialbulkyattacker","physicalwall","specialwall","physicalsetup","specialsetup","status","priority","speedcontrol","sun","rain","hail","sand"];
+	var i=0;
+	var maxi = global.draftvalues.mondata[monname1][0][posfilterroles[0]];
+	console.log( "maxi "+ maxi);
+	var maxstrung = posfilterroles[0];
+	var maxii = global.draftvalues.mondata[monname1][0][posfilterroles[1]];
+	var maxiistrung = posfilterroles[1];
+	while(i<posfilterroles.length) {
+		if(global.draftvalues.mondata[monname1][0][posfilterroles[i]] >= maxi){
+			maxiistrung = maxstrung;
+			maxii = maxi;
+			maxstrung = posfilterroles[i];
+			maxi = global.draftvalues.mondata[monname1][0][posfilterroles[i]];
+		}
+		i++;
+	}
+	score = score + 40 * (global.draftvalues.mondata[monname2][0][maxstrung]||0);
+	score = score + 40 * (global.draftvalues.mondata[monname2][0][maxiistrung]||0);
+	console.log("role " + maxstrung + " " + maxiistrung+ " score: " + score);
+	return [maxstrung, maxiistrung];
+}
+
 function roleSimilarity(monname1, monname2) {
 	var score = 0;
 	var posfilterroles=["entryhazards","hazardremoval","itemremover","pivot","cleric","pivot","scarf","physicalsweeper","specialsweeper","physicalbulkyattacker","specialbulkyattacker","physicalwall","specialwall","physicalsetup","specialsetup","status","priority","speedcontrol","sun","rain","hail","sand"];
@@ -3985,9 +4065,9 @@ function weaknessForPokemon(monname)
 	while(i<postypings.length) {
 		var weaknessToType = 0;
 		if(monname in  global.draftvalues.mondata){
-			weaknessToType += global.draftvalues.weaknesssheet[postypings[i]][global.draftvalues.mondata[monname]["Typing1"]];
-			if(global.draftvalues.mondata[monname]["Typing 2"] != ""){
-				weaknessToType += global.draftvalues.weaknesssheet[postypings[i]][global.draftvalues.mondata[monname]["Typing 2"]];
+			weaknessToType += global.draftvalues.weaknesssheet[postypings[i]][global.draftvalues.mondata[monname][0]["Typing1"]];
+			if(global.draftvalues.mondata[monname][0]["Typing 2"] != ""){
+				weaknessToType += global.draftvalues.weaknesssheet[postypings[i]][global.draftvalues.mondata[monname][0]["Typing 2"]];
 			}
 
 		}
