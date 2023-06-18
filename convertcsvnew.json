@@ -15769,7 +15769,7 @@
          "sun": 0
       }
    ],
-   "Basculegion":
+   "Basculegion":[
    {
       "name": "Basculegion",
       "Typing1": "Water",
@@ -15796,9 +15796,9 @@
       "rain": 3,
       "hail": 0,
       "sun": 0
-   }
+   }]
 ,
-   "Basculegion-f":
+   "Basculegion-f":[
    {
       "name": "Basculegion-f",
       "Typing1": "Water",
@@ -15825,7 +15825,7 @@
       "rain": 3,
       "hail": 0,
       "sun": 0
-   }
+   }]
    ,
    "Deoxys-Defense": [
       {
