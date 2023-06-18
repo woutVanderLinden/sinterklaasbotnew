@@ -2577,7 +2577,7 @@ exports.commands = {
 				filterroles = mostProminentRole(chosensimilarmon);
 			}
 			else{
-				filterroles =["hazardremoval"];
+				filterroles = posfilterroles[Math.floor(Math.random()*posfilterroles.length)];
 			}
 		}
 
@@ -2675,6 +2675,7 @@ exports.commands = {
 	}
 	while (filterrolesnumber < filterroles.length) {
 		var g = 1;
+		listsix = [];
 		while (g <= draftmons["length"]) {
 			console.log("g" + g);
 			var possiblepic = [];
@@ -4039,8 +4040,8 @@ function roleSimilarity(monname1, monname2) {
 		}
 		i++;
 	}
-	score = score + 40 * (global.draftvalues.mondata[monname2][0][maxstrung]||0);
-	score = score + 40 * (global.draftvalues.mondata[monname2][0][maxiistrung]||0);
+	score = score + 5 * (global.draftvalues.mondata[monname2][0][maxstrung]||0);
+	score = score + 5 * (global.draftvalues.mondata[monname2][0][maxiistrung]||0);
 	console.log("role " + maxstrung + " " + maxiistrung+ " score: " + score);
 	return score;
 }
@@ -4053,24 +4054,24 @@ function typeSimilarity(monname1, monname2)
 		if(global.draftvalues.mondata[monname2] != undefined && global.draftvalues.mondata[monname2][0]["Typing1"] != undefined){
 
 			if(global.draftvalues.mondata[monname1][0]["Typing1"] == global.draftvalues.mondata[monname2][0]["Typing1"]){
-				score = score + 50;
+				score = score + 10;
 			}
 			if(global.draftvalues.mondata[monname2][0]["Typing 2"] != undefined){
 
 				if(global.draftvalues.mondata[monname1][0]["Typing1"] == global.draftvalues.mondata[monname2][0]["Typing 2"]){
-					score = score + 50;
+					score = score + 10;
 				}
 			}
 		}
 		if(global.draftvalues.mondata[monname1][0]["Typing 2"] != undefined){
 
 			if(global.draftvalues.mondata[monname1][0]["Typing 2"] == global.draftvalues.mondata[monname2][0]["Typing1"]){
-				score = score + 50;
+				score = score + 10;
 			}
 			if(global.draftvalues.mondata[monname2][0]["Typing 2"]!=undefined){
 
 				if(global.draftvalues.mondata[monname1][0]["Typing 2"] == global.draftvalues.mondata[monname2][0]["Typing 2"]){
-					score = score + 50;
+					score = score + 10;
 				}
 			}
 		}
