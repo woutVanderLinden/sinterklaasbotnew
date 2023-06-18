@@ -6133,6 +6133,7 @@
       }
    ],
    "Shaymin":
+           [
    {
       "name": "Shaymin",
       "Typing1": "Grass",
@@ -6160,6 +6161,7 @@
       "hail": 0,
       "sun": 0
    }
+              ]
    ,
    "Mienshao": [
       {
