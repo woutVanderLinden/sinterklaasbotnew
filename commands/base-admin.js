@@ -3754,6 +3754,9 @@ function calculatescore(room,monname,name){
 						if((global.draftvalues.mondata[monname][filterroles[r]]||0)==0){
 							t=t*0;
 						}
+						else{
+							t = t + (global.draftvalues.mondata[monname][filterroles[r]] * 4);
+						}
 						r++;
 					}
 					
