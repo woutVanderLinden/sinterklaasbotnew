@@ -16356,7 +16356,7 @@
          "specialbulkyattacker": 0,
          "physicalwall": 0,
          "physicalsetup": 4,
-         "priority": 2,
+         "priority": 0,
          "specialsweeper": 0,
          "specialsetup": 0,
          "status": 0,
