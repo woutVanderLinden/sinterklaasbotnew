@@ -15485,7 +15485,7 @@
          "sun": 0
       }
    ],
-   "WalkingWake": [
+   "Walkingwake": [
       {
          "name": "WalkingWake",
          "Typing1": "Water",
@@ -21400,7 +21400,7 @@
          "sun": 0
       }
    ],
-   "IronLeaves": [
+   "Ironleaves": [
       {
          "name": "IronLeaves",
          "Typing1": "Grass",
@@ -21429,7 +21429,7 @@
          "sun": 0
       }
    ],
-   "WoChien": [
+   "Wochien": [
       {
          "name": "WoChien",
          "Typing1": "Dark",
@@ -21458,7 +21458,7 @@
          "sun": 0
       }
    ],
-   "ChienPao": [
+   "Chienpao": [
       {
          "name": "ChienPao",
          "Typing1": "Dark",
@@ -21487,7 +21487,7 @@
          "sun": 0
       }
    ],
-   "TingLu": [
+   "Tinglu": [
       {
          "name": "TingLu",
          "Typing1": "Dark",
@@ -21516,7 +21516,7 @@
          "sun": 0
       }
    ],
-   "ChiYu": [
+   "Chiyu": [
       {
          "name": "ChiYu",
          "Typing1": "Dark",
@@ -21545,7 +21545,7 @@
          "sun": 0
       }
    ],
-   "RoaringMoon": [
+   "Roaringmoon": [
       {
          "name": "Roaring Moon",
          "Typing1": "Dragon",
@@ -21574,7 +21574,7 @@
          "sun": 0
       }
    ],
-   "GreatTusk": [
+   "Greattusk": [
       {
          "name": "Great Tusk",
          "Typing1": "Ground",
@@ -21603,7 +21603,7 @@
          "sun": 0
       }
    ],
-   "IronTreads": [
+   "Irontreads": [
       {
          "name": "Iron Treads",
          "Typing1": "Ground",
@@ -21632,7 +21632,7 @@
          "sun": 0
       }
    ],
-   "ScreamTail": [
+   "Screamtail": [
       {
          "name": "Scream Tail",
          "Typing1": "Fairy",
@@ -21661,7 +21661,7 @@
          "sun": 0
       }
    ],
-   "BruteBonnet": [
+   "Brutebonnet": [
       {
          "name": "Brute Bonnet",
          "Typing1": "Grass",
@@ -21690,7 +21690,7 @@
          "sun": 0
       }
    ],
-   "FlutterMane": [
+   "Fluttermane": [
       {
          "name": "Flutter Mane",
          "Typing1": "Ghost",
@@ -21719,7 +21719,7 @@
          "sun": 0
       }
    ],
-   "SlitherWing": [
+   "Slitherwing": [
       {
          "name": "Slither Wing",
          "Typing1": "Fighting",
@@ -21748,7 +21748,7 @@
          "sun": 0
       }
    ],
-   "IronMoth": [
+   "Ironmoth": [
       {
          "name": "Iron Moth",
          "Typing1": "Fire",
@@ -21777,7 +21777,7 @@
          "sun": 0
       }
    ],
-   "SandyShocks": [
+   "Sandyshocks": [
       {
          "name": "Sandy Shocks",
          "Typing1": "Ground",
@@ -21806,7 +21806,7 @@
          "sun": 0
       }
    ],
-   "IronBundle": [
+   "Ironbundle": [
       {
          "name": "Iron Bundle",
          "Typing1": "Ice",
@@ -21835,7 +21835,7 @@
          "sun": 0
       }
    ],
-   "IronHands": [
+   "Ironhands": [
       {
          "name": "Iron Hands",
          "Typing1": "Fighting",
@@ -21864,7 +21864,7 @@
          "sun": 0
       }
    ],
-   "IronJugulis": [
+   "Ironjugulis": [
       {
          "name": "Iron Jugulis",
          "Typing1": "Flying",
@@ -21893,7 +21893,7 @@
          "sun": 0
       }
    ],
-   "IronThorns": [
+   "Ironthorns": [
       {
          "name": "Iron Thorns",
          "Typing1": "Rock",
