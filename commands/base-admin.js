@@ -448,7 +448,7 @@ exports.commands = {
 			var newuser={};
 			newuser["erekredieten"]=global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)]["Points"];
 			newuser["draftedmons"]=[];
-			newuser["tieredpicks"]=global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)]["TierPicks"];
+			newuser["tieredpicks"]=[...global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)]["TierPicks"]];
 			newuser["totaldraftscore"]=0;
 			global.draftvalues.users[toId(by)]=newuser;
 			global.draftvalues.turnorder.push(toId(by));
