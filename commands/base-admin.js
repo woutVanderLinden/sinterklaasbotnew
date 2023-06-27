@@ -1994,7 +1994,7 @@ exports.commands = {
 						global.draftvalues.users[name]["totaldraftscore"]=global.draftvalues.users[name]["totaldraftscore"]+calculatescore(room,arg,name);
 					}
 					else{
-						draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
+
 						var pointscost=draftmons["tierlist"]["Tier"+i]["points"];
 						var currentscore=global.draftvalues.users[name]["erekredieten"];
 
@@ -2002,6 +2002,7 @@ exports.commands = {
 						if(picksleft*40>currentscore-pointscost||picksleft<0){
 							return this.reply("please make sure you have at least "+picksleft*40+ " Erekredieten left" );
 						}
+						draftmons["tierlist"]["Tier"+i]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+i]["pokemon"],arg);
 						global.draftvalues.users[name]["erekredieten"]=global.draftvalues.users[name]["erekredieten"]-draftmons["tierlist"]["Tier"+i]["points"];
 
 						this.send(global.draftvalues.draftroom, name +" paid "+draftmons["tierlist"]["Tier"+i]["points"]+ " erekredieten for "+ arg +".( Erekredieten "+global.draftvalues.users[name]["erekredieten"]+" tieredpicks:"+global.draftvalues.users[name]["tieredpicks"]+ ")");
