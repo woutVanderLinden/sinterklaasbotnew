@@ -212,18 +212,6 @@ exports.commands = {
 				this.restrictReply(txt, "rank");
 				break;
 			case "top":
-				if (args.length > 0) tarRoom = toRoomid(args[0]);
-				if (!tarRoom && this.roomType === "chat") tarRoom = room;
-				if (!tarRoom) return this.restrictReply(this.trad('usage') + ": " + this.cmdToken + cmd + " [room]", "rank");
-				if (!Features['tours'].Leaderboards.isConfigured(tarRoom)) return this.restrictReply(this.trad('not') + " " + tarRoom, "rank");
-				var top = Features['tours'].Leaderboards.getTop(tarRoom);
-				if (!top || !top.length) return this.restrictReply(this.trad('empty') + " " + tarRoom, "rank");
-				var topResults = [];
-				for (var i = 0; i < 5 && i < top.length; i++) {
-					topResults.push("__#" + (i + 1) + "__ **" + Tools.toName(top[i][0]) + "** (" + top[i][6] + ")");
-				}
-				this.restrictReply("**" + Tools.toName(tryGetRoomName(tarRoom)) + "** | " + topResults.join(", "), "rank");
-				break;
 			case "table":
 				const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 				console.log(uri);
