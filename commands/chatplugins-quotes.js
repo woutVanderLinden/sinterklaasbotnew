@@ -8,7 +8,7 @@ var jokesFFM = new Settings.FlatFileManager(jokesDataFile);
 var quotes = {};
 var jokes = {};
 const {MongoClient} = require('mongodb');
-const uri ="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+const uri = process.env.MONGO_URI;
 
 	console.log("hi this is a test "+uri);
 const listener = new EventEmitter();
