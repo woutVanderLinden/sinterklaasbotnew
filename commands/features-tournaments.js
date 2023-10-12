@@ -213,7 +213,7 @@ exports.commands = {
 				break;
 			case "top":
 			case "table":
-				const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+				const uri = process.env.MONGO_URI;
 				console.log(uri);
 				console.log("test");
 
