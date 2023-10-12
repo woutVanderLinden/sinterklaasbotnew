@@ -221,22 +221,6 @@ var addUser = exports.addUser = function (room, user, type, auxData) {
 
 var writeResults = exports.writeResults = function (room, results, Bot) {
 	if (!results) return;
-	for (var i = 0; i < results.players.length; i++) addUser(room, results.players[i], 'A');
-	if (results.winner) addbitterballs(room, results.winner, 3, Bot);
-	if (results.finalist) addbitterballs(room, results.finalist, 2, Bot);
-	for (var i = 0; i < results.semiFinalists.length; i++) addbitterballs(room, results.semiFinalists[i], 1, Bot)
-	for (var user in results.general) addUser(room, user, 'B', results.general[user]);
-};
-
-const {MongoClient} = require('mongodb');
-const uri ="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
-
-
-async function addbitterballs (room, name, amount, Bot) {
-	const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
-	console.log(uri);
-	console.log("test");
-
 	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
 
 	try {
@@ -248,7 +232,7 @@ async function addbitterballs (room, name, amount, Bot) {
 			bitbals = await findOneListingByName(client,"bitterballen")
 		}			
 			console.log(bitbals);
-			var thename = toId(name);
+			
 			if(bitbals==undefined){
 				infos={
 					name: 'bitterballen',
@@ -259,18 +243,14 @@ async function addbitterballs (room, name, amount, Bot) {
 			if(bitbals["nederlands"]==undefined){
 				bitbals["nederlands"]={};
 			}
-			if(bitbals["nederlands"][thename]==undefined){
-				bitbals["nederlands"][thename]=0;
-			}
-
-				var initialInt = parseInt(bitbals["nederlands"][thename]);
-				if(isNaN(initialInt)){
-					initialInt = 0;
-				}
-				bitbals["nederlands"][thename]=initialInt+amount;
-		Bot.say(room, thename+" krijgt "+ amount + "("+parseInt(bitbals["nederlands"][toId(thename)])+") bitterballen.");
+	for (var i = 0; i < results.players.length; i++) addUser(room, results.players[i], 'A');
+	if (results.winner) addbitterballs(room, results.winner, 3, Bot);
+	if (results.finalist) addbitterballs(room, results.finalist, 2, Bot);
+	for (var i = 0; i < results.semiFinalists.length; i++) addbitterballs(room, results.semiFinalists[i], 1, Bot)
+	for (var user in results.general) addUser(room, user, 'B', results.general[user]);
 
 		await updateListingByName(client,"bitterballen" ,bitbals);
+		
 
 
 	} catch (e) {
@@ -283,6 +263,29 @@ async function addbitterballs (room, name, amount, Bot) {
 		await client.close();
 	}
 
+};
+
+const {MongoClient} = require('mongodb');
+const uri ="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+
+
+async function addbitterballs (room, name, amount, Bot) {
+	var thename = toId(name);
+	const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	console.log(uri);
+	console.log("test");
+
+	
+			if(bitbals["nederlands"][thename]==undefined){
+				bitbals["nederlands"][thename]=0;
+			}
+
+				var initialInt = parseInt(bitbals["nederlands"][thename]);
+				if(isNaN(initialInt)){
+					initialInt = 0;
+				}
+				bitbals["nederlands"][thename]=initialInt+amount;
+		Bot.say(room, thename+" krijgt "+ amount + "("+parseInt(bitbals["nederlands"][toId(thename)])+") bitterballen.");
 }
 
 exports.onTournamentEnd = function (room, data, Bot) {
