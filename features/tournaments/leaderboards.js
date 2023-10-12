@@ -266,7 +266,7 @@ var writeResults = exports.writeResults = function (room, results, Bot) {
 };
 
 const {MongoClient} = require('mongodb');
-const uri ="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+const uri = process.env.MONGO_URI;
 
 
 async function addbitterballs (room, name, amount, Bot) {
