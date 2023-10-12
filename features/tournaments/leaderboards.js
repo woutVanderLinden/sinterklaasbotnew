@@ -7,6 +7,7 @@ const toursDataFile = AppOptions.data + 'leaderboards.json';
 var toursFFM = exports.toursFFM = new Settings.FlatFileManager(toursDataFile);
 
 var ladder = exports.ladder = {};
+var bitbals;
 
 try {
 	ladder = exports.ladder = toursFFM.readObj();
@@ -231,7 +232,7 @@ const {MongoClient} = require('mongodb');
 const uri ="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 
 
-function addbitterballs (room, name, amount, Bot) {
+async function addbitterballs (room, name, amount, Bot) {
 	const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 	console.log(uri);
 	console.log("test");
@@ -243,7 +244,9 @@ function addbitterballs (room, name, amount, Bot) {
 
 			console.log("info added");
 			console.log("the client is "+client);
-			let bitbals = await findOneListingByName(client,"bitterballen")
+		if(bitbals == null){
+			bitbals = await findOneListingByName(client,"bitterballen")
+		}			
 			console.log(bitbals);
 			var thename = toId(name);
 			if(bitbals==undefined){
