@@ -350,7 +350,7 @@ exports.commands = {
 				/*first load in the draft file list*/
 				//lets try that now
 				console.log('started reading file');
-				const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+				const uri = process.env.MONGO_URI;
 				console.log(uri);
 				console.log("test");
 
@@ -496,7 +496,7 @@ exports.commands = {
 	if (!by.startsWith("+")&&!by.startsWith("#")&&!by.startsWith("%")&&!by.startsWith("@")){
 					return false;
 				}	
-	const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	const uri = process.env.MONGO_URI;
 	console.log(uri);
 	console.log("test");
 	
@@ -530,7 +530,7 @@ exports.commands = {
 			}
 		}
 
-	const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	const uri = process.env.MONGO_URI;
 	console.log(uri);
 	console.log("test");
 	
@@ -599,7 +599,7 @@ exports.commands = {
 		if (!by.startsWith("+")&&!by.startsWith("#")&&!by.startsWith("%")&&!by.startsWith("@")){
 					return false;
 				}	
-	const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	const uri = process.env.MONGO_URI;
 	console.log(uri);
 	console.log("test");
 	
@@ -656,7 +656,7 @@ exports.commands = {
 	},
 	continuedraft:async function (arg, by, room, cmd) {
 		console.log('started reading file');
-		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+		const uri = process.env.MONGO_URI;
 		console.log(uri);
 		console.log("test");
 
@@ -726,7 +726,7 @@ exports.commands = {
 		},
 	continueauctiondraft:async function (arg, by, room, cmd) {
 		console.log('started reading file');
-		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+		const uri = process.env.MONGO_URI;
 		console.log(uri);
 		console.log("test");
 
@@ -2202,7 +2202,7 @@ exports.commands = {
 			/*first load in the draft file list*/
 			//lets try that now
 			console.log('started reading file');
-			const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+			const uri = process.env.MONGO_URI;
 			console.log(uri);
 			console.log("test");
 			const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
@@ -2248,7 +2248,7 @@ exports.commands = {
 			/*first load in the draft file list*/
 			//lets try that now
 			console.log('started reading file');
-			const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+			const uri = process.env.MONGO_URI;
 			console.log(uri);
 			console.log("test");
 			const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
@@ -3294,7 +3294,7 @@ function printPosTypes(){
 
 async  function saveTeamsToCloud(){
 	
-	const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	const uri = process.env.MONGO_URI;
 	console.log(uri);
 	console.log("test");
 	
