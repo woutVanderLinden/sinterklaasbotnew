@@ -6,78 +6,78 @@
 
 //var XLSX = require('xlsx');
 try {
-	
+
 	require('xlsx');
 } catch (e) {
 	console.log('Installing dependencies... (xlsx)');
-	require('child_process').spawnSync('sh', ['-c', 'npm install xlsx'], {stdio: 'inherit'});
+	require('child_process').spawnSync('sh', ['-c', 'npm install xlsx'], { stdio: 'inherit' });
 }
-let todraftmons={};
-let users={};
+let todraftmons = {};
+let users = {};
 let passedusers = [];
 var http = require('http'); //importing http
-var packdrafting=false;
-var pointdrafting=false;
-var auctioning=false;
-var nominatedmon="";
-var giftdrafting=false;
-var currentStartScore=100;
-var currentscore=0;
-var currentHighestBidder="";
-var postypings=["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
-var auctiondrafting=false;
-var pointpicks=0;
+var packdrafting = false;
+var pointdrafting = false;
+var auctioning = false;
+var nominatedmon = "";
+var giftdrafting = false;
+var currentStartScore = 100;
+var currentscore = 0;
+var currentHighestBidder = "";
+var postypings = ["Grass", "Fire", "Water", "Ice", "Bug", "Normal", "Flying", "Poison", "Psychic", "Ghost", "Fighting", "Rock", "Ground", "Electric", "Dragon", "Fairy", "Dark", "Steel"];
+var auctiondrafting = false;
+var pointpicks = 0;
 startKeepAlive();
 function draftmons(arg) {
-	var result='';
-		for (var i = 0; i < arg.length; i++) {
-			console.log(arg[i]);
-    //Do something
-			
-				result=result+","+arg[i];
-			
-			
-		}
-		result=result.substring(1,result.length-1);
-	return 'draftable mons are ' +result;
+	var result = '';
+	for (var i = 0; i < arg.length; i++) {
+		console.log(arg[i]);
+		//Do something
+
+		result = result + "," + arg[i];
+
+
+	}
+	result = result.substring(1, result.length - 1);
+	return 'draftable mons are ' + result;
 };
 
 function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
+	var currentIndex = array.length, temporaryValue, randomIndex;
 
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
+	// While there remain elements to shuffle...
+	while (0 !== currentIndex) {
 
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
+		// Pick a remaining element...
+		randomIndex = Math.floor(Math.random() * currentIndex);
+		currentIndex -= 1;
 
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
+		// And swap it with the current element.
+		temporaryValue = array[currentIndex];
+		array[currentIndex] = array[randomIndex];
+		array[randomIndex] = temporaryValue;
+	}
 
-  return array;
+	return array;
 }
 try {
-	
-	
+
+
 	require('sugar');
 	global.draftvalues = {};
-	global.draftvalues.pointpicks=0;
-	global.draftvalues.todraftmons={};
-	global.draftvalues.draftdirectionup={};
-	global.draftvalues.users={};
-	global.draftvalues.picknr={};
-	global.draftvalues.turnorder=[];
-	global.draftvalues.possiblepicks={};
-	global.draftvalues.packdrafting=false;
-	global.draftvalues.draftstarted=false;
-	global.draftvalues.nextdrafter={};
-	global.draftvalues.draftedmons={};
-	global.draftvalues.currenttier={};
-	global.draftvalues.pointdrafting=false;
+	global.draftvalues.pointpicks = 0;
+	global.draftvalues.todraftmons = {};
+	global.draftvalues.draftdirectionup = {};
+	global.draftvalues.users = {};
+	global.draftvalues.picknr = {};
+	global.draftvalues.turnorder = [];
+	global.draftvalues.possiblepicks = {};
+	global.draftvalues.packdrafting = false;
+	global.draftvalues.draftstarted = false;
+	global.draftvalues.nextdrafter = {};
+	global.draftvalues.draftedmons = {};
+	global.draftvalues.currenttier = {};
+	global.draftvalues.pointdrafting = false;
 	global.colors = require('colors');
 	global.util = require('util');
 	global.fs = require('fs');
@@ -85,92 +85,92 @@ try {
 	global.PSClient = require('./showdown-client.js');
 	let rawdata = fs.readFileSync('convertcsvnew.json');
 	let student = JSON.parse(rawdata);
-	global.draftvalues.mondata=student;
+	global.draftvalues.mondata = student;
 	let rawdata3 = fs.readFileSync('UsefullTeamCombos.json');
 	let student3 = JSON.parse(rawdata3);
-	global.draftvalues.prevteams=student3;
+	global.draftvalues.prevteams = student3;
 	let colordata = fs.readFileSync('TypingsToColor.json');
 	let colors = JSON.parse(colordata);
-	global.draftvalues.typingcolors=colors;
+	global.draftvalues.typingcolors = colors;
 	let nameData = fs.readFileSync('ToName.json');
 	let namedatajson = JSON.parse(nameData);
-	global.draftvalues.NameData=namedatajson;
+	global.draftvalues.NameData = namedatajson;
 
 	let rawdata2 = fs.readFileSync('weaknesssheet.json');
 	let student2 = JSON.parse(rawdata2);
-	global.draftvalues.weaknesssheet=student2;
+	global.draftvalues.weaknesssheet = student2;
 } catch (e) {
 	console.log(e.stack);
 	console.log("ERROR: missing dependencies, try 'npm install'");
 	process.exit(-1);
 }
-const {MongoClient} = require('mongodb');
+const { MongoClient } = require('mongodb');
 const uri = process.env.MONGO_URI;
 
-	console.log("hi this is a test "+uri);
-async function listDatabases(client){
+console.log("hi this is a test " + uri);
+async function listDatabases(client) {
 
-    databasesList = await client.db().admin().listDatabases();
+	databasesList = await client.db().admin().listDatabases();
 
-    console.log("Databases:");
+	console.log("Databases:");
 
-    databasesList.databases.forEach(db => console.log(` - ${db.name}`));
+	databasesList.databases.forEach(db => console.log(` - ${db.name}`));
 
 };
 
-async function createListing(client, newListing){
+async function createListing(client, newListing) {
 
-    const result = await client.db("sample_airbnb").collection("listingsAndReviews").insertOne(newListing);
+	const result = await client.db("sample_airbnb").collection("listingsAndReviews").insertOne(newListing);
 
-    console.log(`New listing created with the following id: ${result.insertedId}`);
+	console.log(`New listing created with the following id: ${result.insertedId}`);
 
 };
 
 async function findOneListingByName(client, nameOfListing) {
 
-    result = await global.client.db("sample_airbnb").collection("listingsAndReviews").findOne({ name: nameOfListing });
+	result = await global.client.db("sample_airbnb").collection("listingsAndReviews").findOne({ name: nameOfListing });
 
-    if (result) {
+	if (result) {
 
-        console.log(`Found a listing in the collection with the name '${nameOfListing}':`);
+		console.log(`Found a listing in the collection with the name '${nameOfListing}':`);
 
-        console.log(result);
-	return result;
-    } else {
+		console.log(result);
+		return result;
+	} else {
 
-        console.log(`No listings found with the name '${nameOfListing}'`);
+		console.log(`No listings found with the name '${nameOfListing}'`);
 
-    }
+	}
 
 }
-	console.log(uri);
-async function dbconnect(){
+console.log(uri);
+async function dbconnect() {
 
-	const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	const uri = process.env.MONGO_URI;
 	console.log(uri);
 	console.log("test");
-	
-	const client = await new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
-	
+
+	const client = await new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
 	try {
 		await client.connect();
 		await listDatabases(client);
 	} catch (e) {
 
-    console.error(e);
+		console.error(e);
 
 	}
-	
-	finally{
+
+	finally {
 		await client.close();
 	}
 }
 dbconnect();
 
-async function disconnect(client){
-	
+async function disconnect(client) {
 
-		await client.close();
+
+	await client.close();
 
 }
 console.log((
@@ -293,7 +293,7 @@ global.reloadFeatures = function () {
 
 /* Bot creation and connection */
 
-function botAfterConnect () {
+function botAfterConnect() {
 	//join rooms
 	if (typeof Config.rooms === "string") {
 		joinByQueryRequest(Config.rooms);
@@ -370,7 +370,7 @@ function joinByQueryRequest(target) {
 				if (target === 'all' || target === 'public') {
 					for (var i = 0; i < publicRooms.length; i++) cmds.push('|/join ' + publicRooms[i]);
 				}
-			} catch (e) {}
+			} catch (e) { }
 			for (var i = 0; i < Config.initCmds.length; i++) {
 				cmds.push(Config.initCmds[i]);
 			}
@@ -408,32 +408,33 @@ var opts = {
 	debug: (Config.debug ? Config.debug.debug : true)
 };
 function startKeepAlive() {
-    setInterval(function() {
-        var options = {
-            host: 'newsinterklaasbot.herokuapp.com',
-            port: 80,
-            path: '/'
-        };
-        http.get(options, function(res) {
-            res.on('data', function(chunk) {
-                try {
-                    // optional logging... disable after it's working
-                    console.log("HEROKU RESPONSE: " + chunk);
-                } catch (err) {
-                    console.log(err.message);
-                }
-            });
-        }).on('error', function(err) {
-            console.log("Error: " + err.message);
-        });
-    }, 20 * 60 * 1000); // load every 20 minutes
+	setInterval(function () {
+		var options = {
+			host: 'newsinterklaasbot.herokuapp.com',
+			port: 80,
+			path: '/'
+		};
+		http.get(options, function (res) {
+			res.on('data', function (chunk) {
+				try {
+					// optional logging... disable after it's working
+					console.log("HEROKU RESPONSE: " + chunk);
+				} catch (err) {
+					console.log(err.message);
+				}
+			});
+		}).on('error', function (err) {
+			console.log("Error: " + err.message);
+		});
+	}, 20 * 60 * 1000); // load every 20 minutes
 }
 startKeepAlive();
 
 port = process.env.PORT || 8000;
-const uri2 =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
-	console.log(uri2);
-	console.log("test");
+const uri2 = process.env.MONGO_URI;
+
+console.log(uri2);
+console.log("test");
 console.log(port);
 console.log("test");
 global.Bot = new PSClient(Config.server, 8000, opts);
@@ -467,13 +468,13 @@ Bot.on('formats', function (formats) {
 	for (var i = 0; i < formatsArr.length; i++) {
 		commaIndex = formatsArr[i].indexOf(',');
 		if (commaIndex === -1) {
-			Formats[toId(formatsArr[i])] = {name: formatsArr[i], team: true, ladder: true, chall: true};
+			Formats[toId(formatsArr[i])] = { name: formatsArr[i], team: true, ladder: true, chall: true };
 		} else if (commaIndex === 0) {
 			i++;
 			continue;
 		} else {
 			name = formatsArr[i];
-			formatData = {name: name, team: true, ladder: true, chall: true};
+			formatData = { name: name, team: true, ladder: true, chall: true };
 			code = commaIndex >= 0 ? parseInt(name.substr(commaIndex + 1), 16) : NaN;
 			if (!isNaN(code)) {
 				name = name.substr(0, commaIndex);
@@ -515,7 +516,7 @@ Bot.on('challstr', function (challstr) {
 
 var retryingRename = false;
 Bot.on('renamefailure', function (e) {
-	if (e === -1)  {
+	if (e === -1) {
 		if (!Config.nick) {
 			debug('Login failure - generating another random nickname');
 			Bot.rename('Bot ' + Tools.generateRandomNick(10));
@@ -606,29 +607,29 @@ Bot.on('userrename', function (room, old, by) {
 });
 
 /* Features */
-async function announcefinals(data,room){
-	
-if (!data.bracketData || data.bracketData.type !== 'tree') return;
+async function announcefinals(data, room) {
+
+	if (!data.bracketData || data.bracketData.type !== 'tree') return;
 	if (data.bracketData.rootNode && data.bracketData.rootNode.state === 'inprogress' && data.bracketData.rootNode.room) {
-	//	const doubleElim = data.bracketData.rootNode.children[0] && data.bracketData.rootNode.children[1].children[0] && data.bracketData.rootNode.children[1] &&
-	//		(data.bracketData.rootNode.children[1].children[1].children[0] && !data.bracketData.rootNode.children[1].children[0].children[0]);
-	//	if (doubleElim) {
-	//		Bot.say(room, `/wall ${data.bracketData.rootNode.children[0].team} is on match point! <<${data.bracketData.rootNode.room}>>`);
+		//	const doubleElim = data.bracketData.rootNode.children[0] && data.bracketData.rootNode.children[1].children[0] && data.bracketData.rootNode.children[1] &&
+		//		(data.bracketData.rootNode.children[1].children[1].children[0] && !data.bracketData.rootNode.children[1].children[0].children[0]);
+		//	if (doubleElim) {
+		//		Bot.say(room, `/wall ${data.bracketData.rootNode.children[0].team} is on match point! <<${data.bracketData.rootNode.room}>>`);
 		//} else {
-			Bot.say(room, `/wall Watch the finals of the tournament! <<${data.bracketData.rootNode.room}>>`);
-	//	}
+		Bot.say(room, `/wall Watch the finals of the tournament! <<${data.bracketData.rootNode.room}>>`);
+		//	}
 	}
 }
 Bot.on('line', function (room, message, isIntro, spl) {
-	
-	var messes1=message.split("|");
 
-	
-	if(message.startsWith("|tournament|update|")){
-	   
-		var messes=message.split("|");
-		announcefinals(JSON. parse(messes[3]),room);
-	   }
+	var messes1 = message.split("|");
+
+
+	if (message.startsWith("|tournament|update|")) {
+
+		var messes = message.split("|");
+		announcefinals(JSON.parse(messes[3]), room);
+	}
 	for (var f in Features) {
 		try {
 			if (typeof Features[f].parse === "function") Features[f].parse(room, message, isIntro, spl);
@@ -713,8 +714,8 @@ var checkSystem = function () {
 				Bot.rename('Bot ' + Tools.generateRandomNick(10));
 				break;
 		}
-	
-}
+
+	}
 };
 if (!AppOptions.testmode) {
 	var utilChecker = setInterval(checkSystem, 60 * 60 * 1000);
