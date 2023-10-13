@@ -80,7 +80,7 @@ async function findOneListingByName(client, nameOfListing) {
 
 }
 async function samplefunc (arg, by, room, cmd,vart) {
-		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+		const uri = process.env.MONGO_URI;
 	console.log(uri);
 	console.log("test");
 	
@@ -183,7 +183,7 @@ async function samplefunc (arg, by, room, cmd,vart) {
 	
 }
 async function quotefunc (arg, by, room, cmd,vart) {
-		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+		const uri = process.env.MONGO_URI;
 	console.log(uri);
 	console.log("test");
 	
@@ -299,7 +299,7 @@ async function quotefunc (arg, by, room, cmd,vart) {
 }
 
 async function infofunc (arg, by, room, cmd,vart) {
-		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+		const uri = process.env.MONGO_URI;
 	console.log(uri);
 	console.log("test");
 	
@@ -416,7 +416,7 @@ async function infofunc (arg, by, room, cmd,vart) {
 	console.log(uri);
 	
 	async function bitterballenfunc (arg, by, room, cmd,vart) {
-		const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+		const uri = process.env.MONGO_URI;
 	console.log(uri);
 	
 	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
@@ -520,7 +520,7 @@ async function infofunc (arg, by, room, cmd,vart) {
 	console.log(uri);
 async function dbconnect(){
 
-	const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+const uri = process.env.MONGO_URI;
 
 	
 	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
