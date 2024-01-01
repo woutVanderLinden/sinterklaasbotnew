@@ -307,6 +307,7 @@ exports.commands = {
 		global.draftvalues.currentPick = 0;
 		global.draftvalues.packdrafting=true;
 		global.draftvalues.draftstarted=true;
+		global.draftvalues.pointdrafting = false;
 		 global.draftvalues.picknr[toId(global.draftvalues.draftroom)]=0;
 		global.draftvalues.nextdrafter=0;
 		//this.reply('draft order is '+result);
