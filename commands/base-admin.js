@@ -2189,7 +2189,7 @@ exports.commands = {
 	//var list=global.draftvalues.users[toId(room)];
 		 }
 		else{
-		var newlist=pickmultimons(draftmons["tierlist"][global.draftvalues.currenttier[toId(room)]]["pokemon"],6,list);
+		var newlist=pickmultimons(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["pokemon"],6,list);
 			global.draftvalues.possiblepicks=newlist;
 		if(toId(by)==toId(room)){
 				this.reply(draftmonsprint(newlist));
