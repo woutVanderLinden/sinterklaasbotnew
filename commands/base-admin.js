@@ -301,9 +301,10 @@ exports.commands = {
 		let rawdata = fs.readFileSync('newdrafttest.json');
 		let student = JSON.parse(rawdata);
 		console.log(student);
-		global.draftvalues.currenttier[toId(room)]=0;
+		global.draftvalues.currenttier[toId(room)]=1;
 		global.draftvalues.todraftmons[toId(room)]=student;
-		
+		global.draftvalues.tierOrder = [1,1,2,2,3,3,4,4,5,5];
+		global.draftvalues.currentPick = 0;
 		global.draftvalues.packdrafting=true;
 		global.draftvalues.draftstarted=true;
 		 global.draftvalues.picknr[toId(global.draftvalues.draftroom)]=0;
@@ -319,6 +320,7 @@ exports.commands = {
 		var draftmons=global.draftvalues.todraftmons[toId(room)];
 		global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
 		var list=global.draftvalues.users[toId(room)];
+		console.log(list);
 		var newlist=pickmultimons(draftmons["tierlist"][global.draftvalues.currenttier[toId(room)]]["pokemon"],6,list);
 		global.draftvalues.possiblepicks=newlist;
 		if(toId(by)==toId(room)){
@@ -329,6 +331,47 @@ exports.commands = {
 		
 			}
 	var list=global.draftvalues.users[toId(room)];
+		return this.reply('use ?draft {pokemonname} to draft your mons, Choose next mon '+list[0]);
+	},
+
+	/*
+	the following commands are used for detectivepackdrafting
+	*/
+
+	startdetectivepackdraft: function(arg, by, room, cmd) {
+		if (!this.isRanked('admin')&& !toId(by) =="yveltalnl") return false;
+		console.log('started reading file');
+		let rawdata = fs.readFileSync('newdrafttest.json');
+		let student = JSON.parse(rawdata);
+		console.log(student);
+		global.draftvalues.currenttier[toId(room)]=0;
+		global.draftvalues.todraftmons[toId(room)]=student;
+
+		global.draftvalues.packdrafting=true;
+		global.draftvalues.draftstarted=true;
+		global.draftvalues.picknr[toId(global.draftvalues.draftroom)]=0;
+		global.draftvalues.nextdrafter=0;
+		//this.reply('draft order is '+result);
+		console.log(global.draftvalues.draftstarted);
+		console.log(global.draftvalues.todraftmons);
+		let rawdata2 = fs.readFileSync('draftedmons.json');
+		let student2 = JSON.parse(rawdata2);
+		if(global.draftvalues.draftedmons={}){
+			global.draftvalues.draftedmons=student2;
+		}
+		var draftmons=global.draftvalues.todraftmons[toId(room)];
+		global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
+		var list=global.draftvalues.users[toId(room)];
+		var newlist=pickmultimons(draftmons["tierlist"][global.draftvalues.currenttier[toId(room)]]["pokemon"],6,list);
+		global.draftvalues.possiblepicks=newlist;
+		if(toId(by)==toId(room)){
+			this.reply(draftmonsprint(newlist));
+
+		}else{
+			this.reply(draftmonsprint2(newlist));
+
+		}
+		var list=global.draftvalues.users[toId(room)];
 		return this.reply('use ?draft {pokemonname} to draft your mons, Choose next mon '+list[0]);
 	},
 	
