@@ -330,7 +330,7 @@ exports.commands = {
 				this.reply(draftmonsprint2(newlist));
 		
 			}
-	var list=global.draftvalues.users[toId(room)];
+	var list=global.draftvalues.turnorder;
 		return this.reply('use ?draft {pokemonname} to draft your mons, Choose next mon '+list[0]);
 	},
 

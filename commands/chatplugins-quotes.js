@@ -411,7 +411,6 @@ async function infofunc (arg, by, room, cmd,vart) {
 	finally{
 		await client.close();
 	}
-	
 }
 	console.log(uri);
 	
