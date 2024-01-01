@@ -597,7 +597,7 @@ exports.commands = {
 		if(toId(by)==toId(room)){
 			return this.reply(draftmonsprint(list));
 		}else{
-			return this.reply(draftmonsprint2(type,list));
+			return this.reply(draftmonsprint2(list, type));
 		}
 	
 			
