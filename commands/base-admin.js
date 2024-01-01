@@ -322,6 +322,7 @@ exports.commands = {
 		global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
 		var list=global.draftvalues.turnorder
 		console.log(list);
+		global.draftvalues.currenttier[toId(room)] = global.draftvalues.tierOrder[global.draftvalues.currentPick ];
 		var newlist=pickmultimons(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["pokemon"],6,list);
 		global.draftvalues.possiblepicks=newlist;
 		if(toId(by)==toId(room)){
@@ -2014,8 +2015,6 @@ exports.commands = {
 		console.log("global.draftvalues.pointdrafting "+global.draftvalues.pointdrafting);
 		if(!global.draftvalues.pointdrafting){
 			var draftmons=global.draftvalues.todraftmons[toId(room)];
-			console.log("picakable:" + global.draftvalues.possiblepicks);
-			console.log("chosen" + args);
 			if(global.draftvalues.possiblepicks.includes(arg)||(global.draftvalues.possiblepicks.includes('Silvally')&&args[0]=='Silvally')){
 				global.draftvalues.users[name]["draftedmons"].push(arg);
 				draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["pokemon"],arg);
@@ -2189,6 +2188,16 @@ exports.commands = {
 	//var list=global.draftvalues.users[toId(room)];
 		 }
 		else{
+			if(global.draftvalues.packdrafting){
+				global.draftvalues.currentPick++;
+				if(global.draftvalues.currentPick >= global.draftvalues.tierOrder.length){
+					return this.reply("the draft is over good luck and have fun everyone")
+				}
+				else{
+					global.draftvalues.currenttier[toId(room)] = global.draftvalues.tierOrder[global.draftvalues.currentPick ];
+				}
+
+			}
 		var newlist=pickmultimons(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["pokemon"],6,list);
 			global.draftvalues.possiblepicks=newlist;
 		if(toId(by)==toId(room)){
@@ -3396,7 +3405,7 @@ function startNewTier(room,by,elem){
 		if(draftmons["freepicks"]<=global.draftvalues.pointpicks){
 			global.draftvalues.draftstarted=false;
 			global.draftvalues.users[toId(room)]=[];
-			return elem.reply('The draft over is good luck and have fun ');
+			return elem.reply('The draft is over good luck and have fun ');
 		}
 	}
 	//elem.reply('new tier started');
