@@ -3142,8 +3142,8 @@ function draftmonsprint3(arg){
 			result=result;
 		return result;
 	};
- function draftmonsprint2(type, arg){
-		arg=arg.sort();
+ function draftmonsprint2(arg, type){
+		arg = arg.sort();
 		var result='!htmlbox ';
 		if(type != undefined){
 			result = result+ '<div style="color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;"> Terastalyze type: <psicon type="'+type+'" style="vertical-align:-2px;margin: 0px" /></div>';
