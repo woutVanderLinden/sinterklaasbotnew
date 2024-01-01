@@ -298,7 +298,7 @@ exports.commands = {
 	startpackdraft: function(arg, by, room, cmd) {
 		if (!this.isRanked('admin')&& !toId(by) =="yveltalnl") return false;
 		console.log('started reading file');
-		let rawdata = fs.readFileSync('newdrafttest.json');
+		let rawdata = fs.readFileSync('DraftTest4.json');
 		let student = JSON.parse(rawdata);
 		console.log(student);
 		global.draftvalues.currenttier[toId(room)]=1;
@@ -322,7 +322,7 @@ exports.commands = {
 		global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
 		var list=global.draftvalues.turnorder
 		console.log(list);
-		var newlist=pickmultimons(draftmons["tierlist"][global.draftvalues.currenttier[toId(room)]]["pokemon"],6,list);
+		var newlist=pickmultimons(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["pokemon"],6,list);
 		global.draftvalues.possiblepicks=newlist;
 		if(toId(by)==toId(room)){
 				this.reply(draftmonsprint(newlist));
