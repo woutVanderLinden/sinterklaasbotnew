@@ -2017,6 +2017,7 @@ exports.commands = {
 			var draftmons=global.draftvalues.todraftmons[toId(room)];
 			if(global.draftvalues.possiblepicks.includes(arg)||(global.draftvalues.possiblepicks.includes('Silvally')&&args[0]=='Silvally')){
 				global.draftvalues.users[name]["draftedmons"].push(arg);
+				saveTeamsToCloud();
 				draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["pokemon"],arg);
 
 			}
