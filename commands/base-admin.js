@@ -340,17 +340,23 @@ exports.commands = {
 	the following commands are used for detectivepackdrafting
 	*/
 
-	startdetectivepackdraft: function(arg, by, room, cmd) {
+	startUnknownpackdraft: function(arg, by, room, cmd) {
 		if (!this.isRanked('admin')&& !toId(by) =="yveltalnl") return false;
 		console.log('started reading file');
-		let rawdata = fs.readFileSync('newdrafttest.json');
+		global.draftvalues.DataOrder = ["Type1", "LowestBST", "Type2", "color", "Type1", "ability", "weightkg", "type2", "HighestBST", "eggGroups", "ability"]
+		let rawdata = fs.readFileSync('DraftTest4.json');
 		let student = JSON.parse(rawdata);
+		let dexdata = fs.readFileSync('Dexdata.json');
+		global.dexData= JSON.parse(dexdata);
 		console.log(student);
-		global.draftvalues.currenttier[toId(room)]=0;
+		global.draftvalues.currenttier[toId(room)]=1;
 		global.draftvalues.todraftmons[toId(room)]=student;
-
+		global.draftvalues.tierOrder = [1,1,2,2,3,3,4,4,5,5];
+		global.draftvalues.currentPick = 0;
 		global.draftvalues.packdrafting=true;
+		global.draftvalues.UnknownDrafting=true;
 		global.draftvalues.draftstarted=true;
+		global.draftvalues.pointdrafting = false;
 		global.draftvalues.picknr[toId(global.draftvalues.draftroom)]=0;
 		global.draftvalues.nextdrafter=0;
 		//this.reply('draft order is '+result);
@@ -363,18 +369,24 @@ exports.commands = {
 		}
 		var draftmons=global.draftvalues.todraftmons[toId(room)];
 		global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
-		var list=global.draftvalues.users[toId(room)];
-		var newlist=pickmultimons(draftmons["tierlist"][global.draftvalues.currenttier[toId(room)]]["pokemon"],6,list);
+		var list=global.draftvalues.turnorder
+		console.log(list);
+		global.draftvalues.currenttier[toId(room)] = global.draftvalues.tierOrder[global.draftvalues.currentPick ];
+		var newlist=pickmultimons(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["pokemon"],6,list);
 		global.draftvalues.possiblepicks=newlist;
 		if(toId(by)==toId(room)){
 			this.reply(draftmonsprint(newlist));
 
 		}else{
-			this.reply(draftmonsprint2(newlist));
-
+			if(global.draftvalues.UnknownDrafting){
+				this.reply(draftmonsprintUnknown(newlist,global.draftvalues.DataOrder[global.draftvalues.picknr[toId(global.draftvalues.draftroom)]]));
+			}
+			else{
+				this.reply(draftmonsprint2(newlist));
+			}
 		}
-		var list=global.draftvalues.users[toId(room)];
-		return this.reply('use ?draft {pokemonname} to draft your mons, Choose next mon '+list[0]);
+		var list=global.draftvalues.turnorder;
+		return this.reply('use ?draft {pokemonname} to draft your mons, Choose next Tier' + global.draftvalues.currenttier[toId(room)] +'mon '+list[0]);
 	},
 	
 	forcejoin:  async function (arg, by, room, cmd) {
@@ -3291,7 +3303,53 @@ function draftmonsprint5(arg,color){
 	result=result.substring(0,result.length-1);
 	result=result;
 	return result;
-};
+}
+
+function draftmonsprintUnknown(arg,DataType){
+	arg=arg.sort();
+	//color = global.draftvalues.typingcolors[typing];
+	var color = rgb(255, 204, 204);
+	var data = arg
+	//"Type1", "LowestBST", "Type2", "color", "Type1", "ability", "weightkg", "type2", "HighestBST", "eggGroups", "ability"
+	switch(DataType){
+		default:
+			data = global.dexData[arg]["num"];
+			break;
+	}
+
+	var result='';
+	for (var i = 0; i < arg.length; i++) {
+		console.log("here "+arg[i]);
+		var color2 = "rgb(.3,0,0)";
+		/*
+		if(global.draftvalues.mondata[arg[i]]["Typing1"]!=undefined){
+			color = global.draftvalues.typingcolors[global.draftvalues.mondata[arg[i]]["Typing1"]];
+		}
+		if(global.draftvalues.mondata[arg[i]]["Typing 2"]!=undefined){
+			color2 = global.draftvalues.typingcolors[global.draftvalues.mondata[arg[i]]["Typing 2"]];
+		}
+		*/
+
+		//Do something
+		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
+		var name=arg[i];
+		var word="";
+		if(global.draftvalues.mondata[arg[i]]["Typing 2"]==undefined){
+			word ='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +'; font-size: 10pt; font-weight: bold;">';
+		}
+		else{
+			word ='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +'; font-size: 10pt; font-weight: bold;">';
+		}
+		word=word+'<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap">'+data+'</a>';
+		word=word+'</button>';
+		result=result+word;
+
+
+	}
+	result=result.substring(0,result.length-1);
+	result=result;
+	return result;
+}
 
 function printPosTypes(){
 	var arg=global.draftvalues.availableTypes.sort();
