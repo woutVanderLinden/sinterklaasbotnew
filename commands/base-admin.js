@@ -319,7 +319,7 @@ exports.commands = {
 		}
 		var draftmons=global.draftvalues.todraftmons[toId(room)];
 		global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
-		var list=global.draftvalues.users[toId(room)];
+		var list=global.draftvalues.turnorder
 		console.log(list);
 		var newlist=pickmultimons(draftmons["tierlist"][global.draftvalues.currenttier[toId(room)]]["pokemon"],6,list);
 		global.draftvalues.possiblepicks=newlist;
