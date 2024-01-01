@@ -340,7 +340,7 @@ exports.commands = {
 	the following commands are used for detectivepackdrafting
 	*/
 
-	startUnknownpackdraft: function(arg, by, room, cmd) {
+	startunknownpackdraft: function(arg, by, room, cmd) {
 		if (!this.isRanked('admin')&& !toId(by) =="yveltalnl") return false;
 		console.log('started reading file');
 		global.draftvalues.DataOrder = ["Type1", "LowestBST", "Type2", "color", "Type1", "ability", "weightkg", "type2", "HighestBST", "eggGroups", "ability"]
