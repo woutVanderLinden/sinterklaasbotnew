@@ -219,7 +219,7 @@ var addUser = exports.addUser = function (room, user, type, auxData) {
 	}
 };
 
-var writeResults = exports.writeResults = function (room, results, Bot) {
+var writeResults = exports.writeResults = async function (room, results, Bot) {
 	if (!results) return;
 	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
 

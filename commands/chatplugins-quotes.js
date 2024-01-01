@@ -433,7 +433,6 @@ async function infofunc (arg, by, room, cmd,vart) {
 			if(args.length<2 && args.isInteger()){
 				return vart.reply("usage: user,aantal bitterballen");
 			}
-			console.log("the client is "+client);
 			let bitbals = await findOneListingByName(client,"bitterballen")
 			var thename = toId(args[0]);
 			if(bitbals==undefined){
@@ -493,7 +492,7 @@ async function infofunc (arg, by, room, cmd,vart) {
 			await updateListingByName(client,"quotes" ,quotes);
 			
 		} else {
-			if (arg==""){
+			if (arg != ""){
 				arg=toId(by);
 			}
 			let infos = await findOneListingByName(client,"bitterballen")
