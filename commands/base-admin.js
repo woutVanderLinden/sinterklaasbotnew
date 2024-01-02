@@ -379,6 +379,7 @@ exports.commands = {
 
 		}else{
 			if(global.draftvalues.UnknownDrafting){
+				var username = global.draftvalues.turnorder[0];
 				var val= global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
 				var newlist=global.draftvalues.users[username]["draftedmons"];
 				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div>';
@@ -1511,7 +1512,7 @@ exports.commands = {
 				//return this.reply( name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.draftvalues.users[username]["erekredieten"]+" tieredpicks:"+global.draftvalues.users[username]["tieredpicks"]+" )");
 			}
 			else{
-
+				var username = global.draftvalues.turnorder[0];
 				var newlist=global.draftvalues.users[username]["draftedmons"];
 				var val= global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
 				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div><h2>tierhelper </h2><div> Erekredieten: '+global.draftvalues.users[username]["erekredieten"]+' tieredpicks: '+global.draftvalues.users[username]["tieredpicks"]+ " picksleft: " + val +'</div> ';var index=1;
@@ -1544,6 +1545,7 @@ exports.commands = {
 
 			if(global.draftvalues.UnknownDrafting){
 				var val= global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
+				var username = global.draftvalues.turnorder[0];
 				var newlist=global.draftvalues.users[username]["draftedmons"];
 				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div>';
 				var toreply= "!htmlbox "+ word + " Tier"+ global.draftvalues.currenttier[global.draftvalues.draftroom]  + " drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val;
@@ -1697,6 +1699,7 @@ exports.commands = {
 
 			if(global.draftvalues.UnknownDrafting){
 				var val= global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
+				var username = global.draftvalues.turnorder[0];
 				var newlist=global.draftvalues.users[username]["draftedmons"];
 				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div>';
 				var toreply= "!htmlbox "+ word + " Tier"+ global.draftvalues.currenttier[global.draftvalues.draftroom]  + " drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val;
@@ -2233,6 +2236,7 @@ exports.commands = {
 			global.draftvalues.possiblepicks=newlist;
 
 			if(global.draftvalues.UnknownDrafting){
+				var username=list[global.draftvalues.nextdrafter];
 				var val= global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
 				var newlist=global.draftvalues.users[username]["draftedmons"];
 				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div>';
