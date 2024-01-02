@@ -379,14 +379,14 @@ exports.commands = {
 
 		}else{
 			if(global.draftvalues.UnknownDrafting){
-				this.reply(draftmonsprintUnknown(newlist,global.draftvalues.DataOrder[global.draftvalues.picknr[toId(global.draftvalues.draftroom)]]));
+				return  this.send(global.draftvalues.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+newlist,global.draftvalues.DataOrder[global.draftvalues.picknr[toId(global.draftvalues.draftroom)]]+ "</div>");
 			}
 			else{
 				this.reply(draftmonsprint2(newlist));
 			}
 		}
 		var list=global.draftvalues.turnorder;
-		return this.reply('use ?draft {pokemonname} to draft your mons, Choose next Tier' + global.draftvalues.currenttier[toId(room)] +'mon '+list[0]);
+		return this.reply('use ?draft {pokemonname} to draft your mons, Choose next Tier' + global.draftvalues.currenttier[toId(room)] +' pokémon '+list[0]);
 	},
 	
 	forcejoin:  async function (arg, by, room, cmd) {
