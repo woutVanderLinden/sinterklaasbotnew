@@ -2029,11 +2029,11 @@ exports.commands = {
 		}
 		console.log("global.draftvalues.pointdrafting "+global.draftvalues.pointdrafting);
 		if(!global.draftvalues.pointdrafting){
-			var draftmons=global.draftvalues.todraftmons[toId(room)];
+			var draftmons=global.draftvalues.todraftmons[global.draftvalues.draftroom];
 			if(global.draftvalues.possiblepicks.includes(arg)||(global.draftvalues.possiblepicks.includes('Silvally')&&args[0]=='Silvally')){
 				global.draftvalues.users[name]["draftedmons"].push(arg);
 				saveTeamsToCloud();
-				draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["pokemon"],arg);
+				draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[global.draftvalues.draftroom]]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[global.draftvalues.draftroom]]["pokemon"],arg);
 
 			}
 			else{
@@ -2101,7 +2101,7 @@ exports.commands = {
 					}
 					if(!global.draftvalues.pointdrafting){
 
-						if( global.draftvalues.picknr[toId(global.draftvalues.draftroom)]>=draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["picks"]){
+						if( global.draftvalues.picknr[toId(global.draftvalues.draftroom)]>=draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[global.draftvalues.draftroom]]["picks"]){
 							this.send(global.draftvalues.draftroom, name +' drafted '+arg);
 							return startNewTier(room,by,this)
 						}
@@ -2128,8 +2128,8 @@ exports.commands = {
 					console.log("picknr is"+ global.draftvalues.picknr[toId(global.draftvalues.draftroom)]);
 					if(!global.draftvalues.pointdrafting){
 
-						console.log("picknr is"+draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["picks"]);
-						if( global.draftvalues.picknr[toId(global.draftvalues.draftroom)]>=draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["picks"]){
+						console.log("picknr is"+draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[global.draftvalues.draftroom]]["picks"]);
+						if( global.draftvalues.picknr[toId(global.draftvalues.draftroom)]>=draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[global.draftvalues.draftroom]]["picks"]){
 							this.send( name +' drafted '+arg);
 							return startNewTier(room,by,this)
 						}
@@ -2210,19 +2210,30 @@ exports.commands = {
 					return this.reply("the draft is over good luck and have fun everyone")
 				}
 				else{
-					global.draftvalues.currenttier[toId(room)] = global.draftvalues.tierOrder[global.draftvalues.currentPick ];
+					global.draftvalues.currenttier[global.draftvalues.draftroom] = global.draftvalues.tierOrder[global.draftvalues.currentPick ];
 				}
 
 			}
-		var newlist=pickmultimons(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["pokemon"],6,list);
+		var newlist=pickmultimons(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[global.draftvalues.draftroom]]["pokemon"],6,list);
 			global.draftvalues.possiblepicks=newlist;
 		if(toId(by)==toId(room)){
 				this.reply(draftmonsprint(newlist));
-		
-			}else{
-				this.reply(draftmonsprint2(newlist));
-		
+
+		}else{
+			if(global.draftvalues.UnknownDrafting){
+				var val= global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
+
+				var toreply= "!htmlbox Tier"+ arg + "drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val;
+				return  this.send(global.draftvalues.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprintUnknown(newlist,global.draftvalues.DataOrder[global.draftvalues.picknr[toId(global.draftvalues.draftroom)]])+ "</div>");
 			}
+			else{
+				this.reply(draftmonsprint2(newlist));
+			}
+		}
+
+		var list=global.draftvalues.turnorder;
+		return this.reply('use ?draft {pokemonname} to draft your mons, Choose next Tier' + global.draftvalues.currenttier[global.draftvalues.draftroom] +' pokémon '+list[0]);
+
 		return  this.send(global.draftvalues.draftroom,' Choose next mon '+list[0]);
 		}
 	},
@@ -3446,7 +3457,7 @@ function generateMonsList(monlist,room){
 	var i=1;
 	var list=global.draftvalues.turnorder;
 
-		resultlist.push.apply(resultlist,pickmultimons(monlist["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["pokemon"],6,list));
+		resultlist.push.apply(resultlist,pickmultimons(monlist["tierlist"]["Tier"+global.draftvalues.currenttier[global.draftvalues.draftroom]]["pokemon"],6,list));
 
 		console.log(i);
 
@@ -3462,8 +3473,8 @@ function startNewTier(room,by,elem){
 	global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
 	//saveTeamsToCloud();
 	var draftmons=global.draftvalues.todraftmons[toId(room)];
-	global.draftvalues.currenttier[toId(room)]=global.draftvalues.currenttier[toId(room)]+1;
-	console.log("draftlenght"+draftmons["length"]+ " current tier " +global.draftvalues.currenttier[toId(room)]);
+	global.draftvalues.currenttier[toId(room)]=global.draftvalues.currenttier[global.draftvalues.draftroom]+1;
+	console.log("draftlenght"+draftmons["length"]+ " current tier " +global.draftvalues.currenttier[global.draftvalues.draftroom]);
 	if(global.draftvalues.currenttier[toId(room)]>draftmons["length"]){
 		global.draftvalues.pointdrafting=true;
 		global.draftvalues.pointpicks=0;
