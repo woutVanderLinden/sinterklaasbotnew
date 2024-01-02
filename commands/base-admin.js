@@ -381,7 +381,8 @@ exports.commands = {
 			if(global.draftvalues.UnknownDrafting){
 				var username = global.draftvalues.turnorder[0];
 				var val= global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
-				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div>';
+				var draftlist=global.draftvalues.users[username]["draftedmons"];
+				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(draftlist) +'</div>';
 				var toreply= "!htmlbox "+ word + " Tier"+ global.draftvalues.tierOrder[0]  + "     drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val;
 				return  this.send(global.draftvalues.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>" + draftmonsprintUnknown(newlist,global.draftvalues.DataOrder[global.draftvalues.currentPick ])+ "</div></div>");
 			}
@@ -1545,7 +1546,8 @@ exports.commands = {
 			if(global.draftvalues.UnknownDrafting){
 				var val= global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
 				var username = global.draftvalues.turnorder[0];
-				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div>';
+				var draftlist=global.draftvalues.users[username]["draftedmons"];
+				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(draftlist) +'</div>';
 				var toreply= "!htmlbox "+ word + " Tier"+ global.draftvalues.currenttier[global.draftvalues.draftroom]  + " drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val;
 				return  this.send(global.draftvalues.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprintUnknown(newlist,global.draftvalues.DataOrder[global.draftvalues.currentPick ])+ "</div></div>");
 			}
@@ -1698,7 +1700,8 @@ exports.commands = {
 			if(global.draftvalues.UnknownDrafting){
 				var val= global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
 				var username = global.draftvalues.turnorder[0];
-				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div>';
+				var draftlist=global.draftvalues.users[username]["draftedmons"];
+				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(draftlist) +'</div>';
 				var toreply= "!htmlbox "+ word + " Tier"+ global.draftvalues.currenttier[global.draftvalues.draftroom]  + " drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val;
 				return  this.send(global.draftvalues.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprintUnknown(newlist,global.draftvalues.DataOrder[global.draftvalues.currentPick ])+ "</div></div>");
 			}
@@ -2235,7 +2238,8 @@ exports.commands = {
 			if(global.draftvalues.UnknownDrafting){
 				var username=list[global.draftvalues.nextdrafter];
 				var val= global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
-				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div>';
+				var draftlist=global.draftvalues.users[username]["draftedmons"];
+				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(draftlist) +'</div>';
 				var toreply= "!htmlbox "+ word + " Tier"+ global.draftvalues.currenttier[global.draftvalues.draftroom]  + " drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val;
 				return  this.send(global.draftvalues.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprintUnknown(newlist,global.draftvalues.DataOrder[global.draftvalues.currentPick ])+ "</div></div>");
 			}
