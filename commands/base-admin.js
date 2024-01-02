@@ -343,7 +343,7 @@ exports.commands = {
 	startunknownpackdraft: function(arg, by, room, cmd) {
 		if (!this.isRanked('admin')&& !toId(by) =="yveltalnl") return false;
 		console.log('started reading file');
-		global.draftvalues.DataOrder = ["Type1", "LowestBST", "Type2", "color", "Type1", "ability", "weightkg", "type2", "HighestBST", "eggGroups", "ability"]
+		global.draftvalues.DataOrder = ["Type1", "LowestBST", "Type2", "color", "Type1", "ability", "weightkg", "Type2", "HighestBST", "eggGroups", "ability"]
 		let rawdata = fs.readFileSync('DraftTest4.json');
 		let student = JSON.parse(rawdata);
 		let dexdata = fs.readFileSync('dexdata.json');
