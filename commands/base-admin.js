@@ -2221,6 +2221,7 @@ exports.commands = {
 			if(global.draftvalues.packdrafting){
 				global.draftvalues.currentPick++;
 				if(global.draftvalues.currentPick >= global.draftvalues.tierOrder.length){
+					global.draftvalues.draftstarted = false;
 					return this.send(global.draftvalues.draftroom, "the draft is over good luck and have fun everyone")
 				}
 				else{
