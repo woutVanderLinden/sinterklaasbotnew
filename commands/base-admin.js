@@ -3347,29 +3347,35 @@ function draftmonsprintUnknown(arg,DataType){
 		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 		var name=arg[i];
 		var data = toId(name);
+		var nam = toId(name);
 		var basestats = ["hp","atk","def","spa","spd","spe"];
 		var baseStatData = global.dexData[data]["baseStats"]
 		var list = [];
 		basestats.forEach((a) => list.push(baseStatData[a]))
+		var word="";
 		//"Type1", "LowestBST", "Type2", "color", "Type1", "ability", "weightkg", "type2", "HighestBST", "eggGroups", "ability"
 		switch(DataType){
 			case "Type1":
 				data = global.dexData[data]["types"][0];
+				word = "<p>Primary type</p>"
 				break;
 			case "Type2":
-				data = global.dexData[data]["types"][0];
-				if(global.dexData[data]["types"].length > 1){
-					data = global.dexData[data]["types"][1];
+				data = global.dexData[nam]["types"][0];
+				if(global.dexData[nam]["types"].length > 1){
+					data = global.dexData[nam]["types"][1];
 				}
+				word = "<p>Secondary type</p>"
 				break;
 			case "LowestBST":
 				//"baseStats": {"hp": 105, "atk": 105, "def": 75, "spa": 65, "spd": 100, "spe": 50},
 				console.log(list);
 				data = Math.min.apply(Math,list);
+				word = "<p>Lowest Stat</p>"
 				break;
 			case "HighestBST":
 				//"baseStats": {"hp": 105, "atk": 105, "def": 75, "spa": 65, "spd": 100, "spe": 50},
 				data = Math.max.apply(Math,list);
+				word = "<p>Highest Stat</p>"
 				break;
 			case "Ability":
 				var random = 3;
@@ -3388,18 +3394,22 @@ function draftmonsprintUnknown(arg,DataType){
 					abilitychoice = "0";
 				}
 				data =global.dexData[data]["abilities"][abilitychoice];
+				word = "<p>Ability</p>"
 				break;
 			case "weightkg":
 				data = global.dexData[data]["weightkg"];
+				word = "<p>Weight</p>"
 				break;
 			case "eggGroups":
 				data = global.dexData[data]["eggGroups"];
+				word = "<p>Egg Group</p>"
 				break;
 			default:
 				data = global.dexData[data]["num"];
+				word = "<p>Number</p>"
 				break;
 		}
-		var word="";
+
 		if(global.draftvalues.mondata[arg[i]]["Typing 2"]==undefined){
 			word ='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +'; font-size: 10pt; font-weight: bold;">';
 		}
