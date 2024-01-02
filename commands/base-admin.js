@@ -2033,9 +2033,8 @@ exports.commands = {
 			console.log("draftmons" + draftmons);
 			if(global.draftvalues.possiblepicks.includes(arg)||(global.draftvalues.possiblepicks.includes('Silvally')&&args[0]=='Silvally')){
 				global.draftvalues.users[name]["draftedmons"].push(arg);
-				saveTeamsToCloud();
 				draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[global.draftvalues.draftroom]]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[global.draftvalues.draftroom]]["pokemon"],arg);
-
+				saveTeamsToCloud();
 			}
 			else{
 					return this.reply(arg +' is no longer available.'+ name+' pick a different mon or check your spelling. ' );
@@ -3427,20 +3426,16 @@ function printPosTypes(){
 async  function saveTeamsToCloud(){
 	
 	const uri = process.env.MONGO_URI;
-	console.log(uri);
-	console.log("test");
 	
 	const client = new MongoClient(uri, { useNewUrlParser: true , useUnifiedTopology: true});
 	await client.connect();
 	try {
 		let quotes = await findOneListingByName(client,"pokemon")
-		console.log(quotes);
 		quotes["pokemon"]=global.draftvalues.users;
 		quotes["cache"]=global.draftvalues;
 		await updateListingByName(client,"pokemon" ,quotes);
 	
 	} catch (e) {
-
     		console.error(e);
 
 	}
