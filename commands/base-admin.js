@@ -2029,7 +2029,7 @@ exports.commands = {
 		}
 		console.log("global.draftvalues.pointdrafting "+global.draftvalues.pointdrafting);
 		if(!global.draftvalues.pointdrafting){
-			var draftmons=global.draftvalues.todraftmons[global.draftvalues.draftroom];
+			var draftmons=global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)];
 			if(global.draftvalues.possiblepicks.includes(arg)||(global.draftvalues.possiblepicks.includes('Silvally')&&args[0]=='Silvally')){
 				global.draftvalues.users[name]["draftedmons"].push(arg);
 				saveTeamsToCloud();
