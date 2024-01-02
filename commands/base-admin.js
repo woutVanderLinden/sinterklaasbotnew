@@ -2037,7 +2037,7 @@ exports.commands = {
 				draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(global.draftvalues.draftroom)]]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(global.draftvalues.draftroom)]]["pokemon"],arg);
 				saveTeamsToCloud();
 				if(global.draftvalues.UnknownDrafting){
-					this.reply(global.draftvalues.draftroom,'You drafted '+arg);
+					this.send(global.draftvalues.draftroom,'You drafted '+arg);
 
 				}
 			}
