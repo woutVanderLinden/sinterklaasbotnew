@@ -541,10 +541,10 @@
 "otherFormes": ["Pikachu-Cosplay", "Pikachu-Rock-Star", "Pikachu-Belle", "Pikachu-Pop-Star", "Pikachu-PhD", "Pikachu-Libre", "Pikachu-Original", "Pikachu-Hoenn", "Pikachu-Sinnoh", "Pikachu-Unova", "Pikachu-Kalos", "Pikachu-Alola", "Pikachu-Partner", "Pikachu-Starter", "Pikachu-World"],
 "formeOrder": [
 "Pikachu",
-"Pikachu-Original", "Pikachu-Hoenn", "Pikachu-Sinnoh", "Pikachu-Unova", "Pikachu-Kalos", "Pikachu-Alola", "Pikachu-Partner",
-"Pikachu-Starter",
-"Pikachu-World",
-"Pikachu-Rock-Star", "Pikachu-Belle", "Pikachu-Pop-Star", "Pikachu-PhD", "Pikachu-Libre", "Pikachu-Cosplay"
+"Pikachu-Original", "Pikachu-Hoenn", "Pikachu-Sinnoh", "Pikachu-Unova", "Pikachu-Kalos", "Pikachu-Alola", "Pikachu-Partner", // Gen 7 formes
+"Pikachu-Starter", // forme 8 in LGPE
+"Pikachu-World", // Gen 8 forme (indexed as Pikachu 9 in datamine)
+"Pikachu-Rock-Star", "Pikachu-Belle", "Pikachu-Pop-Star", "Pikachu-PhD", "Pikachu-Libre", "Pikachu-Cosplay", // formes 1-6 from Gen 6
 ],
 "canGigantamax": "G-Max Volt Crash"
 },
@@ -8782,7 +8782,7 @@
 "otherFormes": ["Arceus-Bug", "Arceus-Dark", "Arceus-Dragon", "Arceus-Electric", "Arceus-Fairy", "Arceus-Fighting", "Arceus-Fire", "Arceus-Flying", "Arceus-Ghost", "Arceus-Grass", "Arceus-Ground", "Arceus-Ice", "Arceus-Poison", "Arceus-Psychic", "Arceus-Rock", "Arceus-Steel", "Arceus-Water"],
 "formeOrder": [
 "Arceus", "Arceus-Fighting", "Arceus-Flying", "Arceus-Poison", "Arceus-Ground", "Arceus-Rock", "Arceus-Bug", "Arceus-Ghost", "Arceus-Steel",
-"Arceus-Fire", "Arceus-Water", "Arceus-Grass", "Arceus-Electric", "Arceus-Psychic", "Arceus-Ice", "Arceus-Dragon", "Arceus-Dark", "Arceus-Fairy"
+"Arceus-Fire", "Arceus-Water", "Arceus-Grass", "Arceus-Electric", "Arceus-Psychic", "Arceus-Ice", "Arceus-Dragon", "Arceus-Dark", "Arceus-Fairy",
 ]
 },
 "arceusbug": {
@@ -11755,7 +11755,8 @@
 "weightkg": 2.5,
 "color": "Black",
 "evos": ["Spewpa"],
-"eggGroups": ["Bug"]
+"eggGroups": ["Bug"],
+// TODO: Scatterbug technically has the same number of formes as Vivillon
 },
 "spewpa": {
 "num": 665,
@@ -11769,12 +11770,13 @@
 "prevo": "Scatterbug",
 "evoLevel": 9,
 "evos": ["Vivillon", "Vivillon-Fancy"],
-"eggGroups": ["Bug"]
+"eggGroups": ["Bug"],
+// TODO: Spewpa technically has the same number of formes as Vivillon
 },
 "vivillon": {
 "num": 666,
 "name": "Vivillon",
-"baseForme": "Meadow",
+"baseForme": "Meadow", // TODO: actual base forme is Icy Snow, not Meadow
 "types": ["Bug", "Flying"],
 "baseStats": {"hp": 80, "atk": 52, "def": 50, "spa": 90, "spd": 50, "spe": 89},
 "abilities": {"0": "Shield Dust", "1": "Compound Eyes", "H": "Friend Guard"},
@@ -11793,7 +11795,7 @@
 "Vivillon-Continental",
 "Vivillon-Garden",
 "Vivillon-Elegant",
-"Vivillon",
+"Vivillon", // Meadow
 "Vivillon-Modern",
 "Vivillon-Marine",
 "Vivillon-Archipelago",
@@ -11806,7 +11808,7 @@
 "Vivillon-Ocean",
 "Vivillon-Jungle",
 "Vivillon-Fancy",
-"Vivillon-Pokeball"
+"Vivillon-Pokeball",
 ]
 },
 "vivillonfancy": {
@@ -12004,7 +12006,7 @@
 "Furfrou-Dandy",
 "Furfrou-La Reine",
 "Furfrou-Kabuki",
-"Furfrou-Pharaoh"
+"Furfrou-Pharaoh",
 ]
 },
 "espurr": {
@@ -12692,7 +12694,7 @@
 "xerneas": {
 "num": 716,
 "name": "Xerneas",
-"baseForme": "Active",
+"baseForme": "Active", // Neutral is technically the base, but it can't be used in battle
 "types": ["Fairy"],
 "gender": "N",
 "baseStats": {"hp": 126, "atk": 131, "def": 95, "spa": 131, "spd": 98, "spe": 99},
@@ -12746,6 +12748,7 @@
 "tags": ["Restricted Legendary"],
 "eggGroups": ["Undiscovered"],
 "otherFormes": ["Zygarde-10%", "Zygarde-Complete"],
+// forme 2 = 10% with Power Constructor ,forme 3 = 50% with Power Construct
 "formeOrder": ["Zygarde", "Zygarde-10%", "Zygarde-10%", "Zygarde", "Zygarde-Complete"]
 },
 "zygarde10": {
@@ -13272,7 +13275,7 @@
 "color": "Brown",
 "evos": ["Lycanroc", "Lycanroc-Midnight", "Lycanroc-Dusk"],
 "eggGroups": ["Field"],
-"formeOrder": ["Rockruff", "Rockruff"]
+"formeOrder": ["Rockruff", "Rockruff"], // TODO: Rockruff-Dusk
 },
 "lycanroc": {
 "num": 745,
@@ -13745,7 +13748,7 @@
 "otherFormes": ["Silvally-Bug", "Silvally-Dark", "Silvally-Dragon", "Silvally-Electric", "Silvally-Fairy", "Silvally-Fighting", "Silvally-Fire", "Silvally-Flying", "Silvally-Ghost", "Silvally-Grass", "Silvally-Ground", "Silvally-Ice", "Silvally-Poison", "Silvally-Psychic", "Silvally-Rock", "Silvally-Steel", "Silvally-Water"],
 "formeOrder": [
 "Silvally", "Silvally-Fighting", "Silvally-Flying", "Silvally-Poison", "Silvally-Ground", "Silvally-Rock", "Silvally-Bug", "Silvally-Ghost", "Silvally-Steel",
-"Silvally-Fire", "Silvally-Water", "Silvally-Grass", "Silvally-Electric", "Silvally-Psychic", "Silvally-Ice", "Silvally-Dragon", "Silvally-Dark", "Silvally-Fairy"
+"Silvally-Fire", "Silvally-Water", "Silvally-Grass", "Silvally-Electric", "Silvally-Psychic", "Silvally-Ice", "Silvally-Dragon", "Silvally-Dark", "Silvally-Fairy",
 ]
 },
 "silvallybug": {
@@ -14035,8 +14038,9 @@
 "otherFormes": ["Minior-Meteor"],
 "cosmeticFormes": ["Minior-Orange", "Minior-Yellow", "Minior-Green", "Minior-Blue", "Minior-Indigo", "Minior-Violet"],
 "formeOrder": [
+// All of the colored Minior Meteor formes (unsupported by PS) are numbers 0-6
 "Minior-Meteor", "Minior-Meteor", "Minior-Meteor", "Minior-Meteor", "Minior-Meteor", "Minior-Meteor", "Minior-Meteor",
-"Minior", "Minior-Orange", "Minior-Yellow", "Minior-Green", "Minior-Blue", "Minior-Indigo", "Minior-Violet"
+"Minior", "Minior-Orange", "Minior-Yellow", "Minior-Green", "Minior-Blue", "Minior-Indigo", "Minior-Violet",
 ]
 },
 "miniormeteor": {
@@ -19491,6 +19495,7 @@
 "eggGroups": ["Undiscovered"],
 "gen": 9
 },
+// NOTE: PokeStar "formes" are not actually formes and thus do not have a formeOrder
 "pokestarsmeargle": {
 "num": -5000,
 "name": "Pokestar Smeargle",
@@ -19725,4 +19730,4 @@
 "eggGroups": ["Undiscovered"],
 "gen": 5
 }
-}
+};

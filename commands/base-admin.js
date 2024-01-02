@@ -346,7 +346,7 @@ exports.commands = {
 		global.draftvalues.DataOrder = ["Type1", "LowestBST", "Type2", "color", "Type1", "ability", "weightkg", "type2", "HighestBST", "eggGroups", "ability"]
 		let rawdata = fs.readFileSync('DraftTest4.json');
 		let student = JSON.parse(rawdata);
-		let dexdata = fs.readFileSync('Dexdata.json');
+		let dexdata = fs.readFileSync('dexdata.json');
 		global.dexData= JSON.parse(dexdata);
 		console.log(student);
 		global.draftvalues.currenttier[toId(room)]=1;
