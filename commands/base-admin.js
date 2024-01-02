@@ -3327,7 +3327,7 @@ function draftmonsprintUnknown(arg,DataType){
 	var color = "rgb(255, 204, 204)";
 
 
-	//"Type1", "LowestBST", "Type2", "color", "Type1", "ability", "weightkg", "type2", "HighestBST", "eggGroups", "ability"
+
 
 
 	var result='';
@@ -3347,7 +3347,53 @@ function draftmonsprintUnknown(arg,DataType){
 		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 		var name=arg[i];
 		var data = toId(name);
+		var basestats = ["hp","atk","def","spa","spd","spe"];
+		var baseStatData = global.dexData[data]["basestats"]
+		var list = [];
+		basestats.forEach((a) => list.push(baseStatData[a]))
+		//"Type1", "LowestBST", "Type2", "color", "Type1", "ability", "weightkg", "type2", "HighestBST", "eggGroups", "ability"
 		switch(DataType){
+			case "Type1":
+				data = global.dexData[data]["types"][0];
+				break;
+			case "Type2":
+				data = global.dexData[data]["types"][0];
+				if(global.dexData[data]["types"].length > 1){
+					data = global.dexData[data]["types"][1];
+				}
+				break;
+			case "LowestBST":
+				//"baseStats": {"hp": 105, "atk": 105, "def": 75, "spa": 65, "spd": 100, "spe": 50},
+				data = Math.min(list);
+				break;
+			case "HighestBST":
+				//"baseStats": {"hp": 105, "atk": 105, "def": 75, "spa": 65, "spd": 100, "spe": 50},
+				data = Math.max(list);
+				break;
+			case "Ability":
+				var random = 3;
+				var abilitychoice = "0";
+				switch(random){
+					case 1:
+						abilitychoice = "1";
+						break;
+					case 2:
+						abilitychoice = "H";
+						break;
+					default:
+						break;
+				}
+				if(global.dexData[data]["abilities"][abilitychoice] == undefined){
+					abilitychoice = "0";
+				}
+				data =global.dexData[data]["abilities"][abilitychoice];
+				break;
+			case "weightkg":
+				data = global.dexData[data]["weightkg"];
+				break;
+			case "eggGroups":
+				data = global.dexData[data]["eggGroups"];
+				break;
 			default:
 				data = global.dexData[data]["num"];
 				break;
