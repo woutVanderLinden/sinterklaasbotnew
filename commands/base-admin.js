@@ -3309,14 +3309,10 @@ function draftmonsprintUnknown(arg,DataType){
 	//arg=arg.sort();
 	//color = global.draftvalues.typingcolors[typing];
 	var color = "rgb(255, 204, 204)";
-	arg = toId(arg);
-	var data = arg
+
+
 	//"Type1", "LowestBST", "Type2", "color", "Type1", "ability", "weightkg", "type2", "HighestBST", "eggGroups", "ability"
-	switch(DataType){
-		default:
-			data = global.dexData[arg]["num"];
-			break;
-	}
+
 
 	var result='';
 	for (var i = 0; i < arg.length; i++) {
@@ -3334,6 +3330,12 @@ function draftmonsprintUnknown(arg,DataType){
 		//Do something
 		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 		var name=arg[i];
+		var data = name;
+		switch(DataType){
+			default:
+				data = global.dexData[name]["num"];
+				break;
+		}
 		var word="";
 		if(global.draftvalues.mondata[arg[i]]["Typing 2"]==undefined){
 			word ='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +'; font-size: 10pt; font-weight: bold;">';
