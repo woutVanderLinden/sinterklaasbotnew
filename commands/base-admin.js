@@ -3329,7 +3329,7 @@ function draftmonsprintUnknown(arg,DataType){
 
 		//Do something
 		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
-		var name=arg[i];
+		var name=toId(arg[i]);
 		var data = name;
 		switch(DataType){
 			default:
