@@ -2030,7 +2030,7 @@ exports.commands = {
 		console.log("global.draftvalues.pointdrafting "+global.draftvalues.pointdrafting);
 		if(!global.draftvalues.pointdrafting){
 			var draftmons=global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)];
-			console.log("draftmons" + draftmons);
+			console.log("draftmons" + draftmons["tierlist"]);
 			if(global.draftvalues.possiblepicks.includes(arg)||(global.draftvalues.possiblepicks.includes('Silvally')&&args[0]=='Silvally')){
 				global.draftvalues.users[name]["draftedmons"].push(arg);
 				draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(global.draftvalues.draftroom)]]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[global.draftvalues.draftroom]]["pokemon"],arg);
@@ -3343,11 +3343,11 @@ function draftmonsprintUnknown(arg,DataType){
 
 		//Do something
 		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
-		var name=toId(arg[i]);
-		var data = name;
+		var name=arg[i];
+		var data = toId(name);
 		switch(DataType){
 			default:
-				data = global.dexData[name]["num"];
+				data = global.dexData[data]["num"];
 				break;
 		}
 		var word="";
