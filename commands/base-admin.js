@@ -3404,6 +3404,10 @@ function draftmonsprintUnknown(arg,DataType){
 				data = global.dexData[data]["eggGroups"];
 				word = "<p>Egg Group</p>"
 				break;
+			case "color":
+				data = global.dexData[data]["color"];
+				word = "<p>Color</p>"
+				break;
 			default:
 				data = global.dexData[data]["num"];
 				word = "<p>Number</p>"
@@ -3411,10 +3415,10 @@ function draftmonsprintUnknown(arg,DataType){
 		}
 
 		if(global.draftvalues.mondata[arg[i]]["Typing 2"]==undefined){
-			word ='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +'; font-size: 10pt; font-weight: bold;">';
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +'; font-size: 10pt; font-weight: bold;">';
 		}
 		else{
-			word ='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +'; font-size: 10pt; font-weight: bold;">';
+			word = word +'<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +'; font-size: 10pt; font-weight: bold;">';
 		}
 		word=word+'<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap">'+data+'</a>';
 		word=word+'</button>';
