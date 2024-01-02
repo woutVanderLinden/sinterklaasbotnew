@@ -3364,11 +3364,12 @@ function draftmonsprintUnknown(arg,DataType){
 				break;
 			case "LowestBST":
 				//"baseStats": {"hp": 105, "atk": 105, "def": 75, "spa": 65, "spd": 100, "spe": 50},
-				data = Math.min(list);
+				console.log(list);
+				data = Math.min.apply(Math,list);
 				break;
 			case "HighestBST":
 				//"baseStats": {"hp": 105, "atk": 105, "def": 75, "spa": 65, "spd": 100, "spe": 50},
-				data = Math.max(list);
+				data = Math.max.apply(Math,list);
 				break;
 			case "Ability":
 				var random = 3;
