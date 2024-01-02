@@ -379,6 +379,8 @@ exports.commands = {
 
 		}else{
 			if(global.draftvalues.UnknownDrafting){
+				var val= global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
+
 				var toreply= "!htmlbox Tier"+ arg + "drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val;
 				return  this.send(global.draftvalues.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprintUnknown(newlist,global.draftvalues.DataOrder[global.draftvalues.picknr[toId(global.draftvalues.draftroom)]])+ "</div>");
 			}
