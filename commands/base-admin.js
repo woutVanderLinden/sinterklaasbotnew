@@ -3377,7 +3377,7 @@ function draftmonsprintUnknown(arg,DataType){
 				data = Math.max.apply(Math,list);
 				word = "<p>Highest Stat</p>"
 				break;
-			case "Ability":
+			case "ability":
 				var random = 3;
 				var abilitychoice = "0";
 				switch(random){
