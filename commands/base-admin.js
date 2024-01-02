@@ -2033,6 +2033,7 @@ exports.commands = {
 			console.log("draftmons" + draftmons["tierlist"]);
 			if(global.draftvalues.possiblepicks.includes(arg)||(global.draftvalues.possiblepicks.includes('Silvally')&&args[0]=='Silvally')){
 				global.draftvalues.users[name]["draftedmons"].push(arg);
+				console.log(global.draftvalues.currenttier[toId(global.draftvalues.draftroom)]);
 				draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(global.draftvalues.draftroom)]]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[global.draftvalues.draftroom]]["pokemon"],arg);
 				saveTeamsToCloud();
 			}
