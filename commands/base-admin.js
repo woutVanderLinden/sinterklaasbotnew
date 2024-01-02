@@ -2036,6 +2036,10 @@ exports.commands = {
 				console.log(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(global.draftvalues.draftroom)]]);
 				draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(global.draftvalues.draftroom)]]["pokemon"]=removeItemOnce(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(global.draftvalues.draftroom)]]["pokemon"],arg);
 				saveTeamsToCloud();
+				if(global.draftvalues.UnknownDrafting){
+					this.reply(global.draftvalues.draftroom,'You drafted '+arg);
+
+				}
 			}
 			else{
 					return this.reply(arg +' is no longer available.'+ name+' pick a different mon or check your spelling. ' );
@@ -2217,10 +2221,7 @@ exports.commands = {
 			}
 		var newlist=pickmultimons(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[global.draftvalues.draftroom]]["pokemon"],6,list);
 			global.draftvalues.possiblepicks=newlist;
-		if(toId(by)==toId(room)){
-				this.reply(draftmonsprint(newlist));
 
-		}else{
 			if(global.draftvalues.UnknownDrafting){
 				var val= global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
 
@@ -2230,10 +2231,10 @@ exports.commands = {
 			else{
 				this.reply(draftmonsprint2(newlist));
 			}
-		}
+
 
 		var list=global.draftvalues.turnorder;
-		return this.reply('use ?draft {pokemonname} to draft your mons, Choose next Tier' + global.draftvalues.currenttier[global.draftvalues.draftroom] +' pokémon '+list[0]);
+		return this.reply(global.draftvalues.draftroom,' Choose next Tier' + global.draftvalues.currenttier[global.draftvalues.draftroom] +' pokémon '+list[0]);
 
 		return  this.send(global.draftvalues.draftroom,' Choose next mon '+list[0]);
 		}
