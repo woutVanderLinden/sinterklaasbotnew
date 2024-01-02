@@ -395,10 +395,13 @@ exports.commands = {
 		var list=global.draftvalues.turnorder;
 		return this.reply('use ?draft {pokemonname} to draft your mons, Choose next Tier' + global.draftvalues.currenttier[toId(room)] +' pokémon '+list[0]);
 	},
+
 	joker:  async function (arg, by, room, cmd) {
 		if (global.draftvalues.jokerused){
 			return this.reply("Your joker was already used.");
 		}
+		var list=global.draftvalues.turnorder;
+		var newlist = global.draftvalues.possiblepicks;
 		this.reply("joker was used");
 		global.draftvalues.jokerused = true;
 		var username = global.draftvalues.turnorder[0];
