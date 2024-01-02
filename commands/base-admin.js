@@ -3388,7 +3388,7 @@ function draftmonsprintUnknown(arg,DataType){
 				word = "<p>Highest Stat</p>"
 				break;
 			case "ability":
-				var random = getRandomInt(3);
+				var random = Math.floor(Math.random() * 3);
 				var abilitychoice = "0";
 				switch(random){
 					case 1:
@@ -3412,7 +3412,7 @@ function draftmonsprintUnknown(arg,DataType){
 				break;
 			case "eggGroups":
 				var random = 2;
-				var abilitychoice = getRandomInt(random)
+				var abilitychoice =  Math.floor(Math.random() * random);
 				if(global.dexData[data]["eggGroups"][abilitychoice] == undefined){
 					abilitychoice = "0";
 				}
