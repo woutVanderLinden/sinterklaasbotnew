@@ -381,10 +381,9 @@ exports.commands = {
 			if(global.draftvalues.UnknownDrafting){
 				var username = global.draftvalues.turnorder[0];
 				var val= global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
-				var newlist=global.draftvalues.users[username]["draftedmons"];
 				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div>';
-				var toreply= "!htmlbox "+ word + " Tier"+ global.draftvalues.currenttier[global.draftvalues.draftroom]  + " drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val;
-				return  this.send(global.draftvalues.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprintUnknown(newlist,global.draftvalues.DataOrder[global.draftvalues.currentPick ])+ "</div></div>");
+				var toreply= "!htmlbox "+ word + " Tier"+ global.draftvalues.tierOrder[0]  + "     drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val;
+				return  this.send(global.draftvalues.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>" + draftmonsprintUnknown(newlist,global.draftvalues.DataOrder[global.draftvalues.currentPick ])+ "</div></div>");
 			}
 			else{
 				this.reply(draftmonsprint2(newlist));
@@ -1546,7 +1545,6 @@ exports.commands = {
 			if(global.draftvalues.UnknownDrafting){
 				var val= global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
 				var username = global.draftvalues.turnorder[0];
-				var newlist=global.draftvalues.users[username]["draftedmons"];
 				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div>';
 				var toreply= "!htmlbox "+ word + " Tier"+ global.draftvalues.currenttier[global.draftvalues.draftroom]  + " drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val;
 				return  this.send(global.draftvalues.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprintUnknown(newlist,global.draftvalues.DataOrder[global.draftvalues.currentPick ])+ "</div></div>");
@@ -1700,7 +1698,6 @@ exports.commands = {
 			if(global.draftvalues.UnknownDrafting){
 				var val= global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
 				var username = global.draftvalues.turnorder[0];
-				var newlist=global.draftvalues.users[username]["draftedmons"];
 				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div>';
 				var toreply= "!htmlbox "+ word + " Tier"+ global.draftvalues.currenttier[global.draftvalues.draftroom]  + " drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val;
 				return  this.send(global.draftvalues.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprintUnknown(newlist,global.draftvalues.DataOrder[global.draftvalues.currentPick ])+ "</div></div>");
@@ -2238,7 +2235,6 @@ exports.commands = {
 			if(global.draftvalues.UnknownDrafting){
 				var username=list[global.draftvalues.nextdrafter];
 				var val= global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
-				var newlist=global.draftvalues.users[username]["draftedmons"];
 				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(newlist) +'</div>';
 				var toreply= "!htmlbox "+ word + " Tier"+ global.draftvalues.currenttier[global.draftvalues.draftroom]  + " drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val;
 				return  this.send(global.draftvalues.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprintUnknown(newlist,global.draftvalues.DataOrder[global.draftvalues.currentPick ])+ "</div></div>");
@@ -3340,11 +3336,6 @@ function draftmonsprintUnknown(arg,DataType){
 	//arg=arg.sort();
 	//color = global.draftvalues.typingcolors[typing];
 	var color = "rgb(255, 204, 204)";
-
-
-
-
-
 	var result='';
 	for (var i = 0; i < arg.length; i++) {
 		console.log("here "+arg[i]);
@@ -3443,8 +3434,6 @@ function draftmonsprintUnknown(arg,DataType){
 		word=word+'<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap">'+data+'</a>';
 		word=word+'</button>';
 		result=result+word;
-
-
 	}
 	result=result.substring(0,result.length-1);
 	result=result;
