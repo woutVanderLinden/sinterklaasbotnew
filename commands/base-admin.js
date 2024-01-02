@@ -2392,6 +2392,7 @@ exports.commands = {
 		global.draftvalues.draftroom = toId(room);
 		global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)]=student;
 		global.draftvalues.pointdrafting=true;
+		global.draftvalues.turnorder = [];
 		global.draftvalues.draftroom= room;
 		console.log(global.draftvalues.draftroom);
 		if(global.draftvalues.turnorder==undefined){
