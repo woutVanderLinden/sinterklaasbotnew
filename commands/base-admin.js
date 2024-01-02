@@ -3306,9 +3306,9 @@ function draftmonsprint5(arg,color){
 }
 
 function draftmonsprintUnknown(arg,DataType){
-	arg=arg.sort();
+	//arg=arg.sort();
 	//color = global.draftvalues.typingcolors[typing];
-	var color = rgb(255, 204, 204);
+	var color = "rgb(255, 204, 204)";
 	var data = arg
 	//"Type1", "LowestBST", "Type2", "color", "Type1", "ability", "weightkg", "type2", "HighestBST", "eggGroups", "ability"
 	switch(DataType){
