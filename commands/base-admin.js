@@ -307,6 +307,7 @@ exports.commands = {
 		global.draftvalues.currentPick = 0;
 		global.draftvalues.packdrafting=true;
 		global.draftvalues.draftstarted=true;
+		global draftvalues.jokerused = false;
 		global.draftvalues.pointdrafting = false;
 		 global.draftvalues.picknr[toId(global.draftvalues.draftroom)]=0;
 		global.draftvalues.nextdrafter=0;
@@ -357,6 +358,7 @@ exports.commands = {
 		global.draftvalues.UnknownDrafting=true;
 		global.draftvalues.draftstarted=true;
 		global.draftvalues.pointdrafting = false;
+		global.draftvalues.jokerused = false;
 		global.draftvalues.picknr[toId(global.draftvalues.draftroom)]=0;
 		global.draftvalues.nextdrafter=0;
 		//this.reply('draft order is '+result);
@@ -392,6 +394,20 @@ exports.commands = {
 		}
 		var list=global.draftvalues.turnorder;
 		return this.reply('use ?draft {pokemonname} to draft your mons, Choose next Tier' + global.draftvalues.currenttier[toId(room)] +' pokémon '+list[0]);
+	},
+	joker:  async function (arg, by, room, cmd) {
+		if (global.draftvalues.jokerused){
+			return this.reply("Your joker was already used.");
+		}
+		this.reply("joker was used");
+		global.draftvalues.jokerused = true;
+		var username = global.draftvalues.turnorder[0];
+		var val= global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
+		var draftlist=global.draftvalues.users[username]["draftedmons"];
+		var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(draftlist) +'</div>';
+		var toreply= "!htmlbox "+ word + " Tier"+ global.draftvalues.tierOrder[0]  + "     drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val;
+		return  this.send(global.draftvalues.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>" + draftmonsprint5(newlist)+ "</div></div>");
+
 	},
 	
 	forcejoin:  async function (arg, by, room, cmd) {
