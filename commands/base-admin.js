@@ -606,7 +606,7 @@ exports.commands = {
 	},
 	viewdraft: async function (arg, by, room, cmd){
 		if(toId(room)=="nederlands"){
-			this.reply("currently disabled");
+			return this.reply("currently disabled");
 		}
 		if(toId(by)!=toId(room)){
 			if (!by.startsWith("+")&&!by.startsWith("#")&&!by.startsWith("%")&&!by.startsWith("@")){
