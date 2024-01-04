@@ -3495,7 +3495,7 @@ function draftmonsprintUnknown(arg,DataType){
 				break;
 		}
 
-		if(global.draftvalues.mondata[arg[i]]["Typing 2"]==undefined){
+		if(global.draftvalues.mondata[arg[i]] == undefined || global.draftvalues.mondata[arg[i]]["Typing 2"]==undefined){
 			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+i +'" style="background-color:'+color +'; font-size: 10pt; font-weight: bold;">';
 		}
 		else{
