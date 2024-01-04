@@ -3381,7 +3381,7 @@ function draftmonsprint7(arg,color){
 		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 		var name=arg[i];
 		var word="";
-		if(global.draftvalues.mondata[arg[i]]["Typing 2"]==undefined){
+		if(global.draftvalues.mondata[arg[i]] == undefined || global.draftvalues.mondata[arg[i]]["Typing 2"]==undefined){
 			word ='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+i +'" style="background-color:'+color +'; font-size: 10pt; font-weight: bold;">';
 		}
 		else{
