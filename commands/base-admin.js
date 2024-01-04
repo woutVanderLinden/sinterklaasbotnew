@@ -344,15 +344,15 @@ exports.commands = {
 	startunknownpackdraft: function(arg, by, room, cmd) {
 		if (!this.isRanked('admin')&& !toId(by) =="yveltalnl") return false;
 		console.log('started reading file');
-		global.draftvalues.DataOrder = [ "LowestBST","Type1",  "ability", "Type2", "color", "Type1",  "weightkg", "Type2", "HighestBST", "eggGroups", "ability"]
-		let rawdata = fs.readFileSync('DraftTest4.json');
+		global.draftvalues.DataOrder = [ "LowestBST","Type1",  "ability", "Type2", "color", "Type1","heightm", "HighestBST", "ability","weightkg", "eggGroups", "Type2"]
+		let rawdata = fs.readFileSync('DraftGen9Kitakami.json');
 		let student = JSON.parse(rawdata);
 		let dexdata = fs.readFileSync('dexdata.json');
 		global.dexData= JSON.parse(dexdata);
 		console.log(student);
 		global.draftvalues.currenttier[toId(room)]=1;
 		global.draftvalues.todraftmons[toId(room)]=student;
-		global.draftvalues.tierOrder = [1,1,2,2,3,3,4,4,5,5];
+		global.draftvalues.tierOrder = [1,1,2,2,3,3,3,4,4,5,5];
 		global.draftvalues.currentPick = 0;
 		global.draftvalues.packdrafting=true;
 		global.draftvalues.UnknownDrafting=true;
@@ -385,7 +385,7 @@ exports.commands = {
 				var val= global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
 				var draftlist=global.draftvalues.users[username]["draftedmons"];
 				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(draftlist) +'</div>';
-				var toreply= "!htmlbox "+ word + " Tier"+ global.draftvalues.tierOrder[0]  + "     drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val;
+				var toreply= "!htmlbox "+ word + " <h2>Tier"+ global.draftvalues.tierOrder[0]  + "      drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val + "</h2>";
 				return  this.send(global.draftvalues.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>" + draftmonsprintUnknown(newlist,global.draftvalues.DataOrder[global.draftvalues.currentPick ])+ "</div></div>");
 			}
 			else{
@@ -409,7 +409,7 @@ exports.commands = {
 		var draftlist=global.draftvalues.users[username]["draftedmons"];
 		var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(draftlist) +'</div>';
 		var toreply= "!htmlbox "+ word + " Tier"+ global.draftvalues.tierOrder[0]  + "     drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val;
-		return  this.send(global.draftvalues.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>" + draftmonsprint5(newlist)+ "</div></div>");
+		return  this.send(global.draftvalues.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>" + draftmonsprint7(newlist)+ "</div></div>");
 
 	},
 	
@@ -1878,6 +1878,12 @@ exports.commands = {
 		if(global.draftvalues.typedrafting){
 			 list=global.draftvalues.typeturnorder;
 		}
+		if(global.draftvalues.UnknownDrafting){
+			if(parseInt(arg) == undefined){
+				return this.reply("please pick a number");
+			}
+			arg = global.draftvalues.possiblepicks[parseInt(arg)];
+		}
 
 
 		if(list[global.draftvalues.nextdrafter]!=toId(by) && !global.draftvalues.typedrafting){
@@ -2295,7 +2301,7 @@ exports.commands = {
 		if (!this.isRanked('admin')) return false;
 		this.reply('groupchat made');
 		this.reply('/makegroupchat '+arg);
-		this.send('/invite kingbaruk,'+'groupchat-sinterklaas-'+arg);
+		this.send(toId(by),'/invite '+ toId(by) +',groupchat-sinterklaas-'+arg);
 	
 	},
 	invite: function (arg, by, room, cmd) {
@@ -3356,6 +3362,42 @@ function draftmonsprint5(arg,color){
 	return result;
 }
 
+function draftmonsprint7(arg,color){
+	arg=arg.sort();
+	//color = global.draftvalues.typingcolors[typing];
+
+
+	var result='';
+	for (var i = 0; i < arg.length; i++) {
+		console.log("here "+arg[i]);
+		var color2 = "rgb(0,0,0)";
+		if(global.draftvalues.mondata[arg[i]]["Typing1"]!=undefined){
+			color = global.draftvalues.typingcolors[global.draftvalues.mondata[arg[i]]["Typing1"]];
+		}
+		if(global.draftvalues.mondata[arg[i]]["Typing 2"]!=undefined){
+			color2 = global.draftvalues.typingcolors[global.draftvalues.mondata[arg[i]]["Typing 2"]];
+		}
+		//Do something
+		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
+		var name=arg[i];
+		var word="";
+		if(global.draftvalues.mondata[arg[i]]["Typing 2"]==undefined){
+			word ='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+i +'" style="background-color:'+color +'; font-size: 10pt; font-weight: bold;">';
+		}
+		else{
+			word ='<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+i +'" style="background-color:'+color +'; font-size: 10pt; font-weight: bold;">';
+		}
+		word=word+'<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="'+name+'" style="vertical-align:-7px;margin:-2px" />'+name+'</a>';
+		word=word+'</button>';
+		result=result+word;
+
+
+	}
+	result=result.substring(0,result.length-1);
+	result=result;
+	return result;
+}
+
 function draftmonsprintUnknown(arg,DataType){
 	//arg=arg.sort();
 	//color = global.draftvalues.typingcolors[typing];
@@ -3430,6 +3472,10 @@ function draftmonsprintUnknown(arg,DataType){
 				data = global.dexData[data]["weightkg"];
 				word = "<p>Weight</p>"
 				break;
+			case "heightm":
+				data = global.dexData[data]["heightm"];
+				word = "<p>Height</p>"
+				break;
 			case "eggGroups":
 				var random = 2;
 				var abilitychoice =  Math.floor(Math.random() * random);
@@ -3450,10 +3496,10 @@ function draftmonsprintUnknown(arg,DataType){
 		}
 
 		if(global.draftvalues.mondata[arg[i]]["Typing 2"]==undefined){
-			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +'; font-size: 10pt; font-weight: bold;">';
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+i +'" style="background-color:'+color +'; font-size: 10pt; font-weight: bold;">';
 		}
 		else{
-			word = word +'<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+name +'" style="background-color:'+color +'; font-size: 10pt; font-weight: bold;">';
+			word = word +'<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+i +'" style="background-color:'+color +'; font-size: 10pt; font-weight: bold;">';
 		}
 		word=word+'<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap">'+data+'</a>';
 		word=word+'</button>';

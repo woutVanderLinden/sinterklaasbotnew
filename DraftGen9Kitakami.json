@@ -1,0 +1,39 @@
+{
+  "tierlist":{"Tier1":
+{
+"picks":2,
+"points":180,
+"pokemon":["Archaludon","Baxcalibur","Cinderace","Clefable","Corviknight","Dragapult","Dragonite","Enamorus","Excadrill","Garchomp","Gholdengo","Gliscor","Gouging Fire","Great Tusk","Greninja","Heatran","Hoopa-Unbound","Hydreigon","Iron Hands","Iron Moth","Iron Treads","Jirachi","Kingambit","Kommo-o","Landorus-Therian","Latias","Latios","Manaphy","Meowscarada","Ogerpon-Hearthflame","Ogerpon-Wellspring","Quaquaval","Raging Bolt","Rillaboom","Salamence","Samurott-Hisui","Sneasler","Ting-Lu","Tornadus-Therian","Volcarona","Walking Wake","Weavile","Zapdos","Zapdos-Galar"],
+},
+"Tier2":
+{
+"picks":3,
+"points":120,
+"pokemon":["Alomomola","Amoonguss","Arcanine","Arcanine-Hisui","Azelf","Azumarill","Barraskewda","Basculegion","Basculegion-F","Blissey","Breloom","Ceruledge","Clodsire","Cobalion","Conkeldurr","Crawdaunt","Cresselia","Dondozo","Empoleon","Enamorus-Therian","Entei","Espathra","Fezandipiti","Gallade","Garganacl","Gastrodon","Gengar","Glimmora","Goodra","Goodra-Hisui","Grimmsnarl","Gyarados","Hatterene","Hawlucha","Haxorus","Hippowdon","Hydrapple","Incineroar","Infernape","Iron Crown","Iron Jugulis","Iron Leaves","Keldeo","Kleavor","Krookodile","Lilligant-Hisui","Lycanroc-Dusk","Magnezone","Mamoswine","Mandibuzz","Meloetta","Metagross","Mienshao","Milotic","Moltres","Munkidori","Ninetales-Alola","Ogerpon","Ogerpon-Cornerstone","Okidogi","Porygon-Z","Primarina","Raikou","Regidrago","Regieleki","Reuniclus","Rotom-Heat","Rotom-Wash","Sandy Shocks","Scizor","Scream Tail","Serperior","Skarmory","Skeledirge","Slither Wing","Slowking","Slowking-Galar","Snorlax","Staraptor","Suicune","Swampert","Sylveon","Terrakion","Thundurus","Thundurus-Therian","Tinkaton","Torkoal","Tornadus","Toxapex","Toxtricity","Tyranitar","Weezing-Galar","Zarude","Zoroark-Hisui"],
+},
+"Tier3":
+{
+"picks":2,
+"points":100,
+"pokemon":["Araquanid","Armarouge","Articuno-Galar","Bisharp","Blastoise","Blaziken","Bronzong","Brute Bonnet","Cetitan","Chandelure","Chansey","Chesnaught","Cloyster","Comfey","Copperajah","Cyclizar","Decidueye","Decidueye-Hisui","Delphox","Diancie","Ditto","Donphan","Dragalge","Drednaw","Dudunsparce","Duraludon","Eelektross","Emboar","Espeon","Feraligatr (maybe)","Flamigo","Floatzel","Florges","Flygon","Forretress","Galvantula","Gardevoir","Glastrier","Grafaiai","Hariyama","Heracross","Hitmonlee","Hoopa","Inteleon","Iron Thorns","Jolteon","Kilowattrel","Kingdra","Klefki","Lokix","Lucario","Maushold","Medicham","Mesprit","Mimikyu","Mismagius - maybe","Moltres-Galar","Mudsdale","Muk-Alola","Ninetales","Noivern","Oricorio","Overqwil","Pawmot","Pelipper","Politoed","Polteageist","Porygon2","Primeape","Registeel","Revavroom","Rhyperior","Ribombee","Rotom-Mow","Salazzle","Scrafty","Shaymin","Sinistcha","Slowbro","Slowbro-Galar","Talonflame","Tauros-Paldeafire","Tauros-Paldeawater","Tentacruel","Toedscruel","Torterra","Toxicroak","Tsareena","Typhlosion-Hisui","Umbreon","Uxie","Vaporeon","Venusaur","Vikavolt","Virizion","Whimsicott","Wo-Chien","Yanmega","Zoroark"]
+},
+"Tier4":
+{
+"picks":2,
+"points":60,
+"pokemon":["Abomasnow","Alcremie","Altaria","Ambipom","Appletun","Arboliva","Articuno","Avalugg","Basculin","Bellibolt","Bombirdier","Brambleghast","Braviary","Bruxish","Charizard","Cinccino - maybe","Clawitzer","Coalossal","Cryogonal","Dachsbun","Dipplin","Dodrio","Drifblim","Electivire","Exeggutor-Alola","Farigiraf","Flapple","Froslass","Frosmoth","Gligar","Golurk","Granbull","Gurdurr","Haunter","Hitmonchan","Hitmontop","Honchkrow","Houndstone","Indeedee","Klawf","Komala","Lanturn","Lilligant (Maybe)","Ludicolo","Lurantis","Lycanroc","Mabosstiff","Magmortar","Magneton","Masquerain","Minior","Morpeko","Muk","Orthworm","Palossand","Passimian","Persian-Alola","Piloswine","Pincurchin","Poliwrath","Quagsire","Qwilfish","Qwilfish-Hisui","Raichu","Raichu-Alola","Regice","Regirock","Rhydon","Rotom","Rotom-Fan","Rotom-Frost","Sableye","Samurott","Sandaconda","Sandslash-Alola","Sceptile","Scovillain","Scyther","Shiftry","Skuntank","Smeargle","Spiritomb","Squawkabilly","Tatsugiri","Tauros","Tauros-Paldea","Typhlosion","Ursaring","Veluza","Venomoth","Vileplume","Weezing","Zangoose"],
+},
+"Tier5":
+{
+"picks":2,
+"points":40,
+"pokemon":["Ampharos","Arbok","Ariados","Avalugg-Hisui","Banette","Bastiodon","Beartic","Bellossom","Cacturne","Camerupt","Carbink","Chimecho","Crabominable","Cramorant","Crocalor","Dedenne","Dewgong","Dugtrio","Dugtrio-Alola","Dunsparce","Dusknoir","Eiscue","Electrode","Exeggutor","Falinks","Flareon","Furret","Glaceon","Glalie","Gogoat","Golduck","Golem","Golem-Alola","Gothitelle","Greedent","Grumpig","Gumshoos","Houndoom","Hypno","Illumise","Jumpluff","Kricketune","Lapras","Leafeon","Leavanny","Lumineon","Luxray","Lycanroc-Midnight","Magcargo","Malamar","Meganium","Meowstic","Naclstack","Noctowl","Oranguru","Perrserker","Persian","Phione","Pikachu","Probopass","Pyroar","Rabsca","Rampardos","Regigigas","Sandslash","Sawsbuck","Seviper","Slaking","Spidops","Stonjourner","Sudowoodo","Sunflora","Swalot","Toucannon","Trevenant","Tropius","Vespiquen","Victreebel","Vigoroth","Vivillon","Volbeat","Whiscash","Wigglytuff","Wugtrio","Zebstrika"],
+}
+
+},
+
+"freepicks":11,
+"length":5,
+"TierPicks":[1,2,2,3,4,5],
+"Points":480
+}
