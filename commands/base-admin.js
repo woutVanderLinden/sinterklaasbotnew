@@ -35,7 +35,7 @@ async function findOneListingByName(client, nameOfListing) {
 
         console.log(`Found a listing in the collection with the name '${nameOfListing}':`);
 
-        console.log(result);
+       // console.log(result);
 	return result;
     } else {
 
@@ -50,9 +50,9 @@ async function findOneListingByName(client, nameOfListing) {
 
                         .updateOne({ name: nameOfListing }, { $set: updatedListing });
 
-    console.log(`${result.matchedCount} document(s) matched the query criteria.`);
+   // console.log(`${result.matchedCount} document(s) matched the query criteria.`);
 
-    console.log(`${result.modifiedCount} document(s) was/were updated.`);
+    //console.log(`${result.modifiedCount} document(s) was/were updated.`);
 
 }
 
