@@ -2260,7 +2260,7 @@ exports.commands = {
 				var val= global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
 				var draftlist=global.draftvalues.users[username]["draftedmons"];
 				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(draftlist) +'</div>';
-				var toreply= "!htmlbox "+ word + " <h2>Tier"+ global.draftvalues.tierOrder[0]  + "      drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val + "</h2>";
+				var toreply= "!htmlbox "+ word + " <h2>Tier"+ global.draftvalues.currenttier[global.draftvalues.draftroom] + "      drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val + "</h2>";
 				return  this.send(global.draftvalues.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprintUnknown(newlist,global.draftvalues.DataOrder[global.draftvalues.currentPick ])+ "</div></div>");
 			}
 			else{
