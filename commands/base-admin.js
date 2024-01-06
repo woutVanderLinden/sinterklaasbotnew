@@ -349,7 +349,6 @@ exports.commands = {
 		let student = JSON.parse(rawdata);
 		let dexdata = fs.readFileSync('dexdata.json');
 		global.dexData= JSON.parse(dexdata);
-		console.log(student);
 		global.draftvalues.currenttier[toId(room)]=1;
 		global.draftvalues.todraftmons[toId(room)]=student;
 		global.draftvalues.tierOrder = [1,1,2,2,3,3,3,4,4,5,5];
@@ -362,8 +361,6 @@ exports.commands = {
 		global.draftvalues.picknr[toId(global.draftvalues.draftroom)]=0;
 		global.draftvalues.nextdrafter=0;
 		//this.reply('draft order is '+result);
-		console.log(global.draftvalues.draftstarted);
-		console.log(global.draftvalues.todraftmons);
 		let rawdata2 = fs.readFileSync('draftedmons.json');
 		let student2 = JSON.parse(rawdata2);
 		if(global.draftvalues.draftedmons={}){
@@ -372,7 +369,6 @@ exports.commands = {
 		var draftmons=global.draftvalues.todraftmons[toId(room)];
 		global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]=true;
 		var list=global.draftvalues.turnorder
-		console.log(list);
 		global.draftvalues.currenttier[toId(room)] = global.draftvalues.tierOrder[global.draftvalues.currentPick ];
 		var newlist=pickmultimons(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["pokemon"],6,list);
 		global.draftvalues.possiblepicks=newlist;
@@ -1955,7 +1951,6 @@ exports.commands = {
 			global.passedusers = [];
 			var draftmons=global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)];
 			var i=1;
-			console.log(draftmons);
 			while(i<=draftmons["length"]){
 				var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
 				var creditsleft = global.draftvalues.users[name]["Points"]
@@ -2063,14 +2058,12 @@ exports.commands = {
 		}
 		
 		var name=toId(by);
-		console.log(global.draftvalues.users);
 		if(global.draftvalues.users[name]["draftedmons"]==undefined){
 			global.draftvalues.users[name]["draftedmons"]=[];
 		}
 		console.log("global.draftvalues.pointdrafting "+global.draftvalues.pointdrafting);
 		if(!global.draftvalues.pointdrafting){
 			var draftmons=global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)];
-			console.log("draftmons" + draftmons["tierlist"]);
 			if(global.draftvalues.possiblepicks.includes(arg)||(global.draftvalues.possiblepicks.includes('Silvally')&&args[0]=='Silvally')){
 				global.draftvalues.users[name]["draftedmons"].push(arg);
 				console.log(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(global.draftvalues.draftroom)]]);
@@ -2088,7 +2081,6 @@ exports.commands = {
 		else{
 			var draftmons=global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)];
 			var i=1;
-			console.log(draftmons);
 			while(i<=draftmons["length"]){
 				var possiblepic=draftmons["tierlist"]["Tier"+i]["pokemon"];
 				var picksleft=draftmons["freepicks"]-global.draftvalues.picknr[toId(global.draftvalues.draftroom)]-1-global.draftvalues.users[name]["tieredpicks"].length;
@@ -2262,13 +2254,13 @@ exports.commands = {
 			}
 		var newlist=pickmultimons(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[global.draftvalues.draftroom]]["pokemon"],6,list);
 			global.draftvalues.possiblepicks=newlist;
-
+			console.log(global.draftvalues.possiblepicks);
 			if(global.draftvalues.UnknownDrafting){
 				var username=list[global.draftvalues.nextdrafter];
 				var val= global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
 				var draftlist=global.draftvalues.users[username]["draftedmons"];
 				var word = '!htmlbox  <div><h1>' + username +'</h1><div>'+ draftmonsprint6(draftlist) +'</div>';
-				var toreply= "!htmlbox "+ word + " Tier"+ global.draftvalues.currenttier[global.draftvalues.draftroom]  + " drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val;
+				var toreply= "!htmlbox "+ word + "<h2> Tier"+ global.draftvalues.currenttier[global.draftvalues.draftroom]  + " drafter "+ list[global.draftvalues.nextdrafter] + " picksleft:" +val + "<\h2>";
 				return  this.send(global.draftvalues.draftroom,toreply+"<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprintUnknown(newlist,global.draftvalues.DataOrder[global.draftvalues.currentPick ])+ "</div></div>");
 			}
 			else{
