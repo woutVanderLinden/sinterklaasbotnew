@@ -3185,7 +3185,7 @@ function removedraftedspecies(arg,list){
 			for(var j=0;j<arg.length;j++){
 				
 				if(samespecies(arg[j],listtoremove[i])){
-					arg.splice(j,1);
+					arg = arg.splice(j,1);
 					j--;
 				}
 				
@@ -3500,7 +3500,7 @@ function draftmonsprintUnknown(arg,DataType){
 		else{
 			word = word +'<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft '+i +'" style="background-color:'+color +'; font-size: 10pt; font-weight: bold;">';
 		}
-		word=word+'<a href="//dex.pokemonshowdown.com/pokemon/'+ name+'" target="_blank" class="subtle" style="white-space:nowrap">'+data+'</a>';
+		word=word+data;
 		word=word+'</button>';
 		result=result+word;
 	}
