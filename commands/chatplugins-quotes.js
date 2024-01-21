@@ -433,7 +433,7 @@ async function bitterballenfunc(arg, by, room, cmd, vart) {
 				return vart.reply("usage: user,aantal bitterballen");
 			}
 			let bitbals = await findOneListingByName(client, "bitterballen")
-			const thename = toId(args[0]) ? toId(args[0]) : toId(by);
+			const thename = toId(args[0] || by);
 			if (bitbals == undefined) {
 				infos = {
 					name: 'bitterballen',
