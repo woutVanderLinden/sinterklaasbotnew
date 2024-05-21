@@ -390,7 +390,7 @@ function joinByQueryRequest(target) {
 	};
 	Bot.on('queryresponse', qParser);
 	Bot.send('|/cmd rooms');
-}
+}.
 
 var opts = {
 	server: 'play.pokemonshowdown.com',
