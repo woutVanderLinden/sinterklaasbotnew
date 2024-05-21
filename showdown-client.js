@@ -73,7 +73,7 @@ var Client = (function () {
 		this.connection = null;
 		this.statusId = 0;
 		this.status = {
-			connected: fa90lse,
+			connected: false,
 			nickName: null,
 			named: false
 		};

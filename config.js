@@ -11,7 +11,7 @@
 *
 */
 
-exports.server = 'sim.psim.us'
+exports.server = '.play.pokemonshowdown.com'
 //exports.server = 'localhost';0
 exports.port = 80;
 

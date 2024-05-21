@@ -395,7 +395,7 @@ function joinByQueryRequest(target) {
 var opts = {
 	server: 'play.pokemonshowdown.com',
 			serverid: 'showdown',
-			port: 80,
+			port: 8000,
 			secprotocols: [],
 			connectionTimeout: 2 * 60 * 1000,
 			loginServer: 'https://play.pokemonshowdown.com/~~showdown/action.php',
@@ -415,7 +415,7 @@ function startKeepAlive() {
 	setInterval(function () {
 		var options = {
 			host: 'newsinterklaasbot.herokuapp.com',
-			port: 81,
+			port: 80,
 			path: '/'
 		};
 		http.get(options, function (res) {
