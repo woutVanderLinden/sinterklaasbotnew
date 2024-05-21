@@ -393,7 +393,7 @@ function joinByQueryRequest(target) {
 }
 
 var opts = {
-	server: 'sim3.psim.us',
+	server: 'sim.psim.us',
 			serverid: 'showdown',
 			port: 80,
 			secprotocols: [],
@@ -406,7 +406,7 @@ var opts = {
 			retryLogin: 4 * 1000,
 			autoConnect: true,
 			autoReconnect: true,
-			autoReconnectDelay: 5 * 1000,9
+			autoReconnectDelay: 5 * 1000,
 			autoJoin: [],
 			showErrors: true,
 			debug: false
