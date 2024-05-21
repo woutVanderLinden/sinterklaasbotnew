@@ -395,7 +395,7 @@ function joinByQueryRequest(target) {
 var opts = {
 	server: 'sim3.psim.us',
 			serverid: 'showdown',
-			port: 3000,
+			port: 80,
 			secprotocols: [],
 			connectionTimeout: 2 * 60 * 1000,
 			loginServer: 'https://play.pokemonshowdown.com/~~showdown/action.php',
@@ -406,7 +406,7 @@ var opts = {
 			retryLogin: 4 * 1000,
 			autoConnect: true,
 			autoReconnect: true,
-			autoReconnectDelay: 5 * 1000,
+			autoReconnectDelay: 5 * 1000,9
 			autoJoin: [],
 			showErrors: true,
 			debug: false
