@@ -78,7 +78,7 @@ var Client = (function () {
 			named: false
 		};
 		this.challstr = {
-			id: 0,0
+			id: 0,
 			str: ''
 		};
 		this.events = new MyEmitter();
