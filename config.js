@@ -13,7 +13,7 @@
 
 exports.server = 'sim3.psim.us';
 
-exports.port = 80;
+exports.port = 81;
 
 exports.serverid = 'showdown';
 
