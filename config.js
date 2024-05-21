@@ -13,7 +13,7 @@
 
 exports.server = 'play.pokemonshowdown.com'
 //exports.server = 'localhost';0
-exports.port = 80;
+exports.port = 8000;
 
 //exports.serverid = 'localhost';
 exports.serverid = 'showdown';
