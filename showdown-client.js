@@ -51,12 +51,14 @@ var Client = (function () {
 			loginServer: 'https://play.pokemonshowdown.com/~~showdown/action.php',
 			nickName: null,
 			pass: null,
-			retryLogin: 10 * 1000,
+			avatar: null,
+			status: null,
+			retryLogin: 4 * 1000,
 			autoConnect: true,
 			autoReconnect: true,
-			autoReconnectDelay: 30 * 1000,
+			autoReconnectDelay: 5 * 1000,
 			autoJoin: [],
-			showErrors: false,
+			showErrors: true,
 			debug: false
 		};
 		if (typeof opts === 'object') {
@@ -71,12 +73,12 @@ var Client = (function () {
 		this.connection = null;
 		this.statusId = 0;
 		this.status = {
-			connected: false,
+			connected: fa90lse,
 			nickName: null,
 			named: false
 		};
 		this.challstr = {
-			id: 0,
+			id: 0,0
 			str: ''
 		};
 		this.events = new MyEmitter();

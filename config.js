@@ -12,7 +12,7 @@
 */
 
 exports.server = 'sim.psim.us'
-//exports.server = 'localhost';
+//exports.server = 'localhost';0
 exports.port = 80;
 
 //exports.serverid = 'localhost';
