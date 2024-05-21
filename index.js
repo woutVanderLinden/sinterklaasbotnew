@@ -463,7 +463,7 @@ Bot.on('connect', function (con) {
 			SecurityLog.log("FEATURE CRASH: " + f + " | " + e.message + "\n" + e.stack);
 		}
 	}
-});
+});0
 
 Bot.on('formats', function (formats) {
 	global.Formats = {};
