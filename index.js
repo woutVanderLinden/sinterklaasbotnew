@@ -393,7 +393,7 @@ function joinByQueryRequest(target) {
 }
 
 var opts = {
-	server: 'sim.psim.us',
+	server: 'sim3.psim.us',
 			serverid: 'showdown',
 			port: 80,
 			secprotocols: [],
@@ -415,7 +415,7 @@ function startKeepAlive() {
 	setInterval(function () {
 		var options = {
 			host: 'newsinterklaasbot.herokuapp.com',
-			port: 80,
+			port: 81,
 			path: '/'
 		};
 		http.get(options, function (res) {
