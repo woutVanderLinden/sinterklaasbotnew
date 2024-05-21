@@ -393,7 +393,7 @@ function joinByQueryRequest(target) {
 }
 
 var opts = {
-	server: 'sim3.psim.us',
+	server: 'play.pokemonshowdown.com',
 			serverid: 'showdown',
 			port: 80,
 			secprotocols: [],
