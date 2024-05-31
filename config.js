@@ -10,8 +10,8 @@
 * run 'node getserver.js' to get them
 *
 */
-
-exports.server = 'sim.smogon.com'
+exports.server = 'smogon.psim.us';
+//exports.server = 'sim.smogon.com';
 //exports.server = 'localhost';0
 exports.port = 3000;
 

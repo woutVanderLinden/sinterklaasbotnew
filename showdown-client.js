@@ -172,7 +172,7 @@ var Client = (function () {
 		}
 		//var conStr = "wss://sim.smogon.com/showdown/websocket";
 		var conStr = 'wss://' + self.opts.server + ':' + self.opts.port + '/showdown/' + id + '/' + str + '/websocket';
-		self.debug('connecting to ' + conStr + ' - secondary protocols: ' + util.inspect(self.opts.secprotocols));
+		self.debug('treconnecting to ' + conStr + ' - secondary protocols: ' + util.inspect(self.opts.secprotocols));
 		webSocket.connect(conStr, self.opts.secprotocols);
 	};
 
