@@ -11,11 +11,20 @@
 *
 */
 
-exports.server = 'sim.psim.us';
+exports.server = 'sim3.psim.us';
 
-exports.port = 3000;
+exports.port = 8000;
 
 exports.serverid = 'showdown';
+
+exports.auth = {
+	admin: ['kingbaruk'],
+	coder: [],
+	alpha: [],
+	beta: [],
+	gamma: [],
+	locked: []
+};
 
 exports.autoReconnectDelay = 10 * 1000;
 exports.connectionTimeout = 2 * 60 * 1000;
