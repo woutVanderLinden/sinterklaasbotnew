@@ -82,7 +82,8 @@ try {
 	global.util = require('util');
 	global.fs = require('fs');
 	global.path = require('path');
-	global.PSClient = require('./showdown-client.js');
+	//5const SDClient = require('./showdown-client.js');
+	global.Client = require('./showdown-client.js');
 	let rawdata = fs.readFileSync('convertcsvnew.json');
 	let student = JSON.parse(rawdata);
 	global.draftvalues.mondata=student;
