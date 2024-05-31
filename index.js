@@ -3,7 +3,7 @@
 
 	By: Ecuacion
 */
-const SDClient = require('./showdown-client.js');
+
 //var XLSX = require('xlsx');
 try {
 	
@@ -12,6 +12,7 @@ try {
 	console.log('Installing dependencies... (xlsx)');
 	require('child_process').spawnSync('sh', ['-c', 'npm install xlsx'], {stdio: 'inherit'});
 }
+const SDClient = require('./showdown-client.js').default;
 let todraftmons={};
 let users={};
 let passedusers = [];
@@ -83,7 +84,6 @@ try {
 	global.fs = require('fs');
 	global.path = require('path');
 	//5const SDClient = require('./showdown-client.js');
-	global.SDClient = require('./showdown-client.js');
 	let rawdata = fs.readFileSync('convertcsvnew.json');
 	let student = JSON.parse(rawdata);
 	global.draftvalues.mondata=student;
