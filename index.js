@@ -83,7 +83,7 @@ try {
 	global.fs = require('fs');
 	global.path = require('path');
 	//5const SDClient = require('./showdown-client.js');
-	global.Client = require('./showdown-client.js');
+	global.SDClient = require('./showdown-client.js');
 	let rawdata = fs.readFileSync('convertcsvnew.json');
 	let student = JSON.parse(rawdata);
 	global.draftvalues.mondata=student;
@@ -454,7 +454,7 @@ const uri2 =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net
 	console.log("test");
 console.log(port);
 console.log("test");
-global.Bot = new Client(Config.server, 8000, opts);
+global.Bot = new SDClient(Config.server, 8000, opts);
 const express = require('express')
 const app = express();
 
