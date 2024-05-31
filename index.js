@@ -12,7 +12,7 @@ try {
 	console.log('Installing dependencies... (xlsx)');
 	require('child_process').spawnSync('sh', ['-c', 'npm install xlsx'], {stdio: 'inherit'});
 }
-const SDClient = require('./showdown-client.js').default;
+const SDClient = require('./client.js');
 let todraftmons={};
 let users={};
 let passedusers = [];
