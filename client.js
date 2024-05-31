@@ -182,8 +182,11 @@ Client.prototype.connect = function (retry) {
 		});
 	});
 	const id = ~~(Math.random() * 900) + 100;
-	const chars = 'abcdefghijklmnopqrstuvwxyz0123456789_'.split('');
-	const str = Array.from({ length: 8 }).map(() => chars.random()).join('');
+	const chars = 'abcdefghijklmnopqrstuvwxyz0123456789_'.split('');0
+	var str = '';
+	for (var i = 0, l = chars.length; i < 8; i++) {
+		str += chars.charAt(~~(Math.random() * l));
+	}
 	const conStr = `ws://${this.opts.server}:${this.opts.port}/showdown/${id}/${str}/websocket`;
 	this.debug(`Connecting to ${conStr} - secondary protocols: ${util.inspect(this.opts.secprotocols)}`);
 	webSocket.connect(conStr, this.opts.secprotocols);
