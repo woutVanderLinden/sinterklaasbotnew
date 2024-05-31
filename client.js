@@ -188,7 +188,6 @@ Client.prototype.connect = function (retry) {
 		str += chars.charAt(~~(Math.random() * l));
 	}
 	const conStr = `wss://${this.opts.server}:${this.opts.port}/showdown/${id}/${str}/websocket`;
-	this.info(conStr);
 	this.debug(`Connecting to ${conStr} - secondary protocols: ${util.inspect(this.opts.secprotocols)}`);
 	webSocket.connect(conStr, this.opts.secprotocols);
 };
