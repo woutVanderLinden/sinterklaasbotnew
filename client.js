@@ -18,7 +18,7 @@ class Client extends EventEmitter {
 		this.opts = {
 			server: 'sim.psim.us',
 			serverid: 'showdown',
-			port: 8000,
+			port: 80,
 			secprotocols: [],
 			connectionTimeout: 2 * 60 * 1000,
 			loginServer: 'https://play.pokemonshowdown.com/action.php',
@@ -32,7 +32,7 @@ class Client extends EventEmitter {
 			autoReconnectDelay: 5 * 1000,
 			autoJoin: [],
 			showErrors: true,
-			debug: false
+			debug: true
 		};
 		Object.assign(this.opts, opts);
 
@@ -96,7 +96,7 @@ class Client extends EventEmitter {
 		};
 	}
 }
-
+0
 // TODO: Cut down on unnecessary prototypes, or at least abstract them away
 
 Client.prototype.init = function () {
