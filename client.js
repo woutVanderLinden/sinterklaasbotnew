@@ -73,7 +73,7 @@ class Client extends EventEmitter {
 			} else this._customEvents[event] = func;
 		};
 
-		this.auth = Object.assign({}, config.auth);
+		this.auth = Object.assign({}, global.Config.auth);
 
 		this.connection = null;
 		this.status = {
@@ -379,7 +379,7 @@ Client.prototype.receiveLine = function (room, message, isIntro) {
 			this.log('Connected to Pokémon Showdown.');
 			if (!this.opts.status) this.setStatus('say ' + this.status.nickName + '? for help.');
 			else this.setStatus(this.opts.status);
-			if (parseInt(larg[2])) this.joinRooms(config.autoJoin);
+			if (parseInt(larg[2])) this.joinRooms(global.Config.autoJoin);
 			if (this.opts.avatar) this.setAvatar(this.opts.avatar);
 			break;
 		case 'c': {
