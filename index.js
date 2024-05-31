@@ -453,7 +453,7 @@ const uri2 =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net
 	console.log("test");
 console.log(port);
 console.log("test");
-global.Bot = new PSClient(Config.server, 8000, opts);
+global.Bot = new Client(Config.server, 8000, opts);
 const express = require('express')
 const app = express();
 
