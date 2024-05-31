@@ -16,7 +16,7 @@ class Client extends EventEmitter {
 	constructor (opts = {}) {
 		super();
 		this.opts = {
-			server: 'sim.psim.us',
+			server: 'sim3.psim.us',
 			serverid: 'showdown',
 			port: 80,
 			secprotocols: [],
