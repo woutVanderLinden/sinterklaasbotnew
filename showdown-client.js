@@ -51,14 +51,12 @@ var Client = (function () {
 			loginServer: 'https://play.pokemonshowdown.com/~~showdown/action.php',
 			nickName: null,
 			pass: null,
-			avatar: null,
-			status: null,
-			retryLogin: 4 * 1000,
+			retryLogin: 10 * 1000,
 			autoConnect: true,
 			autoReconnect: true,
-			autoReconnectDelay: 5 * 1000,
+			autoReconnectDelay: 30 * 1000,
 			autoJoin: [],
-			showErrors: true,
+			showErrors: false,
 			debug: false
 		};
 		if (typeof opts === 'object') {
@@ -170,11 +168,8 @@ var Client = (function () {
 		for (var i = 0, l = chars.length; i < 8; i++) {
 			str += chars.charAt(~~(Math.random() * l));
 		}
-		//var conStr = "wss://sim.smogon.com:8000/showdown/websocket";
-		var conStr = 'wss://' + self.opts.server + ':' + self.opts.port + '/showdown/' + id + '/' + str + '/websocket';
+		var conStr = 'ws://' + self.opts.server + ':' + self.opts.port + '/showdown/' + id + '/' + str + '/websocket';
 		self.debug('connecting to ' + conStr + ' - secondary protocols: ' + util.inspect(self.opts.secprotocols));
-		info(conStr);
-		self.debug('treconnecting to ' + conStr + ' - secondary protocols: ' + util.inspect(self.opts.secprotocols));
 		webSocket.connect(conStr, self.opts.secprotocols);
 	};
 
