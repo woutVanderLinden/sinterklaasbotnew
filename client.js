@@ -21,7 +21,7 @@ class Client extends EventEmitter {
 			port: 80,
 			secprotocols: [],
 			connectionTimeout: 2 * 60 * 1000,
-			loginServer: 'https://play.pokemonshowdown.com/showdown/action.php',
+			loginServer: 'https://play.pokemonshowdown.com/action.php',
 			nickName: null,
 			pass: null,
 			avatar: null,
