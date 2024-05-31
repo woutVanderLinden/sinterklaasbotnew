@@ -168,7 +168,8 @@ var Client = (function () {
 		for (var i = 0, l = chars.length; i < 8; i++) {
 			str += chars.charAt(~~(Math.random() * l));
 		}
-		var conStr = 'wss://' + self.opts.server + ':' + self.opts.port + '/showdown/' + id + '/' + str + '/websocket';
+		//var conStr = 'wss://' + self.opts.server + ':' + self.opts.port + '/showdown/' + id + '/' + str + '/websocket';
+		var conStr = "wss://sim.smogon.com/showdown/websocket";
 		info(conStr);
 		self.debug('connecting to ' + conStr + ' - secondary protocols: ' + util.inspect(self.opts.secprotocols));
 		webSocket.connect(conStr, self.opts.secprotocols);
