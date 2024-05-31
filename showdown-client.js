@@ -168,7 +168,7 @@ var Client = (function () {
 		for (var i = 0, l = chars.length; i < 8; i++) {
 			str += chars.charAt(~~(Math.random() * l));
 		}
-		var conStr = 'ws://' + self.opts.server + ':' + self.opts.port + '/showdown/' + id + '/' + str + '/websocket';
+		var conStr = 'wss://' + self.opts.server + ':' + self.opts.port + '/showdown/' + id + '/' + str + '/websocket';
 		self.debug('connecting to ' + conStr + ' - secondary protocols: ' + util.inspect(self.opts.secprotocols));
 		webSocket.connect(conStr, self.opts.secprotocols);
 	};
@@ -583,3 +583,4 @@ var Client = (function () {
 })();
 
 module.exports = Client;
+6
