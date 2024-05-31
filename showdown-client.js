@@ -169,6 +169,7 @@ var Client = (function () {
 			str += chars.charAt(~~(Math.random() * l));
 		}
 		var conStr = 'wss://' + self.opts.server + ':' + self.opts.port + '/showdown/' + id + '/' + str + '/websocket';
+		info(conStr);
 		self.debug('connecting to ' + conStr + ' - secondary protocols: ' + util.inspect(self.opts.secprotocols));
 		webSocket.connect(conStr, self.opts.secprotocols);
 	};
