@@ -18,7 +18,7 @@ class Client extends EventEmitter {
 		this.opts = {
 			server: 'sim3.psim.us',
 			serverid: 'showdown',
-			port: 80,
+			port: 443,
 			secprotocols: [],
 			connectionTimeout: 2 * 60 * 1000,
 			loginServer: 'https://play.pokemonshowdown.com/action.php',
