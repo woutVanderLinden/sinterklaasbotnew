@@ -393,6 +393,22 @@ function joinByQueryRequest(target) {
 }
 
 var opts = {
+	server: 'sim3.psim.us',
+			serverid: 'showdown',
+			connectionTimeout: 20_000,
+			loginServer: 'https://play.pokemonshowdown.com/action.php',
+			username: null,
+			password: null,
+			avatar: null,
+			status: null,
+			retryLogin: 4 * 1000,
+			autoReconnect: true,
+			autoReconnectDelay: 5 * 1000,
+			rooms: [],
+			debug: false,
+			throttle: null,
+			noFailMessages: false
+			/*
 	serverid: Config.serverid,
 	secprotocols: [],
 	connectionTimeout: Config.connectionTimeout,
@@ -406,6 +422,7 @@ var opts = {
 	autoJoin: [],
 	showErrors: (Config.debug ? Config.debug.debug : true),
 	debug: (Config.debug ? Config.debug.debug : true)
+	*/
 };
 function startKeepAlive() {
     setInterval(function() {
