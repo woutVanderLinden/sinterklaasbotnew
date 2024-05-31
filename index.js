@@ -3,7 +3,7 @@
 
 	By: Ecuacion
 */
-
+const SDClient = require('./client.js');
 //var XLSX = require('xlsx');
 try {
 	
