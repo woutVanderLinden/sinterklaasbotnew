@@ -393,23 +393,19 @@ function joinByQueryRequest(target) {
 }
 
 var opts = {
-	server: 'play.pokemonshowdown.com',
-			serverid: 'showdown',
-			port: 8000,
-			secprotocols: [],
-			connectionTimeout: 2 * 60 * 1000,
-			loginServer: 'https://play.pokemonshowdown.com/~~showdown/action.php',
-			nickName: null,
-			pass: null,
-			avatar: null,
-			status: null,
-			retryLogin: 4 * 1000,
-			autoConnect: true,
-			autoReconnect: true,
-			autoReconnectDelay: 5 * 1000,
-			autoJoin: [],
-			showErrors: true,
-			debug: false
+	serverid: Config.serverid,
+	secprotocols: [],
+	connectionTimeout: Config.connectionTimeout,
+	loginServer: 'https://play.pokemonshowdown.com/~~' + Config.serverid + '/action.php',
+	nickName: null,
+	pass: null,
+	retryLogin: false,
+	autoConnect: false,
+	autoReconnect: false,
+	autoReconnectDelay: 0,
+	autoJoin: [],
+	showErrors: (Config.debug ? Config.debug.debug : true),
+	debug: (Config.debug ? Config.debug.debug : true)
 };
 function startKeepAlive() {
 	setInterval(function () {
