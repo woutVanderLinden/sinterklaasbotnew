@@ -182,7 +182,7 @@ Client.prototype.connect = function (retry) {
 		});
 	});
 	const id = ~~(Math.random() * 900) + 100;
-	const chars = 'abcdefghijklmnopqrstuvwxyz0123456789_'.split('');0
+	var chars = 'abcdefghijklmnopqrstuvwxyz0123456789_';
 	var str = '';
 	for (var i = 0, l = chars.length; i < 8; i++) {
 		str += chars.charAt(~~(Math.random() * l));
