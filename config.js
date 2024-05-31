@@ -11,9 +11,9 @@
 *
 */
 
-exports.server = 'play.pokemonshowdown.com'
+exports.server = 'sim.smogon.com'
 //exports.server = 'localhost';0
-exports.port = 8000;
+exports.port = 3000;
 
 //exports.serverid = 'localhost';
 exports.serverid = 'showdown';
