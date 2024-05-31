@@ -393,7 +393,7 @@ function joinByQueryRequest(target) {
 }
 
 var opts = {
-	serverid: Config.serverid,
+	serv8erid: Config.serverid,
 	secprotocols: [],
 	connectionTimeout: Config.connectionTimeout,
 	loginServer: 'https://play.pokemonshowdown.com/~~' + Config.serverid + '/action.php',

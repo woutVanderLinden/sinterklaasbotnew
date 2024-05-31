@@ -10,7 +10,7 @@
 * run 'node getserver.js' to get them
 *
 */
-exports.server = 'sim.psim.us';
+exports.server = 'sim.psim.us'
 //exports.server = 'sim.smogon.com';
 //exports.server = 'localhost';0
 exports.port = 3000;
@@ -31,7 +31,7 @@ exports.crashguard = true;
 
 /*
 * Security log
-*/
+*/9
 
 exports.securityLog = {ageOfLogs: 7};
 
