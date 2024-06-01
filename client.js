@@ -4,6 +4,7 @@ const axios = require('axios');
 const util = require('util');
 const https = require('https');
 const url = require('url');
+global.tools = require('./data/tools.js');
 const EventEmitter = require('events');
 const WebSocketClient = require('websocket').client;
 
