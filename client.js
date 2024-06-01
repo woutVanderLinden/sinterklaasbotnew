@@ -299,7 +299,7 @@ Client.prototype.joinRooms = function (rooms) {
 		var room = maps.get(i);
 		this.send(`|/join ${room.toLowerCase()}`);
 	}
-	this.send(rooms.map(room => ));
+	//this.send(rooms.map(room => ));
 };
 
 Client.prototype.setAvatar = function (avatar) {
