@@ -295,7 +295,11 @@ Client.prototype.roomReply = function (room, user, msg) {
 };
 
 Client.prototype.joinRooms = function (rooms) {
-	this.send(rooms.map(room => `|/join ${room.toLowerCase()}`));
+	for (var i = 0, l = maps.length; i < maps.length;i++) {
+		var room = maps.get(i);
+		this.send(`|/join ${room.toLowerCase()}`);
+	}
+	this.send(rooms.map(room => ));
 };
 
 Client.prototype.setAvatar = function (avatar) {
