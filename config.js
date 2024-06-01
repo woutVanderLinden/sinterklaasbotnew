@@ -64,6 +64,8 @@ exports.autoReloginDelay = 60 * 1000;
 */
 
 exports.rooms =['dutch','pet mods'];// ['dutch'];
+exports.autoJoin =['dutch','pet mods'];
+exports.owner = 'kingbaruk';
 
 /*
 * exports.rooms = 'all'; //For joining all rooms
