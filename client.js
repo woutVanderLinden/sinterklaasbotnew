@@ -23,7 +23,7 @@ class Client extends EventEmitter {
 			secprotocols: [],
 			connectionTimeout: 2 * 60 * 1000,
 			loginServer: 'https://play.pokemonshowdown.com/action.php',
-			nickName: 'sinterklaas',
+			nickName: 'Sinterklaas',
 			pass: 'sinterklaas',
 			avatar: '4',
 			status: null,
