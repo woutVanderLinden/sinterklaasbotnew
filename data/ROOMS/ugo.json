@@ -1,0 +1,15 @@
+{
+	"whitelist": [
+		"age",
+		"namecolour",
+		"q",
+		"timer"
+	],
+	"permissions": {
+		"timer": "none"
+	},
+	"ignore": true,
+	"aliases": [
+		"ultimategamingolympics"
+	]
+}

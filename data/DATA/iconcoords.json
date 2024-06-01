@@ -1,0 +1,4930 @@
+{
+	"bulbasaur": [
+	  -40,
+	  0
+	],
+	"ivysaur": [
+	  -80,
+	  0
+	],
+	"venusaur": [
+	  -120,
+	  0
+	],
+	"venusaurmega": [
+	  0,
+	  -2760
+	],
+	"venusaurgmax": [
+	  -200,
+	  -2940
+	],
+	"charmander": [
+	  -160,
+	  0
+	],
+	"charmeleon": [
+	  -200,
+	  0
+	],
+	"charizard": [
+	  -240,
+	  0
+	],
+	"charizardmegax": [
+	  -40,
+	  -2760
+	],
+	"charizardmegay": [
+	  -80,
+	  -2760
+	],
+	"charizardgmax": [
+	  -80,
+	  -2880
+	],
+	"squirtle": [
+	  -280,
+	  0
+	],
+	"wartortle": [
+	  -320,
+	  0
+	],
+	"blastoise": [
+	  -360,
+	  0
+	],
+	"blastoisemega": [
+	  -120,
+	  -2760
+	],
+	"blastoisegmax": [
+	  -240,
+	  -2940
+	],
+	"caterpie": [
+	  -400,
+	  0
+	],
+	"metapod": [
+	  -440,
+	  0
+	],
+	"butterfree": [
+	  0,
+	  -30
+	],
+	"butterfreegmax": [
+	  -120,
+	  -2880
+	],
+	"weedle": [
+	  -40,
+	  -30
+	],
+	"kakuna": [
+	  -80,
+	  -30
+	],
+	"beedrill": [
+	  -120,
+	  -30
+	],
+	"beedrillmega": [
+	  -160,
+	  -2760
+	],
+	"pidgey": [
+	  -160,
+	  -30
+	],
+	"pidgeotto": [
+	  -200,
+	  -30
+	],
+	"pidgeot": [
+	  -240,
+	  -30
+	],
+	"pidgeotmega": [
+	  -200,
+	  -2760
+	],
+	"rattata": [
+	  -280,
+	  -30
+	],
+	"rattataalola": [
+	  -440,
+	  -2520
+	],
+	"raticate": [
+	  -320,
+	  -30
+	],
+	"raticatealola": [
+	  0,
+	  -2550
+	],
+	"raticatealolatotem": [
+	  0,
+	  -2550
+	],
+	"spearow": [
+	  -360,
+	  -30
+	],
+	"fearow": [
+	  -400,
+	  -30
+	],
+	"ekans": [
+	  -440,
+	  -30
+	],
+	"arbok": [
+	  0,
+	  -60
+	],
+	"pikachu": [
+	  -40,
+	  -60
+	],
+	"pikachucosplay": [
+	  -280,
+	  -2250
+	],
+	"pikachurockstar": [
+	  -240,
+	  -2250
+	],
+	"pikachubelle": [
+	  -80,
+	  -2250
+	],
+	"pikachupopstar": [
+	  -200,
+	  -2250
+	],
+	"pikachuphd": [
+	  -160,
+	  -2250
+	],
+	"pikachulibre": [
+	  -120,
+	  -2250
+	],
+	"pikachuoriginal": [
+	  -360,
+	  -2610
+	],
+	"pikachuhoenn": [
+	  -400,
+	  -2610
+	],
+	"pikachusinnoh": [
+	  -440,
+	  -2610
+	],
+	"pikachuunova": [
+	  0,
+	  -2640
+	],
+	"pikachukalos": [
+	  -40,
+	  -2640
+	],
+	"pikachualola": [
+	  -80,
+	  -2640
+	],
+	"pikachupartner": [
+	  -120,
+	  -2640
+	],
+	"pikachustarter": [
+	  -320,
+	  -2640
+	],
+	"pikachugmax": [
+	  -160,
+	  -2880
+	],
+	"pikachuworld": [
+	  -280,
+	  -2730
+	],
+	"raichu": [
+	  -80,
+	  -60
+	],
+	"raichualola": [
+	  -40,
+	  -2550
+	],
+	"sandshrew": [
+	  -120,
+	  -60
+	],
+	"sandshrewalola": [
+	  -80,
+	  -2550
+	],
+	"sandslash": [
+	  -160,
+	  -60
+	],
+	"sandslashalola": [
+	  -120,
+	  -2550
+	],
+	"nidoranf": [
+	  -200,
+	  -60
+	],
+	"nidorina": [
+	  -240,
+	  -60
+	],
+	"nidoqueen": [
+	  -280,
+	  -60
+	],
+	"nidoranm": [
+	  -320,
+	  -60
+	],
+	"nidorino": [
+	  -360,
+	  -60
+	],
+	"nidoking": [
+	  -400,
+	  -60
+	],
+	"clefairy": [
+	  -440,
+	  -60
+	],
+	"clefable": [
+	  0,
+	  -90
+	],
+	"vulpix": [
+	  -40,
+	  -90
+	],
+	"vulpixalola": [
+	  -160,
+	  -2550
+	],
+	"ninetales": [
+	  -80,
+	  -90
+	],
+	"ninetalesalola": [
+	  -200,
+	  -2550
+	],
+	"jigglypuff": [
+	  -120,
+	  -90
+	],
+	"wigglytuff": [
+	  -160,
+	  -90
+	],
+	"zubat": [
+	  -200,
+	  -90
+	],
+	"golbat": [
+	  -240,
+	  -90
+	],
+	"oddish": [
+	  -280,
+	  -90
+	],
+	"gloom": [
+	  -320,
+	  -90
+	],
+	"vileplume": [
+	  -360,
+	  -90
+	],
+	"paras": [
+	  -400,
+	  -90
+	],
+	"parasect": [
+	  -440,
+	  -90
+	],
+	"venonat": [
+	  0,
+	  -120
+	],
+	"venomoth": [
+	  -40,
+	  -120
+	],
+	"diglett": [
+	  -80,
+	  -120
+	],
+	"diglettalola": [
+	  -240,
+	  -2550
+	],
+	"dugtrio": [
+	  -120,
+	  -120
+	],
+	"dugtrioalola": [
+	  -280,
+	  -2550
+	],
+	"meowth": [
+	  -160,
+	  -120
+	],
+	"meowthalola": [
+	  -320,
+	  -2550
+	],
+	"meowthgalar": [
+	  -400,
+	  -2640
+	],
+	"meowthgmax": [
+	  -200,
+	  -2880
+	],
+	"persian": [
+	  -200,
+	  -120
+	],
+	"persianalola": [
+	  -360,
+	  -2550
+	],
+	"psyduck": [
+	  -240,
+	  -120
+	],
+	"golduck": [
+	  -280,
+	  -120
+	],
+	"mankey": [
+	  -320,
+	  -120
+	],
+	"primeape": [
+	  -360,
+	  -120
+	],
+	"growlithe": [
+	  -400,
+	  -120
+	],
+	"arcanine": [
+	  -440,
+	  -120
+	],
+	"poliwag": [
+	  0,
+	  -150
+	],
+	"poliwhirl": [
+	  -40,
+	  -150
+	],
+	"poliwrath": [
+	  -80,
+	  -150
+	],
+	"abra": [
+	  -120,
+	  -150
+	],
+	"kadabra": [
+	  -160,
+	  -150
+	],
+	"alakazam": [
+	  -200,
+	  -150
+	],
+	"alakazammega": [
+	  -240,
+	  -2760
+	],
+	"machop": [
+	  -240,
+	  -150
+	],
+	"machoke": [
+	  -280,
+	  -150
+	],
+	"machamp": [
+	  -320,
+	  -150
+	],
+	"machampgmax": [
+	  -240,
+	  -2880
+	],
+	"bellsprout": [
+	  -360,
+	  -150
+	],
+	"weepinbell": [
+	  -400,
+	  -150
+	],
+	"victreebel": [
+	  -440,
+	  -150
+	],
+	"tentacool": [
+	  0,
+	  -180
+	],
+	"tentacruel": [
+	  -40,
+	  -180
+	],
+	"geodude": [
+	  -80,
+	  -180
+	],
+	"geodudealola": [
+	  -400,
+	  -2550
+	],
+	"graveler": [
+	  -120,
+	  -180
+	],
+	"graveleralola": [
+	  -440,
+	  -2550
+	],
+	"golem": [
+	  -160,
+	  -180
+	],
+	"golemalola": [
+	  0,
+	  -2580
+	],
+	"ponyta": [
+	  -200,
+	  -180
+	],
+	"ponytagalar": [
+	  -440,
+	  -2640
+	],
+	"rapidash": [
+	  -240,
+	  -180
+	],
+	"rapidashgalar": [
+	  0,
+	  -2670
+	],
+	"slowpoke": [
+	  -280,
+	  -180
+	],
+	"slowpokegalar": [
+	  -160,
+	  -2730
+	],
+	"slowbro": [
+	  -320,
+	  -180
+	],
+	"slowbromega": [
+	  -280,
+	  -2760
+	],
+	"slowbrogalar": [
+	  -200,
+	  -2730
+	],
+	"magnemite": [
+	  -360,
+	  -180
+	],
+	"magneton": [
+	  -400,
+	  -180
+	],
+	"farfetchd": [
+	  -440,
+	  -180
+	],
+	"farfetchdgalar": [
+	  -40,
+	  -2670
+	],
+	"doduo": [
+	  0,
+	  -210
+	],
+	"dodrio": [
+	  -40,
+	  -210
+	],
+	"seel": [
+	  -80,
+	  -210
+	],
+	"dewgong": [
+	  -120,
+	  -210
+	],
+	"grimer": [
+	  -160,
+	  -210
+	],
+	"grimeralola": [
+	  -40,
+	  -2580
+	],
+	"muk": [
+	  -200,
+	  -210
+	],
+	"mukalola": [
+	  -80,
+	  -2580
+	],
+	"shellder": [
+	  -240,
+	  -210
+	],
+	"cloyster": [
+	  -280,
+	  -210
+	],
+	"gastly": [
+	  -320,
+	  -210
+	],
+	"haunter": [
+	  -360,
+	  -210
+	],
+	"gengar": [
+	  -400,
+	  -210
+	],
+	"gengarmega": [
+	  -320,
+	  -2760
+	],
+	"gengargmax": [
+	  -280,
+	  -2880
+	],
+	"onix": [
+	  -440,
+	  -210
+	],
+	"drowzee": [
+	  0,
+	  -240
+	],
+	"hypno": [
+	  -40,
+	  -240
+	],
+	"krabby": [
+	  -80,
+	  -240
+	],
+	"kingler": [
+	  -120,
+	  -240
+	],
+	"kinglergmax": [
+	  -320,
+	  -2880
+	],
+	"voltorb": [
+	  -160,
+	  -240
+	],
+	"electrode": [
+	  -200,
+	  -240
+	],
+	"exeggcute": [
+	  -240,
+	  -240
+	],
+	"exeggutor": [
+	  -280,
+	  -240
+	],
+	"exeggutoralola": [
+	  -120,
+	  -2580
+	],
+	"cubone": [
+	  -320,
+	  -240
+	],
+	"marowak": [
+	  -360,
+	  -240
+	],
+	"marowakalola": [
+	  -160,
+	  -2580
+	],
+	"marowakalolatotem": [
+	  -160,
+	  -2580
+	],
+	"hitmonlee": [
+	  -400,
+	  -240
+	],
+	"hitmonchan": [
+	  -440,
+	  -240
+	],
+	"lickitung": [
+	  0,
+	  -270
+	],
+	"koffing": [
+	  -40,
+	  -270
+	],
+	"weezing": [
+	  -80,
+	  -270
+	],
+	"weezinggalar": [
+	  -80,
+	  -2670
+	],
+	"rhyhorn": [
+	  -120,
+	  -270
+	],
+	"rhydon": [
+	  -160,
+	  -270
+	],
+	"chansey": [
+	  -200,
+	  -270
+	],
+	"tangela": [
+	  -240,
+	  -270
+	],
+	"kangaskhan": [
+	  -280,
+	  -270
+	],
+	"kangaskhanmega": [
+	  -360,
+	  -2760
+	],
+	"horsea": [
+	  -320,
+	  -270
+	],
+	"seadra": [
+	  -360,
+	  -270
+	],
+	"goldeen": [
+	  -400,
+	  -270
+	],
+	"seaking": [
+	  -440,
+	  -270
+	],
+	"staryu": [
+	  0,
+	  -300
+	],
+	"starmie": [
+	  -40,
+	  -300
+	],
+	"mrmime": [
+	  -80,
+	  -300
+	],
+	"mrmimegalar": [
+	  -120,
+	  -2670
+	],
+	"scyther": [
+	  -120,
+	  -300
+	],
+	"jynx": [
+	  -160,
+	  -300
+	],
+	"electabuzz": [
+	  -200,
+	  -300
+	],
+	"magmar": [
+	  -240,
+	  -300
+	],
+	"pinsir": [
+	  -280,
+	  -300
+	],
+	"pinsirmega": [
+	  -400,
+	  -2760
+	],
+	"tauros": [
+	  -320,
+	  -300
+	],
+	"magikarp": [
+	  -360,
+	  -300
+	],
+	"gyarados": [
+	  -400,
+	  -300
+	],
+	"gyaradosmega": [
+	  -440,
+	  -2760
+	],
+	"lapras": [
+	  -440,
+	  -300
+	],
+	"laprasgmax": [
+	  -360,
+	  -2880
+	],
+	"ditto": [
+	  0,
+	  -330
+	],
+	"eevee": [
+	  -40,
+	  -330
+	],
+	"eeveestarter": [
+	  -360,
+	  -2640
+	],
+	"eeveegmax": [
+	  -400,
+	  -2880
+	],
+	"vaporeon": [
+	  -80,
+	  -330
+	],
+	"jolteon": [
+	  -120,
+	  -330
+	],
+	"flareon": [
+	  -160,
+	  -330
+	],
+	"porygon": [
+	  -200,
+	  -330
+	],
+	"omanyte": [
+	  -240,
+	  -330
+	],
+	"omastar": [
+	  -280,
+	  -330
+	],
+	"kabuto": [
+	  -320,
+	  -330
+	],
+	"kabutops": [
+	  -360,
+	  -330
+	],
+	"aerodactyl": [
+	  -400,
+	  -330
+	],
+	"aerodactylmega": [
+	  0,
+	  -2790
+	],
+	"snorlax": [
+	  -440,
+	  -330
+	],
+	"snorlaxgmax": [
+	  -440,
+	  -2880
+	],
+	"articuno": [
+	  0,
+	  -360
+	],
+	"articunogalar": [
+	  -320,
+	  -2730
+	],
+	"zapdos": [
+	  -40,
+	  -360
+	],
+	"zapdosgalar": [
+	  -360,
+	  -2730
+	],
+	"moltres": [
+	  -80,
+	  -360
+	],
+	"moltresgalar": [
+	  -400,
+	  -2730
+	],
+	"dratini": [
+	  -120,
+	  -360
+	],
+	"dragonair": [
+	  -160,
+	  -360
+	],
+	"dragonite": [
+	  -200,
+	  -360
+	],
+	"mewtwo": [
+	  -240,
+	  -360
+	],
+	"mewtwomegax": [
+	  -40,
+	  -2790
+	],
+	"mewtwomegay": [
+	  -80,
+	  -2790
+	],
+	"mew": [
+	  -280,
+	  -360
+	],
+	"chikorita": [
+	  -320,
+	  -360
+	],
+	"bayleef": [
+	  -360,
+	  -360
+	],
+	"meganium": [
+	  -400,
+	  -360
+	],
+	"cyndaquil": [
+	  -440,
+	  -360
+	],
+	"quilava": [
+	  0,
+	  -390
+	],
+	"typhlosion": [
+	  -40,
+	  -390
+	],
+	"totodile": [
+	  -80,
+	  -390
+	],
+	"croconaw": [
+	  -120,
+	  -390
+	],
+	"feraligatr": [
+	  -160,
+	  -390
+	],
+	"sentret": [
+	  -200,
+	  -390
+	],
+	"furret": [
+	  -240,
+	  -390
+	],
+	"hoothoot": [
+	  -280,
+	  -390
+	],
+	"noctowl": [
+	  -320,
+	  -390
+	],
+	"ledyba": [
+	  -360,
+	  -390
+	],
+	"ledian": [
+	  -400,
+	  -390
+	],
+	"spinarak": [
+	  -440,
+	  -390
+	],
+	"ariados": [
+	  0,
+	  -420
+	],
+	"crobat": [
+	  -40,
+	  -420
+	],
+	"chinchou": [
+	  -80,
+	  -420
+	],
+	"lanturn": [
+	  -120,
+	  -420
+	],
+	"pichu": [
+	  -160,
+	  -420
+	],
+	"pichuspikyeared": [
+	  -160,
+	  -420
+	],
+	"cleffa": [
+	  -200,
+	  -420
+	],
+	"igglybuff": [
+	  -240,
+	  -420
+	],
+	"togepi": [
+	  -280,
+	  -420
+	],
+	"togetic": [
+	  -320,
+	  -420
+	],
+	"natu": [
+	  -360,
+	  -420
+	],
+	"xatu": [
+	  -400,
+	  -420
+	],
+	"mareep": [
+	  -440,
+	  -420
+	],
+	"flaaffy": [
+	  0,
+	  -450
+	],
+	"ampharos": [
+	  -40,
+	  -450
+	],
+	"ampharosmega": [
+	  -120,
+	  -2790
+	],
+	"bellossom": [
+	  -80,
+	  -450
+	],
+	"marill": [
+	  -120,
+	  -450
+	],
+	"azumarill": [
+	  -160,
+	  -450
+	],
+	"sudowoodo": [
+	  -200,
+	  -450
+	],
+	"politoed": [
+	  -240,
+	  -450
+	],
+	"hoppip": [
+	  -280,
+	  -450
+	],
+	"skiploom": [
+	  -320,
+	  -450
+	],
+	"jumpluff": [
+	  -360,
+	  -450
+	],
+	"aipom": [
+	  -400,
+	  -450
+	],
+	"sunkern": [
+	  -440,
+	  -450
+	],
+	"sunflora": [
+	  0,
+	  -480
+	],
+	"yanma": [
+	  -40,
+	  -480
+	],
+	"wooper": [
+	  -80,
+	  -480
+	],
+	"quagsire": [
+	  -120,
+	  -480
+	],
+	"espeon": [
+	  -160,
+	  -480
+	],
+	"umbreon": [
+	  -200,
+	  -480
+	],
+	"murkrow": [
+	  -240,
+	  -480
+	],
+	"slowking": [
+	  -280,
+	  -480
+	],
+	"slowkinggalar": [
+	  -440,
+	  -2730
+	],
+	"misdreavus": [
+	  -320,
+	  -480
+	],
+	"unown": [
+	  -360,
+	  -480
+	],
+	"wobbuffet": [
+	  -400,
+	  -480
+	],
+	"girafarig": [
+	  -440,
+	  -480
+	],
+	"pineco": [
+	  0,
+	  -510
+	],
+	"forretress": [
+	  -40,
+	  -510
+	],
+	"dunsparce": [
+	  -80,
+	  -510
+	],
+	"gligar": [
+	  -120,
+	  -510
+	],
+	"steelix": [
+	  -160,
+	  -510
+	],
+	"steelixmega": [
+	  -160,
+	  -2790
+	],
+	"snubbull": [
+	  -200,
+	  -510
+	],
+	"granbull": [
+	  -240,
+	  -510
+	],
+	"qwilfish": [
+	  -280,
+	  -510
+	],
+	"scizor": [
+	  -320,
+	  -510
+	],
+	"scizormega": [
+	  -200,
+	  -2790
+	],
+	"shuckle": [
+	  -360,
+	  -510
+	],
+	"heracross": [
+	  -400,
+	  -510
+	],
+	"heracrossmega": [
+	  -240,
+	  -2790
+	],
+	"sneasel": [
+	  -440,
+	  -510
+	],
+	"teddiursa": [
+	  0,
+	  -540
+	],
+	"ursaring": [
+	  -40,
+	  -540
+	],
+	"slugma": [
+	  -80,
+	  -540
+	],
+	"magcargo": [
+	  -120,
+	  -540
+	],
+	"swinub": [
+	  -160,
+	  -540
+	],
+	"piloswine": [
+	  -200,
+	  -540
+	],
+	"corsola": [
+	  -240,
+	  -540
+	],
+	"corsolagalar": [
+	  -160,
+	  -2670
+	],
+	"remoraid": [
+	  -280,
+	  -540
+	],
+	"octillery": [
+	  -320,
+	  -540
+	],
+	"delibird": [
+	  -360,
+	  -540
+	],
+	"mantine": [
+	  -400,
+	  -540
+	],
+	"skarmory": [
+	  -440,
+	  -540
+	],
+	"houndour": [
+	  0,
+	  -570
+	],
+	"houndoom": [
+	  -40,
+	  -570
+	],
+	"houndoommega": [
+	  -280,
+	  -2790
+	],
+	"kingdra": [
+	  -80,
+	  -570
+	],
+	"phanpy": [
+	  -120,
+	  -570
+	],
+	"donphan": [
+	  -160,
+	  -570
+	],
+	"porygon2": [
+	  -200,
+	  -570
+	],
+	"stantler": [
+	  -240,
+	  -570
+	],
+	"smeargle": [
+	  -280,
+	  -570
+	],
+	"tyrogue": [
+	  -320,
+	  -570
+	],
+	"hitmontop": [
+	  -360,
+	  -570
+	],
+	"smoochum": [
+	  -400,
+	  -570
+	],
+	"elekid": [
+	  -440,
+	  -570
+	],
+	"magby": [
+	  0,
+	  -600
+	],
+	"miltank": [
+	  -40,
+	  -600
+	],
+	"blissey": [
+	  -80,
+	  -600
+	],
+	"raikou": [
+	  -120,
+	  -600
+	],
+	"entei": [
+	  -160,
+	  -600
+	],
+	"suicune": [
+	  -200,
+	  -600
+	],
+	"larvitar": [
+	  -240,
+	  -600
+	],
+	"pupitar": [
+	  -280,
+	  -600
+	],
+	"tyranitar": [
+	  -320,
+	  -600
+	],
+	"tyranitarmega": [
+	  -320,
+	  -2790
+	],
+	"lugia": [
+	  -360,
+	  -600
+	],
+	"hooh": [
+	  -400,
+	  -600
+	],
+	"celebi": [
+	  -440,
+	  -600
+	],
+	"treecko": [
+	  0,
+	  -630
+	],
+	"grovyle": [
+	  -40,
+	  -630
+	],
+	"sceptile": [
+	  -80,
+	  -630
+	],
+	"sceptilemega": [
+	  -360,
+	  -2790
+	],
+	"torchic": [
+	  -120,
+	  -630
+	],
+	"combusken": [
+	  -160,
+	  -630
+	],
+	"blaziken": [
+	  -200,
+	  -630
+	],
+	"blazikenmega": [
+	  -400,
+	  -2790
+	],
+	"mudkip": [
+	  -240,
+	  -630
+	],
+	"marshtomp": [
+	  -280,
+	  -630
+	],
+	"swampert": [
+	  -320,
+	  -630
+	],
+	"swampertmega": [
+	  -440,
+	  -2790
+	],
+	"poochyena": [
+	  -360,
+	  -630
+	],
+	"mightyena": [
+	  -400,
+	  -630
+	],
+	"zigzagoon": [
+	  -440,
+	  -630
+	],
+	"zigzagoongalar": [
+	  -200,
+	  -2670
+	],
+	"linoone": [
+	  0,
+	  -660
+	],
+	"linoonegalar": [
+	  -240,
+	  -2670
+	],
+	"wurmple": [
+	  -40,
+	  -660
+	],
+	"silcoon": [
+	  -80,
+	  -660
+	],
+	"beautifly": [
+	  -120,
+	  -660
+	],
+	"cascoon": [
+	  -160,
+	  -660
+	],
+	"dustox": [
+	  -200,
+	  -660
+	],
+	"lotad": [
+	  -240,
+	  -660
+	],
+	"lombre": [
+	  -280,
+	  -660
+	],
+	"ludicolo": [
+	  -320,
+	  -660
+	],
+	"seedot": [
+	  -360,
+	  -660
+	],
+	"nuzleaf": [
+	  -400,
+	  -660
+	],
+	"shiftry": [
+	  -440,
+	  -660
+	],
+	"taillow": [
+	  0,
+	  -690
+	],
+	"swellow": [
+	  -40,
+	  -690
+	],
+	"wingull": [
+	  -80,
+	  -690
+	],
+	"pelipper": [
+	  -120,
+	  -690
+	],
+	"ralts": [
+	  -160,
+	  -690
+	],
+	"kirlia": [
+	  -200,
+	  -690
+	],
+	"gardevoir": [
+	  -240,
+	  -690
+	],
+	"gardevoirmega": [
+	  0,
+	  -2820
+	],
+	"surskit": [
+	  -280,
+	  -690
+	],
+	"masquerain": [
+	  -320,
+	  -690
+	],
+	"shroomish": [
+	  -360,
+	  -690
+	],
+	"breloom": [
+	  -400,
+	  -690
+	],
+	"slakoth": [
+	  -440,
+	  -690
+	],
+	"vigoroth": [
+	  0,
+	  -720
+	],
+	"slaking": [
+	  -40,
+	  -720
+	],
+	"nincada": [
+	  -80,
+	  -720
+	],
+	"ninjask": [
+	  -120,
+	  -720
+	],
+	"shedinja": [
+	  -160,
+	  -720
+	],
+	"whismur": [
+	  -200,
+	  -720
+	],
+	"loudred": [
+	  -240,
+	  -720
+	],
+	"exploud": [
+	  -280,
+	  -720
+	],
+	"makuhita": [
+	  -320,
+	  -720
+	],
+	"hariyama": [
+	  -360,
+	  -720
+	],
+	"azurill": [
+	  -400,
+	  -720
+	],
+	"nosepass": [
+	  -440,
+	  -720
+	],
+	"skitty": [
+	  0,
+	  -750
+	],
+	"delcatty": [
+	  -40,
+	  -750
+	],
+	"sableye": [
+	  -80,
+	  -750
+	],
+	"sableyemega": [
+	  -40,
+	  -2820
+	],
+	"mawile": [
+	  -120,
+	  -750
+	],
+	"mawilemega": [
+	  -80,
+	  -2820
+	],
+	"aron": [
+	  -160,
+	  -750
+	],
+	"lairon": [
+	  -200,
+	  -750
+	],
+	"aggron": [
+	  -240,
+	  -750
+	],
+	"aggronmega": [
+	  -120,
+	  -2820
+	],
+	"meditite": [
+	  -280,
+	  -750
+	],
+	"medicham": [
+	  -320,
+	  -750
+	],
+	"medichammega": [
+	  -160,
+	  -2820
+	],
+	"electrike": [
+	  -360,
+	  -750
+	],
+	"manectric": [
+	  -400,
+	  -750
+	],
+	"manectricmega": [
+	  -200,
+	  -2820
+	],
+	"plusle": [
+	  -440,
+	  -750
+	],
+	"minun": [
+	  0,
+	  -780
+	],
+	"volbeat": [
+	  -40,
+	  -780
+	],
+	"illumise": [
+	  -80,
+	  -780
+	],
+	"roselia": [
+	  -120,
+	  -780
+	],
+	"gulpin": [
+	  -160,
+	  -780
+	],
+	"swalot": [
+	  -200,
+	  -780
+	],
+	"carvanha": [
+	  -240,
+	  -780
+	],
+	"sharpedo": [
+	  -280,
+	  -780
+	],
+	"sharpedomega": [
+	  -240,
+	  -2820
+	],
+	"wailmer": [
+	  -320,
+	  -780
+	],
+	"wailord": [
+	  -360,
+	  -780
+	],
+	"numel": [
+	  -400,
+	  -780
+	],
+	"camerupt": [
+	  -440,
+	  -780
+	],
+	"cameruptmega": [
+	  -280,
+	  -2820
+	],
+	"torkoal": [
+	  0,
+	  -810
+	],
+	"spoink": [
+	  -40,
+	  -810
+	],
+	"grumpig": [
+	  -80,
+	  -810
+	],
+	"spinda": [
+	  -120,
+	  -810
+	],
+	"trapinch": [
+	  -160,
+	  -810
+	],
+	"vibrava": [
+	  -200,
+	  -810
+	],
+	"flygon": [
+	  -240,
+	  -810
+	],
+	"cacnea": [
+	  -280,
+	  -810
+	],
+	"cacturne": [
+	  -320,
+	  -810
+	],
+	"swablu": [
+	  -360,
+	  -810
+	],
+	"altaria": [
+	  -400,
+	  -810
+	],
+	"altariamega": [
+	  -320,
+	  -2820
+	],
+	"zangoose": [
+	  -440,
+	  -810
+	],
+	"seviper": [
+	  0,
+	  -840
+	],
+	"lunatone": [
+	  -40,
+	  -840
+	],
+	"solrock": [
+	  -80,
+	  -840
+	],
+	"barboach": [
+	  -120,
+	  -840
+	],
+	"whiscash": [
+	  -160,
+	  -840
+	],
+	"corphish": [
+	  -200,
+	  -840
+	],
+	"crawdaunt": [
+	  -240,
+	  -840
+	],
+	"baltoy": [
+	  -280,
+	  -840
+	],
+	"claydol": [
+	  -320,
+	  -840
+	],
+	"lileep": [
+	  -360,
+	  -840
+	],
+	"cradily": [
+	  -400,
+	  -840
+	],
+	"anorith": [
+	  -440,
+	  -840
+	],
+	"armaldo": [
+	  0,
+	  -870
+	],
+	"feebas": [
+	  -40,
+	  -870
+	],
+	"milotic": [
+	  -80,
+	  -870
+	],
+	"castform": [
+	  -120,
+	  -870
+	],
+	"castformsunny": [
+	  -40,
+	  -2340
+	],
+	"castformrainy": [
+	  -440,
+	  -2310
+	],
+	"castformsnowy": [
+	  0,
+	  -2340
+	],
+	"kecleon": [
+	  -160,
+	  -870
+	],
+	"shuppet": [
+	  -200,
+	  -870
+	],
+	"banette": [
+	  -240,
+	  -870
+	],
+	"banettemega": [
+	  -360,
+	  -2820
+	],
+	"duskull": [
+	  -280,
+	  -870
+	],
+	"dusclops": [
+	  -320,
+	  -870
+	],
+	"tropius": [
+	  -360,
+	  -870
+	],
+	"chimecho": [
+	  -400,
+	  -870
+	],
+	"absol": [
+	  -440,
+	  -870
+	],
+	"absolmega": [
+	  -400,
+	  -2820
+	],
+	"wynaut": [
+	  0,
+	  -900
+	],
+	"snorunt": [
+	  -40,
+	  -900
+	],
+	"glalie": [
+	  -80,
+	  -900
+	],
+	"glaliemega": [
+	  -440,
+	  -2820
+	],
+	"spheal": [
+	  -120,
+	  -900
+	],
+	"sealeo": [
+	  -160,
+	  -900
+	],
+	"walrein": [
+	  -200,
+	  -900
+	],
+	"clamperl": [
+	  -240,
+	  -900
+	],
+	"huntail": [
+	  -280,
+	  -900
+	],
+	"gorebyss": [
+	  -320,
+	  -900
+	],
+	"relicanth": [
+	  -360,
+	  -900
+	],
+	"luvdisc": [
+	  -400,
+	  -900
+	],
+	"bagon": [
+	  -440,
+	  -900
+	],
+	"shelgon": [
+	  0,
+	  -930
+	],
+	"salamence": [
+	  -40,
+	  -930
+	],
+	"salamencemega": [
+	  0,
+	  -2850
+	],
+	"beldum": [
+	  -80,
+	  -930
+	],
+	"metang": [
+	  -120,
+	  -930
+	],
+	"metagross": [
+	  -160,
+	  -930
+	],
+	"metagrossmega": [
+	  -40,
+	  -2850
+	],
+	"regirock": [
+	  -200,
+	  -930
+	],
+	"regice": [
+	  -240,
+	  -930
+	],
+	"registeel": [
+	  -280,
+	  -930
+	],
+	"latias": [
+	  -320,
+	  -930
+	],
+	"latiasmega": [
+	  -80,
+	  -2850
+	],
+	"latios": [
+	  -360,
+	  -930
+	],
+	"latiosmega": [
+	  -120,
+	  -2850
+	],
+	"kyogre": [
+	  -400,
+	  -930
+	],
+	"kyogreprimal": [
+	  -160,
+	  -2850
+	],
+	"groudon": [
+	  -440,
+	  -930
+	],
+	"groudonprimal": [
+	  -200,
+	  -2850
+	],
+	"rayquaza": [
+	  0,
+	  -960
+	],
+	"rayquazamega": [
+	  -240,
+	  -2850
+	],
+	"jirachi": [
+	  -40,
+	  -960
+	],
+	"deoxys": [
+	  -80,
+	  -960
+	],
+	"deoxysattack": [
+	  -80,
+	  -2340
+	],
+	"deoxysdefense": [
+	  -120,
+	  -2340
+	],
+	"deoxysspeed": [
+	  -160,
+	  -2340
+	],
+	"turtwig": [
+	  -120,
+	  -960
+	],
+	"grotle": [
+	  -160,
+	  -960
+	],
+	"torterra": [
+	  -200,
+	  -960
+	],
+	"chimchar": [
+	  -240,
+	  -960
+	],
+	"monferno": [
+	  -280,
+	  -960
+	],
+	"infernape": [
+	  -320,
+	  -960
+	],
+	"piplup": [
+	  -360,
+	  -960
+	],
+	"prinplup": [
+	  -400,
+	  -960
+	],
+	"empoleon": [
+	  -440,
+	  -960
+	],
+	"starly": [
+	  0,
+	  -990
+	],
+	"staravia": [
+	  -40,
+	  -990
+	],
+	"staraptor": [
+	  -80,
+	  -990
+	],
+	"bidoof": [
+	  -120,
+	  -990
+	],
+	"bibarel": [
+	  -160,
+	  -990
+	],
+	"kricketot": [
+	  -200,
+	  -990
+	],
+	"kricketune": [
+	  -240,
+	  -990
+	],
+	"shinx": [
+	  -280,
+	  -990
+	],
+	"luxio": [
+	  -320,
+	  -990
+	],
+	"luxray": [
+	  -360,
+	  -990
+	],
+	"budew": [
+	  -400,
+	  -990
+	],
+	"roserade": [
+	  -440,
+	  -990
+	],
+	"cranidos": [
+	  0,
+	  -1020
+	],
+	"rampardos": [
+	  -40,
+	  -1020
+	],
+	"shieldon": [
+	  -80,
+	  -1020
+	],
+	"bastiodon": [
+	  -120,
+	  -1020
+	],
+	"burmy": [
+	  -160,
+	  -1020
+	],
+	"wormadam": [
+	  -200,
+	  -1020
+	],
+	"wormadamsandy": [
+	  -280,
+	  -2340
+	],
+	"wormadamtrash": [
+	  -320,
+	  -2340
+	],
+	"mothim": [
+	  -240,
+	  -1020
+	],
+	"combee": [
+	  -280,
+	  -1020
+	],
+	"vespiquen": [
+	  -320,
+	  -1020
+	],
+	"pachirisu": [
+	  -360,
+	  -1020
+	],
+	"buizel": [
+	  -400,
+	  -1020
+	],
+	"floatzel": [
+	  -440,
+	  -1020
+	],
+	"cherubi": [
+	  0,
+	  -1050
+	],
+	"cherrim": [
+	  -40,
+	  -1050
+	],
+	"cherrimsunshine": [
+	  -360,
+	  -2340
+	],
+	"shellos": [
+	  -80,
+	  -1050
+	],
+	"gastrodon": [
+	  -120,
+	  -1050
+	],
+	"ambipom": [
+	  -160,
+	  -1050
+	],
+	"drifloon": [
+	  -200,
+	  -1050
+	],
+	"drifblim": [
+	  -240,
+	  -1050
+	],
+	"buneary": [
+	  -280,
+	  -1050
+	],
+	"lopunny": [
+	  -320,
+	  -1050
+	],
+	"lopunnymega": [
+	  -280,
+	  -2850
+	],
+	"mismagius": [
+	  -360,
+	  -1050
+	],
+	"honchkrow": [
+	  -400,
+	  -1050
+	],
+	"glameow": [
+	  -440,
+	  -1050
+	],
+	"purugly": [
+	  0,
+	  -1080
+	],
+	"chingling": [
+	  -40,
+	  -1080
+	],
+	"stunky": [
+	  -80,
+	  -1080
+	],
+	"skuntank": [
+	  -120,
+	  -1080
+	],
+	"bronzor": [
+	  -160,
+	  -1080
+	],
+	"bronzong": [
+	  -200,
+	  -1080
+	],
+	"bonsly": [
+	  -240,
+	  -1080
+	],
+	"mimejr": [
+	  -280,
+	  -1080
+	],
+	"happiny": [
+	  -320,
+	  -1080
+	],
+	"chatot": [
+	  -360,
+	  -1080
+	],
+	"spiritomb": [
+	  -400,
+	  -1080
+	],
+	"gible": [
+	  -440,
+	  -1080
+	],
+	"gabite": [
+	  0,
+	  -1110
+	],
+	"garchomp": [
+	  -40,
+	  -1110
+	],
+	"garchompmega": [
+	  -320,
+	  -2850
+	],
+	"munchlax": [
+	  -80,
+	  -1110
+	],
+	"riolu": [
+	  -120,
+	  -1110
+	],
+	"lucario": [
+	  -160,
+	  -1110
+	],
+	"lucariomega": [
+	  -360,
+	  -2850
+	],
+	"hippopotas": [
+	  -200,
+	  -1110
+	],
+	"hippowdon": [
+	  -240,
+	  -1110
+	],
+	"skorupi": [
+	  -280,
+	  -1110
+	],
+	"drapion": [
+	  -320,
+	  -1110
+	],
+	"croagunk": [
+	  -360,
+	  -1110
+	],
+	"toxicroak": [
+	  -400,
+	  -1110
+	],
+	"carnivine": [
+	  -440,
+	  -1110
+	],
+	"finneon": [
+	  0,
+	  -1140
+	],
+	"lumineon": [
+	  -40,
+	  -1140
+	],
+	"mantyke": [
+	  -80,
+	  -1140
+	],
+	"snover": [
+	  -120,
+	  -1140
+	],
+	"abomasnow": [
+	  -160,
+	  -1140
+	],
+	"abomasnowmega": [
+	  -400,
+	  -2850
+	],
+	"weavile": [
+	  -200,
+	  -1140
+	],
+	"magnezone": [
+	  -240,
+	  -1140
+	],
+	"lickilicky": [
+	  -280,
+	  -1140
+	],
+	"rhyperior": [
+	  -320,
+	  -1140
+	],
+	"tangrowth": [
+	  -360,
+	  -1140
+	],
+	"electivire": [
+	  -400,
+	  -1140
+	],
+	"magmortar": [
+	  -440,
+	  -1140
+	],
+	"togekiss": [
+	  0,
+	  -1170
+	],
+	"yanmega": [
+	  -40,
+	  -1170
+	],
+	"leafeon": [
+	  -80,
+	  -1170
+	],
+	"glaceon": [
+	  -120,
+	  -1170
+	],
+	"gliscor": [
+	  -160,
+	  -1170
+	],
+	"mamoswine": [
+	  -200,
+	  -1170
+	],
+	"porygonz": [
+	  -240,
+	  -1170
+	],
+	"gallade": [
+	  -280,
+	  -1170
+	],
+	"gallademega": [
+	  -440,
+	  -2850
+	],
+	"probopass": [
+	  -320,
+	  -1170
+	],
+	"dusknoir": [
+	  -360,
+	  -1170
+	],
+	"froslass": [
+	  -400,
+	  -1170
+	],
+	"rotom": [
+	  -440,
+	  -1170
+	],
+	"rotomheat": [
+	  -80,
+	  -2370
+	],
+	"rotomwash": [
+	  -160,
+	  -2370
+	],
+	"rotomfrost": [
+	  -40,
+	  -2370
+	],
+	"rotomfan": [
+	  0,
+	  -2370
+	],
+	"rotommow": [
+	  -120,
+	  -2370
+	],
+	"uxie": [
+	  0,
+	  -1200
+	],
+	"mesprit": [
+	  -40,
+	  -1200
+	],
+	"azelf": [
+	  -80,
+	  -1200
+	],
+	"dialga": [
+	  -120,
+	  -1200
+	],
+	"palkia": [
+	  -160,
+	  -1200
+	],
+	"heatran": [
+	  -200,
+	  -1200
+	],
+	"regigigas": [
+	  -240,
+	  -1200
+	],
+	"giratina": [
+	  -280,
+	  -1200
+	],
+	"giratinaorigin": [
+	  -200,
+	  -2370
+	],
+	"cresselia": [
+	  -320,
+	  -1200
+	],
+	"phione": [
+	  -360,
+	  -1200
+	],
+	"manaphy": [
+	  -400,
+	  -1200
+	],
+	"darkrai": [
+	  -440,
+	  -1200
+	],
+	"shaymin": [
+	  0,
+	  -1230
+	],
+	"shayminsky": [
+	  -240,
+	  -2370
+	],
+	"arceus": [
+	  -40,
+	  -1230
+	],
+	"arceusbug": [
+	  -40,
+	  -1230
+	],
+	"arceusdark": [
+	  -40,
+	  -1230
+	],
+	"arceusdragon": [
+	  -40,
+	  -1230
+	],
+	"arceuselectric": [
+	  -40,
+	  -1230
+	],
+	"arceusfairy": [
+	  -40,
+	  -1230
+	],
+	"arceusfighting": [
+	  -40,
+	  -1230
+	],
+	"arceusfire": [
+	  -40,
+	  -1230
+	],
+	"arceusflying": [
+	  -40,
+	  -1230
+	],
+	"arceusghost": [
+	  -40,
+	  -1230
+	],
+	"arceusgrass": [
+	  -40,
+	  -1230
+	],
+	"arceusground": [
+	  -40,
+	  -1230
+	],
+	"arceusice": [
+	  -40,
+	  -1230
+	],
+	"arceuspoison": [
+	  -40,
+	  -1230
+	],
+	"arceuspsychic": [
+	  -40,
+	  -1230
+	],
+	"arceusrock": [
+	  -40,
+	  -1230
+	],
+	"arceussteel": [
+	  -40,
+	  -1230
+	],
+	"arceuswater": [
+	  -40,
+	  -1230
+	],
+	"victini": [
+	  -80,
+	  -1230
+	],
+	"snivy": [
+	  -120,
+	  -1230
+	],
+	"servine": [
+	  -160,
+	  -1230
+	],
+	"serperior": [
+	  -200,
+	  -1230
+	],
+	"tepig": [
+	  -240,
+	  -1230
+	],
+	"pignite": [
+	  -280,
+	  -1230
+	],
+	"emboar": [
+	  -320,
+	  -1230
+	],
+	"oshawott": [
+	  -360,
+	  -1230
+	],
+	"dewott": [
+	  -400,
+	  -1230
+	],
+	"samurott": [
+	  -440,
+	  -1230
+	],
+	"patrat": [
+	  0,
+	  -1260
+	],
+	"watchog": [
+	  -40,
+	  -1260
+	],
+	"lillipup": [
+	  -80,
+	  -1260
+	],
+	"herdier": [
+	  -120,
+	  -1260
+	],
+	"stoutland": [
+	  -160,
+	  -1260
+	],
+	"purrloin": [
+	  -200,
+	  -1260
+	],
+	"liepard": [
+	  -240,
+	  -1260
+	],
+	"pansage": [
+	  -280,
+	  -1260
+	],
+	"simisage": [
+	  -320,
+	  -1260
+	],
+	"pansear": [
+	  -360,
+	  -1260
+	],
+	"simisear": [
+	  -400,
+	  -1260
+	],
+	"panpour": [
+	  -440,
+	  -1260
+	],
+	"simipour": [
+	  0,
+	  -1290
+	],
+	"munna": [
+	  -40,
+	  -1290
+	],
+	"musharna": [
+	  -80,
+	  -1290
+	],
+	"pidove": [
+	  -120,
+	  -1290
+	],
+	"tranquill": [
+	  -160,
+	  -1290
+	],
+	"unfezant": [
+	  -200,
+	  -1290
+	],
+	"blitzle": [
+	  -240,
+	  -1290
+	],
+	"zebstrika": [
+	  -280,
+	  -1290
+	],
+	"roggenrola": [
+	  -320,
+	  -1290
+	],
+	"boldore": [
+	  -360,
+	  -1290
+	],
+	"gigalith": [
+	  -400,
+	  -1290
+	],
+	"woobat": [
+	  -440,
+	  -1290
+	],
+	"swoobat": [
+	  0,
+	  -1320
+	],
+	"drilbur": [
+	  -40,
+	  -1320
+	],
+	"excadrill": [
+	  -80,
+	  -1320
+	],
+	"audino": [
+	  -120,
+	  -1320
+	],
+	"audinomega": [
+	  0,
+	  -2880
+	],
+	"timburr": [
+	  -160,
+	  -1320
+	],
+	"gurdurr": [
+	  -200,
+	  -1320
+	],
+	"conkeldurr": [
+	  -240,
+	  -1320
+	],
+	"tympole": [
+	  -280,
+	  -1320
+	],
+	"palpitoad": [
+	  -320,
+	  -1320
+	],
+	"seismitoad": [
+	  -360,
+	  -1320
+	],
+	"throh": [
+	  -400,
+	  -1320
+	],
+	"sawk": [
+	  -440,
+	  -1320
+	],
+	"sewaddle": [
+	  0,
+	  -1350
+	],
+	"swadloon": [
+	  -40,
+	  -1350
+	],
+	"leavanny": [
+	  -80,
+	  -1350
+	],
+	"venipede": [
+	  -120,
+	  -1350
+	],
+	"whirlipede": [
+	  -160,
+	  -1350
+	],
+	"scolipede": [
+	  -200,
+	  -1350
+	],
+	"cottonee": [
+	  -240,
+	  -1350
+	],
+	"whimsicott": [
+	  -280,
+	  -1350
+	],
+	"petilil": [
+	  -320,
+	  -1350
+	],
+	"lilligant": [
+	  -360,
+	  -1350
+	],
+	"basculin": [
+	  -400,
+	  -1350
+	],
+	"basculinbluestriped": [
+	  -320,
+	  -2370
+	],
+	"sandile": [
+	  -440,
+	  -1350
+	],
+	"krokorok": [
+	  0,
+	  -1380
+	],
+	"krookodile": [
+	  -40,
+	  -1380
+	],
+	"darumaka": [
+	  -80,
+	  -1380
+	],
+	"darumakagalar": [
+	  -280,
+	  -2670
+	],
+	"darmanitan": [
+	  -120,
+	  -1380
+	],
+	"darmanitanzen": [
+	  -360,
+	  -2370
+	],
+	"darmanitangalar": [
+	  -320,
+	  -2670
+	],
+	"darmanitangalarzen": [
+	  -360,
+	  -2670
+	],
+	"maractus": [
+	  -160,
+	  -1380
+	],
+	"dwebble": [
+	  -200,
+	  -1380
+	],
+	"crustle": [
+	  -240,
+	  -1380
+	],
+	"scraggy": [
+	  -280,
+	  -1380
+	],
+	"scrafty": [
+	  -320,
+	  -1380
+	],
+	"sigilyph": [
+	  -360,
+	  -1380
+	],
+	"yamask": [
+	  -400,
+	  -1380
+	],
+	"yamaskgalar": [
+	  -400,
+	  -2670
+	],
+	"cofagrigus": [
+	  -440,
+	  -1380
+	],
+	"tirtouga": [
+	  0,
+	  -1410
+	],
+	"carracosta": [
+	  -40,
+	  -1410
+	],
+	"archen": [
+	  -80,
+	  -1410
+	],
+	"archeops": [
+	  -120,
+	  -1410
+	],
+	"trubbish": [
+	  -160,
+	  -1410
+	],
+	"garbodor": [
+	  -200,
+	  -1410
+	],
+	"garbodorgmax": [
+	  0,
+	  -2910
+	],
+	"zorua": [
+	  -240,
+	  -1410
+	],
+	"zoroark": [
+	  -280,
+	  -1410
+	],
+	"minccino": [
+	  -320,
+	  -1410
+	],
+	"cinccino": [
+	  -360,
+	  -1410
+	],
+	"gothita": [
+	  -400,
+	  -1410
+	],
+	"gothorita": [
+	  -440,
+	  -1410
+	],
+	"gothitelle": [
+	  0,
+	  -1440
+	],
+	"solosis": [
+	  -40,
+	  -1440
+	],
+	"duosion": [
+	  -80,
+	  -1440
+	],
+	"reuniclus": [
+	  -120,
+	  -1440
+	],
+	"ducklett": [
+	  -160,
+	  -1440
+	],
+	"swanna": [
+	  -200,
+	  -1440
+	],
+	"vanillite": [
+	  -240,
+	  -1440
+	],
+	"vanillish": [
+	  -280,
+	  -1440
+	],
+	"vanilluxe": [
+	  -320,
+	  -1440
+	],
+	"deerling": [
+	  -360,
+	  -1440
+	],
+	"sawsbuck": [
+	  -400,
+	  -1440
+	],
+	"emolga": [
+	  -440,
+	  -1440
+	],
+	"karrablast": [
+	  0,
+	  -1470
+	],
+	"escavalier": [
+	  -40,
+	  -1470
+	],
+	"foongus": [
+	  -80,
+	  -1470
+	],
+	"amoonguss": [
+	  -120,
+	  -1470
+	],
+	"frillish": [
+	  -160,
+	  -1470
+	],
+	"jellicent": [
+	  -200,
+	  -1470
+	],
+	"alomomola": [
+	  -240,
+	  -1470
+	],
+	"joltik": [
+	  -280,
+	  -1470
+	],
+	"galvantula": [
+	  -320,
+	  -1470
+	],
+	"ferroseed": [
+	  -360,
+	  -1470
+	],
+	"ferrothorn": [
+	  -400,
+	  -1470
+	],
+	"klink": [
+	  -440,
+	  -1470
+	],
+	"klang": [
+	  0,
+	  -1500
+	],
+	"klinklang": [
+	  -40,
+	  -1500
+	],
+	"tynamo": [
+	  -80,
+	  -1500
+	],
+	"eelektrik": [
+	  -120,
+	  -1500
+	],
+	"eelektross": [
+	  -160,
+	  -1500
+	],
+	"elgyem": [
+	  -200,
+	  -1500
+	],
+	"beheeyem": [
+	  -240,
+	  -1500
+	],
+	"litwick": [
+	  -280,
+	  -1500
+	],
+	"lampent": [
+	  -320,
+	  -1500
+	],
+	"chandelure": [
+	  -360,
+	  -1500
+	],
+	"axew": [
+	  -400,
+	  -1500
+	],
+	"fraxure": [
+	  -440,
+	  -1500
+	],
+	"haxorus": [
+	  0,
+	  -1530
+	],
+	"cubchoo": [
+	  -40,
+	  -1530
+	],
+	"beartic": [
+	  -80,
+	  -1530
+	],
+	"cryogonal": [
+	  -120,
+	  -1530
+	],
+	"shelmet": [
+	  -160,
+	  -1530
+	],
+	"accelgor": [
+	  -200,
+	  -1530
+	],
+	"stunfisk": [
+	  -240,
+	  -1530
+	],
+	"stunfiskgalar": [
+	  -440,
+	  -2670
+	],
+	"mienfoo": [
+	  -280,
+	  -1530
+	],
+	"mienshao": [
+	  -320,
+	  -1530
+	],
+	"druddigon": [
+	  -360,
+	  -1530
+	],
+	"golett": [
+	  -400,
+	  -1530
+	],
+	"golurk": [
+	  -440,
+	  -1530
+	],
+	"pawniard": [
+	  0,
+	  -1560
+	],
+	"bisharp": [
+	  -40,
+	  -1560
+	],
+	"bouffalant": [
+	  -80,
+	  -1560
+	],
+	"rufflet": [
+	  -120,
+	  -1560
+	],
+	"braviary": [
+	  -160,
+	  -1560
+	],
+	"vullaby": [
+	  -200,
+	  -1560
+	],
+	"mandibuzz": [
+	  -240,
+	  -1560
+	],
+	"heatmor": [
+	  -280,
+	  -1560
+	],
+	"durant": [
+	  -320,
+	  -1560
+	],
+	"deino": [
+	  -360,
+	  -1560
+	],
+	"zweilous": [
+	  -400,
+	  -1560
+	],
+	"hydreigon": [
+	  -440,
+	  -1560
+	],
+	"larvesta": [
+	  0,
+	  -1590
+	],
+	"volcarona": [
+	  -40,
+	  -1590
+	],
+	"cobalion": [
+	  -80,
+	  -1590
+	],
+	"terrakion": [
+	  -120,
+	  -1590
+	],
+	"virizion": [
+	  -160,
+	  -1590
+	],
+	"tornadus": [
+	  -200,
+	  -1590
+	],
+	"tornadustherian": [
+	  -240,
+	  -2400
+	],
+	"thundurus": [
+	  -240,
+	  -1590
+	],
+	"thundurustherian": [
+	  -280,
+	  -2400
+	],
+	"reshiram": [
+	  -280,
+	  -1590
+	],
+	"zekrom": [
+	  -320,
+	  -1590
+	],
+	"landorus": [
+	  -360,
+	  -1590
+	],
+	"landorustherian": [
+	  -320,
+	  -2400
+	],
+	"kyurem": [
+	  -400,
+	  -1590
+	],
+	"kyuremblack": [
+	  -360,
+	  -2400
+	],
+	"kyuremwhite": [
+	  -400,
+	  -2400
+	],
+	"keldeo": [
+	  -440,
+	  -1590
+	],
+	"keldeoresolute": [
+	  -440,
+	  -2400
+	],
+	"meloetta": [
+	  0,
+	  -1620
+	],
+	"meloettapirouette": [
+	  0,
+	  -2430
+	],
+	"genesect": [
+	  -40,
+	  -1620
+	],
+	"genesectdouse": [
+	  -40,
+	  -1620
+	],
+	"genesectshock": [
+	  -40,
+	  -1620
+	],
+	"genesectburn": [
+	  -40,
+	  -1620
+	],
+	"genesectchill": [
+	  -40,
+	  -1620
+	],
+	"chespin": [
+	  -80,
+	  -1620
+	],
+	"quilladin": [
+	  -120,
+	  -1620
+	],
+	"chesnaught": [
+	  -160,
+	  -1620
+	],
+	"fennekin": [
+	  -200,
+	  -1620
+	],
+	"braixen": [
+	  -240,
+	  -1620
+	],
+	"delphox": [
+	  -280,
+	  -1620
+	],
+	"froakie": [
+	  -320,
+	  -1620
+	],
+	"frogadier": [
+	  -360,
+	  -1620
+	],
+	"greninja": [
+	  -400,
+	  -1620
+	],
+	"greninjaash": [
+	  -200,
+	  -2580
+	],
+	"bunnelby": [
+	  -440,
+	  -1620
+	],
+	"diggersby": [
+	  0,
+	  -1650
+	],
+	"fletchling": [
+	  -40,
+	  -1650
+	],
+	"fletchinder": [
+	  -80,
+	  -1650
+	],
+	"talonflame": [
+	  -120,
+	  -1650
+	],
+	"scatterbug": [
+	  -160,
+	  -1650
+	],
+	"spewpa": [
+	  -200,
+	  -1650
+	],
+	"vivillon": [
+	  -240,
+	  -1650
+	],
+	"vivillonfancy": [
+	  -160,
+	  -2430
+	],
+	"vivillonpokeball": [
+	  -40,
+	  -2460
+	],
+	"litleo": [
+	  -280,
+	  -1650
+	],
+	"pyroar": [
+	  -320,
+	  -1650
+	],
+	"flabebe": [
+	  -360,
+	  -1650
+	],
+	"floette": [
+	  -400,
+	  -1650
+	],
+	"floetteeternal": [
+	  -80,
+	  -2490
+	],
+	"florges": [
+	  -440,
+	  -1650
+	],
+	"skiddo": [
+	  0,
+	  -1680
+	],
+	"gogoat": [
+	  -40,
+	  -1680
+	],
+	"pancham": [
+	  -80,
+	  -1680
+	],
+	"pangoro": [
+	  -120,
+	  -1680
+	],
+	"furfrou": [
+	  -160,
+	  -1680
+	],
+	"espurr": [
+	  -200,
+	  -1680
+	],
+	"meowstic": [
+	  -240,
+	  -1680
+	],
+	"meowsticf": [
+	  -280,
+	  -2520
+	],
+	"honedge": [
+	  -280,
+	  -1680
+	],
+	"doublade": [
+	  -320,
+	  -1680
+	],
+	"aegislash": [
+	  -360,
+	  -1680
+	],
+	"aegislashblade": [
+	  -320,
+	  -2520
+	],
+	"spritzee": [
+	  -400,
+	  -1680
+	],
+	"aromatisse": [
+	  -440,
+	  -1680
+	],
+	"swirlix": [
+	  0,
+	  -1710
+	],
+	"slurpuff": [
+	  -40,
+	  -1710
+	],
+	"inkay": [
+	  -80,
+	  -1710
+	],
+	"malamar": [
+	  -120,
+	  -1710
+	],
+	"binacle": [
+	  -160,
+	  -1710
+	],
+	"barbaracle": [
+	  -200,
+	  -1710
+	],
+	"skrelp": [
+	  -240,
+	  -1710
+	],
+	"dragalge": [
+	  -280,
+	  -1710
+	],
+	"clauncher": [
+	  -320,
+	  -1710
+	],
+	"clawitzer": [
+	  -360,
+	  -1710
+	],
+	"helioptile": [
+	  -400,
+	  -1710
+	],
+	"heliolisk": [
+	  -440,
+	  -1710
+	],
+	"tyrunt": [
+	  0,
+	  -1740
+	],
+	"tyrantrum": [
+	  -40,
+	  -1740
+	],
+	"amaura": [
+	  -80,
+	  -1740
+	],
+	"aurorus": [
+	  -120,
+	  -1740
+	],
+	"sylveon": [
+	  -160,
+	  -1740
+	],
+	"hawlucha": [
+	  -200,
+	  -1740
+	],
+	"dedenne": [
+	  -240,
+	  -1740
+	],
+	"carbink": [
+	  -280,
+	  -1740
+	],
+	"goomy": [
+	  -320,
+	  -1740
+	],
+	"sliggoo": [
+	  -360,
+	  -1740
+	],
+	"goodra": [
+	  -400,
+	  -1740
+	],
+	"klefki": [
+	  -440,
+	  -1740
+	],
+	"phantump": [
+	  0,
+	  -1770
+	],
+	"trevenant": [
+	  -40,
+	  -1770
+	],
+	"pumpkaboo": [
+	  -80,
+	  -1770
+	],
+	"pumpkaboosmall": [
+	  -80,
+	  -1770
+	],
+	"pumpkaboolarge": [
+	  -80,
+	  -1770
+	],
+	"pumpkaboosuper": [
+	  -80,
+	  -1770
+	],
+	"gourgeist": [
+	  -120,
+	  -1770
+	],
+	"gourgeistsmall": [
+	  -120,
+	  -1770
+	],
+	"gourgeistlarge": [
+	  -120,
+	  -1770
+	],
+	"gourgeistsuper": [
+	  -120,
+	  -1770
+	],
+	"bergmite": [
+	  -160,
+	  -1770
+	],
+	"avalugg": [
+	  -200,
+	  -1770
+	],
+	"noibat": [
+	  -240,
+	  -1770
+	],
+	"noivern": [
+	  -280,
+	  -1770
+	],
+	"xerneas": [
+	  -320,
+	  -1770
+	],
+	"xerneasneutral": [
+	  -320,
+	  -1770
+	],
+	"yveltal": [
+	  -360,
+	  -1770
+	],
+	"zygarde": [
+	  -400,
+	  -1770
+	],
+	"zygarde10": [
+	  -240,
+	  -2580
+	],
+	"zygardecomplete": [
+	  -280,
+	  -2580
+	],
+	"diancie": [
+	  -440,
+	  -1770
+	],
+	"dianciemega": [
+	  -40,
+	  -2880
+	],
+	"hoopa": [
+	  0,
+	  -1800
+	],
+	"hoopaunbound": [
+	  -400,
+	  -2520
+	],
+	"volcanion": [
+	  -40,
+	  -1800
+	],
+	"rowlet": [
+	  -80,
+	  -1800
+	],
+	"dartrix": [
+	  -120,
+	  -1800
+	],
+	"decidueye": [
+	  -160,
+	  -1800
+	],
+	"litten": [
+	  -200,
+	  -1800
+	],
+	"torracat": [
+	  -240,
+	  -1800
+	],
+	"incineroar": [
+	  -280,
+	  -1800
+	],
+	"popplio": [
+	  -320,
+	  -1800
+	],
+	"brionne": [
+	  -360,
+	  -1800
+	],
+	"primarina": [
+	  -400,
+	  -1800
+	],
+	"pikipek": [
+	  -440,
+	  -1800
+	],
+	"trumbeak": [
+	  0,
+	  -1830
+	],
+	"toucannon": [
+	  -40,
+	  -1830
+	],
+	"yungoos": [
+	  -80,
+	  -1830
+	],
+	"gumshoos": [
+	  -120,
+	  -1830
+	],
+	"gumshoostotem": [
+	  -120,
+	  -1830
+	],
+	"grubbin": [
+	  -160,
+	  -1830
+	],
+	"charjabug": [
+	  -200,
+	  -1830
+	],
+	"vikavolt": [
+	  -240,
+	  -1830
+	],
+	"vikavolttotem": [
+	  -240,
+	  -1830
+	],
+	"crabrawler": [
+	  -280,
+	  -1830
+	],
+	"crabominable": [
+	  -320,
+	  -1830
+	],
+	"oricorio": [
+	  -360,
+	  -1830
+	],
+	"oricoriopompom": [
+	  -320,
+	  -2580
+	],
+	"oricoriopau": [
+	  -360,
+	  -2580
+	],
+	"oricoriosensu": [
+	  -400,
+	  -2580
+	],
+	"cutiefly": [
+	  -400,
+	  -1830
+	],
+	"ribombee": [
+	  -440,
+	  -1830
+	],
+	"ribombeetotem": [
+	  -440,
+	  -1830
+	],
+	"rockruff": [
+	  0,
+	  -1860
+	],
+	"lycanroc": [
+	  -40,
+	  -1860
+	],
+	"lycanrocmidnight": [
+	  -440,
+	  -2580
+	],
+	"lycanrocdusk": [
+	  -160,
+	  -2640
+	],
+	"wishiwashi": [
+	  -80,
+	  -1860
+	],
+	"wishiwashischool": [
+	  0,
+	  -2610
+	],
+	"mareanie": [
+	  -120,
+	  -1860
+	],
+	"toxapex": [
+	  -160,
+	  -1860
+	],
+	"mudbray": [
+	  -200,
+	  -1860
+	],
+	"mudsdale": [
+	  -240,
+	  -1860
+	],
+	"dewpider": [
+	  -280,
+	  -1860
+	],
+	"araquanid": [
+	  -320,
+	  -1860
+	],
+	"araquanidtotem": [
+	  -320,
+	  -1860
+	],
+	"fomantis": [
+	  -360,
+	  -1860
+	],
+	"lurantis": [
+	  -400,
+	  -1860
+	],
+	"lurantistotem": [
+	  -400,
+	  -1860
+	],
+	"morelull": [
+	  -440,
+	  -1860
+	],
+	"shiinotic": [
+	  0,
+	  -1890
+	],
+	"salandit": [
+	  -40,
+	  -1890
+	],
+	"salazzle": [
+	  -80,
+	  -1890
+	],
+	"salazzletotem": [
+	  -80,
+	  -1890
+	],
+	"stufful": [
+	  -120,
+	  -1890
+	],
+	"bewear": [
+	  -160,
+	  -1890
+	],
+	"bounsweet": [
+	  -200,
+	  -1890
+	],
+	"steenee": [
+	  -240,
+	  -1890
+	],
+	"tsareena": [
+	  -280,
+	  -1890
+	],
+	"comfey": [
+	  -320,
+	  -1890
+	],
+	"oranguru": [
+	  -360,
+	  -1890
+	],
+	"passimian": [
+	  -400,
+	  -1890
+	],
+	"wimpod": [
+	  -440,
+	  -1890
+	],
+	"golisopod": [
+	  0,
+	  -1920
+	],
+	"sandygast": [
+	  -40,
+	  -1920
+	],
+	"palossand": [
+	  -80,
+	  -1920
+	],
+	"pyukumuku": [
+	  -120,
+	  -1920
+	],
+	"typenull": [
+	  -160,
+	  -1920
+	],
+	"silvally": [
+	  -200,
+	  -1920
+	],
+	"silvallybug": [
+	  -200,
+	  -1920
+	],
+	"silvallydark": [
+	  -200,
+	  -1920
+	],
+	"silvallydragon": [
+	  -200,
+	  -1920
+	],
+	"silvallyelectric": [
+	  -200,
+	  -1920
+	],
+	"silvallyfairy": [
+	  -200,
+	  -1920
+	],
+	"silvallyfighting": [
+	  -200,
+	  -1920
+	],
+	"silvallyfire": [
+	  -200,
+	  -1920
+	],
+	"silvallyflying": [
+	  -200,
+	  -1920
+	],
+	"silvallyghost": [
+	  -200,
+	  -1920
+	],
+	"silvallygrass": [
+	  -200,
+	  -1920
+	],
+	"silvallyground": [
+	  -200,
+	  -1920
+	],
+	"silvallyice": [
+	  -200,
+	  -1920
+	],
+	"silvallypoison": [
+	  -200,
+	  -1920
+	],
+	"silvallypsychic": [
+	  -200,
+	  -1920
+	],
+	"silvallyrock": [
+	  -200,
+	  -1920
+	],
+	"silvallysteel": [
+	  -200,
+	  -1920
+	],
+	"silvallywater": [
+	  -200,
+	  -1920
+	],
+	"minior": [
+	  -240,
+	  -1920
+	],
+	"miniormeteor": [
+	  -40,
+	  -2610
+	],
+	"komala": [
+	  -280,
+	  -1920
+	],
+	"turtonator": [
+	  -320,
+	  -1920
+	],
+	"togedemaru": [
+	  -360,
+	  -1920
+	],
+	"togedemarutotem": [
+	  -360,
+	  -1920
+	],
+	"mimikyu": [
+	  -400,
+	  -1920
+	],
+	"mimikyubusted": [
+	  -400,
+	  -1920
+	],
+	"mimikyutotem": [
+	  -400,
+	  -1920
+	],
+	"mimikyubustedtotem": [
+	  -400,
+	  -1920
+	],
+	"bruxish": [
+	  -440,
+	  -1920
+	],
+	"drampa": [
+	  0,
+	  -1950
+	],
+	"dhelmise": [
+	  -40,
+	  -1950
+	],
+	"jangmoo": [
+	  -80,
+	  -1950
+	],
+	"hakamoo": [
+	  -120,
+	  -1950
+	],
+	"kommoo": [
+	  -160,
+	  -1950
+	],
+	"kommoototem": [
+	  -160,
+	  -1950
+	],
+	"tapukoko": [
+	  -200,
+	  -1950
+	],
+	"tapulele": [
+	  -240,
+	  -1950
+	],
+	"tapubulu": [
+	  -280,
+	  -1950
+	],
+	"tapufini": [
+	  -320,
+	  -1950
+	],
+	"cosmog": [
+	  -360,
+	  -1950
+	],
+	"cosmoem": [
+	  -400,
+	  -1950
+	],
+	"solgaleo": [
+	  -440,
+	  -1950
+	],
+	"lunala": [
+	  0,
+	  -1980
+	],
+	"nihilego": [
+	  -40,
+	  -1980
+	],
+	"buzzwole": [
+	  -80,
+	  -1980
+	],
+	"pheromosa": [
+	  -120,
+	  -1980
+	],
+	"xurkitree": [
+	  -160,
+	  -1980
+	],
+	"celesteela": [
+	  -200,
+	  -1980
+	],
+	"kartana": [
+	  -240,
+	  -1980
+	],
+	"guzzlord": [
+	  -280,
+	  -1980
+	],
+	"necrozma": [
+	  -320,
+	  -1980
+	],
+	"necrozmaduskmane": [
+	  -200,
+	  -2640
+	],
+	"necrozmadawnwings": [
+	  -240,
+	  -2640
+	],
+	"necrozmaultra": [
+	  -280,
+	  -2640
+	],
+	"magearna": [
+	  -360,
+	  -1980
+	],
+	"magearnaoriginal": [
+	  -320,
+	  -2610
+	],
+	"marshadow": [
+	  -400,
+	  -1980
+	],
+	"poipole": [
+	  -440,
+	  -1980
+	],
+	"naganadel": [
+	  0,
+	  -2010
+	],
+	"stakataka": [
+	  -40,
+	  -2010
+	],
+	"blacephalon": [
+	  -80,
+	  -2010
+	],
+	"zeraora": [
+	  -120,
+	  -2010
+	],
+	"meltan": [
+	  -160,
+	  -2010
+	],
+	"melmetal": [
+	  -200,
+	  -2010
+	],
+	"melmetalgmax": [
+	  -40,
+	  -2910
+	],
+	"grookey": [
+	  -240,
+	  -2010
+	],
+	"thwackey": [
+	  -280,
+	  -2010
+	],
+	"rillaboom": [
+	  -320,
+	  -2010
+	],
+	"rillaboomgmax": [
+	  -280,
+	  -2940
+	],
+	"scorbunny": [
+	  -360,
+	  -2010
+	],
+	"raboot": [
+	  -400,
+	  -2010
+	],
+	"cinderace": [
+	  -440,
+	  -2010
+	],
+	"cinderacegmax": [
+	  -320,
+	  -2940
+	],
+	"sobble": [
+	  0,
+	  -2040
+	],
+	"drizzile": [
+	  -40,
+	  -2040
+	],
+	"inteleon": [
+	  -80,
+	  -2040
+	],
+	"inteleongmax": [
+	  -360,
+	  -2940
+	],
+	"skwovet": [
+	  -120,
+	  -2040
+	],
+	"greedent": [
+	  -160,
+	  -2040
+	],
+	"rookidee": [
+	  -200,
+	  -2040
+	],
+	"corvisquire": [
+	  -240,
+	  -2040
+	],
+	"corviknight": [
+	  -280,
+	  -2040
+	],
+	"corviknightgmax": [
+	  -80,
+	  -2910
+	],
+	"blipbug": [
+	  -320,
+	  -2040
+	],
+	"dottler": [
+	  -360,
+	  -2040
+	],
+	"orbeetle": [
+	  -400,
+	  -2040
+	],
+	"orbeetlegmax": [
+	  -120,
+	  -2910
+	],
+	"nickit": [
+	  -440,
+	  -2040
+	],
+	"thievul": [
+	  0,
+	  -2070
+	],
+	"gossifleur": [
+	  -40,
+	  -2070
+	],
+	"eldegoss": [
+	  -80,
+	  -2070
+	],
+	"wooloo": [
+	  -120,
+	  -2070
+	],
+	"dubwool": [
+	  -160,
+	  -2070
+	],
+	"chewtle": [
+	  -200,
+	  -2070
+	],
+	"drednaw": [
+	  -240,
+	  -2070
+	],
+	"drednawgmax": [
+	  -160,
+	  -2910
+	],
+	"yamper": [
+	  -280,
+	  -2070
+	],
+	"boltund": [
+	  -320,
+	  -2070
+	],
+	"rolycoly": [
+	  -360,
+	  -2070
+	],
+	"carkol": [
+	  -400,
+	  -2070
+	],
+	"coalossal": [
+	  -440,
+	  -2070
+	],
+	"coalossalgmax": [
+	  -200,
+	  -2910
+	],
+	"applin": [
+	  0,
+	  -2100
+	],
+	"flapple": [
+	  -40,
+	  -2100
+	],
+	"flapplegmax": [
+	  -240,
+	  -2910
+	],
+	"appletun": [
+	  -80,
+	  -2100
+	],
+	"appletungmax": [
+	  -280,
+	  -2910
+	],
+	"silicobra": [
+	  -120,
+	  -2100
+	],
+	"sandaconda": [
+	  -160,
+	  -2100
+	],
+	"sandacondagmax": [
+	  -320,
+	  -2910
+	],
+	"cramorant": [
+	  -200,
+	  -2100
+	],
+	"cramorantgulping": [
+	  0,
+	  -2700
+	],
+	"cramorantgorging": [
+	  -40,
+	  -2700
+	],
+	"arrokuda": [
+	  -240,
+	  -2100
+	],
+	"barraskewda": [
+	  -280,
+	  -2100
+	],
+	"toxel": [
+	  -320,
+	  -2100
+	],
+	"toxtricity": [
+	  -360,
+	  -2100
+	],
+	"toxtricitylowkey": [
+	  -80,
+	  -2700
+	],
+	"toxtricitygmax": [
+	  -360,
+	  -2910
+	],
+	"toxtricitylowkeygmax": [
+	  -360,
+	  -2910
+	],
+	"sizzlipede": [
+	  -400,
+	  -2100
+	],
+	"centiskorch": [
+	  -440,
+	  -2100
+	],
+	"centiskorchgmax": [
+	  -400,
+	  -2910
+	],
+	"clobbopus": [
+	  0,
+	  -2130
+	],
+	"grapploct": [
+	  -40,
+	  -2130
+	],
+	"sinistea": [
+	  -80,
+	  -2130
+	],
+	"sinisteaantique": [
+	  -80,
+	  -2130
+	],
+	"polteageist": [
+	  -120,
+	  -2130
+	],
+	"polteageistantique": [
+	  -120,
+	  -2130
+	],
+	"hatenna": [
+	  -160,
+	  -2130
+	],
+	"hattrem": [
+	  -200,
+	  -2130
+	],
+	"hatterene": [
+	  -240,
+	  -2130
+	],
+	"hatterenegmax": [
+	  -440,
+	  -2910
+	],
+	"impidimp": [
+	  -280,
+	  -2130
+	],
+	"morgrem": [
+	  -320,
+	  -2130
+	],
+	"grimmsnarl": [
+	  -360,
+	  -2130
+	],
+	"grimmsnarlgmax": [
+	  0,
+	  -2940
+	],
+	"obstagoon": [
+	  -400,
+	  -2130
+	],
+	"perrserker": [
+	  -440,
+	  -2130
+	],
+	"cursola": [
+	  0,
+	  -2160
+	],
+	"sirfetchd": [
+	  -40,
+	  -2160
+	],
+	"mrrime": [
+	  -80,
+	  -2160
+	],
+	"runerigus": [
+	  -120,
+	  -2160
+	],
+	"milcery": [
+	  -160,
+	  -2160
+	],
+	"alcremie": [
+	  -200,
+	  -2160
+	],
+	"alcremiegmax": [
+	  -40,
+	  -2940
+	],
+	"falinks": [
+	  -240,
+	  -2160
+	],
+	"pincurchin": [
+	  -280,
+	  -2160
+	],
+	"snom": [
+	  -320,
+	  -2160
+	],
+	"frosmoth": [
+	  -360,
+	  -2160
+	],
+	"stonjourner": [
+	  -400,
+	  -2160
+	],
+	"eiscue": [
+	  -440,
+	  -2160
+	],
+	"eiscuenoice": [
+	  -440,
+	  -2700
+	],
+	"indeedee": [
+	  0,
+	  -2190
+	],
+	"indeedeef": [
+	  0,
+	  -2730
+	],
+	"morpeko": [
+	  -40,
+	  -2190
+	],
+	"morpekohangry": [
+	  -40,
+	  -2730
+	],
+	"cufant": [
+	  -80,
+	  -2190
+	],
+	"copperajah": [
+	  -120,
+	  -2190
+	],
+	"copperajahgmax": [
+	  -80,
+	  -2940
+	],
+	"dracozolt": [
+	  -160,
+	  -2190
+	],
+	"arctozolt": [
+	  -200,
+	  -2190
+	],
+	"dracovish": [
+	  -240,
+	  -2190
+	],
+	"arctovish": [
+	  -280,
+	  -2190
+	],
+	"duraludon": [
+	  -320,
+	  -2190
+	],
+	"duraludongmax": [
+	  -120,
+	  -2940
+	],
+	"dreepy": [
+	  -360,
+	  -2190
+	],
+	"drakloak": [
+	  -400,
+	  -2190
+	],
+	"dragapult": [
+	  -440,
+	  -2190
+	],
+	"zacian": [
+	  0,
+	  -2220
+	],
+	"zaciancrowned": [
+	  -80,
+	  -2730
+	],
+	"zamazenta": [
+	  -40,
+	  -2220
+	],
+	"zamazentacrowned": [
+	  -120,
+	  -2730
+	],
+	"eternatus": [
+	  -80,
+	  -2220
+	],
+	"eternatuseternamax": [
+	  -160,
+	  -2940
+	],
+	"kubfu": [
+	  -120,
+	  -2220
+	],
+	"urshifu": [
+	  -160,
+	  -2220
+	],
+	"urshifurapidstrike": [
+	  -160,
+	  -2220
+	],
+	"urshifugmax": [
+	  -400,
+	  -2940
+	],
+	"urshifurapidstrikegmax": [
+	  -440,
+	  -2940
+	],
+	"zarude": [
+	  -200,
+	  -2220
+	],
+	"zarudedada": [
+	  -240,
+	  -2730
+	],
+	"regieleki": [
+	  -240,
+	  -2220
+	],
+	"regidrago": [
+	  -280,
+	  -2220
+	],
+	"glastrier": [
+	  -320,
+	  -2220
+	],
+	"spectrier": [
+	  -360,
+	  -2220
+	],
+	"calyrex": [
+	  -400,
+	  -2220
+	],
+	"calyrexice": [
+	  -0,
+	  -2760
+	],
+	"calyrexshadow": [
+	  -40,
+	  -2760
+	],
+	"missingno": [
+	  0,
+	  0
+	],
+	"syclar": [
+	  0,
+	  -3330
+	],
+	"syclant": [
+	  0,
+	  -3240
+	],
+	"revenankh": [
+	  -40,
+	  -3240
+	],
+	"embirch": [
+	  -40,
+	  -3330
+	],
+	"flarelm": [
+	  -80,
+	  -3330
+	],
+	"pyroak": [
+	  -80,
+	  -3240
+	],
+	"breezi": [
+	  -120,
+	  -3330
+	],
+	"fidgit": [
+	  -120,
+	  -3240
+	],
+	"rebble": [
+	  -120,
+	  -3360
+	],
+	"tactite": [
+	  -160,
+	  -3360
+	],
+	"stratagem": [
+	  -160,
+	  -3240
+	],
+	"privatyke": [
+	  -200,
+	  -3360
+	],
+	"arghonaut": [
+	  -200,
+	  -3240
+	],
+	"kitsunoh": [
+	  -240,
+	  -3240
+	],
+	"cyclohm": [
+	  -280,
+	  -3240
+	],
+	"colossoil": [
+	  -320,
+	  -3240
+	],
+	"krilowatt": [
+	  -360,
+	  -3240
+	],
+	"voodoll": [
+	  -400,
+	  -3360
+	],
+	"voodoom": [
+	  -400,
+	  -3240
+	],
+	"scratchet": [
+	  -160,
+	  -3330
+	],
+	"tomohawk": [
+	  -440,
+	  -3240
+	],
+	"necturine": [
+	  -200,
+	  -3330
+	],
+	"necturna": [
+	  0,
+	  -3270
+	],
+	"mollux": [
+	  -40,
+	  -3270
+	],
+	"cupra": [
+	  -240,
+	  -3330
+	],
+	"argalis": [
+	  -280,
+	  -3330
+	],
+	"aurumoth": [
+	  -80,
+	  -3270
+	],
+	"brattler": [
+	  -320,
+	  -3330
+	],
+	"malaconda": [
+	  -120,
+	  -3270
+	],
+	"cawdet": [
+	  -360,
+	  -3330
+	],
+	"cawmodore": [
+	  -160,
+	  -3270
+	],
+	"volkritter": [
+	  -400,
+	  -3330
+	],
+	"volkraken": [
+	  -200,
+	  -3270
+	],
+	"snugglow": [
+	  -440,
+	  -3330
+	],
+	"plasmanta": [
+	  -240,
+	  -3270
+	],
+	"floatoy": [
+	  0,
+	  -3360
+	],
+	"caimanoe": [
+	  -40,
+	  -3360
+	],
+	"naviathan": [
+	  -280,
+	  -3270
+	],
+	"crucibelle": [
+	  -320,
+	  -3270
+	],
+	"crucibellemega": [
+	  -360,
+	  -3270
+	],
+	"pluffle": [
+	  -80,
+	  -3360
+	],
+	"kerfluffle": [
+	  -400,
+	  -3270
+	],
+	"pajantom": [
+	  -440,
+	  -3270
+	],
+	"mumbao": [
+	  -440,
+	  -3360
+	],
+	"jumbao": [
+	  0,
+	  -3300
+	],
+	"fawnifer": [
+	  0,
+	  -3390
+	],
+	"electrelk": [
+	  -40,
+	  -3390
+	],
+	"caribolt": [
+	  -40,
+	  -3300
+	],
+	"smogecko": [
+	  -80,
+	  -3390
+	],
+	"smoguana": [
+	  -120,
+	  -3390
+	],
+	"smokomodo": [
+	  -80,
+	  -3300
+	],
+	"swirlpool": [
+	  -160,
+	  -3390
+	],
+	"coribalis": [
+	  -200,
+	  -3390
+	],
+	"snaelstrom": [
+	  -120,
+	  -3300
+	],
+	"justyke": [
+	  -240,
+	  -3420
+	],
+	"equilibra": [
+	  -160,
+	  -3300
+	],
+	"solotl": [
+	  -280,
+	  -3420
+	],
+	"astrolotl": [
+	  -200,
+	  -3300
+	],
+	"miasmaw": [
+	  -240,
+	  -3330
+	],
+	"pokestarsmeargle": [
+	  0,
+	  0
+	],
+	"pokestarufo": [
+	  0,
+	  0
+	],
+	"pokestarufo2": [
+	  0,
+	  0
+	],
+	"pokestarbrycenman": [
+	  0,
+	  0
+	],
+	"pokestarmt": [
+	  0,
+	  0
+	],
+	"pokestarmt2": [
+	  0,
+	  0
+	],
+	"pokestartransport": [
+	  0,
+	  0
+	],
+	"pokestargiant": [
+	  0,
+	  0
+	],
+	"pokestarhumanoid": [
+	  0,
+	  0
+	],
+	"pokestarmonster": [
+	  0,
+	  0
+	],
+	"pokestarf00": [
+	  0,
+	  0
+	],
+	"pokestarf002": [
+	  0,
+	  0
+	],
+	"pokestarspirit": [
+	  0,
+	  0
+	],
+	"pokestarblackdoor": [
+	  0,
+	  0
+	],
+	"pokestarwhitedoor": [
+	  0,
+	  0
+	],
+	"pokestarblackbelt": [
+	  0,
+	  0
+	],
+	"pokestarufopropu2": [
+	  0,
+	  0
+	]
+  }

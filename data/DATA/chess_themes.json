@@ -1,0 +1,58 @@
+{
+	"default": {
+		"W": "white",
+		"B": "#9C5624",
+		"sel": "#87CEFA",
+		"hl": "rgba(173, 255, 47, 0.9)",
+		"last": "rgba(255, 51, 0, 0.1)"
+	},
+	"wood": {
+		"W": "#E3AA82",
+		"B": "#9C5624",
+		"sel": "#87CEFA",
+		"hl": "#ADFF2F",
+		"last": null
+	},
+	"green": {
+		"W": "#D8FFD4",
+		"B": "#34833D",
+		"sel": "#87CEFA",
+		"hl": "#ADFF2F",
+		"last": "rgba(0, 155, 199, 0.41)"
+	},
+	"wario": {
+		"W": "yellow",
+		"B": "purple",
+		"sel": "#87CEFA",
+		"hl": "#ADFF2F",
+		"last": null
+	},
+	"pristine": {
+		"W": "white",
+		"B": "#EEEEEE",
+		"sel": "#99E6E6",
+		"hl": "rgba(194, 255, 102, 0.4)",
+		"last": "rgba(255, 51, 0, 0.09)"
+	},
+	"ocean": {
+		"W": "#7DACC9",
+		"B": "#5486B0",
+		"sel": "#87CEFA",
+		"hl": "#00E6B8",
+		"last": null
+	},
+	"spooky": {
+		"W": "#523f69",
+		"B": "#332849",
+		"sel": "rgba(237,160,61)",
+		"hl": "rgba(255,172,64,0.6)",
+		"last": "rgba(160,160,225,0.4)"
+	},
+	"ii":{
+		"W": "#F08DCB",
+		"B": "#8E209F",
+		"sel": "rgba(218, 139, 55, 0.65)",
+		"hl": "rgba(241, 202, 103, 0.85)",
+		"last": "rgba(128, 28, 95, 0.75)"
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"whitelist": [
+		"chainreaction",
+		"q",
+		"timer"
+	],
+	"permissions": {
+		"timer": "none"
+	},
+	"ignore": true,
+	"aliases": [
+		"hv"
+	]
+}

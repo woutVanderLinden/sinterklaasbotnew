@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf8">
+		<link rel="icon" href="/icon.png">
+		<title>CHALLENGE_TITLE</title>
+		<style>
+			body {
+				background-image: url("CHALLENGE_BACKGROUND");
+			}
+			div.navbar	{
+				overflow: hidden;
+				background-color: #333;
+				font-family: Arial;
+			}
+			div.navbar .text {
+				float: left;
+				font-size: 16px;
+				color: white;
+				text-align: right;
+				padding: 14px 16px;
+				text-decoration: none;
+			}
+			div.dropdown {
+				float: left;
+				overflow: hidden;
+			}
+			div.navbar a {
+				float: left;
+				font-size: 16px;
+				color: white;
+				text-align: center;
+				padding: 14px 16px;
+				text-decoration: none;
+			}
+			div.dropdown .dropbtn {
+				font-size: 16px;
+				border: none;
+				outline: none;
+				color: white;
+				padding: 14px 16px;
+				background-color: inherit;
+				font-family: inherit;
+				margin: 0;
+			}
+			div.navbar .active a {
+				background-color: #888;
+			}
+			div.navbar a:hover, .dropdown:hover, .playdrop:hover, .dropbtn, .playbtn {
+				background-color: green;
+			}
+			div.dropdown-content {
+				display: none;
+				position: absolute;
+				background-color: #f9f9f9;
+				min-width: 160px;
+				box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+				z-index: 1;
+			}
+			div.dropdown-content .usermenu {
+				position: absolute;
+			}
+			div.dropdown-content a {
+				float: none;
+				color: black;
+				padding: 12px 16px;
+				text-decoration: none;
+				display: block;
+				text-align: left;
+			}
+			div.dropdown-content a:hover {
+				background-color: #ddd;
+			}
+			div.dropdown:hover .dropdown-content {
+				display: block;
+			}
+			a.blanklink {
+				text-decoration: none;
+			}
+			a.blanklink:visited {
+				text-decoration: none;
+			}
+			div.header {
+				text-align: center;
+				color: white;
+				background-color: rgba(15, 15, 15, 0.95);
+				border-radius: 20px;
+				margin-top: 20px;
+				margin-bottom: 20px;
+			}
+			div.title {
+				font-weight: bold;
+				font-size: 2em;
+				padding: 20px;
+			}
+			div.desc {
+				padding-top: 10px;
+				padding-bottom: 30px;
+			}
+			hr.main {
+				width: 95%;
+			}
+			span.picon {
+				width: 40px;
+				height: 30px;
+				display: inline-block;
+				vertical-align: middle;
+			}
+			div.trainer {
+				background: rgba(25, 25, 25, 0.9);
+				border-radius: 15px;
+				width: 300px;
+				display: inline-block;
+				margin: 10px;
+				color: white;
+				border: 1px solid white;
+				border-style: outset;
+				vertical-align: top;
+			}
+			div.top {
+				overflow: auto;
+			}
+			img.avatar {
+				float: left;
+				height: auto;
+				width: auto;
+				vertical-align: middle;
+				padding-top: 5px;
+			}
+			div.info {
+				float: left;
+				padding-top: 15px;
+				padding-bottom: 10px;
+			}
+			strong.name {
+				padding-bottom: 10px;
+			}
+			div.score-sum {
+				font-size: 0.8em;
+				font-weight: normal;
+				padding-top: 10px;
+			}
+			div.score-per {
+				font-size: 0.8em;
+				font-weight: normal;
+			}
+			hr.break {
+				width: 220px;
+				color: rgba(250, 250, 250, 0.9);
+				margin-top: 20px;
+				margin-left: 40px;
+			}
+			div.rounds {
+				padding-top: 10px;
+				padding-left: 40px;
+			}
+			a.paste, a.paste:link, a.paste:visited {
+				text-decoration: none;
+				color: white;
+			}
+			details.list {
+				width: 200px;
+				padding-bottom: 20px;
+			}
+			summary.rname {
+				width: 200px;
+				padding-bottom: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="navbar">
+			<div class="homeref"><a href="/1v1uc" class="blanklink"><b>1v1UC</b></a></div>
+			<div class="dropdown">
+				<button class="dropbtn">Challenges</button>
+				<div class="dropdown-content">
+					DROPDOWN_CONTENT
+				</div>
+			</div>
+			<a href="/1v1uc/leaderboard">Leaderboard</a>
+			<div class="dropdown">
+				<button class="dropbtn">Halls of Fame</button>
+				<div class="dropdown-content">
+					<a href="/1v1uc/hall_of_heroes">Hall of Heroes</a>
+					<a href="/1v1uc/hall_of_fame">General</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="header">
+			<div class="title">CHALLENGE_TITLE</div>
+			<div class="desc">
+				CHALLENGE_DESCRIPTION
+			</div>
+		</div>
+		<hr class="main" />
+		<div class="trainers">
+			TRAINER_DATA
+		</div>
+	</body>
+</html>

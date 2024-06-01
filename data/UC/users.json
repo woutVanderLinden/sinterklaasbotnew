@@ -1,0 +1,863 @@
+{
+	"ac4er": {
+		"avatar": "hilbert",
+		"id": "ac4er",
+		"name": "Ac4er",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7monomon": [
+				{
+					"link": "https://pokepast.es/1b01b72a9c440c84",
+					"perfect": true,
+					"score": [5, 0],
+					"team": ["Relicanth*"]
+				}
+			]
+		}
+	},
+	"ape711": {
+		"avatar": "janitor",
+		"id": "ape711",
+		"name": "Ape711",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7monomon": [
+				{
+					"link": "https://pokepast.es/d5644a87d326a258",
+					"score": [5, 2],
+					"team": ["Pelipper*"]
+				},
+				{
+					"link": "https://pokepast.es/014320c26f4702cb",
+					"score": [5, 4],
+					"team": ["Mr. Mime*"]
+				},
+				{
+					"link": "https://pokepast.es/27d320f45ba90e99",
+					"score": [5, 3],
+					"team": ["Swampert"]
+				},
+				{
+					"link": "https://pokepast.es/fbfbd6d4a184c05e",
+					"score": [5, 2],
+					"team": ["Rhyperior*"]
+				}
+			]
+		}
+	},
+	"brock20": {
+		"avatar": "fisherman-gen4",
+		"id": "brock20",
+		"name": "brock2.0",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7monomon": [
+				{
+					"link": "https://pokepast.es/f825e339f0536e0b",
+					"score": [5, 2],
+					"team": ["Sceptile-Mega*"]
+				}
+			]
+		}
+	},
+	"cabbbages": {
+		"avatar": "plasmagrunt-gen5bw",
+		"id": "cabbbages",
+		"name": "Cabbbages",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7monomon": [
+				{
+					"link": "https://pokepast.es/6c2e4b420b5069d1",
+					"score": [5, 2],
+					"team": ["Clefable*"]
+				},
+				{
+					"link": "https://pokepast.es/c7acc8e7013f65ed",
+					"score": [5, 2],
+					"team": ["Pheromosa*"]
+				},
+				{
+					"link": "https://pokepast.es/d7c31e21da208db5",
+					"score": [5, 4],
+					"team": ["Xurkitree"]
+				},
+				{
+					"link": "https://pokepast.es/d7c31e21da208db5",
+					"perfect": true,
+					"score": [5, 0],
+					"team": ["Hoopa-Unbound*"]
+				},
+				{
+					"link": "https://pokepast.es/26bb919f0c045c64",
+					"perfect": true,
+					"score": [5, 0],
+					"team": ["Delibird*"]
+				},
+				{
+					"link": "https://pokepast.es/e2454a7f269deb0c",
+					"perfect": true,
+					"score": [5, 0],
+					"team": ["Chandelure"]
+				}
+			]
+		}
+	},
+	"draco3131": {
+		"avatar": "lance",
+		"id": "draco3131",
+		"name": "Draco3131",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7pu": [
+				{
+					"link": "https://pokepast.es/220457cf649b3189",
+					"score": [5, 2],
+					"team": ["Feraligatr*", "Meganium*", "Typhlosion*"]
+				}
+			]
+		}
+	},
+	"dragonmirror27262": {
+		"avatar": "ghetsis",
+		"id": "dragonmirror27262",
+		"name": "Dragonmirror27262",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7babysitting": [
+				{
+					"link": "https://pokepast.es/5d9c56cbf1f02675",
+					"perfect": true,
+					"score": [5, 0],
+					"team": ["Aron", "Geodude", "Porygon"]
+				}
+			],
+			"gen7monomon": [
+				{
+					"link": "https://pokepast.es/1ce535e9526b3267",
+					"score": [5, 1],
+					"team": ["Flygon*"]
+				},
+				{
+					"link": "https://pokepast.es/1bb3e2fd0cdc4052",
+					"score": [5, 3],
+					"team": ["Slaking*"]
+				},
+				{
+					"link": "https://pokepast.es/e2c3eecc541c3645",
+					"score": [5, 3],
+					"team": ["Poliwhirl*"]
+				},
+				{
+					"link": "https://pokepast.es/2b2abda991e80ecb",
+					"score": [5, 4],
+					"team": ["Garbodor*"]
+				},
+				{
+					"link": "https://pokepast.es/53269c0a72fd2d6f",
+					"perfect": true,
+					"score": [5, 0],
+					"team": ["Gardevoir*"]
+				},
+				{
+					"link": "https://pokepast.es/e749c951bbd97c6c",
+					"perfect": true,
+					"score": [5, 3],
+					"team": ["Shedinja*"]
+				}
+			]
+		}
+	},
+	"elements101": {
+		"avatar": "policeman-gen4",
+		"id": "elements101",
+		"name": "Elements 101",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7monomon": [
+				{
+					"link": "https://pokepast.es/3e32bb2d3e1a2972",
+					"score": [5, 3],
+					"team": ["Chandelure*"]
+				},
+				{
+					"link": "https://pokepast.es/561e93a32a70dc7c",
+					"score": [5, 2],
+					"team": ["Zapdos*"]
+				},
+				{
+					"link": "https://pokepast.es/7305b3bf426004f0",
+					"score": [5, 3],
+					"team": ["Weavile*"]
+				}
+			]
+		}
+	},
+	"eriey": {
+		"avatar": "preschoolerf",
+		"id": "eriey",
+		"name": "Eriey",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7monomon": [
+				{
+					"link": "https://pokepast.es/cee49eb709d23406",
+					"score": [5, 3],
+					"team": ["Cottonee*"]
+				},
+				{
+					"link": "https://pokepast.es/b007a0d33b1f1dfa",
+					"score": [5, 3],
+					"team": ["Sharpedo-Mega*"]
+				},
+				{
+					"link": "https://pokepast.es/1207301edfad8282",
+					"score": [5, 2],
+					"team": ["Aegislash*"]
+				},
+				{
+					"link": "https://pokepast.es/f8687f1a5d454526",
+					"score": [5, 1],
+					"team": ["Alakazam-Mega*"]
+				},
+				{
+					"link": "https://pokepast.es/3a04aec3e33696c1",
+					"perfect": true,
+					"score": [5, 4],
+					"team": ["Shedinja*"]
+				},
+				{
+					"link": "https://pokepast.es/f025c0a6883061af",
+					"perfect": true,
+					"score": [5, 0],
+					"team": ["Sharpedo*"]
+				},
+				{
+					"link": "https://pokepast.es/76f9ee2fcb30b3ce",
+					"score": [5, 3],
+					"team": ["Sableye-Mega*"]
+				}
+			],
+			"gen7pu": [
+				{
+					"link": "https://pokepast.es/f8a6c7ca58138b49",
+					"perfect": true,
+					"score": [5, 0],
+					"team": ["Aerodactyl-Mega*", "Golisopod*", "Raichu-Alola*"]
+				},
+				{
+					"link": "https://pokepast.es/4a00bc40a5fceb72",
+					"perfect": true,
+					"score": [5, 0],
+					"team": ["Beedrill-Mega*", "Espeon*", "Stunfisk*"]
+				}
+			]
+		}
+	},
+	"funnydogman": {
+		"avatar": "breeder",
+		"id": "funnydogman",
+		"name": "funny dog man",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7pu": [
+				{
+					"link": "https://pokepast.es/e3fb25018aef92de",
+					"score": [5, 2],
+					"team": ["Pyroar*", "Salamence*", "Gastrodon*"]
+				}
+			]
+		}
+	},
+	"generalgunderson": {
+		"avatar": "ltsurge",
+		"id": "generalgunderson",
+		"name": "GeneralGunderson",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7monomon": [
+				{
+					"link": "https://pokepast.es/f1e1eeb5962d2a65",
+					"score": [5, 2],
+					"team": ["Keldeo*"]
+				},
+				{
+					"link": "https://pokepast.es/865f185d44607682",
+					"score": [5, 3],
+					"team": ["Dusclops*"]
+				},
+				{
+					"link": "https://pokepast.es/f01263b3ccef3629",
+					"score": [5, 2],
+					"team": ["Togekiss*"]
+				}
+			]
+		}
+	},
+	"heavystorming": {
+		"avatar": "janine",
+		"id": "heavystorming",
+		"name": "HeavyStorming",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7monomon": [
+				{
+					"link": "https://pokepast.es/2123f236066b226d",
+					"perfect": true,
+					"score": [5, 0],
+					"team": ["Skarmory*"]
+				}
+			]
+		}
+	},
+	"krytocon": {
+		"avatar": "burglar",
+		"id": "krytocon",
+		"name": "Krytocon",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7babysitting": [
+				{
+					"link": "https://pokepast.es/a2b271b9b0c51b1c",
+					"score": [5, 3],
+					"team": ["Abra*", "Aron*", "Geodude*"]
+				}
+			],
+			"gen7monomon": [
+				{
+					"link": "https://pokepast.es/affc5e6fc13dcd8b",
+					"score": [5, 1],
+					"team": ["Porygon-Z*"]
+				}
+			]
+		}
+	},
+	"literalrng": {
+		"avatar": "crasherwake",
+		"id": "literalrng",
+		"name": "Literal RNG",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7monomon": [
+				{
+					"link": "https://pokepast.es/f5323053ad2e921b",
+					"score": [5, 1],
+					"team": ["Gardevoir-Mega*"]
+				}
+			]
+		}
+	},
+	"murman64": {
+		"avatar": "steven",
+		"id": "murman64",
+		"name": "Murman64",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7babysitting": [
+				{
+					"link": "https://pokepast.es/916b63440084a0c3",
+					"score": [5, 2],
+					"team": ["Abra", "Aron", "Porygon*"]
+				},
+				{
+					"link": "https://pokepast.es/51202ff6432063a9",
+					"score": [5, 3],
+					"team": ["Aron", "Geodude", "Elekid*"]
+				},
+				{
+					"link": "https://pokepast.es/5595f4208c7864e3",
+					"perfect": true,
+					"score": [5, 0],
+					"team": ["Aron", "Elekid", "Larvitar*"]
+				}
+			],
+			"gen7monomon": [
+				{
+					"link": "https://pokepast.es/4dfd2bd1f7dc5b5c",
+					"score": [5, 2],
+					"team": ["Mew*"]
+				},
+				{
+					"link": "https://pokepast.es/fa35a00d8d4ed996",
+					"score": [5, 3],
+					"team": ["Blaziken-Mega*"]
+				},
+				{
+					"link": "https://pokepast.es/546c20b17f607485",
+					"perfect": true,
+					"score": [5, 0],
+					"team": ["Lopunny-Mega"]
+				},
+				{
+					"link": "https://pokepast.es/dbea0f1a6fdce135",
+					"score": [5, 3],
+					"team": ["Meloetta*"]
+				},
+				{
+					"link": "https://pokepast.es/804e6ab27f3aea74",
+					"score": [5, 4],
+					"team": ["Jirachi*"]
+				},
+				{
+					"link": "https://pokepast.es/68ce26f07babb82f",
+					"score": [5, 3],
+					"team": ["Manaphy*"]
+				},
+				{
+					"link": "https://pokepast.es/26797a235b5c647c",
+					"score": [5, 1],
+					"team": ["Celebi*"]
+				},
+				{
+					"link": "https://pokepast.es/44dae237a9c004f9",
+					"score": [5, 4],
+					"team": ["Victini*"]
+				},
+				{
+					"link": "https://pokepast.es/861813b6c828b425",
+					"score": [5, 1],
+					"team": ["Shaymin*"]
+				},
+				{
+					"link": "https://pokepast.es/96db439c483b5f2d",
+					"score": [5, 4],
+					"team": ["Garchomp*"]
+				},
+				{
+					"link": "https://pokepast.es/d0e7f1128628ee3f",
+					"score": [5, 1],
+					"team": ["Garchomp-Mega*"]
+				},
+				{
+					"link": "https://pokepast.es/a57c4e0a4fe6a393",
+					"score": [5, 1],
+					"team": ["Dragonite*"]
+				},
+				{
+					"link": "https://pokepast.es/add4275f1fe39384",
+					"score": [5, 3],
+					"team": ["Kommo-o*"]
+				},
+				{
+					"link": "https://pokepast.es/fb3cecf210c9c142",
+					"score": [5, 2],
+					"team": ["Whimsicott*"]
+				},
+				{
+					"link": "https://pokepast.es/2379e6104cbfacf2",
+					"score": [5, 1],
+					"team": ["Goodra*"]
+				}
+			],
+			"gen7pu": [
+				{
+					"link": "https://pokepast.es/2583946f78d6f755",
+					"perfect": true,
+					"score": [5, 0],
+					"team": ["Pidgeot-Mega*", "Stakataka*", "Weavile*"]
+				}
+			]
+		}
+	},
+	"orcawhale5123": {
+		"avatar": "",
+		"id": "orcawhale5123",
+		"name": "orcawhale5123",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7monomon": [
+				{
+					"link": "https://pokepast.es/075564a9a61885dc",
+					"score": [5, 4],
+					"team": ["Pinsir-Mega*"]
+				}
+			]
+		}
+	},
+	"partman": {
+		"avatar": "benga",
+		"id": "partman",
+		"name": "PartMan",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7babysitting": [
+				{
+					"link": "https://pokepast.es/565025ee7db90441",
+					"score": [5, 2],
+					"team": ["Slakoth*", "Treecko*", "Zubat*"]
+				}
+			],
+			"gen7monomon": [
+				{
+					"link": "https://pokepast.es/6c11daefa733030b",
+					"score": [5, 4],
+					"team": ["Magnezone*"]
+				},
+				{
+					"link": "https://pokepast.es/5e71699755a816d1",
+					"score": [5, 3],
+					"team": ["Greninja*"]
+				},
+				{
+					"link": "https://pokepast.es/b6da7233e12706a5",
+					"score": [5, 1],
+					"team": ["Lopunny-Mega*"]
+				},
+				{
+					"link": "https://pokepast.es/365f682b02bc1602",
+					"score": [5, 3],
+					"team": ["Gengar-Mega*"]
+				},
+				{
+					"link": "https://pokepast.es/82144a650bf4db8d",
+					"perfect": true,
+					"score": [5, 0],
+					"team": ["Riolu*"]
+				},
+				{
+					"link": "https://pokepast.es/ae0ed75913bc9bcf",
+					"score": [5, 1],
+					"team": ["Gyarados-Mega*"]
+				},
+				{
+					"link": "https://pokepast.es/59d7492a5d27fab9",
+					"score": [5, 2],
+					"team": ["Kingdra*"]
+				},
+				{
+					"link": "https://pokepast.es/805245fd7f0b44e1",
+					"score": [5, 3],
+					"team": ["Diggersby*"]
+				},
+				{
+					"link": "https://pokepast.es/89bb5d3bac8e945b",
+					"score": [5, 1],
+					"team": ["Passimian*"]
+				},
+				{
+					"link": "https://pokepast.es/01a40c82b53539c0",
+					"perfect": true,
+					"score": [5, 0],
+					"team": ["Magearna*"]
+				}
+			]
+		}
+	},
+	"riky88": {
+		"avatar": "youngster",
+		"id": "riky88",
+		"name": "Riky88",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7monomon": [
+				{
+					"link": "https://pokepast.es/cb27165f02525ff6",
+					"score": [5, 1],
+					"team": ["Necrozma*"]
+				},
+				{
+					"link": "https://pokepast.es/d7c31e21da208db5",
+					"score": [5, 4],
+					"team": ["Haxorus*"]
+				},
+				{
+					"link": "https://pokepast.es/59c5e00d5e2c2902",
+					"score": [5, 2],
+					"team": ["Heatran*"]
+				},
+				{
+					"link": "https://pokepast.es/f44cb8e811045afa",
+					"score": [5, 4],
+					"team": ["Blaziken-Mega*"]
+				},
+				{
+					"link": "https://pokepast.es/3936e2d791c3604f",
+					"perfect": true,
+					"score": [5, 0],
+					"team": ["Pelipper"]
+				},
+				{
+					"link": "https://pokepast.es/4f445960460996c5",
+					"score": [5, 1],
+					"team": ["Gigalith*"]
+				},
+				{
+					"link": "https://pokepast.es/44a1c0d4a78acaf0",
+					"score": [5, 2],
+					"team": ["Rotom-Frost*"]
+				},
+				{
+					"link": "https://pokepast.es/38a7574653330bbb",
+					"score": [5, 4],
+					"team": ["Electivire*"]
+				},
+				{
+					"link": "https://pokepast.es/88c7baac8843aa3b",
+					"score": [5, 2],
+					"team": ["Stantler*"]
+				},
+				{
+					"link": "https://pokepast.es/274d4ac827f65f86",
+					"score": [5, 3],
+					"team": ["Banette-Mega*"]
+				},
+				{
+					"link": "https://pokepast.es/7b56c0fbd686fab3",
+					"perfect": true,
+					"score": [5, 1],
+					"team": ["Shedinja*"]
+				},
+				{
+					"link": "https://pokepast.es/aaf5bfb6e97b56e9",
+					"score": [5, 1],
+					"team": ["Metagross-Mega*"]
+				}
+			]
+		}
+	},
+	"sustenance1": {
+		"avatar": "will",
+		"id": "sustenance1",
+		"name": "SUSTENANCE_1",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7babysitting": [
+				{
+					"link": "pastebin.com/dcNy6B91",
+					"score": [5, 3],
+					"team": ["Happiny*", "Magnemite*", "Trapinch*"]
+				}
+			],
+			"gen7monomon": [
+				{
+					"link": "pastebin.com/8tY2EqMz",
+					"score": [5, 3],
+					"team": ["Swampert*"]
+				}
+			]
+		}
+	},
+	"synonimous": {
+		"avatar": "gentleman-gen4",
+		"id": "synonimous",
+		"name": "Synonimous",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7monomon": [
+				{
+					"link": "https://pokepast.es/ef0898d63ec51679",
+					"score": [5, 1],
+					"team": ["Kartana*"]
+				},
+				{
+					"link": "https://pokepast.es/cb5809d4e80addaf",
+					"perfect": true,
+					"score": [5, 0],
+					"team": ["Clefable*"]
+				}
+			]
+		}
+	},
+	"standalonestantler": {
+		"avatar": "thorton",
+		"id": "standalonestantler",
+		"name": "StandaloneStantler",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7monomon": [
+				{
+					"link": "https://pokepast.es/a880f2a3c0e5f191",
+					"score": [5, 2],
+					"team": ["Lileep*"]
+				},
+				{
+					"link": "https://pokepast.es/b2a1d16ca57007e6",
+					"score": [5, 4],
+					"team": ["Qwilfish*"]
+				},
+				{
+					"link": "https://pokepast.es/5843c3619097ede1",
+					"score": [5, 2],
+					"team": ["Garbodor"]
+				},
+				{
+					"link": "https://pokepast.es/1db5454ea53a77d9",
+					"perfect": true,
+					"score": [5, 0],
+					"team": ["Wobbuffet*"]
+				},
+				{
+					"link": "https://pokepast.es/775d5cc58dffbe2e",
+					"scpre": [5, 4],
+					"team": ["Roserade*"]
+				},
+				{
+					"link": "https://pokepast.es/cfadee1992988e26",
+					"score": [5, 4],
+					"team": ["Sudowoodo*"]
+				}
+			]
+		}
+	},
+	"vgjungle": {
+		"avatar": "nita",
+		"id": "vgjungle",
+		"name": "VG Jungle",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7monomon": [
+				{
+					"link": "https://pokepast.es/c81c70eb70dec92f",
+					"score": [5, 1],
+					"team": ["Mew"]
+				},
+				{
+					"link": "https://pokepast.es/d2250e9011d12e0c",
+					"score": [5, 3],
+					"team": ["Hawlucha*"]
+				}
+			]
+		}
+	},
+	"wailjesus": {
+		"avatar": "juan",
+		"id": "wailjesus",
+		"name": "WailJesus",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7monomon": [
+				{
+					"link": "https://pokepast.es/354f8c3c33592986",
+					"score": [5, 3],
+					"team": ["Jumpluff*"]
+				}
+			]
+		}
+	},
+	"willrbx": {
+		"avatar": "fisherman-gen4",
+		"id": "willrbx",
+		"name": "WillRBX",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+			"gen7monomon": [
+				{
+					"link": "https://pokepast.es/981c997c0a770ff0",
+					"perfect": true,
+					"score": [5, 0],
+					"team": ["Tapu Lele*"]
+				},
+				{
+					"link": "https://pokepast.es/f6f6933700971652",
+					"perfect": true,
+					"score": [5, 0],
+					"team": ["Zeraora*"]
+				}
+			]
+		}
+	},
+	"name": {
+		"avatar": "",
+		"id": "NAME",
+		"name": "NAME",
+		"points": {
+			"cp": 0,
+			"evs": 0,
+			"ivs": 0
+		},
+		"challenges": {
+		}
+	}
+}

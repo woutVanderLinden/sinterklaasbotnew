@@ -1,0 +1,3592 @@
+{
+	"bulbasaur": [
+		"Seed",
+		"Seed"
+	],
+	"ivysaur": [
+		"Seed",
+		"Seed"
+	],
+	"venusaur": [
+		"Seed",
+		"Seed"
+	],
+	"charmander": [
+		"Lizard",
+		"Lizard"
+	],
+	"charmeleon": [
+		"Flame",
+		"Flame"
+	],
+	"charizard": [
+		"Flame",
+		"Flame"
+	],
+	"squirtle": [
+		"Tiny Turtle",
+		"Young Turtle"
+	],
+	"wartortle": [
+		"Turtle",
+		"Turtle"
+	],
+	"blastoise": [
+		"Shellfish",
+		"Shell"
+	],
+	"caterpie": [
+		"Worm",
+		"Caterpillar"
+	],
+	"metapod": [
+		"Cocoon",
+		"Chrysalis"
+	],
+	"butterfree": [
+		"Butterfly",
+		"Butterfly"
+	],
+	"weedle": [
+		"Hairy Bug",
+		"Hairy Caterpillar"
+	],
+	"kakuna": [
+		"Cocoon",
+		"Pupa"
+	],
+	"beedrill": [
+		"Poison Bee",
+		"Poison Bee"
+	],
+	"pidgey": [
+		"Tiny Bird",
+		"Small Bird"
+	],
+	"pidgeotto": [
+		"Bird",
+		"Bird"
+	],
+	"pidgeot": [
+		"Bird",
+		"Bird"
+	],
+	"rattata": [
+		"Mouse",
+		"Mouse"
+	],
+	"raticate": [
+		"Mouse",
+		"Mouse"
+	],
+	"spearow": [
+		"Tiny Bird",
+		"Small Bird"
+	],
+	"fearow": [
+		"Beak",
+		"Beak"
+	],
+	"ekans": [
+		"Snake",
+		"Snake"
+	],
+	"arbok": [
+		"Cobra",
+		"Cobra"
+	],
+	"pikachu": [
+		"Mouse",
+		"Mouse"
+	],
+	"raichu": [
+		"Mouse",
+		"Mouse"
+	],
+	"sandshrew": [
+		"Mouse",
+		"Mouse"
+	],
+	"sandslash": [
+		"Mouse",
+		"Mouse"
+	],
+	"nidoranf": [
+		"Poison Pin",
+		"Poison Needle"
+	],
+	"nidorina": [
+		"Poison Pin",
+		"Poison Needle"
+	],
+	"nidoqueen": [
+		"Drill",
+		"Drill"
+	],
+	"nidoranm": [
+		"Poison Pin",
+		"Poison Needle"
+	],
+	"nidorino": [
+		"Poison Pin",
+		"Poison Needle"
+	],
+	"nidoking": [
+		"Drill",
+		"Drill"
+	],
+	"clefairy": [
+		"Fairy",
+		"Fairy"
+	],
+	"clefable": [
+		"Fairy",
+		"Fairy"
+	],
+	"vulpix": [
+		"Fox",
+		"Fox"
+	],
+	"ninetales": [
+		"Fox",
+		"Fox"
+	],
+	"jigglypuff": [
+		"Balloon",
+		"Balloon"
+	],
+	"wigglytuff": [
+		"Balloon",
+		"Balloon"
+	],
+	"zubat": [
+		"Bat",
+		"Bat"
+	],
+	"golbat": [
+		"Bat",
+		"Bat"
+	],
+	"oddish": [
+		"Weed",
+		"Weed"
+	],
+	"gloom": [
+		"Weed",
+		"Weed"
+	],
+	"vileplume": [
+		"Flower",
+		"Flower"
+	],
+	"paras": [
+		"Mushroom",
+		"Mushroom"
+	],
+	"parasect": [
+		"Mushroom",
+		"Mushroom"
+	],
+	"venonat": [
+		"Insect",
+		"Insect"
+	],
+	"venomoth": [
+		"Poison Moth",
+		"Poison Moth"
+	],
+	"diglett": [
+		"Mole",
+		"Mole"
+	],
+	"dugtrio": [
+		"Mole",
+		"Mole"
+	],
+	"meowth": [
+		"Scratch Cat",
+		"{{wp|Bakeneko}}"
+	],
+	"persian": [
+		"Classy Cat",
+		"Siamese Cat"
+	],
+	"psyduck": [
+		"Duck",
+		"Duck"
+	],
+	"golduck": [
+		"Duck",
+		"Duck"
+	],
+	"mankey": [
+		"Pig Monkey",
+		"Pig Monkey"
+	],
+	"primeape": [
+		"Pig Monkey",
+		"Pig Monkey"
+	],
+	"growlithe": [
+		"Puppy",
+		"Puppy"
+	],
+	"arcanine": [
+		"Legendary",
+		"Legend"
+	],
+	"poliwag": [
+		"Tadpole",
+		"Tadpole"
+	],
+	"poliwhirl": [
+		"Tadpole",
+		"Tadpole"
+	],
+	"poliwrath": [
+		"Tadpole",
+		"Tadpole"
+	],
+	"abra": [
+		"Psi",
+		"Telekinesis"
+	],
+	"kadabra": [
+		"Psi",
+		"Telekinesis"
+	],
+	"alakazam": [
+		"Psi",
+		"Telekinesis"
+	],
+	"machop": [
+		"Superpower",
+		"Superhuman Strength"
+	],
+	"machoke": [
+		"Superpower",
+		"Superhuman Strength"
+	],
+	"machamp": [
+		"Superpower",
+		"Superhuman Strength"
+	],
+	"bellsprout": [
+		"Flower",
+		"Flower"
+	],
+	"weepinbell": [
+		"Flycatcher",
+		"Flycatcher"
+	],
+	"victreebel": [
+		"Flycatcher",
+		"Flycatcher"
+	],
+	"tentacool": [
+		"Jellyfish",
+		"Jellyfish"
+	],
+	"tentacruel": [
+		"Jellyfish",
+		"Jellyfish"
+	],
+	"geodude": [
+		"Rock",
+		"Rock"
+	],
+	"graveler": [
+		"Rock",
+		"Rock"
+	],
+	"golem": [
+		"Megaton",
+		"Megaton"
+	],
+	"ponyta": [
+		"Fire Horse",
+		"Fire Horse"
+	],
+	"rapidash": [
+		"Fire Horse",
+		"Fire Horse"
+	],
+	"slowpoke": [
+		"Dopey",
+		"Stupid"
+	],
+	"slowbro": [
+		"Hermit Crab",
+		"Hermit Crab"
+	],
+	"magnemite": [
+		"Magnet",
+		"Magnet"
+	],
+	"magneton": [
+		"Magnet",
+		"Magnet"
+	],
+	"farfetchd": [
+		"Wild Duck",
+		"Spot-Billed Duck"
+	],
+	"doduo": [
+		"Twin Bird",
+		"Twin Bird"
+	],
+	"dodrio": [
+		"Triple Bird",
+		"Triplet Bird"
+	],
+	"seel": [
+		"Sea Lion",
+		"Sea Lion"
+	],
+	"dewgong": [
+		"Sea Lion",
+		"Sea Lion"
+	],
+	"grimer": [
+		"Sludge",
+		"Sludge"
+	],
+	"muk": [
+		"Sludge",
+		"Sludge"
+	],
+	"shellder": [
+		"Bivalve",
+		"Bivalve"
+	],
+	"cloyster": [
+		"Bivalve",
+		"Bivalve"
+	],
+	"gastly": [
+		"Gas",
+		"Gaseous"
+	],
+	"haunter": [
+		"Gas",
+		"Gaseous"
+	],
+	"gengar": [
+		"Shadow",
+		"Shadow"
+	],
+	"onix": [
+		"Rock Snake",
+		"Rock Snake"
+	],
+	"drowzee": [
+		"Hypnosis",
+		"Hypnosis"
+	],
+	"hypno": [
+		"Hypnosis",
+		"Hypnosis"
+	],
+	"krabby": [
+		"River Crab",
+		"Freshwater Crab"
+	],
+	"kingler": [
+		"Pincer",
+		"Pincer"
+	],
+	"voltorb": [
+		"Ball",
+		"Ball"
+	],
+	"electrode": [
+		"Ball",
+		"Ball"
+	],
+	"exeggcute": [
+		"Egg",
+		"Egg"
+	],
+	"exeggutor": [
+		"Coconut",
+		"Coconut"
+	],
+	"cubone": [
+		"Lonely",
+		"Lonely"
+	],
+	"marowak": [
+		"Bone Keeper",
+		"Bone Lover"
+	],
+	"hitmonlee": [
+		"Kicking",
+		"Kick"
+	],
+	"hitmonchan": [
+		"Punching",
+		"Punch"
+	],
+	"lickitung": [
+		"Licking",
+		"Licking"
+	],
+	"koffing": [
+		"Poison Gas",
+		"Poison Gas"
+	],
+	"weezing": [
+		"Poison Gas",
+		"Poison Gas"
+	],
+	"rhyhorn": [
+		"Spikes",
+		"Spiky"
+	],
+	"rhydon": [
+		"Drill",
+		"Drill"
+	],
+	"chansey": [
+		"Egg",
+		"Egg"
+	],
+	"tangela": [
+		"Vine",
+		"Tendril"
+	],
+	"kangaskhan": [
+		"Parent",
+		"Parent and Child"
+	],
+	"horsea": [
+		"Dragon",
+		"Dragon"
+	],
+	"seadra": [
+		"Dragon",
+		"Dragon"
+	],
+	"goldeen": [
+		"Goldfish",
+		"Goldfish"
+	],
+	"seaking": [
+		"Goldfish",
+		"Goldfish"
+	],
+	"staryu": [
+		"Star Shape",
+		"Star Shape"
+	],
+	"starmie": [
+		"Mysterious",
+		"Mysterious"
+	],
+	"mrmime": [
+		"Barrier",
+		"Barrier"
+	],
+	"scyther": [
+		"Mantis",
+		"Praying Mantis"
+	],
+	"jynx": [
+		"Human Shape",
+		"Humanoid"
+	],
+	"electabuzz": [
+		"Electric",
+		"Electric Shock"
+	],
+	"magmar": [
+		"Spitfire",
+		"Fire-Blowing"
+	],
+	"pinsir": [
+		"Stag Beetle",
+		"Stag Beetle"
+	],
+	"tauros": [
+		"Wild Bull",
+		"Rampaging Bull"
+	],
+	"magikarp": [
+		"Fish",
+		"Fish"
+	],
+	"gyarados": [
+		"Atrocious",
+		"Atrocious"
+	],
+	"lapras": [
+		"Transport",
+		"Transport"
+	],
+	"ditto": [
+		"Transform",
+		"Transformation"
+	],
+	"eevee": [
+		"Evolution",
+		"Evolution"
+	],
+	"vaporeon": [
+		"Bubble Jet",
+		"Foam-Spitting"
+	],
+	"jolteon": [
+		"Lightning",
+		"Thunder"
+	],
+	"flareon": [
+		"Flame",
+		"Flame"
+	],
+	"porygon": [
+		"Virtual",
+		"Virtual"
+	],
+	"omanyte": [
+		"Spiral",
+		"Spiral"
+	],
+	"omastar": [
+		"Spiral",
+		"Spiral"
+	],
+	"kabuto": [
+		"Shellfish",
+		"Shell"
+	],
+	"kabutops": [
+		"Shellfish",
+		"Shell"
+	],
+	"aerodactyl": [
+		"Fossil",
+		"Fossil"
+	],
+	"snorlax": [
+		"Sleeping",
+		"Dozing"
+	],
+	"articuno": [
+		"Freeze",
+		"Freezing"
+	],
+	"zapdos": [
+		"Electric",
+		"Electric Shock"
+	],
+	"moltres": [
+		"Flame",
+		"Flame"
+	],
+	"dratini": [
+		"Dragon",
+		"Dragon"
+	],
+	"dragonair": [
+		"Dragon",
+		"Dragon"
+	],
+	"dragonite": [
+		"Dragon",
+		"Dragon"
+	],
+	"mewtwo": [
+		"Genetic",
+		"Genetic"
+	],
+	"mew": [
+		"New Species",
+		"New Species"
+	],
+	"chikorita": [
+		"Leaf",
+		"Leaf"
+	],
+	"bayleef": [
+		"Leaf",
+		"Leaf"
+	],
+	"meganium": [
+		"Herb",
+		"Herb"
+	],
+	"cyndaquil": [
+		"Fire Mouse",
+		"Fire Mouse"
+	],
+	"quilava": [
+		"Volcano",
+		"Volcano"
+	],
+	"typhlosion": [
+		"Volcano",
+		"Volcano"
+	],
+	"totodile": [
+		"Big Jaw",
+		"Big Jaw"
+	],
+	"croconaw": [
+		"Big Jaw",
+		"Big Jaw"
+	],
+	"feraligatr": [
+		"Big Jaw",
+		"Big Jaw"
+	],
+	"sentret": [
+		"Scout",
+		"Lookout"
+	],
+	"furret": [
+		"Long Body",
+		"Long Torso"
+	],
+	"hoothoot": [
+		"Owl",
+		"Owl"
+	],
+	"noctowl": [
+		"Owl",
+		"Owl"
+	],
+	"ledyba": [
+		"Five Star",
+		"Five Star"
+	],
+	"ledian": [
+		"Five Star",
+		"Five Star"
+	],
+	"spinarak": [
+		"String Spit",
+		"String-Spitting"
+	],
+	"ariados": [
+		"Long Leg",
+		"Long Leg"
+	],
+	"crobat": [
+		"Bat",
+		"Bat"
+	],
+	"chinchou": [
+		"Angler",
+		"Anglerfish"
+	],
+	"lanturn": [
+		"Light",
+		"Light"
+	],
+	"pichu": [
+		"Tiny Mouse",
+		"Small Mouse"
+	],
+	"cleffa": [
+		"Star Shape",
+		"Star Shape"
+	],
+	"igglybuff": [
+		"Balloon",
+		"Balloon"
+	],
+	"togepi": [
+		"Spike Ball",
+		"Spike Ball"
+	],
+	"togetic": [
+		"Happiness",
+		"Happiness"
+	],
+	"natu": [
+		"Tiny Bird",
+		"Small Bird"
+	],
+	"xatu": [
+		"Mystic",
+		"Spirit"
+	],
+	"mareep": [
+		"Wool",
+		"Fluff"
+	],
+	"flaaffy": [
+		"Wool",
+		"Fluff"
+	],
+	"ampharos": [
+		"Light",
+		"Light"
+	],
+	"bellossom": [
+		"Flower",
+		"Flower"
+	],
+	"marill": [
+		"Aqua Mouse",
+		"Water Mouse"
+	],
+	"azumarill": [
+		"Aqua Rabbit",
+		"Water Rabbit"
+	],
+	"sudowoodo": [
+		"Imitation",
+		"Imitation"
+	],
+	"politoed": [
+		"Frog",
+		"Frog"
+	],
+	"hoppip": [
+		"Cottonweed",
+		"Cottonweed"
+	],
+	"skiploom": [
+		"Cottonweed",
+		"Cottonweed"
+	],
+	"jumpluff": [
+		"Cottonweed",
+		"Cottonweed"
+	],
+	"aipom": [
+		"Long Tail",
+		"Long Tail"
+	],
+	"sunkern": [
+		"Seed",
+		"Seed"
+	],
+	"sunflora": [
+		"Sun",
+		"Sun"
+	],
+	"yanma": [
+		"Clear Wing",
+		"Thin Wing"
+	],
+	"wooper": [
+		"Water Fish",
+		"Water Fish"
+	],
+	"quagsire": [
+		"Water Fish",
+		"Water Fish"
+	],
+	"espeon": [
+		"Sun",
+		"Sun"
+	],
+	"umbreon": [
+		"Moonlight",
+		"Moonlight"
+	],
+	"murkrow": [
+		"Darkness",
+		"Darkness"
+	],
+	"slowking": [
+		"Royal",
+		"Monarch"
+	],
+	"misdreavus": [
+		"Screech",
+		"Night Cry"
+	],
+	"unown": [
+		"Symbol",
+		"Symbol"
+	],
+	"wobbuffet": [
+		"Patient",
+		"Endurance"
+	],
+	"girafarig": [
+		"Long Neck",
+		"Long Neck"
+	],
+	"pineco": [
+		"Bagworm",
+		"Bagworm"
+	],
+	"forretress": [
+		"Bagworm",
+		"Bagworm"
+	],
+	"dunsparce": [
+		"Land Snake",
+		"Land Snake"
+	],
+	"gligar": [
+		"Fly Scorpion",
+		"Flying Scorpion"
+	],
+	"steelix": [
+		"Iron Snake",
+		"Iron Snake"
+	],
+	"snubbull": [
+		"Fairy",
+		"Fairy"
+	],
+	"granbull": [
+		"Fairy",
+		"Fairy"
+	],
+	"qwilfish": [
+		"Balloon",
+		"Balloon"
+	],
+	"scizor": [
+		"Pincer",
+		"Pincer"
+	],
+	"shuckle": [
+		"Mold",
+		"Fermentation"
+	],
+	"heracross": [
+		"Single Horn",
+		"Single Horn"
+	],
+	"sneasel": [
+		"Sharp Claw",
+		"Claw"
+	],
+	"teddiursa": [
+		"Little Bear",
+		"Small Bear"
+	],
+	"ursaring": [
+		"Hibernator",
+		"Hibernation"
+	],
+	"slugma": [
+		"Lava",
+		"Lava"
+	],
+	"magcargo": [
+		"Lava",
+		"Lava"
+	],
+	"swinub": [
+		"Pig",
+		"Pig Boar"
+	],
+	"piloswine": [
+		"Swine",
+		"Wild Boar"
+	],
+	"corsola": [
+		"Coral",
+		"Coral"
+	],
+	"remoraid": [
+		"Jet",
+		"Jet"
+	],
+	"octillery": [
+		"Jet",
+		"Jet"
+	],
+	"delibird": [
+		"Delivery",
+		"Courier"
+	],
+	"mantine": [
+		"Kite",
+		"Kite"
+	],
+	"skarmory": [
+		"Armor Bird",
+		"Armor Bird"
+	],
+	"houndour": [
+		"Dark",
+		"Dark"
+	],
+	"houndoom": [
+		"Dark",
+		"Dark"
+	],
+	"kingdra": [
+		"Dragon",
+		"Dragon"
+	],
+	"phanpy": [
+		"Long Nose",
+		"Long Nose"
+	],
+	"donphan": [
+		"Armor",
+		"Armor"
+	],
+	"porygon2": [
+		"Virtual",
+		"Virtual"
+	],
+	"stantler": [
+		"Big Horn",
+		"Big Horn"
+	],
+	"smeargle": [
+		"Painter",
+		"Painter"
+	],
+	"tyrogue": [
+		"Scuffle",
+		"Scuffle"
+	],
+	"hitmontop": [
+		"Handstand",
+		"Headstand"
+	],
+	"smoochum": [
+		"Kiss",
+		"Kiss"
+	],
+	"elekid": [
+		"Electric",
+		"Electric"
+	],
+	"magby": [
+		"Live Coal",
+		"Live Coal"
+	],
+	"miltank": [
+		"Milk Cow",
+		"Dairy Cow"
+	],
+	"blissey": [
+		"Happiness",
+		"Happiness"
+	],
+	"raikou": [
+		"Thunder",
+		"Thunder"
+	],
+	"entei": [
+		"Volcano",
+		"Volcano"
+	],
+	"suicune": [
+		"Aurora",
+		"Aurora"
+	],
+	"larvitar": [
+		"Rock Skin",
+		"Rock Skin"
+	],
+	"pupitar": [
+		"Hard Shell",
+		"Bullet"
+	],
+	"tyranitar": [
+		"Armor",
+		"Armor"
+	],
+	"lugia": [
+		"Diving",
+		"Diving"
+	],
+	"hooh": [
+		"Rainbow",
+		"Rainbow-Colored"
+	],
+	"celebi": [
+		"Time Travel",
+		"Time Traveling"
+	],
+	"treecko": [
+		"Wood Gecko",
+		"Forest Lizard"
+	],
+	"grovyle": [
+		"Wood Gecko",
+		"Forest Lizard"
+	],
+	"sceptile": [
+		"Forest",
+		"Jungle"
+	],
+	"torchic": [
+		"Chick",
+		"Chick"
+	],
+	"combusken": [
+		"Young Fowl",
+		"Chicken"
+	],
+	"blaziken": [
+		"Blaze",
+		"Raging Flames"
+	],
+	"mudkip": [
+		"Mud Fish",
+		"Swamp Fish"
+	],
+	"marshtomp": [
+		"Mud Fish",
+		"Swamp Fish"
+	],
+	"swampert": [
+		"Mud Fish",
+		"Swamp Fish"
+	],
+	"poochyena": [
+		"Bite",
+		"Bite"
+	],
+	"mightyena": [
+		"Bite",
+		"Bite"
+	],
+	"zigzagoon": [
+		"Tiny Raccoon",
+		"Tiny Raccoon Dog"
+	],
+	"linoone": [
+		"Rushing",
+		"Rushing"
+	],
+	"wurmple": [
+		"Worm",
+		"Caterpillar"
+	],
+	"silcoon": [
+		"Cocoon",
+		"Chrysalis"
+	],
+	"beautifly": [
+		"Butterfly",
+		"Butterfly"
+	],
+	"cascoon": [
+		"Cocoon",
+		"Chrysalis"
+	],
+	"dustox": [
+		"Poison Moth",
+		"Poison Moth"
+	],
+	"lotad": [
+		"Water Weed",
+		"Floating Weed"
+	],
+	"lombre": [
+		"Jolly",
+		"Cheerful"
+	],
+	"ludicolo": [
+		"Carefree",
+		"Optimistic"
+	],
+	"seedot": [
+		"Acorn",
+		"Acorn"
+	],
+	"nuzleaf": [
+		"Wily",
+		"Malicious"
+	],
+	"shiftry": [
+		"Wicked",
+		"Wicked"
+	],
+	"taillow": [
+		"Tiny Swallow",
+		"Small Swallow"
+	],
+	"swellow": [
+		"Swallow",
+		"Swallow"
+	],
+	"wingull": [
+		"Seagull",
+		"Black-Tailed Gull"
+	],
+	"pelipper": [
+		"Water Bird",
+		"Waterfowl"
+	],
+	"ralts": [
+		"Feeling",
+		"Feeling"
+	],
+	"kirlia": [
+		"Emotion",
+		"Emotion"
+	],
+	"gardevoir": [
+		"Embrace",
+		"Embrace"
+	],
+	"surskit": [
+		"Pond Skater",
+		"Water Strider"
+	],
+	"masquerain": [
+		"Eyeball",
+		"Eyeball"
+	],
+	"shroomish": [
+		"Mushroom",
+		"Mushroom"
+	],
+	"breloom": [
+		"Mushroom",
+		"Mushroom"
+	],
+	"slakoth": [
+		"Slacker",
+		"Sloth"
+	],
+	"vigoroth": [
+		"Wild Monkey",
+		"Rampaging Monkey"
+	],
+	"slaking": [
+		"Lazy",
+		"Lazy"
+	],
+	"nincada": [
+		"Trainee",
+		"Lowest-Class"
+	],
+	"ninjask": [
+		"Ninja",
+		"Ninja"
+	],
+	"shedinja": [
+		"Shed",
+		"Husk"
+	],
+	"whismur": [
+		"Whisper",
+		"Whisper"
+	],
+	"loudred": [
+		"Big Voice",
+		"Large Voice"
+	],
+	"exploud": [
+		"Loud Noise",
+		"Noise"
+	],
+	"makuhita": [
+		"Guts",
+		"Guts"
+	],
+	"hariyama": [
+		"Arm Thrust",
+		"Palm Thrust"
+	],
+	"azurill": [
+		"Polka Dot",
+		"Polka Dot"
+	],
+	"nosepass": [
+		"Compass",
+		"Compass"
+	],
+	"skitty": [
+		"Kitten",
+		"Kitten"
+	],
+	"delcatty": [
+		"Prim",
+		"Prim and Proper"
+	],
+	"sableye": [
+		"Darkness",
+		"Darkness"
+	],
+	"mawile": [
+		"Deceiver",
+		"Deceiver"
+	],
+	"aron": [
+		"Iron Armor",
+		"Iron Armor"
+	],
+	"lairon": [
+		"Iron Armor",
+		"Iron Armor"
+	],
+	"aggron": [
+		"Iron Armor",
+		"Iron Armor"
+	],
+	"meditite": [
+		"Meditate",
+		"Meditation"
+	],
+	"medicham": [
+		"Meditate",
+		"Meditation"
+	],
+	"electrike": [
+		"Lightning",
+		"Lightning"
+	],
+	"manectric": [
+		"Discharge",
+		"Discharge"
+	],
+	"plusle": [
+		"Cheering",
+		"Cheering"
+	],
+	"minun": [
+		"Cheering",
+		"Cheering"
+	],
+	"volbeat": [
+		"Firefly",
+		"Firefly"
+	],
+	"illumise": [
+		"Firefly",
+		"Firefly"
+	],
+	"roselia": [
+		"Thorn",
+		"Thorn"
+	],
+	"gulpin": [
+		"Stomach",
+		"Stomach"
+	],
+	"swalot": [
+		"Poison Bag",
+		"Poison Bag"
+	],
+	"carvanha": [
+		"Savage",
+		"Ferocious"
+	],
+	"sharpedo": [
+		"Brutal",
+		"Brutal"
+	],
+	"wailmer": [
+		"Ball Whale",
+		"Ball Whale"
+	],
+	"wailord": [
+		"Float Whale",
+		"Float Whale"
+	],
+	"numel": [
+		"Numb",
+		"Thickheaded"
+	],
+	"camerupt": [
+		"Eruption",
+		"Eruption"
+	],
+	"torkoal": [
+		"Coal",
+		"Coal"
+	],
+	"spoink": [
+		"Bounce",
+		"Hopping"
+	],
+	"grumpig": [
+		"Manipulate",
+		"Manipulation"
+	],
+	"spinda": [
+		"Spot Panda",
+		"Spot Panda"
+	],
+	"trapinch": [
+		"Ant Pit",
+		"Antlion Larva"
+	],
+	"vibrava": [
+		"Vibration",
+		"Vibration"
+	],
+	"flygon": [
+		"Mystic",
+		"Spirit"
+	],
+	"cacnea": [
+		"Cactus",
+		"Cactus"
+	],
+	"cacturne": [
+		"Scarecrow",
+		"Scarecrow Plant"
+	],
+	"swablu": [
+		"Cotton Bird",
+		"Cotton Bird"
+	],
+	"altaria": [
+		"Humming",
+		"Humming"
+	],
+	"zangoose": [
+		"Cat Ferret",
+		"Cat Weasel"
+	],
+	"seviper": [
+		"Fang Snake",
+		"Fang Snake"
+	],
+	"lunatone": [
+		"Meteorite",
+		"Meteorite"
+	],
+	"solrock": [
+		"Meteorite",
+		"Meteorite"
+	],
+	"barboach": [
+		"Whiskers",
+		"Whisker Fish"
+	],
+	"whiscash": [
+		"Whiskers",
+		"Whisker Fish"
+	],
+	"corphish": [
+		"Ruffian",
+		"Rogue"
+	],
+	"crawdaunt": [
+		"Rogue",
+		"Ruffian"
+	],
+	"baltoy": [
+		"Clay Doll",
+		"Clay Figure"
+	],
+	"claydol": [
+		"Clay Doll",
+		"Clay Figure"
+	],
+	"lileep": [
+		"Sea Lily",
+		"Sea Lily"
+	],
+	"cradily": [
+		"Barnacle",
+		"Stone Cup"
+	],
+	"anorith": [
+		"Old Shrimp",
+		"Ancient Shrimp"
+	],
+	"armaldo": [
+		"Plate",
+		"Armor"
+	],
+	"feebas": [
+		"Fish",
+		"Fish"
+	],
+	"milotic": [
+		"Tender",
+		"Affection"
+	],
+	"castform": [
+		"Weather",
+		"Weather"
+	],
+	"kecleon": [
+		"Color Swap",
+		"Color Change"
+	],
+	"shuppet": [
+		"Puppet",
+		"Doll"
+	],
+	"banette": [
+		"Marionette",
+		"Stuffed Toy"
+	],
+	"duskull": [
+		"Requiem",
+		"Approaching Death"
+	],
+	"dusclops": [
+		"Beckon",
+		"Beckoning"
+	],
+	"tropius": [
+		"Fruit",
+		"Fruit"
+	],
+	"chimecho": [
+		"Wind Chime",
+		"Wind Chime"
+	],
+	"absol": [
+		"Disaster",
+		"Calamity"
+	],
+	"wynaut": [
+		"Bright",
+		"Merry"
+	],
+	"snorunt": [
+		"Snow Hat",
+		"Snow Umbrella"
+	],
+	"glalie": [
+		"Face",
+		"Face"
+	],
+	"spheal": [
+		"Clap",
+		"Clap"
+	],
+	"sealeo": [
+		"Ball Roll",
+		"Ball Roll"
+	],
+	"walrein": [
+		"Ice Break",
+		"Ice Breaker"
+	],
+	"clamperl": [
+		"Bivalve",
+		"Bivalve"
+	],
+	"huntail": [
+		"Deep Sea",
+		"Deep Sea"
+	],
+	"gorebyss": [
+		"South Sea",
+		"South Sea"
+	],
+	"relicanth": [
+		"Longevity",
+		"Longevity"
+	],
+	"luvdisc": [
+		"Rendezvous",
+		"Rendezvous"
+	],
+	"bagon": [
+		"Rock Head",
+		"Hard-Headed"
+	],
+	"shelgon": [
+		"Endurance",
+		"Patient"
+	],
+	"salamence": [
+		"Dragon",
+		"Dragon"
+	],
+	"beldum": [
+		"Iron Ball",
+		"Iron Ball"
+	],
+	"metang": [
+		"Iron Claw",
+		"Iron Claw"
+	],
+	"metagross": [
+		"Iron Leg",
+		"Iron Leg"
+	],
+	"regirock": [
+		"Rock Peak",
+		"Rocky Mountain"
+	],
+	"regice": [
+		"Iceberg",
+		"Iceberg"
+	],
+	"registeel": [
+		"Iron",
+		"Iron"
+	],
+	"latias": [
+		"Eon",
+		"Infinity"
+	],
+	"latios": [
+		"Eon",
+		"Infinity"
+	],
+	"kyogre": [
+		"Sea Basin",
+		"Seabed"
+	],
+	"groudon": [
+		"Continent",
+		"Continent"
+	],
+	"rayquaza": [
+		"Sky High",
+		"Sky"
+	],
+	"jirachi": [
+		"Wish",
+		"Wish"
+	],
+	"deoxys": [
+		"DNA",
+		"DNA"
+	],
+	"turtwig": [
+		"Tiny Leaf",
+		"New Leaf"
+	],
+	"grotle": [
+		"Grove",
+		"Grove"
+	],
+	"torterra": [
+		"Continent",
+		"Continent"
+	],
+	"chimchar": [
+		"Chimp",
+		"Small Monkey"
+	],
+	"monferno": [
+		"Playful",
+		"Mischievous"
+	],
+	"infernape": [
+		"Flame",
+		"Flame"
+	],
+	"piplup": [
+		"Penguin",
+		"Penguin"
+	],
+	"prinplup": [
+		"Penguin",
+		"Penguin"
+	],
+	"empoleon": [
+		"Emperor",
+		"Emperor"
+	],
+	"starly": [
+		"Starling",
+		"Starling"
+	],
+	"staravia": [
+		"Starling",
+		"Starling"
+	],
+	"staraptor": [
+		"Predator",
+		"Bird of Prey"
+	],
+	"bidoof": [
+		"Plump Mouse",
+		"Round Mouse"
+	],
+	"bibarel": [
+		"Beaver",
+		"Beaver"
+	],
+	"kricketot": [
+		"Cricket",
+		"Cricket"
+	],
+	"kricketune": [
+		"Cricket",
+		"Cricket"
+	],
+	"shinx": [
+		"Flash",
+		"Flash"
+	],
+	"luxio": [
+		"Spark",
+		"Lightning"
+	],
+	"luxray": [
+		"Gleam Eyes",
+		"Glinting Eyes"
+	],
+	"budew": [
+		"Bud",
+		"Bud"
+	],
+	"roserade": [
+		"Bouquet",
+		"Bouquet"
+	],
+	"cranidos": [
+		"Head Butt",
+		"Head Butt"
+	],
+	"rampardos": [
+		"Head Butt",
+		"Head Butt"
+	],
+	"shieldon": [
+		"Shield",
+		"Shield"
+	],
+	"bastiodon": [
+		"Shield",
+		"Shield"
+	],
+	"burmy": [
+		"Bagworm",
+		"Bagworm"
+	],
+	"wormadam": [
+		"Bagworm",
+		"Bagworm"
+	],
+	"mothim": [
+		"Moth",
+		"Bagworm Moth"
+	],
+	"combee": [
+		"Tiny Bee",
+		"Bee Larva"
+	],
+	"vespiquen": [
+		"Beehive",
+		"Beehive"
+	],
+	"pachirisu": [
+		"EleSquirrel",
+		"Electric Squirrel"
+	],
+	"buizel": [
+		"Sea Weasel",
+		"Sea Weasel"
+	],
+	"floatzel": [
+		"Sea Weasel",
+		"Sea Weasel"
+	],
+	"cherubi": [
+		"Cherry",
+		"Cherry"
+	],
+	"cherrim": [
+		"Blossom",
+		"Cherry Blossom"
+	],
+	"shellos": [
+		"Sea Slug",
+		"Sea Slug"
+	],
+	"gastrodon": [
+		"Sea Slug",
+		"Sea Slug"
+	],
+	"ambipom": [
+		"Long Tail",
+		"Long Tail"
+	],
+	"drifloon": [
+		"Balloon",
+		"Balloon"
+	],
+	"drifblim": [
+		"Blimp",
+		"Blimp"
+	],
+	"buneary": [
+		"Rabbit",
+		"Rabbit"
+	],
+	"lopunny": [
+		"Rabbit",
+		"Rabbit"
+	],
+	"mismagius": [
+		"Magical",
+		"Magical"
+	],
+	"honchkrow": [
+		"Big Boss",
+		"Big Boss"
+	],
+	"glameow": [
+		"Catty",
+		"Beguiling"
+	],
+	"purugly": [
+		"Tiger Cat",
+		"Tiger Cat"
+	],
+	"chingling": [
+		"Bell",
+		"Bell"
+	],
+	"stunky": [
+		"Skunk",
+		"Skunk"
+	],
+	"skuntank": [
+		"Skunk",
+		"Skunk"
+	],
+	"bronzor": [
+		"Bronze",
+		"Bronze"
+	],
+	"bronzong": [
+		"Bronze Bell",
+		"Bronze Bell"
+	],
+	"bonsly": [
+		"Bonsai",
+		"Bonsai"
+	],
+	"mimejr": [
+		"Mime",
+		"Mime"
+	],
+	"happiny": [
+		"Playhouse",
+		"Playing House"
+	],
+	"chatot": [
+		"Music Note",
+		"Music Note"
+	],
+	"spiritomb": [
+		"Forbidden",
+		"Sealed"
+	],
+	"gible": [
+		"Land Shark",
+		"Land Shark"
+	],
+	"gabite": [
+		"Cave",
+		"Cave"
+	],
+	"garchomp": [
+		"Mach",
+		"Mach"
+	],
+	"munchlax": [
+		"Big Eater",
+		"Gluttonous"
+	],
+	"riolu": [
+		"Emanation",
+		"Ripple"
+	],
+	"lucario": [
+		"Aura",
+		"Wave"
+	],
+	"hippopotas": [
+		"Hippo",
+		"Hippo"
+	],
+	"hippowdon": [
+		"Heavyweight",
+		"Heavyweight"
+	],
+	"skorupi": [
+		"Scorpion",
+		"Scorpion"
+	],
+	"drapion": [
+		"Ogre Scorpion",
+		"Monster Scorpion"
+	],
+	"croagunk": [
+		"Toxic Mouth",
+		"Poison Stab"
+	],
+	"toxicroak": [
+		"Toxic Mouth",
+		"Poison Stab"
+	],
+	"carnivine": [
+		"Bug Catcher",
+		"Bug Catcher"
+	],
+	"finneon": [
+		"Wing Fish",
+		"Wing Fish"
+	],
+	"lumineon": [
+		"Neon",
+		"Neon"
+	],
+	"mantyke": [
+		"Kite",
+		"Kite"
+	],
+	"snover": [
+		"Frost Tree",
+		"Frost-Covered Tree"
+	],
+	"abomasnow": [
+		"Frost Tree",
+		"Frost-Covered Tree"
+	],
+	"weavile": [
+		"Sharp Claw",
+		"Claw"
+	],
+	"magnezone": [
+		"Magnet Area",
+		"Magnetic Field"
+	],
+	"lickilicky": [
+		"Licking",
+		"Licking"
+	],
+	"rhyperior": [
+		"Drill",
+		"Drill"
+	],
+	"tangrowth": [
+		"Vine",
+		"Tendril"
+	],
+	"electivire": [
+		"Thunderbolt",
+		"Thunder and Lightning"
+	],
+	"magmortar": [
+		"Blast",
+		"Explosion Fume"
+	],
+	"togekiss": [
+		"Jubilee",
+		"Blessing"
+	],
+	"yanmega": [
+		"Ogre Darner",
+		"Ogre Dragonfly"
+	],
+	"leafeon": [
+		"Verdant",
+		"Fresh Verdure"
+	],
+	"glaceon": [
+		"Fresh Snow",
+		"Fresh Snow"
+	],
+	"gliscor": [
+		"Fang Scorpion",
+		"Fang Scorpion"
+	],
+	"mamoswine": [
+		"Twin Tusk",
+		"Twin Tusk"
+	],
+	"porygonz": [
+		"Virtual",
+		"Virtual"
+	],
+	"gallade": [
+		"Blade",
+		"Blade"
+	],
+	"probopass": [
+		"Compass",
+		"Compass"
+	],
+	"dusknoir": [
+		"Gripper",
+		"Grasping"
+	],
+	"froslass": [
+		"Snow Land",
+		"Snow Country"
+	],
+	"rotom": [
+		"Plasma",
+		"Plasma"
+	],
+	"uxie": [
+		"Knowledge",
+		"Knowledge"
+	],
+	"mesprit": [
+		"Emotion",
+		"Emotion"
+	],
+	"azelf": [
+		"Willpower",
+		"Will"
+	],
+	"dialga": [
+		"Temporal",
+		"Time"
+	],
+	"palkia": [
+		"Spatial",
+		"Space"
+	],
+	"heatran": [
+		"Lava Dome",
+		"Caldera"
+	],
+	"regigigas": [
+		"Colossal",
+		"Huge"
+	],
+	"giratina": [
+		"Renegade",
+		"Rebellious"
+	],
+	"cresselia": [
+		"Lunar",
+		"Crescent Moon"
+	],
+	"phione": [
+		"Sea Drifter",
+		"Ocean"
+	],
+	"manaphy": [
+		"Seafaring",
+		"Migration"
+	],
+	"darkrai": [
+		"Pitch-Black",
+		"Darkness"
+	],
+	"shaymin": [
+		"Gratitude",
+		"Gratitude"
+	],
+	"arceus": [
+		"Alpha",
+		"Creation"
+	],
+	"victini": [
+		"Victory",
+		"Victory"
+	],
+	"snivy": [
+		"Grass Snake",
+		"Grass Snake"
+	],
+	"servine": [
+		"Grass Snake",
+		"Grass Snake"
+	],
+	"serperior": [
+		"Regal",
+		"Royal"
+	],
+	"tepig": [
+		"Fire Pig",
+		"Fire Pig"
+	],
+	"pignite": [
+		"Fire Pig",
+		"Fire Pig"
+	],
+	"emboar": [
+		"Mega Fire Pig",
+		"Big Fire Pig"
+	],
+	"oshawott": [
+		"Sea Otter",
+		"Sea Otter"
+	],
+	"dewott": [
+		"Discipline",
+		"Training"
+	],
+	"samurott": [
+		"Formidable",
+		"Dignified"
+	],
+	"patrat": [
+		"Scout",
+		"Lookout"
+	],
+	"watchog": [
+		"Lookout",
+		"Vigilant"
+	],
+	"lillipup": [
+		"Puppy",
+		"Puppy"
+	],
+	"herdier": [
+		"Loyal Dog",
+		"Faithful Dog"
+	],
+	"stoutland": [
+		"Big-Hearted",
+		"Tolerant"
+	],
+	"purrloin": [
+		"Devious",
+		"Ill-Natured"
+	],
+	"liepard": [
+		"Cruel",
+		"Cruel"
+	],
+	"pansage": [
+		"Grass Monkey",
+		"Grass Monkey"
+	],
+	"simisage": [
+		"Thorn Monkey",
+		"Thorn Monkey"
+	],
+	"pansear": [
+		"High Temp",
+		"High Temperature"
+	],
+	"simisear": [
+		"Ember",
+		"Sparks"
+	],
+	"panpour": [
+		"Spray",
+		"Water Splash"
+	],
+	"simipour": [
+		"Geyser",
+		"High Water"
+	],
+	"munna": [
+		"Dream Eater",
+		"Dream Eater"
+	],
+	"musharna": [
+		"Drowsing",
+		"Trance"
+	],
+	"pidove": [
+		"Tiny Pigeon",
+		"Small Pigeon"
+	],
+	"tranquill": [
+		"Wild Pigeon",
+		"Wild Pigeon"
+	],
+	"unfezant": [
+		"Proud",
+		"Pride"
+	],
+	"blitzle": [
+		"Electrified",
+		"Electrified"
+	],
+	"zebstrika": [
+		"Thunderbolt",
+		"Thunder and Lightning"
+	],
+	"roggenrola": [
+		"Mantle",
+		"Mantle"
+	],
+	"boldore": [
+		"Ore",
+		"Ore"
+	],
+	"gigalith": [
+		"Compressed",
+		"High Pressure"
+	],
+	"woobat": [
+		"Bat",
+		"Bat"
+	],
+	"swoobat": [
+		"Courting",
+		"Courting"
+	],
+	"drilbur": [
+		"Mole",
+		"Mole"
+	],
+	"excadrill": [
+		"Subterrene",
+		"Deep Earth"
+	],
+	"audino": [
+		"Hearing",
+		"Hearing"
+	],
+	"timburr": [
+		"Muscular",
+		"Muscle"
+	],
+	"gurdurr": [
+		"Muscular",
+		"Muscle"
+	],
+	"conkeldurr": [
+		"Muscular",
+		"Muscle"
+	],
+	"tympole": [
+		"Tadpole",
+		"Tadpole"
+	],
+	"palpitoad": [
+		"Vibration",
+		"Vibration"
+	],
+	"seismitoad": [
+		"Vibration",
+		"Vibration"
+	],
+	"throh": [
+		"Judo",
+		"Judo"
+	],
+	"sawk": [
+		"Karate",
+		"Karate"
+	],
+	"sewaddle": [
+		"Sewing",
+		"Sewing"
+	],
+	"swadloon": [
+		"Leaf-Wrapped",
+		"Forest Cloak"
+	],
+	"leavanny": [
+		"Nurturing",
+		"Child-Raising"
+	],
+	"venipede": [
+		"Centipede",
+		"Centipede"
+	],
+	"whirlipede": [
+		"Curlipede",
+		"Cocoon Centipede"
+	],
+	"scolipede": [
+		"Megapede",
+		"Mega Centipede"
+	],
+	"cottonee": [
+		"Cotton Puff",
+		"Cotton Ball"
+	],
+	"whimsicott": [
+		"Windveiled",
+		"Wind-Hidden"
+	],
+	"petilil": [
+		"Bulb",
+		"Root"
+	],
+	"lilligant": [
+		"Flowering",
+		"Decorative Flower"
+	],
+	"basculin": [
+		"Hostile",
+		"Violent"
+	],
+	"sandile": [
+		"Desert Croc",
+		"Desert Crocodile"
+	],
+	"krokorok": [
+		"Desert Croc",
+		"Desert Crocodile"
+	],
+	"krookodile": [
+		"Intimidation",
+		"Menacing"
+	],
+	"darumaka": [
+		"Zen Charm",
+		"Daruma"
+	],
+	"darmanitan": [
+		"Blazing",
+		"Blazing"
+	],
+	"maractus": [
+		"Cactus",
+		"Cactus"
+	],
+	"dwebble": [
+		"Rock Inn",
+		"Stone Hermit"
+	],
+	"crustle": [
+		"Stone Home",
+		"Rock Hermit"
+	],
+	"scraggy": [
+		"Shedding",
+		"Shedding"
+	],
+	"scrafty": [
+		"Hoodlum",
+		"Scoundrel"
+	],
+	"sigilyph": [
+		"Avianoid",
+		"Pseudo-Bird"
+	],
+	"yamask": [
+		"Spirit",
+		"Spirit"
+	],
+	"cofagrigus": [
+		"Coffin",
+		"Coffin"
+	],
+	"tirtouga": [
+		"Prototurtle",
+		"Ancient Turtle"
+	],
+	"carracosta": [
+		"Prototurtle",
+		"Ancient Turtle"
+	],
+	"archen": [
+		"First Bird",
+		"Oldest Bird"
+	],
+	"archeops": [
+		"First Bird",
+		"Oldest Bird"
+	],
+	"trubbish": [
+		"Trash Bag",
+		"Garbage Bag"
+	],
+	"garbodor": [
+		"Trash Heap",
+		"Garbage Dump"
+	],
+	"zorua": [
+		"Tricky Fox",
+		"Evil Fox"
+	],
+	"zoroark": [
+		"Illusion Fox",
+		"Illusory Fox"
+	],
+	"minccino": [
+		"Chinchilla",
+		"Chinchilla"
+	],
+	"cinccino": [
+		"Scarf",
+		"Scarf"
+	],
+	"gothita": [
+		"Fixation",
+		"Stare"
+	],
+	"gothorita": [
+		"Manipulate",
+		"Manipulation"
+	],
+	"gothitelle": [
+		"Astral Body",
+		"Heavenly Body"
+	],
+	"solosis": [
+		"Cell",
+		"Cell"
+	],
+	"duosion": [
+		"Mitosis",
+		"Mitosis"
+	],
+	"reuniclus": [
+		"Multiplying",
+		"Amplification"
+	],
+	"ducklett": [
+		"Water Bird",
+		"Waterfowl"
+	],
+	"swanna": [
+		"White Bird",
+		"Swan"
+	],
+	"vanillite": [
+		"Fresh Snow",
+		"Fresh Snow"
+	],
+	"vanillish": [
+		"Icy Snow",
+		"Ice and Snow"
+	],
+	"vanilluxe": [
+		"Snowstorm",
+		"Blizzard"
+	],
+	"deerling": [
+		"Season",
+		"Seasonal"
+	],
+	"sawsbuck": [
+		"Season",
+		"Seasonal"
+	],
+	"emolga": [
+		"Sky Squirrel",
+		"Flying Squirrel"
+	],
+	"karrablast": [
+		"Clamping",
+		"Bite Down"
+	],
+	"escavalier": [
+		"Cavalry",
+		"Cavalry"
+	],
+	"foongus": [
+		"Mushroom",
+		"Mushroom"
+	],
+	"amoonguss": [
+		"Mushroom",
+		"Mushroom"
+	],
+	"frillish": [
+		"Floating",
+		"Floating"
+	],
+	"jellicent": [
+		"Floating",
+		"Floating"
+	],
+	"alomomola": [
+		"Caring",
+		"Nursing"
+	],
+	"joltik": [
+		"Attaching",
+		"Clinging"
+	],
+	"galvantula": [
+		"EleSpider",
+		"Electric Spider"
+	],
+	"ferroseed": [
+		"Thorn Seed",
+		"Spike Seed"
+	],
+	"ferrothorn": [
+		"Thorn Pod",
+		"Spike Ball"
+	],
+	"klink": [
+		"Gear",
+		"Gear"
+	],
+	"klang": [
+		"Gear",
+		"Gear"
+	],
+	"klinklang": [
+		"Gear",
+		"Gear"
+	],
+	"tynamo": [
+		"EleFish",
+		"Electric Fish"
+	],
+	"eelektrik": [
+		"EleFish",
+		"Electric Fish"
+	],
+	"eelektross": [
+		"EleFish",
+		"Electric Fish"
+	],
+	"elgyem": [
+		"Cerebral",
+		"Brain"
+	],
+	"beheeyem": [
+		"Cerebral",
+		"Brain"
+	],
+	"litwick": [
+		"Candle",
+		"Candle"
+	],
+	"lampent": [
+		"Lamp",
+		"Lamp"
+	],
+	"chandelure": [
+		"Luring",
+		"Temptation"
+	],
+	"axew": [
+		"Tusk",
+		"Tusk"
+	],
+	"fraxure": [
+		"Axe Jaw",
+		"Jaw Ax"
+	],
+	"haxorus": [
+		"Axe Jaw",
+		"Jaw Ax"
+	],
+	"cubchoo": [
+		"Chill",
+		"Freezing"
+	],
+	"beartic": [
+		"Freezing",
+		"Frozen"
+	],
+	"cryogonal": [
+		"Crystallizing",
+		"Crystal"
+	],
+	"shelmet": [
+		"Snail",
+		"Snail"
+	],
+	"accelgor": [
+		"Shell Out",
+		"Deshelled"
+	],
+	"stunfisk": [
+		"Trap",
+		"Trap"
+	],
+	"mienfoo": [
+		"Martial Arts",
+		"Martial Arts"
+	],
+	"mienshao": [
+		"Martial Arts",
+		"Martial Arts"
+	],
+	"druddigon": [
+		"Cave",
+		"Cave"
+	],
+	"golett": [
+		"Automaton",
+		"Golem"
+	],
+	"golurk": [
+		"Automaton",
+		"Golem"
+	],
+	"pawniard": [
+		"Sharp Blade",
+		"Sharp Edge"
+	],
+	"bisharp": [
+		"Sword Blade ",
+		"Sword Blade"
+	],
+	"bouffalant": [
+		"Bash Buffalo",
+		"Headbutt Bull"
+	],
+	"rufflet": [
+		"Eaglet",
+		"Eaglet"
+	],
+	"braviary": [
+		"Valiant",
+		"Daring"
+	],
+	"vullaby": [
+		"Diapered",
+		"Diaper"
+	],
+	"mandibuzz": [
+		"Bone Vulture",
+		"Bone Eagle"
+	],
+	"heatmor": [
+		"Anteater",
+		"Anteater"
+	],
+	"durant": [
+		"Iron Ant",
+		"Iron Ant"
+	],
+	"deino": [
+		"Irate",
+		"Wild"
+	],
+	"zweilous": [
+		"Hostile",
+		"Violent"
+	],
+	"hydreigon": [
+		"Brutal",
+		"Brutal"
+	],
+	"larvesta": [
+		"Torch",
+		"Torch"
+	],
+	"volcarona": [
+		"Sun",
+		"Sun"
+	],
+	"cobalion": [
+		"Iron Will",
+		"Iron Will"
+	],
+	"terrakion": [
+		"Cavern",
+		"Cavern"
+	],
+	"virizion": [
+		"Grassland",
+		"Grassland"
+	],
+	"tornadus": [
+		"Cyclone",
+		"Whirlwind"
+	],
+	"thundurus": [
+		"Bolt Strike",
+		"Lightning Strike"
+	],
+	"reshiram": [
+		"Vast White",
+		"White Yang"
+	],
+	"zekrom": [
+		"Deep Black",
+		"Black Yin"
+	],
+	"landorus": [
+		"Abundance",
+		"Fertility"
+	],
+	"kyurem": [
+		"Boundary",
+		"Boundary"
+	],
+	"keldeo": [
+		"Colt",
+		"Young Colt"
+	],
+	"meloetta": [
+		"Melody",
+		"Melody"
+	],
+	"genesect": [
+		"Paleozoic",
+		"Paleozoic"
+	],
+	"chespin": [
+		"Spiny Nut",
+		"Shelled Chestnut"
+	],
+	"quilladin": [
+		"Spiny Armor",
+		"Spiky Armor"
+	],
+	"chesnaught": [
+		"Spiny Armor",
+		"Spiky Armor"
+	],
+	"fennekin": [
+		"Fox",
+		"Fox"
+	],
+	"braixen": [
+		"Fox",
+		"Fox"
+	],
+	"delphox": [
+		"Fox",
+		"Fox"
+	],
+	"froakie": [
+		"Bubble Frog",
+		"Foam Frog"
+	],
+	"frogadier": [
+		"Bubble Frog",
+		"Foam Frog"
+	],
+	"greninja": [
+		"Ninja",
+		"Ninja"
+	],
+	"bunnelby": [
+		"Digging",
+		"Burrowing"
+	],
+	"diggersby": [
+		"Digging",
+		"Burrowing"
+	],
+	"fletchling": [
+		"Tiny Robin",
+		"Japanese Robin"
+	],
+	"fletchinder": [
+		"Ember",
+		"Sparks"
+	],
+	"talonflame": [
+		"Scorching",
+		"Raging Fire"
+	],
+	"scatterbug": [
+		"Scatterdust",
+		"Powder Blowing"
+	],
+	"spewpa": [
+		"Scatterdust",
+		"Powder Blowing"
+	],
+	"vivillon": [
+		"Scale",
+		"Scale"
+	],
+	"litleo": [
+		"Lion Cub",
+		"Young Lion"
+	],
+	"pyroar": [
+		"Royal",
+		"Monarch"
+	],
+	"flabebe": [
+		"Single Bloom",
+		"Single Flower"
+	],
+	"floette": [
+		"Single Bloom",
+		"Single Flower"
+	],
+	"florges": [
+		"Garden",
+		"Garden"
+	],
+	"skiddo": [
+		"Mount",
+		"Ride"
+	],
+	"gogoat": [
+		"Mount",
+		"Ride"
+	],
+	"pancham": [
+		"Playful",
+		"Naughty"
+	],
+	"pangoro": [
+		"Daunting",
+		"Aggressive"
+	],
+	"furfrou": [
+		"Poodle",
+		"Poodle"
+	],
+	"espurr": [
+		"Restraint",
+		"Self-control"
+	],
+	"meowstic": [
+		"Constraint",
+		"Restraint"
+	],
+	"honedge": [
+		"Sword",
+		"Sword"
+	],
+	"doublade": [
+		"Sword",
+		"Sword"
+	],
+	"aegislash": [
+		"Royal Sword",
+		"Royal Sword"
+	],
+	"spritzee": [
+		"Perfume",
+		"Perfume"
+	],
+	"aromatisse": [
+		"Fragrance",
+		"Fragrance"
+	],
+	"swirlix": [
+		"Cotton Candy",
+		"Cotton Candy"
+	],
+	"slurpuff": [
+		"Meringue",
+		"Whipped Cream"
+	],
+	"inkay": [
+		"Revolving",
+		"Rotation"
+	],
+	"malamar": [
+		"Overturning",
+		"Reversal"
+	],
+	"binacle": [
+		"Two-Handed",
+		"Two Groups"
+	],
+	"barbaracle": [
+		"Collective",
+		"Gathering"
+	],
+	"skrelp": [
+		"Mock Kelp",
+		"Pseudo Grass"
+	],
+	"dragalge": [
+		"Mock Kelp",
+		"Pseudo Grass"
+	],
+	"clauncher": [
+		"Water Gun",
+		"Water Gun"
+	],
+	"clawitzer": [
+		"Howitzer",
+		"Launcher"
+	],
+	"helioptile": [
+		"Generator",
+		"Generator"
+	],
+	"heliolisk": [
+		"Generator",
+		"Generator"
+	],
+	"tyrunt": [
+		" Royal Heir",
+		" Young Lord"
+	],
+	"tyrantrum": [
+		" Despot",
+		" Tyrant"
+	],
+	"amaura": [
+		" Tundra",
+		" Tundra"
+	],
+	"aurorus": [
+		" Tundra",
+		" Tundra"
+	],
+	"sylveon": [
+		"Intertwining",
+		"Association"
+	],
+	"hawlucha": [
+		"Wrestling",
+		"Wrestling"
+	],
+	"dedenne": [
+		"Antenna",
+		"Antenna"
+	],
+	"carbink": [
+		"Jewel",
+		"Jewel"
+	],
+	"goomy": [
+		"Soft Tissue",
+		"Soft Body"
+	],
+	"sliggoo": [
+		"Soft Tissue",
+		"Soft Body"
+	],
+	"goodra": [
+		"Dragon",
+		"Dragon"
+	],
+	"klefki": [
+		"Key Ring",
+		"Key Ring"
+	],
+	"phantump": [
+		"Stump",
+		"Stump"
+	],
+	"trevenant": [
+		"Elder Tree",
+		"Old Tree"
+	],
+	"pumpkaboo": [
+		"Pumpkin",
+		"Pumpkin"
+	],
+	"gourgeist": [
+		"Pumpkin",
+		"Pumpkin"
+	],
+	"bergmite": [
+		"Ice Chunk",
+		"Ice Floe"
+	],
+	"avalugg": [
+		"Iceberg",
+		"Iceberg"
+	],
+	"noibat": [
+		"Sound Wave",
+		"Sound Wave"
+	],
+	"noivern": [
+		"Sound Wave",
+		"Sound Wave"
+	],
+	"xerneas": [
+		"Life",
+		"Life"
+	],
+	"yveltal": [
+		"Destruction",
+		"Destruction"
+	],
+	"zygarde": [
+		"Order",
+		"Order"
+	],
+	"diancie": [
+		"Jewel",
+		"Jewel"
+	],
+	"hoopa": [
+		"Mischief",
+		"Mischief"
+	],
+	"volcanion": [
+		"Steam",
+		"Steam"
+	],
+	"rowlet": [
+		"Grass Quill",
+		"Grass Feather"
+	],
+	"dartrix": [
+		"Blade Quill",
+		"Blade Feather"
+	],
+	"decidueye": [
+		"Arrow Quill",
+		"Arrow Feather"
+	],
+	"litten": [
+		"Fire Cat",
+		"Fire Cat"
+	],
+	"torracat": [
+		"Fire Cat",
+		"Fire Cat"
+	],
+	"incineroar": [
+		"Heel",
+		"Heel"
+	],
+	"popplio": [
+		"Sea Lion",
+		"Sea Lion"
+	],
+	"brionne": [
+		"Pop Star",
+		"Idol"
+	],
+	"primarina": [
+		"Soloist",
+		"Soloist"
+	],
+	"pikipek": [
+		"Woodpecker",
+		"Woodpecker"
+	],
+	"trumbeak": [
+		"Bugle Beak",
+		"Bugle Beak"
+	],
+	"toucannon": [
+		"Cannon",
+		"Cannon"
+	],
+	"yungoos": [
+		"Loitering",
+		"Prowling"
+	],
+	"gumshoos": [
+		"Stakeout",
+		"Stakeout"
+	],
+	"grubbin": [
+		"Larva",
+		"Larva"
+	],
+	"charjabug": [
+		"Battery",
+		"Battery"
+	],
+	"vikavolt": [
+		"Stag Beetle",
+		"Stag Beetle"
+	],
+	"crabrawler": [
+		"Boxing",
+		"Boxing"
+	],
+	"crabominable": [
+		"Woolly Crab",
+		"Horsehair Crab"
+	],
+	"oricorio": [
+		"Dancing",
+		"Dance"
+	],
+	"cutiefly": [
+		"Bee Fly",
+		"Bee Fly"
+	],
+	"ribombee": [
+		"Bee Fly",
+		"Bee Fly"
+	],
+	"rockruff": [
+		"Puppy",
+		"Puppy"
+	],
+	"lycanroc": [
+		"Wolf",
+		"Wolf"
+	],
+	"wishiwashi": [
+		"Small Fry",
+		"Small Fish"
+	],
+	"mareanie": [
+		"Brutal Star",
+		"Brutal"
+	],
+	"toxapex": [
+		"Brutal Star",
+		"Brutal"
+	],
+	"mudbray": [
+		"Donkey",
+		"Donkey"
+	],
+	"mudsdale": [
+		"Draft Horse",
+		"Draft Horse"
+	],
+	"dewpider": [
+		"Water Bubble",
+		"Water Bubble"
+	],
+	"araquanid": [
+		"Water Bubble",
+		"Water Bubble"
+	],
+	"fomantis": [
+		"Sickle Grass",
+		"Sickle Grass"
+	],
+	"lurantis": [
+		"Bloom Sickle",
+		"Flower Sickle"
+	],
+	"morelull": [
+		"Illuminating",
+		"Luminescence"
+	],
+	"shiinotic": [
+		"Illuminating",
+		"Luminescence"
+	],
+	"salandit": [
+		"Toxic Lizard",
+		"Poison Lizard"
+	],
+	"salazzle": [
+		"Toxic Lizard",
+		"Poison Lizard"
+	],
+	"stufful": [
+		"Flailing",
+		"Flailing"
+	],
+	"bewear": [
+		"Strong Arm",
+		"Strong Arm"
+	],
+	"bounsweet": [
+		"Fruit",
+		"Fruit"
+	],
+	"steenee": [
+		"Fruit",
+		"Fruit"
+	],
+	"tsareena": [
+		"Fruit",
+		"Fruit"
+	],
+	"comfey": [
+		"Posy Picker",
+		"Flower Picker"
+	],
+	"oranguru": [
+		"Sage",
+		"Sage"
+	],
+	"passimian": [
+		"Teamwork",
+		"Cooperation"
+	],
+	"wimpod": [
+		"Turn Tail",
+		"Bustling"
+	],
+	"golisopod": [
+		"Hard Scale",
+		"Armored"
+	],
+	"sandygast": [
+		"Sand Heap",
+		"Sand Pile"
+	],
+	"palossand": [
+		"Sand Castle",
+		"Sand Castle"
+	],
+	"pyukumuku": [
+		"Sea Cucumber",
+		"Sea Cucumber"
+	],
+	"typenull": [
+		"Synthetic",
+		"Man-made"
+	],
+	"silvally": [
+		"Synthetic",
+		"Man-made"
+	],
+	"minior": [
+		"Meteor",
+		"Meteor"
+	],
+	"komala": [
+		"Drowsing",
+		"Trance"
+	],
+	"turtonator": [
+		"Blast Turtle",
+		"Explosion Turtle"
+	],
+	"togedemaru": [
+		"Roly-Poly",
+		"Circle Ball"
+	],
+	"mimikyu": [
+		"Disguise",
+		"Disguise"
+	],
+	"bruxish": [
+		"Gnash Teeth",
+		"Bruxism"
+	],
+	"drampa": [
+		"Placid",
+		"Calm"
+	],
+	"dhelmise": [
+		"Sea Creeper",
+		"Seaweed"
+	],
+	"jangmoo": [
+		"Scaly",
+		"Scale"
+	],
+	"hakamoo": [
+		"Scaly",
+		"Scale"
+	],
+	"kommoo": [
+		"Scaly",
+		"Scale"
+	],
+	"tapukoko": [
+		"Land Spirit",
+		"Land Spirit"
+	],
+	"tapulele": [
+		"Land Spirit",
+		"Land Spirit"
+	],
+	"tapubulu": [
+		"Land Spirit",
+		"Land Spirit"
+	],
+	"tapufini": [
+		"Land Spirit",
+		"Land Spirit"
+	],
+	"cosmog": [
+		"Nebula",
+		"Nebula"
+	],
+	"cosmoem": [
+		"Protostar",
+		"Protostar"
+	],
+	"solgaleo": [
+		"Sunne",
+		"Sun"
+	],
+	"lunala": [
+		"Moone",
+		"Moon"
+	],
+	"nihilego": [
+		"Parasite",
+		"Parasite"
+	],
+	"buzzwole": [
+		"Swollen",
+		"Swollen"
+	],
+	"pheromosa": [
+		"Lissome",
+		"Beauty"
+	],
+	"xurkitree": [
+		"Glowing",
+		"Glowing"
+	],
+	"celesteela": [
+		"Launch",
+		"Launch"
+	],
+	"kartana": [
+		"Drawn Sword",
+		"Drawn Sword"
+	],
+	"guzzlord": [
+		"Junkivore",
+		"Allotriophage"
+	],
+	"necrozma": [
+		"Prism",
+		"Prism"
+	],
+	"magearna": [
+		"Artificial",
+		"Artificial"
+	],
+	"marshadow": [
+		"Gloomdweller",
+		"Shadow Dweller"
+	],
+	"poipole": [
+		"Poison Pin",
+		"Poison Needle"
+	],
+	"naganadel": [
+		"Poison Pin",
+		"Poison Needle"
+	],
+	"stakataka": [
+		"Rampart",
+		"Stone Wall"
+	],
+	"blacephalon": [
+		"Fireworks",
+		"Fireworks"
+	],
+	"zeraora": [
+		"Thunderclap",
+		"Thunderclap"
+	],
+	"meltan": [
+		"Hex Nut",
+		"Nut"
+	],
+	"melmetal": [
+		"Hex Nut",
+		"Nut"
+	],
+	"grookey": [
+		"Chimp",
+		"Small Monkey"
+	],
+	"thwackey": [
+		"Beat",
+		"Beat"
+	],
+	"rillaboom": [
+		"Drummer",
+		"Drummer"
+	],
+	"scorbunny": [
+		"Rabbit",
+		"Rabbit"
+	],
+	"raboot": [
+		"Rabbit",
+		"Rabbit"
+	],
+	"cinderace": [
+		"Striker",
+		"Striker"
+	],
+	"sobble": [
+		"Water Lizard",
+		"Water Lizard"
+	],
+	"drizzile": [
+		"Water Lizard",
+		"Water Lizard"
+	],
+	"inteleon": [
+		"Secret Agent",
+		"Agent"
+	],
+	"skwovet": [
+		"Cheeky",
+		"Stuffed Cheeks"
+	],
+	"greedent": [
+		"Greedy",
+		"Greedy"
+	],
+	"rookidee": [
+		"Tiny Bird",
+		"Small Bird"
+	],
+	"corvisquire": [
+		"Raven",
+		"Raven"
+	],
+	"corviknight": [
+		"Raven",
+		"Raven"
+	],
+	"blipbug": [
+		"Larva",
+		"Larva"
+	],
+	"dottler": [
+		"Radome",
+		"Radome"
+	],
+	"orbeetle": [
+		"Seven Spot",
+		"Seven Spot"
+	],
+	"nickit": [
+		"Fox",
+		"Fox"
+	],
+	"thievul": [
+		"Fox",
+		"Fox"
+	],
+	"gossifleur": [
+		"Flowering",
+		"Flower Decoration"
+	],
+	"eldegoss": [
+		"Cotton Bloom",
+		"Cotton Decoration"
+	],
+	"wooloo": [
+		"Sheep",
+		"Sheep"
+	],
+	"dubwool": [
+		"Sheep",
+		"Sheep"
+	],
+	"chewtle": [
+		"Snapping",
+		"Snapping"
+	],
+	"drednaw": [
+		"Bite",
+		"Bite"
+	],
+	"yamper": [
+		"Puppy",
+		"Puppy"
+	],
+	"boltund": [
+		"Dog",
+		"Dog"
+	],
+	"rolycoly": [
+		"Coal",
+		"Coal"
+	],
+	"carkol": [
+		"Coal",
+		"Coal"
+	],
+	"coalossal": [
+		"Coal",
+		"Coal"
+	],
+	"applin": [
+		"Apple Core",
+		"Apple Living"
+	],
+	"flapple": [
+		"Apple Wing",
+		"Apple Wing"
+	],
+	"appletun": [
+		"Apple Nectar",
+		"Apple Juice"
+	],
+	"silicobra": [
+		"Sand Snake",
+		"Sand Snake"
+	],
+	"sandaconda": [
+		"Sand Snake",
+		"Sand Snake"
+	],
+	"cramorant": [
+		"Gulp",
+		"Gulp"
+	],
+	"arrokuda": [
+		"Rush",
+		"Rush"
+	],
+	"barraskewda": [
+		"Skewer",
+		"Skewer"
+	],
+	"toxel": [
+		"Baby",
+		"Baby"
+	],
+	"toxtricity": [
+		"Punk",
+		"Punk"
+	],
+	"sizzlipede": [
+		"Radiator",
+		"Heat Generation"
+	],
+	"centiskorch": [
+		"Radiator",
+		"Heat Generation"
+	],
+	"clobbopus": [
+		"Tantrum",
+		"Spoiled"
+	],
+	"grapploct": [
+		"Jujitsu",
+		"Jujutsu"
+	],
+	"sinistea": [
+		"Black Tea",
+		"Black Tea"
+	],
+	"polteageist": [
+		"Black Tea",
+		"Black Tea"
+	],
+	"hatenna": [
+		"Calm",
+		"Calm"
+	],
+	"hattrem": [
+		"Serene",
+		"Quiet"
+	],
+	"hatterene": [
+		"Silent",
+		"Silent"
+	],
+	"impidimp": [
+		"Wily",
+		"Malicious"
+	],
+	"morgrem": [
+		"Devious",
+		"Ill-Natured"
+	],
+	"grimmsnarl": [
+		"Bulk Up",
+		"Buildup"
+	],
+	"obstagoon": [
+		"Blocking",
+		"Blocking"
+	],
+	"perrserker": [
+		"Viking",
+		"Viking"
+	],
+	"cursola": [
+		"Coral",
+		"Coral"
+	],
+	"sirfetchd": [
+		"Wild Duck",
+		"Spot-Billed Duck"
+	],
+	"mrrime": [
+		"Comedian",
+		"Comedian"
+	],
+	"runerigus": [
+		"Grudge",
+		"Grudge"
+	],
+	"milcery": [
+		"Cream",
+		"Cream"
+	],
+	"alcremie": [
+		"Cream",
+		"Cream"
+	],
+	"falinks": [
+		"Formation",
+		"Battle Formation"
+	],
+	"pincurchin": [
+		"Sea Urchin",
+		"Sea Urchin"
+	],
+	"snom": [
+		"Worm",
+		"Caterpillar"
+	],
+	"frosmoth": [
+		"Frost Moth",
+		"Ice Moth"
+	],
+	"stonjourner": [
+		"Big Rock",
+		"Megalith"
+	],
+	"eiscue": [
+		"Penguin",
+		"Penguin"
+	],
+	"indeedee": [
+		"Emotion",
+		"Emotion"
+	],
+	"morpeko": [
+		"Two-Sided",
+		"Two-Faced"
+	],
+	"cufant": [
+		"Copperderm",
+		"Bronze Statue"
+	],
+	"copperajah": [
+		"Copperderm",
+		"Bronze Statue"
+	],
+	"dracozolt": [
+		"Fossil",
+		"Fossil"
+	],
+	"arctozolt": [
+		"Fossil",
+		"Fossil"
+	],
+	"dracovish": [
+		"Fossil",
+		"Fossil"
+	],
+	"arctovish": [
+		"Fossil",
+		"Fossil"
+	],
+	"duraludon": [
+		"Alloy",
+		"Alloy"
+	],
+	"dreepy": [
+		"Lingering",
+		"Reproachful"
+	],
+	"drakloak": [
+		"Caretaker",
+		"Caretaker"
+	],
+	"dragapult": [
+		"Stealth",
+		"Stealth"
+	],
+	"zacian": [
+		"Warrior",
+		"Warrior"
+	],
+	"zamazenta": [
+		"Warrior",
+		"Warrior"
+	],
+	"eternatus": [
+		"Gigantic",
+		"Huge"
+	],
+	"kubfu": [
+		"Wushu",
+		"Kenpo"
+	],
+	"urshifu": [
+		"Wushu",
+		"Kenpo"
+	],
+	"zarude": [
+		"Rogue Monkey",
+		"Insane"
+	],
+	"regieleki": [
+		"Electron",
+		"Electron"
+	],
+	"regidrago": [
+		"Dragon Orb",
+		"Dragon Ball"
+	],
+	"glastrier": [
+		"Wild Horse"
+	],
+	"spectrier": [
+		"Swift Horse"
+	],
+	"calyrex": [
+		"King",
+		"King"
+	]
+}

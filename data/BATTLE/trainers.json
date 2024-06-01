@@ -1,0 +1,40 @@
+{
+	"ratboy": {
+		"team": "Bunnelby||eviolite|hugepower|poweruppunch,earthquake,strength,rocktomb|Adamant|248,252,,,8,||||10|]Rattata||choiceband|hustle|bodyslam,crunch,irontail,wildcharge|Jolly|,252,,,4,252||||10|]Patrat||leftovers|analytic|crunch,seedbomb,slam,zenheadbutt|Brave|252,252,,,4,||,,,,,0||10|",
+		"avatar": "youngster-gen3",
+		"ai": 0
+	},
+  "partman": {
+    "team": "Chandelure||lifeorb|contrary|overheat,moongeistbeam,dracometeor,psychoboost|Modest|252,,252,252,252,252|M|,0,,,,||150|]Snom||eviolite|wonderguard|rest,strugglebug,powdersnow,haze|Modest|252,,252,252,252,|M|,0,,,,||300|]Blaziken-Mega||lifeorb|adaptability|flareblitz,highjumpkick,bravebird,earthquake|Adamant|252,252,252,,252,252||||150|",
+    "avatar": "benga",
+    "ai": 1
+  },
+  "agguy": {
+    "team": "Rayquaza-Mega||lifeorb|deltastream|extremespeed,dragonascent,outrage,dragondance|Adamant|,252,,,4,252|||||]Groudon-Primal||redorb|desolateland|dragonclaw,brickbreak,precipiceblades,firepunch||252,252,,,4,|||||]Necrozma||shellbell|prismarmor|calmmind,storedpower,moonlight,signalbeam|Timid|,,,252,4,252||,0,,,,|||]Xerneas||powerherb|fairyaura|geomancy,moonblast,hiddenpowerground,hyperbeam|Modest|4,,,252,,252||,0,,,,|||]Necrozma-Dusk-Mane||assaultvest|prismarmor|outrage,xscissor,photongeyser,sunsteelstrike|Jolly|4,252,,,,252|||||]Necrozma-Dawn-Wings||ultranecroziumz|prismarmor|dragonpulse,darkpulse,photongeyser,signalbeam|Timid|4,,,252,,252||,0,,,,|||",
+    "avatar": "wulfric",
+    "ai": 1
+  },
+  "beast": {
+    "team": "Blade|kartana|choiceband|beastboost|leafblade,xscissor,sacredsword,smartstrike|Adamant|,252,,,4,252|||||]Blacephalon||choicespecs|beastboost|mindblown,nightshade,darkpulse,hiddenpowergrass|Modest|,,4,252,,252||,0,,,,|||]Celesteela||leftovers|beastboost|heavyslam,substitute,irondefense,earthquake|Careful|,252,128,,128,|||||]Beauty|pheromosa|assaultvest|beastboost|uturn,outrage,highjumpkick,poisonjab|Adamant|,252,,,4,252|||||]Burst|naganadel|choicespecs|beastboost|dracometeor,dragonpulse,sludgewave,fireblast|Timid|,,,252,4,252||,0,,,,|||]Xurkitree||choicespecs|beastboost|thunderbolt,energyball,voltswitch,dazzlinggleam|Modest|252,,,252,4,||,0,,,,|||",
+    "avatar": "lusamine-nihilego",
+    "ai": 1
+  },
+  "ou": {
+    "team": "Terrakion||focussash|justified|closecombat,stoneedge,stealthrock,swordsdance|Jolly|,252,4,,,252|||||]Bisharp||blackglasses|defiant|suckerpunch,knockoff,ironhead,swordsdance|Adamant|,252,4,,,252|||||]Sigilyph||lifeorb|magicguard|calmmind,psychic,heatwave,dazzlinggleam|Timid|4,,,252,,252||,0,,,,|||]Ninetales-Alola||lightclay|snowwarning|moonblast,freezedry,auroraveil,hail|Timid|248,,,8,,252||,0,,,,|||]Zeraora||lifeorb|voltabsorb|plasmafists,closecombat,knockoff,grassknot|Naive|,252,,4,,252|||||]Necrozma||weaknesspolicy|prismarmor|calmmind,photongeyser,heatwave,rockpolish|Modest|,,4,252,,252||,0,,,,|||",
+    "avatar": "zinnia",
+    "tier": "[Gen 8] OU",
+    "ai": 1
+  },
+  "lhg": {
+    "team": "Walrein||leftovers|thickfat|protect,hiddenpowerflying,surf,blizzard|Serious|248,,8,,252,|M|,0,,,,||30|]Piloswine||eviolite|thickfat|earthquake,doubleedge,iciclecrash,iceshard|Adamant|220,252,,,,36||||30|]Vanilluxe||choicescarf|snowwarning|flashcannon,blizzard,freezedry,hiddenpowerground|Serious|,,4,244,8,252||,0,,,,|S|30|]Weavile||choiceband|pressure|iciclecrash,iceshard,knockoff,lowkick|Jolly|,252,,,4,252||||30|]Lapras||choicespecs|waterabsorb|freezedry,icebeam,hydropump,surf|Modest|120,,,252,,136||,0,,,,|S|32|",
+    "avatar": "wulfric",
+    "tier": "[Gen 8] Custom Game @@@ Dynamax Clause",
+    "ai": 2
+  },
+  "lahc": {
+    "team": "Haxorus||lumberry|moldbreaker|scaleshot,closecombat,poisonjab,swordsdance|Jolly|,252,,,4,252|||S||]Volcarona||heavydutyboots|flamebody|bugbuzz,fierydance,psychic,quiverdance|Timid|8,,184,64,,252||,0,,,,|||]Ninetales-Alola||lightclay|snowwarning|freezedry,moonblast,encore,auroraveil|Timid|248,,,8,,252||,0,,,,|S||]Excadrill||focussash|moldbreaker|earthquake,ironhead,rapidspin,stealthrock|Jolly|,252,4,,,252|||||]Urshifu||blackglasses|unseenfist|drainpunch,wickedblow,suckerpunch,bulkup|Jolly|,252,4,,,252|||S||]Azumarill||sitrusberry|hugepower|playrough,aquajet,knockoff,bellydrum|Adamant|36,252,,,,220|||S||",
+    "avatar": "zinnia",
+    "tier": "[Gen 8] OU",
+    "ai": 2
+  }
+}

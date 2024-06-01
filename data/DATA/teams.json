@@ -1,0 +1,20 @@
+{
+	"gen8randombattle": {
+		"name": "[Gen 8] Random Battle",
+		"teams": [""]
+	},
+	"gen8metronomebattle": {
+		"name": "[Gen 8] Metronome Battle",
+		"teams": [
+			"Dusclops||eviolite|unaware|metronome|Relaxed|252,252,252,252,252,||,,,,,0|||]Dusclops||eviolite|unaware|metronome|Relaxed|252,252,252,252,252,||,,,,,0|||"
+		]
+	},
+	"gen8ou": {
+		"name": "[Gen 8] OU",
+		"teams": [
+			"Terrakion||focussash|justified|closecombat,stoneedge,stealthrock,swordsdance|Jolly|,252,4,,,252|||||]Bisharp||blackglasses|defiant|suckerpunch,knockoff,ironhead,swordsdance|Adamant|,252,4,,,252|||||]Sigilyph||lifeorb|magicguard|calmmind,psychic,heatwave,dazzlinggleam|Timid|4,,,252,,252||,0,,,,|||]Ninetales-Alola||lightclay|snowwarning|moonblast,freezedry,auroraveil,hail|Timid|248,,,8,,252||,0,,,,|||]Zeraora||lifeorb|voltabsorb|plasmafists,closecombat,knockoff,grassknot|Naive|,252,,4,,252|||||]Necrozma||weaknesspolicy|prismarmor|calmmind,photongeyser,heatwave,rockpolish|Modest|,,4,252,,252||,0,,,,|||",
+			"Scizor||lifeorb|technician|swordsdance,bulletpunch,psychocut,knockoff|Adamant|40,252,,,,216|||||]Rillaboom||choiceband|grassysurge|woodhammer,grassyglide,superpower,uturn|Adamant|,252,,,4,252|||||]Crawdaunt||lifeorb|adaptability|swordsdance,knockoff,crabhammer,aquajet|Adamant|4,252,,,,252|||||]Togekiss||choicescarf|serenegrace|trick,airslash,dazzlinggleam,flamethrower|Timid|,,,252,4,252||,0,,,,|||]Zeraora||lifeorb|voltabsorb|plasmafists,knockoff,closecombat,grassknot|Naughty|,252,,4,,252|||||]Necrozma||powerherb|prismarmor|meteorbeam,stealthrock,photongeyser,heatwave|Modest|72,,,240,12,184||,0,,,,|||",
+			"Dragapult||lifeorb|infiltrator|dragondance,dragondarts,steelwing,fireblast|Adamant|,252,,,4,252|||||]Indeedee||choicescarf|psychicsurge|expandingforce,dazzlinggleam,mysticalfire,trick|Timid|,,,252,4,252||,0,,,,|||]Hawlucha||psychicseed|unburden|swordsdance,acrobatics,closecombat,taunt|Adamant|,252,4,,,252|||||]Toxtricity||lifeorb|punkrock|shiftgear,drainpunch,boomburst,overdrive|Modest|,32,,252,,144|||||]Excadrill||focussash|moldbreaker|stealthrock,earthquake,rapidspin,steelbeam|Naive|,252,,4,,252|||||]Kommo-o||throatspray|bulletproof|clangingscales,flashcannon,closecombat,clangoroussoul|Naive|,4,,252,,252|||||"
+		]
+	}
+}

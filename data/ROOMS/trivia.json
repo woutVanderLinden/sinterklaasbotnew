@@ -1,0 +1,14 @@
+{
+	"whitelist": [
+		"age",
+		"namecolour",
+		"timer"
+	],
+	"permissions": {
+		"timer": "gamma"
+	},
+	"ignore": true,
+	"aliases": [
+		"triv"
+	]
+}

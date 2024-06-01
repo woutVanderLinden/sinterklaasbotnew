@@ -1,0 +1,56 @@
+[
+	{
+		"index": "1",
+		"title": "A Slice of the Action",
+		"id": "asliceoftheaction",
+		"embedFields": [],
+		"url": "https://cdn.discordapp.com/attachments/816341849076793394/982899869758922802/A_Slice_of_the_Action.pdf",
+		"aliases": ["scyther"],
+		"solution": "AVERAGE"
+	},
+	{
+		"index": "2",
+		"title": "Bridge of Stars",
+		"id": "bridgeofstars",
+		"embedFields": [],
+		"url": "https://cdn.discordapp.com/attachments/816341849076793394/982679066714992670/Bridge_of_Stars.pdf",
+		"aliases": ["empoleon"],
+		"solution": "CRESCENT"
+	},
+	{
+		"index": "3",
+		"title": "Color Coded",
+		"id": "colorcoded",
+		"embedFields": [],
+		"url": "https://cdn.discordapp.com/attachments/816341849076793394/982682131912347668/Color_Coded.pdf",
+		"aliases": ["phantump"],
+		"solution": "SEA LEMON"
+	},
+	{
+		"index": "4",
+		"title": "New Species",
+		"id": "newspecies",
+		"embedFields": [],
+		"url": "https://cdn.discordapp.com/attachments/816341849076793394/982679068052979813/New_Species.pdf",
+		"aliases": ["regidrago"],
+		"solution": "WOODSHEDS"
+	},
+	{
+		"index": "5",
+		"title": "Rate My Team",
+		"id": "ratemyteam",
+		"embedFields": [],
+		"url": "https://cdn.discordapp.com/attachments/816341849076793394/982709355801620491/Rate_My_Team.pdf",
+		"aliases": ["spinda"],
+		"solution": "RUBBLE"
+	},
+	{
+		"index": "M",
+		"title": "Purification",
+		"id": "purification",
+		"embedFields": [],
+		"url": "https://cdn.discordapp.com/attachments/816341849076793394/982679075963408384/Purification_Meta.pdf",
+		"aliases": ["meta"],
+		"solution": "SHINE LIGHT"
+	}
+]

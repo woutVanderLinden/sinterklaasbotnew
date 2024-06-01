@@ -1,0 +1,11 @@
+{
+	"whitelist": [
+		"addpoints",
+		"lbreset",
+		"leaderboard"
+	],
+	"ignore": true,
+	"aliases": [
+		"th"
+	]
+}

@@ -1,0 +1,13 @@
+{
+	"tour": [5, 2, 10000],
+	"blacklist": [
+		"blackjack",
+		"chainreaction",
+		"chess",
+		"explodingvoltorb",
+		"lightsout",
+		"mastermind",
+		"othello",
+		"quovadis"
+	]
+}

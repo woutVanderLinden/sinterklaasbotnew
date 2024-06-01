@@ -1,0 +1,2068 @@
+{
+	"charged": {
+		"wrap": {
+			"energy_delta": -45,
+			"move_id": 13,
+			"name": "Wrap",
+			"power": 60,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"hyperbeam": {
+			"energy_delta": -80,
+			"move_id": 14,
+			"name": "Hyper Beam",
+			"power": 150,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"darkpulse": {
+			"energy_delta": -50,
+			"move_id": 16,
+			"name": "Dark Pulse",
+			"power": 80,
+			"turn_duration": 1,
+			"type": "Dark"
+		},
+		"sludge": {
+			"energy_delta": -40,
+			"move_id": 18,
+			"name": "Sludge",
+			"power": 50,
+			"turn_duration": 1,
+			"type": "Poison"
+		},
+		"vicegrip": {
+			"energy_delta": -40,
+			"move_id": 20,
+			"name": "Vice Grip",
+			"power": 40,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"flamewheel": {
+			"energy_delta": -55,
+			"move_id": 21,
+			"name": "Flame Wheel",
+			"power": 60,
+			"turn_duration": 1,
+			"type": "Fire"
+		},
+		"megahorn": {
+			"energy_delta": -55,
+			"move_id": 22,
+			"name": "Megahorn",
+			"power": 110,
+			"turn_duration": 1,
+			"type": "Bug"
+		},
+		"flamethrower": {
+			"energy_delta": -55,
+			"move_id": 24,
+			"name": "Flamethrower",
+			"power": 90,
+			"turn_duration": 1,
+			"type": "Fire"
+		},
+		"dig": {
+			"energy_delta": -80,
+			"move_id": 26,
+			"name": "Dig",
+			"power": 100,
+			"turn_duration": 1,
+			"type": "Ground"
+		},
+		"crosschop": {
+			"energy_delta": -35,
+			"move_id": 28,
+			"name": "Cross Chop",
+			"power": 50,
+			"turn_duration": 1,
+			"type": "Fighting"
+		},
+		"psybeam": {
+			"energy_delta": -60,
+			"move_id": 30,
+			"name": "Psybeam",
+			"power": 70,
+			"turn_duration": 1,
+			"type": "Psychic"
+		},
+		"earthquake": {
+			"energy_delta": -65,
+			"move_id": 31,
+			"name": "Earthquake",
+			"power": 120,
+			"turn_duration": 1,
+			"type": "Ground"
+		},
+		"stoneedge": {
+			"energy_delta": -55,
+			"move_id": 32,
+			"name": "Stone Edge",
+			"power": 100,
+			"turn_duration": 1,
+			"type": "Rock"
+		},
+		"icepunch": {
+			"energy_delta": -40,
+			"move_id": 33,
+			"name": "Ice Punch",
+			"power": 55,
+			"turn_duration": 1,
+			"type": "Ice"
+		},
+		"heartstamp": {
+			"energy_delta": -40,
+			"move_id": 34,
+			"name": "Heart Stamp",
+			"power": 40,
+			"turn_duration": 1,
+			"type": "Psychic"
+		},
+		"discharge": {
+			"energy_delta": -45,
+			"move_id": 35,
+			"name": "Discharge",
+			"power": 65,
+			"turn_duration": 1,
+			"type": "Electric"
+		},
+		"flashcannon": {
+			"energy_delta": -70,
+			"move_id": 36,
+			"name": "Flash Cannon",
+			"power": 110,
+			"turn_duration": 1,
+			"type": "Steel"
+		},
+		"drillpeck": {
+			"energy_delta": -40,
+			"move_id": 38,
+			"name": "Drill Peck",
+			"power": 65,
+			"turn_duration": 1,
+			"type": "Flying"
+		},
+		"icebeam": {
+			"energy_delta": -55,
+			"move_id": 39,
+			"name": "Ice Beam",
+			"power": 90,
+			"turn_duration": 1,
+			"type": "Ice"
+		},
+		"blizzard": {
+			"energy_delta": -75,
+			"move_id": 40,
+			"name": "Blizzard",
+			"power": 140,
+			"turn_duration": 1,
+			"type": "Ice"
+		},
+		"heatwave": {
+			"energy_delta": -75,
+			"move_id": 42,
+			"name": "Heat Wave",
+			"power": 95,
+			"turn_duration": 1,
+			"type": "Fire"
+		},
+		"aerialace": {
+			"energy_delta": -45,
+			"move_id": 45,
+			"name": "Aerial Ace",
+			"power": 55,
+			"turn_duration": 1,
+			"type": "Flying"
+		},
+		"drillrun": {
+			"energy_delta": -45,
+			"move_id": 46,
+			"name": "Drill Run",
+			"power": 80,
+			"turn_duration": 1,
+			"type": "Ground"
+		},
+		"petalblizzard": {
+			"energy_delta": -65,
+			"move_id": 47,
+			"name": "Petal Blizzard",
+			"power": 110,
+			"turn_duration": 1,
+			"type": "Grass"
+		},
+		"megadrain": {
+			"energy_delta": -55,
+			"move_id": 48,
+			"name": "Mega Drain",
+			"power": 25,
+			"turn_duration": 1,
+			"type": "Grass"
+		},
+		"bugbuzz": {
+			"buffs": {
+				"activation_chance": 0.3,
+				"target_defense_stat_stage_change": -1
+			},
+			"energy_delta": -60,
+			"move_id": 49,
+			"name": "Bug Buzz",
+			"power": 90,
+			"turn_duration": 1,
+			"type": "Bug"
+		},
+		"poisonfang": {
+			"buffs": {
+				"activation_chance": 1,
+				"target_defense_stat_stage_change": -1
+			},
+			"energy_delta": -35,
+			"move_id": 50,
+			"name": "Poison Fang",
+			"power": 40,
+			"turn_duration": 1,
+			"type": "Poison"
+		},
+		"nightslash": {
+			"buffs": {
+				"activation_chance": 0.125,
+				"attacker_attack_stat_stage_change": 2
+			},
+			"energy_delta": -35,
+			"move_id": 51,
+			"name": "Night Slash",
+			"power": 50,
+			"turn_duration": 1,
+			"type": "Dark"
+		},
+		"bubblebeam": {
+			"buffs": {
+				"activation_chance": 1,
+				"target_attack_stat_stage_change": -1
+			},
+			"energy_delta": -40,
+			"move_id": 53,
+			"name": "Bubble Beam",
+			"power": 25,
+			"turn_duration": 1,
+			"type": "Water"
+		},
+		"submission": {
+			"energy_delta": -50,
+			"move_id": 54,
+			"name": "Submission",
+			"power": 60,
+			"turn_duration": 1,
+			"type": "Fighting"
+		},
+		"lowsweep": {
+			"energy_delta": -40,
+			"move_id": 56,
+			"name": "Low Sweep",
+			"power": 40,
+			"turn_duration": 1,
+			"type": "Fighting"
+		},
+		"aquajet": {
+			"energy_delta": -45,
+			"move_id": 57,
+			"name": "Aqua Jet",
+			"power": 45,
+			"turn_duration": 1,
+			"type": "Water"
+		},
+		"aquatail": {
+			"energy_delta": -35,
+			"move_id": 58,
+			"name": "Aqua Tail",
+			"power": 50,
+			"turn_duration": 1,
+			"type": "Water"
+		},
+		"seedbomb": {
+			"energy_delta": -40,
+			"move_id": 59,
+			"name": "Seed Bomb",
+			"power": 55,
+			"turn_duration": 1,
+			"type": "Grass"
+		},
+		"psyshock": {
+			"energy_delta": -45,
+			"move_id": 60,
+			"name": "Psyshock",
+			"power": 70,
+			"turn_duration": 1,
+			"type": "Psychic"
+		},
+		"ancientpower": {
+			"buffs": {
+				"activation_chance": 0.1,
+				"attacker_attack_stat_stage_change": 2,
+				"attacker_defense_stat_stage_change": 2
+			},
+			"energy_delta": -45,
+			"move_id": 62,
+			"name": "Ancient Power",
+			"power": 45,
+			"turn_duration": 1,
+			"type": "Rock"
+		},
+		"rocktomb": {
+			"energy_delta": -60,
+			"move_id": 63,
+			"name": "Rock Tomb",
+			"power": 70,
+			"turn_duration": 1,
+			"type": "Rock"
+		},
+		"rockslide": {
+			"energy_delta": -45,
+			"move_id": 64,
+			"name": "Rock Slide",
+			"power": 75,
+			"turn_duration": 1,
+			"type": "Rock"
+		},
+		"powergem": {
+			"energy_delta": -60,
+			"move_id": 65,
+			"name": "Power Gem",
+			"power": 80,
+			"turn_duration": 1,
+			"type": "Rock"
+		},
+		"shadowsneak": {
+			"energy_delta": -45,
+			"move_id": 66,
+			"name": "Shadow Sneak",
+			"power": 50,
+			"turn_duration": 1,
+			"type": "Ghost"
+		},
+		"shadowpunch": {
+			"energy_delta": -35,
+			"move_id": 67,
+			"name": "Shadow Punch",
+			"power": 40,
+			"turn_duration": 1,
+			"type": "Ghost"
+		},
+		"ominouswind": {
+			"buffs": {
+				"activation_chance": 0.1,
+				"attacker_attack_stat_stage_change": 2,
+				"attacker_defense_stat_stage_change": 2
+			},
+			"energy_delta": -45,
+			"move_id": 69,
+			"name": "Ominous Wind",
+			"power": 45,
+			"turn_duration": 1,
+			"type": "Ghost"
+		},
+		"shadowball": {
+			"energy_delta": -55,
+			"move_id": 70,
+			"name": "Shadow Ball",
+			"power": 100,
+			"turn_duration": 1,
+			"type": "Ghost"
+		},
+		"magnetbomb": {
+			"energy_delta": -45,
+			"move_id": 72,
+			"name": "Magnet Bomb",
+			"power": 70,
+			"turn_duration": 1,
+			"type": "Steel"
+		},
+		"ironhead": {
+			"energy_delta": -50,
+			"move_id": 74,
+			"name": "Iron Head",
+			"power": 70,
+			"turn_duration": 1,
+			"type": "Steel"
+		},
+		"paraboliccharge": {
+			"energy_delta": -55,
+			"move_id": 75,
+			"name": "Parabolic Charge",
+			"power": 25,
+			"turn_duration": 1,
+			"type": "Electric"
+		},
+		"thunderpunch": {
+			"energy_delta": -40,
+			"move_id": 77,
+			"name": "Thunder Punch",
+			"power": 55,
+			"turn_duration": 1,
+			"type": "Electric"
+		},
+		"thunder": {
+			"energy_delta": -60,
+			"move_id": 78,
+			"name": "Thunder",
+			"power": 100,
+			"turn_duration": 1,
+			"type": "Electric"
+		},
+		"thunderbolt": {
+			"energy_delta": -55,
+			"move_id": 79,
+			"name": "Thunderbolt",
+			"power": 90,
+			"turn_duration": 1,
+			"type": "Electric"
+		},
+		"twister": {
+			"energy_delta": -45,
+			"move_id": 80,
+			"name": "Twister",
+			"power": 45,
+			"turn_duration": 1,
+			"type": "Dragon"
+		},
+		"dragonpulse": {
+			"energy_delta": -60,
+			"move_id": 82,
+			"name": "Dragon Pulse",
+			"power": 90,
+			"turn_duration": 1,
+			"type": "Dragon"
+		},
+		"dragonclaw": {
+			"energy_delta": -35,
+			"move_id": 83,
+			"name": "Dragon Claw",
+			"power": 50,
+			"turn_duration": 1,
+			"type": "Dragon"
+		},
+		"disarmingvoice": {
+			"energy_delta": -45,
+			"move_id": 84,
+			"name": "Disarming Voice",
+			"power": 70,
+			"turn_duration": 1,
+			"type": "Fairy"
+		},
+		"drainingkiss": {
+			"energy_delta": -55,
+			"move_id": 85,
+			"name": "Draining Kiss",
+			"power": 60,
+			"turn_duration": 1,
+			"type": "Fairy"
+		},
+		"dazzlinggleam": {
+			"energy_delta": -70,
+			"move_id": 86,
+			"name": "Dazzling Gleam",
+			"power": 110,
+			"turn_duration": 1,
+			"type": "Fairy"
+		},
+		"moonblast": {
+			"buffs": {
+				"activation_chance": 0.1,
+				"target_attack_stat_stage_change": -1
+			},
+			"energy_delta": -60,
+			"move_id": 87,
+			"name": "Moonblast",
+			"power": 110,
+			"turn_duration": 1,
+			"type": "Fairy"
+		},
+		"playrough": {
+			"energy_delta": -60,
+			"move_id": 88,
+			"name": "Play Rough",
+			"power": 90,
+			"turn_duration": 1,
+			"type": "Fairy"
+		},
+		"crosspoison": {
+			"buffs": {
+				"activation_chance": 0.125,
+				"attacker_attack_stat_stage_change": 2
+			},
+			"energy_delta": -35,
+			"move_id": 89,
+			"name": "Cross Poison",
+			"power": 50,
+			"turn_duration": 1,
+			"type": "Poison"
+		},
+		"sludgebomb": {
+			"energy_delta": -50,
+			"move_id": 90,
+			"name": "Sludge Bomb",
+			"power": 80,
+			"turn_duration": 1,
+			"type": "Poison"
+		},
+		"sludgewave": {
+			"energy_delta": -65,
+			"move_id": 91,
+			"name": "Sludge Wave",
+			"power": 110,
+			"turn_duration": 1,
+			"type": "Poison"
+		},
+		"gunkshot": {
+			"energy_delta": -75,
+			"move_id": 92,
+			"name": "Gunk Shot",
+			"power": 130,
+			"turn_duration": 1,
+			"type": "Poison"
+		},
+		"boneclub": {
+			"energy_delta": -35,
+			"move_id": 94,
+			"name": "Bone Club",
+			"power": 40,
+			"turn_duration": 1,
+			"type": "Ground"
+		},
+		"bulldoze": {
+			"energy_delta": -60,
+			"move_id": 95,
+			"name": "Bulldoze",
+			"power": 80,
+			"turn_duration": 1,
+			"type": "Ground"
+		},
+		"mudbomb": {
+			"energy_delta": -40,
+			"move_id": 96,
+			"name": "Mud Bomb",
+			"power": 55,
+			"turn_duration": 1,
+			"type": "Ground"
+		},
+		"signalbeam": {
+			"buffs": {
+				"activation_chance": 0.2,
+				"target_attack_stat_stage_change": -1,
+				"target_defense_stat_stage_change": -1
+			},
+			"energy_delta": -55,
+			"move_id": 99,
+			"name": "Signal Beam",
+			"power": 75,
+			"turn_duration": 1,
+			"type": "Bug"
+		},
+		"xscissor": {
+			"energy_delta": -35,
+			"move_id": 100,
+			"name": "X Scissor",
+			"power": 45,
+			"turn_duration": 1,
+			"type": "Bug"
+		},
+		"flamecharge": {
+			"buffs": {
+				"activation_chance": 1,
+				"attacker_attack_stat_stage_change": 1
+			},
+			"energy_delta": -50,
+			"move_id": 101,
+			"name": "Flame Charge",
+			"power": 65,
+			"turn_duration": 1,
+			"type": "Fire"
+		},
+		"flameburst": {
+			"energy_delta": -55,
+			"move_id": 102,
+			"name": "Flame Burst",
+			"power": 70,
+			"turn_duration": 1,
+			"type": "Fire"
+		},
+		"fireblast": {
+			"energy_delta": -80,
+			"move_id": 103,
+			"name": "Fire Blast",
+			"power": 140,
+			"turn_duration": 1,
+			"type": "Fire"
+		},
+		"brine": {
+			"energy_delta": -50,
+			"move_id": 104,
+			"name": "Brine",
+			"power": 60,
+			"turn_duration": 1,
+			"type": "Water"
+		},
+		"waterpulse": {
+			"energy_delta": -60,
+			"move_id": 105,
+			"name": "Water Pulse",
+			"power": 70,
+			"turn_duration": 1,
+			"type": "Water"
+		},
+		"scald": {
+			"buffs": {
+				"activation_chance": 0.3,
+				"target_attack_stat_stage_change": -1
+			},
+			"energy_delta": -50,
+			"move_id": 106,
+			"name": "Scald",
+			"power": 80,
+			"turn_duration": 1,
+			"type": "Water"
+		},
+		"hydropump": {
+			"energy_delta": -75,
+			"move_id": 107,
+			"name": "Hydro Pump",
+			"power": 130,
+			"turn_duration": 1,
+			"type": "Water"
+		},
+		"psychic": {
+			"buffs": {
+				"activation_chance": 0.1,
+				"target_defense_stat_stage_change": -1
+			},
+			"energy_delta": -55,
+			"move_id": 108,
+			"name": "Psychic",
+			"power": 90,
+			"turn_duration": 1,
+			"type": "Psychic"
+		},
+		"psystrike": {
+			"energy_delta": -45,
+			"move_id": 109,
+			"name": "Psystrike",
+			"power": 90,
+			"turn_duration": 1,
+			"type": "Psychic"
+		},
+		"icywind": {
+			"buffs": {
+				"activation_chance": 1,
+				"target_attack_stat_stage_change": -1
+			},
+			"energy_delta": -45,
+			"move_id": 111,
+			"name": "Icy Wind",
+			"power": 60,
+			"turn_duration": 1,
+			"type": "Ice"
+		},
+		"gigadrain": {
+			"energy_delta": -80,
+			"move_id": 114,
+			"name": "Giga Drain",
+			"power": 50,
+			"turn_duration": 1,
+			"type": "Grass"
+		},
+		"firepunch": {
+			"energy_delta": -40,
+			"move_id": 115,
+			"name": "Fire Punch",
+			"power": 55,
+			"turn_duration": 1,
+			"type": "Fire"
+		},
+		"solarbeam": {
+			"energy_delta": -80,
+			"move_id": 116,
+			"name": "Solar Beam",
+			"power": 150,
+			"turn_duration": 1,
+			"type": "Grass"
+		},
+		"leafblade": {
+			"energy_delta": -35,
+			"move_id": 117,
+			"name": "Leaf Blade",
+			"power": 70,
+			"turn_duration": 1,
+			"type": "Grass"
+		},
+		"powerwhip": {
+			"energy_delta": -50,
+			"move_id": 118,
+			"name": "Power Whip",
+			"power": 90,
+			"turn_duration": 1,
+			"type": "Grass"
+		},
+		"aircutter": {
+			"energy_delta": -55,
+			"move_id": 121,
+			"name": "Air Cutter",
+			"power": 60,
+			"turn_duration": 1,
+			"type": "Flying"
+		},
+		"hurricane": {
+			"energy_delta": -65,
+			"move_id": 122,
+			"name": "Hurricane",
+			"power": 110,
+			"turn_duration": 1,
+			"type": "Flying"
+		},
+		"brickbreak": {
+			"energy_delta": -35,
+			"move_id": 123,
+			"name": "Brick Break",
+			"power": 40,
+			"turn_duration": 1,
+			"type": "Fighting"
+		},
+		"swift": {
+			"energy_delta": -55,
+			"move_id": 125,
+			"name": "Swift",
+			"power": 60,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"hornattack": {
+			"energy_delta": -35,
+			"move_id": 126,
+			"name": "Horn Attack",
+			"power": 40,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"stomp": {
+			"energy_delta": -40,
+			"move_id": 127,
+			"name": "Stomp",
+			"power": 55,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"hyperfang": {
+			"energy_delta": -50,
+			"move_id": 129,
+			"name": "Hyper Fang",
+			"power": 80,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"bodyslam": {
+			"energy_delta": -35,
+			"move_id": 131,
+			"name": "Body Slam",
+			"power": 60,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"rest": {
+			"energy_delta": -35,
+			"move_id": 132,
+			"name": "Rest",
+			"power": 50,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"struggle": {
+			"energy_delta": -100,
+			"move_id": 133,
+			"name": "Struggle",
+			"power": 35,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"closecombat": {
+			"buffs": {
+				"activation_chance": 1,
+				"attacker_defense_stat_stage_change": -2
+			},
+			"energy_delta": -45,
+			"move_id": 245,
+			"name": "Close Combat",
+			"power": 100,
+			"turn_duration": 1,
+			"type": "Fighting"
+		},
+		"dynamicpunch": {
+			"energy_delta": -50,
+			"move_id": 246,
+			"name": "Dynamic Punch",
+			"power": 90,
+			"turn_duration": 1,
+			"type": "Fighting"
+		},
+		"focusblast": {
+			"energy_delta": -75,
+			"move_id": 247,
+			"name": "Focus Blast",
+			"power": 150,
+			"turn_duration": 1,
+			"type": "Fighting"
+		},
+		"aurorabeam": {
+			"energy_delta": -60,
+			"move_id": 248,
+			"name": "Aurora Beam",
+			"power": 80,
+			"turn_duration": 1,
+			"type": "Ice"
+		},
+		"wildcharge": {
+			"buffs": {
+				"activation_chance": 1,
+				"attacker_defense_stat_stage_change": -2
+			},
+			"energy_delta": -45,
+			"move_id": 251,
+			"name": "Wild Charge",
+			"power": 100,
+			"turn_duration": 1,
+			"type": "Electric"
+		},
+		"zapcannon": {
+			"buffs": {
+				"activation_chance": 1,
+				"target_attack_stat_stage_change": -1
+			},
+			"energy_delta": -80,
+			"move_id": 252,
+			"name": "Zap Cannon",
+			"power": 150,
+			"turn_duration": 1,
+			"type": "Electric"
+		},
+		"avalanche": {
+			"energy_delta": -45,
+			"move_id": 254,
+			"name": "Avalanche",
+			"power": 90,
+			"turn_duration": 1,
+			"type": "Ice"
+		},
+		"bravebird": {
+			"buffs": {
+				"activation_chance": 1,
+				"attacker_defense_stat_stage_change": -3
+			},
+			"energy_delta": -55,
+			"move_id": 256,
+			"name": "Brave Bird",
+			"power": 130,
+			"turn_duration": 1,
+			"type": "Flying"
+		},
+		"skyattack": {
+			"energy_delta": -45,
+			"move_id": 257,
+			"name": "Sky Attack",
+			"power": 75,
+			"turn_duration": 1,
+			"type": "Flying"
+		},
+		"sandtomb": {
+			"buffs": {
+				"activation_chance": 1,
+				"target_defense_stat_stage_change": -1
+			},
+			"energy_delta": -40,
+			"move_id": 258,
+			"name": "Sand Tomb",
+			"power": 25,
+			"turn_duration": 1,
+			"type": "Ground"
+		},
+		"rockblast": {
+			"energy_delta": -40,
+			"move_id": 259,
+			"name": "Rock Blast",
+			"power": 50,
+			"turn_duration": 1,
+			"type": "Rock"
+		},
+		"silverwind": {
+			"buffs": {
+				"activation_chance": 0.1,
+				"attacker_attack_stat_stage_change": 2,
+				"attacker_defense_stat_stage_change": 2
+			},
+			"energy_delta": -45,
+			"move_id": 262,
+			"name": "Silver Wind",
+			"power": 45,
+			"turn_duration": 1,
+			"type": "Bug"
+		},
+		"nightshade": {
+			"energy_delta": -55,
+			"move_id": 265,
+			"name": "Night Shade",
+			"power": 60,
+			"turn_duration": 1,
+			"type": "Ghost"
+		},
+		"gyroball": {
+			"energy_delta": -60,
+			"move_id": 267,
+			"name": "Gyro Ball",
+			"power": 80,
+			"turn_duration": 1,
+			"type": "Steel"
+		},
+		"heavyslam": {
+			"energy_delta": -50,
+			"move_id": 268,
+			"name": "Heavy Slam",
+			"power": 70,
+			"turn_duration": 1,
+			"type": "Steel"
+		},
+		"overheat": {
+			"buffs": {
+				"activation_chance": 1,
+				"attacker_attack_stat_stage_change": -2
+			},
+			"energy_delta": -55,
+			"move_id": 270,
+			"name": "Overheat",
+			"power": 130,
+			"turn_duration": 1,
+			"type": "Fire"
+		},
+		"grassknot": {
+			"energy_delta": -50,
+			"move_id": 272,
+			"name": "Grass Knot",
+			"power": 90,
+			"turn_duration": 1,
+			"type": "Grass"
+		},
+		"energyball": {
+			"buffs": {
+				"activation_chance": 0.1,
+				"target_defense_stat_stage_change": -1
+			},
+			"energy_delta": -55,
+			"move_id": 273,
+			"name": "Energy Ball",
+			"power": 90,
+			"turn_duration": 1,
+			"type": "Grass"
+		},
+		"futuresight": {
+			"energy_delta": -65,
+			"move_id": 275,
+			"name": "Futuresight",
+			"power": 120,
+			"turn_duration": 1,
+			"type": "Psychic"
+		},
+		"mirrorcoat": {
+			"energy_delta": -55,
+			"move_id": 276,
+			"name": "Mirror Coat",
+			"power": 60,
+			"turn_duration": 1,
+			"type": "Psychic"
+		},
+		"outrage": {
+			"energy_delta": -60,
+			"move_id": 277,
+			"name": "Outrage",
+			"power": 110,
+			"turn_duration": 1,
+			"type": "Dragon"
+		},
+		"crunch": {
+			"buffs": {
+				"activation_chance": 0.3,
+				"target_defense_stat_stage_change": -1
+			},
+			"energy_delta": -45,
+			"move_id": 279,
+			"name": "Crunch",
+			"power": 70,
+			"turn_duration": 1,
+			"type": "Dark"
+		},
+		"foulplay": {
+			"energy_delta": -45,
+			"move_id": 280,
+			"name": "Foul Play",
+			"power": 70,
+			"turn_duration": 1,
+			"type": "Dark"
+		},
+		"surf": {
+			"energy_delta": -40,
+			"move_id": 284,
+			"name": "Surf",
+			"power": 65,
+			"turn_duration": 1,
+			"type": "Water"
+		},
+		"dracometeor": {
+			"buffs": {
+				"activation_chance": 1,
+				"attacker_attack_stat_stage_change": -2
+			},
+			"energy_delta": -65,
+			"move_id": 285,
+			"name": "Draco Meteor",
+			"power": 150,
+			"turn_duration": 1,
+			"type": "Dragon"
+		},
+		"doomdesire": {
+			"energy_delta": -40,
+			"move_id": 286,
+			"name": "Doom Desire",
+			"power": 75,
+			"turn_duration": 1,
+			"type": "Steel"
+		},
+		"psychoboost": {
+			"buffs": {
+				"activation_chance": 1,
+				"attacker_attack_stat_stage_change": -2
+			},
+			"energy_delta": -35,
+			"move_id": 288,
+			"name": "Psycho Boost",
+			"power": 70,
+			"turn_duration": 1,
+			"type": "Psychic"
+		},
+		"originpulse": {
+			"energy_delta": -60,
+			"move_id": 289,
+			"name": "Origin Pulse",
+			"power": 130,
+			"turn_duration": 1,
+			"type": "Water"
+		},
+		"precipiceblades": {
+			"energy_delta": -60,
+			"move_id": 290,
+			"name": "Precipice Blades",
+			"power": 130,
+			"turn_duration": 1,
+			"type": "Ground"
+		},
+		"weatherballfire": {
+			"energy_delta": -35,
+			"move_id": 292,
+			"name": "Weather Ball [Fire]",
+			"power": 55,
+			"turn_duration": 1,
+			"type": "Fire"
+		},
+		"weatherballice": {
+			"energy_delta": -35,
+			"move_id": 293,
+			"name": "Weather Ball [Ice]",
+			"power": 55,
+			"turn_duration": 1,
+			"type": "Ice"
+		},
+		"weatherballrock": {
+			"energy_delta": -35,
+			"move_id": 294,
+			"name": "Weather Ball [Rock]",
+			"power": 55,
+			"turn_duration": 1,
+			"type": "Rock"
+		},
+		"weatherballwater": {
+			"energy_delta": -35,
+			"move_id": 295,
+			"name": "Weather Ball [Water]",
+			"power": 55,
+			"turn_duration": 1,
+			"type": "Water"
+		},
+		"frenzyplant": {
+			"energy_delta": -45,
+			"move_id": 296,
+			"name": "Frenzy Plant",
+			"power": 100,
+			"turn_duration": 1,
+			"type": "Grass"
+		},
+		"blastburn": {
+			"energy_delta": -50,
+			"move_id": 298,
+			"name": "Blast Burn",
+			"power": 110,
+			"turn_duration": 1,
+			"type": "Fire"
+		},
+		"hydrocannon": {
+			"energy_delta": -40,
+			"move_id": 299,
+			"name": "Hydro Cannon",
+			"power": 80,
+			"turn_duration": 1,
+			"type": "Water"
+		},
+		"lastresort": {
+			"energy_delta": -55,
+			"move_id": 300,
+			"name": "Last Resort",
+			"power": 90,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"meteormash": {
+			"energy_delta": -50,
+			"move_id": 301,
+			"name": "Meteor Mash",
+			"power": 100,
+			"turn_duration": 1,
+			"type": "Steel"
+		},
+		"skullbash": {
+			"buffs": {
+				"activation_chance": 1,
+				"attacker_defense_stat_stage_change": 1
+			},
+			"energy_delta": -75,
+			"move_id": 302,
+			"name": "Skull Bash",
+			"power": 130,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"acidspray": {
+			"buffs": {
+				"activation_chance": 1,
+				"target_defense_stat_stage_change": -2
+			},
+			"energy_delta": -45,
+			"move_id": 303,
+			"name": "Acid Spray",
+			"power": 20,
+			"turn_duration": 1,
+			"type": "Poison"
+		},
+		"earthpower": {
+			"buffs": {
+				"activation_chance": 0.1,
+				"target_defense_stat_stage_change": -1
+			},
+			"energy_delta": -55,
+			"move_id": 304,
+			"name": "Earth Power",
+			"power": 90,
+			"turn_duration": 1,
+			"type": "Ground"
+		},
+		"crabhammer": {
+			"buffs": {
+				"activation_chance": 0.125,
+				"attacker_attack_stat_stage_change": 2
+			},
+			"energy_delta": -50,
+			"move_id": 305,
+			"name": "Crabhammer",
+			"power": 85,
+			"turn_duration": 1,
+			"type": "Water"
+		},
+		"lunge": {
+			"buffs": {
+				"activation_chance": 1,
+				"target_attack_stat_stage_change": -1
+			},
+			"energy_delta": -45,
+			"move_id": 306,
+			"name": "Lunge",
+			"power": 60,
+			"turn_duration": 1,
+			"type": "Bug"
+		},
+		"octazooka": {
+			"buffs": {
+				"activation_chance": 0.5,
+				"target_attack_stat_stage_change": -2
+			},
+			"energy_delta": -50,
+			"move_id": 308,
+			"name": "Octazooka",
+			"power": 50,
+			"turn_duration": 1,
+			"type": "Water"
+		},
+		"mirrorshot": {
+			"buffs": {
+				"activation_chance": 0.3,
+				"target_attack_stat_stage_change": -1
+			},
+			"energy_delta": -35,
+			"move_id": 309,
+			"name": "Mirror Shot",
+			"power": 35,
+			"turn_duration": 1,
+			"type": "Steel"
+		},
+		"superpower": {
+			"buffs": {
+				"activation_chance": 1,
+				"attacker_attack_stat_stage_change": -1,
+				"attacker_defense_stat_stage_change": -1
+			},
+			"energy_delta": -40,
+			"move_id": 310,
+			"name": "Super Power",
+			"power": 85,
+			"turn_duration": 1,
+			"type": "Fighting"
+		},
+		"fellstinger": {
+			"buffs": {
+				"activation_chance": 1,
+				"attacker_attack_stat_stage_change": 1
+			},
+			"energy_delta": -35,
+			"move_id": 311,
+			"name": "Fell Stinger",
+			"power": 20,
+			"turn_duration": 1,
+			"type": "Bug"
+		},
+		"leaftornado": {
+			"buffs": {
+				"activation_chance": 0.5,
+				"target_attack_stat_stage_change": -2
+			},
+			"energy_delta": -40,
+			"move_id": 312,
+			"name": "Leaf Tornado",
+			"power": 45,
+			"turn_duration": 1,
+			"type": "Grass"
+		},
+		"shadowbone": {
+			"buffs": {
+				"activation_chance": 0.2,
+				"target_defense_stat_stage_change": -1
+			},
+			"energy_delta": -45,
+			"move_id": 315,
+			"name": "Shadow Bone",
+			"power": 75,
+			"turn_duration": 1,
+			"type": "Ghost"
+		},
+		"muddywater": {
+			"buffs": {
+				"activation_chance": 0.3,
+				"target_attack_stat_stage_change": -1
+			},
+			"energy_delta": -35,
+			"move_id": 316,
+			"name": "Muddy Water",
+			"power": 35,
+			"turn_duration": 1,
+			"type": "Water"
+		},
+		"blazekick": {
+			"energy_delta": -40,
+			"move_id": 317,
+			"name": "Blaze Kick",
+			"power": 55,
+			"turn_duration": 1,
+			"type": "Fire"
+		},
+		"razorshell": {
+			"buffs": {
+				"activation_chance": 0.5,
+				"target_defense_stat_stage_change": -1
+			},
+			"energy_delta": -35,
+			"move_id": 318,
+			"name": "Razor Shell",
+			"power": 35,
+			"turn_duration": 1,
+			"type": "Water"
+		},
+		"poweruppunch": {
+			"buffs": {
+				"activation_chance": 1,
+				"attacker_attack_stat_stage_change": 1
+			},
+			"energy_delta": -35,
+			"move_id": 319,
+			"name": "Power Up Punch",
+			"power": 20,
+			"turn_duration": 1,
+			"type": "Fighting"
+		},
+		"gigaimpact": {
+			"energy_delta": -80,
+			"move_id": 321,
+			"name": "Giga Impact",
+			"power": 150,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"frustration": {
+			"energy_delta": -70,
+			"move_id": 322,
+			"name": "Frustration",
+			"power": 10,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"return": {
+			"energy_delta": -70,
+			"move_id": 323,
+			"name": "Return",
+			"power": 130,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"synchronoise": {
+			"energy_delta": -50,
+			"move_id": 324,
+			"name": "Synchronoise",
+			"power": 80,
+			"turn_duration": 1,
+			"type": "Psychic"
+		},
+		"sacredsword": {
+			"energy_delta": -35,
+			"move_id": 330,
+			"name": "Sacred Sword",
+			"power": 60,
+			"turn_duration": 1,
+			"type": "Fighting"
+		},
+		"flyingpress": {
+			"energy_delta": -40,
+			"move_id": 331,
+			"name": "Flying Press",
+			"power": 90,
+			"turn_duration": 1,
+			"type": "Fighting"
+		},
+		"aurasphere": {
+			"energy_delta": -55,
+			"move_id": 332,
+			"name": "Aura Sphere",
+			"power": 100,
+			"turn_duration": 1,
+			"type": "Fighting"
+		},
+		"payback": {
+			"energy_delta": -60,
+			"move_id": 333,
+			"name": "Payback",
+			"power": 110,
+			"turn_duration": 1,
+			"type": "Dark"
+		},
+		"rockwrecker": {
+			"energy_delta": -50,
+			"move_id": 334,
+			"name": "Rock Wrecker",
+			"power": 110,
+			"turn_duration": 1,
+			"type": "Rock"
+		},
+		"aeroblast": {
+			"buffs": {
+				"activation_chance": 0.125,
+				"attacker_attack_stat_stage_change": 2
+			},
+			"energy_delta": -75,
+			"move_id": 335,
+			"name": "Aeroblast",
+			"power": 170,
+			"turn_duration": 1,
+			"type": "Flying"
+		},
+		"technoblast": {
+			"energy_delta": -55,
+			"move_id": 336,
+			"name": "Techno Blast",
+			"power": 120,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"technoblastfire": {
+			"energy_delta": -55,
+			"move_id": 337,
+			"name": "Techno Blast [Fire]",
+			"power": 120,
+			"turn_duration": 1,
+			"type": "Fire"
+		},
+		"technoblastice": {
+			"energy_delta": -55,
+			"move_id": 338,
+			"name": "Techno Blast [Ice]",
+			"power": 120,
+			"turn_duration": 1,
+			"type": "Ice"
+		},
+		"technoblastwater": {
+			"energy_delta": -55,
+			"move_id": 339,
+			"name": "Techno Blast [Water]",
+			"power": 120,
+			"turn_duration": 1,
+			"type": "Water"
+		},
+		"technoblastelectric": {
+			"energy_delta": -55,
+			"move_id": 340,
+			"name": "Techno Blast [Electric]",
+			"power": 120,
+			"turn_duration": 1,
+			"type": "Electric"
+		},
+		"fly": {
+			"energy_delta": -45,
+			"move_id": 341,
+			"name": "Fly",
+			"power": 80,
+			"turn_duration": 1,
+			"type": "Flying"
+		},
+		"vcreate": {
+			"buffs": {
+				"activation_chance": 1,
+				"attacker_defense_stat_stage_change": -3
+			},
+			"energy_delta": -40,
+			"move_id": 342,
+			"name": "V Create",
+			"power": 95,
+			"turn_duration": 1,
+			"type": "Fire"
+		},
+		"leafstorm": {
+			"buffs": {
+				"activation_chance": 1,
+				"attacker_attack_stat_stage_change": -2
+			},
+			"energy_delta": -55,
+			"move_id": 343,
+			"name": "Leaf Storm",
+			"power": 130,
+			"turn_duration": 1,
+			"type": "Grass"
+		},
+		"triattack": {
+			"buffs": {
+				"activation_chance": 0.5,
+				"target_attack_stat_stage_change": -1,
+				"target_defense_stat_stage_change": -1
+			},
+			"energy_delta": -50,
+			"move_id": 344,
+			"name": "Tri Attack",
+			"power": 65,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"featherdance": {
+			"buffs": {
+				"activation_chance": 1,
+				"target_attack_stat_stage_change": -2
+			},
+			"energy_delta": -50,
+			"move_id": 348,
+			"name": "Feather Dance",
+			"power": 35,
+			"turn_duration": 1,
+			"type": "Flying"
+		},
+		"weatherball": {
+			"energy_delta": -35,
+			"move_id": 352,
+			"name": "Weather Ball",
+			"power": 55,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"psychicfangs": {
+			"buffs": {
+				"activation_chance": 1,
+				"target_defense_stat_stage_change": -1
+			},
+			"energy_delta": -35,
+			"move_id": 353,
+			"name": "Psychic Fangs",
+			"power": 40,
+			"turn_duration": 1,
+			"type": "Psychic"
+		}
+	},
+	"fast": {
+		"furycutter": {
+			"energy_delta": 4,
+			"move_id": 200,
+			"name": "Fury Cutter",
+			"power": 2,
+			"turn_duration": 1,
+			"type": "Bug"
+		},
+		"bugbite": {
+			"energy_delta": 3,
+			"move_id": 201,
+			"name": "Bug Bite",
+			"power": 3,
+			"turn_duration": 1,
+			"type": "Bug"
+		},
+		"bite": {
+			"energy_delta": 2,
+			"move_id": 202,
+			"name": "Bite",
+			"power": 4,
+			"turn_duration": 1,
+			"type": "Dark"
+		},
+		"suckerpunch": {
+			"energy_delta": 7,
+			"move_id": 203,
+			"name": "Sucker Punch",
+			"power": 5,
+			"turn_duration": 2,
+			"type": "Dark"
+		},
+		"dragonbreath": {
+			"energy_delta": 3,
+			"move_id": 204,
+			"name": "Dragon Breath",
+			"power": 4,
+			"turn_duration": 1,
+			"type": "Dragon"
+		},
+		"thundershock": {
+			"energy_delta": 9,
+			"move_id": 205,
+			"name": "Thunder Shock",
+			"power": 3,
+			"turn_duration": 2,
+			"type": "Electric"
+		},
+		"spark": {
+			"energy_delta": 8,
+			"move_id": 206,
+			"name": "Spark",
+			"power": 4,
+			"turn_duration": 2,
+			"type": "Electric"
+		},
+		"lowkick": {
+			"energy_delta": 5,
+			"move_id": 207,
+			"name": "Low Kick",
+			"power": 4,
+			"turn_duration": 2,
+			"type": "Fighting"
+		},
+		"karatechop": {
+			"energy_delta": 8,
+			"move_id": 208,
+			"name": "Karate Chop",
+			"power": 5,
+			"turn_duration": 2,
+			"type": "Fighting"
+		},
+		"ember": {
+			"energy_delta": 6,
+			"move_id": 209,
+			"name": "Ember",
+			"power": 7,
+			"turn_duration": 2,
+			"type": "Fire"
+		},
+		"wingattack": {
+			"energy_delta": 7,
+			"move_id": 210,
+			"name": "Wing Attack",
+			"power": 5,
+			"turn_duration": 2,
+			"type": "Flying"
+		},
+		"peck": {
+			"energy_delta": 5,
+			"move_id": 211,
+			"name": "Peck",
+			"power": 6,
+			"turn_duration": 2,
+			"type": "Flying"
+		},
+		"lick": {
+			"energy_delta": 3,
+			"move_id": 212,
+			"name": "Lick",
+			"power": 3,
+			"turn_duration": 1,
+			"type": "Ghost"
+		},
+		"shadowclaw": {
+			"energy_delta": 8,
+			"move_id": 213,
+			"name": "Shadow Claw",
+			"power": 6,
+			"turn_duration": 2,
+			"type": "Ghost"
+		},
+		"vinewhip": {
+			"energy_delta": 8,
+			"move_id": 214,
+			"name": "Vine Whip",
+			"power": 5,
+			"turn_duration": 2,
+			"type": "Grass"
+		},
+		"razorleaf": {
+			"energy_delta": 4,
+			"move_id": 215,
+			"name": "Razor Leaf",
+			"power": 10,
+			"turn_duration": 2,
+			"type": "Grass"
+		},
+		"mudshot": {
+			"energy_delta": 9,
+			"move_id": 216,
+			"name": "Mud Shot",
+			"power": 3,
+			"turn_duration": 2,
+			"type": "Ground"
+		},
+		"iceshard": {
+			"energy_delta": 10,
+			"move_id": 217,
+			"name": "Ice Shard",
+			"power": 9,
+			"turn_duration": 3,
+			"type": "Ice"
+		},
+		"frostbreath": {
+			"energy_delta": 5,
+			"move_id": 218,
+			"name": "Frost Breath",
+			"power": 7,
+			"turn_duration": 2,
+			"type": "Ice"
+		},
+		"quickattack": {
+			"energy_delta": 7,
+			"move_id": 219,
+			"name": "Quick Attack",
+			"power": 5,
+			"turn_duration": 2,
+			"type": "Normal"
+		},
+		"scratch": {
+			"energy_delta": 2,
+			"move_id": 220,
+			"name": "Scratch",
+			"power": 4,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"tackle": {
+			"energy_delta": 2,
+			"move_id": 221,
+			"name": "Tackle",
+			"power": 3,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"pound": {
+			"energy_delta": 4,
+			"move_id": 222,
+			"name": "Pound",
+			"power": 5,
+			"turn_duration": 2,
+			"type": "Normal"
+		},
+		"cut": {
+			"energy_delta": 2,
+			"move_id": 223,
+			"name": "Cut",
+			"power": 3,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"poisonjab": {
+			"energy_delta": 7,
+			"move_id": 224,
+			"name": "Poison Jab",
+			"power": 7,
+			"turn_duration": 2,
+			"type": "Poison"
+		},
+		"acid": {
+			"energy_delta": 5,
+			"move_id": 225,
+			"name": "Acid",
+			"power": 6,
+			"turn_duration": 2,
+			"type": "Poison"
+		},
+		"psychocut": {
+			"energy_delta": 9,
+			"move_id": 226,
+			"name": "Psycho Cut",
+			"power": 3,
+			"turn_duration": 2,
+			"type": "Psychic"
+		},
+		"rockthrow": {
+			"energy_delta": 5,
+			"move_id": 227,
+			"name": "Rock Throw",
+			"power": 8,
+			"turn_duration": 2,
+			"type": "Rock"
+		},
+		"metalclaw": {
+			"energy_delta": 6,
+			"move_id": 228,
+			"name": "Metal Claw",
+			"power": 5,
+			"turn_duration": 2,
+			"type": "Steel"
+		},
+		"bulletpunch": {
+			"energy_delta": 7,
+			"move_id": 229,
+			"name": "Bullet Punch",
+			"power": 6,
+			"turn_duration": 2,
+			"type": "Steel"
+		},
+		"watergun": {
+			"energy_delta": 3,
+			"move_id": 230,
+			"name": "Water Gun",
+			"power": 3,
+			"turn_duration": 1,
+			"type": "Water"
+		},
+		"splash": {
+			"energy_delta": 12,
+			"move_id": 231,
+			"name": "Splash",
+			"power": 0,
+			"turn_duration": 4,
+			"type": "Water"
+		},
+		"mudslap": {
+			"energy_delta": 8,
+			"move_id": 233,
+			"name": "Mud Slap",
+			"power": 11,
+			"turn_duration": 3,
+			"type": "Ground"
+		},
+		"zenheadbutt": {
+			"energy_delta": 6,
+			"move_id": 234,
+			"name": "Zen Headbutt",
+			"power": 8,
+			"turn_duration": 3,
+			"type": "Psychic"
+		},
+		"confusion": {
+			"energy_delta": 12,
+			"move_id": 235,
+			"name": "Confusion",
+			"power": 16,
+			"turn_duration": 4,
+			"type": "Psychic"
+		},
+		"poisonsting": {
+			"energy_delta": 9,
+			"move_id": 236,
+			"name": "Poison Sting",
+			"power": 3,
+			"turn_duration": 2,
+			"type": "Poison"
+		},
+		"bubble": {
+			"energy_delta": 11,
+			"move_id": 237,
+			"name": "Bubble",
+			"power": 7,
+			"turn_duration": 3,
+			"type": "Water"
+		},
+		"feintattack": {
+			"energy_delta": 6,
+			"move_id": 238,
+			"name": "Feint Attack",
+			"power": 6,
+			"turn_duration": 2,
+			"type": "Dark"
+		},
+		"steelwing": {
+			"energy_delta": 5,
+			"move_id": 239,
+			"name": "Steel Wing",
+			"power": 7,
+			"turn_duration": 2,
+			"type": "Steel"
+		},
+		"firefang": {
+			"energy_delta": 5,
+			"move_id": 240,
+			"name": "Fire Fang",
+			"power": 8,
+			"turn_duration": 2,
+			"type": "Fire"
+		},
+		"rocksmash": {
+			"energy_delta": 7,
+			"move_id": 241,
+			"name": "Rock Smash",
+			"power": 9,
+			"turn_duration": 3,
+			"type": "Fighting"
+		},
+		"transform": {
+			"energy_delta": 0,
+			"move_id": 242,
+			"name": "Transform",
+			"power": 0,
+			"turn_duration": 3,
+			"type": "Normal"
+		},
+		"counter": {
+			"energy_delta": 7,
+			"move_id": 243,
+			"name": "Counter",
+			"power": 8,
+			"turn_duration": 2,
+			"type": "Fighting"
+		},
+		"powdersnow": {
+			"energy_delta": 8,
+			"move_id": 244,
+			"name": "Powder Snow",
+			"power": 5,
+			"turn_duration": 2,
+			"type": "Ice"
+		},
+		"chargebeam": {
+			"energy_delta": 11,
+			"move_id": 249,
+			"name": "Charge Beam",
+			"power": 5,
+			"turn_duration": 3,
+			"type": "Electric"
+		},
+		"voltswitch": {
+			"energy_delta": 16,
+			"move_id": 250,
+			"name": "Volt Switch",
+			"power": 12,
+			"turn_duration": 4,
+			"type": "Electric"
+		},
+		"dragontail": {
+			"energy_delta": 9,
+			"move_id": 253,
+			"name": "Dragon Tail",
+			"power": 13,
+			"turn_duration": 3,
+			"type": "Dragon"
+		},
+		"airslash": {
+			"energy_delta": 9,
+			"move_id": 255,
+			"name": "Air Slash",
+			"power": 9,
+			"turn_duration": 3,
+			"type": "Flying"
+		},
+		"infestation": {
+			"energy_delta": 12,
+			"move_id": 260,
+			"name": "Infestation",
+			"power": 6,
+			"turn_duration": 3,
+			"type": "Bug"
+		},
+		"strugglebug": {
+			"energy_delta": 8,
+			"move_id": 261,
+			"name": "Struggle Bug",
+			"power": 9,
+			"turn_duration": 3,
+			"type": "Bug"
+		},
+		"astonish": {
+			"energy_delta": 9,
+			"move_id": 263,
+			"name": "Astonish",
+			"power": 5,
+			"turn_duration": 3,
+			"type": "Ghost"
+		},
+		"hex": {
+			"energy_delta": 12,
+			"move_id": 264,
+			"name": "Hex",
+			"power": 6,
+			"turn_duration": 3,
+			"type": "Ghost"
+		},
+		"irontail": {
+			"energy_delta": 6,
+			"move_id": 266,
+			"name": "Iron Tail",
+			"power": 9,
+			"turn_duration": 3,
+			"type": "Steel"
+		},
+		"firespin": {
+			"energy_delta": 10,
+			"move_id": 269,
+			"name": "Fire Spin",
+			"power": 9,
+			"turn_duration": 3,
+			"type": "Fire"
+		},
+		"bulletseed": {
+			"energy_delta": 13,
+			"move_id": 271,
+			"name": "Bullet Seed",
+			"power": 5,
+			"turn_duration": 3,
+			"type": "Grass"
+		},
+		"extrasensory": {
+			"energy_delta": 10,
+			"move_id": 274,
+			"name": "Extrasensory",
+			"power": 8,
+			"turn_duration": 3,
+			"type": "Psychic"
+		},
+		"snarl": {
+			"energy_delta": 13,
+			"move_id": 278,
+			"name": "Snarl",
+			"power": 5,
+			"turn_duration": 3,
+			"type": "Dark"
+		},
+		"hiddenpower": {
+			"energy_delta": 8,
+			"move_id": 281,
+			"name": "Hidden Power",
+			"power": 9,
+			"turn_duration": 3,
+			"type": "Normal"
+		},
+		"takedown": {
+			"energy_delta": 8,
+			"move_id": 282,
+			"name": "Take Down",
+			"power": 5,
+			"turn_duration": 3,
+			"type": "Normal"
+		},
+		"waterfall": {
+			"energy_delta": 8,
+			"move_id": 283,
+			"name": "Waterfall",
+			"power": 12,
+			"turn_duration": 3,
+			"type": "Water"
+		},
+		"yawn": {
+			"energy_delta": 12,
+			"move_id": 287,
+			"name": "Yawn",
+			"power": 0,
+			"turn_duration": 4,
+			"type": "Normal"
+		},
+		"present": {
+			"energy_delta": 12,
+			"move_id": 291,
+			"name": "Present",
+			"power": 3,
+			"turn_duration": 3,
+			"type": "Normal"
+		},
+		"smackdown": {
+			"energy_delta": 8,
+			"move_id": 297,
+			"name": "Smack Down",
+			"power": 12,
+			"turn_duration": 3,
+			"type": "Rock"
+		},
+		"charm": {
+			"energy_delta": 6,
+			"move_id": 320,
+			"name": "Charm",
+			"power": 16,
+			"turn_duration": 3,
+			"type": "Fairy"
+		},
+		"lockon": {
+			"energy_delta": 5,
+			"move_id": 325,
+			"name": "Lock On",
+			"power": 1,
+			"turn_duration": 1,
+			"type": "Normal"
+		},
+		"thunderfang": {
+			"energy_delta": 5,
+			"move_id": 326,
+			"name": "Thunder Fang",
+			"power": 8,
+			"turn_duration": 2,
+			"type": "Electric"
+		},
+		"icefang": {
+			"energy_delta": 5,
+			"move_id": 327,
+			"name": "Ice Fang",
+			"power": 8,
+			"turn_duration": 2,
+			"type": "Ice"
+		},
+		"gust": {
+			"energy_delta": 12,
+			"move_id": 345,
+			"name": "Gust",
+			"power": 16,
+			"turn_duration": 4,
+			"type": "Flying"
+		},
+		"incinerate": {
+			"energy_delta": 20,
+			"move_id": 346,
+			"name": "Incinerate",
+			"power": 15,
+			"turn_duration": 5,
+			"type": "Fire"
+		}
+	}
+}

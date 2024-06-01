@@ -1,0 +1,20 @@
+module.exports = {
+	bug: ["tlouk", "lecremebrule", "squirtell"],
+	dark: ["tlouk"],
+	dragon: ["lecremebrule", "princessnature"],
+	electric: ["armaldlo", "pokesartoolcay"],
+	fairy: ["lecremebrule", "smajet"],
+	fighting: ["tlouk", "666lesbian69", "lecremebrule"],
+	fire: ["1v1sp", "lecremebrule", "tlouk", "malcolm24"],
+	flying: ["tlouk"],
+	ghost: ["partman", "oceaney"],
+	grass: ["yeche"],
+	ground: ["yeche", "theseelgoesmeow"],
+	ice: ["theseelgoesmeow", "lecremebrule", "cabbbages"],
+	normal: ["lecremebrule"],
+	poison: [],
+	psychic: ["theseelgoesmeow", "armaldlo"],
+	rock: ["tlouk", "partman"],
+	steel: ["tlouk", "theseelgoesmeow", "oceaney"],
+	water: ["lecremebrule", "yeche"]
+};

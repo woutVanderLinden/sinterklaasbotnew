@@ -1,0 +1,22 @@
+{
+	"tour": false,
+	"auth": {
+		"alpha": [],
+		"beta": [],
+		"gamma": []
+	},
+	"assign": {
+		"_ladderPrefix": "2v2lts",
+		"_ladderFloor": 1250
+	},
+	"blacklist": [
+		"blackjack",
+		"chainreaction",
+		"chess",
+		"explodingvoltorb",
+		"lightsout",
+		"mastermind",
+		"othello",
+		"quovadis"
+	]
+}

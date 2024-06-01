@@ -1,0 +1,51 @@
+{
+	"auth": {
+		"alpha": ["meteorbeam"],
+		"beta": [],
+		"gamma": []
+	},
+	"whitelist": [
+		"addraids",
+		"addtoraid",
+		"dt",
+		"endraid",
+		"hostban",
+		"hostraid",
+		"hundos",
+		"lockraid",
+		"myraids",
+		"pingraid",
+		"raidban",
+		"raidhelp",
+		"raidhours",
+		"raids",
+		"register",
+		"removefromraid",
+		"removeraids",
+		"setraids",
+		"setuser",
+		"showmycode",
+		"unhostban",
+		"unlockraid",
+		"unraidban",
+		"weatheris",
+		"wishlist",
+
+		"fixname",
+		"hangman",
+		"q",
+		"timer",
+		"whitelist"
+	],
+	"permissions": {
+		"hangman": "gamma"
+	},
+	"ignore": true,
+	"aliases": [
+		"go",
+		"pogo"
+	],
+	"assign": {
+		"_raidsize": 10
+	}
+}
