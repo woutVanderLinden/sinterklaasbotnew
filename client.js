@@ -317,9 +317,11 @@ Client.prototype.log = function (...things) {
 			fs.appendFile('./logs.txt', `\n${require('util').format(thing)}`, function (e) {
 				if (e) return console.log(e);
 				try {
+					/*
 					client.channels.cache.get('719087165241425981')
 						?.send('```\n' + require('util').format(thing).substr(0, 1990) + '```')
 						?.then(() => resolve()) || resolve();
+						*/
 				} catch (e) {
 					console.log(e);
 					resolve();
