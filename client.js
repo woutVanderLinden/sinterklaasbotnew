@@ -286,6 +286,12 @@ Client.prototype.say = function (room, msg) {
 	else this._queued.push(room + '|' + msg);
 };
 
+Client.prototype.sendRoom = function (room, msg) {
+	if (room.charAt(0) === ',') return this.pm(room.substr(1), msg);
+	else this._queued.push(room + '|' + msg);
+};
+
+
 Client.prototype.pm = function (user, msg) {
 	this._queued.push('|/pm ' + user + ',' + msg);
 };
