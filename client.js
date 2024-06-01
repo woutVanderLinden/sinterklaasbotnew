@@ -296,7 +296,7 @@ Client.prototype.roomReply = function (room, user, msg) {
 
 Client.prototype.joinRooms = function (rooms) {
 	for (var i = 0, l = rooms.length; i < rooms.length;i++) {
-		var room = rooms.get(i);
+		var room = rooms[i];
 		this.send(`|/join ${room.toLowerCase()}`);
 	}
 	//this.send(rooms.map(room => ));
