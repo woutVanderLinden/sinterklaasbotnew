@@ -683,7 +683,7 @@ exports.commands = {
 		var args = arg.split(",");
 		console.log(args);
 		if (args.length < 3) {
-			return this.reply("Usage: " + this.cmdToken + cmd + " [user], [montopick]");
+			return this.reply("Usage: " + this.cmdToken + cmd + " [user], [montopick], [type], optional:[type2]");
 		}
 
 		const uri = process.env.MONGO_URI;
@@ -707,7 +707,7 @@ exports.commands = {
 			list["teracaptains"][args[1]] = teratypes;
 			console.log(teratypes);
 			console.log(args[1]);
-			console.log(list["teracaptains"][args[1]]);
+			console.log(quotes["pokemon"][toId(args[0])]["teracaptains"][args[1]]);
 			quotes["pokemon"][toId(args[0])]["teracaptains"][args[1]] = teratypes;
 			await updateListingByName(client, "pokemon", quotes);
 			if (toId(by) == toId(room)) {
