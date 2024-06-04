@@ -671,6 +671,81 @@ exports.commands = {
 			}
 		}*/
 	},
+	addteracaptain: async function (arg, by, room, cmd) {
+		if (toId(by) != toId(room)) {
+			if (!by.startsWith("+") && !by.startsWith("#") && !by.startsWith("%") && !by.startsWith("@")) {
+				return false;
+			}
+		}
+		var args = arg.split(",");
+		console.log(args);
+		if (args.length < 3) {
+			return this.reply("Usage: " + this.cmdToken + cmd + " [user], [montopick]");
+		}
+
+		const uri = process.env.MONGO_URI;
+		console.log(uri);
+		console.log("test");
+
+		const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+		try {
+			await client.connect();
+			let quotes = await findOneListingByName(client, "pokemon");
+			var list;
+			var type;
+			var teratypes = [];
+			
+			for (var i = 2; i < args.length; i++) {
+				teratypes.push(args[i]);
+			}
+			list = quotes["pokemon"][toId(args[0])];
+			list["teracaptains"][args[1]] = teratypes;
+			if (toId(by) == toId(room)) {
+				return this.reply("tera captain" + args[1] "added");
+			} else {
+				return this.reply(draftmonsprint2(list, type));
+			}
+			await updateListingByName(client, "pokemon", quotes);
+
+		} catch (e) {
+			console.error(e);
+		}
+		finally {
+			await client.close();
+		}
+		/*
+		await client.connect();
+		await listDatabases(client);
+		let rawdata = fs.readFileSync('draftedmons.json');
+		let student = JSON.parse(rawdata);
+		if(arg==''){
+			if(toId(by)==toId(room)){
+				
+				return this.reply(draftmonsprint(student[toId(by)]));
+		
+			}else{
+				
+				if (!by.startsWith("+")&&!by.startsWith("#")&&!by.startsWith("%")&&!by.startsWith("@")){
+					return false;
+				}
+				else{
+					
+					return this.reply(draftmonsprint2(student[toId(by)]));
+				}
+			}
+			
+		}
+		else{
+			if(toId(by)==toId(room)){
+				return this.reply(draftmonsprint(student[toId(arg)]));
+			
+			}else{
+				return this.reply(draftmonsprint2(student[toId(arg)]));
+			
+			}
+		}*/
+	},
 	viewdraft2: async function (arg, by, room, cmd) {
 
 		if (!by.startsWith("+") && !by.startsWith("#") && !by.startsWith("%") && !by.startsWith("@")) {
