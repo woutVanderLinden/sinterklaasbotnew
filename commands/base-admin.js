@@ -3374,7 +3374,7 @@ function draftmonsprinttera(arg, teracaptains) {
 	var result = '!htmlbox ';
 	if (teracaptains != undefined) {
 		var keys = Object.keys(teracaptains);
-		var wordorg;
+		var wordorg = "";
 		for(const key of keys){
 			var word = '<a href="//dex.pokemonshowdown.com/pokemon/' + key + '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + key + '" style="vertical-align:-7px;margin:-2px" />' + key + '</a> :';
 			var types = teracaptains[key];
