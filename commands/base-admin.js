@@ -779,7 +779,7 @@ exports.commands = {
 			if (list["teracaptains"] == undefined) {
 				list["teracaptains"] = [];
 			}
-			list.[teracaptains] = undefined; 
+			delete list["teracaptains"][arg[1]]; 
 			if (toId(by) == toId(room)) {
 				return this.reply("tera captain " + args[1] + " removed");
 			} else {
