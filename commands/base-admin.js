@@ -701,8 +701,9 @@ exports.commands = {
 				teratypes.push(args[i]);
 			}
 			list = quotes["pokemon"][toId(args[0])];
+			list["teracaptains"] = {};
 			if (list["teracaptains"] == undefined) {
-				list["teracaptains"] = [];
+				list["teracaptains"] = {};
 			}
 			list["teracaptains"][args[1]] = teratypes;
 			console.log(teratypes);
