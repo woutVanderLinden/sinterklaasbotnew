@@ -707,12 +707,12 @@ exports.commands = {
 				list["teracaptains"] = [];
 			}
 			list["teracaptains"][args[1]] = teratypes;
+			await updateListingByName(client, "pokemon", quotes);
 			if (toId(by) == toId(room)) {
 				return this.reply("tera captain " + args[1] + " added");
 			} else {
 				return this.reply("tera captain " + args[1] + " added");
 			}
-			await updateListingByName(client, "pokemon", quotes);
 
 		} catch (e) {
 			console.error(e);
