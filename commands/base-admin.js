@@ -708,6 +708,7 @@ exports.commands = {
 			console.log(teratypes);
 			console.log(args[1]);
 			console.log(list["teracaptains"][args[1]]);
+			quotes["pokemon"][toId(args[0])]["teracaptains"][args[1]] = teratypes;
 			await updateListingByName(client, "pokemon", quotes);
 			if (toId(by) == toId(room)) {
 				return this.reply("tera captain " + args[1] + " added");
