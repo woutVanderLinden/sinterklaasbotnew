@@ -702,7 +702,7 @@ exports.commands = {
 			list = quotes["pokemon"][toId(args[0])];
 			list["teracaptains"][args[1]] = teratypes;
 			if (toId(by) == toId(room)) {
-				return this.reply("tera captain" + args[1] "added");
+				return this.reply("tera captain " + args[1] + " added");
 			} else {
 				return this.reply(draftmonsprint2(list, type));
 			}
