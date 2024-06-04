@@ -700,6 +700,9 @@ exports.commands = {
 				teratypes.push(args[i]);
 			}
 			list = quotes["pokemon"][toId(args[0])];
+			if (list["teracaptains"] == undefined) {
+				list["teracaptains"] = [];
+			}
 			list["teracaptains"][args[1]] = teratypes;
 			if (toId(by) == toId(room)) {
 				return this.reply("tera captain " + args[1] + " added");
