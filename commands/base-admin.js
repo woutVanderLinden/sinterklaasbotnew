@@ -775,9 +775,9 @@ exports.commands = {
 			var type;
 			list = quotes["pokemon"][toId(args[0])];
 			if (list["teracaptains"] == undefined) {
-				list["teracaptains"] = [];
+				list["teracaptains"] = {};
 			}
-			delete list["teracaptains"][arg[1]];
+			delete list["teracaptains"][args[1]];
 			await updateListingByName(client, "pokemon", quotes);
 			if (toId(by) == toId(room)) {
 				return this.reply("tera captain " + args[1] + " removed");
