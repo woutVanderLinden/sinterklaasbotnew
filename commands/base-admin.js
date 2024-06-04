@@ -3374,6 +3374,7 @@ function draftmonsprinttera(arg, teracaptains) {
 	var result = '!htmlbox ';
 	if (teracaptains != undefined) {
 		var keys = Object.keys(teracaptains);
+		var wordorg;
 		for(const key of keys){
 			var word = '<a href="//dex.pokemonshowdown.com/pokemon/' + key + '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + key + '" style="vertical-align:-7px;margin:-2px" />' + key + '</a> :';
 			var types = teracaptains[key];
@@ -3381,8 +3382,9 @@ function draftmonsprinttera(arg, teracaptains) {
 				var type1 = '<psicon type="' + type + '" style="vertical-align:-2px;margin: 0px" />';
 				word = word + type1;
 			}
+			wordorg = wordorg + word;
 		}
-		result = result + '<div style="color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;"> Tera captains:'  + word + '</div>';
+		result = result + '<div style="color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;"> Tera captains:'  + wordorg + '</div>';
 	}
 
 	for (var i = 0; i < arg.length; i++) {
