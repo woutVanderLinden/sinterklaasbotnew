@@ -687,8 +687,6 @@ exports.commands = {
 		}
 
 		const uri = process.env.MONGO_URI;
-		console.log(uri);
-		console.log("test");
 
 		const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
@@ -707,6 +705,9 @@ exports.commands = {
 				list["teracaptains"] = [];
 			}
 			list["teracaptains"][args[1]] = teratypes;
+			console.log(teratypes);
+			console.log(args[1]);
+			console.log(list["teracaptains"][args[1]]);
 			await updateListingByName(client, "pokemon", quotes);
 			if (toId(by) == toId(room)) {
 				return this.reply("tera captain " + args[1] + " added");
