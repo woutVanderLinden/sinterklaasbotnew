@@ -627,7 +627,7 @@ exports.commands = {
 			else {
 				type = quotes["pokemon"][toId(arg)]["TerralyzeType"];
 				list = quotes["pokemon"][toId(arg)]["draftedmons"];
-				teracaptains = quotes["pokemon"][toId(by)]["teracaptains"];
+				teracaptains = quotes["pokemon"][toId(arg)]["teracaptains"];
 			}
 			if (toId(by) == toId(room)) {
 				return this.reply(draftmonsprint(list));
@@ -701,15 +701,10 @@ exports.commands = {
 				teratypes.push(args[i]);
 			}
 			list = quotes["pokemon"][toId(args[0])];
-			list["teracaptains"] = {};
 			if (list["teracaptains"] == undefined) {
 				list["teracaptains"] = {};
 			}
 			list["teracaptains"][args[1]] = teratypes;
-			console.log(teratypes);
-			console.log(args[1]);
-			console.log(quotes["pokemon"][toId(args[0])]["teracaptains"][args[1]]);
-			quotes["pokemon"][toId(args[0])]["teracaptains"][args[1]] = teratypes;
 			await updateListingByName(client, "pokemon", quotes);
 			if (toId(by) == toId(room)) {
 				return this.reply("tera captain " + args[1] + " added");
