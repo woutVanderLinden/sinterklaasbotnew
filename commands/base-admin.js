@@ -618,18 +618,21 @@ exports.commands = {
 			let quotes = await findOneListingByName(client, "pokemon");
 			var list;
 			var type;
+			var teracaptains;
 			if (arg == '') {
 				type = quotes["pokemon"][toId(by)]["TerralyzeType"];
 				list = quotes["pokemon"][toId(by)]["draftedmons"];
+				teracaptains = quotes["pokemon"][toId(by)]["teracaptains"];
 			}
 			else {
 				type = quotes["pokemon"][toId(arg)]["TerralyzeType"];
 				list = quotes["pokemon"][toId(arg)]["draftedmons"];
+				teracaptains = quotes["pokemon"][toId(by)]["teracaptains"];
 			}
 			if (toId(by) == toId(room)) {
 				return this.reply(draftmonsprint(list));
 			} else {
-				return this.reply(draftmonsprint2(list, type));
+				return this.reply(draftmonsprint(teralist, teracaptains));
 			}
 
 
@@ -707,7 +710,80 @@ exports.commands = {
 			if (toId(by) == toId(room)) {
 				return this.reply("tera captain " + args[1] + " added");
 			} else {
-				return this.reply(draftmonsprint2(list, type));
+				return this.reply("tera captain " + args[1] + " added");
+			}
+			await updateListingByName(client, "pokemon", quotes);
+
+		} catch (e) {
+			console.error(e);
+		}
+		finally {
+			await client.close();
+		}
+		/*
+		await client.connect();
+		await listDatabases(client);
+		let rawdata = fs.readFileSync('draftedmons.json');
+		let student = JSON.parse(rawdata);
+		if(arg==''){
+			if(toId(by)==toId(room)){
+				
+				return this.reply(draftmonsprint(student[toId(by)]));
+		
+			}else{
+				
+				if (!by.startsWith("+")&&!by.startsWith("#")&&!by.startsWith("%")&&!by.startsWith("@")){
+					return false;
+				}
+				else{
+					
+					return this.reply(draftmonsprint2(student[toId(by)]));
+				}
+			}
+			
+		}
+		else{
+			if(toId(by)==toId(room)){
+				return this.reply(draftmonsprint(student[toId(arg)]));
+			
+			}else{
+				return this.reply(draftmonsprint2(student[toId(arg)]));
+			
+			}
+		}*/
+	},
+	removeteracaptain: async function (arg, by, room, cmd) {
+		if (toId(by) != toId(room)) {
+			if (!by.startsWith("+") && !by.startsWith("#") && !by.startsWith("%") && !by.startsWith("@")) {
+				return false;
+			}
+		}
+		var args = arg.split(",");
+		console.log(args);
+		if (args.length < 2) {
+			return this.reply("Usage: " + this.cmdToken + cmd + " [user], [montopick]");
+		}
+
+		const uri = process.env.MONGO_URI;
+		console.log(uri);
+		console.log("test");
+
+		const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+		try {
+			await client.connect();
+			let quotes = await findOneListingByName(client, "pokemon");
+			var list;
+			var type;
+			list = quotes["pokemon"][toId(args[0])];
+			if (list["teracaptains"] == undefined) {
+				list["teracaptains"] = [];
+			}
+			delete list["teracaptains"].[args[1]]; 
+			if (toId(by) == toId(room)) {
+				return this.reply("tera captain " + args[1] + " removed");
+			} else {
+				return this.reply("tera captain " + args[1] + " removed");
 			}
 			await updateListingByName(client, "pokemon", quotes);
 
@@ -3291,6 +3367,34 @@ function draftmonsprint3(arg) {
 
 	}
 	console.log(result);
+	result = result.substring(0, result.length - 1);
+	result = result;
+	return result;
+};
+function draftmonsprinttera(arg, teracaptains) {
+	arg = arg.sort();
+	var result = '!htmlbox ';
+	if (teracaptains != undefined) {
+		var keys = teracaptains.keys();
+		for(const key of keys){
+			var word = '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a> :';
+			var types = teracaptains[key];
+			for(const type of types){
+				var type1 = '<psicon type="' + type + '" style="vertical-align:-2px;margin: 0px" />';
+				word = word + type
+			}
+		}
+		result = result + '<div style="color: black; border: 2px solid silver; background-color: rgb(234, 245, 234); padding: 4px;"> Tera captains:'  + word + '</div>';
+	}
+
+	for (var i = 0; i < arg.length; i++) {
+		console.log(arg[i]);
+		//Do something
+		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
+		var name = arg[i];
+		var word = '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a>,';
+		result = result + word;
+	}
 	result = result.substring(0, result.length - 1);
 	result = result;
 	return result;
