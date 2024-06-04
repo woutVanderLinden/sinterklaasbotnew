@@ -632,7 +632,7 @@ exports.commands = {
 			if (toId(by) == toId(room)) {
 				return this.reply(draftmonsprint(list));
 			} else {
-				return this.reply(draftmonsprint(list, teracaptains));
+				return this.reply(draftmonsprinttera(list, teracaptains));
 			}
 
 
