@@ -3380,7 +3380,7 @@ function draftmonsprinttera(arg, teracaptains) {
 			var types = teracaptains[key];
 			for(const type of types){
 				var type1 = '<psicon type="' + type + '" style="vertical-align:-2px;margin: 0px" />';
-				word = word + type1;
+				word = word + "  " + type1;
 			}
 			wordorg = wordorg + word;
 		}
