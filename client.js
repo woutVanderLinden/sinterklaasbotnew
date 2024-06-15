@@ -27,10 +27,10 @@ class Client extends EventEmitter {
 			pass: 'sinterklaas',
 			avatar: '4',
 			status: null,
-			retryLogin: 4 * 1000,
+			retryLogin: 4000 * 1000,
 			autoConnect: true,
 			autoReconnect: true,
-			autoReconnectDelay: 5 * 1000,
+			autoReconnectDelay: 5000 * 1000,
 			autoJoin: ['nederlands'],
 			showErrors: true,
 			debug: true
@@ -527,7 +527,7 @@ Client.prototype.startConnectionTimeOut = function () {
 			const t = Date.now();
 			if (t - this.lastMessage > this.opts.connectionTimeout) {
 				this.error('Connection timeout: ' + (t - this.lastMessage));
-				this.softDisconnect();
+				//this.softDisconnect();
 			}
 		}
 	}, this.opts.connectionTimeout);
