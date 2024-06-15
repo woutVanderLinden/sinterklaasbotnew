@@ -21,7 +21,7 @@ class Client extends EventEmitter {
 			serverid: 'showdown',
 			port: 443,
 			secprotocols: [],
-			connectionTimeout: 2 * 60 * 1000,
+			connectionTimeout: 2 * 6000 * 1000,
 			loginServer: 'https://play.pokemonshowdown.com/action.php',
 			nickName: 'Sinterklaas',
 			pass: 'sinterklaas',
@@ -97,7 +97,7 @@ class Client extends EventEmitter {
 		};
 	}
 }
-0
+
 // TODO: Cut down on unnecessary prototypes, or at least abstract them away
 
 Client.prototype.init = function () {
