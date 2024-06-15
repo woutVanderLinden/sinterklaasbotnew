@@ -2540,7 +2540,7 @@ exports.commands = {
 		else {
 
 		}
-		let rawdata = fs.readFileSync('DraftTest4.json');
+		let rawdata = fs.readFileSync('DraftGen9LowDex');
 		let student = JSON.parse(rawdata);
 		console.log(student);
 		global.draftvalues.draftroom = toId(room);
