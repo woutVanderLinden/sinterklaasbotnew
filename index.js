@@ -65,6 +65,7 @@ try {
 	
 	
 	require('sugar');
+	global.lastfinals = "";
 	global.draftvalues = {};
 	global.draftvalues.pointpicks=0;
 	global.draftvalues.todraftmons={};
@@ -633,7 +634,11 @@ if (!data.bracketData || data.bracketData.type !== 'tree') return;
 	//	if (doubleElim) {
 	//		Bot.say(room, `/wall ${data.bracketData.rootNode.children[0].team} is on match point! <<${data.bracketData.rootNode.room}>>`);
 		//} else {
-			Bot.say(room, `/wall Watch the finals of the tournament! <<${data.bracketData.rootNode.room}>>`);
+			if(global.lastfinals != data.bracketData.rootNode.room){
+				Bot.say(room, `/wall Watch the finals of the tournament! <<${data.bracketData.rootNode.room}>>`);
+				global.lastfinals =  data.bracketData.rootNode.room;
+			}
+
 	//	}
 	}
 }
