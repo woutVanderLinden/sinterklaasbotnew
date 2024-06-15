@@ -15079,9 +15079,9 @@
          "sun": 1
       }
    ],
-   "Type 0": [
+   "Type0": [
       {
-         "name": "Type 0",
+         "name": "Type0",
          "Typing1": "Normal",
          "Typing 2": "",
          "physicalbulkyattacker": 1,
@@ -22237,9 +22237,9 @@
          "sun": 0
       }
    ],
-   "Killowattrel": [
+   "Kilowattrel": [
       {
-         "name": "Killowattrel",
+         "name": "Kilowattrel",
          "Typing1": "Electric",
          "Typing 2": "Flying",
          "physicalbulkyattacker": 0,
@@ -22759,9 +22759,9 @@
          "sun": 0
       }
    ],
-   "Tatsurigi": [
+   "Tatsugiri": [
       {
-         "name": "Tatsurigi",
+         "name": "Tatsugiri",
          "Typing1": "Dragon",
          "Typing 2": "Water",
          "physicalbulkyattacker": 0,
@@ -22770,15 +22770,15 @@
          "physicalsetup": 0,
          "priority": 0,
          "specialsweeper": 2,
-         "specialsetup": 0,
+         "specialsetup": 3,
          "status": 0,
          "itemremover": 0,
-         "scarf": 4,
+         "scarf": 3,
          "entryhazards": 0,
-         "pivot": 0,
+         "pivot": 3,
          "cleric": 0,
          "specialwall": 0,
-         "hazardremoval": 0,
+         "hazardremoval": 3,
          "physicalsweeper": 0,
          "sand": 0,
          "speedcontrol": 0,
@@ -24468,6 +24468,64 @@
          "rain": 0,
          "hail": 0,
          "sun": 5
+      }
+   ],
+   "Minun": [
+      {
+         "name": "Minun",
+         "Typing1": "Electric",
+         "Typing 2": "",
+         "physicalbulkyattacker": 0,
+         "specialbulkyattacker": 0,
+         "physicalwall": 0,
+         "physicalsetup": 2,
+         "priority": 0,
+         "specialsweeper": 0,
+         "specialsetup": 0,
+         "status": 0,
+         "itemremover": 0,
+         "scarf": 0,
+         "entryhazards": 0,
+         "pivot": 1,
+         "cleric": 0,
+         "specialwall": 0,
+         "hazardremoval": 0,
+         "physicalsweeper": 0,
+         "sand": 0,
+         "speedcontrol": 0,
+         "screens": 0,
+         "rain": 0,
+         "hail": 0,
+         "sun": 0
+      }
+   ],
+   "Plusle": [
+      {
+         "name": "Plusle",
+         "Typing1": "Electric",
+         "Typing 2": "",
+         "physicalbulkyattacker": 0,
+         "specialbulkyattacker": 0,
+         "physicalwall": 0,
+         "physicalsetup": 2,
+         "priority": 0,
+         "specialsweeper": 0,
+         "specialsetup": 0,
+         "status": 0,
+         "itemremover": 0,
+         "scarf": 0,
+         "entryhazards": 0,
+         "pivot": 1,
+         "cleric": 0,
+         "specialwall": 0,
+         "hazardremoval": 0,
+         "physicalsweeper": 0,
+         "sand": 0,
+         "speedcontrol": 0,
+         "screens": 0,
+         "rain": 0,
+         "hail": 0,
+         "sun": 0
       }
    ]
 }
