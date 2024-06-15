@@ -15052,9 +15052,9 @@
          "sun": 1
       }
    ],
-   "Type0": [
+   "Type: Null": [
       {
-         "name": "Type0",
+         "name": "Type: Null",
          "Typing1": "Normal",
          "Typing 2": "",
          "physicalbulkyattacker": 1,
@@ -22761,9 +22761,9 @@
          "sun": 0
       }
    ],
-   "Tauros-Paldea": [
+   "Tauros-Paldea-Combat": [
       {
-         "name": "Tauros-Paldea",
+         "name": "Tauros-Paldea-Combat",
          "Typing1": "Fighting",
          "Typing 2": "",
          "physicalbulkyattacker": 0,
@@ -24635,6 +24635,64 @@
          "entryhazards": 0,
          "pivot": 0,
          "cleric": 2,
+         "specialwall": 0,
+         "hazardremoval": 0,
+         "physicalsweeper": 0,
+         "sand": 0,
+         "speedcontrol": 0,
+         "screens": 0,
+         "rain": 0,
+         "hail": 0,
+         "sun": 0
+      }
+   ],
+   "Spinda": [
+      {
+         "name": "Spinda",
+         "Typing1": "Normal",
+         "Typing 2": "",
+         "physicalbulkyattacker": 0,
+         "specialbulkyattacker": 0,
+         "physicalwall": 0,
+         "physicalsetup": 1,
+         "priority": 0,
+         "specialsweeper": 0,
+         "specialsetup": 0,
+         "status": 0,
+         "itemremover": 0,
+         "scarf": 0,
+         "entryhazards": 0,
+         "pivot": 0,
+         "cleric": 0,
+         "specialwall": 0,
+         "hazardremoval": 1,
+         "physicalsweeper": 0,
+         "sand": 0,
+         "speedcontrol": 0,
+         "screens": 0,
+         "rain": 0,
+         "hail": 0,
+         "sun": 0
+      }
+   ],
+   "Sinistcha": [
+      {
+         "name": "Sinistcha",
+         "Typing1": "Grass",
+         "Typing 2": "Ghost",
+         "physicalbulkyattacker": 0,
+         "specialbulkyattacker": 4,
+         "physicalwall": 2,
+         "physicalsetup": 0,
+         "priority": 0,
+         "specialsweeper": 0,
+         "specialsetup": 0,
+         "status": 4,
+         "itemremover": 0,
+         "scarf": 0,
+         "entryhazards": 0,
+         "pivot": 0,
+         "cleric": 0,
          "specialwall": 0,
          "hazardremoval": 0,
          "physicalsweeper": 0,
