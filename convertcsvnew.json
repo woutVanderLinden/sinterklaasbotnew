@@ -24686,7 +24686,7 @@
          "physicalsetup": 0,
          "priority": 0,
          "specialsweeper": 0,
-         "specialsetup": 0,
+         "specialsetup": 3,
          "status": 4,
          "itemremover": 0,
          "scarf": 0,
