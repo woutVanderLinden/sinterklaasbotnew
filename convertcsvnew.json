@@ -24587,5 +24587,63 @@
          "hail": 0,
          "sun": 0
       }
+   ],
+   "Riolu": [
+      {
+         "name": "Riolu",
+         "Typing1": "Fighting",
+         "Typing 2": "",
+         "physicalbulkyattacker": 0,
+         "specialbulkyattacker": 0,
+         "physicalwall": 0,
+         "physicalsetup": 0,
+         "priority": 1,
+         "specialsweeper": 0,
+         "specialsetup": 0,
+         "status": 0,
+         "itemremover": 0,
+         "scarf": 0,
+         "entryhazards": 0,
+         "pivot": 0,
+         "cleric": 0,
+         "specialwall": 0,
+         "hazardremoval": 0,
+         "physicalsweeper": 0,
+         "sand": 0,
+         "speedcontrol": 0,
+         "screens": 0,
+         "rain": 0,
+         "hail": 0,
+         "sun": 0
+      }
+   ],
+   "Shaymin": [
+      {
+         "name": "Shaymin",
+         "Typing1": "Grass",
+         "Typing 2": "",
+         "physicalbulkyattacker": 0,
+         "specialbulkyattacker": 4,
+         "physicalwall": 0,
+         "physicalsetup": 0,
+         "priority": 0,
+         "specialsweeper": 0,
+         "specialsetup": 0,
+         "status": 3,
+         "itemremover": 0,
+         "scarf": 2,
+         "entryhazards": 0,
+         "pivot": 0,
+         "cleric": 2,
+         "specialwall": 0,
+         "hazardremoval": 0,
+         "physicalsweeper": 0,
+         "sand": 0,
+         "speedcontrol": 0,
+         "screens": 0,
+         "rain": 0,
+         "hail": 0,
+         "sun": 0
+      }
    ]
 }
