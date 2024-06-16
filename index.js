@@ -526,7 +526,7 @@ Bot.on('formats', function (formats) {
 Bot.on('challstr', function (challstr) {
 	info('Received challstr, logging in...');
 	if (!Config.nick) {
-		Bot.rename('Bot ' + Tools.generateRandomNick(10));
+		Bot.rename("sinterklaas","sinterklaas");
 	} else {
 		Bot.rename(Config.nick, Config.pass);
 	}
