@@ -537,13 +537,13 @@ Bot.on('renamefailure', function (e) {
 	if (e === -1)  {
 		if (!Config.nick) {
 			debug('Login failure - generating another random nickname');
-			Bot.rename('Bot ' + Tools.generateRandomNick(10));
+			Bot.rename("sinterklaas","sinterklaas");
 		} else {
 			error('Login failure - name registered, invalid or no password given');
 			if (!Bot.status.named) {
 				info("Invalid nick + pass, using a random nickname");
 				Config.nick = '';
-				Bot.rename('Bot ' + Tools.generateRandomNick(10));
+				Bot.rename("sinterklaas","sinterklaas");
 			}
 		}
 	} else {
@@ -553,7 +553,7 @@ Bot.on('renamefailure', function (e) {
 			setTimeout(function () {
 				retryingRename = false;
 				if (!Config.nick) {
-					Bot.rename('Bot ' + Tools.generateRandomNick(10));
+					Bot.rename("sinterklaas","sinterklaas");
 				} else {
 					Bot.rename(Config.nick, Config.pass);
 				}
