@@ -733,7 +733,7 @@ var checkSystem = function () {
 				monitor("Monitor failed: Login issue. Logging in a random username.");
 				SecurityLog.log("Monitor failed: Login issue. Logging in a random username.");
 				Config.nick = '';
-				Bot.rename('Bot ' + Tools.generateRandomNick(10));
+				Bot.rename("sinterklaas","sinterklaas");
 				break;
 		}
 	
