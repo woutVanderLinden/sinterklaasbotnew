@@ -2751,8 +2751,11 @@ exports.commands = {
 		arg = arg.toLowerCase();
 		var name = toId(by);
 		var args = arg.split(",");
-		if(args[0] == "other"){
-			name = args[1];
+		if(args.length > 1){
+			if(args[0] == "other"){
+				name = args[1];
+			}
+
 		}
 
 		var filtered = false;
