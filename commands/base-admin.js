@@ -2753,7 +2753,7 @@ exports.commands = {
 		var args = arg.split(",");
 		if(args.length > 1){
 			if(args[0] == "other"){
-				name = args[1];
+				name = toId(args[1]);
 			}
 
 		}
