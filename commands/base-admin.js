@@ -4371,7 +4371,7 @@ function endbid(arg, arg2) {
 		global.draftvalues.nextdrafter = global.draftvalues.nextdrafter + 1;
 		var username = list[global.draftvalues.nextdrafter];
 		var picksleft = global.draftvalues.nrofpicks - global.draftvalues.users[name]["draftedmons"].length;
-		console.log("pickslef " + global.draftvalues.turnorder);
+		console.log("picksleft " + global.draftvalues.turnorder);
 		if (picksleft < 1) {
 			global.draftvalues.turnorder.remove(name);
 			console.log("turnorder " + global.draftvalues.turnorder);
@@ -4381,7 +4381,7 @@ function endbid(arg, arg2) {
 				global.draftvalues.users[toId(global.draftvalues.draftroom)] = [];
 				//saveTeamsToCloud();
 				global.draftvalues.draftstarted = false;
-				return name + " paid " + arg2 + " erekredieten for " + arg + ".( Erekredieten " + global.draftvalues.users[name]["erekredieten"] + ") \n" + 'The draft over is good luck and have fun ';
+				return name + " paid " + arg2 + " erekredieten for " + arg + ".( Erekredieten " + global.draftvalues.users[name]["erekredieten"] + ") \n" + '\announce The draft is over good luck and have fun ';
 			}
 		}
 		if (global.draftvalues.nextdrafter > global.draftvalues.turnorder.length - 1) {
