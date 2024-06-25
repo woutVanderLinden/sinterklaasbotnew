@@ -2590,7 +2590,7 @@ exports.commands = {
 		}
 		//thislistsix
 		//return  this.reply("!htmlbox <div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprint5(newlistsix,"rgb(255, 204, 204)")+ "</div>");
-
+		console.log(monToColor);
 		return this.reply(draftmonsprint4(newlistsix, draftsshown, by, room, monToColor));
 		//global.draftvalues.users[name]["erekredieten"]
 		//mondata
@@ -3364,7 +3364,7 @@ function draftmonsprintroles(arg, role, nrshown, by, room, monToColor) {
 	result = result + "</div>";
 	return result;
 };
-function draftmonsprint4(arg, nrshown, by, room) {
+function draftmonsprint4(arg, nrshown, by, room, monToColor) {
 	//arg=arg.sort();
 	var result = "suggestions:";
 	if (toId(by) != toId(room)) {
@@ -3384,7 +3384,7 @@ function draftmonsprint4(arg, nrshown, by, room) {
 
 		}
 		else {
-			var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="background-color: rgb(204, 255, 204) ">';
+			var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="background-color:' + monToColor[name] + '">';
 			word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a>';
 			word = word + '</button>';
 			result = result + word;
