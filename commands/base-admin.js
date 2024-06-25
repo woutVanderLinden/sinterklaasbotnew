@@ -463,8 +463,8 @@ exports.commands = {
 			if (global.draftvalues.turnorder == undefined) {
 				global.draftvalues.turnorder = [];
 			}
-			if (global.draftvalues.turnorder.includes(toId(by))) {
-				return this.send(global.draftvalues.draftroom, toId(by) + " already joined the draft")
+			if (global.draftvalues.turnorder.includes(toId(arg))) {
+				return this.send(global.draftvalues.draftroom, toId(arg) + " already joined the draft")
 			}
 			else {
 
