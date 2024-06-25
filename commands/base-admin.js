@@ -4440,14 +4440,14 @@ function PlayerPrintoutStandard(list) {
 			}
 		}
 	}
-	var word = '!htmlbox  <div><div> <div  style="padding: 12px; border: 1px solid black;" class="box">' +
+	var word = '!htmlbox  <div><div> <div  style="height: 100px; padding: 12px; border: 1px solid black;" class="box">' +
 		'\t<div style="display: inline-flex;float: left;"><h1>' + username + '</h1> </div>' +
 		'\t<div style="display: inline-flex;width: 100px; height 40px ;padding: 6px; border: 1px solid black;float: right;">' +
 
 		'\t<center>Erekredieten:<h3>'+  global.draftvalues.users[username]["erekredieten"] + '</h3></center></div><right>'+
 		'\t<div style="display: inline-flex;width: 100px; height 40px; padding: 12px; border: 0px solid black;float: right;"></div>' +
 	'<div  style="display: inline-flex;width: 100px; height 40px; padding: 6px; border: 1px solid black;float: right;" class="box">'+
-		'<center> Picks left: <h3>' + val +'</h3></center></div></right></div></div><div style="background-color: #333333 "><h2>' + draftmonsprint6(newlist) + '</h2></div><div>'
+		'<center> Picks left: <h3>' + val +'</h3></center></div></right></div></div><div  "><h2 style="background-color: silver>' + draftmonsprint6(newlist) + '</h2></div><div>'
 
 	var tier1number = global.draftvalues.users[username]["tieredpicks"].filter(x => x==1).length;
 	var tier2number = global.draftvalues.users[username]["tieredpicks"].filter(x => x==2).length;
@@ -4455,7 +4455,7 @@ function PlayerPrintoutStandard(list) {
 	var tier4number = global.draftvalues.users[username]["tieredpicks"].filter(x => x==4).length;
 	var tier5number = global.draftvalues.users[username]["tieredpicks"].filter(x => x==5).length;
 
-	word = word  + 'Recommend a Pokemon: <p><button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend '+ remainvalue +'" style="background-color: rgb(204, 204, 255)">recommend </button></p><div>';
+	word = word  + 'Recommend a Pokemon: <button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend '+ remainvalue +'" style="background-color: rgb(204, 204, 255)">recommend </button><div>';
 	var index = 1;
 	word = word + " <table border=\"1\">" +
 		"        <col width=\"150\" align=\"char\" char=\".\"" +
