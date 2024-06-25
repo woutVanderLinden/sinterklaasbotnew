@@ -18,7 +18,7 @@ exports.port = 8000;
 exports.serverid = 'showdown';
 
 exports.auth = {
-	admin: ['kingbaruk','gangstersamurott','yveltalnl','damnright'],
+	admin: ['kingbaruk','gangstersamurott','yveltalnl','damnright','greencroagunk'],
 	coder: [],
 	alpha: [],
 	beta: [],
@@ -93,7 +93,8 @@ exports.exceptions = {
 	'yveltalnl':true,
     'gangstersamurott':true,
      'damnright':true,
-	'cc': true
+	'cc': true,
+	'greencroagunk':true
 	 
 };
 
