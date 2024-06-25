@@ -2720,7 +2720,6 @@ exports.commands = {
 				k++;
 			}
 			var maxscore = Math.max.apply(Math, values);
-			console.log("max " + maxscore);
 			var index = values.indexOf(maxscore);
 			if (maxscore == values[0] && maxscore == values[1]) {
 				index = Math.floor(Math.random() * values.length);
@@ -2730,9 +2729,7 @@ exports.commands = {
 
 			if ((chosensimilarmon in global.draftvalues.mondata)) {
 				var randmon = Math.floor(Math.random() * teamChosen.length);
-				console.log(randmon);
 				chosensimilarmon = teamChosen[randmon];
-				console.log(chosensimilarmon);
 				//pikachu
 				filterroles = mostProminentRole(chosensimilarmon);
 			}
@@ -3127,7 +3124,7 @@ exports.commands = {
 			filterrolesnumber++;
 		}
 		response = '!htmlbox <div  style=\'color: black; border: 2px solid red; background-color: rgb(204, 255, 204); padding: 4px;\'>' + response + '</div>';
-		console.log(response);
+		console.log(monToColor);
 		//thislistsix
 		this.send(global.draftvalues.draftroom, response);
 		//global.draftvalues.users[name]["erekredieten"]
