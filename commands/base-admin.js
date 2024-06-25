@@ -3352,7 +3352,7 @@ function draftmonsprintroles(arg, role, nrshown, by, room, monToColor) {
 
 			}
 			else {
-				var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:100px; background-color:' + monToColor[name] + '">';
+				var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:150px; background-color:' + monToColor[name] + '">';
 				word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a>';
 				word = word + '</button>';
 				result = result + word;
@@ -3418,10 +3418,10 @@ function draftmonsprint5(arg, color) {
 		var name = arg[i];
 		var word = "";
 		if (global.draftvalues.mondata[arg[i]]["Typing 2"] == undefined) {
-			word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:100px; background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
+			word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:150px; background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
 		}
 		else {
-			word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:100px; background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
+			word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:150px; background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
 		}
 		word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a>';
 		word = word + '</button>';
