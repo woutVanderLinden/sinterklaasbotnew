@@ -2439,6 +2439,7 @@ exports.commands = {
 		var posfilterroles = ["entryhazards", "hazardremoval", "itemremover", "pivot", "cleric", "pivot", "scarf", "physicalsweeper", "specialsweeper", "physicalbulkyattacker", "specialbulkyattacker", "physicalwall", "specialwall", "physicalsetup", "specialsetup", "status", "priority", "speedcontrol", "sun", "rain", "hail", "sand"];
 		var filterroles = [];
 		var x = 0;
+		var monToColor = {};
 		var tierrecommend = false;
 		var pointrecommend = false;
 		while (x < args.length) {
@@ -2646,6 +2647,7 @@ exports.commands = {
 
 		var tierrecommend = false;
 		var pointrecommend = false;
+		var monToColor = {};
 		var maxpoints = 0;
 		var postypings = ["Grass", "Fire", "Water", "Ice", "Bug", "Normal", "Flying", "Poison", "Psychic", "Ghost", "Fighting", "Rock", "Ground", "Electric", "Dragon", "Fairy", "Dark", "Steel"];
 		var filtertypings = [];
@@ -3061,14 +3063,17 @@ exports.commands = {
 							t = t + 0.1;
 
 						}
+
 						listsix.push(t);
 						listsix.sort();
 						best[t] = {};
 						best[t]["name"] = possiblepic[j];
 						if (tierrecommend) {
 							best[t]["credits"] = draftmons["tierlist"][tier]["points"];
+							monToColor[t] = global.colorForTiers[tier];
 						} else {
 							best[t]["credits"] = draftmons["tierlist"]["Tier" + g]["points"];
+							monToColor[t] = global.colorForTiers["Tier" + g];
 						}
 
 					} else {
@@ -3083,8 +3088,10 @@ exports.commands = {
 						best[t]["name"] = possiblepic[j];
 						if (tierrecommend) {
 							best[t]["credits"] = draftmons["tierlist"][tier]["points"];
+							monToColor[t] = global.colorForTiers[tier];
 						} else {
 							best[t]["credits"] = draftmons["tierlist"]["Tier" + g]["points"];
+							monToColor[t] = global.colorForTiers["Tier" + g];
 						}
 						if (filtered) {
 							if (listsix.length > draftsshown) {
@@ -3116,7 +3123,7 @@ exports.commands = {
 				y++;
 			}
 
-			response = response + draftmonsprintroles(newlistsix, filterroles[filterrolesnumber], draftsshown, by, global.draftvalues.draftroom);
+			response = response + draftmonsprintroles(newlistsix, filterroles[filterrolesnumber], draftsshown, by, global.draftvalues.draftroom, monToColor);
 			filterrolesnumber++;
 		}
 		response = '!htmlbox <div  style=\'color: black; border: 2px solid red; background-color: rgb(204, 255, 204); padding: 4px;\'>' + response + '</div>';
@@ -3323,7 +3330,7 @@ function draftmonsprint6(arg) {
 	result = result;
 	return result;
 };
-function draftmonsprintroles(arg, role, nrshown, by, room) {
+function draftmonsprintroles(arg, role, nrshown, by, room, monToColor) {
 	//arg=arg.sort();
 	var result = "suggestions:";
 
@@ -3345,7 +3352,7 @@ function draftmonsprintroles(arg, role, nrshown, by, room) {
 
 			}
 			else {
-				var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="background-color: rgb(204, 255, 204) ">';
+				var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:100px; background-color:' + monToColor[name] + '">';
 				word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a>';
 				word = word + '</button>';
 				result = result + word;
@@ -3411,10 +3418,10 @@ function draftmonsprint5(arg, color) {
 		var name = arg[i];
 		var word = "";
 		if (global.draftvalues.mondata[arg[i]]["Typing 2"] == undefined) {
-			word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
+			word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:100px; background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
 		}
 		else {
-			word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
+			word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:100px; background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
 		}
 		word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a>';
 		word = word + '</button>';

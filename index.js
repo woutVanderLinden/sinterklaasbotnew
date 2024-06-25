@@ -82,7 +82,7 @@ try {
 	global.draftvalues.currenttier={};
 	global.draftvalues.pointdrafting=false;
 	global.colors = require('colors');
-	global.colorForTiers = {tier1:"rgb(250,100,100)", tier2:"rgb(250,150,100)", tier3:"rgb(250,250,100)", tier4:"rgb(150,250,80)", tier5:"rgb(100,160,250)"};
+	global.colorForTiers = {tier1:"rgb(250,100,100)", tier2:"rgb(250,150,100)", tier3:"rgb(250,250,100)", tier4:"rgb(150,250,80)", tier5:"rgb(120,180,250)"};
 	global.util = require('util');
 	global.fs = require('fs');
 	global.path = require('path');
