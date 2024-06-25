@@ -4482,13 +4482,13 @@ function PlayerPrintoutStandard(list) {
 		"              <td><center><h2>"+tier5number+"</h2></center></td>" +
 		"        </tr>" +
 		"        <tr>" +
-		"            <td></div><div><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier1\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier1</button></td>" +
+		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier1\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier1</button></td>" +
 		"           <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier2\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier2</button></td>" +
 		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier3\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier3</button></td>" +
 		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier4\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier4</button></td>" +
 		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier5\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier5</button></td>" +
 		"        </tr>" +
-		"    </table>";
+		"    </table></div></div>";
 	return word;
 }
 
