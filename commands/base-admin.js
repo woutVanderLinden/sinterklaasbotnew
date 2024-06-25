@@ -3312,7 +3312,7 @@ function draftmonsprint6(arg) {
 
 
 	}
-	if(arg.length>0) {
+	if(arg.length > 0) {
 		result = result.substring(0, result.length - 1);
 	}
 
@@ -4421,7 +4421,7 @@ function weaknessForPokemon(monname) {
 function PlayerPrintoutStandard(list) {
 	var username = list[0];
 	var newlist = global.draftvalues.users[username]["draftedmons"];
-
+	var draftmons = global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)];
 	var val = global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
 	var tier1cost = draftmons["tierlist"]["Tier1"]["points"];
 	var tier2cost = draftmons["tierlist"]["Tier2"]["points"];
