@@ -4458,7 +4458,7 @@ function PlayerPrintoutStandard(list) {
 		'\t<center>Erekredieten:<h3>'+  global.draftvalues.users[username]["erekredieten"] + '</h3></center></div><right>'+
 		'\t<div style="display: inline-flex;width: 100px; height 40px; padding: 12px; border: 0px solid black;float: right;"></div>' +
 	'<div  style="display: inline-flex;width: 100px; height 40px; padding: 6px; border: 1px solid black;float: right;" class="box">'+
-		'<center> Picks left: <h3>' + val +'</h3></center></div></right></div></div><div style="height:30px;background-color: silver;  border: 2px solid black;">' + draftmonsprint6(newlist) + '</div><div>'
+		'<center> Picks left: <h3>' + val +'</h3></center></div></right></div></div><div style="padding:5px;background-color: silver;  border: 2px solid black;">' + draftmonsprint6(newlist) + '</div><div>'
 
 	var tier1number = global.draftvalues.users[username]["tieredpicks"].filter(x => x==1).length;
 	var tier2number = global.draftvalues.users[username]["tieredpicks"].filter(x => x==2).length;
