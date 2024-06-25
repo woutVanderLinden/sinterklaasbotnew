@@ -4440,10 +4440,10 @@ function PlayerPrintoutStandard(list) {
 			}
 		}
 	}
-	var word = '!htmlbox  <div><div> <div  style="padding: 12px; border: 1px solid black;" class="box">\n' +
-		'\t<div style="display: inline-flex;float: left;"><h1>' + username + '</h1></div>\n' +
-		'\t<div style="display: inline-flex;width: 20%; padding: 12px; border: 0px solid black;float: left;"></div>\n' +
-		'\t<div style="display: inline-flex;width: 8%;padding: 6px; border: 1px solid black;margin 0 auto;">\n' +
+	var word = '!htmlbox  <div><div> <div  style="padding: 12px; border: 1px solid black;" class="box">' +
+		'\t<div style="display: inline-flex;float: left;"><h1>' + username + '</h1></div>' +
+		'\t<div style="display: inline-flex;width: 20%; padding: 12px; border: 0px solid black;float: left;"></div>' +
+		'\t<div style="display: inline-flex;width: 8%;padding: 6px; border: 1px solid black;margin 0 auto;">' +
 		'\t<center>Erekredieten:<h3>'+  global.draftvalues.users[username]["erekredieten"] + '</h3></center></div><right>'+
 	'<div  style="display: inline-flex;width: 5%; padding: 6px; border: 1px solid black;float: right;" class="box">'+
 		'<center> Picks left: <h3>' + val +'</h3></center></div></right></div></div><div>'
@@ -4456,41 +4456,39 @@ function PlayerPrintoutStandard(list) {
 
 	word = word + draftmonsprint6(newlist) + '<center>Recommend a Pokemon: <p><button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend '+ remainvalue +'" style="background-color: rgb(204, 204, 255)">recommend </button></p></center><div>\n';
 	var index = 1;
-	word = word + " <table border=\"1\">\n" +
+	word = word + " <table border=\"1\">" +
 		"          \n" +
 		"        <col width=\"150\" align=\"char\" char=\".\"\n" +
-		"                    valign=\"top\" charoff =\"3\"  style=\"background-color:rgb(250,100,100);color:#ffffff;\">  \n" +
+		"                    valign=\"top\" charoff =\"3\"  style=\"background-color:rgb(250,100,100);color:#ffffff;\">  " +
 		"        <col width=\"150\" align=\"char\" char=\".\" \n" +
-		"                    valign=\"top\" charoff =\"3\"style=\"background-color:rgb(250,150,100);\">  \n" +
+		"                    valign=\"top\" charoff =\"3\"style=\"background-color:rgb(250,150,100);\">  " +
 		"        <col width=\"150\" align=\"char\" char=\".\"\n" +
-		"                    valign=\"top\" style=\"background-color:rgb(250,250,100)\"> \n" +
+		"                    valign=\"top\" style=\"background-color:rgb(250,250,100)\"> " +
 		"        <col width=\"150\" align=\"char\" char=\".\"\n" +
-		"                    valign=\"top\"style=\"background-color:rgb(150,250,80)\">  \n" +
+		"                    valign=\"top\"style=\"background-color:rgb(150,250,80)\">  " +
 		"        <col width=\"150\" align=\"char\" char=\".\"\n" +
-		"                    valign=\"top\"style=\"background-color:rgb(100,160,250)\"> \n" +
-		"                    \n" +
-		"                     \n" +
-		"        <tr>\n" +
-		"            <th  ><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 1</h2> 160</button></th>\n" +
-		"            <th><h2><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier2\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 2</h2> 120</button></th>\n" +
-		"            <th><h2><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier3\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 3</h2> 100</button></th>\n" +
-		"            <th><h2><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier4\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 4</h2> 60</button></th>\n" +
-		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier5\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 5</h2> 40</button></th>\n" +
-		"        </tr>\n" +
-		"        <tr>\n" +
-		"            <td><center><h2>"+tier1number+"</h2></center></td>\n" +
-		"            <td><center><h2>"+tier2number+"</h2></center></td>\n" +
-		"            <td><center><h2>"+tier3number+"</h2></center></td>\n" +
-		"             <td><center><h2>"+tier4number+"</h2></center></td>\n" +
-		"              <td><center><h2>"+tier5number+"</h2></center></td>\n" +
-		"        </tr>\n" +
-		"        <tr>\n" +
-		"            <td></div><div><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier1\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier1</button></td>\n" +
-		"           <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier2\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier2</button></td>\n" +
-		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier3\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier3</button></td>\n" +
-		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier4\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier4</button></td>\n" +
-		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier5\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier5</button></td>\n" +
-		"        </tr>\n" +
+		"                    valign=\"top\"style=\"background-color:rgb(100,160,250)\"> " +
+		"        <tr>" +
+		"            <th  ><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 1</h2> 160</button></th>" +
+		"            <th><h2><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier2\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 2</h2> 120</button></th>" +
+		"            <th><h2><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier3\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 3</h2> 100</button></th>" +
+		"            <th><h2><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier4\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 4</h2> 60</button></th>" +
+		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier5\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 5</h2> 40</button></th>" +
+		"        </tr>" +
+		"        <tr>" +
+		"            <td><center><h2>"+tier1number+"</h2></center></td>" +
+		"            <td><center><h2>"+tier2number+"</h2></center></td>" +
+		"            <td><center><h2>"+tier3number+"</h2></center></td>" +
+		"             <td><center><h2>"+tier4number+"</h2></center></td>" +
+		"              <td><center><h2>"+tier5number+"</h2></center></td>" +
+		"        </tr>" +
+		"        <tr>" +
+		"            <td></div><div><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier1\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier1</button></td>" +
+		"           <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier2\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier2</button></td>" +
+		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier3\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier3</button></td>" +
+		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier4\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier4</button></td>" +
+		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier5\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier5</button></td>" +
+		"        </tr>" +
 		"    </table>";
 	return word;
 }
