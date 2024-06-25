@@ -4423,21 +4423,26 @@ function PlayerPrintoutStandard(list) {
 	var newlist = global.draftvalues.users[username]["draftedmons"];
 
 	var val = global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
+	var tier1cost = draftmons["tierlist"]["Tier1"]["points"];
+	var tier2cost = draftmons["tierlist"]["Tier2"]["points"];
+	var tier3cost = draftmons["tierlist"]["Tier3"]["points"];
+	var tier4cost = draftmons["tierlist"]["Tier4"]["points"];
+	var tier5cost = draftmons["tierlist"]["Tier5"]["points"];
 
-	var remainvalue =  global.draftvalues.users[username]["erekredieten"]-40*(global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)]-global.draftvalues.users[username]["tieredpicks"].length -1);
-	if(global.draftvalues.users[username]["tieredpicks"].includes(1) && remainvalue < 160){
+	var remainvalue =  global.draftvalues.users[username]["erekredieten"]-40*(global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)]-global.draftvalues.users[username]["tieredpicks"].length);
+	if(global.draftvalues.users[username]["tieredpicks"].includes(1) && remainvalue < tier1cost){
 		remainvalue = "Tier1";
 	}
 	else{
-		if(global.draftvalues.users[username]["tieredpicks"].includes(2) && remainvalue < 120){
+		if(global.draftvalues.users[username]["tieredpicks"].includes(2) && remainvalue < tier2cost){
 			remainvalue = "Tier2";
 		}
 		else{
-			if(global.draftvalues.users[username]["tieredpicks"].includes(3) && remainvalue < 100){
+			if(global.draftvalues.users[username]["tieredpicks"].includes(3) && remainvalue < tier3cost){
 				remainvalue = "Tier3";
 			}
 			else{
-				if(global.draftvalues.users[username]["tieredpicks"].includes(4) && remainvalue < 60){
+				if(global.draftvalues.users[username]["tieredpicks"].includes(4) && remainvalue < tier4cost){
 					remainvalue = "Tier4";
 				}
 			}
@@ -4458,6 +4463,8 @@ function PlayerPrintoutStandard(list) {
 	var tier4number = global.draftvalues.users[username]["tieredpicks"].filter(x => x==4).length;
 	var tier5number = global.draftvalues.users[username]["tieredpicks"].filter(x => x==5).length;
 
+
+
 	word = word  + '<div> Recommend a Pokemon: <button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend '+ remainvalue +'" style="background-color: rgb(204, 204, 255)">recommend </button></div><div>';
 	var index = 1;
 	word = word + " <table border=\"1\">" +
@@ -4472,11 +4479,11 @@ function PlayerPrintoutStandard(list) {
 		"        <col width=\"150\" align=\"char\" char=\".\"" +
 		"                    valign=\"top\"style=\"background-color:rgb(100,160,250)\"> " +
 		"        <tr>" +
-		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 1</h2> 160</button></th>" +
-		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier2\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 2</h2> 120</button></th>" +
-		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier3\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 3</h2> 100</button></th>" +
-		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier4\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 4</h2> 60</button></th>" +
-		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier5\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 5</h2> 40</button></th>" +
+		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 1</h2>" + tier1cost + "</button></th>" +
+		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier2\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 2</h2>" + tier2cost + "</button></th>" +
+		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier3\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 3</h2>" + tier3cost + "</button></th>" +
+		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier4\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 4</h2>" + tier4cost + "</button></th>" +
+		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier5\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 5</h2>" + tier5cost + "</button></th>" +
 		"        </tr>" +
 		"        <tr>" +
 		"            <td><center><h2 style=\"background-color:rgb(250,250,100,0)\">"+tier1number+"</h2></center></td>" +
