@@ -1284,7 +1284,7 @@ exports.commands = {
 
 		 */
 		this.reply("use ?draftable tier(x) to watch the corresponding tier. Or use the search or recommend function for a pick");
-		word = PlayerPrintoutStandard(list);
+		word = PlayerPrintoutStandard(list,0);
 		console.log(word);
 
 		this.send(global.draftvalues.draftroom, word);
@@ -1638,14 +1638,14 @@ exports.commands = {
 	*///pick a new six mons to draft
 			var username = list[global.draftvalues.nextdrafter];
 			if (global.draftvalues.pointdrafting) {
-				word = PlayerPrintoutStandard(list);
+				word = PlayerPrintoutStandard(list,global.draftvalues.nextdrafter);
 				console.log(word);
 				this.send(global.draftvalues.draftroom, word);
 				//return this.reply( name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.draftvalues.users[username]["erekredieten"]+" tieredpicks:"+global.draftvalues.users[username]["tieredpicks"]+" )");
 			}
 			else {
 				var username = global.draftvalues.turnorder[0];
-				word = PlayerPrintoutStandard(list);
+				word = PlayerPrintoutStandard(list,global.draftvalues.nextdrafter);
 				console.log(word);
 				this.send(global.draftvalues.draftroom, word);
 				return this.reply(name + " drafted " + arg + ", the next drafter is " + username);
@@ -1758,13 +1758,13 @@ exports.commands = {
 	*///pick a new six mons to draft
 			var username = list[global.draftvalues.nextdrafter];
 			if (global.draftvalues.pointdrafting) {
-				word = PlayerPrintoutStandard(list);
+				word = PlayerPrintoutStandard(list,global.draftvalues.nextdrafter);
 				console.log(word);
 				this.send(global.draftvalues.draftroom, word);
 				return this.reply(name + " drafted " + arg + ", the next drafter is " + username + " (Erekredieten:" + global.draftvalues.users[username]["erekredieten"] + " tieredpicks:" + global.draftvalues.users[username]["tieredpicks"] + " )");
 			}
 			else {
-				word = PlayerPrintoutStandard(list);
+				word = PlayerPrintoutStandard(list,global.draftvalues.nextdrafter);
 				console.log(word);
 				this.send(global.draftvalues.draftroom, word);
 				return this.reply(name + " drafted " + arg + ", the next drafter is " + username);
@@ -2251,13 +2251,13 @@ exports.commands = {
 			this.send(global.draftvalues.draftroom, username + " turn");
 			if (global.draftvalues.pointdrafting) {
 
-				word = PlayerPrintoutStandard(list);
+				word = PlayerPrintoutStandard(list,global.draftvalues.nextdrafter);
 				console.log(word);
 				this.send(global.draftvalues.draftroom, word);
 
 			}
 			else {
-				word = PlayerPrintoutStandard(list);
+				word = PlayerPrintoutStandard(list,global.draftvalues.nextdrafter);
 				console.log(word);
 				this.send(global.draftvalues.draftroom, word);
 				return this.send(global.draftvalues.draftroom, name + " drafted " + arg + ", the next drafter is " + username + " picks left: " + picksleft);
@@ -4430,8 +4430,8 @@ function weaknessForPokemon(monname) {
 	}
 	return toreturn;
 }
-function PlayerPrintoutStandard(list) {
-	var username = list[0];
+function PlayerPrintoutStandard(list,i) {
+	var username = list[i];
 	var newlist = global.draftvalues.users[username]["draftedmons"];
 	var draftmons = global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)];
 	var val = global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
