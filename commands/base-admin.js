@@ -4481,15 +4481,15 @@ function PlayerPrintoutStandard(list,i) {
 	var index = 1;
 	word = word + " <table border=\"1\">" +
 		"        <col width=\"150\" align=\"char\" char=\".\"" +
-		"                    valign=\"top\" charoff =\"3\"  style=\"background-color:rgb(250,100,100);color:#ffffff;\">  " +
+		"                    valign=\"top\" charoff =\"3\"  style=\"background-color:" + global.colorForTiers["Tier1"] + ";color:#ffffff;\">  " +
 		"        <col width=\"150\" align=\"char\" char=\".\" " +
-		"                    valign=\"top\" charoff =\"3\"style=\"background-color:rgb(250,150,100);\">  " +
+		"                    valign=\"top\" charoff =\"3\"style=\"background-color:" + global.colorForTiers["Tier2"] + ";\">  " +
 		"        <col width=\"150\" align=\"char\" char=\".\"" +
-		"                    valign=\"top\" style=\"background-color:rgb(250,250,100)\"> " +
+		"                    valign=\"top\" style=\"background-color:" + global.colorForTiers["Tier3"] + "\"> " +
 		"        <col width=\"150\" align=\"char\" char=\".\"" +
-		"                    valign=\"top\"style=\"background-color:rgb(150,250,80)\">  " +
+		"                    valign=\"top\"style=\"background-color:" + global.colorForTiers["Tier4"] + "\">  " +
 		"        <col width=\"150\" align=\"char\" char=\".\"" +
-		"                    valign=\"top\"style=\"background-color:rgb(100,160,250)\"> " +
+		"                    valign=\"top\"style=\"background-color:" + global.colorForTiers["Tier5"] + "\"> " +
 		"        <tr>" +
 		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 1</h2>" + tier1cost + "</button></th>" +
 		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier2\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 2</h2>" + tier2cost + "</button></th>" +
