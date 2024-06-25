@@ -1283,28 +1283,9 @@ exports.commands = {
 
 		 */
 		this.reply("use ?draftable tier(x) to watch the corresponding tier. Or use the search or recommend function for a pick");
-		var username = list[0];
-		var newlist = global.draftvalues.users[username]["draftedmons"];
-		var val = global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
-		var word = '!htmlbox  <div><h1>' + username + '</h1><div>' + draftmonsprint6(newlist) + '</div><h2>tierhelper </h2><div> Erekredieten: ' + global.draftvalues.users[username]["erekredieten"] + ' tieredpicks: ' + global.draftvalues.users[username]["tieredpicks"] + " picksleft: " + val + '</div> ';
-		var index = 1;
-		word = word + "<div>";
-		while (index < 6) {
-			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier' + index + '" style="background-color: rgb(204, 255, 204)">Tier' + index + "</button>";
-			index++;
-		}
-		word = word + "</div>";
-		word = word + "<div>";
-		word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
-
-		var index2 = 1;
-		while (index2 < 6) {
-			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier' + index2 + '" style="background-color: rgb(204, 204, 255)">recommend Tier' + index2 + "</button>";
-			index2++;
-		}
-		word = word + "</div>";
-		word = word + "</div>";
+		word = PlayerPrintoutStandard(list);
 		console.log(word);
+
 		this.send(global.draftvalues.draftroom, word);
 		return this.reply(' the next drafter is ' + list[0]);
 	},
@@ -1656,50 +1637,14 @@ exports.commands = {
 	*///pick a new six mons to draft
 			var username = list[global.draftvalues.nextdrafter];
 			if (global.draftvalues.pointdrafting) {
-				var newlist = global.draftvalues.users[username]["draftedmons"];
-				var val = global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
-				var word = '!htmlbox  <div><h1>' + username + '</h1><div>' + draftmonsprint6(newlist) + '</div><h2>tierhelper </h2><div> Erekredieten: ' + global.draftvalues.users[username]["erekredieten"] + ' tieredpicks: ' + global.draftvalues.users[username]["tieredpicks"] + " picksleft: " + val + '</div> '; var index = 1;
-				word = word + "<div>";
-				while (index < 6) {
-					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier' + index + '" style="background-color: rgb(204, 255, 204)">Tier' + index + "</button>";
-					index++;
-				}
-				word = word + "</div>";
-				word = word + "<div>";
-				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
-
-				var index2 = 1;
-				while (index2 < 6) {
-					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier' + index2 + '" style="background-color: rgb(204, 204, 255)">recommend Tier' + index2 + "</button>";
-					index2++;
-				}
-				word = word + "</div>";
-				word = word + "</div>";
+				word = PlayerPrintoutStandard(list);
 				console.log(word);
 				this.send(global.draftvalues.draftroom, word);
 				//return this.reply( name +" drafted "+arg+", the next drafter is "+username+ " (Erekredieten:"+global.draftvalues.users[username]["erekredieten"]+" tieredpicks:"+global.draftvalues.users[username]["tieredpicks"]+" )");
 			}
 			else {
 				var username = global.draftvalues.turnorder[0];
-				var newlist = global.draftvalues.users[username]["draftedmons"];
-				var val = global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
-				var word = '!htmlbox  <div><h1>' + username + '</h1><div>' + draftmonsprint6(newlist) + '</div><h2>tierhelper </h2><div> Erekredieten: ' + global.draftvalues.users[username]["erekredieten"] + ' tieredpicks: ' + global.draftvalues.users[username]["tieredpicks"] + " picksleft: " + val + '</div> '; var index = 1;
-				word = word + "<div>";
-				while (index < 6) {
-					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier' + index + '" style="background-color: rgb(204, 255, 204)">Tier' + index + "</button>";
-					index++;
-				}
-				word = word + "</div>";
-				word = word + "<div>";
-				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
-
-				var index2 = 1;
-				while (index2 < 6) {
-					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier' + index2 + '" style="background-color: rgb(204, 204, 255)">recommend Tier' + index2 + "</button>";
-					index2++;
-				}
-				word = word + "</div>";
-				word = word + "</div>";
+				word = PlayerPrintoutStandard(list);
 				console.log(word);
 				this.send(global.draftvalues.draftroom, word);
 				return this.reply(name + " drafted " + arg + ", the next drafter is " + username);
@@ -1812,49 +1757,13 @@ exports.commands = {
 	*///pick a new six mons to draft
 			var username = list[global.draftvalues.nextdrafter];
 			if (global.draftvalues.pointdrafting) {
-				var newlist = global.draftvalues.users[username]["draftedmons"];
-				var val = global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
-				var word = '!htmlbox  <div><h1>' + username + '</h1><div>' + draftmonsprint6(newlist) + '</div><h2>tierhelper </h2><div> Erekredieten: ' + global.draftvalues.users[username]["erekredieten"] + ' tieredpicks: ' + global.draftvalues.users[username]["tieredpicks"] + " picksleft: " + val + '</div> '; var index = 1;
-				word = word + "<div>";
-				while (index < 6) {
-					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier' + index + '" style="background-color: rgb(204, 255, 204)">Tier' + index + "</button>";
-					index++;
-				}
-				word = word + "</div>";
-				word = word + "<div>";
-				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
-
-				var index2 = 1;
-				while (index2 < 6) {
-					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier' + index2 + '" style="background-color: rgb(204, 204, 255)">recommend Tier' + index2 + "</button>";
-					index2++;
-				}
-				word = word + "</div>";
-				word = word + "</div>";
+				word = PlayerPrintoutStandard(list);
 				console.log(word);
 				this.send(global.draftvalues.draftroom, word);
 				return this.reply(name + " drafted " + arg + ", the next drafter is " + username + " (Erekredieten:" + global.draftvalues.users[username]["erekredieten"] + " tieredpicks:" + global.draftvalues.users[username]["tieredpicks"] + " )");
 			}
 			else {
-				var newlist = global.draftvalues.users[username]["draftedmons"];
-				var val = global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
-				var word = '!htmlbox  <div><h1>' + username + '</h1><div>' + draftmonsprint6(newlist) + '</div><h2>tierhelper </h2><div> Erekredieten: ' + global.draftvalues.users[username]["erekredieten"] + ' tieredpicks: ' + global.draftvalues.users[username]["tieredpicks"] + " picksleft: " + val + '</div> '; var index = 1;
-				word = word + "<div>";
-				while (index < 6) {
-					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier' + index + '" style="background-color: rgb(204, 255, 204)">Tier' + index + "</button>";
-					index++;
-				}
-				word = word + "</div>";
-				word = word + "<div>";
-				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
-
-				var index2 = 1;
-				while (index2 < 6) {
-					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier' + index2 + '" style="background-color: rgb(204, 204, 255)">recommend Tier' + index2 + "</button>";
-					index2++;
-				}
-				word = word + "</div>";
-				word = word + "</div>";
+				word = PlayerPrintoutStandard(list);
 				console.log(word);
 				this.send(global.draftvalues.draftroom, word);
 				return this.reply(name + " drafted " + arg + ", the next drafter is " + username);
@@ -2341,49 +2250,13 @@ exports.commands = {
 			this.send(global.draftvalues.draftroom, username + " turn");
 			if (global.draftvalues.pointdrafting) {
 
-				var newlist = global.draftvalues.users[username]["draftedmons"];
-				var val = global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
-				var word = '!htmlbox  <div><h1>' + username + '</h1><div>' + draftmonsprint6(newlist) + '</div><h2>tierhelper </h2><div> Erekredieten: ' + global.draftvalues.users[username]["erekredieten"] + ' tieredpicks: ' + global.draftvalues.users[username]["tieredpicks"] + " picksleft: " + val + '</div> '; var index = 1;
-				word = word + "<div>";
-				while (index < 6) {
-					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier' + index + '" style="background-color: rgb(204, 255, 204)">Tier' + index + "</button>";
-					index++;
-				}
-				word = word + "</div>";
-				word = word + "<div>";
-				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
-
-				var index2 = 1;
-				while (index2 < 6) {
-					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier' + index2 + '" style="background-color: rgb(204, 204, 255)">recommend Tier' + index2 + "</button>";
-					index2++;
-				}
-				word = word + "</div>";
-				word = word + "</div>";
+				word = PlayerPrintoutStandard(list);
 				console.log(word);
 				this.send(global.draftvalues.draftroom, word);
 
 			}
 			else {
-				var newlist = global.draftvalues.users[username]["draftedmons"];
-				var val = global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
-				var word = '!htmlbox  <div><h1>' + username + '</h1><div>' + draftmonsprint6(newlist) + '</div><h2>tierhelper </h2><div> Erekredieten: ' + global.draftvalues.users[username]["erekredieten"] + ' tieredpicks: ' + global.draftvalues.users[username]["tieredpicks"] + " picksleft: " + val + '</div> '; var index = 1;
-				word = word + "<div>";
-				while (index < 6) {
-					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier' + index + '" style="background-color: rgb(204, 255, 204)">Tier' + index + "</button>";
-					index++;
-				}
-				word = word + "</div>";
-				word = word + "<div>";
-				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
-
-				var index2 = 1;
-				while (index2 < 6) {
-					word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier' + index2 + '" style="background-color: rgb(204, 204, 255)">recommend Tier' + index2 + "</button>";
-					index2++;
-				}
-				word = word + "</div>";
-				word = word + "</div>";
+				word = PlayerPrintoutStandard(list);
 				console.log(word);
 				this.send(global.draftvalues.draftroom, word);
 				return this.send(global.draftvalues.draftroom, name + " drafted " + arg + ", the next drafter is " + username + " picks left: " + picksleft);
@@ -4541,4 +4414,85 @@ function weaknessForPokemon(monname) {
 		i++;
 	}
 	return toreturn;
-};
+}
+function PlayerPrintoutStandard(list) {
+	var username = list[0];
+	var newlist = global.draftvalues.users[username]["draftedmons"];
+
+	var val = global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
+
+	var remainvalue =  global.draftvalues.users[username]["erekredieten"]-40*(global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)]+global.draftvalues.users[username]["tieredpicks"].length -1);
+	if(global.draftvalues.users[username]["tieredpicks"].includes(1) && remainvalue < 160){
+		remainvalue = "Tier1";
+	}
+	else{
+		if(global.draftvalues.users[username]["tieredpicks"].includes(2) && remainvalue < 120){
+			remainvalue = "Tier2";
+		}
+		else{
+			if(global.draftvalues.users[username]["tieredpicks"].includes(3) && remainvalue < 100){
+				remainvalue = "Tier3";
+			}
+			else{
+				if(global.draftvalues.users[username]["tieredpicks"].includes(4) && remainvalue < 60){
+					remainvalue = "Tier4";
+				}
+			}
+		}
+	}
+	var word = '!htmlbox  <div><div> <div  style="padding: 12px; border: 1px solid black;" class="box">\n' +
+		'\t<div style="display: inline-flex;float: left;"><h1>' + username + '</h1></div>\n' +
+		'\t<div style="display: inline-flex;width: 20%; padding: 12px; border: 0px solid black;float: left;"></div>\n' +
+		'\t<div style="display: inline-flex;width: 8%;padding: 6px; border: 1px solid black;margin 0 auto;">\n' +
+		'\t<center>Erekredieten:<h3>'+  global.draftvalues.users[username]["erekredieten"] + '</h3></center></div><right>'+
+	'<div  style="display: inline-flex;width: 5%; padding: 6px; border: 1px solid black;float: right;" class="box">'+
+		'<center> Picks left: <h3>' + val +'</h3></center></div></right></div></div><div>'
+
+	var tier1number = global.draftvalues.users[username]["tieredpicks"].filter(x => x==1).length;
+	var tier2number = global.draftvalues.users[username]["tieredpicks"].filter(x => x==2).length;
+	var tier3number = global.draftvalues.users[username]["tieredpicks"].filter(x => x==3).length;
+	var tier4number = global.draftvalues.users[username]["tieredpicks"].filter(x => x==4).length;
+	var tier5number = global.draftvalues.users[username]["tieredpicks"].filter(x => x==5).length;
+
+	word = word + draftmonsprint6(newlist) + '<center>Recommend a Pokemon: <p><button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend '+ remainvalue +'" style="background-color: rgb(204, 204, 255)">recommend </button></p></center><div>\n';
+	var index = 1;
+	word = word + " <table border=\"1\">\n" +
+		"          \n" +
+		"        <col width=\"150\" align=\"char\" char=\".\"\n" +
+		"                    valign=\"top\" charoff =\"3\"  style=\"background-color:rgb(250,100,100);color:#ffffff;\">  \n" +
+		"        <col width=\"150\" align=\"char\" char=\".\" \n" +
+		"                    valign=\"top\" charoff =\"3\"style=\"background-color:rgb(250,150,100);\">  \n" +
+		"        <col width=\"150\" align=\"char\" char=\".\"\n" +
+		"                    valign=\"top\" style=\"background-color:rgb(250,250,100)\"> \n" +
+		"        <col width=\"150\" align=\"char\" char=\".\"\n" +
+		"                    valign=\"top\"style=\"background-color:rgb(150,250,80)\">  \n" +
+		"        <col width=\"150\" align=\"char\" char=\".\"\n" +
+		"                    valign=\"top\"style=\"background-color:rgb(100,160,250)\"> \n" +
+		"                    \n" +
+		"                     \n" +
+		"        <tr>\n" +
+		"            <th  ><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 1</h2> 160</button></th>\n" +
+		"            <th><h2><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier2\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 2</h2> 120</button></th>\n" +
+		"            <th><h2><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier3\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 3</h2> 100</button></th>\n" +
+		"            <th><h2><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier4\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 4</h2> 60</button></th>\n" +
+		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier5\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 5</h2> 40</button></th>\n" +
+		"        </tr>\n" +
+		"        <tr>\n" +
+		"            <td><center><h2>"+tier1number+"</h2></center></td>\n" +
+		"            <td><center><h2>"+tier2number+"</h2></center></td>\n" +
+		"            <td><center><h2>"+tier3number+"</h2></center></td>\n" +
+		"             <td><center><h2>"+tier4number+"</h2></center></td>\n" +
+		"              <td><center><h2>"+tier5number+"</h2></center></td>\n" +
+		"        </tr>\n" +
+		"        <tr>\n" +
+		"            <td></div><div><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier1\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier1</button></td>\n" +
+		"           <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier2\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier2</button></td>\n" +
+		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier3\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier3</button></td>\n" +
+		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier4\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier4</button></td>\n" +
+		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier5\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier5</button></td>\n" +
+		"        </tr>\n" +
+		"    </table>";
+	return word;
+}
+
+;
