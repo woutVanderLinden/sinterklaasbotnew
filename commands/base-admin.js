@@ -450,16 +450,16 @@ exports.commands = {
 			}
 
 
-			let rawdata = fs.readFileSync('DraftTest4.json');
-			let student = JSON.parse(rawdata);
-			console.log(student);
+			//let rawdata = fs.readFileSync('DraftTest4.json');
+			//let student = JSON.parse(rawdata);
+			//console.log(student);
 
 
-			global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)] = student;
+			//global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)] = student;
 			console.log('drafter added');
 
-			global.draftvalues.maxtier = student["length"];
-			console.log(global.draftvalues.users[toId(global.draftvalues.draftroom)]);
+			//global.draftvalues.maxtier = student["length"];
+			//console.log(global.draftvalues.users[toId(global.draftvalues.draftroom)]);
 			if (global.draftvalues.turnorder == undefined) {
 				global.draftvalues.turnorder = [];
 			}
