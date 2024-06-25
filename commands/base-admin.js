@@ -4454,19 +4454,18 @@ function PlayerPrintoutStandard(list) {
 	var tier4number = global.draftvalues.users[username]["tieredpicks"].filter(x => x==4).length;
 	var tier5number = global.draftvalues.users[username]["tieredpicks"].filter(x => x==5).length;
 
-	word = word + draftmonsprint6(newlist) + '<center>Recommend a Pokemon: <p><button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend '+ remainvalue +'" style="background-color: rgb(204, 204, 255)">recommend </button></p></center><div>\n';
+	word = word + draftmonsprint6(newlist) + '<center>Recommend a Pokemon: <p><button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend '+ remainvalue +'" style="background-color: rgb(204, 204, 255)">recommend </button></p></center><div>';
 	var index = 1;
 	word = word + " <table border=\"1\">" +
-		"          \n" +
-		"        <col width=\"150\" align=\"char\" char=\".\"\n" +
+		"        <col width=\"150\" align=\"char\" char=\".\"" +
 		"                    valign=\"top\" charoff =\"3\"  style=\"background-color:rgb(250,100,100);color:#ffffff;\">  " +
-		"        <col width=\"150\" align=\"char\" char=\".\" \n" +
+		"        <col width=\"150\" align=\"char\" char=\".\" " +
 		"                    valign=\"top\" charoff =\"3\"style=\"background-color:rgb(250,150,100);\">  " +
-		"        <col width=\"150\" align=\"char\" char=\".\"\n" +
+		"        <col width=\"150\" align=\"char\" char=\".\"" +
 		"                    valign=\"top\" style=\"background-color:rgb(250,250,100)\"> " +
-		"        <col width=\"150\" align=\"char\" char=\".\"\n" +
+		"        <col width=\"150\" align=\"char\" char=\".\"" +
 		"                    valign=\"top\"style=\"background-color:rgb(150,250,80)\">  " +
-		"        <col width=\"150\" align=\"char\" char=\".\"\n" +
+		"        <col width=\"150\" align=\"char\" char=\".\"" +
 		"                    valign=\"top\"style=\"background-color:rgb(100,160,250)\"> " +
 		"        <tr>" +
 		"            <th  ><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 1</h2> 160</button></th>" +
