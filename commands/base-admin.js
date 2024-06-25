@@ -2529,7 +2529,7 @@ exports.commands = {
 				maxlength = draftsshown;
 				if (listsix.length < maxlength) {
 					while (listsix.includes(t)) {
-						t = t + 0.1;
+						t = t + 0.0000000001;
 
 					}
 					listsix.push(t);
@@ -2550,7 +2550,7 @@ exports.commands = {
 				else {
 
 					while (listsix.includes(t)) {
-						t = t + 0.1;
+						t = t + 0.0000000001;
 
 					}
 					listsix.push(t);
