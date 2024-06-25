@@ -4468,10 +4468,10 @@ function PlayerPrintoutStandard(list) {
 		"        <col width=\"150\" align=\"char\" char=\".\"" +
 		"                    valign=\"top\"style=\"background-color:rgb(100,160,250)\"> " +
 		"        <tr>" +
-		"            <th  ><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 1</h2> 160</button></th>" +
-		"            <th><h2><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier2\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 2</h2> 120</button></th>" +
-		"            <th><h2><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier3\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 3</h2> 100</button></th>" +
-		"            <th><h2><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier4\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 4</h2> 60</button></th>" +
+		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 1</h2> 160</button></th>" +
+		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier2\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 2</h2> 120</button></th>" +
+		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier3\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 3</h2> 100</button></th>" +
+		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier4\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 4</h2> 60</button></th>" +
 		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier5\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2>Tier 5</h2> 40</button></th>" +
 		"        </tr>" +
 		"        <tr>" +
