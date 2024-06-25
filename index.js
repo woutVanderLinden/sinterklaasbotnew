@@ -26,7 +26,7 @@ var currentStartScore=100;
 var currentscore=0;
 var currentHighestBidder="";
 var postypings=["Grass","Fire","Water","Ice","Bug","Normal","Flying","Poison","Psychic","Ghost","Fighting","Rock","Ground","Electric","Dragon","Fairy","Dark","Steel"];
-var colorForTiers = {tier1:"rgb(250,100,100)", tier2:"rgb(250,150,100)", tier3:"rgb(250,250,100)", tier4:"rgb(150,250,80)", tier5:"rgb(100,160,250)"};
+
 var auctiondrafting=false;
 var pointpicks=0;
 startKeepAlive();
@@ -82,6 +82,7 @@ try {
 	global.draftvalues.currenttier={};
 	global.draftvalues.pointdrafting=false;
 	global.colors = require('colors');
+	global.colorForTiers = {tier1:"rgb(250,100,100)", tier2:"rgb(250,150,100)", tier3:"rgb(250,250,100)", tier4:"rgb(150,250,80)", tier5:"rgb(100,160,250)"};
 	global.util = require('util');
 	global.fs = require('fs');
 	global.path = require('path');
