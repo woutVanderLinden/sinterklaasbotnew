@@ -4488,7 +4488,7 @@ function PlayerPrintoutStandard(list) {
 		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier4\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier4</button></td>" +
 		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier5\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier5</button></td>" +
 		"        </tr>" +
-		"    </table></div></div>";
+		"    </table></div></div></div>";
 	return word;
 }
 
