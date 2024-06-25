@@ -3301,8 +3301,11 @@ function draftmonsprint2(arg, type) {
 
 function draftmonsprint6(arg) {
 	arg = arg.sort();
-	var result = '';
+	var result = 'none';
 	for (var i = 0; i < arg.length; i++) {
+		if(result == "none") {
+			result = "";
+		}
 		console.log(arg[i]);
 		//Do something
 		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
