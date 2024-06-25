@@ -869,15 +869,16 @@ exports.commands = {
 		var val = global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
 		var toreply = "!htmlbox Tier" + arg + " drafter " + list[global.draftvalues.nextdrafter] + " picks left:" + val;
 		arg = toId(arg);
+		var color = colorForTiers[arg]
 		//const str = 'abc efg';
 		const arg2 = arg.charAt(0).toUpperCase() + arg.slice(1);
 		var draftmons = global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)];
 		console.log(arg2);
 		if (toId(by) == toId(room)) {
-			return this.send(global.draftvalues.draftroom, toreply + "<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>" + draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"], "rgb(255, 204, 204)") + "</div>");
+			return this.send(global.draftvalues.draftroom, toreply + "<div  style='color: black; border: 2px solid red; background-color: "+color +"; padding: 4px;'>" + draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"], color) + "</div>");
 
 		} else {
-			return this.send(global.draftvalues.draftroom, toreply + "<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>" + draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"], "rgb(255, 204, 204)") + "</div>");
+			return this.send(global.draftvalues.draftroom, toreply + "<div  style='color: black; border: 2px solid red; background-color: "+color +"; padding: 4px;'>" + draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"], color) + "</div>");
 
 		}
 
@@ -4458,7 +4459,7 @@ function PlayerPrintoutStandard(list) {
 		'\t<center>Erekredieten:<h3>'+  global.draftvalues.users[username]["erekredieten"] + '</h3></center></div><right>'+
 		'\t<div style="display: inline-flex;width: 100px; height 40px; padding: 12px; border: 0px solid black;float: right;"></div>' +
 	'<div  style="display: inline-flex;width: 100px; height 40px; padding: 6px; border: 1px solid black;float: right;" class="box">'+
-		'<center> Picks left: <h3>' + val +'</h3></center></div></right></div></div><div style="padding:5px;background-color: silver;  border: 2px solid black;">' + draftmonsprint6(newlist) + '</div><div>'
+		'<center> Picks left: <h3>' + val +'</h3></center></div></right></div></div><div style="padding:5px;background-color: goldenrod;  border: 2px solid black;">' + draftmonsprint6(newlist) + '</div><div>'
 
 	var tier1number = global.draftvalues.users[username]["tieredpicks"].filter(x => x==1).length;
 	var tier2number = global.draftvalues.users[username]["tieredpicks"].filter(x => x==2).length;
