@@ -3067,10 +3067,10 @@ exports.commands = {
 						best[t]["name"] = possiblepic[j];
 						if (tierrecommend) {
 							best[t]["credits"] = draftmons["tierlist"][tier]["points"];
-							monToColor[t] = global.colorForTiers[tier];
+							monToColor[possiblepic[j]] = global.colorForTiers[tier];
 						} else {
 							best[t]["credits"] = draftmons["tierlist"]["Tier" + g]["points"];
-							monToColor[t] = global.colorForTiers["Tier" + g];
+							monToColor[possiblepic[j]] = global.colorForTiers["Tier" + g];
 						}
 
 					} else {
@@ -3085,10 +3085,10 @@ exports.commands = {
 						best[t]["name"] = possiblepic[j];
 						if (tierrecommend) {
 							best[t]["credits"] = draftmons["tierlist"][tier]["points"];
-							monToColor[t] = global.colorForTiers[tier];
+							monToColor[possiblepic[j]] = global.colorForTiers[tier];
 						} else {
 							best[t]["credits"] = draftmons["tierlist"]["Tier" + g]["points"];
-							monToColor[t] = global.colorForTiers["Tier" + g];
+							monToColor[possiblepic[j]] = global.colorForTiers["Tier" + g];
 						}
 						if (filtered) {
 							if (listsix.length > draftsshown) {
