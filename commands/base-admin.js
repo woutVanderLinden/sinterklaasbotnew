@@ -381,7 +381,7 @@ exports.commands = {
 				var val = global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
 				var draftlist = global.draftvalues.users[username]["draftedmons"];
 				var word = '!htmlbox  <div><h1>' + username + '</h1><div>' + draftmonsprint6(draftlist) + '</div>';
-				var toreply = "!htmlbox " + word + " <h2>Tier" + global.draftvalues.tierOrder[0] + "      drafter " + list[global.draftvalues.nextdrafter] + " picksleft:" + val + "</h2>";
+				var toreply = "!htmlbox " + word + " <h2>Tier" + global.draftvalues.tierOrder[0] + "      drafter " + list[global.draftvalues.nextdrafter] + " picks left:" + val + "</h2>";
 				return this.send(global.draftvalues.draftroom, toreply + "<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>" + draftmonsprintUnknown(newlist, global.draftvalues.DataOrder[global.draftvalues.currentPick]) + "</div></div>");
 			}
 			else {
@@ -404,7 +404,7 @@ exports.commands = {
 		var val = global.draftvalues.tierOrder.length - global.draftvalues.currentPick;
 		var draftlist = global.draftvalues.users[username]["draftedmons"];
 		var word = '!htmlbox  <div><h1>' + username + '</h1><div>' + draftmonsprint6(draftlist) + '</div>';
-		var toreply = "!htmlbox " + word + " Tier" + global.draftvalues.tierOrder[0] + "     drafter " + list[global.draftvalues.nextdrafter] + " picksleft:" + val;
+		var toreply = "!htmlbox " + word + " Tier" + global.draftvalues.tierOrder[0] + "     drafter " + list[global.draftvalues.nextdrafter] + " picks left:" + val;
 		return this.send(global.draftvalues.draftroom, toreply + "<div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>" + draftmonsprint7(newlist) + "</div></div>");
 
 	},
@@ -867,7 +867,7 @@ exports.commands = {
 		}
 		var list = global.draftvalues.turnorder;
 		var val = global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
-		var toreply = "!htmlbox Tier" + arg + " drafter " + list[global.draftvalues.nextdrafter] + " picksleft:" + val;
+		var toreply = "!htmlbox Tier" + arg + " drafter " + list[global.draftvalues.nextdrafter] + " picks left:" + val;
 		arg = toId(arg);
 		//const str = 'abc efg';
 		const arg2 = arg.charAt(0).toUpperCase() + arg.slice(1);
@@ -908,7 +908,7 @@ exports.commands = {
 
 			var newlist = global.draftvalues.users[username]["draftedmons"];
 			var val = global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
-			var word = '!htmlbox  <div><h1>' + username + '</h1><div>' + draftmonsprint6(newlist) + '</div><h2>tierhelper </h2><div> Erekredieten: ' + global.draftvalues.users[username]["erekredieten"] + ' tieredpicks: ' + global.draftvalues.users[username]["tieredpicks"] + " picksleft: " + val + '</div> '; var index = 1;
+			var word = '!htmlbox  <div><h1>' + username + '</h1> <div class="box"> picks left: <p>' + val + '</p></div> <div>' + draftmonsprint6(newlist) + '</div><h2>tierhelper </h2><div> Erekredieten: ' + global.draftvalues.users[username]["erekredieten"] + ' tieredpicks: ' + global.draftvalues.users[username]["tieredpicks"] + " picks left: " + val + '</div> '; var index = 1;
 			word = word + "<div>";
 			while (index < 6) {
 				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier' + index + '" style="background-color: rgb(204, 255, 204)">Tier' + index + "</button>";
