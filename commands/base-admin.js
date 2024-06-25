@@ -4421,7 +4421,7 @@ function PlayerPrintoutStandard(list) {
 
 	var val = global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
 
-	var remainvalue =  global.draftvalues.users[username]["erekredieten"]-40*(global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)]+global.draftvalues.users[username]["tieredpicks"].length -1);
+	var remainvalue =  global.draftvalues.users[username]["erekredieten"]-40*(global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)]-global.draftvalues.users[username]["tieredpicks"].length -1);
 	if(global.draftvalues.users[username]["tieredpicks"].includes(1) && remainvalue < 160){
 		remainvalue = "Tier1";
 	}
