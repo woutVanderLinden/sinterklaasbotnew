@@ -2538,9 +2538,11 @@ exports.commands = {
 					best[t]["name"] = possiblepic[j];
 					if (tierrecommend) {
 						best[t]["credits"] = draftmons["tierlist"][tier]["points"];
+						monToColor[possiblepic[j]] = global.colorForTiers[tier];
 					}
 					else {
 						best[t]["credits"] = draftmons["tierlist"]["Tier" + g]["points"];
+						monToColor[possiblepic[j]] = global.colorForTiers["Tier" + g];
 					}
 
 					console.log(best);
@@ -2557,9 +2559,11 @@ exports.commands = {
 					best[t]["name"] = possiblepic[j];
 					if (tierrecommend) {
 						best[t]["credits"] = draftmons["tierlist"][tier]["points"];
+						monToColor[possiblepic[j]] = global.colorForTiers[tier];
 					}
 					else {
 						best[t]["credits"] = draftmons["tierlist"]["Tier" + g]["points"];
+						monToColor[possiblepic[j]] = global.colorForTiers["Tier" + g];
 					}
 					if (listsix.length > draftsshown) {
 						delete best[listsix[draftsshown]];
@@ -2587,7 +2591,7 @@ exports.commands = {
 		//thislistsix
 		//return  this.reply("!htmlbox <div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprint5(newlistsix,"rgb(255, 204, 204)")+ "</div>");
 
-		return this.reply(draftmonsprint4(newlistsix, draftsshown, by, room));
+		return this.reply(draftmonsprint4(newlistsix, draftsshown, by, room, monToColor));
 		//global.draftvalues.users[name]["erekredieten"]
 		//mondata
 	},
