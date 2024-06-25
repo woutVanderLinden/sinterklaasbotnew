@@ -449,13 +449,6 @@ exports.commands = {
 				}
 			}
 
-			if (global.draftvalues.draftstarted == true) {
-				return this.send(global.draftvalues.draftroom, "draft already started");
-			}
-			else {
-
-			}
-
 
 			let rawdata = fs.readFileSync('DraftTest4.json');
 			let student = JSON.parse(rawdata);
