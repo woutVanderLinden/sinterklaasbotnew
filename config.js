@@ -18,7 +18,7 @@ exports.port = 8000;
 exports.serverid = 'showdown';
 
 exports.auth = {
-	admin: ['kingbaruk'],
+	admin: ['kingbaruk','gangstersamurott','yveltalnl','damnright'],
 	coder: [],
 	alpha: [],
 	beta: [],
@@ -91,6 +91,8 @@ exports.initCmds = ['|/avatar 282']; // Other commands (avatar, blockchallenges,
 exports.exceptions = {
 	 'kingbaruk': true,
 	'yveltalnl':true,
+    'gangstersamurott':true,
+     'damnright':true,
 	'cc': true
 	 
 };
