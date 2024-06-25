@@ -4441,10 +4441,11 @@ function PlayerPrintoutStandard(list) {
 		}
 	}
 	var word = '!htmlbox  <div><div> <div  style="padding: 12px; border: 1px solid black;" class="box">' +
-		'\t<div style="display: inline-flex;float: left;"><h1>' + username + '</h1> <h2>' + draftmonsprint6(newlist) + '</h2></div>' +
-		'\t<div style="display: inline-flex;width: 40px; height 40px ;padding: 6px; border: 1px solid black;float: right;">' +
-		'\t<div style="display: inline-flex;width: 40px; height 40px; padding: 12px; border: 0px solid black;float: right;"></div>' +
+		'\t<div style="display: inline-flex;float: left;"><h1>' + username + '</h1> </div><div><h2>' + draftmonsprint6(newlist) + '</h2></div>' +
+		'\t<div style="display: inline-flex;width: 100px; height 40px ;padding: 6px; border: 1px solid black;float: right;">' +
+
 		'\t<center>Erekredieten:<h3>'+  global.draftvalues.users[username]["erekredieten"] + '</h3></center></div><right>'+
+		'\t<div style="display: inline-flex;width: 100px; height 40px; padding: 12px; border: 0px solid black;float: right;"></div>' +
 	'<div  style="display: inline-flex;width: 40px; height 40px; padding: 6px; border: 1px solid black;float: right;" class="box">'+
 		'<center> Picks left: <h3>' + val +'</h3></center></div></right></div></div><div>'
 
@@ -4475,7 +4476,7 @@ function PlayerPrintoutStandard(list) {
 		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier5\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 5</h2> 40</button></th>" +
 		"        </tr>" +
 		"        <tr>" +
-		"            <td><center><h2 style=\"background-color:rgb(250,250,100,0\")>"+tier1number+"</h2></center></td>" +
+		"            <td><center><h2 style=\"background-color:rgb(250,250,100,0)\">"+tier1number+"</h2></center></td>" +
 		"            <td><center><h2 style=\"background-color:rgb(250,250,100,0)\">"+tier2number+"</h2></center></td>" +
 		"            <td><center><h2 style=\"background-color:rgb(250,250,100,0)\">"+tier3number+"</h2></center></td>" +
 		"             <td><center><h2 style=\"background-color:rgb(250,250,100,0)\">"+tier4number+"</h2></center></td>" +
