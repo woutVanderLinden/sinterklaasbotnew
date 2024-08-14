@@ -101,9 +101,15 @@ Check the [configuration guide](https://github.com/Ecuacion/Pokemon-Showdown-Nod
 **Console Config**
  - `Config.debug`: Specify which console messages are shown
 
+**Draft Tools**
+-----------
+- This bot is implemented with an interactive draft feature, so you can host your draft with a simple command.
+  A sample interface is shown below:
+  ![alt text](https://github.com/woutVanderLinden/sinterklaasbotnew/blob/master/voorbeeldafbeelding.png)
+
 Credits
 -----------
-
+ - Kingbaruk (Owner)
  - [Ecuacion](https://github.com/Ecuacion/) (Owner)
  
 Contributors:
