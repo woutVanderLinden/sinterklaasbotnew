@@ -2145,7 +2145,7 @@ exports.commands = {
 				var picksleft = draftmons["freepicks"] - global.draftvalues.picknr[toId(global.draftvalues.draftroom)] - 1 - global.draftvalues.users[name]["tieredpicks"].length;
 				if (possiblepic.includes(arg)) {
 					if(global.draftvalues.creditDrafting){
-						console.log(tier +" "+ tier.pickrequired);
+						console.log(tier +" pickreq"+ tier.pickrequired);
 						if(tier.pickrequired){
 							if (global.draftvalues.users[name]["tieredpicks"].includes(i)) {
 								var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==5).length;
