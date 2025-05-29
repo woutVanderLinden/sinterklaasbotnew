@@ -3402,7 +3402,7 @@ function draftmonsprintroles(arg, role, nrshown, by, room, monToColor) {
 			}
 			else {
 				var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:150px; background-color:' + monToColor[name] + '">';
-				word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name +" ("+moncost+")"+ '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a>';
+				word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + " ("+moncost+")" + '</a>';
 				word = word + '</button>';
 				result = result + word;
 			}
@@ -3432,8 +3432,9 @@ function draftmonsprint4(arg, nrshown, by, room, monToColor) {
 
 		}
 		else {
+			var moncost = global.draftvalues.mondata[name][0]["Cost"];
 			var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="background-color:' + monToColor[name] + '">';
-			word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a>';
+			word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name +" ("+moncost +")" + '</a>';
 			word = word + '</button>';
 			result = result + word;
 		}
@@ -3473,7 +3474,7 @@ function draftmonsprint5(arg, color) {
 		else {
 			word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:150px; background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
 		}
-		word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + " ("+moncost +")"+ '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a>';
+		word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name +  '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + " ("+moncost +")"+ '</a>';
 		word = word + '</button>';
 		result = result + word;
 
