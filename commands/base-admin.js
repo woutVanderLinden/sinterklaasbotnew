@@ -4486,8 +4486,8 @@ function PlayerPrintoutStandard(list,i) {
 	//var tier3cost = draftmons["tierlist"]["Tier3"]["points"];
 	//var tier4cost = draftmons["tierlist"]["Tier4"]["points"];
 	//var tier5cost = draftmons["tierlist"]["Tier5"]["points"];
-
-	var remainvalue =  global.draftvalues.users[username]["erekredieten"]-40*(global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)]-global.draftvalues.users[username]["tieredpicks"].length);
+/*
+	var remainvalue =  global.draftvalues.users[username]["erekredieten"];-40*(global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)]-global.draftvalues.users[username]["tieredpicks"].length);
 	if(global.draftvalues.users[username]["tieredpicks"].includes(1) && remainvalue < tier1cost){
 		remainvalue = "Tier1";
 	}
@@ -4505,7 +4505,7 @@ function PlayerPrintoutStandard(list,i) {
 				}
 			}
 		}
-	}
+	}*/
 	remainvalue=global.draftvalues.users[username]["erekredieten"];
 	var word = '!htmlbox  <div><div> <div  style="height: 100px; padding: 12px; border: 1px solid black;" class="box">' +
 		'\t<div style="display: inline-flex;float: left;"><h1>' + username + '</h1> </div>' +
