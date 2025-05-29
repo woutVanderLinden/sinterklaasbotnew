@@ -4481,11 +4481,11 @@ function PlayerPrintoutStandard(list,i) {
 	var newlist = global.draftvalues.users[username]["draftedmons"];
 	var draftmons = global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)];
 	var val = global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
-	var tier1cost = draftmons["tierlist"]["Tier1"]["points"];
-	var tier2cost = draftmons["tierlist"]["Tier2"]["points"];
-	var tier3cost = draftmons["tierlist"]["Tier3"]["points"];
-	var tier4cost = draftmons["tierlist"]["Tier4"]["points"];
-	var tier5cost = draftmons["tierlist"]["Tier5"]["points"];
+	//var tier1cost = draftmons["tierlist"]["Tier1"]["points"];
+	//var tier2cost = draftmons["tierlist"]["Tier2"]["points"];
+	//var tier3cost = draftmons["tierlist"]["Tier3"]["points"];
+	//var tier4cost = draftmons["tierlist"]["Tier4"]["points"];
+	//var tier5cost = draftmons["tierlist"]["Tier5"]["points"];
 
 	var remainvalue =  global.draftvalues.users[username]["erekredieten"]-40*(global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)]-global.draftvalues.users[username]["tieredpicks"].length);
 	if(global.draftvalues.users[username]["tieredpicks"].includes(1) && remainvalue < tier1cost){
