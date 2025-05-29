@@ -2451,7 +2451,7 @@ exports.commands = {
 		else {
 
 		}
-		let rawdata = fs.readFileSync('DraftGen9PuntenDraft.json');
+		let rawdata = fs.readFileSync('DraftGen9LowDex.json');
 		let student = JSON.parse(rawdata);
 		console.log(student);
 		global.draftvalues.creditDrafting=true;
