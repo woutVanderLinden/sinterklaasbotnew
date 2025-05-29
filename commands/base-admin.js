@@ -2147,7 +2147,7 @@ exports.commands = {
 					if(global.draftvalues.creditDrafting){
 						if(tier.pickrequired){
 							if (global.draftvalues.users[name]["tieredpicks"].includes(i)) {
-								var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==2).length;
+								var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==5).length;
 								var pointscost=global.draftvalues.mondata[arg]["cost"];
 								if (picksleft * 3 - 2*tierFpicks> currentscore - pointscost || picksleft < 0) {
 									return this.reply("please make sure you have at least " + picksleft * 3 - 2*tierFpicks + " Erekredieten left");
@@ -2166,7 +2166,7 @@ exports.commands = {
 
 						}
 						else{
-							var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==2).length;
+							var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==5).length;
 							var pointscost=global.draftvalues.mondata[arg]["cost"];
 							if (picksleft * 3 - 2*tierFpicks> currentscore - pointscost || picksleft < 0) {
 								return this.reply("please make sure you have at least " + picksleft * 3 - 2*tierFpicks + " Erekredieten left");
@@ -4540,6 +4540,12 @@ function PlayerPrintoutStandard(list,i) {
 		"<tr>"
 	for (let i = 0; i < global.tiers.length; i++) {
 		word= word +  "<th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable " + global.tiers[i] + "\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">"+global.tiers[i]+"</h2></button></th>"
+	}
+	word=word+
+		"</tr><tr>"
+	for (let i = 0; i < global.tiers.length; i++) {
+		var tierpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==i).length;
+		word= word +  " <td><center><h2 style=\\\"background-color:rgb(250,250,100,0)\\\">"+tierpicks+"</h2></center></td>\""
 	}
 	word=word+
 		"</tr><tr>"
