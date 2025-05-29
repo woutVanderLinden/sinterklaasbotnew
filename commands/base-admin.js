@@ -4580,7 +4580,7 @@ function PlayerPrintoutStandard(list,i) {
 		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier5\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier5</button></td>" +
 		"        </tr>" +
 		"    </table></div></div></div>";*/
-	return word;
+	return word+ " </table></div></div></div>";
 }
 
 ;
