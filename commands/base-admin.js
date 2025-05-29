@@ -2170,6 +2170,7 @@ exports.commands = {
 						}
 						else{
 							var picksleft = draftmons["freepicks"] - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
+							console.log("picks left: "+picksleft);
 							var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==5).length;
 							var pointscost=global.draftvalues.mondata[arg][0]["Cost"];
 							console.log("pointcost2 "+ pointscost)
