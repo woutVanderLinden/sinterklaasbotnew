@@ -2152,9 +2152,9 @@ exports.commands = {
 								var picksleft = draftmons["freepicks"] - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
 								var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==5).length;
 								var pointscost=global.draftvalues.mondata[arg][0]["Cost"];
-								console.log("pointcost "+pointscost);
 								if (picksleft * 3 - 2*tierFpicks > currentscore - pointscost || picksleft < 0) {
-									return this.reply("please make sure you have at least " + picksleft * 3 - 2*tierFpicks + " Erekredieten left");
+									var kredieten =(picksleft * 3 - 2*tierFpicks);
+									return this.reply("please make sure you have at least " + kredieten + " Erekredieten left");
 								}
 								draftmons["tierlist"][tier]["pokemon"] = removeItemOnce(draftmons["tierlist"][tier]["pokemon"], arg);
 								global.draftvalues.users[name]["tieredpicks"] = removeItemOnce(global.draftvalues.users[name]["tieredpicks"], i);
@@ -2171,13 +2171,11 @@ exports.commands = {
 						}
 						else{
 							var picksleft = draftmons["freepicks"] - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
-							console.log("picks left: "+picksleft);
-							console.log("f-picks left: "+tierFpicks);
 							var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==5).length;
 							var pointscost=global.draftvalues.mondata[arg][0]["Cost"];
-							console.log("pointcost2 "+ pointscost)
 							if (picksleft * 3 - 2*tierFpicks > currentscore - pointscost || picksleft < 0) {
-								return this.reply("please make sure you have at least " + picksleft * 3 - 2*tierFpicks + " Erekredieten left");
+								var kredieten =(picksleft * 3 - 2*tierFpicks);
+								return this.reply("please make sure you have at least " + kredieten + " Erekredieten left");
 							}
 							draftmons["tierlist"][tier]["pokemon"] = removeItemOnce(draftmons["tierlist"][tier]["pokemon"], arg);
 							global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"] - pointscost;
