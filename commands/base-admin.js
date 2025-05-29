@@ -3393,6 +3393,7 @@ function draftmonsprintroles(arg, role, nrshown, by, room, monToColor) {
 			//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 			var name = arg[i]["name"];
 			var credits = arg[i]["credits"];
+			var moncost = global.draftvalues.mondata[name][0]["Cost"];
 			if (toId(by) == toId(room)) {
 
 				var word = name + " (" + credits + " erekredieten), ";
@@ -3401,7 +3402,7 @@ function draftmonsprintroles(arg, role, nrshown, by, room, monToColor) {
 			}
 			else {
 				var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:150px; background-color:' + monToColor[name] + '">';
-				word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a>';
+				word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name +" ("+moncost+")"+ '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a>';
 				word = word + '</button>';
 				result = result + word;
 			}
