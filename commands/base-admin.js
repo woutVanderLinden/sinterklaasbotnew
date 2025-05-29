@@ -2141,6 +2141,7 @@ exports.commands = {
 			var i = 0;
 			while (i <= draftmons["length"]) {
 				var tier=global.tiers[i];
+				var currentscore=global.draftvalues.users[name]["erekredieten"];
 				var possiblepic = draftmons["tierlist"][tier]["pokemon"];
 				var picksleft = draftmons["freepicks"] - global.draftvalues.picknr[toId(global.draftvalues.draftroom)] - 1 - global.draftvalues.users[name]["tieredpicks"].length;
 				if (possiblepic.includes(arg)) {
@@ -2171,6 +2172,7 @@ exports.commands = {
 						else{
 							var picksleft = draftmons["freepicks"] - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
 							console.log("picks left: "+picksleft);
+							console.log("f-picks left: "+tierFpicks);
 							var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==5).length;
 							var pointscost=global.draftvalues.mondata[arg][0]["Cost"];
 							console.log("pointcost2 "+ pointscost)
