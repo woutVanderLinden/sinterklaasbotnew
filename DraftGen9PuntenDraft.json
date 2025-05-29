@@ -6,7 +6,7 @@
       "points":17,
       "tiernr": 1,
       "pickrequired": true,
-      "pokemon":["Baxcalibur"]
+      "pokemon":["Archaludon","Baxcalibur","Cinderace","Clefable","Corviknight","Dragapult","Dragonite","Enamorus","Excadrill","Garchomp","Gholdengo","Gliscor","Gouging Fire","Great Tusk","Greninja","Heatran","Hoopa-Unbound"]
     },
     "Tiera":
     {
@@ -14,7 +14,7 @@
       "points":16,
       "tiernr": 1,
       "pickrequired": false,
-      "pokemon":["Alomomola"]
+      "pokemon":["Alomomola","Amoonguss","Arcanine","Arcanine-Hisui","Azelf","Azumarill","Barraskewda","Basculegion","Basculegion-F","Blissey","Breloom","Ceruledge","Clodsire","Cobalion","Conkeldurr","Crawdaunt","Cresselia","Dondozo","Empoleon","Enamorus-Therian","Entei","Espathra","Fezandipiti","Gallade","Garganacl","Gastrodon","Gengar","Glimmora","Goodra","Goodra-Hisui"]
     },
     "Tierb":
     {
@@ -45,7 +45,7 @@
       "points":12,
       "tiernr": 2,
       "pickrequired": true,
-      "pokemon":["Muk"]
+      "pokemon":["Ampharos","Arbok","Ariados","Avalugg-Hisui","Banette","Bastiodon","Beartic","Bellossom","Cacturne","Camerupt","Carbink","Chimecho","Crabominable","Cramorant","Crocalor","Dedenne","Dewgong","Dugtrio"]
     }
   },
 
