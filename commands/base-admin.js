@@ -2148,7 +2148,7 @@ exports.commands = {
 						if(tier.pickrequired){
 							if (global.draftvalues.users[name]["tieredpicks"].includes(i)) {
 								var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==5).length;
-								var pointscost=global.draftvalues.mondata[arg]["cost"];
+								var pointscost=global.draftvalues.mondata[arg]["Cost"];
 								if (picksleft * 3 - 2*tierFpicks> currentscore - pointscost || picksleft < 0) {
 									return this.reply("please make sure you have at least " + picksleft * 3 - 2*tierFpicks + " Erekredieten left");
 								}
@@ -2167,7 +2167,7 @@ exports.commands = {
 						}
 						else{
 							var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==5).length;
-							var pointscost=global.draftvalues.mondata[arg]["cost"];
+							var pointscost=global.draftvalues.mondata[arg]["Cost"];
 							if (picksleft * 3 - 2*tierFpicks> currentscore - pointscost || picksleft < 0) {
 								return this.reply("please make sure you have at least " + picksleft * 3 - 2*tierFpicks + " Erekredieten left");
 							}
