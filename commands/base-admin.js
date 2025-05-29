@@ -2148,10 +2148,11 @@ exports.commands = {
 						//console.log(tier +" pickreq"+ tier.pickrequired);
 						if(draftmons["tierlist"][tier].pickrequired){
 							if (global.draftvalues.users[name]["tieredpicks"].includes(i)) {
+								var picksleft = draftmons["freepicks"] - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
 								var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==5).length;
 								var pointscost=global.draftvalues.mondata[arg][0]["Cost"];
 								console.log("pointcost "+pointscost);
-								if (picksleft * 3 - 2*tierFpicks> currentscore - pointscost || picksleft < 0) {
+								if (picksleft * 3 - 2*tierFpicks > currentscore - pointscost || picksleft < 0) {
 									return this.reply("please make sure you have at least " + picksleft * 3 - 2*tierFpicks + " Erekredieten left");
 								}
 								draftmons["tierlist"][tier]["pokemon"] = removeItemOnce(draftmons["tierlist"][tier]["pokemon"], arg);
@@ -2168,10 +2169,11 @@ exports.commands = {
 
 						}
 						else{
+							var picksleft = draftmons["freepicks"] - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
 							var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==5).length;
 							var pointscost=global.draftvalues.mondata[arg][0]["Cost"];
 							console.log("pointcost2 "+ pointscost)
-							if (picksleft * 3 - 2*tierFpicks> currentscore - pointscost || picksleft < 0) {
+							if (picksleft * 3 - 2*tierFpicks > currentscore - pointscost || picksleft < 0) {
 								return this.reply("please make sure you have at least " + picksleft * 3 - 2*tierFpicks + " Erekredieten left");
 							}
 							draftmons["tierlist"][tier]["pokemon"] = removeItemOnce(draftmons["tierlist"][tier]["pokemon"], arg);
