@@ -13,7 +13,7 @@
       "picks":3,
       "points":16,
       "tiernr": 1,
-      "pickrequired": true,
+      "pickrequired": false,
       "pokemon":["Alomomola"]
     },
     "Tierb":
@@ -21,7 +21,7 @@
       "picks":3,
       "points":15,
       "tiernr": 1,
-      "pickrequired": true,
+      "pickrequired": false,
       "pokemon":["Armarouge"]},
     "Tierc":
     {
@@ -44,7 +44,7 @@
       "picks":3,
       "points":12,
       "tiernr": 2,
-      "pickrequired": false,
+      "pickrequired": true,
       "pokemon":["Muk"]
     }
   },

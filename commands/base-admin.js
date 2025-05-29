@@ -2145,11 +2145,12 @@ exports.commands = {
 				var picksleft = draftmons["freepicks"] - global.draftvalues.picknr[toId(global.draftvalues.draftroom)] - 1 - global.draftvalues.users[name]["tieredpicks"].length;
 				if (possiblepic.includes(arg)) {
 					if(global.draftvalues.creditDrafting){
+						console.log(tier);
 						if(tier.pickrequired){
 							if (global.draftvalues.users[name]["tieredpicks"].includes(i)) {
 								var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==5).length;
 								var pointscost=global.draftvalues.mondata[arg]["Cost"];
-								console.log("pointcost "+pointscost)
+								console.log("pointcost "+pointscost);
 								if (picksleft * 3 - 2*tierFpicks> currentscore - pointscost || picksleft < 0) {
 									return this.reply("please make sure you have at least " + picksleft * 3 - 2*tierFpicks + " Erekredieten left");
 								}
@@ -2169,7 +2170,7 @@ exports.commands = {
 						else{
 							var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==5).length;
 							var pointscost=global.draftvalues.mondata[arg]["Cost"];
-							console.log("pointcost2 "+pointscost)
+							console.log("pointcost2 "+ pointscost)
 							if (picksleft * 3 - 2*tierFpicks> currentscore - pointscost || picksleft < 0) {
 								return this.reply("please make sure you have at least " + picksleft * 3 - 2*tierFpicks + " Erekredieten left");
 							}
