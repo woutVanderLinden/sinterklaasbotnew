@@ -4544,7 +4544,7 @@ function PlayerPrintoutStandard(list,i) {
 	word=word+
 		"</tr><tr>"
 	for (let i = 0; i < global.tiers.length; i++) {
-		var tierpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==i).length;
+		var tierpicks = global.draftvalues.users[username]["tieredpicks"].filter(x => x==i).length;
 		word= word +  " <td><center><h2 style=\\\"background-color:rgb(250,250,100,0)\\\">"+tierpicks+"</h2></center></td>\""
 	}
 	word=word+
