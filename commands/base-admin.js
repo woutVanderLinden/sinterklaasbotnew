@@ -542,6 +542,20 @@ exports.commands = {
 		//console.log
 		return this.reply(result)
 	},
+	seehistory: 'history',
+	history: function (arg, by, room, cmd) {
+		var list = Object.keys(global.history);
+		var result = '';
+		for (var i = 0; i < list.length; i++) {
+
+			//Do something
+
+			result = result + ", " + list[i]+ ";"+global.history[list(i)];
+		}
+		result = result.substring(1, result.length);
+		//console.log
+		return this.reply(result)
+	},
 	takecredits: function (arg, by, room, cmd) {
 		if (!this.isRanked('admin')) return false;
 		var args = arg.split(",");
@@ -1163,6 +1177,7 @@ exports.commands = {
 			global.draftvalues.picknr[toId(global.draftvalues.draftroom)] = 0;
 
 			global.draftvalues.nextdrafter = 0;
+			global.history={};
 
 			global.draftvalues.draftstarted = true
 			this.reply('draft order is ' + result);
@@ -2152,13 +2167,14 @@ exports.commands = {
 								var picksleft = draftmons["freepicks"] - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
 								var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==5).length;
 								var pointscost=global.draftvalues.mondata[arg][0]["Cost"];
-								if (picksleft * 3 - 2*tierFpicks > currentscore - pointscost || picksleft < 0) {
-									var kredieten =(picksleft * 3 - 2*tierFpicks);
+								if ((picksleft-1) * 3 - 2*tierFpicks > currentscore - pointscost || picksleft < 0) {
+									var kredieten =((picksleft-1) * 3 - 2*tierFpicks);
 									return this.reply("please make sure you have at least " + kredieten + " Erekredieten left");
 								}
 								draftmons["tierlist"][tier]["pokemon"] = removeItemOnce(draftmons["tierlist"][tier]["pokemon"], arg);
 								global.draftvalues.users[name]["tieredpicks"] = removeItemOnce(global.draftvalues.users[name]["tieredpicks"], i);
 								global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"] - pointscost;
+								global.history[arg]=name;
 
 
 								this.send(global.draftvalues.draftroom, name + " used a tierpick to draft a tier " + i + " " + arg + " (erekredieten. " + global.draftvalues.users[name]["erekredieten"] + "tierpicks " + global.draftvalues.users[name]["tieredpicks"] + " )");
@@ -2173,10 +2189,11 @@ exports.commands = {
 							var picksleft = draftmons["freepicks"] - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
 							var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==5).length;
 							var pointscost=global.draftvalues.mondata[arg][0]["Cost"];
-							if (picksleft * 3 - 2*tierFpicks > currentscore - pointscost || picksleft < 0) {
-								var kredieten =(picksleft * 3 - 2*tierFpicks);
+							if ((picksleft-1) * 3 - 2*tierFpicks > currentscore - pointscost || picksleft < 0) {
+								var kredieten =((picksleft-1) * 3 - 2*tierFpicks);
 								return this.reply("please make sure you have at least " + kredieten + " Erekredieten left");
 							}
+							global.history[arg]=name;
 							draftmons["tierlist"][tier]["pokemon"] = removeItemOnce(draftmons["tierlist"][tier]["pokemon"], arg);
 							global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"] - pointscost;
 
