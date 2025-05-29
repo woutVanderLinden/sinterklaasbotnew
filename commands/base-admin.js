@@ -1150,11 +1150,11 @@ exports.commands = {
 	},
 
 	startdraft: async function (arg, by, room, cmd) {
-
 		if (!this.isRanked('admin')) return false;
 		if (global.draftvalues.draftstarted == true) {
 			return this.reply("draft already started");
 		}
+		global.history={};
 		if (global.auctionDrafting) {
 			global.draftvalues.typedrafting = true;
 
@@ -1177,7 +1177,6 @@ exports.commands = {
 			global.draftvalues.picknr[toId(global.draftvalues.draftroom)] = 0;
 
 			global.draftvalues.nextdrafter = 0;
-			global.history={};
 
 			global.draftvalues.draftstarted = true
 			this.reply('draft order is ' + result);
