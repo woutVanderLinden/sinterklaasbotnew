@@ -23467,6 +23467,36 @@
          "sun": null
       }
    ],
+   "Crocalor": [
+      {
+         "name": "Crocalor",
+         "Cost": 1,
+         "Typing1": "Fire",
+         "Typing 2": "Ghost",
+         "physicalbulkyattacker": null,
+         "specialbulkyattacker": 0,
+         "physicalwall": 1,
+         "physicalsetup": 0,
+         "priority": null,
+         "specialsweeper": null,
+         "specialsetup": null,
+         "status": null,
+         "itemremover": null,
+         "scarf": null,
+         "entryhazards": null,
+         "pivot": null,
+         "cleric": null,
+         "specialwall": 0,
+         "hazardremoval": null,
+         "physicalsweeper": null,
+         "sand": null,
+         "speedcontrol": null,
+         "screens": null,
+         "rain": null,
+         "hail": null,
+         "sun": null
+      }
+   ],
    "Spidops": [
       {
          "name": "Spidops",
