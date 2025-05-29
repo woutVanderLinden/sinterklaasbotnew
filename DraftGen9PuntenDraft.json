@@ -1,0 +1,56 @@
+{
+  "tierlist":{
+    "TierS":
+    {
+      "picks":2,
+      "points":17,
+      "tiernr": 1,
+      "pickrequired": true,
+      "pokemon":["baxcalibur"]
+    },
+    "TierA":
+    {
+      "picks":3,
+      "points":16,
+      "tiernr": 1,
+      "pickrequired": true,
+      "pokemon":["Alomomola"]
+    },
+    "TierB":
+    {
+      "picks":3,
+      "points":15,
+      "tiernr": 1,
+      "pickrequired": true,
+      "pokemon":["Armarouge"]},
+    "TierC":
+    {
+      "picks":3,
+      "points":14,
+      "tiernr": 1,
+      "pickrequired": false,
+      "pokemon":["Abomasnow"]
+    },
+    "TierD":
+    {
+      "picks":3,
+      "points":13,
+      "tiernr": 2,
+      "pickrequired": false,
+      "pokemon":["Arbok"]
+    },
+    "TierE":
+    {
+      "picks":3,
+      "points":12,
+      "tiernr": 2,
+      "pickrequired": false,
+      "pokemon":["Muk"]
+    }
+  },
+
+"freepicks":11,
+"length":5,
+"TierPicks":[1,1,17,17],
+"Points":480
+}

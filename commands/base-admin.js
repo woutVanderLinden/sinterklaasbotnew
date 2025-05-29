@@ -1174,8 +1174,9 @@ exports.commands = {
 			//if(global.draftvalues.draftedmons={});
 			//}
 			var draftmons = global.draftvalues.todraftmons[toId(room)];
+			global.tiers=Array.from(draftmons["tierlist"].keys());
 			global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)] = true;
-			var tiername = "Tier" + global.draftvalues.currenttier[toId(room)];
+			var tiername = tiers[0];
 			//global.draftvalues.cur[toId(room)]
 			console.log(tiername);
 			global.draftvalues.possiblepicks = draftmons["tierlist"];
@@ -2133,32 +2134,72 @@ exports.commands = {
 		}
 		else {
 			var draftmons = global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)];
-			var i = 1;
+			var i = 0;
 			while (i <= draftmons["length"]) {
-				var possiblepic = draftmons["tierlist"]["Tier" + i]["pokemon"];
+				var tier=global.tiers[i];
+				var possiblepic = draftmons["tierlist"][tier]["pokemon"];
 				var picksleft = draftmons["freepicks"] - global.draftvalues.picknr[toId(global.draftvalues.draftroom)] - 1 - global.draftvalues.users[name]["tieredpicks"].length;
 				if (possiblepic.includes(arg)) {
-					if (global.draftvalues.users[name]["tieredpicks"].includes(i)) {
-						draftmons["tierlist"]["Tier" + i]["pokemon"] = removeItemOnce(draftmons["tierlist"]["Tier" + i]["pokemon"], arg);
-						global.draftvalues.users[name]["tieredpicks"] = removeItemOnce(global.draftvalues.users[name]["tieredpicks"], i);
-						this.send(global.draftvalues.draftroom, name + " used a tierpick to draft a tier " + i + " " + arg + " (erekredieten. " + global.draftvalues.users[name]["erekredieten"] + "tierpicks " + global.draftvalues.users[name]["tieredpicks"] + " )");
-						global.draftvalues.users[name]["totaldraftscore"] = global.draftvalues.users[name]["totaldraftscore"] + calculatescore(room, arg, name);
-					}
-					else {
+					if(global.draftvalues.creditDrafting){
+						if(tier.pickrequired){
+							if (global.draftvalues.users[name]["tieredpicks"].includes(i)) {
+								var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==2).length;
+								var pointscost=global.draftvalues.mondata[arg]["cost"];
+								if (picksleft * 3 - 2*tierFpicks> currentscore - pointscost || picksleft < 0) {
+									return this.reply("please make sure you have at least " + picksleft * 3 - 2*tierFpicks + " Erekredieten left");
+								}
+								draftmons["tierlist"][tier]["pokemon"] = removeItemOnce(draftmons["tierlist"][tier]["pokemon"], arg);
+								global.draftvalues.users[name]["tieredpicks"] = removeItemOnce(global.draftvalues.users[name]["tieredpicks"], i);
+								global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"] - pointscost;
 
-						var pointscost = draftmons["tierlist"]["Tier" + i]["points"];
-						var currentscore = global.draftvalues.users[name]["erekredieten"];
 
-						console.log("freepicks " + draftmons["freepicks"] + " picknr: " + global.draftvalues.picknr[toId(global.draftvalues.draftroom)] + " pickleft " + picksleft);
-						if (picksleft * 40 > currentscore - pointscost || picksleft < 0) {
-							return this.reply("please make sure you have at least " + picksleft * 40 + " Erekredieten left");
+								this.send(global.draftvalues.draftroom, name + " used a tierpick to draft a tier " + i + " " + arg + " (erekredieten. " + global.draftvalues.users[name]["erekredieten"] + "tierpicks " + global.draftvalues.users[name]["tieredpicks"] + " )");
+								global.draftvalues.users[name]["totaldraftscore"] = global.draftvalues.users[name]["totaldraftscore"] + calculatescore(room, arg, name);
+							}
+							else{
+								return this.reply("please make sure you have at least a pick of tier "+tier+" left");
+							}
+
 						}
-						draftmons["tierlist"]["Tier" + i]["pokemon"] = removeItemOnce(draftmons["tierlist"]["Tier" + i]["pokemon"], arg);
-						global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"] - draftmons["tierlist"]["Tier" + i]["points"];
+						else{
+							var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==2).length;
+							var pointscost=global.draftvalues.mondata[arg]["cost"];
+							if (picksleft * 3 - 2*tierFpicks> currentscore - pointscost || picksleft < 0) {
+								return this.reply("please make sure you have at least " + picksleft * 3 - 2*tierFpicks + " Erekredieten left");
+							}
+							draftmons["tierlist"][tier]["pokemon"] = removeItemOnce(draftmons["tierlist"][tier]["pokemon"], arg);
+							global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"] - pointscost;
 
-						this.send(global.draftvalues.draftroom, name + " paid " + draftmons["tierlist"]["Tier" + i]["points"] + " erekredieten for " + arg + ".( Erekredieten " + global.draftvalues.users[name]["erekredieten"] + " tieredpicks:" + global.draftvalues.users[name]["tieredpicks"] + ")");
-						global.draftvalues.users[name]["totaldraftscore"] = global.draftvalues.users[name]["totaldraftscore"] + calculatescore(room, arg, name);
+
+							this.send(global.draftvalues.draftroom, name + " used credits to draft a tier " + i + " " + arg + " (erekredieten. " + global.draftvalues.users[name]["erekredieten"] + "tierpicks " + global.draftvalues.users[name]["tieredpicks"] + " )");
+							global.draftvalues.users[name]["totaldraftscore"] = global.draftvalues.users[name]["totaldraftscore"] + calculatescore(room, arg, name);
+
+						}
 					}
+					else{
+						if (global.draftvalues.users[name]["tieredpicks"].includes(i)) {
+							draftmons["tierlist"][tier]["pokemon"] = removeItemOnce(draftmons["tierlist"][tier]["pokemon"], arg);
+							global.draftvalues.users[name]["tieredpicks"] = removeItemOnce(global.draftvalues.users[name]["tieredpicks"], i);
+							this.send(global.draftvalues.draftroom, name + " used a tierpick to draft a tier " + i + " " + arg + " (erekredieten. " + global.draftvalues.users[name]["erekredieten"] + "tierpicks " + global.draftvalues.users[name]["tieredpicks"] + " )");
+							global.draftvalues.users[name]["totaldraftscore"] = global.draftvalues.users[name]["totaldraftscore"] + calculatescore(room, arg, name);
+						}
+						else {
+
+							var pointscost = draftmons["tierlist"][tier]["points"];
+							var currentscore = global.draftvalues.users[name]["erekredieten"];
+
+							console.log("freepicks " + draftmons["freepicks"] + " picknr: " + global.draftvalues.picknr[toId(global.draftvalues.draftroom)] + " pickleft " + picksleft);
+							if (picksleft * 40 > currentscore - pointscost || picksleft < 0) {
+								return this.reply("please make sure you have at least " + picksleft * 40 + " Erekredieten left");
+							}
+							draftmons["tierlist"][tier]["pokemon"] = removeItemOnce(draftmons["tierlist"][tier]["pokemon"], arg);
+							global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"] - draftmons["tierlist"][tier]["points"];
+
+							this.send(global.draftvalues.draftroom, name + " paid " + draftmons["tierlist"][tier]["points"] + " erekredieten for " + arg + ".( Erekredieten " + global.draftvalues.users[name]["erekredieten"] + " tieredpicks:" + global.draftvalues.users[name]["tieredpicks"] + ")");
+							global.draftvalues.users[name]["totaldraftscore"] = global.draftvalues.users[name]["totaldraftscore"] + calculatescore(room, arg, name);
+						}
+					}
+
 
 					global.draftvalues.users[name]["draftedmons"].push(arg);
 					i = 100;
@@ -2407,9 +2448,10 @@ exports.commands = {
 		else {
 
 		}
-		let rawdata = fs.readFileSync('DraftGen9LowDex.json');
+		let rawdata = fs.readFileSync('DraftGen9PuntenDraft.json');
 		let student = JSON.parse(rawdata);
 		console.log(student);
+		global.draftvalues.creditDrafting=true;
 		global.draftvalues.draftroom = toId(room);
 		global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)] = student;
 		global.draftvalues.pointdrafting = true;
@@ -2830,20 +2872,20 @@ exports.commands = {
 			var g = 1;
 			listsix = [];
 			while (g <= draftmons["length"]) {
-				;
 				var possiblepic = [];
 				if (tierrecommend) {
 					possiblepic = draftmons["tierlist"][tier]["pokemon"];
 					g = 100;
 				} else {
-					if (pointrecommend) {
+					if (pointrecommend && !global.creditDrafting) {
 						while (possiblepic = draftmons["tierlist"]["Tier" + g]["points"] > maxpoints) {
 
 							g++
 						}
 
 					}
-					possiblepic = draftmons["tierlist"]["Tier" + g]["pokemon"];
+					var tier=global.tiers[g];
+					possiblepic = draftmons["tierlist"][tier]["pokemon"];
 				}
 				var j = 0;
 				while (j < possiblepic["length"]) {
@@ -3041,6 +3083,11 @@ exports.commands = {
 							if ((global.draftvalues.mondata[monname][0][filterroles[filterrolesnumber]] || 0) == 0) {
 								t = t * 0;
 							}
+						}
+					}
+					if (pointrecommend && global.creditDrafting) {
+						if(global.draftvalues.mondata[monname][0]["cost"]>	maxscore){
+							t=0;
 						}
 					}
 					if (t == 0) {
@@ -3770,7 +3817,7 @@ function calculatescore(room, monname, name) {
 	var x = 0;
 	while (x < args.length) {
 		var argx = args[x];
-		if (posfilterroles.includes(toId(argx))) {
+			if (posfilterroles.includes(toId(argx))) {
 			filterroles.push(toId(argx));
 		}
 		var draftsshown = 3;
@@ -3783,13 +3830,19 @@ function calculatescore(room, monname, name) {
 		if (postypings.includes(argx)) {
 			filtertypings.push(argx);
 		}
+		if (argx.includes("maxcost")) {
+			pointrecommend=true;
+			var last2 = argx.slice(-2);
+			maxpoints = parseInt(last2);
+			pointrecommend = true;
+		}
 		if (!Number.isNaN(parseInt(argx))) {
 			if (parseInt(argx) < 40) {
 				draftsshown = parseInt(argx);
 			}
 			else {
-				maxpoints = parseInt(argx);
-				pointrecommend = true;
+				//maxpoints = parseInt(argx);
+				//pointrecommend = true;
 			}
 		}
 		x++;
@@ -4453,6 +4506,7 @@ function PlayerPrintoutStandard(list,i) {
 			}
 		}
 	}
+	remainvalue=global.draftvalues.users[username]["erekredieten"];
 	var word = '!htmlbox  <div><div> <div  style="height: 100px; padding: 12px; border: 1px solid black;" class="box">' +
 		'\t<div style="display: inline-flex;float: left;"><h1>' + username + '</h1> </div>' +
 		'\t<div style="display: inline-flex;width: 100px; height 40px ;padding: 6px; border: 1px solid black;float: right;">' +
@@ -4472,9 +4526,26 @@ function PlayerPrintoutStandard(list,i) {
 
 	word = word  + '<div  style="padding: 5px;"> Recommend a Pokemon: <button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend '+ remainvalue +'" style="background-color: rgb(204, 204, 255)">recommend </button></div><div>';
 	var index = 1;
-	word = word + " <table border=\"1\">" +
-		"        <col width=\"150\" align=\"char\" char=\".\"" +
-		"                    valign=\"top\" charoff =\"3\"  style=\"background-color:" + global.colorForTiers["Tier1"] + ";color:#ffffff;\">  " +
+	//global.colorForTierings
+	word = word + " <table border=\"1\">" ;
+	for (let i = 0; i < global.tiers.length; i++) {
+		word= word +"        <col width=\"150\" align=\"char\" char=\".\"" +
+		"                    valign=\"top\" charoff =\"3\"  style=\"background-color:" + global.colorForTierings[i] + ";color:#ffffff;\">  "
+	}
+	word=word+
+		"<tr>"
+	for (let i = 0; i < global.tiers.length; i++) {
+		word= word +  "<th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable" + global.tiers[i] + "\" style=\"width: 100%; background-color: rgb(204, 255, 204)\"><h2  style=\"background-color:rgb(250,250,100)\">"+global.tiers[i]+"</h2></button></th>"
+	}
+	word=word+
+		"</tr><tr>"
+	for (let i = 0; i < global.tiers.length; i++) {
+		word = word + "<td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend" +global.tiers[i]  +"\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend "+global.tiers[i] + "</button></td>"
+	}
+	word=word+
+		"</tr>";
+
+		/*
 		"        <col width=\"150\" align=\"char\" char=\".\" " +
 		"                    valign=\"top\" charoff =\"3\"style=\"background-color:" + global.colorForTiers["Tier2"] + ";\">  " +
 		"        <col width=\"150\" align=\"char\" char=\".\"" +
@@ -4504,7 +4575,7 @@ function PlayerPrintoutStandard(list,i) {
 		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier4\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier4</button></td>" +
 		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier5\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier5</button></td>" +
 		"        </tr>" +
-		"    </table></div></div></div>";
+		"    </table></div></div></div>";*/
 	return word;
 }
 
