@@ -550,7 +550,7 @@ exports.commands = {
 
 			//Do something
 
-			result = result + ", " + list[i]+ ";"+global.history[list(i)];
+			result = result + ", " + list[i]+ ";"+global.history[list[i]];
 		}
 		result = result.substring(1, result.length);
 		//console.log
