@@ -1266,7 +1266,7 @@ exports.commands = {
 		//}
 		var draftmons = global.draftvalues.todraftmons[toId(room)];
 
-		global.tiers=Array.from(draftmons["tierlist"].keys());
+		global.tiers=Array.from(Object.keys(draftmons["tierlist"]));
 		global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)] = true;
 		var tiername = "Tier" + global.draftvalues.currenttier[toId(room)];
 		console.log(tiername);
