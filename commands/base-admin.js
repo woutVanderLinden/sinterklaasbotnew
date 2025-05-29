@@ -898,6 +898,8 @@ exports.commands = {
 		var list = global.draftvalues.turnorder;
 		var username = list[global.draftvalues.nextdrafter];
 		this.send(global.draftvalues.draftroom, username + " turn");
+		var draftmons = global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)];
+		global.tiers=Array.from(draftmons["tierlist"].keys());
 		if (global.draftvalues.pointdrafting) {
 
 			var newlist = global.draftvalues.users[username]["draftedmons"];
@@ -1177,6 +1179,7 @@ exports.commands = {
 			global.tiers=Array.from(draftmons["tierlist"].keys());
 			global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)] = true;
 			var tiername = tiers[0];
+			this.reply(global.tiers);
 			//global.draftvalues.cur[toId(room)]
 			console.log(tiername);
 			global.draftvalues.possiblepicks = draftmons["tierlist"];
