@@ -8,7 +8,7 @@
       "pickrequired": true,
       "pokemon":["baxcalibur"]
     },
-    "tiera":
+    "Tiera":
     {
       "picks":3,
       "points":16,
@@ -16,14 +16,14 @@
       "pickrequired": true,
       "pokemon":["Alomomola"]
     },
-    "tierb":
+    "Tierb":
     {
       "picks":3,
       "points":15,
       "tiernr": 1,
       "pickrequired": true,
       "pokemon":["Armarouge"]},
-    "tierc":
+    "Tierc":
     {
       "picks":3,
       "points":14,
@@ -31,7 +31,7 @@
       "pickrequired": false,
       "pokemon":["Abomasnow"]
     },
-    "tierd":
+    "Tierd":
     {
       "picks":3,
       "points":13,
@@ -39,7 +39,7 @@
       "pickrequired": false,
       "pokemon":["Arbok"]
     },
-    "tiere":
+    "Tiere":
     {
       "picks":3,
       "points":12,
