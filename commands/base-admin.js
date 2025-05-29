@@ -1176,7 +1176,6 @@ exports.commands = {
 			//if(global.draftvalues.draftedmons={});
 			//}
 			var draftmons = global.draftvalues.todraftmons[toId(room)];
-			global.tiers=Array.from(draftmons["tierlist"].keys());
 			global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)] = true;
 			var tiername = tiers[0];
 			this.reply(global.tiers);
@@ -1266,6 +1265,8 @@ exports.commands = {
 		//if(global.draftvalues.draftedmons={});
 		//}
 		var draftmons = global.draftvalues.todraftmons[toId(room)];
+
+		global.tiers=Array.from(draftmons["tierlist"].keys());
 		global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)] = true;
 		var tiername = "Tier" + global.draftvalues.currenttier[toId(room)];
 		console.log(tiername);
