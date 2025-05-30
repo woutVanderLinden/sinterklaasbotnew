@@ -547,12 +547,16 @@ exports.commands = {
 		var list = Object.keys(global.history);
 
 		var result = '!htmlbox ';
+
 		for (var i = 0; i < list.length; i++) {
 			console.log(list[i]);
 			//Do something
 			//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 			var name = list[i];
-			var word = '<a href=///"'+ global.history[name] +'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a>,';
+			//var word = '<a href="' + global.history[name] +'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a>,';
+			var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?viewdraft ' + global.history[name] + '" style="width:150px;">';
+			word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name  +'</a>';
+			word = word + '</button>';
 			result = result + word;
 		}
 		result = result.substring(0, result.length - 1);
@@ -3472,8 +3476,8 @@ function draftmonsprintroles(arg, role, nrshown, by, room, monToColor) {
 
 			}
 			else {
-				var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:150px; background-color:' + monToColor[name] + '">';
-				word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name  + '</a><div>'+ " ("+moncost+")"+'</div>';
+				var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:150px;height:80px; background-color:' + monToColor[name] + '">';
+				word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name  +"<br/> ("+moncost+")"+'</a>';
 				word = word + '</button>';
 				result = result + word;
 			}
