@@ -3479,7 +3479,7 @@ function draftmonsprintroles(arg, role, nrshown, by, room, monToColor) {
 			}
 			else {
 				var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:150px;height:80px; background-color:' + monToColor[name] + '">';
-				word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" ><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name  +"<br/> ("+moncost+")"+'</a>';
+				word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" ><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name  +"</a><br/> ("+moncost+")";
 				word = word + '</button>';
 				result = result + word;
 			}
