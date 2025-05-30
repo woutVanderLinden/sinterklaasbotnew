@@ -646,9 +646,10 @@ exports.commands = {
 				teracaptains = quotes["pokemon"][toId(arg)]["teracaptains"];
 			}
 			if (toId(by) == toId(room)) {
-				return this.reply(arg +"\n "+draftmonsprint(list));
+				this.reply("showing draft of" + arg);
+				return (draftmonsprint(list));
 			} else {
-				return this.reply(arg +"\n "+draftmonsprinttera(list, teracaptains));
+				return this.reply(draftmonsprinttera(list, teracaptains));
 			}
 
 
