@@ -542,6 +542,7 @@ exports.commands = {
 		//console.log
 		return this.reply(result)
 	},
+	viewhistory: 'history',
 	seehistory: 'history',
 	history: function (arg, by, room, cmd) {
 		var list = Object.keys(global.history);
@@ -555,7 +556,7 @@ exports.commands = {
 			var name = list[i];
 			//var word = '<a href="' + global.history[name] +'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a>,';
 			var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?viewdraft ' + global.history[name] + '" style="width:150px;">';
-			word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name  +'</a>';
+			word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" ><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name  +'</a><br/>' + global.history[name] ;
 			word = word + '</button>';
 			result = result + word;
 		}
@@ -634,6 +635,7 @@ exports.commands = {
 			var type;
 			var teracaptains;
 			if (arg == '') {
+				arg=toId(by);
 				type = quotes["pokemon"][toId(by)]["TerralyzeType"];
 				list = quotes["pokemon"][toId(by)]["draftedmons"];
 				teracaptains = quotes["pokemon"][toId(by)]["teracaptains"];
@@ -644,9 +646,9 @@ exports.commands = {
 				teracaptains = quotes["pokemon"][toId(arg)]["teracaptains"];
 			}
 			if (toId(by) == toId(room)) {
-				return this.reply(draftmonsprint(list));
+				return this.reply(arg +"\n "+draftmonsprint(list));
 			} else {
-				return this.reply(draftmonsprinttera(list, teracaptains));
+				return this.reply(arg +"\n "+draftmonsprinttera(list, teracaptains));
 			}
 
 
@@ -3477,7 +3479,7 @@ function draftmonsprintroles(arg, role, nrshown, by, room, monToColor) {
 			}
 			else {
 				var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:150px;height:80px; background-color:' + monToColor[name] + '">';
-				word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name  +"<br/> ("+moncost+")"+'</a>';
+				word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" ><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name  +"<br/> ("+moncost+")"+'</a>';
 				word = word + '</button>';
 				result = result + word;
 			}
