@@ -548,8 +548,16 @@ exports.commands = {
 		var list = Object.keys(global.history);
 
 		var result = '!htmlbox ';
+		var number=20;
+		if (!Number.isNaN(parseInt(arg))) {
+			number = parseInt(arg);
+		}
+		var start=0;
+		if((list.length-number>0)){
+			start=(list.length-number);
+		}
 
-		for (var i = 0; i < list.length; i++) {
+		for (var i = start; i < list.length; i++) {
 			console.log(list[i]);
 			//Do something
 			//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
