@@ -552,7 +552,7 @@ exports.commands = {
 			//Do something
 			//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 			var name = list[i];
-			var word = '<a href="'+ global.history[name] +'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a>,';
+			var word = '<a href=///"'+ global.history[name] +'" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a>,';
 			result = result + word;
 		}
 		result = result.substring(0, result.length - 1);
