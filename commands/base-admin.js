@@ -647,7 +647,7 @@ exports.commands = {
 			}
 			if (toId(by) == toId(room)) {
 				this.reply("showing draft of" + arg);
-				return (draftmonsprint(list));
+				return this.reply(draftmonsprint(list));
 			} else {
 				return this.reply(draftmonsprinttera(list, teracaptains));
 			}
