@@ -16353,6 +16353,64 @@
          "sun": null
       }
    ],
+   "Ursaluna-Bloodmoon": [
+      {
+         "name": "Ursaluna-Bloodmoon",
+         "Typing1": "Normal",
+         "Typing 2": "Ground",
+         "physicalbulkyattacker": 0,
+         "specialbulkyattacker": 5,
+         "physicalwall": 0,
+         "physicalsetup": 0,
+         "priority": 0,
+         "specialsweeper": 0,
+         "specialsetup": 4,
+         "status": 0,
+         "itemremover": 0,
+         "scarf": 0,
+         "entryhazards": 0,
+         "pivot": 0,
+         "cleric": 0,
+         "specialwall": 0,
+         "hazardremoval": 0,
+         "physicalsweeper": 0,
+         "sand": 0,
+         "speedcontrol": 0,
+         "screens": 0,
+         "rain": 0,
+         "hail": 0,
+         "sun": 0
+      }
+   ],
+   "Pecharunt": [
+      {
+         "name": "Pecharunt",
+         "Typing1": "Ghost",
+         "Typing 2": "Poison",
+         "physicalbulkyattacker": 0,
+         "specialbulkyattacker": 0,
+         "physicalwall": 5,
+         "physicalsetup": 0,
+         "priority": 0,
+         "specialsweeper": 0,
+         "specialsetup": 2,
+         "status": 0,
+         "itemremover": 0,
+         "scarf": 0,
+         "entryhazards": 0,
+         "pivot": 4,
+         "cleric": 0,
+         "specialwall": 0,
+         "hazardremoval": 0,
+         "physicalsweeper": 0,
+         "sand": 0,
+         "speedcontrol": 0,
+         "screens": 0,
+         "rain": 0,
+         "hail": 0,
+         "sun": 0
+      }
+   ],
    "Alomomola": [
       {
          "name": "Alomomola",
@@ -16767,6 +16825,35 @@
          "rain": null,
          "hail": null,
          "sun": null
+      }
+   ],
+   "Fletchinder": [
+      {
+         "name": "Fletchinder",
+         "Typing1": "Fire",
+         "Typing 2": "Flying",
+         "physicalbulkyattacker": 0,
+         "specialbulkyattacker": 0,
+         "physicalwall": 0,
+         "physicalsetup": 0,
+         "priority": 3,
+         "specialsweeper": 0,
+         "specialsetup": 0,
+         "status": 0,
+         "itemremover": 0,
+         "scarf": 0,
+         "entryhazards": 0,
+         "pivot": 0,
+         "cleric": 0,
+         "specialwall": 0,
+         "hazardremoval": 0,
+         "physicalsweeper": 0,
+         "sand": 0,
+         "speedcontrol": 0,
+         "screens": 0,
+         "rain": 0,
+         "hail": 0,
+         "sun": 0
       }
    ],
    "Sneasler": [
