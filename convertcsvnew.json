@@ -16416,6 +16416,7 @@
    "Ursaluna-Bloodmoon": [
       {
          "name": "Ursaluna-Bloodmoon",
+         "Cost": 17,
          "Typing1": "Normal",
          "Typing 2": "Ground",
          "physicalbulkyattacker": 0,
