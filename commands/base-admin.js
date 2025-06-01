@@ -2567,6 +2567,7 @@ exports.commands = {
 		var posfilterroles = ["entryhazards", "hazardremoval", "itemremover", "pivot", "cleric", "pivot", "scarf", "physicalsweeper", "specialsweeper", "physicalbulkyattacker", "specialbulkyattacker", "physicalwall", "specialwall", "physicalsetup", "specialsetup", "status", "priority", "speedcontrol", "sun", "rain", "hail", "sand"];
 		var filterroles = [];
 		var x = 0;
+		var maxscore
 		var monToColor = {};
 		var tierrecommend = false;
 		var pointrecommend = false;
@@ -2594,7 +2595,7 @@ exports.commands = {
 					draftsshown = parseInt(argx);
 				}
 				else {
-					maxpoints = parseInt(argx);
+					maxscore = parseInt(argx);
 					pointrecommend = true;
 				}
 			}
@@ -2619,7 +2620,7 @@ exports.commands = {
 				g = 100;
 			} else {
 				if (pointrecommend) {
-					while (possiblepic = draftmons["tierlist"]["Tier" + g]["points"] > maxpoints) {
+					while (possiblepic = draftmons["tierlist"]["Tier" + g]["points"] > maxscore) {
 
 						g++
 					}
@@ -2655,7 +2656,7 @@ exports.commands = {
 
 				}
 				if (pointrecommend && global.draftvalues.creditDrafting) {
-					if(global.draftvalues.mondata[monname][0]["cost"] <	maxscore){
+					if(global.draftvalues.mondata[monname][0]["cost"] >	maxscore){
 						t=0;
 					}
 				}
@@ -3189,7 +3190,7 @@ exports.commands = {
 						}
 					}
 					if (pointrecommend && global.draftvalues.creditDrafting) {
-						if(global.draftvalues.mondata[monname][0]["cost"] <	maxscore){
+						if(global.draftvalues.mondata[monname][0]["cost"] >	maxpoints){
 							t=0;
 						}
 					}
