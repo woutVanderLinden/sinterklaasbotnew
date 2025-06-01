@@ -83,7 +83,7 @@ try {
 	global.draftvalues.currenttier={};
 	global.draftvalues.pointdrafting=false;
 	global.colors = require('colors');
-	global.colorForTiers = {tier1:"rgb(220,80,80)", tier2:"rgb(220,140,100)", tier3:"rgb(210,190,0)", tier4:"rgb(80,200,80)", tier5:"rgb(100,160,250)",Tier1:"rgb(220,80,80)", Tier2:"rgb(220,140,100)", Tier3:"rgb(210,190,0)", Tier4:"rgb(80,200,80)", Tier5:"rgb(100,160,250)"};
+	global.colorForTiers = {tiers:"rgb(220,80,80)", tiera:"rgb(220,140,100)", tierb:"rgb(210,190,0)", tierc:"rgb(80,200,80)", tierd:"rgb(100,160,250)",tiere:"rgb(60,100,200)",tier1:"rgb(220,80,80)", tier2:"rgb(220,140,100)", tier3:"rgb(210,190,0)", tier4:"rgb(80,200,80)", tier5:"rgb(100,160,250)",Tier1:"rgb(220,80,80)", Tier2:"rgb(220,140,100)", Tier3:"rgb(210,190,0)", Tier4:"rgb(80,200,80)", Tier5:"rgb(100,160,250)"};
 	global.colorForTierings=["rgb(220,80,80)", "rgb(220,140,100)", "rgb(210,190,0)", "rgb(80,200,80)", "rgb(100,160,250)", "rgb(60,100,200)"];
 	global.util = require('util');
 	global.fs = require('fs');
