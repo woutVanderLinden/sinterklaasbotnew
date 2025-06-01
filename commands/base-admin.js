@@ -2610,7 +2610,7 @@ exports.commands = {
 		else {
 			draftmons = global.draftvalues.todraftmons[toId(room)];
 		}
-		while (g <= draftmons["length"]) {
+		while (g <= draftmons["tierlist"]["length"]) {
 
 			var possiblepic = [];
 			if (tierrecommend) {
@@ -2964,7 +2964,7 @@ exports.commands = {
 		while (filterrolesnumber < filterroles.length) {
 			var g = 1;
 			listsix = [];
-			while (g <= draftmons["length"]) {
+			while (g <= draftmons["tierlist"]["length"]) {
 				var possiblepic = [];
 				if (tierrecommend) {
 					possiblepic = draftmons["tierlist"][tier]["pokemon"];
