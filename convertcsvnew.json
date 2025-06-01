@@ -16448,6 +16448,7 @@
          "name": "Pecharunt",
          "Typing1": "Ghost",
          "Typing 2": "Poison",
+         "Cost": 14,
          "physicalbulkyattacker": 0,
          "specialbulkyattacker": 0,
          "physicalwall": 5,

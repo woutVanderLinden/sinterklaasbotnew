@@ -2656,7 +2656,7 @@ exports.commands = {
 
 				}
 				if (pointrecommend && global.draftvalues.creditDrafting) {
-					if(global.draftvalues.mondata[monname][0]["cost"] >	maxscore){
+					if(global.draftvalues.mondata[monname][0]["Cost"] >	maxscore){
 						t=0;
 					}
 				}
@@ -3190,10 +3190,8 @@ exports.commands = {
 						}
 					}
 					if (pointrecommend && global.draftvalues.creditDrafting) {
-						console.log("moncost"+global.draftvalues.mondata[monname][0]["cost"]);
-						if(global.draftvalues.mondata[monname][0]["cost"] >	maxpoints){
+						if(global.draftvalues.mondata[monname][0]["Cost"] >	maxpoints){
 							t = 0;
-							console.log("moncost2 "+global.draftvalues.mondata[monname][0]["cost"]);
 						}
 					}
 					if (t == 0) {
