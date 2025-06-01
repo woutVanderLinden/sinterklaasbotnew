@@ -2815,7 +2815,7 @@ exports.commands = {
 				filtertypings.push(argx);
 			}
 			if (!Number.isNaN(parseInt(argx))) {
-				if (parseInt(argx) < 40 && !global.creditDrafting) {
+				if (parseInt(argx) < 40 && !global.draftvalues.creditDrafting) {
 					draftsshown = parseInt(argx);
 				}
 				else {
@@ -2975,7 +2975,7 @@ exports.commands = {
 					possiblepic = draftmons["tierlist"][tier]["pokemon"];
 					g = 100;
 				} else {
-					if (pointrecommend && !global.creditDrafting) {
+					if (pointrecommend && !global.draftvalues.creditDrafting) {
 						while (possiblepic = draftmons["tierlist"]["Tier" + g]["points"] > maxpoints) {
 
 							g++
@@ -3183,7 +3183,7 @@ exports.commands = {
 							}
 						}
 					}
-					if (pointrecommend && global.creditDrafting) {
+					if (pointrecommend && global.draftvalues.creditDrafting) {
 						if(global.draftvalues.mondata[monname][0]["cost"]>	maxscore){
 							t=0;
 						}
@@ -3939,7 +3939,7 @@ function calculatescore(room, monname, name) {
 			pointrecommend = true;
 		}
 		if (!Number.isNaN(parseInt(argx))) {
-			if (parseInt(argx) < 40 && !global.creditDrafting) {
+			if (parseInt(argx) < 40 && !global.draftvalues.creditDrafting) {
 				draftsshown = parseInt(argx);
 			}
 			else {
