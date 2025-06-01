@@ -16891,6 +16891,7 @@
    "Fletchinder": [
       {
          "name": "Fletchinder",
+         "Cost": 1,
          "Typing1": "Fire",
          "Typing 2": "Flying",
          "physicalbulkyattacker": 0,

@@ -2570,6 +2570,7 @@ exports.commands = {
 		var monToColor = {};
 		var tierrecommend = false;
 		var pointrecommend = false;
+		var tier = "";
 		while (x < args.length) {
 			var argx = args[x];
 
@@ -2581,7 +2582,7 @@ exports.commands = {
 				argx = toId(argx);
 				argx = jsUcfirst(argx);
 				tierrecommend = true;
-				var tier = argx;
+				tier = argx;
 			}
 			argx = toId(argx);
 			argx = jsUcfirst(argx);
@@ -2777,7 +2778,7 @@ exports.commands = {
 
 
 		var response = "";
-
+		var tier = "";
 		var tierrecommend = false;
 		var pointrecommend = false;
 		var monToColor = {};
@@ -3921,7 +3922,7 @@ function calculatescore(room, monname, name) {
 		if (argx.includes("tier")) {
 			argx = jsUcfirst(argx);
 			tierrecommend = true;
-			var tier = argx;
+			tier = argx;
 		}
 		argx = jsUcfirst(argx);
 		if (postypings.includes(argx)) {
@@ -3931,6 +3932,7 @@ function calculatescore(room, monname, name) {
 			pointrecommend=true;
 			var last2 = argx.slice(-2);
 			maxpoints = parseInt(last2);
+			console.log(last2);
 			pointrecommend = true;
 		}
 		if (!Number.isNaN(parseInt(argx))) {
