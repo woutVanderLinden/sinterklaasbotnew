@@ -2619,7 +2619,7 @@ exports.commands = {
 				possiblepic = draftmons["tierlist"][tier]["pokemon"];
 				g = 100;
 			} else {
-				if (pointrecommend) {
+				if (pointrecommend && !global.draftvalues.creditDrafting) {
 					while (possiblepic = draftmons["tierlist"]["Tier" + g]["points"] > maxscore) {
 
 						g++
@@ -3190,8 +3190,10 @@ exports.commands = {
 						}
 					}
 					if (pointrecommend && global.draftvalues.creditDrafting) {
+						console.log("moncost"+global.draftvalues.mondata[monname][0]["cost"]);
 						if(global.draftvalues.mondata[monname][0]["cost"] >	maxpoints){
-							t=0;
+							t = 0;
+							console.log("moncost2 "+global.draftvalues.mondata[monname][0]["cost"]);
 						}
 					}
 					if (t == 0) {
