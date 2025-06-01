@@ -2670,8 +2670,8 @@ exports.commands = {
 						monToColor[possiblepic[j]] = global.colorForTiers[tier];
 					}
 					else {
-						best[t]["credits"] = draftmons["tierlist"]["Tier" + g]["points"];
-						monToColor[possiblepic[j]] = global.colorForTiers["Tier" + g];
+						best[t]["credits"] = draftmons["tierlist"][tier]["points"];
+						monToColor[possiblepic[j]] = global.colorForTiers[tier];
 					}
 
 					console.log(best);
@@ -2691,8 +2691,8 @@ exports.commands = {
 						monToColor[possiblepic[j]] = global.colorForTiers[tier];
 					}
 					else {
-						best[t]["credits"] = draftmons["tierlist"]["Tier" + g]["points"];
-						monToColor[possiblepic[j]] = global.colorForTiers["Tier" + g];
+						best[t]["credits"] = draftmons["tierlist"][tier]["points"];
+						monToColor[possiblepic[j]] = global.colorForTiers[tier];
 					}
 					if (listsix.length > draftsshown) {
 						delete best[listsix[draftsshown]];
@@ -3207,8 +3207,8 @@ exports.commands = {
 							best[t]["credits"] = draftmons["tierlist"][tier]["points"];
 							monToColor[possiblepic[j]] = global.colorForTiers[tier];
 						} else {
-							best[t]["credits"] = draftmons["tierlist"]["Tier" + g]["points"];
-							monToColor[possiblepic[j]] = global.colorForTiers["Tier" + g];
+							best[t]["credits"] = draftmons["tierlist"][tier]["points"];
+							monToColor[possiblepic[j]] = global.colorForTiers[tier];
 						}
 
 					} else {
@@ -3225,8 +3225,8 @@ exports.commands = {
 							best[t]["credits"] = draftmons["tierlist"][tier]["points"];
 							monToColor[possiblepic[j]] = global.colorForTiers[tier];
 						} else {
-							best[t]["credits"] = draftmons["tierlist"]["Tier" + g]["points"];
-							monToColor[possiblepic[j]] = global.colorForTiers["Tier" + g];
+							best[t]["credits"] = draftmons["tierlist"][tier]["points"];
+							monToColor[possiblepic[j]] = global.colorForTiers[tier];
 						}
 						if (filtered) {
 							if (listsix.length > draftsshown) {
