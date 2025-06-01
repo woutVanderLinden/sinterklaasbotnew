@@ -2654,6 +2654,11 @@ exports.commands = {
 
 
 				}
+				if (pointrecommend && global.draftvalues.creditDrafting) {
+					if(global.draftvalues.mondata[monname][0]["cost"] <	maxscore){
+						t=0;
+					}
+				}
 				t = 99 - t;
 				var maxlength = draftsshown + 3;
 				maxlength = draftsshown;
@@ -3184,7 +3189,7 @@ exports.commands = {
 						}
 					}
 					if (pointrecommend && global.draftvalues.creditDrafting) {
-						if(global.draftvalues.mondata[monname][0]["cost"]>	maxscore){
+						if(global.draftvalues.mondata[monname][0]["cost"] <	maxscore){
 							t=0;
 						}
 					}
