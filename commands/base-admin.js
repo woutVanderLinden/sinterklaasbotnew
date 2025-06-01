@@ -1210,7 +1210,7 @@ exports.commands = {
 			var draftmons = global.draftvalues.todraftmons[toId(room)];
 			global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)] = true;
 			var tiername = tiers[0];
-			this.reply(global.tiers);
+			//this.reply(global.tiers);
 			//global.draftvalues.cur[toId(room)]
 			console.log(tiername);
 			global.draftvalues.possiblepicks = draftmons["tierlist"];
@@ -2599,7 +2599,7 @@ exports.commands = {
 			}
 			x++;
 		}
-		var g = 1;
+		var g = 0;
 		var draftmons = [];
 		var best = {};
 		var listsix = [];
@@ -2610,7 +2610,7 @@ exports.commands = {
 		else {
 			draftmons = global.draftvalues.todraftmons[toId(room)];
 		}
-		while (g <= draftmons["tierlist"]["length"]) {
+		while (g <= draftmons["length"]) {
 
 			var possiblepic = [];
 			if (tierrecommend) {
@@ -2624,7 +2624,8 @@ exports.commands = {
 					}
 
 				}
-				possiblepic = draftmons["tierlist"]["Tier" + g]["pokemon"];
+				tier=global.tiers[g];
+				possiblepic = draftmons["tierlist"][tier]["pokemon"];
 			}
 			var j = 0;
 
@@ -2962,9 +2963,9 @@ exports.commands = {
 
 		}
 		while (filterrolesnumber < filterroles.length) {
-			var g = 1;
+			var g = 0;
 			listsix = [];
-			while (g <= draftmons["tierlist"]["length"]) {
+			while (g <= draftmons["length"]) {
 				var possiblepic = [];
 				if (tierrecommend) {
 					possiblepic = draftmons["tierlist"][tier]["pokemon"];
@@ -2977,7 +2978,7 @@ exports.commands = {
 						}
 
 					}
-					var tier=global.tiers[g];
+					tier=global.tiers[g];
 					possiblepic = draftmons["tierlist"][tier]["pokemon"];
 				}
 				var j = 0;
