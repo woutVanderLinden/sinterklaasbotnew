@@ -16739,6 +16739,36 @@
          "sun": null
       }
    ],
+   "Servine": [
+      {
+         "name": "Servine",
+         "Cost": 1,
+         "Typing1": "Grass",
+         "Typing 2": "",
+         "physicalbulkyattacker": null,
+         "specialbulkyattacker": null,
+         "physicalwall": null,
+         "physicalsetup": null,
+         "priority": null,
+         "specialsweeper": 1,
+         "specialsetup": 2,
+         "status": 1,
+         "itemremover": 1,
+         "scarf": 0,
+         "entryhazards": null,
+         "pivot": null,
+         "cleric": null,
+         "specialwall": null,
+         "hazardremoval": 1,
+         "physicalsweeper": null,
+         "sand": null,
+         "speedcontrol": null,
+         "screens": null,
+         "rain": null,
+         "hail": null,
+         "sun": null
+      }
+   ],
    "Sneasler": [
       {
          "name": "Sneasler",
