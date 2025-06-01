@@ -2806,13 +2806,16 @@ exports.commands = {
 				tierrecommend = true;
 				var tier = argx;
 			}
+			if (argx.includes("all")) {
+				draftsshown = 100;
+			}
 			argx = toId(argx);
 			argx = jsUcfirst(argx);
 			if (postypings.includes(argx)) {
 				filtertypings.push(argx);
 			}
 			if (!Number.isNaN(parseInt(argx))) {
-				if (parseInt(argx) < 40) {
+				if (parseInt(argx) < 40 && !global.creditDrafting) {
 					draftsshown = parseInt(argx);
 				}
 				else {
@@ -3936,7 +3939,7 @@ function calculatescore(room, monname, name) {
 			pointrecommend = true;
 		}
 		if (!Number.isNaN(parseInt(argx))) {
-			if (parseInt(argx) < 40) {
+			if (parseInt(argx) < 40 && !global.creditDrafting) {
 				draftsshown = parseInt(argx);
 			}
 			else {
