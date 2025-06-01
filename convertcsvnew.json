@@ -763,6 +763,36 @@
          "sun": null
       }
    ],
+   "Zweilous": [
+      {
+         "name": "Zweilous",
+         "Cost": 1,
+         "Typing1": "Dragon",
+         "Typing 2": "Dark",
+         "physicalbulkyattacker": null,
+         "specialbulkyattacker": null,
+         "physicalwall": null,
+         "physicalsetup": null,
+         "priority": null,
+         "specialsweeper": 0,
+         "specialsetup": 0,
+         "status": null,
+         "itemremover": null,
+         "scarf": 1,
+         "entryhazards": null,
+         "pivot": 0,
+         "cleric": null,
+         "specialwall": null,
+         "hazardremoval": 0,
+         "physicalsweeper": 1,
+         "sand": null,
+         "speedcontrol": null,
+         "screens": null,
+         "rain": null,
+         "hail": null,
+         "sun": null
+      }
+   ],
    "Jirachi": [
       {
          "name": "Jirachi",
@@ -4090,6 +4120,36 @@
          "cleric": null,
          "specialwall": 4,
          "hazardremoval": null,
+         "physicalsweeper": null,
+         "sand": null,
+         "speedcontrol": null,
+         "screens": null,
+         "rain": null,
+         "hail": null,
+         "sun": null
+      }
+   ],
+   "Terapagos": [
+      {
+         "name": "Terpagos",
+         "Cost": 16,
+         "Typing1": "Normal",
+         "Typing 2": "",
+         "physicalbulkyattacker": 0,
+         "specialbulkyattacker": 3,
+         "physicalwall": 3,
+         "physicalsetup": 0,
+         "priority": null,
+         "specialsweeper": null,
+         "specialsetup": 4,
+         "status": null,
+         "itemremover": null,
+         "scarf": null,
+         "entryhazards": null,
+         "pivot": null,
+         "cleric": null,
+         "specialwall": 3,
+         "hazardremoval": 5,
          "physicalsweeper": null,
          "sand": null,
          "speedcontrol": null,
