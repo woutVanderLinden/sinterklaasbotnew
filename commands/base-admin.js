@@ -2591,7 +2591,7 @@ exports.commands = {
 				filtertypings.push(argx);
 			}
 			if (!Number.isNaN(parseInt(argx))) {
-				if (parseInt(argx) < 40) {
+				if (parseInt(argx) < 40 && !global.draftvalues.creditDrafting) {
 					draftsshown = parseInt(argx);
 				}
 				else {
