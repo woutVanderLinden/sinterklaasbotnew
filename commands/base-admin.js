@@ -2243,11 +2243,11 @@ exports.commands = {
 								global.history[arg]=name;
 
 
-								this.send(global.draftvalues.draftroom, name + " used a tierpick to draft a tier " + i + " " + arg + " (erekredieten. " + global.draftvalues.users[name]["erekredieten"] + "tierpicks " + global.draftvalues.users[name]["tieredpicks"] + " )");
+								this.send(global.draftvalues.draftroom, name + " used a tierpick and " + pointscost +  "credits to draft a tier " + i + " " + arg + " (erekredieten. " + global.draftvalues.users[name]["erekredieten"] + " tierpicks " + global.draftvalues.users[name]["tieredpicks"] + " )");
 								global.draftvalues.users[name]["totaldraftscore"] = global.draftvalues.users[name]["totaldraftscore"] + calculatescore(room, arg, name);
 							}
 							else{
-								if(tier==="Tierf"){
+								if(tier==="Tiere"||tier==="tiere"){
 									var picksleft = draftmons["freepicks"] - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
 									var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==5).length;
 									var pointscost=3;
@@ -2260,7 +2260,7 @@ exports.commands = {
 									global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"] - pointscost;
 
 
-									this.send(global.draftvalues.draftroom, name + " used credits to draft a tier " + i + " " + arg + " (erekredieten. " + global.draftvalues.users[name]["erekredieten"] + "tierpicks " + global.draftvalues.users[name]["tieredpicks"] + " )");
+									this.send(global.draftvalues.draftroom, name + " used "+ pointscost +  " credits to draft a tier " + i + " " + arg + " (erekredieten. " + global.draftvalues.users[name]["erekredieten"] + " tierpicks " + global.draftvalues.users[name]["tieredpicks"] + " )");
 									global.draftvalues.users[name]["totaldraftscore"] = global.draftvalues.users[name]["totaldraftscore"] + calculatescore(room, arg, name);
 
 								}
@@ -2283,7 +2283,7 @@ exports.commands = {
 							global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"] - pointscost;
 
 
-							this.send(global.draftvalues.draftroom, name + " used credits to draft a tier " + i + " " + arg + " (erekredieten. " + global.draftvalues.users[name]["erekredieten"] + "tierpicks " + global.draftvalues.users[name]["tieredpicks"] + " )");
+							this.send(global.draftvalues.draftroom, name + " used "+ pointscost + " credits to draft a tier " + i + " " + arg + " (erekredieten. " + global.draftvalues.users[name]["erekredieten"] + "tierpicks " + global.draftvalues.users[name]["tieredpicks"] + " )");
 							global.draftvalues.users[name]["totaldraftscore"] = global.draftvalues.users[name]["totaldraftscore"] + calculatescore(room, arg, name);
 
 						}
