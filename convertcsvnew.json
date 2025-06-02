@@ -24220,7 +24220,7 @@
    "Iron Leaves": [
       {
          "name": "Iron Leaves",
-         "Cost": 0,
+         "Cost": 10,
          "Typing1": "Grass",
          "Typing 2": "Psychic",
          "physicalbulkyattacker": null,
@@ -25840,7 +25840,7 @@
    "Tinkaton": [
       {
          "name": "Tinkaton",
-         "Cost": null,
+         "Cost": 10,
          "Typing1": "Fairy",
          "Typing 2": "Steel",
          "physicalbulkyattacker": 2,

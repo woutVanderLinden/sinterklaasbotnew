@@ -2247,7 +2247,26 @@ exports.commands = {
 								global.draftvalues.users[name]["totaldraftscore"] = global.draftvalues.users[name]["totaldraftscore"] + calculatescore(room, arg, name);
 							}
 							else{
-								return this.reply("please make sure you have at least a pick of tier "+tier+" left");
+								if(tier==="Tierf"){
+									var picksleft = draftmons["freepicks"] - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
+									var tierFpicks = global.draftvalues.users[name]["tieredpicks"].filter(x => x==5).length;
+									var pointscost=3;
+									if ((picksleft-1) * 3 - 2*tierFpicks > currentscore - pointscost || picksleft < 0) {
+										var kredieten =((picksleft-1) * 3 - 2*tierFpicks);
+										return this.reply("please make sure you have at least " + kredieten + " Erekredieten left");
+									}
+									global.history[arg]=name;
+									draftmons["tierlist"][tier]["pokemon"] = removeItemOnce(draftmons["tierlist"][tier]["pokemon"], arg);
+									global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"] - pointscost;
+
+
+									this.send(global.draftvalues.draftroom, name + " used credits to draft a tier " + i + " " + arg + " (erekredieten. " + global.draftvalues.users[name]["erekredieten"] + "tierpicks " + global.draftvalues.users[name]["tieredpicks"] + " )");
+									global.draftvalues.users[name]["totaldraftscore"] = global.draftvalues.users[name]["totaldraftscore"] + calculatescore(room, arg, name);
+
+								}
+								else{
+									return this.reply("please make sure you have at least a pick of tier "+tier+" left");
+								}
 							}
 
 						}
