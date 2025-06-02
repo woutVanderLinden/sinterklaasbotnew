@@ -900,10 +900,10 @@ exports.commands = {
 		var draftmons = global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)];
 		console.log(arg2);
 		if (toId(by) == toId(room)) {
-			return this.send(global.draftvalues.draftroom, toreply + "<div  style='color: black; border: 2px solid red; background-color: "+color +"; padding: 0px;'>" + draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"], color) + "</div>");
+			return this.send(global.draftvalues.draftroom, toreply + "<div  style='color: black; border: 2px solid red; background-color: "+color +"; padding: -2px;'>" + draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"], color) + "</div>");
 
 		} else {
-			return this.send(global.draftvalues.draftroom, toreply + "<div  style='color: black; border: 2px solid red; background-color: "+color +"; padding: 0px;'>" + draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"], color) + "</div>");
+			return this.send(global.draftvalues.draftroom, toreply + "<div  style='color: black; border: 2px solid red; background-color: "+color +"; padding: -2px;'>" + draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"], color) + "</div>");
 
 		}
 
