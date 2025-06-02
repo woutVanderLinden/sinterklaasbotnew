@@ -3590,7 +3590,7 @@ function draftmonsprint5(arg, color) {
 		else {
 			word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:150px;height:70px; background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
 		}
-		word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name +  '" target="_blank" class="subtle" ><psicon pokemon="' + name + '" style="vertical-align:0px;margin:-2px" />' + name + '</a><br/>'+ " ("+moncost +")";
+		word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name +  '" target="_blank" class="subtle" ><psicon pokemon="' + name + '" style="margin:0px" />' + name + '</a><br/>'+ " ("+moncost +")";
 		word = word + '</button>';
 		result = result + word;
 
