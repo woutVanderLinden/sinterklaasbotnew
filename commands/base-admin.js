@@ -900,10 +900,10 @@ exports.commands = {
 		var draftmons = global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)];
 		console.log(arg2);
 		if (toId(by) == toId(room)) {
-			return this.send(global.draftvalues.draftroom, toreply + "<div  style='color: black; border: 2px solid red; background-color: "+color +"; padding: 4px;'>" + draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"], color) + "</div>");
+			return this.send(global.draftvalues.draftroom, toreply + "<div  style='color: black; border: 2px solid red; background-color: "+color +"; padding: 0px;'>" + draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"], color) + "</div>");
 
 		} else {
-			return this.send(global.draftvalues.draftroom, toreply + "<div  style='color: black; border: 2px solid red; background-color: "+color +"; padding: 4px;'>" + draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"], color) + "</div>");
+			return this.send(global.draftvalues.draftroom, toreply + "<div  style='color: black; border: 2px solid red; background-color: "+color +"; padding: 0px;'>" + draftmonsprint5(draftmons["tierlist"][arg2]["pokemon"], color) + "</div>");
 
 		}
 
@@ -3590,7 +3590,7 @@ function draftmonsprint5(arg, color) {
 		else {
 			word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:150px;height:70px; background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
 		}
-		word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name +  '" target="_blank" class="subtle" ><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a><br/>'+ " ("+moncost +")";
+		word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name +  '" target="_blank" class="subtle" ><psicon pokemon="' + name + '" style="vertical-align:0px;margin:-2px" />' + name + '</a><br/>'+ " ("+moncost +")";
 		word = word + '</button>';
 		result = result + word;
 
