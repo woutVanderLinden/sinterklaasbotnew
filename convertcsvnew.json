@@ -562,7 +562,7 @@
    "Garchomp": [
       {
          "name": "Garchomp",
-         "Cost": 17,
+         "Cost": 15,
          "Typing1": "Dragon",
          "Typing 2": "Ground",
          "physicalbulkyattacker": 2,
@@ -1096,7 +1096,7 @@
    "Salamence": [
       {
          "name": "Salamence",
-         "Cost": 14,
+         "Cost": 13,
          "Typing1": "Dragon",
          "Typing 2": "Flying",
          "physicalbulkyattacker": 3,
@@ -22480,7 +22480,7 @@
    "Baxcalibur": [
       {
          "name": "Baxcalibur",
-         "Cost": 17,
+         "Cost": 15,
          "Typing1": "Dragon",
          "Typing 2": "Ice",
          "physicalbulkyattacker": null,
@@ -22930,7 +22930,7 @@
    "Espathra": [
       {
          "name": "Espathra",
-         "Cost": 11,
+         "Cost": 10,
          "Typing1": "Psychic",
          "Typing 2": "",
          "physicalbulkyattacker": 2,
@@ -22939,7 +22939,7 @@
          "physicalsetup": null,
          "priority": null,
          "specialsweeper": null,
-         "specialsetup": null,
+         "specialsetup": 5,
          "status": null,
          "itemremover": null,
          "scarf": 2,
@@ -24370,7 +24370,7 @@
    "Gouging Fire": [
       {
          "name": "Gouging Fire",
-         "Cost": 17,
+         "Cost": 15,
          "Typing1": "Fire",
          "Typing 2": "Dragon",
          "physicalbulkyattacker": 4,
@@ -24640,7 +24640,7 @@
    "Ogerpon-Hearthflame": [
       {
          "name": "Ogerpon-Hearthflame",
-         "Cost": 17,
+         "Cost": 14,
          "Typing1": "Grass",
          "Typing 2": "Fire",
          "physicalbulkyattacker": null,
@@ -25690,7 +25690,7 @@
    "Shaymin": [
       {
          "name": "Shaymin",
-         "Cost": 10,
+         "Cost": 9,
          "Typing1": "Grass",
          "Typing 2": "",
          "physicalbulkyattacker": null,
