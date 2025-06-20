@@ -629,6 +629,10 @@ exports.commands = {
 				return false;
 			}
 		}
+		if(toId(room)== "nederlands"||toId(room)== "dutch"){
+			return this.reply("you can't use this now");
+		}
+
 
 		const uri = process.env.MONGO_URI;
 		console.log(uri);
