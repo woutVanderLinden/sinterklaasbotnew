@@ -1182,10 +1182,24 @@ exports.commands = {
 
 			global.draftvalues.tierPicks = global.draftvalues.todraftmons[toId(room)]["freepicks"];
 			var list = global.draftvalues.turnorder;
+			var yvel =list.indexOf("yveltalnl");
+			var mich =list.indexOf("michielleus");
+			if(yvel != -1 && mich !=-1){
+				list.splice(yvel, 1);
+				mich =list.indexOf("michielleus");
+				list.splice(mich, 1);
+				list = shuffle(list);
+				list.add("michielleus");
+				list.add("yveltalnl");
+			}
+			else{
+				list = shuffle(list);
+			}
 			global.draftvalues.availableTypes = ["Grass", "Fire", "Water", "Ice", "Bug", "Normal", "Flying", "Poison", "Psychic", "Ghost", "Fighting", "Rock", "Ground", "Electric", "Dragon", "Fairy", "Dark", "Steel"];
 			global.draftvalues.giftdrafting = false;
 			console.log(list);
-			list = shuffle(list);
+
+
 			global.draftvalues.typeturnorder = [...list];
 			console.log(list);
 			var result = '';
@@ -3010,6 +3024,11 @@ exports.commands = {
 							g++
 						}
 
+					}
+					if(g==0){
+						if(!global.draftvalues.users[name]["tieredpicks"].includes(g)){
+							g++;
+						}
 					}
 					tier=global.tiers[g];
 					possiblepic = draftmons["tierlist"][tier]["pokemon"];
