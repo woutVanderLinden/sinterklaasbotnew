@@ -1185,12 +1185,12 @@ exports.commands = {
 			var yvel =list.indexOf("yveltalnl");
 			var mich =list.indexOf("michielleus");
 			if(yvel != -1 && mich !=-1){
-				list.splice(yvel, 1);
-				mich =list.indexOf("michielleus");
-				list.splice(mich, 1);
+				list = list.splice(yvel, 1);
+				mich = list.indexOf("michielleus");
+				list = list.splice(mich, 1);
 				list = shuffle(list);
-				list.add("michielleus");
-				list.add("yveltalnl");
+				list.push("michielleus");
+				list.push("yveltalnl");
 			}
 			else{
 				list = shuffle(list);
