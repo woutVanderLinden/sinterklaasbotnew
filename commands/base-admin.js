@@ -1281,14 +1281,11 @@ exports.commands = {
 		console.log(list);
 		var yvel = list.indexOf("yveltalnl");
 		var mich = list.indexOf("michielleus");
-		this.reply('mich ' + mich + 'yveltal ' + yvel);
 		if(yvel != -1 && mich !=-1){
-			this.reply('michy piggy' + list);
-			list = list.splice(yvel, 1);
+			list.splice(yvel, 1);
 			mich = list.indexOf("michielleus");
-			list = list.splice(mich, 1);
+			list.splice(mich, 1);
 			list = shuffle(list);
-			this.reply(list);
 			list.push("michielleus");
 			list.push("yveltalnl");
 		}
