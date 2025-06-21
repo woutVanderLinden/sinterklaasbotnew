@@ -1182,15 +1182,17 @@ exports.commands = {
 
 			global.draftvalues.tierPicks = global.draftvalues.todraftmons[toId(room)]["freepicks"];
 			var list = global.draftvalues.turnorder;
-			var yvel =list.indexOf("yveltalnl");
-			var mich =list.indexOf("michielleus");
+			var yvel = list.indexOf("yveltalnl");
+			var mich = list.indexOf("michielleus");
 			if(yvel != -1 && mich !=-1){
+				this.reply('michy piggy' + list);
 				list = list.splice(yvel, 1);
 				mich = list.indexOf("michielleus");
 				list = list.splice(mich, 1);
 				list = shuffle(list);
-				list.push("michielleus");
-				list.push("yveltalnl");
+				this.reply(list);
+				//list.push("michielleus");
+				//list.push("yveltalnl");
 			}
 			else{
 				list = shuffle(list);
