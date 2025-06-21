@@ -1182,22 +1182,9 @@ exports.commands = {
 
 			global.draftvalues.tierPicks = global.draftvalues.todraftmons[toId(room)]["freepicks"];
 			var list = global.draftvalues.turnorder;
-			var yvel = list.indexOf("yveltalnl");
-			var mich = list.indexOf("michielleus");
-			this.reply('mich ' + mich + 'yveltal ' + yvel);
-			if(yvel != -1 && mich !=-1){
-				this.reply('michy piggy' + list);
-				list = list.splice(yvel, 1);
-				mich = list.indexOf("michielleus");
-				list = list.splice(mich, 1);
-				list = shuffle(list);
-				this.reply(list);
-				//list.push("michielleus");
-				//list.push("yveltalnl");
-			}
-			else{
-				list = shuffle(list);
-			}
+
+			list = shuffle(list);
+
 			global.draftvalues.availableTypes = ["Grass", "Fire", "Water", "Ice", "Bug", "Normal", "Flying", "Poison", "Psychic", "Ghost", "Fighting", "Rock", "Ground", "Electric", "Dragon", "Fairy", "Dark", "Steel"];
 			global.draftvalues.giftdrafting = false;
 			console.log(list);
@@ -1292,7 +1279,22 @@ exports.commands = {
 		var list = global.draftvalues.turnorder;
 		global.draftvalues.giftdrafting = false;
 		console.log(list);
-		list = shuffle(list);
+		var yvel = list.indexOf("yveltalnl");
+		var mich = list.indexOf("michielleus");
+		this.reply('mich ' + mich + 'yveltal ' + yvel);
+		if(yvel != -1 && mich !=-1){
+			this.reply('michy piggy' + list);
+			list = list.splice(yvel, 1);
+			mich = list.indexOf("michielleus");
+			list = list.splice(mich, 1);
+			list = shuffle(list);
+			this.reply(list);
+			list.push("michielleus");
+			list.push("yveltalnl");
+		}
+		else {
+			list = shuffle(list);
+		}
 		console.log(list);
 		var result = '';
 		for (var i = 0; i < list.length; i++) {
