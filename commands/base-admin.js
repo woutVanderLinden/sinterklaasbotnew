@@ -919,7 +919,7 @@ exports.commands = {
 		const uri = process.env.MONGO_URI;
 		console.log(uri);
 		console.log("test");
-
+		global.history={};
 		const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 		try {
