@@ -935,7 +935,8 @@ exports.commands = {
 		var username = list[global.draftvalues.nextdrafter];
 		this.send(global.draftvalues.draftroom, username + " turn");
 		var draftmons = global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)];
-		global.tiers=Array.from(draftmons["tierlist"].keys());
+		//global.tiers=Array.from(draftmons["tierlist"].keys());
+		global.tiers=Array.from(Object.keys(draftmons["tierlist"]));
 		if (global.draftvalues.pointdrafting) {
 
 			var newlist = global.draftvalues.users[username]["draftedmons"];
