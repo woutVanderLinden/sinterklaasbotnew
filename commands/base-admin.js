@@ -629,9 +629,7 @@ exports.commands = {
 				return false;
 			}
 		}
-		if(toId(room)== "nederlands"||toId(room)== "dutch"){
-			return this.reply("you can't use this now");
-		}
+
 
 
 		const uri = process.env.MONGO_URI;
@@ -1282,6 +1280,7 @@ exports.commands = {
 		console.log(list);
 		var yvel = list.indexOf("yveltalnl");
 		var mich = list.indexOf("michielleus");
+		/*
 		if(yvel != -1 && mich !=-1){
 			list.splice(yvel, 1);
 			mich = list.indexOf("michielleus");
@@ -1293,6 +1292,8 @@ exports.commands = {
 		else {
 			list = shuffle(list);
 		}
+		*/
+		list = shuffle(list);
 		console.log(list);
 		var result = '';
 		for (var i = 0; i < list.length; i++) {
