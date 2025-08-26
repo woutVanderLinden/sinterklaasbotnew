@@ -96,7 +96,7 @@ exports.exceptions = {
 	'cc': true,
 	'greencroagunk':true,
 	'moyerf': true,
-	'kwingbaruk' : true
+	'groteneus' : true
 	 
 };
 
