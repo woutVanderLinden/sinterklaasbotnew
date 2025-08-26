@@ -2488,7 +2488,7 @@ exports.commands = {
 		if (!this.isRanked('admin') && !toId(by) == "moyerf") return false;
 		this.reply('groupchat made');
 		this.reply('/makegroupchat ' + arg);
-		this.send(toId(by), '/invite ' + toId(by) + ',groupchat-sinterklaas-' + arg);
+		this.send('groupchat-sinterklaas-' + arg, '/invite ' + toId(by) + ',groupchat-sinterklaas-' + arg);
 
 	},
 	invite: function (arg, by, room, cmd) {
