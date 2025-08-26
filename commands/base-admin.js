@@ -2485,14 +2485,14 @@ exports.commands = {
 		}
 	},
 	makegroupchat: function (arg, by, room, cmd) {
-		if (!this.isRanked('admin') && !toId(by) == "yveltalnl") return false;
+		if (!this.isRanked('admin') && !toId(by) == "moyerf") return false;
 		this.reply('groupchat made');
 		this.reply('/makegroupchat ' + arg);
 		this.send(toId(by), '/invite ' + toId(by) + ',groupchat-sinterklaas-' + arg);
 
 	},
 	invite: function (arg, by, room, cmd) {
-		if (!this.isRanked('admin') && !toId(by) == "yveltalnl") return false;
+		if (!this.isRanked('admin') && !toId(by) == "moyerf") return false;
 		this.reply('invite made');
 		return this.reply('/invite ' + arg);
 
