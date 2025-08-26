@@ -94,7 +94,8 @@ exports.exceptions = {
     'gangstersamurott':true,
      'damnright':true,
 	'cc': true,
-	'greencroagunk':true
+	'greencroagunk':true,
+	'moyerf': true
 	 
 };
 
