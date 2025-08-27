@@ -2498,6 +2498,34 @@ exports.commands = {
 		return this.reply('/invite ' + arg);
 
 	},
+	massinvite: function (arg, by, room, cmd) {
+		if (!this.isRanked('admin')) return false;
+		this.reply('invite made');
+		var args = arg.split(",");
+		var x=0;
+		while (x < args.length) {
+			var argx = args[x];
+			this.reply('/invite ' + argx);
+			this.reply("/roompromote "+argx + ",whitelist");
+			x++;
+		}
+
+	},
+	roompromote: function(arg, by, room, cmd) {
+		if (!this.isRanked('admin')) return false;
+		this.reply('/roompromote ' + arg);
+
+	},
+	auction: function (arg, by, room, cmd) {
+		if (!this.isRanked('admin')) return false;
+		this.reply('/auction ' + arg);
+	},
+	modchat:  function (arg, by, room, cmd) {
+		if (!this.isRanked('admin')) return false;
+		if(room.includes("groupchat")){
+			this.reply('/modchat +');
+		}
+	},
 	creategiftdraft: function (arg, by, room, cmd) {
 		global.draftvalues.draftroom = room;
 		console.log(global.draftvalues.draftroom);
