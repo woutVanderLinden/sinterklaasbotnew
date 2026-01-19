@@ -2463,7 +2463,7 @@ exports.commands = {
 			var list = global.draftvalues.turnorder;
 			return this.reply(global.draftvalues.draftroom, ' Choose next Tier' + global.draftvalues.currenttier[global.draftvalues.draftroom] + ' pokémon ' + list[0]);
 
-			return this.send(global.draftvalues.draftroom, ' Choose next mon ' + list[0]);
+			return this.reply(global.draftvalues.draftroom, ' Choose next mon ' + list[0]);
 		}
 	},
 
