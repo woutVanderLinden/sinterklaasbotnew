@@ -2311,6 +2311,7 @@ exports.commands = {
 						}
 					}
 					else{
+					
 						if(i>4) {
 							if (global.draftvalues.users[name]["tieredpicks"].includes("MEGA")) {
 								var pointscost = draftmons["tierlist"][tier]["points"];
@@ -2335,13 +2336,17 @@ exports.commands = {
 								global.draftvalues.users[name]["totaldraftscore"] = global.draftvalues.users[name]["totaldraftscore"] + calculatescore(room, arg, name);
 							}
 							else {
+								megavalue=0
+								if (global.draftvalues.users[name]["tieredpicks"].includes("MEGA")) {
+									megavalue=1
+								}
 
 								var pointscost = draftmons["tierlist"][tier]["points"];
 								var currentscore = global.draftvalues.users[name]["erekredieten"];
 
 								console.log("freepicks " + draftmons["freepicks"] + " picknr: " + global.draftvalues.picknr[toId(global.draftvalues.draftroom)] + " pickleft " + picksleft);
-								if (picksleft * 40 > currentscore - pointscost || picksleft < 0) {
-									return this.reply("please make sure you have at least " + picksleft * 40 + " Erekredieten left");
+								if (picksleft * 40 - 40 * megavalue> currentscore - pointscost || picksleft < 0) {
+									return this.reply("please make sure you have at least " + picksleft * 40 - 40 * megavalue + " Erekredieten left");
 								}
 								draftmons["tierlist"][tier]["pokemon"] = removeItemOnce(draftmons["tierlist"][tier]["pokemon"], arg);
 								global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"] - draftmons["tierlist"][tier]["points"];
