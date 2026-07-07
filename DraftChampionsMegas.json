@@ -33,13 +33,13 @@
 {
 "picks":1,
 "points":40,
-"pokemon":["Charizard-Mega-X","Charizard-Mega-Y","Diancie-Mega","Dragalge-Mega","Dragonite-Mega","Excadrill-Mega","Garchomp-Mega","Gallade-Mega","Gardevoir-Mega","Glimmora-Mega","Greninja-Mega","Lopunny-Mega","Mawile-Mega","Medicham-Mega","Raichu-Mega-Y","Scizor-Mega"]
+"pokemon":["Charizard-MegaX","Charizard-MegaY","Diancie-Mega","Dragalge-Mega","Dragonite-Mega","Excadrill-Mega","Garchomp-Mega","Gallade-Mega","Gardevoir-Mega","Glimmora-Mega","Greninja-Mega","Lopunny-Mega","Mawile-Mega","Medicham-Mega","Scizor-Mega"]
 },
 "Megatier2":
 {
 "picks":3,
 "points":20,
-"pokemon":["Aerodactyl-Mega","Altaria-Mega","Chandelure-Mega","Chesnaught-Mega","Clefable-Mega","Feraligatr-Mega","Floette-Mega","Froslass-Mega","Gyarados-Mega","Hawlucha-Mega","Kangaskhan-Mega","Meganium-Mega","Pinsir-Mega","Pyroar-Mega","Raichu-Mega-X","Sableye-Mega","Sceptile-Mega","Scovillain-Mega","Skarmory-Mega","Swampert-Mega","Tyranitar-Mega","Venusaur-Mega"]
+"pokemon":["Aerodactyl-Mega","Altaria-Mega","Chandelure-Mega","Chesnaught-Mega","Clefable-Mega","Feraligatr-Mega","Floette-Mega","Froslass-Mega","Gyarados-Mega","Hawlucha-Mega","Kangaskhan-Mega","Meganium-Mega","Pinsir-Mega","Pyroar-Mega","Raichu-MegaX","Sableye-Mega","Sceptile-Mega","Scovillain-Mega","Skarmory-Mega","Swampert-Mega","Tyranitar-Mega","Venusaur-Mega"]
 },
 "Megatier3":
 {
