@@ -8,6 +8,7 @@ var jokesFFM = new Settings.FlatFileManager(jokesDataFile);
 var quotes = {};
 var jokes = {};
 const { MongoClient } = require('mongodb');
+
 const uri = process.env.MONGO_URI;
 
 console.log("hi this is a test " + uri);
@@ -520,9 +521,10 @@ async function bitterballenfunc(arg, by, room, cmd, vart) {
 console.log(uri);
 async function dbconnect() {
 
-	const uri = process.env.MONGO_URI;
-
-
+	const uri =	"mongodb+srv://kingbaruk:H2MWiHQgN46qrUu@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
+	
+	console.log("hi this is a test " + uri);
+	var MongoClient = require('mongodb').MongoClient;
 	const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 	try {

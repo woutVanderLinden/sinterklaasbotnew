@@ -53,7 +53,7 @@ exports.watchconfig = true;
 * Login Details
 */
 
-exports.nick = 'Sinterklaas';
+exports.nick = 'sinterklaas';
 
 exports.pass = 'sinterklaas';
 
@@ -63,8 +63,8 @@ exports.autoReloginDelay = 60 * 1000;
 * Rooms to join
 */
 
-exports.rooms =['dutch','pet mods'];// ['dutch'];
-exports.autoJoin =['dutch','pet mods'];
+exports.rooms =['dutch'];// ['dutch'];
+exports.autoJoin =['dutch'];
 exports.owner = 'kingbaruk';
 
 /*
@@ -125,7 +125,7 @@ exports.globalPermissions = {
 * Commands configuration
 */
 
-exports.commandTokens = ['?', '/botmsg ?']; //Array of valid command characters
+exports.commandTokens = ['?','=', '/botmsg =']; //Array of valid command characters
 
 exports.defaultPermission = '%';
 

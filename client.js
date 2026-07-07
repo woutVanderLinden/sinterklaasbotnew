@@ -7,6 +7,7 @@ const url = require('url');
 global.tools = require('./data/tools.js');
 const EventEmitter = require('events');
 const WebSocketClient = require('websocket').client;
+process.env.MONGO_URI="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority"
 
 function toID (text) {
 	if (typeof text !== 'string') return text;
