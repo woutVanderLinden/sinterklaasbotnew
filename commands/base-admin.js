@@ -2646,7 +2646,6 @@ exports.commands = {
 		if (global.draftvalues.turnorder == undefined) {
 			global.draftvalues.turnorder = [];
 		}
-		this.reply("!htmlbox <p> hi </p>");
 		this.send(global.draftvalues.draftroom, '!htmlbox  <h1>normal draft</h1> <p>Press this button or ?joindraft to join </p> <button name="send" value="/msgroom nederlands, /botmsg sinterklaasthebot, ?joindraft"> joindraft </button>');
 
 	},
