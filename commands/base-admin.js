@@ -334,7 +334,7 @@ exports.commands = {
 
 		}
 		var list = global.draftvalues.turnorder;
-		return this.reply('use =draft {pokemonname} to draft your mons, Choose next mon ' + list[0]);
+		return this.reply('use ?draft {pokemonname} to draft your mons, Choose next mon ' + list[0]);
 	},
 
 	/*
@@ -389,7 +389,7 @@ exports.commands = {
 			}
 		}
 		var list = global.draftvalues.turnorder;
-		return this.reply('use =draft {pokemonname} to draft your mons, Choose next Tier' + global.draftvalues.currenttier[toId(room)] + ' pokémon ' + list[0]);
+		return this.reply('use ?draft {pokemonname} to draft your mons, Choose next Tier' + global.draftvalues.currenttier[toId(room)] + ' pokémon ' + list[0]);
 	},
 
 	joker: async function (arg, by, room, cmd) {
@@ -941,16 +941,16 @@ exports.commands = {
 			var word = '!htmlbox  <div><h1>' + username + '</h1> <div class="box"> picks left: <p>' + val + '</p></div> <div>' + draftmonsprint6(newlist) + '</div><h2>tierhelper </h2><div> Erekredieten: ' + global.draftvalues.users[username]["erekredieten"] + ' tieredpicks: ' + global.draftvalues.users[username]["tieredpicks"] + " picks left: " + val + '</div> '; var index = 1;
 			word = word + "<div>";
 			while (index < 6) {
-				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =draftable Tier' + index + '" style="background-color: rgb(204, 255, 204)">Tier' + index + "</button>";
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier' + index + '" style="background-color: rgb(204, 255, 204)">Tier' + index + "</button>";
 				index++;
 			}
 			word = word + "</div>";
 			word = word + "<div>";
-			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
 
 			var index2 = 1;
 			while (index2 < 6) {
-				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =recommend Tier' + index2 + '" style="background-color: rgb(204, 204, 255)">recommend Tier' + index2 + "</button>";
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier' + index2 + '" style="background-color: rgb(204, 204, 255)">recommend Tier' + index2 + "</button>";
 				index2++;
 			}
 			word = word + "</div>";
@@ -965,16 +965,16 @@ exports.commands = {
 			var word = '!htmlbox  <div><h1>' + username + '</h1><div>' + draftmonsprint6(newlist) + '</div><h2>tierhelper </h2><div> Erekredieten: ' + global.draftvalues.users[username]["erekredieten"] + ' tieredpicks: ' + global.draftvalues.users[username]["tieredpicks"] + " picksleft: " + val + '</div> '; var index = 1;
 			word = word + "<div>";
 			while (index < 6) {
-				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =draftable Tier' + index + '" style="background-color: rgb(204, 255, 204)">Tier' + index + "</button>";
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier' + index + '" style="background-color: rgb(204, 255, 204)">Tier' + index + "</button>";
 				index++;
 			}
 			word = word + "</div>";
 			word = word + "<div>";
-			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
 
 			var index2 = 1;
 			while (index2 < 6) {
-				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =recommend Tier' + index2 + '" style="background-color: rgb(204, 204, 255)">recommend Tier' + index2 + "</button>";
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier' + index2 + '" style="background-color: rgb(204, 204, 255)">recommend Tier' + index2 + "</button>";
 				index2++;
 			}
 			word = word + "</div>";
@@ -1011,10 +1011,10 @@ exports.commands = {
 			var word = '!htmlbox  <div><h1>' + username + '</h1><div>' + draftmonsprint6(newlist) + '</div><h2>tierhelper </h2><div> Erekredieten: ' + global.draftvalues.users[username]["erekredieten"] + ' tieredpicks: ' + global.draftvalues.users[username]["tieredpicks"] + " picksleft: " + val + '</div> ';
 			var index = 1;
 			word = word + "<div>";
-			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =draftable Tier' + index + '" style="background-color: rgb(204, 255, 204)">Showlist</button>';
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier' + index + '" style="background-color: rgb(204, 255, 204)">Showlist</button>';
 			word = word + "</div>";
 			word = word + "<div>";
-			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
 
 			word = word + "</div>";
 			word = word + "</div>";
@@ -1029,16 +1029,16 @@ exports.commands = {
 			var word = '!htmlbox  <div><h1>' + username + '</h1><div>' + draftmonsprint6(newlist) + '</div><h2>tierhelper </h2><div> Erekredieten: ' + global.draftvalues.users[username]["erekredieten"] + ' tieredpicks: ' + global.draftvalues.users[username]["tieredpicks"] + " picksleft: " + val + '</div> '; var index = 1;
 			word = word + "<div>";
 			while (index < 6) {
-				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =draftable Tier' + index + '" style="background-color: rgb(204, 255, 204)">Tier' + index + "</button>";
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier' + index + '" style="background-color: rgb(204, 255, 204)">Tier' + index + "</button>";
 				index++;
 			}
 			word = word + "</div>";
 			word = word + "<div>";
-			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
 
 			var index2 = 1;
 			while (index2 < 6) {
-				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =recommend Tier' + index2 + '" style="background-color: rgb(204, 204, 255)">recommend Tier' + index2 + "</button>";
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier' + index2 + '" style="background-color: rgb(204, 204, 255)">recommend Tier' + index2 + "</button>";
 				index2++;
 			}
 			word = word + "</div>";
@@ -1054,16 +1054,16 @@ exports.commands = {
 			var word = '!htmlbox  <div><h1>' + username + '</h1><div>' + draftmonsprint6(newlist) + '</div><h2>tierhelper </h2><div> Erekredieten: ' + global.draftvalues.users[username]["erekredieten"] + ' tieredpicks: ' + global.draftvalues.users[username]["tieredpicks"] + " picksleft: " + val + '</div> '; var index = 1;
 			word = word + "<div>";
 			while (index < 6) {
-				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =draftable Tier' + index + '" style="background-color: rgb(204, 255, 204)">Tier' + index + "</button>";
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier' + index + '" style="background-color: rgb(204, 255, 204)">Tier' + index + "</button>";
 				index++;
 			}
 			word = word + "</div>";
 			word = word + "<div>";
-			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
 
 			var index2 = 1;
 			while (index2 < 6) {
-				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =recommend Tier' + index2 + '" style="background-color: rgb(204, 204, 255)">recommend Tier' + index2 + "</button>";
+				word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier' + index2 + '" style="background-color: rgb(204, 204, 255)">recommend Tier' + index2 + "</button>";
 				index2++;
 			}
 			word = word + "</div>";
@@ -1144,17 +1144,17 @@ exports.commands = {
 			}
 
 		 */
-		this.reply("use =draftable tier(x) to watch the corresponding tier. Or use the search or recommend function for a pick");
+		this.reply("use ?draftable tier(x) to watch the corresponding tier. Or use the search or recommend function for a pick");
 		var username = list[0];
 		var newlist = global.draftvalues.users[username]["draftedmons"];
 		var val = global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
 		var word = '!htmlbox  <div><h1>' + username + '</h1><div>' + draftmonsprint6(newlist) + '</div><h2>tierhelper </h2><div> Erekredieten: ' + global.draftvalues.users[username]["erekredieten"] + ' tieredpicks: ' + global.draftvalues.users[username]["tieredpicks"] + " picksleft: " + val + '</div> ';
 		var index = 1;
 		word = word + "<div>";
-		word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =draftable Tier' + index + '" style="background-color: rgb(204, 255, 204)">Showlist</button>';
+		word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier' + index + '" style="background-color: rgb(204, 255, 204)">Showlist</button>';
 		word = word + "</div>";
 		word = word + "<div>";
-		word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
+		word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
 
 		var index2 = 1;
 
@@ -1232,7 +1232,7 @@ exports.commands = {
 				}
 
 			 */
-			this.reply("use =draftable tier(x) to watch the corresponding tier. Or use the search or recommend function for a pick");
+			this.reply("use ?draftable tier(x) to watch the corresponding tier. Or use the search or recommend function for a pick");
 			var username = list[0];
 			var newlist = global.draftvalues.users[username]["draftedmons"];
 			var val = global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
@@ -1240,12 +1240,12 @@ exports.commands = {
 			var index = 1;
 			word = word + "<div>";
 
-			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =draftable Tier1" style="background-color: rgb(204, 255, 204)">Show List</button>';
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1" style="background-color: rgb(204, 255, 204)">Show List</button>';
 			index++;
 
 			word = word + "</div>";
 			word = word + "<div>";
-			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
 
 			index2++;
 
@@ -1334,7 +1334,7 @@ exports.commands = {
 			}
 
 		 */
-		this.reply("use =draftable tier(x) to watch the corresponding tier. Or use the search or recommend function for a pick");
+		this.reply("use ?draftable tier(x) to watch the corresponding tier. Or use the search or recommend function for a pick");
 		word = PlayerPrintoutStandard(list,0);
 		console.log(word);
 
@@ -1440,7 +1440,7 @@ exports.commands = {
 			while (i <= draftmons["length"]) {
 				var possiblepic = draftmons["tierlist"]["Tier" + i]["pokemon"];
 				var creditsleft = global.draftvalues.users[name]["Points"]
-				//var picksleft=draftmons["freepicks"]-global.draftvalues.picknr[toId(global.draftvalues.draftroom)]-1-global.draftvalues.users[name]["tieredpicks"].length;
+				//var picksleft?draftmons["freepicks"]-global.draftvalues.picknr[toId(global.draftvalues.draftroom)]-1-global.draftvalues.users[name]["tieredpicks"].length;
 				if (possiblepic.includes(arg)) {
 
 					draftmons["tierlist"]["Tier" + i]["pokemon"] = removeItemOnce(draftmons["tierlist"]["Tier" + i]["pokemon"], arg);
@@ -2552,7 +2552,7 @@ exports.commands = {
 		global.draftvalues.draftroom = room;
 		console.log(global.draftvalues.draftroom);
 		this.reply("!htmlbox <p> hi </p>");
-		this.send(global.draftvalues.draftroom, '!htmlbox  <h1>Giftdraft</h1> <p>Press this button or =joindraft to join </p> <button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =joindraft"> joindraft </button>');
+		this.send(global.draftvalues.draftroom, '!htmlbox  <h1>Giftdraft</h1> <p>Press this button or ?joindraft to join </p> <button name="send" value="/msgroom nederlands, /botmsg sinterklaasthebot, ?joindraft"> joindraft </button>');
 
 	},
 
@@ -2600,7 +2600,7 @@ exports.commands = {
 		}
 		console.log(global.draftvalues.draftroom);
 		this.reply("!htmlbox <p> hi </p>");
-		this.send(global.draftvalues.draftroom, '!htmlbox  <h1>Auctiondraft</h1> <p>Press this button or =joindraft to join </p> <button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =joindraft"> joindraft </button>');
+		this.send(global.draftvalues.draftroom, '!htmlbox  <h1>Auctiondraft</h1> <p>Press this button or ?joindraft to join </p> <button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?joindraft"> joindraft </button>');
 
 	},
 
@@ -2647,7 +2647,7 @@ exports.commands = {
 			global.draftvalues.turnorder = [];
 		}
 		this.reply("!htmlbox <p> hi </p>");
-		this.send(global.draftvalues.draftroom, '!htmlbox  <h1>normal draft</h1> <p>Press this button or =joindraft to join </p> <button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =joindraft"> joindraft </button>');
+		this.send(global.draftvalues.draftroom, '!htmlbox  <h1>normal draft</h1> <p>Press this button or ?joindraft to join </p> <button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?joindraft"> joindraft </button>');
 
 	},
 
@@ -3595,7 +3595,7 @@ function draftmonsprintroles(arg, role, nrshown, by, room, monToColor) {
 
 			}
 			else {
-				var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =draft ' + name + '" style="width:150px;height:70px;vertical-align: top; background-color:' + monToColor[name] + '">';
+				var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:150px;height:70px;vertical-align: top; background-color:' + monToColor[name] + '">';
 				word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" ><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name  +"</a><br/> ("+moncost+")";
 				word = word + '</button>';
 				result = result + word;
@@ -3627,7 +3627,7 @@ function draftmonsprint4(arg, nrshown, by, room, monToColor) {
 		}
 		else {
 			var moncost = global.draftvalues.mondata[name][0]["Cost"];
-			var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =draft ' + name + '" style="background-color:' + monToColor[name] + '">';
+			var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="background-color:' + monToColor[name] + '">';
 			word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" ><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a><br/>'+" ("+moncost +")" ;
 			word = word + '</button>';
 			result = result + word;
@@ -3663,10 +3663,10 @@ function draftmonsprint5(arg, color) {
 		//var moncost = global.draftvalues.mondata[arg[i]][0]["Cost"];
 		var word = "";
 		if (global.draftvalues.mondata[arg[i]]["Typing 2"] == undefined) {
-			word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =draft ' + name + '" style="width:150px;height:70px;vertical-align: top; background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
+			word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:150px;height:70px;vertical-align: top; background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
 		}
 		else {
-			word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =draft ' + name + '" style="width:150px;height:70px;vertical-align: top; background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
+			word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="width:150px;height:70px;vertical-align: top; background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
 		}
 		word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name +  '" target="_blank" class="subtle" ><psicon pokemon="' + name + '" style="vertical-align:0px;margin:0px" />' + name + '</a><br/>'
 		//word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name +  '" target="_blank" class="subtle" ><psicon pokemon="' + name + '" style="vertical-align:0px;margin:0px" />' + name + '</a><br/>'+ " ("+moncost +")";
@@ -3701,10 +3701,10 @@ function draftmonsprint7(arg, color) {
 		var name = arg[i];
 		var word = "";
 		if (global.draftvalues.mondata[arg[i]] == undefined || global.draftvalues.mondata[arg[i]]["Typing 2"] == undefined) {
-			word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =draft ' + i + '" style="background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
+			word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + i + '" style="background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
 		}
 		else {
-			word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =draft ' + i + '" style="background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
+			word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + i + '" style="background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
 		}
 		word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a>';
 		word = word + '</button>';
@@ -3815,10 +3815,10 @@ function draftmonsprintUnknown(arg, DataType) {
 		}
 
 		if (global.draftvalues.mondata[arg[i]] == undefined || global.draftvalues.mondata[arg[i]]["Typing 2"] == undefined) {
-			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =draft ' + i + '" style="background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + i + '" style="background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
 		}
 		else {
-			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =draft ' + i + '" style="background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + i + '" style="background-color:' + color + '; font-size: 10pt; font-weight: bold;">';
 		}
 		word = word + data;
 		word = word + '</button>';
@@ -3838,7 +3838,7 @@ function printPosTypes() {
 		//Do something
 		//<a href="//dex.pokemonshowdown.com/pokemon/cofagrigus" target="_blank" class="subtle" style="white-space:nowrap"><psicon pokemon="Cofagrigus" style="vertical-align:-7px;margin:-2px" />Cofagrigus</a>
 		var name = arg[i];
-		var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =draft ' + name + '" style="background-color:' + color + '">';
+		var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draft ' + name + '" style="background-color:' + color + '">';
 		word = word + '<psicon type="' + name + '" style="vertical-align:-7px;margin:-2px" />';
 		word = word + '</button>';
 		result = result + word;
@@ -3979,7 +3979,7 @@ function startNewTier(room, by, elem) {
 	else {
 		if (!global.draftvalues.pointdrafting) {
 			global.draftvalues.possiblepicks = draftmons["tierlist"]["Tier" + global.draftvalues.currenttier[toId(room)]]["pokemon"];
-			//global.draftvalues.todraftmons=draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["pokemon"];
+			//global.draftvalues.todraftmons?draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["pokemon"];
 			if (toId(by) == toId(room)) {
 				elem.reply(draftmonsprint(draftmons["tierlist"]["Tier" + global.draftvalues.currenttier[toId(room)]]["pokemon"]));
 
@@ -3991,7 +3991,7 @@ function startNewTier(room, by, elem) {
 		}
 		else {
 			global.draftvalues.possiblepicks = draftmons["tierlist"]["Tier" + global.draftvalues.currenttier[toId(room)]]["pokemon"];
-			//global.draftvalues.todraftmons=draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["pokemon"];
+			//global.draftvalues.todraftmons?draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["pokemon"];
 			if (toId(by) == toId(room)) {
 				//elem.reply(draftmonsprint(draftmons["tierlist"]["Tier"+global.draftvalues.currenttier[toId(room)]]["pokemon"]));
 
@@ -4466,7 +4466,7 @@ function endbid(arg, arg2) {
 			if (global.draftvalues.nextdrafter > global.draftvalues.typeturnorder.length - 1) {
 				global.draftvalues.nextdrafter = 0;
 			}
-			//this.reply("use =draftable tier(x) to watch the corresponding tier. Or use the search or recommend function for a pick");
+			//this.reply("use ?draftable tier(x) to watch the corresponding tier. Or use the search or recommend function for a pick");
 			var username = list[global.draftvalues.nextdrafter];
 			var newlist = global.draftvalues.users[username]["draftedmons"];
 			var val = global.draftvalues.tierPicks - global.draftvalues.picknr[toId(global.draftvalues.draftroom)];
@@ -4474,12 +4474,12 @@ function endbid(arg, arg2) {
 			var index = 1;
 			word = word + "<div>";
 
-			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =draftable Tier1" style="background-color: rgb(204, 255, 204)">Show List</button>';
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1" style="background-color: rgb(204, 255, 204)">Show List</button>';
 			index++;
 
 			word = word + "</div>";
 			word = word + "<div>";
-			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
+			word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
 
 			index2++;
 
@@ -4556,12 +4556,12 @@ function endbid(arg, arg2) {
 	var word = '!htmlbox  <div><h1>' + username + '</h1>' + insert + '<div>' + draftmonsprint6(newlist) + '</div><h2>tierhelper </h2><div> Erekredieten: ' + global.draftvalues.users[username]["erekredieten"] + ' tieredpicks: ' + global.draftvalues.users[username]["tieredpicks"] + " picksleft: " + val + '</div> '; var index = 1;
 	word = word + "<div>";
 	while (index < 2) {
-		word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =draftable Tier1" style="background-color: rgb(204, 255, 204)">show list</button>';
+		word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1" style="background-color: rgb(204, 255, 204)">show list</button>';
 		index++;
 	}
 	word = word + "</div>";
 	word = word + "<div>";
-	word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
+	word = word + '<button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend" style="background-color: rgb(204, 204, 255)">recommend </button>';
 
 	var index2 = 1;
 
@@ -4730,7 +4730,7 @@ function PlayerPrintoutStandard(list,i) {
 
 
 
-	word = word  + '<div  style="padding: 5px;"> Recommend a Pokemon: <button name="send" value="/msgroom nederlands, /botmsg sinterklaas, =recommend '+ remainvalue +'" style="background-color: rgb(204, 204, 255)">recommend </button></div><div>';
+	word = word  + '<div  style="padding: 5px;"> Recommend a Pokemon: <button name="send" value="/msgroom nederlands, /botmsg sinterklaas, ?recommend '+ remainvalue +'" style="background-color: rgb(204, 204, 255)">recommend </button></div><div>';
 	var index = 1;
 	//global.colorForTierings
 	word = word + " <table border=\"1\">" ;
@@ -4741,7 +4741,7 @@ function PlayerPrintoutStandard(list,i) {
 	word=word+
 		"<tr>"
 	for (let i = 0; i < global.tiers.length; i++) {
-		word= word +  "<th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, =draftable " + global.tiers[i] + "\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">"+global.tiers[i]+"</h2></button></th>"
+		word= word +  "<th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable " + global.tiers[i] + "\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">"+global.tiers[i]+"</h2></button></th>"
 	}
 	word=word+
 		"</tr><tr>"
@@ -4752,7 +4752,7 @@ function PlayerPrintoutStandard(list,i) {
 	word=word+
 		"</tr><tr>"
 	for (let i = 0; i < global.tiers.length; i++) {
-		word = word + "<td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, =recommend " +global.tiers[i]  +"\" style=\"width:100%; background-color: rgb(204, 204, 255,0)\">recommend "+global.tiers[i] + "</button></td>"
+		word = word + "<td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend " +global.tiers[i]  +"\" style=\"width:100%; background-color: rgb(204, 204, 255,0)\">recommend "+global.tiers[i] + "</button></td>"
 	}
 	word=word+
 		"</tr>";
@@ -4767,11 +4767,11 @@ function PlayerPrintoutStandard(list,i) {
 		"        <col width=\"150\" align=\"char\" char=\".\"" +
 		"                    valign=\"top\"style=\"background-color:" + global.colorForTiers["Tier5"] + "\"> " +
 		"        <tr>" +
-		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, =draftable Tier1\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 1</h2>" + tier1cost + "</button></th>" +
-		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, =draftable Tier2\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 2</h2>" + tier2cost + "</button></th>" +
-		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, =draftable Tier3\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 3</h2>" + tier3cost + "</button></th>" +
-		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, =draftable Tier4\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 4</h2>" + tier4cost + "</button></th>" +
-		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, =draftable Tier5\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 5</h2>" + tier5cost + "</button></th>" +
+		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier1\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 1</h2>" + tier1cost + "</button></th>" +
+		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier2\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 2</h2>" + tier2cost + "</button></th>" +
+		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier3\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 3</h2>" + tier3cost + "</button></th>" +
+		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier4\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 4</h2>" + tier4cost + "</button></th>" +
+		"            <th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?draftable Tier5\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">Tier 5</h2>" + tier5cost + "</button></th>" +
 		"        </tr>" +
 		"        <tr>" +
 		"            <td><center><h2 style=\"background-color:rgb(250,250,100,0)\">"+tier1number+"</h2></center></td>" +
@@ -4781,11 +4781,11 @@ function PlayerPrintoutStandard(list,i) {
 		"              <td><center><h2 style=\"background-color:rgb(250,250,100,0)\">"+tier5number+"</h2></center></td>" +
 		"        </tr>" +
 		"        <tr>" +
-		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, =recommend Tier1\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier1</button></td>" +
-		"           <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, =recommend Tier2\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier2</button></td>" +
-		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, =recommend Tier3\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier3</button></td>" +
-		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, =recommend Tier4\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier4</button></td>" +
-		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, =recommend Tier5\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier5</button></td>" +
+		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier1\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier1</button></td>" +
+		"           <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier2\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier2</button></td>" +
+		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier3\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier3</button></td>" +
+		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier4\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier4</button></td>" +
+		"            <td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaas, ?recommend Tier5\" style=\"width:100%; background-color: rgb(204, 204, 255)\">recommend Tier5</button></td>" +
 		"        </tr>" +
 		"    </table></div></div></div>";*/
 	return word+ " </table></div></div></div>";
