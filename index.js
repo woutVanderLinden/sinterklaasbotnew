@@ -545,7 +545,7 @@ Bot.on('formats', function (formats) {
 Bot.on('challstr', function (challstr) {
 	info('Received challstr, logging in...');
 	if (!Config.nick) {
-		Bot.rename("sinterklaasthebot","pikachu");
+		Bot.rename("sinterklaas","pikachu");
 	} else {
 		Bot.rename(Config.nick, Config.pass);
 	}
@@ -556,13 +556,13 @@ Bot.on('renamefailure', function (e) {
 	if (e === -1)  {
 		if (!Config.nick) {
 			debug('Login failure - generating another random nickname');
-			Bot.rename("sinterklaasthebot","pikachu");
+			Bot.rename("","pikachu");
 		} else {
 			error('Login failure - name registered, invalid or no password given');
 			if (!Bot.status.named) {
 				info("Invalid nick + pass, using a random nickname");
 				Config.nick = '';
-				Bot.rename("sinterklaasthebot","pikachu");
+				Bot.rename("sinterklaas","sinterklaas");
 			}
 		}
 	} else {
@@ -572,7 +572,7 @@ Bot.on('renamefailure', function (e) {
 			setTimeout(function () {
 				retryingRename = false;
 				if (!Config.nick) {
-					Bot.rename("sinterklaasthebot","pikachu");
+					Bot.rename("sinterklaas","sinterklaas");
 				} else {
 					Bot.rename(Config.nick, Config.pass);
 				}
@@ -752,7 +752,7 @@ var checkSystem = function () {
 				monitor("Monitor failed: Login issue. Logging in a random username.");
 				SecurityLog.log("Monitor failed: Login issue. Logging in a random username.");
 				Config.nick = '';
-				Bot.rename("sinterklaasthebot","pikachu");
+				Bot.rename("sinterklaas","sinterklaas");
 				break;
 		}
 	
