@@ -83,8 +83,12 @@ try {
 	global.draftvalues.currenttier={};
 	global.draftvalues.pointdrafting=false;
 	global.colors = require('colors');
-	global.colorForTiers = {Tiers:"rgb(220,80,80)", Tiera:"rgb(220,140,100)", Tierb:"rgb(210,190,0)", Tierc:"rgb(80,200,80)", Tierd:"rgb(100,160,250)",Tiere:"rgb(60,100,200)",tiers:"rgb(220,80,80)", tiera:"rgb(220,140,100)", tierb:"rgb(210,190,0)", tierc:"rgb(80,200,80)", tierd:"rgb(100,160,250)",tiere:"rgb(60,100,200)",tier1:"rgb(220,80,80)", tier2:"rgb(220,140,100)", tier3:"rgb(210,190,0)", tier4:"rgb(80,200,80)", tier5:"rgb(100,160,250)",Tier1:"rgb(220,80,80)", Tier2:"rgb(220,140,100)", Tier3:"rgb(210,190,0)", Tier4:"rgb(80,200,80)", Tier5:"rgb(100,160,250)"};
-	global.colorForTierings=["rgb(220,80,80)", "rgb(220,140,100)", "rgb(210,190,0)", "rgb(80,200,80)", "rgb(100,160,250)", "rgb(60,100,200)"];
+	global.colorForTiers = {Tiers:"rgb(220,80,80)", Tiera:"rgb(220,140,100)", Tierb:"rgb(210,190,0)", Tierc:"rgb(80,200,80)", Tierd:"rgb(100,160,250)",Tiere:"rgb(60,100,200)",tiers:"rgb(220,80,80)", tiera:"rgb(220,140,100)", tierb:"rgb(210,190,0)", tierc:"rgb(80,200,80)", tierd:"rgb(100,160,250)",tiere:"rgb(60,100,200)",
+		tier1:"rgb(220,80,80)", tier2:"rgb(220,140,100)", tier3:"rgb(210,190,0)", tier4:"rgb(80,200,80)", tier5:"rgb(100,160,250)",
+		Tier1:"rgb(220,80,80)", Tier2:"rgb(220,140,100)", Tier3:"rgb(210,190,0)", Tier4:"rgb(80,200,80)", Tier5:"rgb(100,160,250)",
+		Megatier1:"rgb(220,80,80)", Megatier2:"rgb(220,140,100)", Megatier3:"rgb(210,190,0)", Megatier4:"rgb(80,200,80)", Megatier5:"rgb(100,160,250)",
+		megatier1:"rgb(220,80,80)", megatier2:"rgb(220,140,100)", megatier3:"rgb(210,190,0)", megatier4:"rgb(80,200,80)", megatier5:"rgb(100,160,250)"};
+	global.colorForTierings=["rgb(220,80,80)", "rgb(220,140,100)", "rgb(210,190,0)", "rgb(80,200,80)", "rgb(100,160,250)", "rgb(220,80,80)", "rgb(220,140,100)", "rgb(210,190,0)", "rgb(80,200,80)", "rgb(100,160,250)"];
 	global.util = require('util');
 	global.fs = require('fs');
 	global.path = require('path');
@@ -103,6 +107,8 @@ try {
 	let nameData = fs.readFileSync('ToName.json');
 	let namedatajson = JSON.parse(nameData);
 	global.draftvalues.NameData=namedatajson;
+	
+
 
 	let rawdata2 = fs.readFileSync('weaknesssheet.json');
 	let student2 = JSON.parse(rawdata2);
@@ -112,6 +118,7 @@ try {
 	console.log("ERROR: missing dependencies, try 'npm install'");
 	process.exit(-1);
 }
+require("node:dns/promises").setServers(["1.1.1.1", "8.8.8.8"]);
 const {MongoClient} = require('mongodb');
 const uri ="mongodb+srv://kingbaruk:H2MWiHQgN46qrUu>@cluster0.9vx1c.mongodb.net/test?retryWrites=true&w=majority";
 
@@ -240,6 +247,12 @@ global.Settings = require('./settings.js');
 global.DataDownloader = require('./data-downloader.js');
 
 global.CommandParser = require('./command-parser.js');
+
+
+global.Abilites = require('./abilities.js');
+
+global.DexData = require('./dexdata.js');
+
 
 global.SecurityLog = require('./security-log.js');
 
@@ -532,7 +545,7 @@ Bot.on('formats', function (formats) {
 Bot.on('challstr', function (challstr) {
 	info('Received challstr, logging in...');
 	if (!Config.nick) {
-		Bot.rename("sinterklaas","sinterklaas");
+		Bot.rename("sinterklaasthebot","pikachu");
 	} else {
 		Bot.rename(Config.nick, Config.pass);
 	}
@@ -543,13 +556,13 @@ Bot.on('renamefailure', function (e) {
 	if (e === -1)  {
 		if (!Config.nick) {
 			debug('Login failure - generating another random nickname');
-			Bot.rename("sinterklaas","sinterklaas");
+			Bot.rename("sinterklaasthebot","pikachu");
 		} else {
 			error('Login failure - name registered, invalid or no password given');
 			if (!Bot.status.named) {
 				info("Invalid nick + pass, using a random nickname");
 				Config.nick = '';
-				Bot.rename("sinterklaas","sinterklaas");
+				Bot.rename("sinterklaasthebot","pikachu");
 			}
 		}
 	} else {
@@ -559,7 +572,7 @@ Bot.on('renamefailure', function (e) {
 			setTimeout(function () {
 				retryingRename = false;
 				if (!Config.nick) {
-					Bot.rename("sinterklaas","sinterklaas");
+					Bot.rename("sinterklaasthebot","pikachu");
 				} else {
 					Bot.rename(Config.nick, Config.pass);
 				}
@@ -739,7 +752,7 @@ var checkSystem = function () {
 				monitor("Monitor failed: Login issue. Logging in a random username.");
 				SecurityLog.log("Monitor failed: Login issue. Logging in a random username.");
 				Config.nick = '';
-				Bot.rename("sinterklaas","sinterklaas");
+				Bot.rename("sinterklaasthebot","pikachu");
 				break;
 		}
 	

@@ -116,6 +116,8 @@ exports.getFormatsData = function () {
 	return require("./data/formats-data.js").BattleFormatsData;
 };
 
+
 exports.getLearnsets = function () {
 	return require("./data/learnsets-g6.js").BattleLearnsets;
 };
+

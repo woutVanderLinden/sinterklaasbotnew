@@ -53,9 +53,9 @@ exports.watchconfig = true;
 * Login Details
 */
 
-exports.nick = 'sinterklaasthebot';
+exports.nick = 'sinterklaas';
 
-exports.pass = 'pikachu';
+exports.pass = 'sinterklaas';
 
 exports.autoReloginDelay = 60 * 1000;
 

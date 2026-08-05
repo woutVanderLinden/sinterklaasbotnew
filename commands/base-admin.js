@@ -1,8 +1,47 @@
 /*
 	Admin Commands
 */
+var datenow = Date.now();
+
+
+var data = exports.data = [
+	{
+		url: "https://raw.githubusercontent.com/Zarel/Pokemon-Showdown/master/config/formats.js",
+		file: "formats.js"
+	},
+	{
+		url: "https://raw.githubusercontent.com/Zarel/Pokemon-Showdown/master/data/formats-data.js",
+		file: "formats-data.js"
+	},
+	{
+		url: "https://play.pokemonshowdown.com/data/pokedex.js?" + datenow,
+		file: "pokedex.js"
+	},
+	{
+		url: "https://play.pokemonshowdown.com/data/moves.js?" + datenow,
+		file: "moves.js"
+	},
+	{
+		url: "https://play.pokemonshowdown.com/data/abilities.js?" + datenow,
+		file: "abilities.js"
+	},
+	{
+		url: "https://play.pokemonshowdown.com/data/items.js?" + datenow,
+		file: "items.js"
+	},
+	{
+		url: "https://play.pokemonshowdown.com/data/learnsets-g6.js?" + datenow,
+		file: "learnsets-g6.js"
+	},
+	{
+		url: "https://play.pokemonshowdown.com/data/aliases.js?" + datenow,
+		file: "aliases.js"
+	}
+];
+
 
 const { MongoClient } = require('mongodb');
+const { getPokedex } = require('../data-downloader');
 async function listDatabases(client) {
 	//hinicework
 	databasesList = await client.db().admin().listDatabases();
@@ -632,10 +671,12 @@ exports.commands = {
 
 
 		const uri = process.env.MONGO_URI;
+	
 		console.log(uri);
 		console.log("test");
 
-		const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+		//const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+		const client = new MongoClient(uri, port=27017);
 
 		try {
 			await client.connect();
@@ -1592,6 +1633,8 @@ exports.commands = {
 				var currentscore=global.draftvalues.users[name]["erekredieten"];
 				var possiblepic = draftmons["tierlist"][tier]["pokemon"];
 				var picksleft = draftmons["freepicks"] - global.draftvalues.picknr[toId(global.draftvalues.draftroom)] - 1 - global.draftvalues.users[name]["tieredpicks"].length;
+				console.log("drafted mon:"+arg)
+				console.log(possiblepic.includes(arg))
 				if (possiblepic.includes(arg)) {
 					if(global.draftvalues.creditDrafting){
 						//console.log(tier +" pickreq"+ tier.pickrequired);
@@ -1638,24 +1681,61 @@ exports.commands = {
 					}
 					else {
 
-						if (global.draftvalues.users[name]["tieredpicks"].includes(i)) {
-							draftmons["tierlist"]["Tier" + i]["pokemon"] = removeItemOnce(draftmons["tierlist"]["Tier" + i]["pokemon"], arg);
-							global.draftvalues.users[name]["tieredpicks"] = removeItemOnce(global.draftvalues.users[name]["tieredpicks"], i);
-							this.reply(name + " used a tierpick to draft a tier " + i + " " + arg + "( erekredieten. " + global.draftvalues.users[name]["erekredieten"] + " tierpicks " + global.draftvalues.users[name]["tieredpicks"] + " )");
-
-						} else {
-							draftmons["tierlist"]["Tier" + i]["pokemon"] = removeItemOnce(draftmons["tierlist"]["Tier" + i]["pokemon"], arg);
-							var pointscost = draftmons["tierlist"]["Tier" + i]["points"];
-							var currentscore = global.draftvalues.users[name]["erekredieten"];
-							var picksleft = draftmons["freepicks"] - global.draftvalues.picknr[toId(global.draftvalues.draftroom)] - 1 - global.draftvalues.users[name]["tieredpicks"].length;
-							console.log("freepicks " + draftmons["freepicks"] + " picknr: " + global.draftvalues.picknr[toId(global.draftvalues.draftroom)] + " pickleft" + picksleft);
-							if (picksleft * 40 > currentscore - pointscost) {
-								return this.reply("please make sure you have at least " + picksleft * 40 + "Erekredieten left");
+						
+						if(i>4) {
+							if (global.draftvalues.users[name]["tieredpicks"].includes("MEGA")) {
+								var pointscost = draftmons["tierlist"][tier]["points"];
+								var currentscore = global.draftvalues.users[name]["erekredieten"];
+								
+								console.log("freepicks " + draftmons["freepicks"] + " picknr: " + global.draftvalues.picknr[toId(global.draftvalues.draftroom)] + " pickleft " + picksleft);
+								console.log((picksleft+1) * 40)
+								console.log(currentscore - pointscost)
+								if ((picksleft+1) * 40 > currentscore - pointscost || picksleft < -1) {
+									value = (picksleft+1) * 40
+									return this.reply("please make sure you have at least " + value  + " Erekredieten left");
+								}
+								draftmons["tierlist"][tier]["pokemon"] = removeItemOnce(draftmons["tierlist"][tier]["pokemon"], arg);
+								global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"] - draftmons["tierlist"][tier]["points"];
+								global.draftvalues.users[name]["tieredpicks"] = removeItemOnce(global.draftvalues.users[name]["tieredpicks"], "MEGA");
+								this.send(global.draftvalues.draftroom, name + " paid " + draftmons["tierlist"][tier]["points"] + " erekredieten and a MEGA credit for " + arg + ".( Erekredieten " + global.draftvalues.users[name]["erekredieten"] + " tieredpicks:" + global.draftvalues.users[name]["tieredpicks"] + ")");
+								global.draftvalues.users[name]["totaldraftscore"] = global.draftvalues.users[name]["totaldraftscore"] + calculatescore(room, arg, name);
+								global.history[arg]=name;
 							}
-							global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"] - draftmons["tierlist"]["Tier" + i]["points"];
+							else{
+								return this.reply("please make sure you have a megacredit left");
+							}
+					
+						}
+						else {
+							if (global.draftvalues.users[name]["tieredpicks"].includes(i+1)) {
+								draftmons["tierlist"][tier]["pokemon"] = removeItemOnce(draftmons["tierlist"][tier]["pokemon"], arg);
+								global.draftvalues.users[name]["tieredpicks"] = removeItemOnce(global.draftvalues.users[name]["tieredpicks"], i+1);
+								j=i+1 
+								this.send(global.draftvalues.draftroom, name + " used a tierpick to draft a tier " + j + " " + arg + " (erekredieten. " + global.draftvalues.users[name]["erekredieten"] + "tierpicks " + global.draftvalues.users[name]["tieredpicks"] + " )");
+								global.draftvalues.users[name]["totaldraftscore"] = global.draftvalues.users[name]["totaldraftscore"] + calculatescore(room, arg, name);
+								global.history[arg]=name;
+							}
+							else {
+								megavalue = 0
+								if (global.draftvalues.users[name]["tieredpicks"].includes("MEGA")) {
+									megavalue = 1
+								}
 
-							this.reply(name + " paid " + draftmons["tierlist"]["Tier" + i]["points"] + " erekredieten.( Erekredieten " + global.draftvalues.users[name]["erekredieten"] + " tieredpicks:" + global.draftvalues.users[name]["tieredpicks"] + ")");
+								var pointscost = draftmons["tierlist"][tier]["points"];
+								var currentscore = global.draftvalues.users[name]["erekredieten"];
 
+								console.log("freepicks " + draftmons["freepicks"] + " picknr: " + global.draftvalues.picknr[toId(global.draftvalues.draftroom)] + " pickleft " + picksleft);
+								if (picksleft * 40 - 40 * megavalue> currentscore - pointscost || picksleft < 0) {
+									creditprint = (picksleft) * 40 - 40 * megavalue 
+									return this.reply("please make sure you have at least " + creditprint + " Erekredieten left");
+								}
+								draftmons["tierlist"][tier]["pokemon"] = removeItemOnce(draftmons["tierlist"][tier]["pokemon"], arg);
+								global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"] - draftmons["tierlist"][tier]["points"];
+
+								this.send(global.draftvalues.draftroom, name + " paid " + draftmons["tierlist"][tier]["points"] + " erekredieten for " + arg + ".( Erekredieten " + global.draftvalues.users[name]["erekredieten"] + " tieredpicks:" + global.draftvalues.users[name]["tieredpicks"] + ")");
+								global.draftvalues.users[name]["totaldraftscore"] = global.draftvalues.users[name]["totaldraftscore"] + calculatescore(room, arg, name);
+								global.history[arg]=name;
+							}
 						}
 					}
 
@@ -2317,27 +2397,37 @@ exports.commands = {
 								var currentscore = global.draftvalues.users[name]["erekredieten"];
 								
 								console.log("freepicks " + draftmons["freepicks"] + " picknr: " + global.draftvalues.picknr[toId(global.draftvalues.draftroom)] + " pickleft " + picksleft);
-								if (picksleft * 40 > currentscore - pointscost || picksleft < 0) {
-									return this.reply("please make sure you have at least " + picksleft * 40 + " Erekredieten left");
+								console.log((picksleft+1) * 40)
+								console.log(currentscore - pointscost)
+								if ((picksleft+1) * 40 > currentscore - pointscost || picksleft < -1) {
+									value = (picksleft+1) * 40
+									return this.reply("please make sure you have at least " + value  + " Erekredieten left");
 								}
 								draftmons["tierlist"][tier]["pokemon"] = removeItemOnce(draftmons["tierlist"][tier]["pokemon"], arg);
 								global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"] - draftmons["tierlist"][tier]["points"];
 								global.draftvalues.users[name]["tieredpicks"] = removeItemOnce(global.draftvalues.users[name]["tieredpicks"], "MEGA");
 								this.send(global.draftvalues.draftroom, name + " paid " + draftmons["tierlist"][tier]["points"] + " erekredieten and a MEGA credit for " + arg + ".( Erekredieten " + global.draftvalues.users[name]["erekredieten"] + " tieredpicks:" + global.draftvalues.users[name]["tieredpicks"] + ")");
 								global.draftvalues.users[name]["totaldraftscore"] = global.draftvalues.users[name]["totaldraftscore"] + calculatescore(room, arg, name);
+								global.history[arg]=name;
 							}
+							else{
+								return this.reply("please make sure you have a megacredit left");
+							}
+					
 						}
 						else {
-							if (global.draftvalues.users[name]["tieredpicks"].includes(i)) {
+							if (global.draftvalues.users[name]["tieredpicks"].includes(i+1)) {
 								draftmons["tierlist"][tier]["pokemon"] = removeItemOnce(draftmons["tierlist"][tier]["pokemon"], arg);
-								global.draftvalues.users[name]["tieredpicks"] = removeItemOnce(global.draftvalues.users[name]["tieredpicks"], i);
-								this.send(global.draftvalues.draftroom, name + " used a tierpick to draft a tier " + i + " " + arg + " (erekredieten. " + global.draftvalues.users[name]["erekredieten"] + "tierpicks " + global.draftvalues.users[name]["tieredpicks"] + " )");
+								global.draftvalues.users[name]["tieredpicks"] = removeItemOnce(global.draftvalues.users[name]["tieredpicks"], i+1);
+								j=i+1 
+								this.send(global.draftvalues.draftroom, name + " used a tierpick to draft a tier " + j + " " + arg + " (erekredieten. " + global.draftvalues.users[name]["erekredieten"] + "tierpicks " + global.draftvalues.users[name]["tieredpicks"] + " )");
 								global.draftvalues.users[name]["totaldraftscore"] = global.draftvalues.users[name]["totaldraftscore"] + calculatescore(room, arg, name);
+								global.history[arg]=name;
 							}
 							else {
-								megavalue=0
+								megavalue = 0
 								if (global.draftvalues.users[name]["tieredpicks"].includes("MEGA")) {
-									megavalue=1
+									megavalue = 1
 								}
 
 								var pointscost = draftmons["tierlist"][tier]["points"];
@@ -2345,13 +2435,15 @@ exports.commands = {
 
 								console.log("freepicks " + draftmons["freepicks"] + " picknr: " + global.draftvalues.picknr[toId(global.draftvalues.draftroom)] + " pickleft " + picksleft);
 								if (picksleft * 40 - 40 * megavalue> currentscore - pointscost || picksleft < 0) {
-									return this.reply("please make sure you have at least " + picksleft * 40 - 40 * megavalue + " Erekredieten left");
+									creditprint = (picksleft) * 40 - 40 * megavalue 
+									return this.reply("please make sure you have at least " + creditprint + " Erekredieten left");
 								}
 								draftmons["tierlist"][tier]["pokemon"] = removeItemOnce(draftmons["tierlist"][tier]["pokemon"], arg);
 								global.draftvalues.users[name]["erekredieten"] = global.draftvalues.users[name]["erekredieten"] - draftmons["tierlist"][tier]["points"];
 
 								this.send(global.draftvalues.draftroom, name + " paid " + draftmons["tierlist"][tier]["points"] + " erekredieten for " + arg + ".( Erekredieten " + global.draftvalues.users[name]["erekredieten"] + " tieredpicks:" + global.draftvalues.users[name]["tieredpicks"] + ")");
 								global.draftvalues.users[name]["totaldraftscore"] = global.draftvalues.users[name]["totaldraftscore"] + calculatescore(room, arg, name);
+								global.history[arg]=name;
 							}
 						}
 					}
@@ -2636,7 +2728,7 @@ exports.commands = {
 		let rawdata = fs.readFileSync('DraftChampionsMegas.json');
 		let student = JSON.parse(rawdata);
 		console.log(student);
-		global.draftvalues.creditDrafting=true;
+		global.draftvalues.creditDrafting=false;
 		global.draftvalues.draftroom = toId(room);
 		global.draftvalues.todraftmons[toId(global.draftvalues.draftroom)] = student;
 		global.draftvalues.pointdrafting = true;
@@ -2651,8 +2743,11 @@ exports.commands = {
 	},
 
 	search: function (arg, by, room, cmd) {
+		var args = arg.split(",");
+		argscopy= args.slice();
 		arg = arg.toLowerCase();
 		var args = arg.split(",");
+		var posstats = ["hp","atk","def","spa","spd","spe"]
 		var postypings = ["Grass", "Fire", "Water", "Ice", "Bug", "Normal", "Flying", "Poison", "Psychic", "Ghost", "Fighting", "Rock", "Ground", "Electric", "Dragon", "Fairy", "Dark", "Steel"];
 		var filtertypings = [];
 		var posfilterroles = ["entryhazards", "hazardremoval", "itemremover", "pivot", "cleric", "pivot", "scarf", "physicalsweeper", "specialsweeper", "physicalbulkyattacker", "specialbulkyattacker", "physicalwall", "specialwall", "physicalsetup", "specialsetup", "status", "priority", "speedcontrol", "sun", "rain", "hail", "sand"];
@@ -2663,6 +2758,10 @@ exports.commands = {
 		var tierrecommend = false;
 		var pointrecommend = false;
 		var tier = "";
+		var megafilter = -1
+		
+		var filterabils = []
+		var filterstats = []
 		while (x < args.length) {
 			var argx = args[x];
 
@@ -2676,8 +2775,36 @@ exports.commands = {
 				tierrecommend = true;
 				tier = argx;
 			}
+			for(stat of posstats){
+				if(argx.includes(stat)){
+					statfilter={}
+					seperates = argx.split(" ")
+					statfilter["stat"] = stat
+					remainstr = argx.slice(stat.length)
+					
+					statfilter["modifier"] = seperates[1]
+					statfilter["value"] = parseInt(seperates[2])
+					console.log("statfilter " + statfilter["stat"] +" "+ statfilter["modifier"]+ " "+statfilter["value"])
+					filterstats.push(statfilter)
+				}
+
+			} 
 			argx = toId(argx);
+			if(argx in global.Abilites.BattleAbilities){
+				filterabils.push(argscopy[x])
+			}
+		
+
+			
 			argx = jsUcfirst(argx);
+			
+			if(argx == "Mega"){
+				megafilter = 1
+				console.log("megafilter on")
+			}
+			if(argx == "Nonmega"){
+				megafilter = 0
+			}
 			if (postypings.includes(argx)) {
 				filtertypings.push(argx);
 			}
@@ -2690,8 +2817,10 @@ exports.commands = {
 					pointrecommend = true;
 				}
 			}
+			
 			x++;
 		}
+		console.log("filtered on abilities:" + filterabils)
 		var g = 0;
 		var draftmons = [];
 		var best = {};
@@ -2703,29 +2832,95 @@ exports.commands = {
 		else {
 			draftmons = global.draftvalues.todraftmons[toId(room)];
 		}
-		while (g <= draftmons["length"]) {
 
-			var possiblepic = [];
-			if (tierrecommend) {
-				possiblepic = draftmons["tierlist"][tier]["pokemon"];
-				g = 100;
-			} else {
-				if (pointrecommend && !global.draftvalues.creditDrafting) {
-					while (possiblepic = draftmons["tierlist"]["Tier" + g]["points"] > maxscore) {
-
-						g++
-					}
-
-				}
-				tier=global.tiers[g];
-				possiblepic = draftmons["tierlist"][tier]["pokemon"];
+		maxtiers = draftmons["length"]
+		if (megafilter == 1) {
+				g = 5
 			}
+		if (megafilter == 0) {
+				maxtiers = 4
+		}
+			
+
+
+		while (g <= maxtiers) {
+				var possiblepic = [];
+				if (tierrecommend) {
+					possiblepic = draftmons["tierlist"][tier]["pokemon"];
+					g = 100;
+				} else {
+					tiernumber = g+1
+					tiername ="Tier" + tiernumber
+					console.log(tiername)
+					if(g>4){
+						tiernumber = g-4
+						tiername = "Megatier" + tiernumber
+					}
+					if (pointrecommend && !global.draftvalues.creditDrafting) {
+						while (draftmons["tierlist"][tiername]["points"] > maxscore) {
+							console.log(draftmons["tierlist"][tiername]["points"])
+							g++
+							tiernumber = g+1
+							tiername ="Tier" + tiernumber
+							console.log(tiername)
+							if(g>4){
+								tiernumber = g-4
+								tiername = "Megatier" + tiernumber
+							}
+						}
+
+					}
+				
+				possiblepic = draftmons["tierlist"][tiername]["pokemon"];
+				tier=tiername
+			}
+			//
 			var j = 0;
 
 			while (j < possiblepic["length"]) {
 				var monname = possiblepic[j];
-				console.log(monname);
-				var t = 1.0;
+				dexname = toId(monname).toLowerCase()
+				var t = 10.0;
+				if(filterabils.length > 0){
+					abilsmatch=false;
+					if (filterabils.includes(global.DexData.BattlePokedex[dexname]["abilities"]["0"])) {
+						abilsmatch = true
+					}
+					if ("1" in global.DexData.BattlePokedex[dexname]["abilities"] && filterabils.includes(global.DexData.BattlePokedex[dexname]["abilities"]["1"])) {
+						abilsmatch = true
+					}
+					if ("H" in global.DexData.BattlePokedex[dexname]["abilities"] && filterabils.includes(global.DexData.BattlePokedex[dexname]["abilities"]["H"])) {
+						abilsmatch = true
+						
+					}
+					if(abilsmatch){
+						console.log("abiliteis matched for " + dexname)
+					}
+					else {
+						t = t * 0;
+					}
+				}
+				if(filterstats.length > 0){
+					for (statfilter of filterstats){
+						if(statfilter ["modifier"] == "<"){
+							if(global.DexData.BattlePokedex[dexname]["baseStats"][statfilter ["stat"]] >= statfilter ["value"]){
+								t = t * 0;
+							}
+						}
+						if(statfilter ["modifier"] == "="){
+							if(global.DexData.BattlePokedex[dexname]["baseStats"][statfilter ["stat"]] != statfilter ["value"]){
+								t = t * 0;
+							}
+						}
+						if(statfilter ["modifier"] == ">"){
+							if(global.DexData.BattlePokedex[dexname]["baseStats"][statfilter ["stat"]] <= statfilter ["value"]){
+								t = t * 0;
+							}
+						}
+					}
+				
+
+				}
 				if (filtertypings.length > 0) {
 					if (filtertypings.includes(global.draftvalues.mondata[monname][0]["Typing 2"]) || filtertypings.includes(global.draftvalues.mondata[monname][0]["Typing1"])) {
 
@@ -2759,20 +2954,22 @@ exports.commands = {
 						t = t + 0.0000000001;
 
 					}
-					listsix.push(t);
-					listsix.sort();
-					best[t] = {};
-					best[t]["name"] = possiblepic[j];
-					if (tierrecommend) {
-						best[t]["credits"] = draftmons["tierlist"][tier]["points"];
-						monToColor[possiblepic[j]] = global.colorForTiers[tier];
-					}
-					else {
-						best[t]["credits"] = draftmons["tierlist"][tier]["points"];
-						monToColor[possiblepic[j]] = global.colorForTiers[tier];
-					}
+					if(t<99){
+						listsix.push(t);
+						listsix.sort();
+						best[t] = {};
+						best[t]["name"] = possiblepic[j];
+						if (tierrecommend) {
+							best[t]["credits"] = draftmons["tierlist"][tier]["points"];
+							monToColor[possiblepic[j]] = global.colorForTiers[tier];
+						}
+						else {
+							best[t]["credits"] = draftmons["tierlist"][tier]["points"];
+							monToColor[possiblepic[j]] = global.colorForTiers[tier];
+						}
 
-					console.log(best);
+						console.log(best);
+					}
 				}
 				else {
 
@@ -2780,22 +2977,25 @@ exports.commands = {
 						t = t + 0.0000000001;
 
 					}
-					listsix.push(t);
-					listsix.sort();
-					best[t] = {};
-					best[t]["name"] = possiblepic[j];
-					if (tierrecommend) {
-						best[t]["credits"] = draftmons["tierlist"][tier]["points"];
-						monToColor[possiblepic[j]] = global.colorForTiers[tier];
+					if(t<99){
+						listsix.push(t);
+						listsix.sort();
+						best[t] = {};
+						best[t]["name"] = possiblepic[j];
+						if (tierrecommend) {
+							best[t]["credits"] = draftmons["tierlist"][tier]["points"];
+							monToColor[possiblepic[j]] = global.colorForTiers[tier];
+						}
+						else {
+							best[t]["credits"] = draftmons["tierlist"][tier]["points"];
+							monToColor[possiblepic[j]] = global.colorForTiers[tier];
+						}
+						if (listsix.length > draftsshown) {
+							delete best[listsix[draftsshown]];
+							listsix.pop();
+						}
 					}
-					else {
-						best[t]["credits"] = draftmons["tierlist"][tier]["points"];
-						monToColor[possiblepic[j]] = global.colorForTiers[tier];
-					}
-					if (listsix.length > draftsshown) {
-						delete best[listsix[draftsshown]];
-						listsix.pop();
-					}
+			
 				}
 				j++;
 			}
@@ -2807,7 +3007,8 @@ exports.commands = {
 		console.log(listsix);
 		console.log(best);
 		shuffle(listsix);
-		while (y < draftsshown) {
+		while (y < listsix.length) {
+			
 			var newobj = {};
 
 			newobj["name"] = best[listsix[y]]["name"];
@@ -2815,12 +3016,14 @@ exports.commands = {
 			newlistsix[y] = newobj;
 			y++;
 		}
+		draftsshown = Math.min(draftsshown, listsix.length)
 		//thislistsix
 		//return  this.reply("!htmlbox <div  style='color: black; border: 2px solid red; background-color: rgb(255, 204, 204); padding: 4px;'>"+draftmonsprint5(newlistsix,"rgb(255, 204, 204)")+ "</div>");
 		console.log(monToColor);
 		return this.reply(draftmonsprint4(newlistsix, draftsshown, by, room, monToColor));
 		//global.draftvalues.users[name]["erekredieten"]
 		//mondata
+		
 	},
 	draftweak: 'draftweakness',
 
@@ -2848,7 +3051,6 @@ exports.commands = {
 	similar: function (arg, by, room, cmd) {
 		arg = arg.toLowerCase();
 		var args = arg.split(",");
-		console.log(similar(jsUcfirst(toId(args[0])), jsUcfirst(toId(args[1]))));
 		return this.reply("similarity between " + args[0] + " and " + args[1] + " is " + similar(jsUcfirst(toId(args[0])), jsUcfirst(toId(args[1]))));
 	},
 
@@ -2886,7 +3088,10 @@ exports.commands = {
 		var filterroles = [];
 		var userlist = global.draftvalues.turnorder;
 		var x = 0;
-
+		var megafilter = -1 //-1 is all, 1 is megas only and 0 is non megas only
+		if (!global.draftvalues.users[name]["tieredpicks"].includes("MEGA")) {
+			megafilter = 0
+		}
 		while (x < args.length) {
 			var argx = args[x];
 
@@ -2908,16 +3113,25 @@ exports.commands = {
 			}
 			argx = toId(argx);
 			argx = jsUcfirst(argx);
+			if(argx == "Mega"){
+				megafilter = 1
+				console.log("megafilter on")
+			}
+			if(argx == "Nonmega"){
+				megafilter = 0
+			}
 			if (postypings.includes(argx)) {
 				filtertypings.push(argx);
 			}
 			if (!Number.isNaN(parseInt(argx))) {
 				if (parseInt(argx) < 40 && !global.draftvalues.creditDrafting) {
 					draftsshown = parseInt(argx);
+						
 				}
 				else {
 					maxpoints = parseInt(argx);
 					pointrecommend = true;
+					
 				}
 			}
 			x++;
@@ -3066,24 +3280,47 @@ exports.commands = {
 		while (filterrolesnumber < filterroles.length) {
 			var g = 0;
 			listsix = [];
-			while (g <= draftmons["length"]) {
+			maxtiers = draftmons["length"]
+			console.log("maxlength is "+ maxtiers)
+			if (megafilter == 1) {
+				g = 5
+			}
+			if (megafilter == 0) {
+				maxtiers = 4
+			}
+			while (g <= maxtiers) {
 				var possiblepic = [];
 				if (tierrecommend) {
 					possiblepic = draftmons["tierlist"][tier]["pokemon"];
 					g = 100;
 				} else {
+					tiernumber = g+1
+					tiername ="Tier" + tiernumber
+					console.log(tiername)
+					if(g>4){
+						tiernumber = g-4
+						tiername = "Megatier" + tiernumber
+					}
 					if (pointrecommend && !global.draftvalues.creditDrafting) {
-						while (possiblepic = draftmons["tierlist"]["Tier" + g]["points"] > maxpoints) {
-
+						while (draftmons["tierlist"][tiername]["points"] > maxpoints) {
+							console.log(draftmons["tierlist"][tiername]["points"])
 							g++
+							tiernumber = g+1
+							tiername ="Tier" + tiernumber
+							console.log(tiername)
+							if(g>4){
+								tiernumber = g-4
+								tiername = "Megatier" + tiernumber
+							}
 						}
 
 					}
-					if(g==0){
-						if(!global.draftvalues.users[name]["tieredpicks"].includes(g)){
-							g++;
-						}
-					}
+
+					//if(g==0){
+					//	if(!global.draftvalues.users[name]["tieredpicks"].includes(g)){
+					//		g++;
+					//	}
+					//}
 					tier=global.tiers[g];
 					possiblepic = draftmons["tierlist"][tier]["pokemon"];
 				}
@@ -3595,7 +3832,7 @@ function draftmonsprintroles(arg, role, nrshown, by, room, monToColor) {
 			}
 			else {
 				var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaasthebot, ?draft ' + name + '" style="width:150px;height:70px;vertical-align: top; background-color:' + monToColor[name] + '">';
-				word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" ><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name  +"</a><br/>";
+				word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" ><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name  +"</a><br/> ("+ credits + ")";
 				word = word + '</button>';
 				result = result + word;
 			}
@@ -3625,9 +3862,9 @@ function draftmonsprint4(arg, nrshown, by, room, monToColor) {
 
 		}
 		else {
-			var moncost = global.draftvalues.mondata[name][0]["Cost"];
+			//var moncost = global.draftvalues.mondata[name][0]["Cost"];
 			var word = '<button name="send" value="/msgroom nederlands, /botmsg sinterklaasthebot, ?draft ' + name + '" style="background-color:' + monToColor[name] + '">';
-			word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" ><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a><br/>'+" ("+moncost +")" ;
+			word = word + '<a href="//dex.pokemonshowdown.com/pokemon/' + name + '" target="_blank" class="subtle" ><psicon pokemon="' + name + '" style="vertical-align:-7px;margin:-2px" />' + name + '</a><br/>'+" ("+credits +")" ;
 			word = word + '</button>';
 			result = result + word;
 		}
@@ -3758,7 +3995,6 @@ function draftmonsprintUnknown(arg, DataType) {
 				break;
 			case "LowestBST":
 				//"baseStats": {"hp": 105, "atk": 105, "def": 75, "spa": 65, "spd": 100, "spe": 50},
-				console.log(list);
 				data = Math.min.apply(Math, list);
 				word = "<p>Lowest Stat</p>"
 				break;
@@ -3915,11 +4151,7 @@ function generateMonsList(monlist, room) {
 
 	resultlist.push.apply(resultlist, pickmultimons(monlist["tierlist"]["Tier" + global.draftvalues.currenttier[global.draftvalues.draftroom]]["pokemon"], 6, list));
 
-	console.log(i);
-
-	console.log(resultlist);
-
-	console.log(resultlist);
+	
 	return resultlist;
 }
 function startNewTier(room, by, elem) {
@@ -4038,7 +4270,6 @@ function calculatescore(room, monname, name) {
 			pointrecommend=true;
 			var last2 = argx.slice(-2);
 			maxpoints = parseInt(last2);
-			console.log(last2);
 			pointrecommend = true;
 		}
 		if (!Number.isNaN(parseInt(argx))) {
@@ -4161,7 +4392,7 @@ function calculatescore(room, monname, name) {
 	//console.log(possiblepic["length"]);
 	//var monname=possiblepic[j];
 	var t = 0.0;
-	console.log(monname);
+	
 	if (typings.includes(global.draftvalues.mondata[monname]["Typing1"])) {
 		if (global.draftvalues.mondata[monname]["Typing 2"] != undefined) {
 
@@ -4176,7 +4407,6 @@ function calculatescore(room, monname, name) {
 		}
 	}
 	else {
-		console.log(global.draftvalues.mondata[monname]["Typing 2"]);
 		if (global.draftvalues.mondata[monname]["Typing 2"] != undefined) {
 			if (typings.includes(global.draftvalues.mondata[monname]["Typing 2"])) {
 				t = t + 5;
@@ -4189,11 +4419,11 @@ function calculatescore(room, monname, name) {
 			t = t + 15;
 		}
 	}
-	console.log("beforeentry" + t);
+	
 	if (totalhazards < 5) {
 		t = t + (global.draftvalues.mondata[monname]["entryhazards"] || 0);
 	}
-	console.log("postentry" + t);
+
 	if (totalremovers < 5) {
 		t = t + (global.draftvalues.mondata[monname]["hazardremoval"] || 0);
 	}
@@ -4228,7 +4458,7 @@ function calculatescore(room, monname, name) {
 	else {
 		physicalt = physicalt + (global.draftvalues.mondata[monname]["physicalbulkyattacker"] || 0);
 	}
-	console.log("beforesetup" + t);
+	
 	if (totalphysicalup > 5) {
 		var divider = totalphysicalup / 5 + .5;
 		physicalt = physicalt + (global.draftvalues.mondata[monname]["physicalsetup"] || 0) / divider;
@@ -4236,7 +4466,6 @@ function calculatescore(room, monname, name) {
 	else {
 		physicalt = physicalt + (global.draftvalues.mondata[monname]["physicalsetup"] || 0);
 	}
-	console.log("aftersetup" + t);
 	if (totalspecials > 5) {
 		var divider = totalspecials / 5 + .5;
 		specialt = specialt + (global.draftvalues.mondata[monname]["specialsweeper"] || 0) / divider;
@@ -4287,7 +4516,7 @@ function calculatescore(room, monname, name) {
 	else {
 		t = t + (global.draftvalues.mondata[monname]["specialwall"] || 0);
 	}
-	console.log("zfterwall" + t);
+	
 	t = t + (global.draftvalues.mondata[monname]["speedcontrol"] || 0);
 	if (totalprio > 5) {
 		var divider = totalprio / 5 + .5;
@@ -4334,7 +4563,7 @@ function calculatescore(room, monname, name) {
 			t = t + (global.draftvalues.mondata[monname]["sand"] || 0);
 		}
 	}
-	console.log(t);
+	
 	if (filtertypings.length > 0) {
 		if (filtertypings.includes(global.draftvalues.mondata[monname]["Typing 2"]) || filtertypings.includes(global.draftvalues.mondata[monname]["Typing1"])) {
 
@@ -4363,8 +4592,7 @@ function calculatescore(room, monname, name) {
 	return t;
 };
 function pmlists(monlists, room, vart) {
-	console.log(global.draftvalues.turnorder);
-	console.log(monlists + "hi");
+	
 	var directionword = "down";
 	if (global.draftvalues.draftdirectionup[toId(global.draftvalues.draftroom)]) {
 		directionword = "up"
@@ -4566,7 +4794,7 @@ function endbid(arg, arg2) {
 
 	word = word + "</div>";
 	word = word + "</div>";
-	console.log(word);
+	
 	word = name + " paid " + arg2 + " erekredieten for " + arg + ".( Erekredieten " + global.draftvalues.users[name]["erekredieten"] + ") \n" + word;
 	global.nominatedType = "";
 	global.nominatedmon = "";
@@ -4586,7 +4814,6 @@ function mostProminentRole(monname1) {
 	var posfilterroles = ["entryhazards", "hazardremoval", "itemremover", "pivot", "cleric", "pivot", "scarf", "physicalsweeper", "specialsweeper", "physicalbulkyattacker", "specialbulkyattacker", "physicalwall", "specialwall", "physicalsetup", "specialsetup", "status", "priority", "speedcontrol", "sun", "rain", "hail", "sand"];
 	var i = 0;
 	var maxi = global.draftvalues.mondata[monname1][0][posfilterroles[0]];
-	console.log("maxi " + maxi);
 	var maxstrung = posfilterroles[0];
 	var maxii = global.draftvalues.mondata[monname1][0][posfilterroles[1]];
 	var maxiistrung = posfilterroles[1];
@@ -4599,7 +4826,7 @@ function mostProminentRole(monname1) {
 		}
 		i++;
 	}
-	console.log("role " + maxstrung + " " + maxiistrung);
+	
 	return [maxstrung, maxiistrung];
 }
 
@@ -4608,7 +4835,7 @@ function roleSimilarity(monname1, monname2) {
 	var posfilterroles = ["entryhazards", "hazardremoval", "itemremover", "pivot", "cleric", "pivot", "scarf", "physicalsweeper", "specialsweeper", "physicalbulkyattacker", "specialbulkyattacker", "physicalwall", "specialwall", "physicalsetup", "specialsetup", "status", "priority", "speedcontrol", "sun", "rain", "hail", "sand"];
 	var i = 0;
 	var maxi = global.draftvalues.mondata[monname1][0][posfilterroles[0]];
-	console.log("maxi " + maxi);
+	
 	var maxstrung = posfilterroles[0];
 	var maxii = global.draftvalues.mondata[monname1][0][posfilterroles[1]];
 	var maxiistrung = posfilterroles[1];
@@ -4623,14 +4850,13 @@ function roleSimilarity(monname1, monname2) {
 	}
 	score = score + 5 * (global.draftvalues.mondata[monname2][0][maxstrung] || 0);
 	score = score + 5 * (global.draftvalues.mondata[monname2][0][maxiistrung] || 0);
-	console.log("role " + maxstrung + " " + maxiistrung + " score: " + score);
+	
 	return score;
 }
 
 function typeSimilarity(monname1, monname2) {
 	var score = 0;
-	console.log(monname1);
-	console.log(monname1 + "type1 " + global.draftvalues.mondata[monname1][0]["Typing1"]);
+	
 	if (global.draftvalues.mondata[monname1] != undefined && global.draftvalues.mondata[monname1][0]["Typing1"] != undefined) {
 		if (global.draftvalues.mondata[monname2] != undefined && global.draftvalues.mondata[monname2][0]["Typing1"] != undefined) {
 
@@ -4657,7 +4883,7 @@ function typeSimilarity(monname1, monname2) {
 			}
 		}
 	}
-	console.log("typesim " + score);
+	
 	return score;
 }
 function weaknessForPokemon(monname) {
@@ -4667,7 +4893,7 @@ function weaknessForPokemon(monname) {
 	var i = 0;
 	while (i < postypings.length) {
 		var weaknessToType = 0;
-		console.log(monname);
+		
 		if (monname in global.draftvalues.mondata) {
 			weaknessToType += global.draftvalues.weaknesssheet[postypings[i]][global.draftvalues.mondata[monname][0]["Typing1"]];
 			if (global.draftvalues.mondata[monname][0]["Typing 2"] != "") {
@@ -4731,30 +4957,67 @@ function PlayerPrintoutStandard(list,i) {
 
 	word = word  + '<div  style="padding: 5px;"> Recommend a Pokemon: <button name="send" value="/msgroom nederlands, /botmsg sinterklaasthebot, ?recommend '+ remainvalue +'" style="background-color: rgb(204, 204, 255)">recommend </button></div><div>';
 	var index = 1;
+	length = 5
+	megalength = 5
 	//global.colorForTierings
 	word = word + " <table border=\"1\">" ;
-	for (let i = 0; i < global.tiers.length; i++) {
+	for (let i = 0; i < length; i++) {
 		word= word +"        <col width=\"150\" align=\"char\" char=\".\"" +
 		"                    valign=\"top\" charoff =\"3\"  style=\"background-color:" + global.colorForTierings[i] + ";color:#ffffff;\">  "
 	}
 	word=word+
 		"<tr>"
-	for (let i = 0; i < global.tiers.length; i++) {
+	for (let i = 0; i < length; i++) {
 		word= word +  "<th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaasthebot, ?draftable " + global.tiers[i] + "\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">"+global.tiers[i]+"</h2></button></th>"
 	}
 	word=word+
 		"</tr><tr>"
-	for (let i = 0; i < global.tiers.length; i++) {
-		var tierpicks = global.draftvalues.users[username]["tieredpicks"].filter(x => x==i).length;
+	for (let i = 0; i < length; i++) {
+		var tierpicks = 0
+		if(i>4){
+			var tierpicks = global.draftvalues.users[username]["tieredpicks"].filter(x => x=="MEGA").length;
+		}
+		else{
+			var tierpicks = global.draftvalues.users[username]["tieredpicks"].filter(x => x==i+1).length;
+		}
+
 		word= word +  " <td><center><h2 style=\"background-color:rgb(250,250,100,0)\">"+tierpicks+"</h2></center></td>"
 	}
 	word=word+
 		"</tr><tr>"
-	for (let i = 0; i < global.tiers.length; i++) {
+	for (let i = 0; i < length; i++) {
 		word = word + "<td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaasthebot, ?recommend " +global.tiers[i]  +"\" style=\"width:100%; background-color: rgb(204, 204, 255,0)\">recommend "+global.tiers[i] + "</button></td>"
 	}
 	word=word+
 		"</tr>";
+	if (global.draftvalues.users[username]["tieredpicks"].includes("MEGA")) {
+		word=word+
+			"<tr>"
+		for (let i = 5; i < 5+megalength; i++) {
+			word= word +  "<th><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaasthebot, ?draftable " + global.tiers[i] + "\" style=\"width: 100%; background-color: rgb(204, 255, 204,0)\"><h2  style=\"background-color:rgb(250,250,100,0)\">"+global.tiers[i]+"</h2></button></th>"
+		}
+		word=word+
+			"</tr><tr>"
+		for (let i = 5; i < 5+megalength; i++) {
+			var tierpicks = 0
+			if(i>4){
+				var tierpicks = global.draftvalues.users[username]["tieredpicks"].filter(x => x=="MEGA").length;
+			}
+			else{
+				var tierpicks = global.draftvalues.users[username]["tieredpicks"].filter(x => x==i+1).length;
+			}
+
+			word= word +  " <td><center><h2 style=\"background-color:rgb(250,250,100,0)\">"+tierpicks+"</h2></center></td>"
+		}
+		word=word+
+			"</tr><tr>"
+		for (let i = 5; i < 5+megalength; i++) {
+			word = word + "<td><button name=\"send\" value=\"/msgroom nederlands, /botmsg sinterklaasthebot, ?recommend " +global.tiers[i]  +"\" style=\"width:100%; background-color: rgb(204, 204, 255,0)\">recommend "+global.tiers[i] + "</button></td>"
+		}
+		word=word+
+			"</tr>";
+		}
+
 
 		/*
 		"        <col width=\"150\" align=\"char\" char=\".\" " +

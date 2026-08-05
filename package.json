@@ -53,6 +53,7 @@
     "image-js": "^1.6.2",
     "inline-css": "^4.0.3",
     "markdown": "^0.5.0",
+    "mongoclient": "^1.0.3",
     "mongodb": "^4.17.2",
     "permessage-deflate": "^0.1.7",
     "probe-image-size": "^7.3.0",
